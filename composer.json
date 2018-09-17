@@ -12,7 +12,8 @@
   "autoload": {
     "files": [ "registration.php" ],
     "psr-4": {
-      "MageSuite\\ContentConstructorFrontend\\": ""
+      "MageSuite\\ContentConstructorFrontend\\": "",
+      "Creativestyle\\ContentConstructorFrontendExtension\\": "Legacy"
     }
   }
 }
