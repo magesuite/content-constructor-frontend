@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="MageSuite\ContentConstructor\View\TemplateLocator" type="MageSuite\ContentConstructorFrontend\Template\Locator" />
+
+    <preference for="MageSuite\ContentConstructor\Service\MediaResolver" type="MageSuite\ContentConstructorFrontend\Service\MediaResolver" />
+
+    <preference for="MageSuite\ContentConstructor\Service\UrlResolver" type="MageSuite\ContentConstructorFrontend\Service\UrlResolver" />
+
+    <preference for="MageSuite\ContentConstructor\View\Template" type="MageSuite\ContentConstructorFrontend\Template\Twig" />
+
+    <preference for="MageSuite\ContentConstructor\Factory\ComponentFactory" type="MageSuite\ContentConstructorFrontend\Service\ComponentFactory" />
+
+    <preference for="MageSuite\ContentConstructor\ComponentSupport"
+                type="\MageSuite\ContentConstructorFrontend\Config\DefaultComponentSupport" />
+
+    <preference for="MageSuite\ContentConstructor\Components\Navigation\DataProvider"
+                type="MageSuite\ContentConstructorFrontend\DataProviders\NavigationDataProvider" />
+
+    <preference for="MageSuite\ContentConstructor\Components\ProductCarousel\DataProvider"
+                type="MageSuite\ContentConstructorFrontend\DataProviders\ProductCarouselDataProvider" />
+
+    <preference for="MageSuite\ContentConstructorFrontend\DataProviders\AdditionalProductDataProvider"
+                type="MageSuite\ContentConstructorFrontend\DataProviders\EmptyAdditionalProductDataProvider" />
+
+    <preference for="MageSuite\ContentConstructor\Components\BrandCarousel\DataProvider"
+                type="MageSuite\ContentConstructorFrontend\DataProviders\BrandDataProvider" />
+
+    <preference for="MageSuite\ContentConstructor\Components\CategoryLinks\DataProvider"
+                type="MageSuite\ContentConstructorFrontend\DataProviders\CategoryLinksDataProvider" />
+
+    <preference for="MageSuite\ContentConstructor\Components\Button\DataProvider"
+                type="MageSuite\ContentConstructorFrontend\DataProviders\ButtonDataProvider" />
+
+    <preference for="MageSuite\ContentConstructor\Components\CmsTeaser\DataProvider"
+                type="MageSuite\ContentConstructorFrontend\DataProviders\CmsTeaserDataProvider" />
+
+    <preference for="MageSuite\ContentConstructor\Components\ProductFinder\EndpointUrlProvider"
+                type="MageSuite\ContentConstructorFrontend\Service\ProductFinder\Redirect\EndpointUrlProvider" />
+
+    <type name="Magento\Catalog\Block\Product\AbstractProduct">
+        <plugin name="creativestyle_add_product_object_to_image_data_array" type="MageSuite\ContentConstructorFrontend\Model\Plugin\ProductImage"/>
+    </type>
+    <type name="Magento\Catalog\Block\Product\AbstractProduct">
+        <plugin name="add_product_object_to_image_data_array" type="Smile\ElasticsuiteSwatches\Model\Plugin\ProductImage" disabled="true"/>
+    </type>
+    <type name="Magento\Catalog\Block\Product\AbstractProduct">
+        <plugin name="add_product_object_to_image_data_array" type="Magento\Swatches\Model\Plugin\ProductImage" disabled="true"/>
+    </type>
+
+    <type name="Magento\Catalog\Controller\Category\View">
+        <plugin name="redirect_if_one_result"
+                type="MageSuite\ContentConstructorFrontend\Plugin\ProductFinder\RedirectWhenOnlyOneResultWasFound"/>
+    </type>
+
+    <type name="MageSuite\ContentConstructorFrontend\Model\Plugin\ProductImage">
+        <arguments>
+            <argument name="swatchesHelperData" xsi:type="object">Smile\ElasticsuiteSwatches\Helper\Swatches</argument>
+        </arguments>
+    </type>
+
+    <type name="\MageSuite\ContentConstructorFrontend\Model\Filter\Pool">
+        <arguments>
+            <argument name="filters" xsi:type="array">
+                <item name="new_products" xsi:type="object">MageSuite\ContentConstructorFrontend\Model\Filter\NewProducts</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

@@ -1,0 +1,21 @@
+<?php
+
+$i = 1;
+
+foreach ($block->getBlocksList() as $component) {
+    if (isset($component['_data']['_path'])) {
+        $component['_data']['href'] = $block->getUrl($component['_data']['_path']);
+        unset($component['_data']['_path']);
+    }
+    $blockContent = $block->getLayout()->createBlock(
+        isset($component['_type']) ? $component['_type'] : '\MageSuite\ContentConstructorFrontend\Block\Component',
+        'block' . $i,
+        ['data' => isset($component['_data']) ? $component['_data'] : $component]
+    );
+    if (isset($component['_template'])) {
+        $blockContent->setTemplate($component['_template']);
+    }
+    echo $blockContent->toHtml();
+
+    $i++;
+}
