@@ -13,7 +13,7 @@ class CategoryGridTeasers extends \Magento\Framework\App\Helper\AbstractHelper
      */
     private $registry;
     /**
-     * @var \MageSuite\ContentConstructorAdminExtension\Repository\Xml\XmlToComponentConfigurationMapper
+     * @var \MageSuite\ContentConstructorAdmin\Repository\Xml\XmlToComponentConfigurationMapper
      */
     private $xmlToComponentConfigurationMapper;
     /**
@@ -28,7 +28,7 @@ class CategoryGridTeasers extends \Magento\Framework\App\Helper\AbstractHelper
     public function __construct(
         \Magento\Framework\App\Helper\Context $context,
         \Magento\Framework\Registry $registry,
-        \MageSuite\ContentConstructorAdminExtension\Repository\Xml\XmlToComponentConfigurationMapper $xmlToComponentConfigurationMapper,
+        \MageSuite\ContentConstructorAdmin\Repository\Xml\XmlToComponentConfigurationMapper $xmlToComponentConfigurationMapper,
         \MageSuite\ContentConstructor\Service\MediaResolver $mediaResolver,
         \MageSuite\ContentConstructor\Service\UrlResolver $urlResolver
     )

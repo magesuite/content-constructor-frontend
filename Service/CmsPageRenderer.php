@@ -30,7 +30,7 @@ class CmsPageRenderer
     protected $blockFactory;
 
     /**
-     * @var \MageSuite\ContentConstructorAdminExtension\Repository\Xml\XmlToComponentConfigurationMapper
+     * @var \MageSuite\ContentConstructorAdmin\Repository\Xml\XmlToComponentConfigurationMapper
      */
     protected $xmlToComponentConfigurationMapper;
 
@@ -44,7 +44,7 @@ class CmsPageRenderer
         \Magento\Framework\View\Design\Theme\ThemeProviderInterface $themeProvider,
         \Magento\Framework\View\DesignInterface $design,
         \Magento\Framework\View\Element\BlockFactory $blockFactory,
-        \MageSuite\ContentConstructorAdminExtension\Repository\Xml\XmlToComponentConfigurationMapper $xmlToComponentConfigurationMapper,
+        \MageSuite\ContentConstructorAdmin\Repository\Xml\XmlToComponentConfigurationMapper $xmlToComponentConfigurationMapper,
         \Psr\Log\LoggerInterface $logger
     )
     {
