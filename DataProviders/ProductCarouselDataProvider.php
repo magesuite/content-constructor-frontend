@@ -156,12 +156,16 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
      * @param array $criteria
      * @return array
      */
-    public function getProducts(array $criteria)
+    public function getProducts(array $criteria, $returnProductsEntities = false)
     {
         $collection = $this->buildCollectionSearchCriteria($criteria);
         $collection->addMediaGalleryData();
 
         $products = $collection->getItems();
+
+        if($returnProductsEntities) {
+            return $products;
+        }
 
         $this->salabilityStatus = $this->salabilityHelper->getSalabilityStatus($products);
 
