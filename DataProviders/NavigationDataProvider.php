@@ -13,12 +13,12 @@ class NavigationDataProvider implements \MageSuite\ContentConstructor\Components
     protected $categoryRepository;
 
     /**
-     * @var \Creativestyle\ContentConstructorFrontendExtension\Helper\Category
+     * @var \MageSuite\ContentConstructorFrontend\Helper\Category
      */
     protected $categoryHelper;
 
     /**
-     * @var \Creativestyle\FrontendExtension\Helper\Category
+     * @var \MageSuite\Frontend\Helper\Category
      */
     protected $categoryFrontendHelper;
 
@@ -32,12 +32,12 @@ class NavigationDataProvider implements \MageSuite\ContentConstructor\Components
     private $scopeConfig;
 
     /**
-     * @var \Creativestyle\FrontendExtension\Model\Category\Tree
+     * @var \MageSuite\Frontend\Model\Category\Tree
      */
     protected $categoryTree;
 
     /**
-     * @var \Creativestyle\ContentConstructorFrontendExtension\Service\MediaResolver
+     * @var \MageSuite\ContentConstructorFrontend\Service\MediaResolver
      */
     protected $mediaResolver;
 

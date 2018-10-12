@@ -55,7 +55,8 @@ class ComponentFactoryTest extends \PHPUnit\Framework\TestCase
             ['product-grid', \MageSuite\ContentConstructor\Components\ProductGrid\ProductGrid::class],
             ['custom-html', \MageSuite\ContentConstructor\Components\CustomHtml\CustomHtml::class],
             ['cms-teaser', \MageSuite\ContentConstructor\Components\CmsTeaser\CmsTeaser::class],
-            ['product-finder', \MageSuite\ContentConstructor\Components\ProductFinder\ProductFinder::class]
+            ['product-finder', \MageSuite\ContentConstructor\Components\ProductFinder\ProductFinder::class],
+            ['daily-deal-teaser', \MageSuite\ContentConstructor\Components\DailyDealTeaser\DailyDealTeaser::class]
         ];
     }
 }

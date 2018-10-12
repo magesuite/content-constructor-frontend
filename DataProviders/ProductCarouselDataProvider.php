@@ -222,9 +222,17 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
 
+        if (isset($criteria['filter_attributes'])) {
+            foreach ($criteria['filter_attributes'] as $attribute => $conditions) {
+                $collection->addAttributeToFilter($attribute, [$conditions['operator'] => $conditions['value']]);
+            }
+        }
+
         // when skus are defined other criterias are not included
         if (isset($criteria['skus']) and !empty($criteria['skus'])) {
-            $collection->addFieldToFilter('sku', explode(',', $criteria['skus']));
+            $skus = $this->prepareSkusArray($criteria['skus']);
+
+            $collection->addFieldToFilter('sku', $skus);
 
             return $collection;
         }
@@ -262,6 +270,7 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
         if (isset($criteria['limit'])) {
             $collection->setPageSize($criteria['limit']);
         }
+
 
         return $collection;
     }
@@ -382,7 +391,7 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
             return $products;
         }
 
-        $skus = explode(',', $criteria['skus']);
+        $skus = $this->prepareSkusArray($criteria['skus']);
 
         $sortedProducts = [];
 
@@ -504,5 +513,10 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
         $collection->setFlag('virtual_category_applied', true);
 
         return $collection;
+    }
+
+    protected function prepareSkusArray($skus)
+    {
+        return array_map('trim', explode(',', $skus));
     }
 }

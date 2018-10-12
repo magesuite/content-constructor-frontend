@@ -39,13 +39,16 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
         );
 
         $serverName = $context->getRequest()->getServer('HTTP_HOST');
+        $actionName = $this->getRequest()->getFullActionName();
 
         if($serverName != null and !empty($serverName)) {
             $cacheKey .= '_'.md5($serverName);
         }
 
-        $this->setData('cache_key', $cacheKey);
-        $this->setData('cache_lifetime', self::CACHE_LIFETIME);
+        if($actionName != 'content_constructor_preview_view') {
+            $this->setData('cache_key', $cacheKey);
+            $this->setData('cache_lifetime', self::CACHE_LIFETIME);
+        }
     }
 
     public function getIdentities()
@@ -85,6 +88,4 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
 
         return $this->component->render($componentData);
     }
-
-    
 }

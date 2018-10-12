@@ -30,7 +30,8 @@ class ComponentFactory implements \MageSuite\ContentConstructor\Factory\Componen
         'magento-product-grid-teasers' => \MageSuite\ContentConstructor\Components\MagentoProductGridTeasers\MagentoProductGridTeasers::class,
         'custom-html' => \MageSuite\ContentConstructor\Components\CustomHtml\CustomHtml::class,
         'cms-teaser' => \MageSuite\ContentConstructor\Components\CmsTeaser\CmsTeaser::class,
-        'product-finder' => \MageSuite\ContentConstructor\Components\ProductFinder\ProductFinder::class
+        'product-finder' => \MageSuite\ContentConstructor\Components\ProductFinder\ProductFinder::class,
+        'daily-deal-teaser' => \MageSuite\ContentConstructor\Components\DailyDealTeaser\DailyDealTeaser::class
     ];
 
     /**

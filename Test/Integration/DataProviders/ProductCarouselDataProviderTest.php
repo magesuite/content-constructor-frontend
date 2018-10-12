@@ -220,7 +220,7 @@ class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
 
     protected function itReturnsProductsBySku()
     {
-        $result = $this->dataProvider->getProducts(['skus' => 'cheapest,the_most_expensive']);
+        $result = $this->dataProvider->getProducts(['skus' => 'cheapest, the_most_expensive']);
 
         $this->assertCount(2, $result, __FUNCTION__ . ' Only two skus were provided, so only two products should be returned');
 

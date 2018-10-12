@@ -80,7 +80,7 @@ class MediaResolver implements \MageSuite\ContentConstructor\Service\MediaResolv
     {
         if (preg_match('/\bhttps?:\/\//i', $mediaPath)) {
             $path = parse_url($mediaPath, PHP_URL_PATH);
-            return ltrim($path, '/media/');
+            return str_replace( '/media/', '', $path);
         } else {
             preg_match_all('/url="(?<url>.*?)"/si', $mediaPath, $results, PREG_PATTERN_ORDER);
         }
