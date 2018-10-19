@@ -74,8 +74,24 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
             throw new \InvalidArgumentException("Block must receive it's type in configuration");
         }
 
+        $type = $this->getData('type');
         $componentData = $this->getData('data');
         $classOverrides = $componentData['class_overrides'] ?? [];
+
+        if($type == 'product-carousel') {
+            return $this->getLayout()->createBlock(
+                \MageSuite\ContentConstructorFrontend\Block\Component\ProductCarousel::class,
+                '',
+                ['data' => $componentData]
+            )->toHtml();
+        }
+        else if($type == 'product-grid') {
+            return $this->getLayout()->createBlock(
+                \MageSuite\ContentConstructorFrontend\Block\Component\ProductGrid::class,
+                '',
+                ['data' => $componentData]
+            )->toHtml();
+        }
 
         $this->component = $this->componentFactory->create($this->getData('type'), $classOverrides);
 

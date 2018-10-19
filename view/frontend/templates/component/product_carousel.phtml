@@ -1,0 +1,54 @@
+<?php /** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\ProductCarousel */ ?>
+<div class="cs-container">
+    <div class="cs-container__inner">
+        <?php
+        $mobileComponentVisibility = $block->getData('componentVisibility')['mobile'];
+        $desktopComponentVisibility = $block->getData('componentVisibility')['desktop'];
+        $visibilityClass = '';
+
+        if (!$mobileComponentVisibility) {
+            $visibilityClass .= 'cs-display-controller--hidden-mobile';
+        }
+
+        if (!$desktopComponentVisibility) {
+            $visibilityClass .= 'cs-display-controller--hidden-desktop';
+        }
+
+        $showNavigation = $block->getShowNavigation() ?? $block->getVar('product_carousel/show_navigation');
+        ?>
+        <div class="<?= $visibilityClass ?>">
+            <div class="cs-products-promo">
+                <div class="cs-products-promo__carousel">
+                    <div class="cs-products-promo__wrapper">
+                        <ul class="cs-products-promo__slides">
+                            <?php $iterator = 1 ?>
+                            <?php foreach ($block->getProducts() as $product): ?>
+                                <li class="cs-products-promo__slide cs-grid-product cs-grid-product--in-carousel">
+                                    <?= $block->renderProductTile($product, $iterator) ?>
+                                </li>
+                                <?php $iterator++ ?>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+
+                    <?php if ($block->getVar('product_carousel/show_navigation')): ?>
+                        <button class="cs-products-promo__nav cs-products-promo__nav--prev" type="button">
+                            <svg class="cs-products-promo__nav-icon">
+                                <use xlink:href="<?=$block->getVar('product_carousel/icon/left')?>"></use>
+                            </svg>
+                        </button>
+                        <button class="cs-products-promo__nav cs-products-promo__nav--next" type="button">
+                            <svg class="cs-products-promo__nav-icon">
+                                <use xlink:href="<?=$block->getVar('product_carousel/icon/right')?>"></use>
+                            </svg>
+                        </button>
+                    <?php endif; ?>
+
+                    <?php if ($block->getVar('product_carousel/show_pagination')): ?>
+                        <ul class="cs-products-promo__pagination"></ul>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

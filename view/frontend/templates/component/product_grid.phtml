@@ -1,0 +1,116 @@
+<?php /** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\ProductGrid */
+$viewModel = $block->getViewModel();
+
+$mobileComponentVisibility = $viewModel->getData()['componentVisibility']['mobile'];
+$desktopComponentVisibility = $viewModel->getData()['componentVisibility']['desktop'];
+$visibilityClass = '';
+
+if (!$mobileComponentVisibility) {
+    $visibilityClass .= $block->getVar('component_hidden_classes/mobile');
+}
+
+if (!$desktopComponentVisibility) {
+    $visibilityClass .= $block->getVar('component_hidden_classes/desktop');
+}
+
+$componentConfiguration = $viewModel->getData();
+
+$hero = $viewModel->getHero();
+
+$linkTag = (isset($hero['href']) and !empty($hero['href'])) ? 'a' : 'div';
+$isHeroIncluded = (isset($hero['position']) and !empty($hero['position'])) ? true : false;
+
+$heroAlt = 'Teaser image';
+
+if (isset($hero['image']['alt']) and !empty($hero['image']['alt'])) {
+    $heroAlt = $hero['image']['alt'];
+} else if (isset($hero['headline']) and !empty($hero['headline'])) {
+    $heroAlt = $hero['headline'];
+} else if (isset($hero['subheadline']) and !empty($hero['subheadline'])) {
+    $heroAlt = $hero['subheadline'];
+}
+?>
+
+
+<div class="<?= $visibilityClass ?>">
+    <div class="cs-products-grid <?= $isHeroIncluded ? 'cs-products-grid--with-hero' : '' ?>"
+         data-rows-mobile="<?= $componentConfiguration['rows_mobile'] ?>"
+         data-rows-tablet="<?= $componentConfiguration['rows_tablet'] ?>"
+         data-rows-desktop="<?= $componentConfiguration['rows_desktop'] ?>"
+    >
+        <?php
+        $teasersConfiguration = $block->getVar('product_grid/teasers_configuration');
+        $teasersConfiguration['gridPosition']['x'] = $hero['position'];
+        ?>
+        <div class="cs-grid-layout"
+             data-columns-configuration='<?= json_encode($block->getVar('product_grid/columns_configuration')) ?>'
+             data-teasers-configuration='[<?= json_encode($teasersConfiguration) ?>]'>
+            <ul class="cs-grid-layout__grid">
+                <?php if ($isHeroIncluded): ?>
+                <li class="cs-grid-layout__brick cs-grid-layout__brick--x2 cs-grid-layout__brick--teaser | cs-products-grid__hero cs-products-grid__hero--scheme-<?= $hero['colorScheme'] ?>"
+                    data-teaser-id="1">
+                    <<?= $linkTag ?> <?php if (isset($hero['href']) and !empty($hero['href'])): ?> href="<?= $hero['href'] ?>" <?php endif; ?>
+                    class="cs-products-grid__hero-link">
+
+
+                    <?php if (isset($hero['image']['src']) and !empty($hero['image']['src'])): ?>
+                        <figure class="cs-products-grid__hero-figure">
+                            <img
+                                class="cs-products-grid__hero-image | lazyload"
+                                src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                                data-src="<?= $hero['image']['src'] ?>"
+                                <?php if (isset($hero['image']['srcSet']) and !empty($hero['image']['srcSet'])): ?>data-srcset="<?= $hero['image']['srcSet'] ?>"<?php endif; ?>
+                                alt="<?= $heroAlt ?>"
+                            >
+                            <noscript>
+                                <img
+                                    class="cs-products-grid__hero-image"
+                                    src="<?= $hero['image']['src'] ?>"
+                                    <?php if (isset($hero['image']['srcSet']) and !empty($hero['image']['srcSet'])): ?>srcset="<?= $hero['image']['srcSet'] ?>"<?php endif; ?>
+                                    alt="<?= $heroAlt ?>"
+                                >
+                            </noscript>
+                        </figure>
+                    <?php endif; ?>
+
+                    <div class="cs-products-grid__hero-content-wrapper cs-products-grid__hero-content-wrapper--variant-<?= $hero['displayVariant'] ?>">
+                        <div class="cs-products-grid__hero-content">
+                            <?php if ($hero['headline']): ?>
+                                <h2 class="cs-products-grid__hero-headline"><?= $hero['headline'] ?></h2>
+                            <?php endif ?>
+
+                            <?php if ($hero['subheadline']): ?>
+                                <p class="cs-products-grid__hero-subheadline"><?= $hero['subheadline'] ?></p>
+                            <?php endif ?>
+
+                            <?php if ($hero['paragraph']): ?>
+                                <p class="cs-products-grid__hero-text"><?= $hero['paragraph'] ?></p>
+                            <?php endif ?>
+
+                            <?php if ($hero['href'] and isset($hero['button']['label'])): ?>
+                                <div class="cs-products-grid__hero-cta">
+                                    <span role="button"
+                                          class="cs-button cs-button--type_long cs-button--look_default | cs-products-grid__button">
+                                        <span class="cs-button__span"><?= $hero['button']['label'] ?></span>
+                                        <svg class="cs-button__icon | cs-products-grid__button-icon"><use
+                                                    xlink:href="#arrow_next"></use></svg>
+                                    </span>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+
+                    </<?= $linkTag ?>>
+                    </li>
+                <?php endif; ?>
+                <?php $iterator = 1 ?>
+                <?php foreach ($viewModel->getProducts() as $product): ?>
+                    <li class="cs-grid-layout__brick cs-products-grid__item">
+                        <?= $viewModel->renderProductTile($product, $iterator) ?>
+                    </li>
+                <?php endforeach ?>
+            </ul>
+        </div>
+    </div>
+</div>
+
