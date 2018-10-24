@@ -141,12 +141,10 @@ class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
         $this->assertCount(1, $result);
         $this->assertArrayHasKey('price', $result[0]);
 
-        $priceHtml = '<span  id="product-price-334"                data-price-amount="100"
-        data-price-type="finalPrice"
-        class="price-wrapper ">
-        <span class="price">$100.00</span>    </span>';
-
-        $this->assertContains($priceHtml, $result[0]['price']);
+        $this->assertContains('id="product-price-334"', $result[0]['price']);
+        $this->assertContains('data-price-amount="100"', $result[0]['price']);
+        $this->assertContains('data-price-type="finalPrice"', $result[0]['price']);
+        $this->assertContains('<span class="price">$100.00</span>', $result[0]['price']);
     }
 
     public function itReturnsCorrectProductQty()
