@@ -21,25 +21,18 @@ class ProductGrid extends \Magento\Framework\DataObject
     protected $dataProvider;
 
     /**
-     * @var \MageSuite\ContentConstructor\Service\MediaResolver
-     */
-    protected $mediaResolver;
-
-    /**
-     * @var \MageSuite\ContentConstructor\Service\UrlResolver
-     */
-    protected $urlResolver;
-
-    /**
      * @var array
      */
     protected $configuration;
+    /**
+     * @var ProductGrid\HeroFactory
+     */
+    protected $heroFactory;
 
     public function __construct(
         \MageSuite\ContentConstructorFrontend\Service\ProductTileRenderer $productTileRenderer,
         \MageSuite\ContentConstructor\Components\ProductCarousel\DataProvider $dataProvider,
-        \MageSuite\ContentConstructor\Service\MediaResolver $mediaResolver,
-        \MageSuite\ContentConstructor\Service\UrlResolver $urlResolver,
+        \MageSuite\ContentConstructorFrontend\Model\Component\ProductGrid\HeroFactory $heroFactory,
         array $data = []
     )
     {
@@ -47,25 +40,19 @@ class ProductGrid extends \Magento\Framework\DataObject
 
         $this->productTileRenderer = $productTileRenderer;
         $this->dataProvider = $dataProvider;
-        $this->mediaResolver = $mediaResolver;
-        $this->urlResolver = $urlResolver;
+        $this->heroFactory = $heroFactory;
     }
 
+    /**
+     * @return \MageSuite\ContentConstructorFrontend\Model\Component\ProductGrid\Hero
+     */
     public function getHero() {
-        $hero = $this->getData()['hero'];
+        return $this->heroFactory->create(['data' => $this->getData()['hero']]);
+    }
 
-        if(isset($hero['href']) and !empty($hero['href'])) {
-            $hero['href'] = $this->urlResolver->resolve($hero['href']);
-        }
+    public function hasHero() {
+        return $this->getHero()->isEnabled();
 
-        if(!empty($hero['decoded_image'])) {
-            $hero['image'] = [
-                'src' => $this->mediaResolver->resolve($hero['decoded_image']),
-                'srcSet' => $this->mediaResolver->resolveSrcSet($hero['decoded_image'])
-            ];
-        }
-
-        return $hero;
     }
 
     public function getProducts() {
@@ -81,5 +68,16 @@ class ProductGrid extends \Magento\Framework\DataObject
 
     public function renderProductTile($product, $iterator) {
         return $this->productTileRenderer->render($product, $iterator);
+    }
+
+    public function getColumnsConfiguration() {
+        return $this->getVar('product_grid/columns_configuration');
+    }
+
+    public function getTeasersConfiguration() {
+        $teasersConfiguration = $this->getVar('product_grid/teasers_configuration');
+        $teasersConfiguration['gridPosition']['x'] = $this->getHero()->getPosition();
+
+        return $teasersConfiguration;
     }
 }

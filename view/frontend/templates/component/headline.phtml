@@ -1,0 +1,15 @@
+<?php
+/** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\Headline */
+$componentConfiguration = $block->getData();
+$visibilityClass = $this
+    ->helper(\MageSuite\ContentConstructorFrontend\Helper\ComponentVisibility::class)
+    ->getVisibilityClass($componentConfiguration);
+
+$tag = $block->getHeadingTag();
+?>
+<div class="<?= $visibilityClass ?>">
+    <div class="cs-headline">
+        <<?=$tag?> class="cs-headline__title"><?= $block->getTitle() ?></<?=$tag?>>
+        <p class="cs-headline__subtitle"><?= $block->getSubtitle() ?></p>
+    </div>
+</div>

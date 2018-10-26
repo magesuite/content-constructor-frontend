@@ -92,6 +92,13 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
                 ['data' => $componentData]
             )->toHtml();
         }
+        else if($type == 'headline') {
+            return $this->getLayout()->createBlock(
+                \MageSuite\ContentConstructorFrontend\Block\Component\Headline::class,
+                '',
+                ['data' => $componentData]
+            )->toHtml();
+        }
 
         $this->component = $this->componentFactory->create($this->getData('type'), $classOverrides);
 
