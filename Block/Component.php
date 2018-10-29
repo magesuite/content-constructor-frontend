@@ -7,43 +7,58 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
     const CACHE_LIFETIME = 86400;
     const CACHE_KEY = 'component_html_%s_%s';
 
-    private $component;
+    protected $component;
 
     /**
      * @var \MageSuite\ContentConstructorFrontend\Service\ComponentFactory
      */
-    private $componentFactory;
+    protected $componentFactory;
 
     /**
      * @var \Magento\Store\Model\StoreManagerInterface
      */
-    private $storeManager;
+    protected $storeManager;
+
+    /**
+     * @var \Magento\Customer\Model\Session
+     */
+    protected $customerSession;
 
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         \MageSuite\ContentConstructor\Factory\ComponentFactory $componentFactory,
         \Magento\Store\Model\StoreManagerInterface $storeManager,
+        \Magento\Customer\Model\Session $customerSession,
         array $data = []
     ) {
         parent::__construct($context, $data);
 
         $this->storeManager = $storeManager;
+        $this->customerSession = $customerSession;
         $this->componentFactory = $componentFactory;
 
         $componentHash = substr(md5(serialize($this->getData())), 0 ,8);
+        $store = $this->storeManager->getStore();
 
         $cacheKey = sprintf(
             self::CACHE_KEY,
             $componentHash,
-            $this->storeManager->getStore()->getId()
+            $store->getId()
         );
+
+        $cacheKeyAdditionalElements = [
+            $store->getCurrentCurrencyCode(),
+            $this->customerSession->getCustomerGroupId()
+        ];
 
         $serverName = $context->getRequest()->getServer('HTTP_HOST');
         $actionName = $this->getRequest()->getFullActionName();
 
         if($serverName != null and !empty($serverName)) {
-            $cacheKey .= '_'.md5($serverName);
+            $cacheKeyAdditionalElements[] = $serverName;
         }
+
+        $cacheKey .= '_'.md5(implode('|', $cacheKeyAdditionalElements));
 
         if($actionName != 'content_constructor_preview_view') {
             $this->setData('cache_key', $cacheKey);
