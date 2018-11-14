@@ -229,7 +229,7 @@ class MediaResolver implements \MageSuite\ContentConstructor\Service\MediaResolv
     }
 
     protected function isDirectUrl($url) {
-        return substr($url, 0, 4) == 'http';
+        return filter_var($url, FILTER_VALIDATE_URL);
     }
 
 }
