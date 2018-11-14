@@ -32,6 +32,7 @@ class MediaResolverTest extends \PHPUnit\Framework\TestCase
             \MageSuite\ContentConstructorFrontend\Service\MediaResolver::class,
             ['directoryList' => $this->directoryListStub]
         );
+
     }
 
     public function testItImplementsMediaResolverInterface()
@@ -44,6 +45,11 @@ class MediaResolverTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(
             'http://localhost/pub/media/wysiwyg/test.png',
             $this->mediaResolver->resolve('{{media url="wysiwyg/test.png"}}')
+        );
+
+        $this->assertEquals(
+            'http://localhost/pub/media/wysiwyg/test.gif',
+            $this->mediaResolver->resolve('{{media url="wysiwyg/test.gif"}}')
         );
     }
 
@@ -80,6 +86,18 @@ class MediaResolverTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(
             '',
             $this->mediaResolver->resolveSrcSet('{{media url="wysiwyg/not_existing.jpg"}}')
+        );
+    }
+
+    public function testItReturnsEmptySrcSetWhenFileIsGif()
+    {
+        $wysiwygUploadDirectoryPath = realpath(__DIR__ . '/../assets');
+
+        $this->directoryListStub->method('getPath')->willReturn($wysiwygUploadDirectoryPath);
+
+        $this->assertEquals(
+            '',
+            $this->mediaResolver->resolveSrcSet('{{media url="wysiwyg/test.gif"}}')
         );
     }
 

@@ -112,13 +112,13 @@ class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
 
     private function itSortsProperlyByPrice()
     {
-        $result = $this->dataProvider->getProducts(['category_id' => 333, 'order_by' => 'price', 'order_type' => 'DESC']);
+        $result = $this->dataProvider->getProducts(['category_id' => 333, 'order_by' => 'price', 'order_type' => 'desc']);
 
         $this->assertEquals('The most expensive product', $result[0]['name'], __FUNCTION__.self::MESSAGE_SORT_PRICE_DESC);
         $this->assertEquals('The middle product', $result[1]['name'], __FUNCTION__.self::MESSAGE_SORT_PRICE_DESC);
         $this->assertEquals('Cheapest product', $result[2]['name'], __FUNCTION__.self::MESSAGE_SORT_PRICE_DESC);
 
-        $result = $this->dataProvider->getProducts(['category_id' => 333, 'order_by' => 'price', 'order_type' => 'ASC']);
+        $result = $this->dataProvider->getProducts(['category_id' => 333, 'order_by' => 'price', 'order_type' => 'asc']);
 
         $this->assertEquals('Cheapest product', $result[0]['name'], __FUNCTION__.self::MESSAGE_SORT_PRICE_ASC);
         $this->assertEquals('The middle product', $result[1]['name'], __FUNCTION__.self::MESSAGE_SORT_PRICE_ASC);

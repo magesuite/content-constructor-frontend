@@ -13,7 +13,7 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
         'bestsellers_amount' => 'bestseller_score_by_amount'
     ];
 
-    protected $salabilityStatus = [];
+    protected $stockData = [];
 
     /**
      * @var \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory
@@ -56,9 +56,9 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
     protected $scopeInterface;
 
     /**
-     * @var \MageSuite\Frontend\Helper\Product\Salability
+     * @var \MageSuite\Frontend\Helper\Product\StockData
      */
-    protected $salabilityHelper;
+    protected $stockDataHelper;
 
     /**
      * @var \Magento\Catalog\Model\Config
@@ -116,7 +116,7 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
         \Magento\Catalog\Block\Product\View $productView,
         AdditionalProductDataProvider $additionalProductDataProvider,
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeInterface,
-        \MageSuite\Frontend\Helper\Product\Salability $salabilityHelper,
+        \MageSuite\Frontend\Helper\Product\StockData $stockDataHelper,
         \Magento\Catalog\Model\Config $catalogConfig,
         \Magento\Store\Model\StoreManagerInterface $storeManager,
         \Magento\Catalog\Block\Product\ListProduct $listProductBlock,
@@ -137,7 +137,7 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
         $this->productView = $productView;
         $this->additionalProductDataProvider = $additionalProductDataProvider;
         $this->scopeInterface = $scopeInterface;
-        $this->salabilityHelper = $salabilityHelper;
+        $this->stockDataHelper = $stockDataHelper;
         $this->catalogConfig = $catalogConfig;
         $this->storeManager = $storeManager;
         $this->listProductBlock = $listProductBlock;
@@ -163,7 +163,7 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
 
         $products = $collection->getItems();
 
-        $this->salabilityStatus = $this->salabilityHelper->getSalabilityStatus($products);
+        $this->stockData = $this->stockDataHelper->getStockData($products);
 
         $result = [];
 
@@ -349,13 +349,7 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
 
     protected function isProductInStock($product)
     {
-        $productId = $product->getId();
-
-        if (isset($this->salabilityStatus[$productId])) {
-            return $this->salabilityStatus[$productId];
-        }
-
-        return $product->getIsSalable();
+        return $this->stockData[$product->getId()]['salable'] ?? $product->getIsSalable();
     }
 
     protected function getProductWishlistDataPost($product)
@@ -365,7 +359,7 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
 
     protected function getProductQty($productId)
     {
-        return $this->stockInterface->getStockQty($productId);
+        return $this->stockData[$productId]['qty'] ?? 0;
     }
 
     protected function getSwatchesHtml($product)
@@ -406,7 +400,7 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
 
     public function getAddToCartButtonHtml($product)
     {
-        if (!$product->isSalable()) {
+        if (!$this->isProductInStock($product)) {
             return '';
         }
 
@@ -414,7 +408,7 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
 
         $productType = $product->getTypeId();
 
-        if ($productType !== 'configurable') {
+        if ($productType !== \Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE) {
             $addToCartText = __('Add to cart');
         } else {
             $addToCartText = __('Configure');

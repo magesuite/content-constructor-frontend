@@ -98,7 +98,7 @@ class MediaResolver implements \MageSuite\ContentConstructor\Service\MediaResolv
         $originalImageName = pathinfo($originalImagePath, PATHINFO_BASENAME);
         $originalImageDirectory = dirname($originalImagePath);
 
-        if (!file_exists($originalImagePath) OR !is_file($originalImagePath)) {
+        if (!$this->imageFileExist($originalImagePath) OR $this->isGif($originalImagePath)) {
             return '';
         }
 
@@ -135,7 +135,7 @@ class MediaResolver implements \MageSuite\ContentConstructor\Service\MediaResolv
         $originalImageName = pathinfo($originalImagePath, PATHINFO_BASENAME);
         $originalImageDirectory = dirname($originalImagePath);
 
-        if (!file_exists($originalImagePath) OR !is_file($originalImagePath)) {
+        if (!$this->imageFileExist($originalImagePath) OR $this->isGif($originalImagePath)) {
             return '';
         }
 
@@ -163,6 +163,20 @@ class MediaResolver implements \MageSuite\ContentConstructor\Service\MediaResolv
         }
 
         return vsprintf('%s, %s 2x', $srcSet);
+    }
+
+    protected function imageFileExist($originalImagePath) {
+        if (!file_exists($originalImagePath) OR !is_file($originalImagePath)) {
+            return false;
+        }
+
+        return true;
+    }
+
+    protected function isGif($originalImagePath) {
+        $pathParts = pathinfo($originalImagePath);
+
+        return $pathParts['extension'] === 'gif';
     }
 
     protected function getUrl($url)

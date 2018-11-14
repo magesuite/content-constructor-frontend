@@ -20,16 +20,20 @@ class Pool
      * @var AttributeSorter
      */
     protected $attributeSorter;
+    /**
+     * @var \Magento\Catalog\Model\Config
+     */
+    protected $catalogConfig;
 
     public function __construct(
-        \Magento\Catalog\Model\Config\Source\ListSort $sortableAttributesProvider,
+        \Magento\Catalog\Model\Config $catalogConfig,
         AttributeSorter $attributeSorter,
         $sorters = []
     )
     {
-        $this->sortableAttributesProvider = $sortableAttributesProvider;
         $this->additionalSorters = $sorters;
         $this->attributeSorter = $attributeSorter;
+        $this->catalogConfig = $catalogConfig;
     }
 
     public function getSorters() {
@@ -61,12 +65,15 @@ class Pool
 
     protected function buildAttributeSorters()
     {
-        $builtInAttributeSorters = $this->sortableAttributesProvider->toOptionArray();
+        $builtInAttributeSorters = $this->catalogConfig->getAttributesUsedForSortBy();
 
-        foreach ($builtInAttributeSorters as $sorter) {
-            $this->sorters[$sorter['value']] = [
-                'label' => $sorter['label'],
-                'value' => $sorter['value'],
+        foreach ($builtInAttributeSorters as $attribute) {
+            $label = $attribute['frontend_label'];
+            $value = $attribute['attribute_code'];
+
+            $this->sorters[$value] = [
+                'label' => $label,
+                'value' => $value,
                 'sorter_object' => $this->attributeSorter
             ];
         }
