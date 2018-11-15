@@ -39,6 +39,10 @@ class MediaResolver implements \MageSuite\ContentConstructor\Service\MediaResolv
 
     public function resolve($mediaPath)
     {
+        if($this->isDirectUrl($mediaPath)) {
+            return $mediaPath;
+        }
+
         $url = $this->parseMediaUrl($mediaPath);
 
         return $this->getUrl($url);
@@ -46,6 +50,10 @@ class MediaResolver implements \MageSuite\ContentConstructor\Service\MediaResolv
 
     public function resolveSrcSet($mediaPath)
     {
+        if($this->isDirectUrl($mediaPath)) {
+            return $mediaPath;
+        }
+
         $originalImageUrl = $this->parseMediaUrl($mediaPath);
         $cacheIdentifier = 'src_set_' . md5($originalImageUrl);
 
@@ -62,6 +70,10 @@ class MediaResolver implements \MageSuite\ContentConstructor\Service\MediaResolv
 
     public function resolveSrcSetByDensity($mediaPath)
     {
+        if($this->isDirectUrl($mediaPath)) {
+            return $mediaPath;
+        }
+
         $originalImageUrl = $this->parseMediaUrl($mediaPath);
         $cacheIdentifier = 'src_set_density_' . md5($originalImageUrl);
 
@@ -74,6 +86,29 @@ class MediaResolver implements \MageSuite\ContentConstructor\Service\MediaResolv
         }
 
         return $srcSet;
+    }
+
+    /**
+     * Returns images paths from strings in array
+     * @param $array
+     * @return mixed
+     */
+    public function resolveInArray($array)
+    {
+        if (!is_array($array)) {
+            return $array;
+        }
+
+        foreach ($array as $key => $value) {
+            if (is_array($value)) {
+                $array[$key] = $this->resolveInArray($value);
+                continue;
+            }
+
+            $array[$key] = $this->filterProvider->getPageFilter()->filter($array[$key]);
+        }
+
+        return $array;
     }
 
     protected function parseMediaUrl($mediaPath)
@@ -207,26 +242,8 @@ class MediaResolver implements \MageSuite\ContentConstructor\Service\MediaResolv
         return sprintf('%s %sw', $url, $width);
     }
 
-    /**
-     * Returns images paths from strings in array
-     * @param $array
-     * @return mixed
-     */
-    public function resolveInArray($array)
-    {
-        if (!is_array($array)) {
-            return $array;
-        }
-
-        foreach ($array as $key => $value) {
-            if (is_array($value)) {
-                $array[$key] = $this->resolveInArray($value);
-                continue;
-            }
-
-            $array[$key] = $this->filterProvider->getPageFilter()->filter($array[$key]);
-        }
-
-        return $array;
+    protected function isDirectUrl($url) {
+        return filter_var($url, FILTER_VALIDATE_URL);
     }
+
 }

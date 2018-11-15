@@ -53,6 +53,13 @@ class MediaResolverTest extends \PHPUnit\Framework\TestCase
         );
     }
 
+    public function testItReturnsUrlDirectlyWhenItsPassed() {
+        $this->assertEquals(
+            'https://example.com/image.png',
+            $this->mediaResolver->resolve('https://example.com/image.png')
+        );
+    }
+
     public function testItCorrectlyResolvesSrcSet()
     {
         $wysiwygUploadDirectoryPath = realpath(__DIR__ . '/../assets');
@@ -65,6 +72,13 @@ class MediaResolverTest extends \PHPUnit\Framework\TestCase
         );
     }
 
+    public function testItReturnsUrlDirectlyInSrcSetWhenItsPassed() {
+        $this->assertEquals(
+            'https://example.com/image.png',
+            $this->mediaResolver->resolveSrcSet('https://example.com/image.png')
+        );
+    }
+
     public function testItCorrectlyResolvesSrcSetByDensity()
     {
         $wysiwygUploadDirectoryPath = realpath(__DIR__ . '/../assets');
@@ -74,6 +88,13 @@ class MediaResolverTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(
             'http://localhost/pub/media/wysiwyg/.thumbs/480/test.jpg, http://localhost/pub/media/wysiwyg/.thumbs/960/test.jpg 2x',
             $this->mediaResolver->resolveSrcSetByDensity('{{media url="wysiwyg/test.jpg"}}')
+        );
+    }
+
+    public function testItReturnsUrlDirectlyInDensityBasedSrcSetWhenItsPassed() {
+        $this->assertEquals(
+            'https://example.com/image.png',
+            $this->mediaResolver->resolveSrcSetByDensity('https://example.com/image.png')
         );
     }
 
