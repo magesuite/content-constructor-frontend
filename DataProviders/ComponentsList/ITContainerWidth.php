@@ -17,8 +17,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
             'data' => [
                 'items' => [
                     0 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvYmFubmVyXzMuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/banner_3.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
                         'displayVariant' => '1',
                         'headline' => 'Text vertically centered on the left',
                         'subheadline' => 'Large teaser',
@@ -74,8 +74,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
             'data' => [
                 'items' => [
                     0 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvYmFubmVyXzMuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/banner_3.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
                         'displayVariant' => '2',
                         'headline' => 'Text on the bottom, left corner',
                         'subheadline' => 'Large teaser',
@@ -131,8 +131,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
             'data' => [
                 'items' => [
                     0 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvYmFubmVyXzMuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/banner_3.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
                         'displayVariant' => '3',
                         'headline' => 'Text vertically centered in the middle',
                         'subheadline' => 'Large teaser',
@@ -188,8 +188,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
             'data' => [
                 'items' => [
                     0 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvYmFubmVyXzMuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/banner_3.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
                         'displayVariant' => '4',
                         'headline' => 'Text on the bottom - centered',
                         'subheadline' => 'Large teaser',
@@ -245,8 +245,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
             'data' => [
                 'items' => [
                     0 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvYmFuZXIyLmpwZyJ9fQ',
-                        'decodedImage' => '{{media url="creative_components/baner2.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ==',
+                        'decodedImage' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
                         'displayVariant' => '1',
                         'headline' => 'Text vertically centered on the left',
                         'subheadline' => 'Large teaser',
@@ -302,8 +302,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
             'data' => [
                 'items' => [
                     0 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvYmFuZXIyLmpwZyJ9fQ',
-                        'decodedImage' => '{{media url="creative_components/baner2.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ==',
+                        'decodedImage' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
                         'displayVariant' => '2',
                         'headline' => 'Text on the bottom, left corner',
                         'subheadline' => 'Large teaser',
@@ -359,8 +359,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
             'data' => [
                 'items' => [
                     0 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvYmFuZXIyLmpwZyJ9fQ',
-                        'decodedImage' => '{{media url="creative_components/baner2.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ==',
+                        'decodedImage' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
                         'displayVariant' => '3',
                         'headline' => 'Text vertically centered in the middle',
                         'subheadline' => 'Large teaser',
@@ -416,8 +416,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
             'data' => [
                 'items' => [
                     0 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvYmFuZXIyLmpwZyJ9fQ',
-                        'decodedImage' => '{{media url="creative_components/baner2.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ==',
+                        'decodedImage' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
                         'displayVariant' => '4',
                         'headline' => 'Text on the bottom - centered',
                         'subheadline' => 'Large teaser',
@@ -474,8 +474,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
             'data' => [
                 'items' => [
                     0 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvYmFubmVyXzMuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/banner_3.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
                         'displayVariant' => '1',
                         'headline' => 'Text vertically centered on the left',
                         'subheadline' => 'Slider',
@@ -487,8 +487,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
                         'colorScheme' => 'dark',
                     ],
                     1 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvYmFuZXIyLmpwZyJ9fQ',
-                        'decodedImage' => '{{media url="creative_components/baner2.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ==',
+                        'decodedImage' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
                         'headline' => 'Text on the bottom, left corner',
                         'paragraph' => 'Text over image',
                         'ctaLabel' => 'Dark',
@@ -544,8 +544,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
             'data' => [
                 'items' => [
                     0 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvYmFubmVyXzMuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/banner_3.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
                         'displayVariant' => '3',
                         'headline' => 'Text vertically centered in the middle',
                         'subheadline' => 'Teasers in row',
@@ -557,8 +557,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
                         'colorScheme' => 'dark',
                     ],
                     1 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvYmFuZXIyLmpwZyJ9fQ',
-                        'decodedImage' => '{{media url="creative_components/baner2.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ==',
+                        'decodedImage' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
                         'headline' => 'Text on the bottom - cectered',
                         'subheadline' => 'Teasers in row',
                         'paragraph' => 'Text over image',
@@ -614,8 +614,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
             'data' => [
                 'items' => [
                     0 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvYmFubmVyXzMuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/banner_3.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
                         'displayVariant' => '1',
                         'headline' => 'Text vertically centered on the left',
                         'subheadline' => 'Teasers in column',
@@ -627,8 +627,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
                         'colorScheme' => 'light',
                     ],
                     1 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvYmFuZXIyLmpwZyJ9fQ',
-                        'decodedImage' => '{{media url="creative_components/baner2.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ==',
+                        'decodedImage' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
                         'displayVariant' => '4',
                         'headline' => 'Text on the bottom - centered',
                         'subheadline' => 'Teasers in column',
@@ -684,8 +684,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
             'data' => [
                 'items' => [
                     0 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvYmFubmVyXzMuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/banner_3.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
                         'displayVariant' => '1',
                         'headline' => 'Headline',
                         'subheadline' => 'Teasers in column',
@@ -697,8 +697,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
                         'colorScheme' => 'dark',
                     ],
                     1 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvYmFuZXIyLmpwZyJ9fQ',
-                        'decodedImage' => '{{media url="creative_components/baner2.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ==',
+                        'decodedImage' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
                         'headline' => 'Headline',
                         'subheadline' => 'Teasers in column',
                         'paragraph' => 'Text below image',
@@ -755,8 +755,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
             'data' => [
                 'items' => [
                     0 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvYmFubmVyXzMuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/banner_3.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
                         'displayVariant' => '1',
                         'headline' => 'Text vertically centered on the left',
                         'subheadline' => 'Slider',
@@ -768,8 +768,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
                         'colorScheme' => 'dark',
                     ],
                     1 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvYmFuZXIyLmpwZyJ9fQ',
-                        'decodedImage' => '{{media url="creative_components/baner2.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ==',
+                        'decodedImage' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
                         'headline' => 'Text on the bottom, left corner',
                         'subheadline' => 'Slider',
                         'paragraph' => 'Text over image',
@@ -781,8 +781,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
                         'colorScheme' => 'dark',
                     ],
                     2 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvc2xpZGUxLmpwZyJ9fQ',
-                        'decodedImage' => '{{media url="creative_components/slide1.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvamFuLWxvc2VydC02MzM5NjAtdW5zcGxhc2guanBnIn19',
+                        'decodedImage' => '{{media url="creative_components/jan-losert-633960-unsplash.jpg"}}',
                         'headline' => 'Text vertically centered in the middle',
                         'subheadline' => 'Slider',
                         'paragraph' => 'Text over image',
@@ -838,8 +838,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
             'data' => [
                 'items' => [
                     0 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvYmFubmVyXzMuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/banner_3.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
                         'displayVariant' => '4',
                         'headline' => 'Text on the bottom - centered',
                         'subheadline' => 'Teasers in column',
@@ -851,8 +851,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
                         'colorScheme' => 'light',
                     ],
                     1 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvYmFuZXIyLmpwZyJ9fQ',
-                        'decodedImage' => '{{media url="creative_components/baner2.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ==',
+                        'decodedImage' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
                         'headline' => 'Text vertically centered on the left',
                         'subheadline' => 'Teasers in column',
                         'paragraph' => 'Text over image',
@@ -864,8 +864,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
                         'colorScheme' => 'light',
                     ],
                     2 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvc2xpZGUxLmpwZyJ9fQ',
-                        'decodedImage' => '{{media url="creative_components/slide1.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvamFuLWxvc2VydC02MzM5NjAtdW5zcGxhc2guanBnIn19',
+                        'decodedImage' => '{{media url="creative_components/jan-losert-633960-unsplash.jpg"}}',
                         'headline' => 'Text vertically centered in the middle',
                         'subheadline' => 'Teasers in column',
                         'paragraph' => 'Text over image',
@@ -921,8 +921,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
             'data' => [
                 'items' => [
                     0 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvYmFubmVyXzMuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/banner_3.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
                         'displayVariant' => '1',
                         'colorScheme' => 'dark',
                         'headline' => 'Text vertically centered on the left',
@@ -934,8 +934,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
                         'aspectRatio' => '960:511',
                     ],
                     1 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvYmFuZXIyLmpwZyJ9fQ',
-                        'decodedImage' => '{{media url="creative_components/baner2.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ==',
+                        'decodedImage' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
                         'displayVariant' => '2',
                         'colorScheme' => 'dark',
                         'headline' => 'Text on the bottom, left corner',
@@ -947,8 +947,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
                         'aspectRatio' => '960:511'
                     ],
                     2 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvc2xpZGUxLmpwZyJ9fQ',
-                        'decodedImage' => '{{media url="creative_components/slide1.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvamFuLWxvc2VydC02MzM5NjAtdW5zcGxhc2guanBnIn19',
+                        'decodedImage' => '{{media url="creative_components/jan-losert-633960-unsplash.jpg"}}',
                         'displayVariant' => '3',
                         'colorScheme' => 'dark',
                         'headline' => 'Text vertically centered in the middle',
@@ -1004,8 +1004,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
             'data' => [
                 'items' => [
                     0 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvYmFubmVyXzMuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/banner_3.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
                         'displayVariant' => '1',
                         'headline' => 'Headline',
                         'subheadline' => 'Teasers in column',
@@ -1017,8 +1017,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
                         'colorScheme' => 'dark',
                     ],
                     1 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvYmFuZXIyLmpwZyJ9fQ',
-                        'decodedImage' => '{{media url="creative_components/baner2.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ==',
+                        'decodedImage' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
                         'headline' => 'Headline',
                         'paragraph' => 'Text below image',
                         'ctaLabel' => 'Dark',
@@ -1030,8 +1030,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
                         'colorScheme' => 'dark',
                     ],
                     2 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvc2xpZGUxLmpwZyJ9fQ',
-                        'decodedImage' => '{{media url="creative_components/slide1.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvamFuLWxvc2VydC02MzM5NjAtdW5zcGxhc2guanBnIn19',
+                        'decodedImage' => '{{media url="creative_components/jan-losert-633960-unsplash.jpg"}}',
                         'headline' => 'Headline',
                         'paragraph' => 'Text below image',
                         'ctaLabel' => 'Light',
@@ -1088,8 +1088,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
             'data' => [
                 'items' => [
                     0 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvTGF5ZXJfNjdfcmV1cGxvYWQuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/Layer_67_reupload.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvaG93YXJkLWxhd3JlbmNlLWItMTE0MTgxMy11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/howard-lawrence-b-1141813-unsplash.jpg"}}',
                         'displayVariant' => '1',
                         'headline' => 'Text vertically centered on the left',
                         'subheadline' => 'Slider',
@@ -1101,8 +1101,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
                         'colorScheme' => 'dark',
                     ],
                     1 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvTGF5ZXJfNjZfcmV1cGxvYWQuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/Layer_66_reupload.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYWxleGFuZHJ1LWFjZWEtMTE2MDQ2MS11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/alexandru-acea-1160461-unsplash.jpg"}}',
                         'headline' => 'Text on the bottom, left corner',
                         'paragraph' => 'Text over image',
                         'ctaLabel' => 'Dark',
@@ -1114,8 +1114,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
                         'colorScheme' => 'dark',
                     ],
                     2 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvTGF5ZXJfNjZfY29weV8yX3JldXBsb2FkLmpwZyJ9fQ',
-                        'decodedImage' => '{{media url="creative_components/Layer_66_copy_2_reupload.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZXN0ZWUtamFuc3NlbnMtNzQ1ODYxLXVuc3BsYXNoLmpwZyJ9fQ==',
+                        'decodedImage' => '{{media url="creative_components/estee-janssens-745861-unsplash.jpg"}}',
                         'headline' => 'Text vertically centered in the middle',
                         'paragraph' => 'Text over image',
                         'ctaLabel' => 'Light',
@@ -1127,8 +1127,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
                         'colorScheme' => 'light',
                     ],
                     3 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvTGF5ZXJfNjdfcmV1cGxvYWQuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/Layer_67_reupload.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvaG93YXJkLWxhd3JlbmNlLWItMTE0MTgxMy11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/howard-lawrence-b-1141813-unsplash.jpg"}}',
                         'headline' => 'Text on the bottom - centered',
                         'paragraph' => 'Text over image',
                         'ctaLabel' => 'Dark',
@@ -1184,8 +1184,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
             'data' => [
                 'items' => [
                     0 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvTGF5ZXJfNjdfcmV1cGxvYWQuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/Layer_67_reupload.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvaG93YXJkLWxhd3JlbmNlLWItMTE0MTgxMy11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/howard-lawrence-b-1141813-unsplash.jpg"}}',
                         'displayVariant' => '1',
                         'headline' => 'Text vertically centered on the left',
                         'subheadline' => '2 in row, 2 rows',
@@ -1197,8 +1197,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
                         'colorScheme' => 'light',
                     ],
                     1 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvTGF5ZXJfNjZfcmV1cGxvYWQuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/Layer_66_reupload.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYWxleGFuZHJ1LWFjZWEtMTE2MDQ2MS11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/alexandru-acea-1160461-unsplash.jpg"}}',
                         'headline' => 'Text on the bottom, left corner',
                         'subheadline' => '2 in row, 2 rows',
                         'paragraph' => 'Text over image',
@@ -1210,8 +1210,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
                         'colorScheme' => 'light',
                     ],
                     2 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvTGF5ZXJfNjZfY29weV8yX3JldXBsb2FkLmpwZyJ9fQ',
-                        'decodedImage' => '{{media url="creative_components/Layer_66_copy_2_reupload.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZXN0ZWUtamFuc3NlbnMtNzQ1ODYxLXVuc3BsYXNoLmpwZyJ9fQ==',
+                        'decodedImage' => '{{media url="creative_components/estee-janssens-745861-unsplash.jpg"}}',
                         'headline' => 'Text vertically centered in the middle',
                         'subheadline' => '2 in row, 2 rows',
                         'paragraph' => 'Text over image',
@@ -1223,8 +1223,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
                         'colorScheme' => 'light',
                     ],
                     3 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvTGF5ZXJfNjdfcmV1cGxvYWQuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/Layer_67_reupload.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvaG93YXJkLWxhd3JlbmNlLWItMTE0MTgxMy11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/howard-lawrence-b-1141813-unsplash.jpg"}}',
                         'headline' => 'Text on the bottom - centered',
                         'subheadline' => '2 in row, 2 rows',
                         'paragraph' => 'Text over image',
@@ -1280,8 +1280,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
             'data' => [
                 'items' => [
                     0 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvTGF5ZXJfNjdfcmV1cGxvYWQuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/Layer_67_reupload.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvaG93YXJkLWxhd3JlbmNlLWItMTE0MTgxMy11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/howard-lawrence-b-1141813-unsplash.jpg"}}',
                         'displayVariant' => '1',
                         'headline' => 'Text vertically centered on the left',
                         'subheadline' => 'Big, 2 small, big',
@@ -1293,8 +1293,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
                         'colorScheme' => 'dark',
                     ],
                     1 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvTGF5ZXJfNjZfcmV1cGxvYWQuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/Layer_66_reupload.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYWxleGFuZHJ1LWFjZWEtMTE2MDQ2MS11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/alexandru-acea-1160461-unsplash.jpg"}}',
                         'headline' => 'Text on the bottom, left corner',
                         'subheadline' => 'Big, 2 small, big',
                         'paragraph' => 'Text over image',
@@ -1306,8 +1306,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
                         'colorScheme' => 'dark',
                     ],
                     2 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvTGF5ZXJfNjZfY29weV8yX3JldXBsb2FkLmpwZyJ9fQ',
-                        'decodedImage' => '{{media url="creative_components/Layer_66_copy_2_reupload.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZXN0ZWUtamFuc3NlbnMtNzQ1ODYxLXVuc3BsYXNoLmpwZyJ9fQ==',
+                        'decodedImage' => '{{media url="creative_components/estee-janssens-745861-unsplash.jpg"}}',
                         'headline' => 'Text vertically centered in the middle',
                         'subheadline' => 'Big, 2 small, big',
                         'paragraph' => 'Text over image',
@@ -1319,8 +1319,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
                         'colorScheme' => 'dark',
                     ],
                     3 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvTGF5ZXJfNjdfcmV1cGxvYWQuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/Layer_67_reupload.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvaG93YXJkLWxhd3JlbmNlLWItMTE0MTgxMy11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/howard-lawrence-b-1141813-unsplash.jpg"}}',
                         'headline' => 'Text on the bottom - centered',
                         'subheadline' => 'Big, 2 small, big',
                         'paragraph' => 'Text over image',
@@ -1376,8 +1376,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
             'data' => [
                 'items' => [
                     0 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvTGF5ZXJfNjdfcmV1cGxvYWQuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/Layer_67_reupload.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvaG93YXJkLWxhd3JlbmNlLWItMTE0MTgxMy11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/howard-lawrence-b-1141813-unsplash.jpg"}}',
                         'displayVariant' => '1',
                         'headline' => 'Text vertically centered on the left',
                         'subheadline' => 'Text below image',
@@ -1389,8 +1389,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
                         'colorScheme' => 'dark',
                     ],
                     1 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvTGF5ZXJfNjZfcmV1cGxvYWQuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/Layer_66_reupload.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYWxleGFuZHJ1LWFjZWEtMTE2MDQ2MS11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/alexandru-acea-1160461-unsplash.jpg"}}',
                         'headline' => 'Text on the bottom, left corner',
                         'subheadline' => 'Text below image',
                         'paragraph' => 'Teasers in column',
@@ -1402,8 +1402,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
                         'colorScheme' => 'dark',
                     ],
                     2 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvTGF5ZXJfNjZfY29weV8yX3JldXBsb2FkLmpwZyJ9fQ',
-                        'decodedImage' => '{{media url="creative_components/Layer_66_copy_2_reupload.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZXN0ZWUtamFuc3NlbnMtNzQ1ODYxLXVuc3BsYXNoLmpwZyJ9fQ==',
+                        'decodedImage' => '{{media url="creative_components/estee-janssens-745861-unsplash.jpg"}}',
                         'headline' => 'Text vertically centered in the middle',
                         'subheadline' => 'Text below image',
                         'paragraph' => 'Teasers in column',
@@ -1415,8 +1415,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
                         'colorScheme' => 'dark',
                     ],
                     3 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvTGF5ZXJfNjdfcmV1cGxvYWQuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/Layer_67_reupload.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvaG93YXJkLWxhd3JlbmNlLWItMTE0MTgxMy11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/howard-lawrence-b-1141813-unsplash.jpg"}}',
                         'headline' => 'Text on the bottom - centered',
                         'subheadline' => 'Text below image',
                         'paragraph' => 'Teasers in column',
@@ -1473,8 +1473,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
             'data' => [
                 'items' => [
                     0 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvc2xpZGUxXzEuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/slide1_1.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
                         'displayVariant' => '1',
                         'headline' => 'Text vertically centered on the left',
                         'subheadline' => 'Slider',
@@ -1486,8 +1486,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
                         'colorScheme' => 'dark',
                     ],
                     1 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvc2xpZGUxXzEuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/slide1_1.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
                         'headline' => 'Text on the bottom, left corner',
                         'paragraph' => 'Text over image',
                         'ctaLabel' => 'Dark',
@@ -1499,8 +1499,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
                         'colorScheme' => 'dark',
                     ],
                     2 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvc2xpZGUxXzEuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/slide1_1.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
                         'headline' => 'Text vertically centered in the middle',
                         'paragraph' => 'Text over image',
                         'ctaLabel' => 'Dark',
@@ -1512,8 +1512,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
                         'colorScheme' => 'dark',
                     ],
                     3 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvc2xpZGUxXzEuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/slide1_1.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
                         'headline' => 'Text on the bottom - centered',
                         'paragraph' => 'Text over image',
                         'ctaLabel' => 'Dark',
@@ -1525,8 +1525,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
                         'colorScheme' => 'dark',
                     ],
                     4 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvc2xpZGUxXzEuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/slide1_1.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
                         'headline' => '',
                         'paragraph' => '',
                         'ctaLabel' => '',
@@ -1537,8 +1537,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
                         'colorScheme' => 'light',
                     ],
                     5 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvc2xpZGUxXzEuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/slide1_1.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
                         'headline' => '',
                         'paragraph' => '',
                         'ctaLabel' => '',
@@ -1594,8 +1594,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
             'data' => [
                 'items' => [
                     0 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvc2xpZGUxXzEuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/slide1_1.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
                         'displayVariant' => '1',
                         'headline' => 'Text vertically centered on the left',
                         'subheadline' => '2 in row, 3 rows',
@@ -1607,8 +1607,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
                         'colorScheme' => 'light',
                     ],
                     1 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvc2xpZGUxXzEuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/slide1_1.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
                         'headline' => 'Text on the bottom, left corner',
                         'subheadline' => '2 in row, 3 rows',
                         'paragraph' => 'Text over image',
@@ -1620,8 +1620,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
                         'colorScheme' => 'light',
                     ],
                     2 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvc2xpZGUxXzEuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/slide1_1.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
                         'headline' => 'Text vertically centered in the middle',
                         'subheadline' => '2 in row, 3 rows',
                         'paragraph' => 'Text over image',
@@ -1633,8 +1633,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
                         'colorScheme' => 'light',
                     ],
                     3 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvc2xpZGUxXzEuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/slide1_1.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
                         'headline' => 'Text on the bottom - centered',
                         'subheadline' => '2 in row, 3 rows',
                         'paragraph' => 'Text over image',
@@ -1646,8 +1646,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
                         'colorScheme' => 'light',
                     ],
                     4 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvc2xpZGUxXzEuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/slide1_1.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
                         'headline' => '',
                         'subheadline' => '',
                         'paragraph' => '',
@@ -1659,8 +1659,8 @@ class ITContainerWidth implements DataProviderBlocksInterface
                         'colorScheme' => 'light',
                     ],
                     5 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvc2xpZGUxXzEuanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/slide1_1.jpg"}}',
+                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0=',
+                        'decodedImage' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
                         'headline' => '',
                         'subheadline' => '',
                         'paragraph' => '',
