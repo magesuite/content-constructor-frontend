@@ -156,7 +156,7 @@ Necessitatibus, quos itaque accusantium vitae aperiam eligendi autem unde dolori
 <li>expedita adipisci facere quo assumenda,</li>
 <li>explicabo repellendus perspiciatis quos. Deserunt, accusamus, adipisci!</li>
 </ol>
-<div><img src="{{media url="creative_components/baner2.jpg"}}" width="640" height="341" /></div>
+<div><img src="{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}" width="640" height="341" /></div>
 <p>Modi eum omnis minus minima, fugiat nam explicabo aperiam ipsam delectus ullam aspernatur fuga enim rerum nostrum 
 exercitationem aliquid doloribus consequatur repellendus quasi praesentium natus perferendis tenetur rem pariatur odio? 
 Sapiente eligendi quos sequi cumque voluptatibus. Repellendus laudantium similique nihil consequuntur, perspiciatis iure 
@@ -164,7 +164,7 @@ veritatis, illum nulla quos quam soluta libero asperiores, cumque dicta sunt off
 dolorem commodi ipsam. Eligendi aperiam ea, impedit tempore perspiciatis incidunt optio facere reiciendis, assumenda ad 
 ipsum cupiditate. Molestiae placeat nobis tempora doloribus unde reprehenderit distinctio ut, autem vero officiis inventore! 
 Sit alias illum omnis facilis quas quaerat ratione animi nam minus quam, sint ut aliquam obcaecati voluptates saepe reprehenderit 
-accusantium repellendus maxime fuga nostrum illo ab aperiam?&nbsp;<img src="{{media url="creative_components/banner_3.jpg"}}" width="574" height="402" /> 
+accusantium repellendus maxime fuga nostrum illo ab aperiam?&nbsp;<img src="{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}" width="574" height="402" /> 
 Laboriosam odit quibusdam doloribus accusamus blanditiis impedit qui quia nemo maxime aperiam laborum obcaecati repellendus 
 dolor inventore dolorem nihil, nobis velit, quae. Culpa, architecto, iure suscipit quam porro esse tempore ipsum voluptates 
 placeat excepturi illo vero neque nesciunt quibusdam cupiditate hic doloremque praesentium debitis nobis! Cum, reiciendis 

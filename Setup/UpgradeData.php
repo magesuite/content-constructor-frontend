@@ -61,7 +61,7 @@ class UpgradeData implements \Magento\Framework\Setup\UpgradeDataInterface
             );
         }
 
-        if (version_compare($context->getVersion(), '0.0.6', '<')) {
+        if (version_compare($context->getVersion(), '1.0.1', '<')) {
             $this->copyCreativeComponentsImages->install($setup, $context);
         }
 
