@@ -5,13 +5,17 @@
             <label>MageSuite</label>
         </tab>
         <section id="cc_frontend_extension" translate="label" type="text" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="1">
-            <label>Category</label>
+            <label>Content Constructor</label>
             <tab>magesuite</tab>
-            <resource>MageSuite_ContentConstructorFrontend::config_category</resource>
+            <resource>MageSuite_ContentConstructorFrontend::content_constructor</resource>
             <group id="configuration" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Configuration</label>
-                <field id="sort_alphabetically" translate="label" type="select" sortOrder="10" showInDefault="1" >
-                    <label>Sort Subcategories Alphabetically</label>
+                <field id="enable_component_list_page" translate="label" type="select" sortOrder="10" showInDefault="1" >
+                    <label>Enable components list test page</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="sort_alphabetically" translate="label" type="select" sortOrder="20" showInDefault="1" >
+                    <label>Sort subcategories alphabetically</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
             </group>

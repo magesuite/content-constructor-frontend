@@ -2,7 +2,7 @@
 
 namespace MageSuite\ContentConstructorFrontend\DataProviders\ComponentsList;
 
-class ProductGridNoHero implements DataProviderBlocksInterface
+class ProductGridNoHero extends DataProviderComponents
 {
     public function getBlocks()
     {

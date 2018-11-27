@@ -2,7 +2,7 @@
 
 namespace MageSuite\ContentConstructorFrontend\DataProviders\ComponentsList;
 
-class ProductGridHeroLeft implements DataProviderBlocksInterface
+class ProductGridHeroLeft extends DataProviderComponents
 {
     public function getBlocks()
     {
@@ -24,8 +24,8 @@ class ProductGridHeroLeft implements DataProviderBlocksInterface
                 'limit' => '6',
                 'hero' => [
                     'position' => 'left',
-                    'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvcGx1c2gtZGVzaWduLXN0dWRpby01NTMzMTktdW5zcGxhc2guanBnIn19',
-                    'decoded_image' => '{{media url="creative_components/plush-design-studio-553319-unsplash.jpg"}}',
+                    'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                    'decoded_image' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
                     'size_info' => '1163x780px (1163:780)',
                     'displayVariant' => '1',
                     'colorScheme' => 'dark',
@@ -60,8 +60,8 @@ class ProductGridHeroLeft implements DataProviderBlocksInterface
                 'limit' => '12',
                 'hero' => [
                     'position' => 'left',
-                    'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvcGx1c2gtZGVzaWduLXN0dWRpby01NTMzMTktdW5zcGxhc2guanBnIn19',
-                    'decoded_image' => '{{media url="creative_components/plush-design-studio-553319-unsplash.jpg"}}',
+                    'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                    'decoded_image' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
                     'size_info' => '1163x780px (1163:780)',
                     'displayVariant' => '2',
                     'colorScheme' => 'dark',
@@ -96,8 +96,8 @@ class ProductGridHeroLeft implements DataProviderBlocksInterface
                 'limit' => '18',
                 'hero' => [
                     'position' => 'left',
-                    'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvcGx1c2gtZGVzaWduLXN0dWRpby01NTMzMTktdW5zcGxhc2guanBnIn19',
-                    'decoded_image' => '{{media url="creative_components/plush-design-studio-553319-unsplash.jpg"}}',
+                    'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                    'decoded_image' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
                     'size_info' => '1163x780px (1163:780)',
                     'displayVariant' => '3',
                     'colorScheme' => 'dark',
@@ -132,8 +132,8 @@ class ProductGridHeroLeft implements DataProviderBlocksInterface
                 'limit' => '24',
                 'hero' => [
                     'position' => 'left',
-                    'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvcGx1c2gtZGVzaWduLXN0dWRpby01NTMzMTktdW5zcGxhc2guanBnIn19',
-                    'decoded_image' => '{{media url="creative_components/plush-design-studio-553319-unsplash.jpg"}}',
+                    'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                    'decoded_image' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
                     'size_info' => '1163x780px (1163:780)',
                     'displayVariant' => '4',
                     'colorScheme' => 'dark',
@@ -168,8 +168,8 @@ class ProductGridHeroLeft implements DataProviderBlocksInterface
                 'limit' => '24',
                 'hero' => [
                     'position' => 'left',
-                    'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvcGx1c2gtZGVzaWduLXN0dWRpby01NTMzMTktdW5zcGxhc2guanBnIn19',
-                    'decoded_image' => '{{media url="creative_components/plush-design-studio-553319-unsplash.jpg"}}',
+                    'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                    'decoded_image' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
                     'size_info' => '1163x780px (1163:780)',
                     'displayVariant' => '1',
                     'colorScheme' => 'light',
@@ -204,8 +204,8 @@ class ProductGridHeroLeft implements DataProviderBlocksInterface
                 'limit' => '24',
                 'hero' => [
                     'position' => 'left',
-                    'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvcGx1c2gtZGVzaWduLXN0dWRpby01NTMzMTktdW5zcGxhc2guanBnIn19',
-                    'decoded_image' => '{{media url="creative_components/plush-design-studio-553319-unsplash.jpg"}}',
+                    'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                    'decoded_image' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
                     'size_info' => '1163x780px (391:262)',
                     'displayVariant' => '2',
                     'colorScheme' => 'light',
@@ -240,8 +240,8 @@ class ProductGridHeroLeft implements DataProviderBlocksInterface
                 'limit' => '30',
                 'hero' => [
                     'position' => 'left',
-                    'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvcGx1c2gtZGVzaWduLXN0dWRpby01NTMzMTktdW5zcGxhc2guanBnIn19',
-                    'decoded_image' => '{{media url="creative_components/plush-design-studio-553319-unsplash.jpg"}}',
+                    'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                    'decoded_image' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
                     'size_info' => '1163x780px (391:262)',
                     'displayVariant' => '3',
                     'colorScheme' => 'light',
@@ -276,8 +276,8 @@ class ProductGridHeroLeft implements DataProviderBlocksInterface
                 'limit' => '60',
                 'hero' => [
                     'position' => 'left',
-                    'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvcGx1c2gtZGVzaWduLXN0dWRpby01NTMzMTktdW5zcGxhc2guanBnIn19',
-                    'decoded_image' => '{{media url="creative_components/plush-design-studio-553319-unsplash.jpg"}}',
+                    'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                    'decoded_image' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
                     'size_info' => '1163x780px (391:262)',
                     'displayVariant' => '4',
                     'colorScheme' => 'light',
