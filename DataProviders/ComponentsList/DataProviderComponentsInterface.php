@@ -2,7 +2,7 @@
 
 namespace MageSuite\ContentConstructorFrontend\DataProviders\ComponentsList;
 
-interface DataProviderBlocksInterface
+interface DataProviderComponentsInterface
 {
     public function getBlocks();
 }

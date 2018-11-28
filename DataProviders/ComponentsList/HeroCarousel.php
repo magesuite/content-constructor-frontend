@@ -2,7 +2,7 @@
 
 namespace MageSuite\ContentConstructorFrontend\DataProviders\ComponentsList;
 
-abstract class HeroCarousel implements DataProviderBlocksInterface
+abstract class HeroCarousel extends DataProviderComponents
 {
     protected $mobileDisplayVariant = '';
     protected $subtitle = '';
@@ -19,8 +19,8 @@ abstract class HeroCarousel implements DataProviderBlocksInterface
                 'mobileDisplayVariant' => $this->mobileDisplayVariant,
                 'items' => [
                     0 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvaGVucnktYXNjcm9mdC0xMTU0MTA1LXVuc3BsYXNoLmpwZyJ9fQ==',
-                        'decodedImage' => '{{media url="creative_components/henry-ascroft-1154105-unsplash.jpg"}}',
+                        'image' => $this->getImage('henry-ascroft-1154105-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('henry-ascroft-1154105-unsplash.jpg'),
                         'displayVariant' => 'variant-1',
                         'colorScheme' => 'dark',
                         'headline' => 'Text vertically centered on the left',
@@ -33,8 +33,8 @@ abstract class HeroCarousel implements DataProviderBlocksInterface
 
                     ],
                     1 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvcGx1c2gtZGVzaWduLXN0dWRpby01NTMzMTktdW5zcGxhc2guanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/plush-design-studio-553319-unsplash.jpg"}}',
+                        'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
                         'displayVariant' => 'variant-2',
                         'colorScheme' => 'dark',
                         'headline' => 'Text on the bottom, left corner',
@@ -46,8 +46,8 @@ abstract class HeroCarousel implements DataProviderBlocksInterface
                         'href' => 'http://www.creativestyle.pl/'
                     ],
                     2 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvaGVucnktYXNjcm9mdC0xMTU0MTA1LXVuc3BsYXNoLmpwZyJ9fQ==',
-                        'decodedImage' => '{{media url="creative_components/henry-ascroft-1154105-unsplash.jpg"}}',
+                        'image' => $this->getImage('henry-ascroft-1154105-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('henry-ascroft-1154105-unsplash.jpg'),
                         'displayVariant' => 'variant-3',
                         'colorScheme' => 'dark',
                         'headline' => 'Text vertically centered in the middle',
@@ -59,8 +59,8 @@ abstract class HeroCarousel implements DataProviderBlocksInterface
                         'href' => 'http://www.creativestyle.pl/'
                     ],
                     3 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvcGx1c2gtZGVzaWduLXN0dWRpby01NTMzMTktdW5zcGxhc2guanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/plush-design-studio-553319-unsplash.jpg"}}',
+                        'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
                         'displayVariant' => 'variant-4',
                         'colorScheme' => 'dark',
                         'headline' => 'Text on the bottom - centered',
@@ -83,8 +83,8 @@ abstract class HeroCarousel implements DataProviderBlocksInterface
                 'mobileDisplayVariant' => $this->mobileDisplayVariant,
                 'items' => [
                     0 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvaGVucnktYXNjcm9mdC0xMTU0MTA1LXVuc3BsYXNoLmpwZyJ9fQ==',
-                        'decodedImage' => '{{media url="creative_components/henry-ascroft-1154105-unsplash.jpg"}}',
+                        'image' => $this->getImage('henry-ascroft-1154105-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('henry-ascroft-1154105-unsplash.jpg'),
                         'displayVariant' => 'variant-1',
                         'colorScheme' => 'light',
                         'headline' => 'Test headline',
@@ -96,8 +96,8 @@ abstract class HeroCarousel implements DataProviderBlocksInterface
                         'href' => 'http://www.creativestyle.pl/'
                     ],
                     1 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvcGx1c2gtZGVzaWduLXN0dWRpby01NTMzMTktdW5zcGxhc2guanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/plush-design-studio-553319-unsplash.jpg"}}',
+                        'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
                         'displayVariant' => 'variant-2',
                         'colorScheme' => 'light',
                         'headline' => 'Test headline',
@@ -109,8 +109,8 @@ abstract class HeroCarousel implements DataProviderBlocksInterface
                         'href' => 'http://www.creativestyle.pl/'
                     ],
                     2 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvaGVucnktYXNjcm9mdC0xMTU0MTA1LXVuc3BsYXNoLmpwZyJ9fQ==',
-                        'decodedImage' => '{{media url="creative_components/henry-ascroft-1154105-unsplash.jpg"}}',
+                        'image' => $this->getImage('henry-ascroft-1154105-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('henry-ascroft-1154105-unsplash.jpg'),
                         'displayVariant' => 'variant-3',
                         'colorScheme' => 'light',
                         'headline' => 'Test headline',
@@ -122,8 +122,8 @@ abstract class HeroCarousel implements DataProviderBlocksInterface
                         'href' => 'http://www.creativestyle.pl/'
                     ],
                     3 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvcGx1c2gtZGVzaWduLXN0dWRpby01NTMzMTktdW5zcGxhc2guanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/plush-design-studio-553319-unsplash.jpg"}}',
+                        'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
                         'displayVariant' => 'variant-4',
                         'colorScheme' => 'light',
                         'headline' => 'Test headline',
@@ -146,8 +146,8 @@ abstract class HeroCarousel implements DataProviderBlocksInterface
                 'mobileDisplayVariant' => $this->mobileDisplayVariant,
                 'items' => [
                     0 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvaGVucnktYXNjcm9mdC0xMTU0MTA1LXVuc3BsYXNoLmpwZyJ9fQ==',
-                        'decodedImage' => '{{media url="creative_components/henry-ascroft-1154105-unsplash.jpg"}}',
+                        'image' => $this->getImage('henry-ascroft-1154105-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('henry-ascroft-1154105-unsplash.jpg'),
                         'displayVariant' => 'variant-1',
                         'colorScheme' => 'light',
                         'headline' => '',
@@ -159,8 +159,8 @@ abstract class HeroCarousel implements DataProviderBlocksInterface
                         'aspectRatio' => '583:390',
                     ],
                     1 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvcGx1c2gtZGVzaWduLXN0dWRpby01NTMzMTktdW5zcGxhc2guanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/plush-design-studio-553319-unsplash.jpg"}}',
+                        'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
                         'displayVariant' => 'variant-1',
                         'colorScheme' => 'light',
                         'headline' => '',
@@ -172,8 +172,8 @@ abstract class HeroCarousel implements DataProviderBlocksInterface
                         'aspectRatio' => '1163:780',
                     ],
                     2 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvaGVucnktYXNjcm9mdC0xMTU0MTA1LXVuc3BsYXNoLmpwZyJ9fQ==',
-                        'decodedImage' => '{{media url="creative_components/henry-ascroft-1154105-unsplash.jpg"}}',
+                        'image' => $this->getImage('henry-ascroft-1154105-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('henry-ascroft-1154105-unsplash.jpg'),
                         'displayVariant' => 'variant-1',
                         'colorScheme' => 'light',
                         'headline' => '',
@@ -185,8 +185,8 @@ abstract class HeroCarousel implements DataProviderBlocksInterface
                         'aspectRatio' => '583:390',
                     ],
                     3 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvcGx1c2gtZGVzaWduLXN0dWRpby01NTMzMTktdW5zcGxhc2guanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/plush-design-studio-553319-unsplash.jpg"}}',
+                        'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
                         'displayVariant' => 'variant-1',
                         'colorScheme' => 'light',
                         'headline' => '',
@@ -209,8 +209,8 @@ abstract class HeroCarousel implements DataProviderBlocksInterface
                 'mobileDisplayVariant' => $this->mobileDisplayVariant,
                 'items' => [
                     0 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvcGx1c2gtZGVzaWduLXN0dWRpby01NTMzMTktdW5zcGxhc2guanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/plush-design-studio-553319-unsplash.jpg"}}',
+                        'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
                         'displayVariant' => 'variant-1',
                         'colorScheme' => 'dark',
                         'headline' => 'Headline only',
@@ -222,8 +222,8 @@ abstract class HeroCarousel implements DataProviderBlocksInterface
                         'aspectRatio' => '1163:780',
                     ],
                     1 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvcGx1c2gtZGVzaWduLXN0dWRpby01NTMzMTktdW5zcGxhc2guanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/plush-design-studio-553319-unsplash.jpg"}}',
+                        'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
                         'displayVariant' => 'variant-2',
                         'colorScheme' => 'dark',
                         'headline' => 'Headline only',
@@ -235,8 +235,8 @@ abstract class HeroCarousel implements DataProviderBlocksInterface
                         'aspectRatio' => '1163:780',
                     ],
                     2 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvaGVucnktYXNjcm9mdC0xMTU0MTA1LXVuc3BsYXNoLmpwZyJ9fQ==',
-                        'decodedImage' => '{{media url="creative_components/henry-ascroft-1154105-unsplash.jpg"}}',
+                        'image' => $this->getImage('henry-ascroft-1154105-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('henry-ascroft-1154105-unsplash.jpg'),
                         'displayVariant' => 'variant-3',
                         'colorScheme' => 'light',
                         'headline' => 'Headline only',
@@ -248,8 +248,8 @@ abstract class HeroCarousel implements DataProviderBlocksInterface
                         'aspectRatio' => '583:390',
                     ],
                     3 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvcGx1c2gtZGVzaWduLXN0dWRpby01NTMzMTktdW5zcGxhc2guanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/plush-design-studio-553319-unsplash.jpg"}}',
+                        'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
                         'displayVariant' => 'variant-4',
                         'colorScheme' => 'dark',
                         'headline' => 'Headline only',
@@ -261,8 +261,8 @@ abstract class HeroCarousel implements DataProviderBlocksInterface
                         'aspectRatio' => '1163:780',
                     ],
                     4 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvaGVucnktYXNjcm9mdC0xMTU0MTA1LXVuc3BsYXNoLmpwZyJ9fQ==',
-                        'decodedImage' => '{{media url="creative_components/henry-ascroft-1154105-unsplash.jpg"}}',
+                        'image' => $this->getImage('henry-ascroft-1154105-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('henry-ascroft-1154105-unsplash.jpg'),
                         'displayVariant' => 'variant-1',
                         'colorScheme' => 'dark',
                         'headline' => 'Headline',
@@ -274,8 +274,8 @@ abstract class HeroCarousel implements DataProviderBlocksInterface
                         'aspectRatio' => '583:390',
                     ],
                     5 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvcGx1c2gtZGVzaWduLXN0dWRpby01NTMzMTktdW5zcGxhc2guanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/plush-design-studio-553319-unsplash.jpg"}}',
+                        'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
                         'displayVariant' => 'variant-2',
                         'colorScheme' => 'dark',
                         'headline' => 'Headline',
@@ -287,8 +287,8 @@ abstract class HeroCarousel implements DataProviderBlocksInterface
                         'aspectRatio' => '1163:780',
                     ],
                     6 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvaGVucnktYXNjcm9mdC0xMTU0MTA1LXVuc3BsYXNoLmpwZyJ9fQ==',
-                        'decodedImage' => '{{media url="creative_components/henry-ascroft-1154105-unsplash.jpg"}}',
+                        'image' => $this->getImage('henry-ascroft-1154105-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('henry-ascroft-1154105-unsplash.jpg'),
                         'displayVariant' => 'variant-3',
                         'colorScheme' => 'light',
                         'headline' => 'Headline',
@@ -300,8 +300,8 @@ abstract class HeroCarousel implements DataProviderBlocksInterface
                         'aspectRatio' => '583:390',
                     ],
                     7 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvcGx1c2gtZGVzaWduLXN0dWRpby01NTMzMTktdW5zcGxhc2guanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/plush-design-studio-553319-unsplash.jpg"}}',
+                        'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
                         'displayVariant' => 'variant-4',
                         'colorScheme' => 'dark',
                         'headline' => 'Headline',
@@ -313,8 +313,8 @@ abstract class HeroCarousel implements DataProviderBlocksInterface
                         'aspectRatio' => '1163:780',
                     ],
                     8 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvcGx1c2gtZGVzaWduLXN0dWRpby01NTMzMTktdW5zcGxhc2guanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/plush-design-studio-553319-unsplash.jpg"}}',
+                        'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
                         'displayVariant' => 'variant-2',
                         'colorScheme' => 'dark',
                         'headline' => '',
@@ -326,8 +326,8 @@ abstract class HeroCarousel implements DataProviderBlocksInterface
                         'aspectRatio' => '1163:780',
                     ],
                     9 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvaGVucnktYXNjcm9mdC0xMTU0MTA1LXVuc3BsYXNoLmpwZyJ9fQ==',
-                        'decodedImage' => '{{media url="creative_components/henry-ascroft-1154105-unsplash.jpg"}}',
+                        'image' => $this->getImage('henry-ascroft-1154105-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('henry-ascroft-1154105-unsplash.jpg'),
                         'displayVariant' => 'variant-2',
                         'colorScheme' => 'light',
                         'headline' => '',
@@ -339,8 +339,8 @@ abstract class HeroCarousel implements DataProviderBlocksInterface
                         'aspectRatio' => '583:390',
                     ],
                     10 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvcGx1c2gtZGVzaWduLXN0dWRpby01NTMzMTktdW5zcGxhc2guanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/plush-design-studio-553319-unsplash.jpg"}}',
+                        'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
                         'displayVariant' => 'variant-4',
                         'colorScheme' => 'dark',
                         'headline' => 'Headline',
@@ -352,8 +352,8 @@ abstract class HeroCarousel implements DataProviderBlocksInterface
                         'aspectRatio' => '1163:780',
                     ],
                     11 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvcGx1c2gtZGVzaWduLXN0dWRpby01NTMzMTktdW5zcGxhc2guanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/plush-design-studio-553319-unsplash.jpg"}}',
+                        'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
                         'displayVariant' => 'variant-2',
                         'colorScheme' => 'dark',
                         'headline' => '',
@@ -365,8 +365,8 @@ abstract class HeroCarousel implements DataProviderBlocksInterface
                         'aspectRatio' => '1163:780',
                     ],
                     12 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvaGVucnktYXNjcm9mdC0xMTU0MTA1LXVuc3BsYXNoLmpwZyJ9fQ==',
-                        'decodedImage' => '{{media url="creative_components/henry-ascroft-1154105-unsplash.jpg"}}',
+                        'image' => $this->getImage('henry-ascroft-1154105-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('henry-ascroft-1154105-unsplash.jpg'),
                         'displayVariant' => 'variant-2',
                         'colorScheme' => 'light',
                         'headline' => '',

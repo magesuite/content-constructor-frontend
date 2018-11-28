@@ -2,7 +2,7 @@
 
 namespace MageSuite\ContentConstructorFrontend\DataProviders\ComponentsList;
 
-class Paragraph implements DataProviderBlocksInterface
+class Paragraph extends DataProviderComponents
 {
     public function getBlocks()
     {

@@ -2,7 +2,7 @@
 
 namespace MageSuite\ContentConstructorFrontend\DataProviders\ComponentsList;
 
-class Index implements DataProviderBlocksInterface
+class Index extends DataProviderComponents
 {
 
     /**

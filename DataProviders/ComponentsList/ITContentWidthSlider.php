@@ -2,7 +2,7 @@
 
 namespace MageSuite\ContentConstructorFrontend\DataProviders\ComponentsList;
 
-class ITContentWidthSlider implements DataProviderBlocksInterface
+class ITContentWidthSlider extends DataProviderComponents
 {
     public function getBlocks()
     {
@@ -17,8 +17,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
             'data' => [
                 'items' => [
                     0 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0=',
-                        'decodedImage' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                        'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
                         'displayVariant' => '1',
                         'colorScheme' => 'dark',
                         'headline' => 'Text vertically centered on the left',
@@ -30,8 +30,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '960:511',
                     ],
                     1 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ==',
-                        'decodedImage' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+                        'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                         'displayVariant' => '2',
                         'colorScheme' => 'dark',
                         'headline' => 'Text on the bottom, left corner',
@@ -43,8 +43,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '960:511',
                     ],
                     2 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvamFuLWxvc2VydC02MzM5NjAtdW5zcGxhc2guanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/jan-losert-633960-unsplash.jpg"}}',
+                        'image' => $this->getImage('jan-losert-633960-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('jan-losert-633960-unsplash.jpg'),
                         'displayVariant' => '3',
                         'colorScheme' => 'dark',
                         'headline' => 'Text vertically centered in the middle',
@@ -56,8 +56,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '960:511',
                     ],
                     3 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0=',
-                        'decodedImage' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                        'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
                         'displayVariant' => '4',
                         'colorScheme' => 'dark',
                         'headline' => 'Text on the bottom - centered',
@@ -69,8 +69,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '960:511',
                     ],
                     4 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ==',
-                        'decodedImage' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+                        'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                         'displayVariant' => '1',
                         'colorScheme' => 'light',
                         'headline' => 'Text vertically centered on the left',
@@ -82,8 +82,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '960:511',
                     ],
                     5 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvamFuLWxvc2VydC02MzM5NjAtdW5zcGxhc2guanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/jan-losert-633960-unsplash.jpg"}}',
+                        'image' => $this->getImage('jan-losert-633960-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('jan-losert-633960-unsplash.jpg'),
                         'displayVariant' => '2',
                         'colorScheme' => 'light',
                         'headline' => 'Text on the bottom, left corner',
@@ -95,8 +95,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '960:511',
                     ],
                     6 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0=',
-                        'decodedImage' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                        'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
                         'displayVariant' => '3',
                         'colorScheme' => 'light',
                         'headline' => 'Text vertically centered in the middle',
@@ -108,8 +108,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '960:511',
                     ],
                     7 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ==',
-                        'decodedImage' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+                        'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                         'displayVariant' => '4',
                         'colorScheme' => 'light',
                         'headline' => 'Text on the bottom - centered',
@@ -166,8 +166,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
             'data' => [
                 'items' => [
                     0 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0=',
-                        'decodedImage' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                        'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
                         'displayVariant' => '1',
                         'colorScheme' => 'dark',
                         'headline' => 'Text vertically centered on the left',
@@ -179,8 +179,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '960:511',
                     ],
                     1 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ==',
-                        'decodedImage' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+                        'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                         'displayVariant' => '2',
                         'colorScheme' => 'dark',
                         'headline' => 'Text on the bottom, left corner',
@@ -192,8 +192,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '960:511',
                     ],
                     2 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0=',
-                        'decodedImage' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                        'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
                         'displayVariant' => '3',
                         'colorScheme' => 'dark',
                         'headline' => 'Text vertically centered in the middle',
@@ -205,8 +205,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '960:511',
                     ],
                     3 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ==',
-                        'decodedImage' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+                        'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                         'displayVariant' => '4',
                         'colorScheme' => 'dark',
                         'headline' => 'Text on the bottom - centered',
@@ -218,8 +218,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '960:511',
                     ],
                     4 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0=',
-                        'decodedImage' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                        'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
                         'displayVariant' => '1',
                         'colorScheme' => 'light',
                         'headline' => 'Text vertically centered on the left',
@@ -231,8 +231,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '960:511',
                     ],
                     5 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ==',
-                        'decodedImage' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+                        'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                         'displayVariant' => '2',
                         'colorScheme' => 'light',
                         'headline' => 'Text on the bottom, left corner',
@@ -244,8 +244,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '960:511',
                     ],
                     6 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0=',
-                        'decodedImage' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                        'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
                         'displayVariant' => '3',
                         'colorScheme' => 'light',
                         'headline' => 'Text vertically centered in the middle',
@@ -257,8 +257,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '960:511',
                     ],
                     7 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ==',
-                        'decodedImage' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+                        'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                         'displayVariant' => '4',
                         'colorScheme' => 'light',
                         'headline' => 'Text on the bottom - centered',
@@ -314,8 +314,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
             'data' => [
                 'items' => [
                     0 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0=',
-                        'decodedImage' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                        'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
                         'displayVariant' => '1',
                         'colorScheme' => 'dark',
                         'headline' => 'Headline',
@@ -327,8 +327,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '960:511',
                     ],
                     1 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ==',
-                        'decodedImage' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+                        'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                         'displayVariant' => '4',
                         'colorScheme' => 'dark',
                         'headline' => 'Headline',
@@ -340,8 +340,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '960:511',
                     ],
                     2 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0=',
-                        'decodedImage' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                        'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
                         'displayVariant' => '1',
                         'colorScheme' => 'light',
                         'headline' => 'Headline',
@@ -353,8 +353,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '960:511',
                     ],
                     3 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ==',
-                        'decodedImage' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+                        'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                         'displayVariant' => '1',
                         'colorScheme' => 'light',
                         'headline' => 'Headline',
@@ -411,8 +411,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
             'data' => [
                 'items' => [
                     0 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0=',
-                        'decodedImage' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                        'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
                         'displayVariant' => '1',
                         'colorScheme' => 'dark',
                         'headline' => 'Text vertically centered on the left',
@@ -424,8 +424,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '960:511',
                     ],
                     1 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ==',
-                        'decodedImage' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+                        'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                         'displayVariant' => '2',
                         'colorScheme' => 'dark',
                         'headline' => 'Text on the bottom, left corner',
@@ -437,8 +437,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '960:511',
                     ],
                     2 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0=',
-                        'decodedImage' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                        'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
                         'displayVariant' => '3',
                         'colorScheme' => 'dark',
                         'headline' => 'Text vertically centered in the middle',
@@ -450,8 +450,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '960:511',
                     ],
                     3 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0=',
-                        'decodedImage' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                        'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
                         'displayVariant' => '4',
                         'colorScheme' => 'dark',
                         'headline' => 'Text on the bottom centered',
@@ -463,8 +463,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '960:511',
                     ],
                     4 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ==',
-                        'decodedImage' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+                        'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                         'displayVariant' => '1',
                         'colorScheme' => 'light',
                         'headline' => 'Text vertically centered on the left',
@@ -476,8 +476,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '960:511',
                     ],
                     5 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0=',
-                        'decodedImage' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                        'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
                         'displayVariant' => '2',
                         'colorScheme' => 'light',
                         'headline' => 'Text on the bottom, left corner',
@@ -489,8 +489,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '960:511',
                     ],
                     6 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ==',
-                        'decodedImage' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+                        'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                         'displayVariant' => '3',
                         'colorScheme' => 'light',
                         'headline' => 'Text vertically centered in the middle',
@@ -502,8 +502,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '960:511',
                     ],
                     7 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0=',
-                        'decodedImage' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                        'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
                         'displayVariant' => '4',
                         'colorScheme' => 'light',
                         'headline' => 'Text on the bottom - centered',
@@ -559,8 +559,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
             'data' => [
                 'items' => [
                     0 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0=',
-                        'decodedImage' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                        'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
                         'displayVariant' => '1',
                         'colorScheme' => 'dark',
                         'headline' => 'Headline',
@@ -572,8 +572,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '960:511',
                     ],
                     1 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ==',
-                        'decodedImage' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+                        'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                         'displayVariant' => '2',
                         'colorScheme' => 'dark',
                         'headline' => 'Headline',
@@ -585,8 +585,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '960:511',
                     ],
                     2 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvamFuLWxvc2VydC02MzM5NjAtdW5zcGxhc2guanBnIn19',
-                        'decodedImage' => '{{media url="creative_components/jan-losert-633960-unsplash.jpg"}}',
+                        'image' => $this->getImage('jan-losert-633960-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('jan-losert-633960-unsplash.jpg'),
                         'displayVariant' => '4',
                         'colorScheme' => 'dark',
                         'headline' => 'Headline',
@@ -598,8 +598,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '960:511',
                     ],
                     3 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0=',
-                        'decodedImage' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                        'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
                         'displayVariant' => '1',
                         'colorScheme' => 'light',
                         'headline' => 'Headline',
@@ -611,8 +611,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '960:511',
                     ],
                     4 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ==',
-                        'decodedImage' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+                        'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                         'displayVariant' => '1',
                         'colorScheme' => 'light',
                         'headline' => 'Headline',
@@ -624,8 +624,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '960:511',
                     ],
                     5 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0=',
-                        'decodedImage' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                        'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
                         'displayVariant' => '1',
                         'colorScheme' => 'light',
                         'headline' => 'Headline',
@@ -682,8 +682,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
             'data' => [
                 'items' => [
                     0 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvaG93YXJkLWxhd3JlbmNlLWItMTE0MTgxMy11bnNwbGFzaC5qcGcifX0=',
-                        'decodedImage' => '{{media url="creative_components/howard-lawrence-b-1141813-unsplash.jpg"}}',
+                        'image' => $this->getImage('howard-lawrence-b-1141813-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('howard-lawrence-b-1141813-unsplash.jpg'),
                         'displayVariant' => '1',
                         'colorScheme' => 'dark',
                         'headline' => 'Text vertically centered on the left',
@@ -695,8 +695,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '574:571',
                     ],
                     1 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYWxleGFuZHJ1LWFjZWEtMTE2MDQ2MS11bnNwbGFzaC5qcGcifX0=',
-                        'decodedImage' => '{{media url="creative_components/alexandru-acea-1160461-unsplash.jpg"}}',
+                        'image' => $this->getImage('alexandru-acea-1160461-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('alexandru-acea-1160461-unsplash.jpg'),
                         'displayVariant' => '2',
                         'colorScheme' => 'dark',
                         'headline' => 'Text on the bottom, left corner',
@@ -708,8 +708,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '574:571',
                     ],
                     2 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZXN0ZWUtamFuc3NlbnMtNzQ1ODYxLXVuc3BsYXNoLmpwZyJ9fQ==',
-                        'decodedImage' => '{{media url="creative_components/estee-janssens-745861-unsplash.jpg"}}',
+                        'image' => $this->getImage('estee-janssens-745861-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('estee-janssens-745861-unsplash.jpg'),
                         'displayVariant' => '3',
                         'colorScheme' => 'dark',
                         'headline' => 'Text vertically centered in the middle',
@@ -721,8 +721,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '573:571',
                     ],
                     3 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvaG93YXJkLWxhd3JlbmNlLWItMTE0MTgxMy11bnNwbGFzaC5qcGcifX0=',
-                        'decodedImage' => '{{media url="creative_components/howard-lawrence-b-1141813-unsplash.jpg"}}',
+                        'image' => $this->getImage('howard-lawrence-b-1141813-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('howard-lawrence-b-1141813-unsplash.jpg'),
                         'displayVariant' => '4',
                         'colorScheme' => 'dark',
                         'headline' => 'Text on the bottom - centered',
@@ -734,8 +734,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '574:571',
                     ],
                     4 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYWxleGFuZHJ1LWFjZWEtMTE2MDQ2MS11bnNwbGFzaC5qcGcifX0=',
-                        'decodedImage' => '{{media url="creative_components/alexandru-acea-1160461-unsplash.jpg"}}',
+                        'image' => $this->getImage('alexandru-acea-1160461-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('alexandru-acea-1160461-unsplash.jpg'),
                         'displayVariant' => '1',
                         'colorScheme' => 'light',
                         'headline' => 'Text vertically centered on the left',
@@ -747,8 +747,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '574:571',
                     ],
                     5 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZXN0ZWUtamFuc3NlbnMtNzQ1ODYxLXVuc3BsYXNoLmpwZyJ9fQ==',
-                        'decodedImage' => '{{media url="creative_components/estee-janssens-745861-unsplash.jpg"}}',
+                        'image' => $this->getImage('estee-janssens-745861-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('estee-janssens-745861-unsplash.jpg'),
                         'displayVariant' => '2',
                         'colorScheme' => 'light',
                         'headline' => 'Text on the bottom, left corner',
@@ -760,8 +760,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '574:571',
                     ],
                     6 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvaG93YXJkLWxhd3JlbmNlLWItMTE0MTgxMy11bnNwbGFzaC5qcGcifX0=',
-                        'decodedImage' => '{{media url="creative_components/howard-lawrence-b-1141813-unsplash.jpg"}}',
+                        'image' => $this->getImage('howard-lawrence-b-1141813-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('howard-lawrence-b-1141813-unsplash.jpg'),
                         'displayVariant' => '3',
                         'colorScheme' => 'light',
                         'headline' => 'Text vertically centered in the middle',
@@ -773,8 +773,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '574:571',
                     ],
                     7 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYWxleGFuZHJ1LWFjZWEtMTE2MDQ2MS11bnNwbGFzaC5qcGcifX0=',
-                        'decodedImage' => '{{media url="creative_components/alexandru-acea-1160461-unsplash.jpg"}}',
+                        'image' => $this->getImage('alexandru-acea-1160461-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('alexandru-acea-1160461-unsplash.jpg'),
                         'displayVariant' => '4',
                         'colorScheme' => 'light',
                         'headline' => 'Text on the bottom - centered',
@@ -830,8 +830,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
             'data' => [
                 'items' => [
                     0 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvaG93YXJkLWxhd3JlbmNlLWItMTE0MTgxMy11bnNwbGFzaC5qcGcifX0=',
-                        'decodedImage' => '{{media url="creative_components/howard-lawrence-b-1141813-unsplash.jpg"}}',
+                        'image' => $this->getImage('howard-lawrence-b-1141813-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('howard-lawrence-b-1141813-unsplash.jpg'),
                         'displayVariant' => '1',
                         'colorScheme' => 'dark',
                         'headline' => 'Headline',
@@ -843,8 +843,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '574:571',
                     ],
                     1 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYWxleGFuZHJ1LWFjZWEtMTE2MDQ2MS11bnNwbGFzaC5qcGcifX0=',
-                        'decodedImage' => '{{media url="creative_components/alexandru-acea-1160461-unsplash.jpg"}}',
+                        'image' => $this->getImage('alexandru-acea-1160461-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('alexandru-acea-1160461-unsplash.jpg'),
                         'displayVariant' => '2',
                         'colorScheme' => 'dark',
                         'headline' => 'Headline',
@@ -856,8 +856,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '574:571',
                     ],
                     2 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZXN0ZWUtamFuc3NlbnMtNzQ1ODYxLXVuc3BsYXNoLmpwZyJ9fQ==',
-                        'decodedImage' => '{{media url="creative_components/estee-janssens-745861-unsplash.jpg"}}',
+                        'image' => $this->getImage('estee-janssens-745861-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('estee-janssens-745861-unsplash.jpg'),
                         'displayVariant' => '3',
                         'colorScheme' => 'dark',
                         'headline' => 'Headline',
@@ -869,8 +869,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '573:571',
                     ],
                     3 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvaG93YXJkLWxhd3JlbmNlLWItMTE0MTgxMy11bnNwbGFzaC5qcGcifX0=',
-                        'decodedImage' => '{{media url="creative_components/howard-lawrence-b-1141813-unsplash.jpg"}}',
+                        'image' => $this->getImage('howard-lawrence-b-1141813-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('howard-lawrence-b-1141813-unsplash.jpg'),
                         'displayVariant' => '4',
                         'colorScheme' => 'dark',
                         'headline' => 'Headline',
@@ -882,8 +882,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '574:571',
                     ],
                     4 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYWxleGFuZHJ1LWFjZWEtMTE2MDQ2MS11bnNwbGFzaC5qcGcifX0=',
-                        'decodedImage' => '{{media url="creative_components/alexandru-acea-1160461-unsplash.jpg"}}',
+                        'image' => $this->getImage('alexandru-acea-1160461-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('alexandru-acea-1160461-unsplash.jpg'),
                         'displayVariant' => '1',
                         'colorScheme' => 'light',
                         'headline' => 'Headline',
@@ -895,8 +895,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '574:571',
                     ],
                     5 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvaG93YXJkLWxhd3JlbmNlLWItMTE0MTgxMy11bnNwbGFzaC5qcGcifX0=',
-                        'decodedImage' => '{{media url="creative_components/howard-lawrence-b-1141813-unsplash.jpg"}}',
+                        'image' => $this->getImage('howard-lawrence-b-1141813-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('howard-lawrence-b-1141813-unsplash.jpg'),
                         'displayVariant' => '1',
                         'colorScheme' => 'light',
                         'headline' => 'Headline',
@@ -908,8 +908,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '574:571',
                     ],
                     6 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZXN0ZWUtamFuc3NlbnMtNzQ1ODYxLXVuc3BsYXNoLmpwZyJ9fQ==',
-                        'decodedImage' => '{{media url="creative_components/estee-janssens-745861-unsplash.jpg"}}',
+                        'image' => $this->getImage('estee-janssens-745861-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('estee-janssens-745861-unsplash.jpg'),
                         'displayVariant' => '1',
                         'colorScheme' => 'light',
                         'headline' => 'Headline',
@@ -921,8 +921,8 @@ class ITContentWidthSlider implements DataProviderBlocksInterface
                         'aspectRatio' => '573:571',
                     ],
                     7 => [
-                        'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYWxleGFuZHJ1LWFjZWEtMTE2MDQ2MS11bnNwbGFzaC5qcGcifX0=',
-                        'decodedImage' => '{{media url="creative_components/alexandru-acea-1160461-unsplash.jpg"}}',
+                        'image' => $this->getImage('alexandru-acea-1160461-unsplash.jpg'),
+                        'decodedImage' => $this->getDecodedImage('alexandru-acea-1160461-unsplash.jpg'),
                         'displayVariant' => '1',
                         'colorScheme' => 'light',
                         'headline' => 'Headline',
