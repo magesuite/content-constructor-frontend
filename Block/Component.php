@@ -78,23 +78,32 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
         $componentData = $this->getData('data');
         $classOverrides = $componentData['class_overrides'] ?? [];
 
+        $output = '';
+
         if($type == 'product-carousel') {
-            return $this->getLayout()->createBlock(
+            $output .= $this->getLayout()->createBlock(
                 \MageSuite\ContentConstructorFrontend\Block\Component\ProductCarousel::class,
                 '',
                 ['data' => $componentData]
             )->toHtml();
         }
         else if($type == 'product-grid') {
-            return $this->getLayout()->createBlock(
+            $output .=  $this->getLayout()->createBlock(
                 \MageSuite\ContentConstructorFrontend\Block\Component\ProductGrid::class,
                 '',
                 ['data' => $componentData]
             )->toHtml();
         }
         else if($type == 'headline') {
-            return $this->getLayout()->createBlock(
+            $output .=  $this->getLayout()->createBlock(
                 \MageSuite\ContentConstructorFrontend\Block\Component\Headline::class,
+                '',
+                ['data' => $componentData]
+            )->toHtml();
+        }
+        else if($type == 'image-teaser') {
+            $output .=  $this->getLayout()->createBlock(
+                \MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser::class,
                 '',
                 ['data' => $componentData]
             )->toHtml();
@@ -106,7 +115,9 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
             return '';
         }
 
-        return $this->component->render($componentData);
+        $output .= $this->component->render($componentData);
+
+        return $output;
     }
 
     
