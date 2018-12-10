@@ -1,0 +1,11 @@
+<?php
+/** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\Button */
+$componentConfiguration = $block->getData();
+$visibilityClass = $this
+    ->helper(\MageSuite\ContentConstructorFrontend\Helper\ComponentVisibility::class)
+    ->getVisibilityClass($componentConfiguration);
+?>
+<div class="<?=$visibilityClass?>">
+    <hr class="cs-separator">
+</div>
+

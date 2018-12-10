@@ -17,7 +17,7 @@ class ComponentFactory implements \MageSuite\ContentConstructor\Factory\Componen
     private $classMappings = [
         'headline' => \MageSuite\ContentConstructor\Components\Headline\Headline::class,
         'static-cms-block' => \MageSuite\ContentConstructorFrontend\Block\StaticBlock::class,
-        'paragraph' => \MageSuite\ContentConstructorFrontend\Block\Paragraph::class,
+        'paragraph' => \MageSuite\ContentConstructorFrontend\Block\Component\Paragraph::class,
         'navigation' => \MageSuite\ContentConstructor\Components\Navigation\Navigation::class,
         'product-carousel' => \MageSuite\ContentConstructor\Components\ProductCarousel\ProductCarousel::class,
         'hero-carousel' => \MageSuite\ContentConstructor\Components\HeroCarousel\HeroCarousel::class,

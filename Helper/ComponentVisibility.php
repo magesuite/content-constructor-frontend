@@ -22,6 +22,10 @@ class ComponentVisibility extends \Magento\Framework\App\Helper\AbstractHelper
     public function getVisibilityClass($componentConfiguration) {
         $viewConfig = $this->viewConfig->getViewConfig();
 
+        if(!isset($componentConfiguration['componentVisibility'])) {
+            return '';
+        }
+
         $mobileComponentVisibility = $componentConfiguration['componentVisibility']['mobile'];
         $desktopComponentVisibility = $componentConfiguration['componentVisibility']['desktop'];
         $visibilityClasses = [];

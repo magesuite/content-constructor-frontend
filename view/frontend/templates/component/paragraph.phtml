@@ -1,0 +1,12 @@
+<?php
+/** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\Paragraph */
+$componentConfiguration = $block->getData();
+$visibilityClass = $this
+    ->helper(\MageSuite\ContentConstructorFrontend\Helper\ComponentVisibility::class)
+    ->getVisibilityClass($componentConfiguration);
+?>
+<div class="<?=$visibilityClass?>">
+    <div class="cs-paragraph cs-paragraph--cols-<?=$block->getColumns()?> cs-paragraph--mode-<?=$componentConfiguration['scenarios']['reading']['id'] ?? ''?> | cs-cms-block">
+        <?=$block->getContent()?>
+    </div>
+</div>

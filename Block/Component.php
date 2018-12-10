@@ -78,7 +78,7 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
         $componentData = $this->getData('data');
         $classOverrides = $componentData['class_overrides'] ?? [];
 
-        $output = '';
+        $output = '<!-- new one  -->';
 
         if($type == 'product-carousel') {
             $output .= $this->getLayout()->createBlock(
@@ -108,6 +108,56 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
                 ['data' => $componentData]
             )->toHtml();
         }
+        else if($type == 'hero-carousel') {
+            $output .=  $this->getLayout()->createBlock(
+                \MageSuite\ContentConstructorFrontend\Block\Component\HeroCarousel::class,
+                '',
+                ['data' => $componentData]
+            )->toHtml();
+        }
+        else if($type == 'button') {
+            $output .=  $this->getLayout()->createBlock(
+                \MageSuite\ContentConstructorFrontend\Block\Component\Button::class,
+                '',
+                ['data' => $componentData]
+            )->toHtml();
+        }
+        else if($type == 'separator') {
+            $output .=  $this->getLayout()->createBlock(
+                \MageSuite\ContentConstructorFrontend\Block\Component\Separator::class,
+                '',
+                ['data' => $componentData]
+            )->toHtml();
+        }
+        else if($type == 'category-links') {
+            $output .=  $this->getLayout()->createBlock(
+                \MageSuite\ContentConstructorFrontend\Block\Component\CategoryLinks::class,
+                '',
+                ['data' => $componentData]
+            )->toHtml();
+        }
+        else if($type == 'brand-carousel') {
+            $output .=  $this->getLayout()->createBlock(
+                \MageSuite\ContentConstructorFrontend\Block\Component\BrandCarousel::class,
+                '',
+                ['data' => $componentData]
+            )->toHtml();
+        }
+        else if($type == 'custom-html') {
+            return $this->getLayout()->createBlock(
+                \MageSuite\ContentConstructorFrontend\Block\Component\CustomHtml::class,
+                '',
+                ['data' => $componentData]
+            )->toHtml();
+        }
+        else if($type == 'paragraph') {
+            return $this->getLayout()->createBlock(
+                \MageSuite\ContentConstructorFrontend\Block\Component\Paragraph::class,
+                '',
+                ['data' => $componentData]
+            )->toHtml();
+        }
+
 
         $this->component = $this->componentFactory->create($this->getData('type'), $classOverrides);
 
@@ -115,7 +165,11 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
             return '';
         }
 
+        $output .= '<!-- old one -->';
+
         $output .= $this->component->render($componentData);
+
+        $output .= '<!-- old one end -->';
 
         return $output;
     }
