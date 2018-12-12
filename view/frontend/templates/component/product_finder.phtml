@@ -5,49 +5,58 @@ $visibilityClass = $this
     ->helper(\MageSuite\ContentConstructorFrontend\Helper\ComponentVisibility::class)
     ->getVisibilityClass($componentConfiguration);
 
+$steps = $block->getSteps();
+$i = 0;
 ?>
 <div class="<?=$visibilityClass?>">
-    <div class="cs-product-finder {{ mix }}">
-        {% for step in steps %}
-        {% set stepOptionsPerRow = optionsPerRow | merge(step.optionsPerRow ?: {}) %}
-        {% set stepClasses = namespace ~ "product-finder__step--options-mobile_" ~ stepOptionsPerRow.mobile %}
-        {% set stepClasses = stepClasses ~ " " ~ namespace ~ "product-finder__step--options-tablet_" ~ stepOptionsPerRow.tablet %}
-        {% set stepClasses = stepClasses ~ " " ~ namespace ~ "product-finder__step--options-desktop_" ~ stepOptionsPerRow.desktop %}
-        {% if loop.index0  == 0 %}
-        {% set stepClasses = stepClasses ~ " " ~ namespace ~ "product-finder__step--current" %}
-        {% endif %}
+    <div class="cs-product-finder">
+        <?php foreach($steps as $step): ?>
+        <?php
+
+         $stepOptionsPerRow = array_merge($block->getData('optionsPerRow'), isset($step['optionsPerRow']) ? $step['optionsPerRow'] : []);
+         $stepClasses = [];
+
+         $stepClasses[] = "cs-product-finder__step--options-mobile_".$stepOptionsPerRow['mobile'];
+         $stepClasses[] = "cs-product-finder__step--options-tablet_".$stepOptionsPerRow['mobile'];
+         $stepClasses[] = " cs-product-finder__step--options-desktop_".$stepOptionsPerRow['desktop'];
+
+         if($i == 0) {
+             $stepClasses[] = 'cs-product-finder__step--current';
+         }
+        ?>
         <article
-            class="cs-product-finder__step {{ stepClasses }}"
-            data-step-id="{{ step.id }}"
+            class="cs-product-finder__step <?=implode(' ', $stepClasses)?>"
+            data-step-id="<?=$step['id']?>"
         >
             <header class="cs-product-finder__step-header">
-                <div class="cs-product-finder__step-title">{{ step.title }}</div>
-                <p class="cs-product-finder__step-description">{{ step.description }}</p>
+                <div class="cs-product-finder__step-title"><?=$step['title']?></div>
+                <p class="cs-product-finder__step-description"><?=$step['description']?></p>
             </header>
             <div class="cs-product-finder__step-options">
-                {% for option in step.options %}
+                <?php foreach($step['options'] as $option): ?>
                 <div
                     class="cs-product-finder__step-option"
-                    data-next-step-id="{{ option.next_step }}"
-                    data-attributes='{{ option.attributes | json_encode() }}'
-                    data-category-id='{{ option.category_id }}'
-                    data-category-only='{{ option.category_only }}'
+                    data-next-step-id="<?=isset($option['next_step']) ? $option['next_step'] : '' ?>"
+                    data-attributes='<?=json_encode($option['attributes'])?>'
+                    data-category-id='<?=isset($option['category_id']) ? $option['category_id'] : '' ?>'
+                    data-category-only='<?=isset($option['category_only']) ? $option['category_only'] : '' ?>'
                 >
                     <div class="cs-product-finder__option-sizer"></div>
                     <div class="cs-product-finder__option-content">
-                        {% if option.image %}
-                        <img class="cs-product-finder__option-image" src="{{ option.image }}">
-                        {% endif %}
-                        {% if option.label %}
-                        <p class="cs-product-finder__option-label">{{ option.label }}</p>
-                        {% endif %}
+                        <?php if($option['image']): ?>
+                        <img class="cs-product-finder__option-image" src="<?=$option['image']?>">
+                        <?php endif; ?>
+                        <?php if($option['label']): ?>
+                        <p class="cs-product-finder__option-label"><?=$option['label']?></p>
+                        <?php endif; ?>
                     </div>
                 </div>
-                {% endfor %}
+                <?php endforeach; ?>
             </div>
             <button class="cs-product-finder__back-button"><?=__("Go to previous step")?></button>
         </article>
-        {% endfor %}
+        <?php $i++; ?>
+        <?php endforeach; ?>
         <button class="cs-product-finder__back-button"><?=__("Go to previous step")?></button>
         <form class="cs-product-finder__form" method="post" action="<?=$block->getRedirectEndpointUrl()?>"></form>
     </div>

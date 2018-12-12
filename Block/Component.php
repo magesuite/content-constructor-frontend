@@ -143,6 +143,20 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
                 ['data' => $componentData]
             )->toHtml();
         }
+        else if($type == 'cms-teaser') {
+            $output .=  $this->getLayout()->createBlock(
+                \MageSuite\ContentConstructorFrontend\Block\Component\CmsTeaser::class,
+                '',
+                ['data' => $componentData]
+            )->toHtml();
+        }
+        else if($type == 'product-finder') {
+            return $this->getLayout()->createBlock(
+                \MageSuite\ContentConstructorFrontend\Block\Component\ProductFinder::class,
+                '',
+                ['data' => $componentData]
+            )->toHtml();
+        }
         else if($type == 'custom-html') {
             return $this->getLayout()->createBlock(
                 \MageSuite\ContentConstructorFrontend\Block\Component\CustomHtml::class,

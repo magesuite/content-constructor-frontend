@@ -1,0 +1,162 @@
+<?php
+/** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\CmsTeaser */
+$componentConfiguration = $block->getData();
+$visibilityClass = $this
+    ->helper(\MageSuite\ContentConstructorFrontend\Helper\ComponentVisibility::class)
+    ->getVisibilityClass($componentConfiguration);
+
+/** @var \MageSuite\ContentConstructorFrontend\Model\Component\CmsTeaser $viewModel */
+$viewModel = $block->getViewModel();
+
+$mix = 'cs-image-teaser--cms-pages';
+
+$isSlider = false;
+$isSliderMobile = false;
+
+$itemsPerRow = $componentConfiguration['currentScenario']['desktopLayout']['id'];
+$itemsPerRowMobile = 2;
+$itemsPerViewMobile = 1;
+$itemsPerView = $componentConfiguration['currentScenario']['desktopLayout']['id'];
+$displayVariant = 'inside';
+
+if ($componentConfiguration['currentScenario']['mobileLayout']['id'] == 'slider') {
+    $itemsPerRowMobile = 1;
+    $isSliderMobile = true;
+}
+
+$sizesMobile = '(max-width: 48em) 100vw';
+$sizesDesktop = (100 / $itemsPerView) . 'vw';
+$sizesDesktop = '(min-width: 1200px) ' . (1200 / $itemsPerView) . 'px, ' . $sizesDesktop;
+$sizes = $sizesMobile . ', ' . $sizesDesktop;
+$textDisplayVariant = $block->getData('textDisplayVariant');
+
+if (!$textDisplayVariant) {
+    $textDisplayVariant = 2;
+}
+
+$slides = $viewModel->getSlides();
+
+foreach ($slides as $slide) {
+    $slide->setData('displayVariant', $textDisplayVariant);
+}
+
+?>
+
+<div class="cs-container cs-container--edge-to-edge">
+    <div class="cs-container__inner">
+        <div class="<?= $visibilityClass ?>">
+            <div class="cs-image-teaser
+             cs-image-teaser--items-in-row-<?= $itemsPerRow ?>
+             cs-image-teaser--items-in-row-mobile-<?= $itemsPerViewMobile ?>
+             <?= $isSlider ? 'cs-image-teaser--slider' : '' ?>
+             <?= $mix ?>"
+                 data-items-per-view="<?= $itemsPerView ?>"
+                <?= $itemsPerViewMobile ? 'data-mobile-items-per-view="' . $itemsPerViewMobile . '"' : '' ?>
+                 data-is-slider="<?= $isSlider ?>"
+                 data-mobile-is-slider="<?= $isSliderMobile ?>">
+
+                <div class="cs-image-teaser__carousel">
+                    <div class="cs-image-teaser__wrapper cs-image-teaser__wrapper--content-display-<?= $displayVariant ?>">
+                        <ul class="cs-image-teaser__slides">
+
+                            <?php foreach ($slides as $item): ?>
+                                <li class="cs-image-teaser__slide cs-image-teaser__slide--scheme-<?= $item->getData('colorScheme') ?> <?= $item->getSrc() ? 'cs-image-teaser__slide--image-uploaded' : '' ?>">
+                                    <?php if ($item->getHref()): ?>
+                                    <a href="<?= $item->getHref() ?>" class="cs-image-teaser__slide-link">
+                                        <?php endif; ?>
+
+                                        <?php
+                                        $imageSrc = $item->getSrc();
+
+                                        if ($imageSrc and !$item->isSvg()) {
+                                            $imageSrc = ($isSlider and $isSliderMobile) ? '' : 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
+                                        }
+                                        ?>
+                                        <?php if ($item->getSrc()): ?>
+                                            <figure class="cs-image-teaser__figure">
+                                                <img
+                                                        class="cs-image-teaser__image | <?= ($isSlider and $isSliderMobile) ? 'swiper-lazy' : 'lazyload' ?>"
+                                                        src="<?= $imageSrc ?>"
+                                                    <?php if (!$item->isSvg()): ?> data-src="<?= $item->getSrc() ?>" <?php endif; ?>
+                                                    <?php if ($item->getSrcSet() and !$item->isSvg()): ?>
+                                                        data-srcset="<?= $item->getSrcSet() ?>"
+                                                    <?php endif; ?>
+                                                    <?php if ($sizes and !$item->isSvg()): ?>
+                                                        sizes="<?= $sizes ?>"
+                                                    <?php endif; ?>
+                                                        alt="<?= $item->getAlt() ?>"
+                                                    <?php if ($item->getWidth()): ?> width="<?= $item->getWidth() ?>" <?php endif; ?>
+                                                    <?php if ($item->getHeight()): ?> width="<?= $item->getHeight() ?>" <?php endif; ?>
+                                                >
+                                                <noscript>
+                                                    <img
+                                                            class="cs-image-teaser__image"
+                                                            src="<?= $item->getSrc() ?>"
+                                                            <?php if ($item->getSrcSet()): ?>srcset="<?= $item->getSrcSet() ?>" <?php endif; ?>
+                                                            <?php if ($sizes): ?>sizes="<?= $sizes ?>"<?php endif; ?>
+                                                            alt="<?= $item->getAlt() ?>"
+                                                        <?php if ($item->getWidth()): ?> width="<?= $item->getWidth() ?>" <?php endif; ?>
+                                                        <?php if ($item->getHeight()): ?> width="<?= $item->getHeight() ?>" <?php endif; ?>
+                                                    >
+                                                </noscript>
+                                            </figure>
+                                        <?php endif; ?>
+
+                                        <div class="cs-image-teaser__content-wrapper cs-image-teaser__content-wrapper--content-display-scenario-<?= $item->getData('displayVariant') ?>">
+                                            <div class="cs-image-teaser__content">
+                                                <?php if ($item->getHeadline()): ?>
+                                                    <h2 class="cs-image-teaser__headline"><?= $item->getHeadline() ?></h2>
+                                                <?php endif; ?>
+
+                                                <?php if ($item->getSubheadline()): ?>
+                                                    <p class="cs-image-teaser__subheadline"><?= $item->getSubheadline() ?></p>
+                                                <?php endif; ?>
+
+                                                <?php if ($item->getParagraph()): ?>
+                                                    <p class="cs-image-teaser__text"><?= $item->getParagraph() ?></p>
+                                                <?php endif; ?>
+
+                                                <?php if ($item->getHref() and $item->getData('ctaLabel')): ?>
+                                                    <div class="cs-image-teaser__cta">
+                                                    <span role="button"
+                                                          class="cs-button cs-button--type_long cs-button--look_default">
+                                                        <span class="cs-button__span"><?= $item->getData('ctaLabel') ?></span>
+                                                        <svg class="cs-button__icon"><use
+                                                                    xlink:href="#arrow_next"></use></svg>
+                                                    </span>
+                                                    </div>
+                                                <?php endif; ?>
+                                            </div>
+                                        </div>
+                                        <?php if ($item->getHref()): ?>
+                                    </a>
+                                <?php endif; ?>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+
+                    <?php if ($isSlider or $isSliderMobile): ?>
+                        <button class="cs-image-teaser__nav cs-image-teaser__nav--prev"
+                                type="button">
+                            <svg class="cs-image-teaser__nav-icon">
+                                <use xlink:href="#icon_arrow-left"></use>
+                            </svg>
+                        </button>
+                        <button class="cs-image-teaser__nav cs-image-teaser__nav--next"
+                                type="button">
+                            <svg class="cs-image-teaser__nav-icon">
+                                <use xlink:href="#icon_arrow-right"></use>
+                            </svg>
+                        </button>
+                    <?php endif; ?>
+
+                </div>
+
+                <?php if ($isSliderMobile): ?>
+                    <ul class="cs-image-teaser__pagination"></ul>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</div>
