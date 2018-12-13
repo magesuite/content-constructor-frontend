@@ -2,7 +2,7 @@
 
 namespace MageSuite\ContentConstructorFrontend\Model\Component;
 
-class ProductGrid extends \Magento\Framework\DataObject
+class ProductGrid extends \Magento\Framework\DataObject implements ViewModel
 {
     const DEFAULT_PRODUCTS_LIMIT = 24;
     /**

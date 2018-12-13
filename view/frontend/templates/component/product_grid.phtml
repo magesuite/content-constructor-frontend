@@ -1,32 +1,28 @@
 <?php
 /** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\ProductGrid */
-$component = $block->getViewModel();
-$componentConfiguration = $component->getData();
-$visibilityClass = $this
-    ->helper(\MageSuite\ContentConstructorFrontend\Helper\ComponentVisibility::class)
-    ->getVisibilityClass($componentConfiguration);
+$viewModel = $block->getViewModel();
 
-$hero = $component->getHero();
+$hero = $viewModel->getHero();
 $heroImage = $hero->getImage();
 
 $linkTag = !empty($hero->getHref()) ? 'a' : 'div';
 ?>
-<div class="<?= $visibilityClass ?>">
-    <div class="cs-products-grid <?= $component->hasHero() ? 'cs-products-grid--with-hero' : '' ?>"
-         data-rows-mobile="<?= $component->getRowsMobile() ?>"
-         data-rows-tablet="<?= $component->getRowsTablet() ?>"
-         data-rows-desktop="<?= $component->getRowsDesktop() ?>"
+<div class="<?=$block->getVisibilityClass()?>">
+    <div class="cs-products-grid <?= $viewModel->hasHero() ? 'cs-products-grid--with-hero' : '' ?>"
+         data-rows-mobile="<?= $viewModel->getRowsMobile() ?>"
+         data-rows-tablet="<?= $viewModel->getRowsTablet() ?>"
+         data-rows-desktop="<?= $viewModel->getRowsDesktop() ?>"
     >
         <?php
         $columnsConfiguration = $block->getVar('product_grid/columns_configuration');
         $teasersConfiguration = $block->getVar('product_grid/teasers_configuration');
-        $teasersConfiguration['gridPosition']['x'] = $component->getHero()->getPosition();
+        $teasersConfiguration['gridPosition']['x'] = $viewModel->getHero()->getPosition();
         ?>
         <div class="cs-grid-layout"
              data-columns-configuration='<?= json_encode($columnsConfiguration) ?>'
              data-teasers-configuration='[<?= json_encode($teasersConfiguration) ?>]'>
             <ul class="cs-grid-layout__grid">
-                <?php if ($component->hasHero()): ?>
+                <?php if ($viewModel->hasHero()): ?>
                 <li class="cs-grid-layout__brick cs-grid-layout__brick--x2 cs-grid-layout__brick--teaser | cs-products-grid__hero cs-products-grid__hero--scheme-<?= $hero['colorScheme'] ?>"
                     data-teaser-id="1">
                     <<?= $linkTag ?> <?php if ($hero->getHref()): ?> href="<?= $hero->getHref() ?>" <?php endif; ?>
@@ -84,9 +80,9 @@ $linkTag = !empty($hero->getHref()) ? 'a' : 'div';
                     </li>
                 <?php endif; ?>
                 <?php $iterator = 1 ?>
-                <?php foreach ($component->getProducts() as $product): ?>
+                <?php foreach ($viewModel->getProducts() as $product): ?>
                     <li class="cs-grid-layout__brick cs-products-grid__item">
-                        <?= $component->renderProductTile($product, $iterator) ?>
+                        <?= $viewModel->renderProductTile($product, $iterator) ?>
                     </li>
                 <?php endforeach ?>
             </ul>

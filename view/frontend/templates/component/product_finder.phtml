@@ -1,19 +1,18 @@
 <?php
 /** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\ProductFinder */
 $componentConfiguration = $block->getData();
-$visibilityClass = $this
-    ->helper(\MageSuite\ContentConstructorFrontend\Helper\ComponentVisibility::class)
-    ->getVisibilityClass($componentConfiguration);
+/** @var \MageSuite\ContentConstructorFrontend\Model\Component\ProductFinder $viewModel */
+$viewModel = $block->getViewModel();
 
-$steps = $block->getSteps();
+$steps = $viewModel->getSteps();
 $i = 0;
 ?>
-<div class="<?=$visibilityClass?>">
+<div class="<?=$block->getVisibilityClass()?>">
     <div class="cs-product-finder">
         <?php foreach($steps as $step): ?>
         <?php
 
-         $stepOptionsPerRow = array_merge($block->getData('optionsPerRow'), isset($step['optionsPerRow']) ? $step['optionsPerRow'] : []);
+         $stepOptionsPerRow = array_merge($viewModel->getData('optionsPerRow'), isset($step['optionsPerRow']) ? $step['optionsPerRow'] : []);
          $stepClasses = [];
 
          $stepClasses[] = "cs-product-finder__step--options-mobile_".$stepOptionsPerRow['mobile'];
@@ -58,6 +57,6 @@ $i = 0;
         <?php $i++; ?>
         <?php endforeach; ?>
         <button class="cs-product-finder__back-button"><?=__("Go to previous step")?></button>
-        <form class="cs-product-finder__form" method="post" action="<?=$block->getRedirectEndpointUrl()?>"></form>
+        <form class="cs-product-finder__form" method="post" action="<?=$viewModel->getRedirectEndpointUrl()?>"></form>
     </div>
 </div>

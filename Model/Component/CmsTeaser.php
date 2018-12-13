@@ -2,7 +2,7 @@
 
 namespace MageSuite\ContentConstructorFrontend\Model\Component;
 
-class CmsTeaser extends \Magento\Framework\DataObject
+class CmsTeaser extends \Magento\Framework\DataObject implements ViewModel
 {
     /**
      * @var \MageSuite\ContentConstructorFrontend\DataProviders\CmsTeaserDataProvider

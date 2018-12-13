@@ -1,9 +1,6 @@
 <?php
 /** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\CmsTeaser */
 $componentConfiguration = $block->getData();
-$visibilityClass = $this
-    ->helper(\MageSuite\ContentConstructorFrontend\Helper\ComponentVisibility::class)
-    ->getVisibilityClass($componentConfiguration);
 
 /** @var \MageSuite\ContentConstructorFrontend\Model\Component\CmsTeaser $viewModel */
 $viewModel = $block->getViewModel();
@@ -28,11 +25,8 @@ $sizesMobile = '(max-width: 48em) 100vw';
 $sizesDesktop = (100 / $itemsPerView) . 'vw';
 $sizesDesktop = '(min-width: 1200px) ' . (1200 / $itemsPerView) . 'px, ' . $sizesDesktop;
 $sizes = $sizesMobile . ', ' . $sizesDesktop;
-$textDisplayVariant = $block->getData('textDisplayVariant');
 
-if (!$textDisplayVariant) {
-    $textDisplayVariant = 2;
-}
+$textDisplayVariant = $block->getData('textDisplayVariant') ?? 2;
 
 $slides = $viewModel->getSlides();
 
@@ -44,7 +38,7 @@ foreach ($slides as $slide) {
 
 <div class="cs-container cs-container--edge-to-edge">
     <div class="cs-container__inner">
-        <div class="<?= $visibilityClass ?>">
+        <div class="<?=$block->getVisibilityClass()?>">
             <div class="cs-image-teaser
              cs-image-teaser--items-in-row-<?= $itemsPerRow ?>
              cs-image-teaser--items-in-row-mobile-<?= $itemsPerViewMobile ?>
@@ -59,68 +53,68 @@ foreach ($slides as $slide) {
                     <div class="cs-image-teaser__wrapper cs-image-teaser__wrapper--content-display-<?= $displayVariant ?>">
                         <ul class="cs-image-teaser__slides">
 
-                            <?php foreach ($slides as $item): ?>
-                                <li class="cs-image-teaser__slide cs-image-teaser__slide--scheme-<?= $item->getData('colorScheme') ?> <?= $item->getSrc() ? 'cs-image-teaser__slide--image-uploaded' : '' ?>">
-                                    <?php if ($item->getHref()): ?>
-                                    <a href="<?= $item->getHref() ?>" class="cs-image-teaser__slide-link">
+                            <?php foreach ($slides as $slide): ?>
+                                <li class="cs-image-teaser__slide cs-image-teaser__slide--scheme-<?= $slide->getData('colorScheme') ?> <?= $slide->getSrc() ? 'cs-image-teaser__slide--image-uploaded' : '' ?>">
+                                    <?php if ($slide->getHref()): ?>
+                                    <a href="<?= $slide->getHref() ?>" class="cs-image-teaser__slide-link">
                                         <?php endif; ?>
 
                                         <?php
-                                        $imageSrc = $item->getSrc();
+                                        $imageSrc = $slide->getSrc();
 
-                                        if ($imageSrc and !$item->isSvg()) {
+                                        if ($imageSrc and !$slide->isSvg()) {
                                             $imageSrc = ($isSlider and $isSliderMobile) ? '' : 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
                                         }
                                         ?>
-                                        <?php if ($item->getSrc()): ?>
+                                        <?php if ($slide->getSrc()): ?>
                                             <figure class="cs-image-teaser__figure">
                                                 <img
                                                         class="cs-image-teaser__image | <?= ($isSlider and $isSliderMobile) ? 'swiper-lazy' : 'lazyload' ?>"
                                                         src="<?= $imageSrc ?>"
-                                                    <?php if (!$item->isSvg()): ?> data-src="<?= $item->getSrc() ?>" <?php endif; ?>
-                                                    <?php if ($item->getSrcSet() and !$item->isSvg()): ?>
-                                                        data-srcset="<?= $item->getSrcSet() ?>"
+                                                    <?php if (!$slide->isSvg()): ?> data-src="<?= $slide->getSrc() ?>" <?php endif; ?>
+                                                    <?php if ($slide->getSrcSet() and !$slide->isSvg()): ?>
+                                                        data-srcset="<?= $slide->getSrcSet() ?>"
                                                     <?php endif; ?>
-                                                    <?php if ($sizes and !$item->isSvg()): ?>
+                                                    <?php if ($sizes and !$slide->isSvg()): ?>
                                                         sizes="<?= $sizes ?>"
                                                     <?php endif; ?>
-                                                        alt="<?= $item->getAlt() ?>"
-                                                    <?php if ($item->getWidth()): ?> width="<?= $item->getWidth() ?>" <?php endif; ?>
-                                                    <?php if ($item->getHeight()): ?> width="<?= $item->getHeight() ?>" <?php endif; ?>
+                                                        alt="<?= $slide->getAlt() ?>"
+                                                    <?php if ($slide->getWidth()): ?> width="<?= $slide->getWidth() ?>" <?php endif; ?>
+                                                    <?php if ($slide->getHeight()): ?> width="<?= $slide->getHeight() ?>" <?php endif; ?>
                                                 >
                                                 <noscript>
                                                     <img
                                                             class="cs-image-teaser__image"
-                                                            src="<?= $item->getSrc() ?>"
-                                                            <?php if ($item->getSrcSet()): ?>srcset="<?= $item->getSrcSet() ?>" <?php endif; ?>
+                                                            src="<?= $slide->getSrc() ?>"
+                                                            <?php if ($slide->getSrcSet()): ?>srcset="<?= $slide->getSrcSet() ?>" <?php endif; ?>
                                                             <?php if ($sizes): ?>sizes="<?= $sizes ?>"<?php endif; ?>
-                                                            alt="<?= $item->getAlt() ?>"
-                                                        <?php if ($item->getWidth()): ?> width="<?= $item->getWidth() ?>" <?php endif; ?>
-                                                        <?php if ($item->getHeight()): ?> width="<?= $item->getHeight() ?>" <?php endif; ?>
+                                                            alt="<?= $slide->getAlt() ?>"
+                                                        <?php if ($slide->getWidth()): ?> width="<?= $slide->getWidth() ?>" <?php endif; ?>
+                                                        <?php if ($slide->getHeight()): ?> width="<?= $slide->getHeight() ?>" <?php endif; ?>
                                                     >
                                                 </noscript>
                                             </figure>
                                         <?php endif; ?>
 
-                                        <div class="cs-image-teaser__content-wrapper cs-image-teaser__content-wrapper--content-display-scenario-<?= $item->getData('displayVariant') ?>">
+                                        <div class="cs-image-teaser__content-wrapper cs-image-teaser__content-wrapper--content-display-scenario-<?= $slide->getData('displayVariant') ?>">
                                             <div class="cs-image-teaser__content">
-                                                <?php if ($item->getHeadline()): ?>
-                                                    <h2 class="cs-image-teaser__headline"><?= $item->getHeadline() ?></h2>
+                                                <?php if ($slide->getHeadline()): ?>
+                                                    <h2 class="cs-image-teaser__headline"><?= $slide->getHeadline() ?></h2>
                                                 <?php endif; ?>
 
-                                                <?php if ($item->getSubheadline()): ?>
-                                                    <p class="cs-image-teaser__subheadline"><?= $item->getSubheadline() ?></p>
+                                                <?php if ($slide->getSubheadline()): ?>
+                                                    <p class="cs-image-teaser__subheadline"><?= $slide->getSubheadline() ?></p>
                                                 <?php endif; ?>
 
-                                                <?php if ($item->getParagraph()): ?>
-                                                    <p class="cs-image-teaser__text"><?= $item->getParagraph() ?></p>
+                                                <?php if ($slide->getParagraph()): ?>
+                                                    <p class="cs-image-teaser__text"><?= $slide->getParagraph() ?></p>
                                                 <?php endif; ?>
 
-                                                <?php if ($item->getHref() and $item->getData('ctaLabel')): ?>
+                                                <?php if ($slide->getHref() and $slide->getData('ctaLabel')): ?>
                                                     <div class="cs-image-teaser__cta">
                                                     <span role="button"
                                                           class="cs-button cs-button--type_long cs-button--look_default">
-                                                        <span class="cs-button__span"><?= $item->getData('ctaLabel') ?></span>
+                                                        <span class="cs-button__span"><?= $slide->getData('ctaLabel') ?></span>
                                                         <svg class="cs-button__icon"><use
                                                                     xlink:href="#arrow_next"></use></svg>
                                                     </span>
@@ -128,7 +122,7 @@ foreach ($slides as $slide) {
                                                 <?php endif; ?>
                                             </div>
                                         </div>
-                                        <?php if ($item->getHref()): ?>
+                                        <?php if ($slide->getHref()): ?>
                                     </a>
                                 <?php endif; ?>
                                 </li>

@@ -6,13 +6,12 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
 {
     const CACHE_LIFETIME = 86400;
     const CACHE_KEY = 'component_html_%s_%s';
+    /**
+     * @var \MageSuite\ContentConstructorFrontend\Service\ComponentPool
+     */
+    protected $componentPool;
 
     private $component;
-
-    /**
-     * @var \MageSuite\ContentConstructorFrontend\Service\ComponentFactory
-     */
-    private $componentFactory;
 
     /**
      * @var \Magento\Store\Model\StoreManagerInterface
@@ -21,14 +20,14 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
 
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
-        \MageSuite\ContentConstructor\Factory\ComponentFactory $componentFactory,
+        \MageSuite\ContentConstructorFrontend\Service\ComponentPool $componentPool,
         \Magento\Store\Model\StoreManagerInterface $storeManager,
         array $data = []
     ) {
         parent::__construct($context, $data);
 
         $this->storeManager = $storeManager;
-        $this->componentFactory = $componentFactory;
+        $this->componentPool = $componentPool;
 
         $componentHash = substr(md5(serialize($this->getData())), 0 ,8);
 
@@ -76,116 +75,17 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
 
         $type = $this->getData('type');
         $componentData = $this->getData('data');
-        $classOverrides = $componentData['class_overrides'] ?? [];
 
-        $output = '<!-- new one  -->';
+        $componentClassName = $this->componentPool->getClassName($type);
 
-        if($type == 'product-carousel') {
-            $output .= $this->getLayout()->createBlock(
-                \MageSuite\ContentConstructorFrontend\Block\Component\ProductCarousel::class,
-                '',
-                ['data' => $componentData]
-            )->toHtml();
-        }
-        else if($type == 'product-grid') {
-            $output .=  $this->getLayout()->createBlock(
-                \MageSuite\ContentConstructorFrontend\Block\Component\ProductGrid::class,
-                '',
-                ['data' => $componentData]
-            )->toHtml();
-        }
-        else if($type == 'headline') {
-            $output .=  $this->getLayout()->createBlock(
-                \MageSuite\ContentConstructorFrontend\Block\Component\Headline::class,
-                '',
-                ['data' => $componentData]
-            )->toHtml();
-        }
-        else if($type == 'image-teaser') {
-            $output .=  $this->getLayout()->createBlock(
-                \MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser::class,
-                '',
-                ['data' => $componentData]
-            )->toHtml();
-        }
-        else if($type == 'hero-carousel') {
-            $output .=  $this->getLayout()->createBlock(
-                \MageSuite\ContentConstructorFrontend\Block\Component\HeroCarousel::class,
-                '',
-                ['data' => $componentData]
-            )->toHtml();
-        }
-        else if($type == 'button') {
-            $output .=  $this->getLayout()->createBlock(
-                \MageSuite\ContentConstructorFrontend\Block\Component\Button::class,
-                '',
-                ['data' => $componentData]
-            )->toHtml();
-        }
-        else if($type == 'separator') {
-            $output .=  $this->getLayout()->createBlock(
-                \MageSuite\ContentConstructorFrontend\Block\Component\Separator::class,
-                '',
-                ['data' => $componentData]
-            )->toHtml();
-        }
-        else if($type == 'category-links') {
-            $output .=  $this->getLayout()->createBlock(
-                \MageSuite\ContentConstructorFrontend\Block\Component\CategoryLinks::class,
-                '',
-                ['data' => $componentData]
-            )->toHtml();
-        }
-        else if($type == 'brand-carousel') {
-            $output .=  $this->getLayout()->createBlock(
-                \MageSuite\ContentConstructorFrontend\Block\Component\BrandCarousel::class,
-                '',
-                ['data' => $componentData]
-            )->toHtml();
-        }
-        else if($type == 'cms-teaser') {
-            $output .=  $this->getLayout()->createBlock(
-                \MageSuite\ContentConstructorFrontend\Block\Component\CmsTeaser::class,
-                '',
-                ['data' => $componentData]
-            )->toHtml();
-        }
-        else if($type == 'product-finder') {
-            return $this->getLayout()->createBlock(
-                \MageSuite\ContentConstructorFrontend\Block\Component\ProductFinder::class,
-                '',
-                ['data' => $componentData]
-            )->toHtml();
-        }
-        else if($type == 'custom-html') {
-            return $this->getLayout()->createBlock(
-                \MageSuite\ContentConstructorFrontend\Block\Component\CustomHtml::class,
-                '',
-                ['data' => $componentData]
-            )->toHtml();
-        }
-        else if($type == 'paragraph') {
-            return $this->getLayout()->createBlock(
-                \MageSuite\ContentConstructorFrontend\Block\Component\Paragraph::class,
-                '',
-                ['data' => $componentData]
-            )->toHtml();
-        }
-
-
-        $this->component = $this->componentFactory->create($this->getData('type'), $classOverrides);
-
-        if($this->component == null) {
+        if($componentClassName == null) {
             return '';
         }
 
-        $output .= '<!-- old one -->';
 
-        $output .= $this->component->render($componentData);
-
-        $output .= '<!-- old one end -->';
-
-        return $output;
+        return $this->getLayout()
+            ->createBlock($componentClassName, '', ['data' => $componentData])
+            ->toHtml();
     }
 
     

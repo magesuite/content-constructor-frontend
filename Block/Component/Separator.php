@@ -2,7 +2,7 @@
 
 namespace MageSuite\ContentConstructorFrontend\Block\Component;
 
-class Separator extends \Magento\Framework\View\Element\Template
+class Separator extends AbstractComponent
 {
     protected $_template = 'MageSuite_ContentConstructorFrontend::component/separator.phtml';
 }

@@ -1,22 +1,21 @@
 <?php
 /** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\ProductCarousel */
 $componentConfiguration = $block->getData();
-$visibilityClass = $this
-    ->helper(\MageSuite\ContentConstructorFrontend\Helper\ComponentVisibility::class)
-    ->getVisibilityClass($componentConfiguration);
+
+/** @var \MageSuite\ContentConstructorFrontend\Model\Component\ProductCarousel $viewModel */
+$viewModel = $block->getViewModel();
 ?>
 <div class="cs-container">
     <div class="cs-container__inner">
-
-        <div class="<?= $visibilityClass ?>">
+        <div class="<?=$block->getVisibilityClass()?>">
             <div class="cs-products-promo">
                 <div class="cs-products-promo__carousel">
                     <div class="cs-products-promo__wrapper">
                         <ul class="cs-products-promo__slides">
                             <?php $iterator = 1 ?>
-                            <?php foreach ($block->getProducts() as $product): ?>
+                            <?php foreach ($viewModel->getProducts() as $product): ?>
                                 <li class="cs-products-promo__slide cs-grid-product cs-grid-product--in-carousel">
-                                    <?= $block->renderProductTile($product, $iterator) ?>
+                                    <?= $viewModel->renderProductTile($product, $iterator) ?>
                                 </li>
                                 <?php $iterator++ ?>
                             <?php endforeach; ?>

@@ -2,7 +2,7 @@
 
 namespace MageSuite\ContentConstructorFrontend\Model\Component;
 
-class ImageTeaser extends \Magento\Framework\DataObject
+class ImageTeaser extends \Magento\Framework\DataObject implements ViewModel
 {
     /**
      * @var \MageSuite\ContentConstructorFrontend\Model\Component\ImageTeaser\Slide[]|null

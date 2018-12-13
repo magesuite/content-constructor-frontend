@@ -1,9 +1,6 @@
 <?php
 /** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\BrandCarousel */
 $componentConfiguration = $block->getData();
-$visibilityClass = $this
-    ->helper(\MageSuite\ContentConstructorFrontend\Helper\ComponentVisibility::class)
-    ->getVisibilityClass($componentConfiguration);
 
 /** @var \MageSuite\ContentConstructorFrontend\Model\Component\BrandCarousel $viewModel */
 $viewModel = $block->getViewModel();
@@ -12,7 +9,7 @@ $brands = $viewModel->getBrands();
 ?>
 <section class="cs-container">
     <div class="cs-container__inner">
-        <div class="<?=$visibilityClass?>">
+        <div class="<?=$block->getVisibilityClass()?>">
             <div class="cs-brand-carousel {{ mix }}">
                 <div class="cs-brand-carousel__carousel">
                     <div class="cs-brand-carousel__wrapper">

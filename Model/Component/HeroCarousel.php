@@ -4,7 +4,7 @@
 namespace MageSuite\ContentConstructorFrontend\Model\Component;
 
 
-class HeroCarousel extends \Magento\Framework\DataObject
+class HeroCarousel extends \Magento\Framework\DataObject implements ViewModel
 {
     /**
      * @var \MageSuite\ContentConstructorFrontend\Model\Component\ImageTeaser\Slide[]|null

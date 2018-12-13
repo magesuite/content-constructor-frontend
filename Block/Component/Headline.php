@@ -2,7 +2,7 @@
 
 namespace MageSuite\ContentConstructorFrontend\Block\Component;
 
-class Headline extends \Magento\Framework\View\Element\Template
+class Headline extends AbstractComponent
 {
     protected $_template = 'MageSuite_ContentConstructorFrontend::component/headline.phtml';
 

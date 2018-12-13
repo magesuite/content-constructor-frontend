@@ -2,7 +2,7 @@
 
 namespace MageSuite\ContentConstructorFrontend\Model\Component;
 
-class BrandCarousel extends \Magento\Framework\DataObject
+class BrandCarousel extends \Magento\Framework\DataObject implements ViewModel
 {
     /**
      * @var \MageSuite\BrandManagement\Model\ResourceModel\Brands\CollectionFactory

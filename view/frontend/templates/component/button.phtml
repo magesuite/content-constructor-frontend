@@ -1,17 +1,14 @@
 <?php
 /** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\Button */
 $componentConfiguration = $block->getData();
-$visibilityClass = $this
-    ->helper(\MageSuite\ContentConstructorFrontend\Helper\ComponentVisibility::class)
-    ->getVisibilityClass($componentConfiguration);
 
-
+/** @var \MageSuite\ContentConstructorFrontend\Model\Component\Button $viewModel */
 $viewModel = $block->getViewModel();
 ?>
 
-<div class="<?=$visibilityClass?>">
+<div class="<?=$block->getVisibilityClass()?>">
     <a href="<?=$viewModel->getHref()?>" class="cs-button cs-button--type_more-content">
-        <?=$block->getLabel()?>
+        <?=$viewModel->getLabel()?>
 
         <?php $numberOfProducts = $viewModel->getNumberOfProducts(); ?>
         <?php if(is_numeric($numberOfProducts)): ?>

@@ -2,7 +2,7 @@
 
 namespace MageSuite\ContentConstructorFrontend\Model\Component;
 
-class Button extends \Magento\Framework\DataObject
+class Button extends \Magento\Framework\DataObject implements ViewModel
 {
     /**
      * @var \MageSuite\ContentConstructorFrontend\Service\UrlResolver
