@@ -6,7 +6,7 @@
                 <resource id="Magento_Backend::stores">
                     <resource id="Magento_Backend::stores_settings">
                         <resource id="Magento_Config::config" >
-                            <resource id="MageSuite_ContentConstructorFrontend::content_constructor" title="MageSuite Content Constructor"/>
+                            <resource id="MageSuite_ContentConstructorFrontend::content_constructor" title="MageSuite Content Constructor" translate="title" sortOrder="10" />
                         </resource>
                     </resource>
                 </resource>
