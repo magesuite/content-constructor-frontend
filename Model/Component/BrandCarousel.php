@@ -46,19 +46,7 @@ class BrandCarousel extends \Magento\Framework\DataObject implements ViewModel
             $storeId = $this->storeManager->getStore()->getId();
             $brand = $this->brandsRepository->getById($brand->getEntityId(), $storeId);
 
-            if(!$brand->getEnabled()) {
-                continue;
-            }
-
-            if(!$brand->getShowInBrandCarousel()) {
-                continue;
-            }
-
-            if(empty($brand->getBrandIconUrl())) {
-                continue;
-            }
-
-            if(empty($brand->getBrandUrl())) {
+            if(!$this->isBrandVisible($brand)) {
                 continue;
             }
 
@@ -72,5 +60,12 @@ class BrandCarousel extends \Magento\Framework\DataObject implements ViewModel
         }
 
         return $data;
+    }
+
+    protected function isBrandVisible($brand) {
+        return $brand->getEnabled() and
+            $brand->getShowInBrandCarousel() and
+            $brand->getBrandIconUrl() and
+            $brand->getBrandUrl();
     }
 }

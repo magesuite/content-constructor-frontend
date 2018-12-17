@@ -7,17 +7,17 @@ class Button extends \Magento\Framework\DataObject implements ViewModel
     /**
      * @var \MageSuite\ContentConstructorFrontend\Service\UrlResolver
      */
-    private $urlResolver;
+    protected $urlResolver;
 
     /**
      * @var \Magento\Catalog\Api\CategoryRepositoryInterface
      */
-    private $categoryRepository;
+    protected $categoryRepository;
 
     /**
      * @var \MageSuite\ContentConstructorFrontend\Helper\Category
      */
-    private $categoryHelper;
+    protected $categoryHelper;
 
     public function __construct(
         \MageSuite\ContentConstructorFrontend\Service\UrlResolver $urlResolver,

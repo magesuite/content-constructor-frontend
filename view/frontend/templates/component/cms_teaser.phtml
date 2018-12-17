@@ -80,7 +80,7 @@ foreach ($slides as $slide) {
                                                     <?php endif; ?>
                                                         alt="<?= $slide->getAlt() ?>"
                                                     <?php if ($slide->getWidth()): ?> width="<?= $slide->getWidth() ?>" <?php endif; ?>
-                                                    <?php if ($slide->getHeight()): ?> width="<?= $slide->getHeight() ?>" <?php endif; ?>
+                                                    <?php if ($slide->getHeight()): ?> height="<?= $slide->getHeight() ?>" <?php endif; ?>
                                                 >
                                                 <noscript>
                                                     <img
@@ -90,7 +90,7 @@ foreach ($slides as $slide) {
                                                             <?php if ($sizes): ?>sizes="<?= $sizes ?>"<?php endif; ?>
                                                             alt="<?= $slide->getAlt() ?>"
                                                         <?php if ($slide->getWidth()): ?> width="<?= $slide->getWidth() ?>" <?php endif; ?>
-                                                        <?php if ($slide->getHeight()): ?> width="<?= $slide->getHeight() ?>" <?php endif; ?>
+                                                        <?php if ($slide->getHeight()): ?> height="<?= $slide->getHeight() ?>" <?php endif; ?>
                                                     >
                                                 </noscript>
                                             </figure>

@@ -107,7 +107,7 @@ $sizes = $sizesMobile . ', ' . $sizesDesktop;
                                                         <?php if ($sizes and !$slide->isSvg()): ?>sizes="<?= $sizes ?>"<?php endif; ?>
                                                         alt="<?= $slide->getAlt() ?>"
                                                     <?php if ($slide->getWidth()): ?> width="<?= $slide->getWidth() ?>" <?php endif; ?>
-                                                    <?php if ($slide->getHeight()): ?> width="<?= $slide->getHeight() ?>" <?php endif; ?>
+                                                    <?php if ($slide->getHeight()): ?> height="<?= $slide->getHeight() ?>" <?php endif; ?>
                                                 >
                                                 <noscript>
                                                     <img
@@ -117,7 +117,7 @@ $sizes = $sizesMobile . ', ' . $sizesDesktop;
                                                             <?php if ($sizes): ?>sizes="<?= $sizes ?>"<?php endif; ?>
                                                             alt="<?= $slide->getAlt() ?>"
                                                         <?php if ($slide->getWidth()): ?> width="<?= $slide->getWidth() ?>" <?php endif; ?>
-                                                        <?php if ($slide->getHeight()): ?> width="<?= $slide->getHeight() ?>" <?php endif; ?>
+                                                        <?php if ($slide->getHeight()): ?> height="<?= $slide->getHeight() ?>" <?php endif; ?>
                                                     >
                                                 </noscript>
                                             </figure>
