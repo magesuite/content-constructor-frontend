@@ -1,0 +1,45 @@
+<?php
+/** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\ProductCarousel */
+$componentConfiguration = $block->getData();
+
+/** @var \MageSuite\ContentConstructorFrontend\Model\Component\ProductCarousel $viewModel */
+$viewModel = $block->getViewModel();
+?>
+<div class="cs-container">
+    <div class="cs-container__inner">
+        <div class="<?=$block->getVisibilityClass()?>">
+            <div class="cs-products-promo">
+                <div class="cs-products-promo__carousel">
+                    <div class="cs-products-promo__wrapper">
+                        <ul class="cs-products-promo__slides">
+                            <?php $iterator = 1 ?>
+                            <?php foreach ($viewModel->getProducts() as $product): ?>
+                                <li class="cs-products-promo__slide cs-grid-product cs-grid-product--in-carousel">
+                                    <?= $viewModel->renderProductTile($product, $iterator) ?>
+                                </li>
+                                <?php $iterator++ ?>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+
+                    <?php if ($block->getVar('product_carousel/show_navigation')): ?>
+                        <button class="cs-products-promo__nav cs-products-promo__nav--prev" type="button">
+                            <svg class="cs-products-promo__nav-icon">
+                                <use xlink:href="<?= $block->getVar('product_carousel/icon/left') ?>"></use>
+                            </svg>
+                        </button>
+                        <button class="cs-products-promo__nav cs-products-promo__nav--next" type="button">
+                            <svg class="cs-products-promo__nav-icon">
+                                <use xlink:href="<?= $block->getVar('product_carousel/icon/right') ?>"></use>
+                            </svg>
+                        </button>
+                    <?php endif; ?>
+
+                    <?php if ($block->getVar('product_carousel/show_pagination')): ?>
+                        <ul class="cs-products-promo__pagination"></ul>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

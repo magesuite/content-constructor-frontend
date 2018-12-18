@@ -1,0 +1,12 @@
+<?php
+/** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\Paragraph */
+$componentConfiguration = $block->getData();
+
+/** @var \MageSuite\ContentConstructorFrontend\Model\Component\Paragraph $viewModel */
+$viewModel = $block->getViewModel();
+?>
+<div class="<?=$block->getVisibilityClass()?>">
+    <div class="cs-paragraph cs-paragraph--cols-<?=$viewModel->getColumns()?> cs-paragraph--mode-<?=$componentConfiguration['scenarios']['reading']['id'] ?? ''?> | cs-cms-block">
+        <?=$viewModel->getContent()?>
+    </div>
+</div>

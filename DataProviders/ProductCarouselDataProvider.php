@@ -156,7 +156,7 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
      * @param array $criteria
      * @return array
      */
-    public function getProducts(array $criteria)
+    public function getProducts(array $criteria, $returnProductsEntities = false)
     {
         $collection = $this->buildCollectionSearchCriteria($criteria);
         $collection->addMediaGalleryData();
@@ -164,6 +164,10 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
         $products = $collection->getItems();
 
         $this->stockData = $this->stockDataHelper->getStockData($products);
+
+        if($returnProductsEntities) {
+            return $products;
+        }
 
         $result = [];
 

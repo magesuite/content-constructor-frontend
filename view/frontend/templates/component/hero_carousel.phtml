@@ -1,0 +1,98 @@
+<?php
+/** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\HeroCarousel */
+$componentConfiguration = $block->getData();
+
+/** @var \MageSuite\ContentConstructorFrontend\Model\Component\HeroCarousel $viewModel */
+$viewModel = $block->getViewModel();
+
+$mobileDisplayVariantClass = '';
+$sizes = '(max-width: 48em) 100vw, (max-width: 1200px) 80vw, 960px';
+
+if ($componentConfiguration['mobileDisplayVariant']['id'] == 'list') {
+    $mobileDisplayVariantClass = 'cs-hero--as-list-mobile';
+} else if ($componentConfiguration['mobileDisplayVariant']['id'] == 'hidden') {
+    $mobileDisplayVariantClass = 'cs-hero--hidden-mobile';
+}
+
+?>
+<div class="cs-container cs-container--edge-to-edge cs-container--noscroll ">
+    <div class="cs-container__inner">
+        <div class="<?=$block->getVisibilityClass()?>">
+            <div class="cs-hero <?= $mobileDisplayVariantClass ?> cs-hero--centered">
+                <div class="cs-hero__carousel">
+                    <div class="cs-hero__wrapper">
+                        <ul class="cs-hero__slides">
+
+                            <?php foreach ($viewModel->getSlides() as $slide): ?>
+                                <?php
+                                $imageSrc = $slide->getSrc();
+                                $href = $slide->getHref();
+                                ?>
+                                <li class="cs-hero__slide cs-hero__slide--scheme-<?= $slide->getData('colorScheme') ?> <?= $imageSrc ? 'cs-hero__slide--image-uploaded' : '' ?>">
+                                    <?php if ($href): ?>
+                                    <a href="<?= $href ?>" class="cs-hero__slide-link">
+                                        <?php endif; ?>
+
+                                        <?php if ($imageSrc): ?>
+                                            <figure class="cs-hero__figure">
+                                                <img
+                                                        class="cs-hero__image"
+                                                        src="<?= $imageSrc ?>"
+                                                        srcset="<?= $slide->getSrcSet() ?>"
+                                                        sizes="<?= $sizes ?>"
+                                                        alt="<?= $slide->getAlt() ?>"
+                                                >
+                                            </figure>
+                                        <?php endif; ?>
+
+                                        <div class="cs-hero__content-wrapper cs-hero__content-wrapper--<?= $slide->getData('displayVariant') ?>">
+                                            <div class="cs-hero__content">
+                                                <?php if ($slide->getHeadline()): ?>
+                                                    <h2 class="cs-hero__headline"><?= $slide->getHeadline() ?></h2>
+                                                <?php endif; ?>
+
+                                                <?php if ($slide->getSubheadline()): ?>
+                                                    <p class="cs-hero__subheadline"><?= $slide->getSubheadline() ?></p>
+                                                <?php endif; ?>
+
+                                                <?php if ($slide->getParagraph()): ?>
+                                                    <p class="cs-hero__text"><?= $slide->getParagraph() ?></p>
+                                                <?php endif; ?>
+
+                                                <?php if ($slide->getHref() and $slide->getData('ctaLabel')): ?>
+                                                    <div class="cs-hero__cta">
+                                                <span role="button"
+                                                      class="cs-button cs-button--type_long cs-button--look_default">
+                                                    <span class="cs-button__span"><?= $slide->getData('ctaLabel') ?></span>
+                                                        <svg class="cs-button__icon"><use
+                                                                    xlink:href="#arrow_next"></use></svg>
+                                                </span>
+                                                    </div>
+                                                <?php endif; ?>
+                                            </div>
+                                        </div>
+                                        <?php if ($href): ?>
+                                    </a>
+                                <?php endif; ?>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="cs-hero__nav cs-hero__nav--prev cs-hero__nav--large" type="button">
+                    <svg class="cs-hero__nav-icon">
+                        <use xlink:href="#icon_arrow-left"></use>
+                    </svg>
+                </button>
+                <button class="cs-hero__nav cs-hero__nav--next cs-hero__nav--large" type="button">
+                    <svg class="cs-hero__nav-icon">
+                        <use xlink:href="#icon_arrow-right"></use>
+                    </svg>
+                </button>
+
+                <ul class="cs-hero__pagination"></ul>
+            </div>
+        </div>
+    </div>
+</div>
