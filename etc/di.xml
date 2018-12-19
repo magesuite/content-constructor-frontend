@@ -79,73 +79,73 @@
 
     <type name="MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser">
         <arguments>
-            <item name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\ImageTeaser</item>
+            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\ImageTeaser</argument>
         </arguments>
     </type>
 
     <type name="MageSuite\ContentConstructorFrontend\Block\Component\HeroCarousel">
         <arguments>
-            <item name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\HeroCarousel</item>
+            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\HeroCarousel</argument>
         </arguments>
     </type>
 
     <type name="MageSuite\ContentConstructorFrontend\Block\Component\CategoryLinks">
         <arguments>
-            <item name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\CategoryLinks</item>
+            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\CategoryLinks</argument>
         </arguments>
     </type>
 
     <type name="MageSuite\ContentConstructorFrontend\Block\Component\Button">
         <arguments>
-            <item name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\Button</item>
+            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\Button</argument>
         </arguments>
     </type>
 
     <type name="MageSuite\ContentConstructorFrontend\Block\Component\BrandCarousel">
         <arguments>
-            <item name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\BrandCarousel</item>
+            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\BrandCarousel</argument>
         </arguments>
     </type>
 
     <type name="MageSuite\ContentConstructorFrontend\Block\Component\CmsTeaser">
         <arguments>
-            <item name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\CmsTeaser</item>
+            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\CmsTeaser</argument>
         </arguments>
     </type>
 
     <type name="MageSuite\ContentConstructorFrontend\Block\Component\Paragraph">
         <arguments>
-            <item name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\Paragraph</item>
+            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\Paragraph</argument>
         </arguments>
     </type>
 
     <type name="MageSuite\ContentConstructorFrontend\Block\Component\ProductGrid">
         <arguments>
-            <item name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\ProductGrid</item>
+            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\ProductGrid</argument>
         </arguments>
     </type>
 
     <type name="MageSuite\ContentConstructorFrontend\Block\Component\ProductCarousel">
         <arguments>
-            <item name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\ProductCarousel</item>
+            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\ProductCarousel</argument>
         </arguments>
     </type>
 
     <type name="MageSuite\ContentConstructorFrontend\Block\Component\ProductFinder">
         <arguments>
-            <item name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\ProductFinder</item>
+            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\ProductFinder</argument>
         </arguments>
     </type>
 
     <type name="MageSuite\ContentConstructorFrontend\Block\Component\Headline">
         <arguments>
-            <item name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\Headline</item>
+            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\Headline</argument>
         </arguments>
     </type>
 
     <type name="MageSuite\ContentConstructorFrontend\Block\Component\StaticBlock">
         <arguments>
-            <item name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\StaticBlock</item>
+            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\StaticBlock</argument>
         </arguments>
     </type>
     
