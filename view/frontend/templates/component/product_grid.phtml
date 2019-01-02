@@ -7,85 +7,89 @@ $heroImage = $hero->getImage();
 
 $linkTag = !empty($hero->getHref()) ? 'a' : 'div';
 ?>
-<div class="<?=$block->getVisibilityClass()?>">
-    <div class="cs-products-grid <?= $viewModel->hasHero() ? 'cs-products-grid--with-hero' : '' ?>"
-         data-rows-mobile="<?= $viewModel->getRowsMobile() ?>"
-         data-rows-tablet="<?= $viewModel->getRowsTablet() ?>"
-         data-rows-desktop="<?= $viewModel->getRowsDesktop() ?>"
-    >
-        <?php
-        $columnsConfiguration = $block->getVar('product_grid/columns_configuration');
-        $teasersConfiguration = $block->getVar('product_grid/teasers_configuration');
-        $teasersConfiguration['gridPosition']['x'] = $viewModel->getHero()->getPosition();
-        ?>
-        <div class="cs-grid-layout"
-             data-columns-configuration='<?= json_encode($columnsConfiguration) ?>'
-             data-teasers-configuration='[<?= json_encode($teasersConfiguration) ?>]'>
-            <ul class="cs-grid-layout__grid">
-                <?php if ($viewModel->hasHero()): ?>
-                <li class="cs-grid-layout__brick cs-grid-layout__brick--x2 cs-grid-layout__brick--teaser | cs-products-grid__hero cs-products-grid__hero--scheme-<?= $hero['colorScheme'] ?>"
-                    data-teaser-id="1">
-                    <<?= $linkTag ?> <?php if ($hero->getHref()): ?> href="<?= $hero->getHref() ?>" <?php endif; ?>
-                    class="cs-products-grid__hero-link">
+<div class="cs-container cs-container--products-grid">
+    <div class="cs-container__inner">
+        <div class="<?=$block->getVisibilityClass()?>">
+            <div class="cs-products-grid <?= $viewModel->hasHero() ? 'cs-products-grid--with-hero' : '' ?>"
+                 data-rows-mobile="<?= $viewModel->getRowsMobile() ?>"
+                 data-rows-tablet="<?= $viewModel->getRowsTablet() ?>"
+                 data-rows-desktop="<?= $viewModel->getRowsDesktop() ?>"
+            >
+                <?php
+                $columnsConfiguration = $block->getVar('product_grid/columns_configuration');
+                $teasersConfiguration = $block->getVar('product_grid/teasers_configuration');
+                $teasersConfiguration['gridPosition']['x'] = $viewModel->getHero()->getPosition();
+                ?>
+                <div class="cs-grid-layout"
+                     data-columns-configuration='<?= json_encode($columnsConfiguration) ?>'
+                     data-teasers-configuration='[<?= json_encode($teasersConfiguration) ?>]'>
+                    <ul class="cs-grid-layout__grid">
+                        <?php if ($viewModel->hasHero()): ?>
+                        <li class="cs-grid-layout__brick cs-grid-layout__brick--x2 cs-grid-layout__brick--teaser | cs-products-grid__hero cs-products-grid__hero--scheme-<?= $hero['colorScheme'] ?>"
+                            data-teaser-id="1">
+                            <<?= $linkTag ?> <?php if ($hero->getHref()): ?> href="<?= $hero->getHref() ?>" <?php endif; ?>
+                            class="cs-products-grid__hero-link">
 
 
-                    <?php if ($heroImage->getSrc()): ?>
-                        <figure class="cs-products-grid__hero-figure">
-                            <img
-                                class="cs-products-grid__hero-image | lazyload"
-                                src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-                                data-src="<?= $heroImage->getSrc() ?>"
-                                <?php if ($heroImage->getSrcSet()): ?>data-srcset="<?= $heroImage->getSrcSet() ?>"<?php endif; ?>
-                                alt="<?= $heroImage->getAlt() ?>"
-                            >
-                            <noscript>
-                                <img
-                                    class="cs-products-grid__hero-image"
-                                    src="<?= $heroImage->getSrc() ?>"
-                                    <?php if ($heroImage->getSrcSet()): ?>srcset="<?= $heroImage->getSrcSet() ?>"<?php endif; ?>
-                                    alt="<?= $heroImage->getAlt() ?>"
-                                >
-                            </noscript>
-                        </figure>
-                    <?php endif; ?>
-
-                    <div class="cs-products-grid__hero-content-wrapper cs-products-grid__hero-content-wrapper--variant-<?= $hero->getDisplayVariant() ?>">
-                        <div class="cs-products-grid__hero-content">
-                            <?php if ($hero->getHeadline()): ?>
-                                <h2 class="cs-products-grid__hero-headline"><?= $hero->getHeadline() ?></h2>
-                            <?php endif ?>
-
-                            <?php if ($hero->getSubheadline()): ?>
-                                <p class="cs-products-grid__hero-subheadline"><?= $hero->getSubheadline() ?></p>
-                            <?php endif ?>
-
-                            <?php if ($hero->getParagraph()): ?>
-                                <p class="cs-products-grid__hero-text"><?= $hero->getParagraph() ?></p>
-                            <?php endif ?>
-
-                            <?php if ($hero->getHref() and $hero->getButtonLabel()): ?>
-                                <div class="cs-products-grid__hero-cta">
-                                    <span role="button"
-                                          class="cs-button cs-button--type_long cs-button--look_default | cs-products-grid__button">
-                                        <span class="cs-button__span"><?= $hero->getButtonLabel() ?></span>
-                                        <svg class="cs-button__icon | cs-products-grid__button-icon"><use
-                                                    xlink:href="#arrow_next"></use></svg>
-                                    </span>
-                                </div>
+                            <?php if ($heroImage->getSrc()): ?>
+                                <figure class="cs-products-grid__hero-figure">
+                                    <img
+                                        class="cs-products-grid__hero-image | lazyload"
+                                        src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                                        data-src="<?= $heroImage->getSrc() ?>"
+                                        <?php if ($heroImage->getSrcSet()): ?>data-srcset="<?= $heroImage->getSrcSet() ?>"<?php endif; ?>
+                                        alt="<?= $heroImage->getAlt() ?>"
+                                    >
+                                    <noscript>
+                                        <img
+                                            class="cs-products-grid__hero-image"
+                                            src="<?= $heroImage->getSrc() ?>"
+                                            <?php if ($heroImage->getSrcSet()): ?>srcset="<?= $heroImage->getSrcSet() ?>"<?php endif; ?>
+                                            alt="<?= $heroImage->getAlt() ?>"
+                                        >
+                                    </noscript>
+                                </figure>
                             <?php endif; ?>
-                        </div>
-                    </div>
 
-                    </<?= $linkTag ?>>
-                    </li>
-                <?php endif; ?>
-                <?php $iterator = 1 ?>
-                <?php foreach ($viewModel->getProducts() as $product): ?>
-                    <li class="cs-grid-layout__brick cs-products-grid__item">
-                        <?= $viewModel->renderProductTile($product, $iterator) ?>
-                    </li>
-                <?php endforeach ?>
-            </ul>
+                            <div class="cs-products-grid__hero-content-wrapper cs-products-grid__hero-content-wrapper--variant-<?= $hero->getDisplayVariant() ?>">
+                                <div class="cs-products-grid__hero-content">
+                                    <?php if ($hero->getHeadline()): ?>
+                                        <h2 class="cs-products-grid__hero-headline"><?= $hero->getHeadline() ?></h2>
+                                    <?php endif ?>
+
+                                    <?php if ($hero->getSubheadline()): ?>
+                                        <p class="cs-products-grid__hero-subheadline"><?= $hero->getSubheadline() ?></p>
+                                    <?php endif ?>
+
+                                    <?php if ($hero->getParagraph()): ?>
+                                        <p class="cs-products-grid__hero-text"><?= $hero->getParagraph() ?></p>
+                                    <?php endif ?>
+
+                                    <?php if ($hero->getHref() and $hero->getButtonLabel()): ?>
+                                        <div class="cs-products-grid__hero-cta">
+                                            <span role="button"
+                                                  class="cs-button cs-button--type_long cs-button--look_default | cs-products-grid__button">
+                                                <span class="cs-button__span"><?= $hero->getButtonLabel() ?></span>
+                                                <svg class="cs-button__icon | cs-products-grid__button-icon"><use
+                                                            xlink:href="#arrow_next"></use></svg>
+                                            </span>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+
+                            </<?= $linkTag ?>>
+                            </li>
+                        <?php endif; ?>
+                        <?php $iterator = 1 ?>
+                        <?php foreach ($viewModel->getProducts() as $product): ?>
+                            <li class="cs-grid-layout__brick cs-products-grid__item">
+                                <?= $viewModel->renderProductTile($product, $iterator) ?>
+                            </li>
+                        <?php endforeach ?>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>
