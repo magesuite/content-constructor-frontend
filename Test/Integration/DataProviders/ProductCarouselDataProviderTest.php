@@ -82,6 +82,10 @@ class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
 
     public static function loadProductsFixture() {
         require __DIR__.'/_files/products.php';
+
+        $indexerRegistry = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()
+            ->create(\Magento\Framework\Indexer\IndexerRegistry::class);
+        $indexerRegistry->get(\Magento\CatalogSearch\Model\Indexer\Fulltext::INDEXER_ID)->reindexAll();
     }
 
     public static function loadProductsFixtureRollback() {

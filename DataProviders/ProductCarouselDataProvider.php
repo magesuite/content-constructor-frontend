@@ -236,7 +236,7 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
         if (isset($criteria['skus']) and !empty($criteria['skus'])) {
             $skus = $this->prepareSkusArray($criteria['skus']);
 
-            $collection->addFieldToFilter('sku', $skus);
+            $collection->addAttributeToFilter('sku', $skus);
 
             return $collection;
         }
