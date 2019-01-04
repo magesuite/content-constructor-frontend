@@ -6,17 +6,21 @@ $componentConfiguration = $block->getData();
 $viewModel = $block->getViewModel();
 ?>
 
-<div class="<?=$block->getVisibilityClass()?>">
-    <a href="<?=$viewModel->getHref()?>" class="cs-button cs-button--type_more-content">
-        <?=$viewModel->getLabel()?>
+<div class="cs-container cs-container--button">
+    <div class="cs-container__inner">
+        <div class="<?=$block->getVisibilityClass()?>">
+            <a href="<?=$viewModel->getHref()?>" class="cs-button cs-button--type_more-content">
+                <?=$viewModel->getLabel()?>
 
-        <?php $numberOfProducts = $viewModel->getNumberOfProducts(); ?>
-        <?php if(is_numeric($numberOfProducts)): ?>
-        <span class="cs-button__span"><?=$numberOfProducts?></span>
-        <?php endif; ?>
+                <?php $numberOfProducts = $viewModel->getNumberOfProducts(); ?>
+                <?php if(is_numeric($numberOfProducts)): ?>
+                <span class="cs-button__span"><?=$numberOfProducts?></span>
+                <?php endif; ?>
 
-        <svg class="cs-button__icon">
-            <use xlink:href="#arrow_next"></use>
-        </svg>
-    </a>
+                <svg class="cs-button__icon">
+                    <use xlink:href="#arrow_next"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
 </div>

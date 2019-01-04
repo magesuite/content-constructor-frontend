@@ -1,2 +1,8 @@
 <?php /** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\CustomHtml */ ?>
-<?=$block->getMarkup()?>
+<div class="cs-container cs-container--custom-html">
+    <div class="cs-container__inner">
+        <div class="<?=$block->getVisibilityClass()?>">
+            <?=$block->getMarkup()?>
+        </div>
+    </div>
+</div>

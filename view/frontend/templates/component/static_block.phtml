@@ -6,8 +6,12 @@ $componentConfiguration = $block->getData();
 $viewModel = $block->getViewModel();
 $resetStyles = $viewModel->getData('resetstyles');
 ?>
-<div class="<?=$block->getVisibilityClass()?>">
-    <div class="<?php if (!$resetStyles): ?>cs-static-cms-block<?php endif; ?> cs-cms-block <?php if ($resetStyles): ?>cs-static-cms-block-resetstyles<?php endif; ?>">
-        <?=$viewModel->getContent()?>
+<div class="cs-container cs-container--static-block">
+    <div class="cs-container__inner">
+        <div class="<?=$block->getVisibilityClass()?>">
+            <div class="<?php if (!$resetStyles): ?>cs-static-cms-block<?php endif; ?> cs-cms-block <?php if ($resetStyles): ?>cs-static-cms-block-resetstyles<?php endif; ?>">
+                <?=$viewModel->getContent()?>
+            </div>
+        </div>
     </div>
 </div>

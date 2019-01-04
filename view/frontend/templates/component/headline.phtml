@@ -5,9 +5,13 @@ $viewModel = $block->getViewModel();
 
 $tag = $viewModel->getHeadingTag();
 ?>
-<div class="<?=$block->getVisibilityClass()?>">
-    <div class="cs-headline">
-        <<?=$tag?> class="cs-headline__title"><?= $viewModel->getTitle() ?></<?=$tag?>>
-        <p class="cs-headline__subtitle"><?= $viewModel->getSubtitle() ?></p>
+<div class="cs-container cs-container--headline">
+    <div class="cs-container__inner">
+        <div class="<?=$block->getVisibilityClass()?>">
+            <div class="cs-headline">
+                <<?=$tag?> class="cs-headline__title"><?= $viewModel->getTitle() ?></<?=$tag?>>
+                <p class="cs-headline__subtitle"><?= $viewModel->getSubtitle() ?></p>
+            </div>
+        </div>
     </div>
 </div>

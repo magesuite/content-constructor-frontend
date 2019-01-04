@@ -13,7 +13,7 @@ $displayVariant = 'outside';
 $isSlider = false;
 $isSliderMobile = false;
 
-$mix = '';
+$mix = $block->getMix();
 
 if (in_array($imageTeaser['currentScenario']['mobileLayout']['id'], ['large', 'slider', 'col'])) {
     $itemsPerRowMobile = 1;
@@ -62,7 +62,7 @@ if ($imageTeaser['currentScenario']['teaserWidth']['id'] == 'w-s') {
 $sizes = $sizesMobile . ', ' . $sizesDesktop;
 ?>
 
-<div class="cs-container cs-container--edge-to-edge">
+<div class="cs-container cs-container--image-teaser">
     <?php if ($imageTeaser['currentScenario']['teaserWidth']['id'] == 'c' or $imageTeaser['currentScenario']['teaserWidth']['id'] == 'c-s'): ?>
     <div class="cs-container__inner">
         <?php endif; ?>
