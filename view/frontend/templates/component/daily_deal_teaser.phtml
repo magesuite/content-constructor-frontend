@@ -2,6 +2,7 @@
 /** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser */
 /** @var $viewModel \MageSuite\ContentConstructorFrontend\Model\Component\DailyDealTeaser */
 $viewModel = $block->getViewModel();
+$visibility = $block->getVisibilityClass();
 
 $product = $viewModel->getProduct();
 
@@ -20,9 +21,9 @@ $labels = [
 ];
 ?>
 
-<div class="cs-container cs-container--daily-deal-teaser">
-    <div class="cs-container__inner">
-        <div class="<?=$block->getVisibilityClass()?>">
+<div <?php if (!empty($visibility)): ?> class="<?=$visibility?>" <?php endif; ?>">
+    <div class="cs-container cs-container--daily-deal-teaser">
+        <div class="cs-container__inner">
             <section class="cs-daily-deal-teaser">
                 <a href="<?= $product['url'] ?>" class="cs-daily-deal-teaser__image-wrapper">
                     <figure class="cs-daily-deal-teaser__figure" role="group">

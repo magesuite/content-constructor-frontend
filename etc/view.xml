@@ -5,15 +5,151 @@
             <var name="mobile">cs-display-controller--hidden-mobile</var>
             <var name="desktop">cs-display-controller--hidden-desktop</var>
         </var>
-        <var name="product_carousel">
-            <var name="show_navigation">true</var>
-            <var name="show_pagination">true</var>
-            <var name="icon">
-                <var name="left">#icon_arrow-left</var>
-                <var name="right">#icon_arrow-right</var>
+        <var name="max_content_width">1200</var>
+        <var name="brand_carousel">
+            <var name="mix"></var>
+            <var name="lazyload_brand_images">true</var>
+            <var name="link_brands">true</var>
+            <var name="pagination">
+                <var name="show">true</var>
+                <var name="mix">cs-hide-tablet-desktop</var>
+            </var>
+            <var name="navigation">
+                <var name="show">true</var>
+                <var name="arrows">
+                    <var name="prev">
+                        <var name="mix">cs-hide-mobile</var>
+                        <var name="path">#icon_arrow-left</var>
+                    </var>
+                    <var name="next">
+                        <var name="mix">cs-hide-mobile</var>
+                        <var name="path">#icon_arrow-right</var>
+                    </var>
+                </var>
             </var>
         </var>
+        <var name="button">
+            <var name="mix"></var>
+            <var name="icon">
+                <var name="show">true</var>
+                <var name="path">#arrow_next</var>
+            </var>
+        </var>
+        <var name="category_links">
+            <var name="mix"></var>
+            <var name="show_title">true</var>
+            <var name="hide_links_breakpoints">
+                <var name="tablet">
+                    <var name="mix">cs-hide-tablet</var>
+                    <var name="hide_from">5</var>
+                </var>
+                <var name="desktop">
+                    <var name="mix">cs-hide-laptop</var>
+                    <var name="hide_from">7</var>
+                </var>
+            </var>
+            <var name="all_products">
+                <var name="label">All Products</var>
+                <var name="icon">#icon_arrow-right</var>
+            </var>
+        </var>
+        <var name="cms_teaser">
+            <var name="mix"></var>
+            <var name="pagination">
+                <var name="show">true</var>
+                <var name="mix">cs-hide-tablet-desktop</var>
+            </var>
+            <var name="navigation">
+                <var name="show">true</var>
+                <var name="arrows">
+                    <var name="prev">
+                        <var name="mix">cs-hide-mobile</var>
+                        <var name="path">#icon_arrow-left</var>
+                    </var>
+                    <var name="next">
+                        <var name="mix">cs-hide-mobile</var>
+                        <var name="path">#icon_arrow-right</var>
+                    </var>
+                </var>
+            </var>
+            <var name="cta_button_icon">
+                <var name="show">true</var>
+                <var name="path">#arrow_next</var>
+            </var>
+        </var>
+        <var name="headline">
+            <var name="mix"></var>
+        </var>
+        <var name="hero_carousel">
+            <var name="mix">cs-hero--centered</var>
+            <var name="sizes">(max-width: 48em) 100vw, (max-width: 1200px) 80vw, 960px</var>
+            <var name="pagination">
+                <var name="show">true</var>
+                <var name="mix"></var>
+            </var>
+            <var name="navigation">
+                <var name="show">true</var>
+                <var name="arrows">
+                    <var name="prev">
+                        <var name="mix">cs-hide-mobile cs-hero__nav--large</var>
+                        <var name="path">#icon_arrow-left</var>
+                    </var>
+                    <var name="next">
+                        <var name="mix">cs-hide-mobile cs-hero__nav--large</var>
+                        <var name="path">#icon_arrow-right</var>
+                    </var>
+                </var>
+            </var>
+            <var name="cta_button_icon">
+                <var name="show">true</var>
+                <var name="path">#arrow_next</var>
+            </var>
+        </var>
+        <var name="image_teaser">
+            <var name="mix"></var>
+            <var name="pagination">
+                <var name="show">true</var>
+                <var name="mix"></var>
+            </var>
+            <var name="navigation">
+                <var name="show">true</var>
+                <var name="arrows">
+                    <var name="prev">
+                        <var name="mix">cs-hide-mobile</var>
+                        <var name="path">#icon_arrow-left</var>
+                    </var>
+                    <var name="next">
+                        <var name="mix">cs-hide-mobile</var>
+                        <var name="path">#icon_arrow-right</var>
+                    </var>
+                </var>
+            </var>
+        </var>
+        <var name="product_carousel">
+            <var name="navigation">
+                <var name="show">true</var>
+                <var name="arrows">
+                    <var name="prev">
+                        <var name="mix"></var>
+                        <var name="path">#icon_arrow-left</var>
+                    </var>
+                    <var name="next">
+                        <var name="mix"></var>
+                        <var name="path">#icon_arrow-right</var>
+                    </var>
+                </var>
+            </var>
+            <var name="cta_button_icon">
+                <var name="show">true</var>
+                <var name="path">#arrow_next</var>
+            </var>
+        </var>
+        <var name="product_finder">
+            <var name="mix"></var>
+        </var>
         <var name="product_grid">
+            <var name="mix"></var>
+            <var name="lazyload_heros_images">true</var>
             <var name="columns_configuration">
                 <var name="phone">1</var>
                 <var name="phoneLg">2</var>
@@ -30,11 +166,18 @@
                     <var name="x">2</var>
                     <var name="y">1</var>
                 </var>
-                <var name="gridPosition">
-                    <var name="x">left</var>
-                    <var name="y">1</var>
-                </var>
             </var>
+            <var name="cta_button_icon">
+                <var name="show">true</var>
+                <var name="path">#arrow_next</var>
+            </var>
+        </var>
+        <var name="separator">
+            <var name="mix"></var>
+        </var>
+        <var name="static_block">
+            <var name="mix"></var>
+            <var name="lazyload_icons">false</var>
         </var>
     </vars>
 </view>

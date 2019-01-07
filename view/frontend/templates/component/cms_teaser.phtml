@@ -4,6 +4,7 @@ $componentConfiguration = $block->getData();
 
 /** @var \MageSuite\ContentConstructorFrontend\Model\Component\CmsTeaser $viewModel */
 $viewModel = $block->getViewModel();
+$visibility = $block->getVisibilityClass();
 
 $mix = 'cs-image-teaser--cms-pages';
 
@@ -23,7 +24,7 @@ if ($componentConfiguration['currentScenario']['mobileLayout']['id'] == 'slider'
 
 $sizesMobile = '(max-width: 48em) 100vw';
 $sizesDesktop = (100 / $itemsPerView) . 'vw';
-$sizesDesktop = '(min-width: 1200px) ' . (1200 / $itemsPerView) . 'px, ' . $sizesDesktop;
+$sizesDesktop = '(min-width: ' . $block->getVar('max_content_width') . 'px) ' . ($block->getVar('max_content_width') / $itemsPerView) . 'px, ' . $sizesDesktop;
 $sizes = $sizesMobile . ', ' . $sizesDesktop;
 
 $textDisplayVariant = $block->getData('textDisplayVariant') ?? 2;
@@ -36,9 +37,9 @@ foreach ($slides as $slide) {
 
 ?>
 
-<div class="cs-container cs-container--cms-teaser">
-    <div class="cs-container__inner">
-        <div class="<?=$block->getVisibilityClass()?>">
+<div <?php if (!empty($visibility)): ?> class="<?=$visibility?>" <?php endif; ?>>
+    <div class="cs-container cs-container--cms-teaser">
+        <div class="cs-container__inner">
             <div class="cs-image-teaser
              cs-image-teaser--items-in-row-<?= $itemsPerRow ?>
              cs-image-teaser--items-in-row-mobile-<?= $itemsPerViewMobile ?>
@@ -47,7 +48,8 @@ foreach ($slides as $slide) {
                  data-items-per-view="<?= $itemsPerView ?>"
                 <?= $itemsPerViewMobile ? 'data-mobile-items-per-view="' . $itemsPerViewMobile . '"' : '' ?>
                  data-is-slider="<?= $isSlider ?>"
-                 data-mobile-is-slider="<?= $isSliderMobile ?>">
+                 data-mobile-is-slider="<?= $isSliderMobile ?>"
+                <?= $block->getVar('cms_teaser/mix'); ?>>
 
                 <div class="cs-image-teaser__carousel">
                     <div class="cs-image-teaser__wrapper cs-image-teaser__wrapper--content-display-<?= $displayVariant ?>">
@@ -112,12 +114,14 @@ foreach ($slides as $slide) {
 
                                                 <?php if ($slide->getHref() and $slide->getData('ctaLabel')): ?>
                                                     <div class="cs-image-teaser__cta">
-                                                    <span role="button"
-                                                          class="cs-button cs-button--type_long cs-button--look_default">
-                                                        <span class="cs-button__span"><?= $slide->getData('ctaLabel') ?></span>
-                                                        <svg class="cs-button__icon"><use
-                                                                    xlink:href="#arrow_next"></use></svg>
-                                                    </span>
+                                                        <span role="button" class="cs-button cs-button--type_long cs-button--look_default">
+                                                            <span class="cs-button__span"><?= $slide->getData('ctaLabel') ?></span>
+                                                            <?php if($block->getVar('cms_teaser/cta_button_icon/show')): ?>
+                                                                <svg class="cs-button__icon">
+                                                                    <use xlink:href="<?php echo $block->getVar('cms_teaser/cta_button_icon/path'); ?>"></use>
+                                                                </svg>
+                                                            <?php endif; ?>
+                                                        </span>
                                                     </div>
                                                 <?php endif; ?>
                                             </div>
@@ -130,27 +134,27 @@ foreach ($slides as $slide) {
                         </ul>
                     </div>
 
-                    <?php if ($isSlider or $isSliderMobile): ?>
-                        <button class="cs-image-teaser__nav cs-image-teaser__nav--prev"
+                    <?php if ($block->getVar('cms_teaser/show_navigation') && ($isSlider or $isSliderMobile)): ?>
+                        <button class="cs-image-teaser__nav cs-image-teaser__nav--prev <?= $block->getVar('cms_teaser/navigation/arrows/prev/mix') ?>"
                                 type="button">
                             <svg class="cs-image-teaser__nav-icon">
-                                <use xlink:href="#icon_arrow-left"></use>
+                                <use xlink:href="<?php echo $block->getVar('cms_teaser/navigation/arrows/prev/path'); ?>"></use>
                             </svg>
                         </button>
-                        <button class="cs-image-teaser__nav cs-image-teaser__nav--next"
+                        <button class="cs-image-teaser__nav cs-image-teaser__nav--next <?= $block->getVar('cms_teaser/navigation/arrows/next/mix') ?>"
                                 type="button">
                             <svg class="cs-image-teaser__nav-icon">
-                                <use xlink:href="#icon_arrow-right"></use>
+                                <use xlink:href="<?php echo $block->getVar('cms_teaser/navigation/arrows/next/path'); ?>"></use>
                             </svg>
                         </button>
                     <?php endif; ?>
 
                 </div>
 
-                <?php if ($isSliderMobile): ?>
-                    <ul class="cs-image-teaser__pagination"></ul>
+                <?php if($block->getVar('cms_teaser/pagination/show') && ($isSlider or $isSliderMobile)): ?>
+                    <ul class="cs-image-teaser__pagination <?= $block->getVar('cms_teaser/pagination/mix') ?>"></ul>
                 <?php endif; ?>
             </div>
         </div>
-    </div>
+    <div>
 </div>

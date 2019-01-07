@@ -4,9 +4,8 @@ $componentConfiguration = $block->getData();
 
 /** @var \MageSuite\ContentConstructorFrontend\Model\Component\HeroCarousel $viewModel */
 $viewModel = $block->getViewModel();
-
+$visibility = $block->getVisibilityClass();
 $mobileDisplayVariantClass = '';
-$sizes = '(max-width: 48em) 100vw, (max-width: 1200px) 80vw, 960px';
 
 if ($componentConfiguration['mobileDisplayVariant']['id'] == 'list') {
     $mobileDisplayVariantClass = 'cs-hero--as-list-mobile';
@@ -15,10 +14,11 @@ if ($componentConfiguration['mobileDisplayVariant']['id'] == 'list') {
 }
 
 ?>
-<div class="cs-container cs-container--hero">
-    <div class="cs-container__inner">
-        <div class="<?=$block->getVisibilityClass()?>">
-            <div class="cs-hero <?= $mobileDisplayVariantClass ?> cs-hero--centered">
+
+<div <?php if (!empty($visibility)): ?> class="<?=$visibility?>" <?php endif; ?>>
+    <div class="cs-container cs-container--hero">
+        <div class="cs-container__inner">
+            <div class="cs-hero <?= $mobileDisplayVariantClass ?> <?= $block->getVar('hero_carousel/mix'); ?>">
                 <div class="cs-hero__carousel">
                     <div class="cs-hero__wrapper">
                         <ul class="cs-hero__slides">
@@ -39,7 +39,7 @@ if ($componentConfiguration['mobileDisplayVariant']['id'] == 'list') {
                                                         class="cs-hero__image"
                                                         src="<?= $imageSrc ?>"
                                                         srcset="<?= $slide->getSrcSet() ?>"
-                                                        sizes="<?= $sizes ?>"
+                                                        sizes="<?= $block->getVar('hero_carousel/sizes'); ?>"
                                                         alt="<?= $slide->getAlt() ?>"
                                                 >
                                             </figure>
@@ -64,8 +64,11 @@ if ($componentConfiguration['mobileDisplayVariant']['id'] == 'list') {
                                                 <span role="button"
                                                       class="cs-button cs-button--type_long cs-button--look_default">
                                                     <span class="cs-button__span"><?= $slide->getData('ctaLabel') ?></span>
-                                                        <svg class="cs-button__icon"><use
-                                                                    xlink:href="#arrow_next"></use></svg>
+                                                    <?php if($block->getVar('hero_carousel/cta_button_icon/show')): ?>
+                                                        <svg class="cs-button__icon">
+                                                            <use xlink:href="<?= $block->getVar('hero_carousel/cta_button_icon/path') ?>"></use>
+                                                        </svg>
+                                                    <?php endif; ?>
                                                 </span>
                                                     </div>
                                                 <?php endif; ?>
@@ -80,18 +83,25 @@ if ($componentConfiguration['mobileDisplayVariant']['id'] == 'list') {
                     </div>
                 </div>
 
-                <button class="cs-hero__nav cs-hero__nav--prev cs-hero__nav--large" type="button">
-                    <svg class="cs-hero__nav-icon">
-                        <use xlink:href="#icon_arrow-left"></use>
-                    </svg>
-                </button>
-                <button class="cs-hero__nav cs-hero__nav--next cs-hero__nav--large" type="button">
-                    <svg class="cs-hero__nav-icon">
-                        <use xlink:href="#icon_arrow-right"></use>
-                    </svg>
-                </button>
+                <?php if($block->getVar('hero_carousel/navigation/show')): ?>
+                    <button class="cs-hero__nav cs-hero__nav--prev <?= $block->getVar('hero_carousel/navigation/arrows/prev/mix') ?>"
+                            type="button">
+                        <svg class="cs-hero__nav-icon">
+                            <use xlink:href="<?php echo $block->getVar('hero_carousel/navigation/arrows/prev/path'); ?>"></use>
+                        </svg>
+                    </button>
+                    <button class="cs-hero__nav cs-hero__nav--next <?= $block->getVar('hero_carousel/navigation/arrows/next/mix') ?>"
+                            type="button">
+                        <svg class="cs-hero__nav-icon">
+                            <use xlink:href="<?php echo $block->getVar('hero_carousel/navigation/arrows/next/path'); ?>"></use>
+                        </svg>
+                    </button>
+                <?php endif; ?>
 
-                <ul class="cs-hero__pagination"></ul>
+
+                <?php if($block->getVar('hero_carousel/pagination/show')): ?>
+                    <ul class="cs-hero__pagination <?= $block->getVar('hero_carousel/pagination/mix') ?>"></ul>
+                <?php endif; ?>
             </div>
         </div>
     </div>

@@ -4,23 +4,27 @@ $componentConfiguration = $block->getData();
 
 /** @var \MageSuite\ContentConstructorFrontend\Model\Component\Button $viewModel */
 $viewModel = $block->getViewModel();
+$visibility = $block->getVisibilityClass();
 ?>
 
-<div class="cs-container cs-container--button">
-    <div class="cs-container__inner">
-        <div class="<?=$block->getVisibilityClass()?>">
-            <a href="<?=$viewModel->getHref()?>" class="cs-button cs-button--type_more-content">
-                <?=$viewModel->getLabel()?>
+<div <?php if (!empty($visibility)): ?> class="<?=$visibility?>" <?php endif; ?>>
+    <div class="cs-container cs-container--button">
+        <div class="cs-container__inner">
+            <a href="<?=$viewModel->getHref()?>" class="cs-button-component <?=$block->getVar('button/mix');?>">
+                <span class="cs-button-component__span">
+                    <?=$viewModel->getLabel()?>
 
-                <?php $numberOfProducts = $viewModel->getNumberOfProducts(); ?>
-                <?php if(is_numeric($numberOfProducts)): ?>
-                <span class="cs-button__span"><?=$numberOfProducts?></span>
+                    <?php $numberOfProducts = $viewModel->getNumberOfProducts(); ?>
+                    <?php if(is_numeric($numberOfProducts)): ?>
+                    <span class="cs-button-component__amount"><?=$numberOfProducts?></span>
+                    <?php endif; ?>
+                </span>
+                <?php if($block->getVar('button/icon/show')): ?>
+                    <svg class="cs-button-component__icon">
+                        <use xlink:href="<?php echo $block->getVar('button/icon/path'); ?>"></use>
+                    </svg>
                 <?php endif; ?>
-
-                <svg class="cs-button__icon">
-                    <use xlink:href="#arrow_next"></use>
-                </svg>
             </a>
         </div>
-    </div>
+    <div>
 </div>
