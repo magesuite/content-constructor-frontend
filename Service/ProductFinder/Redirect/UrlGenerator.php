@@ -40,7 +40,7 @@ class UrlGenerator
             $paramsToSearch = ['search_origin' => 'product_finder'];
 
             foreach ($attributesValues as $attributeCode => $attributeValues) {
-                if (isset($attributeValues['range'])) {
+                if (isset($attributeValues['range']) && isset($attributeValues['range'][0]) && isset($attributeValues['range'][1])) {
                     $paramsToSearch[$attributeCode] = sprintf('%s-%s', $attributeValues['range'][0], $attributeValues['range'][1]);
                 } else if (isset($attributeValues['values'])) {
                     $attribute = $this->eavConfig->getAttribute(\Magento\Catalog\Model\Product::ENTITY, $attributeCode);
