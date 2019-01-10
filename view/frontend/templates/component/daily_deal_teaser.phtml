@@ -1,0 +1,137 @@
+<?php
+/** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser */
+/** @var $viewModel \MageSuite\ContentConstructorFrontend\Model\Component\DailyDealTeaser */
+$viewModel = $block->getViewModel();
+
+$product = $viewModel->getProduct();
+
+$showIfExpired = false;
+$expiredContent = '';
+
+$labels = [
+    'day' =>  __('Day'),
+    'days' =>  __('Days'),
+    'hour' =>  __('Hour'),
+    'hours' =>  __('Hours'),
+    'minute' =>  __('Min'),
+    'minutes' =>  __('Min'),
+    'second' =>  __('Sec'),
+    'seconds' =>  __('Sec')
+];
+?>
+
+<div class="cs-container cs-container--daily-deal-teaser">
+    <div class="cs-container__inner">
+        <div class="<?=$block->getVisibilityClass()?>">
+            <section class="cs-daily-deal-teaser">
+                <a href="<?= $product['url'] ?>" class="cs-daily-deal-teaser__image-wrapper">
+                    <figure class="cs-daily-deal-teaser__figure" role="group">
+                        <img
+                            class="cs-daily-deal-teaser__image | lazyload"
+                            src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                            data-src="<?=$product['image']['src'] ?>"
+                            alt="<?= $product['name'] ?>"
+                            <?php if (isset($product['image']['srcset'])): ?>data-srcset="<?=$product['image']['srcset']?>"<?php endif; ?>
+                            <?php if (isset($product['image']['sizes'])): ?>sizes="<?=$product['image']['sizes']?>"<?php endif; ?>
+                            <?php if (isset($product['image']['width'])): ?>width="<?=$product['image']['width']?>"<?php endif; ?>
+                            <?php if (isset($product['image']['height'])): ?>height="<?=$product['image']['height']?>"<?php endif; ?>
+                        >
+                        <noscript>
+                            <img
+                                class="cs-daily-deal-teaser__image"
+                                src="<?= $product['image']['src'] ?>"
+                                alt="<?= $product['name'] ?>"
+                                <?php if (isset($product['image']['srcset'])): ?>data-srcset="<?=$product['image']['srcset']?>"<?php endif; ?>
+                                <?php if (isset($product['image']['sizes'])): ?>sizes="<?=$product['image']['sizes']?>"<?php endif; ?>
+                                <?php if (isset($product['image']['width'])): ?>width="<?=$product['image']['width']?>"<?php endif; ?>
+                                <?php if (isset($product['image']['height'])): ?>height="<?=$product['image']['height']?>"<?php endif; ?>
+                            >
+                        </noscript>
+
+                        <figcaption class="cs-daily-deal-teaser__slogan"><?=__('Short time offer')?></figcaption>
+
+                        <figure class="cs-daily-deal-teaser__slogan-icon-wrapper">
+                            <svg class="cs-daily-deal-teaser__slogan-icon"><use xlink:href="#clock"></use></svg>
+                        </figure>
+                    </figure>
+                </a>
+
+                <div class="cs-daily-deal-teaser__details">
+                    <?php if (isset($product['brandName'])): ?>
+                    <p class="cs-daily-deal-teaser__product-brand"><?=$product['brandName']?></p>
+                    <?php endif; ?>
+
+                    <p class="cs-daily-deal-teaser__product-name">
+                        <a href="<?=$product['url']?>" class="cs-daily-deal-teaser__product-link"><?=$product['name']?></a>
+                    </p>
+
+                    <div class="cs-daily-deal-teaser__product-rating">
+                        <?= $this->getLayout()
+                            ->createBlock(\Magento\Framework\View\Element\Template::class)
+                            ->setMaxStars(5)
+                            ->setActiveStars($product['rating']['data']['activeStars'])
+                            ->setReviewsCount($product['rating']['data']['text'])
+                            ->setTemplate('Magento_Review::rating-stars.phtml')
+                            ->toHtml();
+                        ?>
+                    </div>
+
+                    <?php if(isset($product['swatches'])): ?>
+                    <div class="cs-daily-deal-teaser__product-swatches"><?=$product['swatches']?></div>
+                    <?php endif; ?>
+
+                    <div class="cs-daily-deal-teaser__dd-details">
+                        <div class="cs-daily-deal-teaser__dd-column">
+                            <p class="cs-daily-deal-teaser__dd-headline cs-daily-deal-teaser__dd-headline--countdown"><?=__('Time left')?></p>
+
+                            <div class="cs-dailydeal cs-dailydeal--teaser">
+                                <div class="cs-dailydeal__countdown" data-dailydeal-end="<?=$product['dailyDealOffer']['to']?>"></div>
+                                <input type="hidden" name="cs-dailydeal__countdown-labels" class="cs-dailydeal__countdown-labels" value='<?=json_encode($labels)?>'>
+                            </div>
+                        </div>
+
+                        <div class="cs-daily-deal-teaser__dd-column">
+                            <p class="cs-daily-deal-teaser__dd-headline cs-daily-deal-teaser__dd-headline--limit"><?=__('Available items')?></p>
+
+                            <div class="cs-daily-deal-teaser__progress-bar">
+                                <div class="cs-cart-bonus__progress-wrapper cs-daily-deal-teaser__progress-bar-content">
+                                    <?php $percentage = ( ((int)$product['dailyDealOffer']['items'] / (int)$product['dailyDealOffer']['initialAmount']) * 100) / 100 ?>
+                                    <div class="cs-cart-bonus__progress-done cs-daily-deal-teaser__progress" style="transform: scaleX(<?=$percentage?>)"></div>
+                                    <div class="cs-cart-bonus__progress-possible cs-daily-deal-teaser__progress-bg"></div>
+                                </div>
+
+                                <span class="cs-daily-deal-teaser__available">
+                                    <?=$product['dailyDealOffer']['items']?> / <?=$product['dailyDealOffer']['initialAmount']?>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="cs-daily-deal-teaser__actions">
+                    <div class="cs-daily-deal-teaser__price-details">
+                        <div class="cs-daily-deal-teaser__discount">
+                            <span class="cs-daily-deal-teaser__badge-wrapper cs-dailydeal__badge cs-dailydeal__badge--dd-discount">
+                                <span class="cs-badge cs-badge--cut cs-badge--attention cs-daily-deal-teaser__badge">
+                                    <span class="cs-badge__span cs-daily-deal-teaser__badge-text">-<?=$product['dailyDealOffer']['discountPercentage']?>%</span>
+                                </span>
+                            </span>
+                        </div>
+
+                        <div class="cs-daily-deal-teaser__price"><?=$product['price']?></div>
+                    </div>
+
+                    <div class="cs-daily-deal-teaser__addtocart cs-addtocart">
+                        <?=$product['addToCartButtonHtml']?>
+                    </div>
+                </aside>
+            </section>
+
+            <?php if($showIfExpired): ?>
+            <div class="cs-daily-deal-teaser cs-daily-deal-teaser--expired">
+                <?php echo $expiredContent; ?>
+            </div>
+            <?php endif; ?>
+        </div>
+    </div>
+</div>
