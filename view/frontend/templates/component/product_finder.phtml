@@ -4,35 +4,45 @@ $componentConfiguration = $block->getData();
 /** @var \MageSuite\ContentConstructorFrontend\Model\Component\ProductFinder $viewModel */
 $viewModel = $block->getViewModel();
 
+$visibility = $block->getVisibilityClass();
 $steps = $viewModel->getSteps();
 $i = 0;
 ?>
-<div class="cs-container cs-container--product-finder">
-    <div class="cs-container__inner">
-        <div class="<?=$block->getVisibilityClass()?>">
-            <div class="cs-product-finder">
+
+<div <?php if (!empty($visibility)): ?> class="<?=$visibility?>" <?php endif; ?>>
+    <div class="cs-container cs-container--product-finder">
+        <div class="cs-container__inner">
+            <div class="cs-product-finder <?=$block->getVar('product_finder/mix');?>">
                 <?php foreach($steps as $step): ?>
                 <?php
 
-                 $stepOptionsPerRow = array_merge($viewModel->getData('optionsPerRow'), isset($step['optionsPerRow']) ? $step['optionsPerRow'] : []);
-                 $stepClasses = [];
+                    $stepOptionsPerRow = array_merge($viewModel->getData('optionsPerRow'), isset($step['optionsPerRow']) ? $step['optionsPerRow'] : []);
+                    $stepClasses = [];
 
-                 $stepClasses[] = "cs-product-finder__step--options-mobile_".$stepOptionsPerRow['mobile'];
-                 $stepClasses[] = "cs-product-finder__step--options-tablet_".$stepOptionsPerRow['mobile'];
-                 $stepClasses[] = " cs-product-finder__step--options-desktop_".$stepOptionsPerRow['desktop'];
+                    $stepClasses[] = "cs-product-finder__step--options-mobile_".$stepOptionsPerRow['mobile'];
+                    $stepClasses[] = "cs-product-finder__step--options-tablet_".$stepOptionsPerRow['mobile'];
+                    $stepClasses[] = " cs-product-finder__step--options-desktop_".$stepOptionsPerRow['desktop'];                                   $stepClasses[] = $step['additional_css_class'];
 
-                 if($i == 0) {
-                     $stepClasses[] = 'cs-product-finder__step--current';
-                 }
+                    if($i == 0) {
+                        $stepClasses[] = 'cs-product-finder__step--current';
+                    }
                 ?>
                 <article
                     class="cs-product-finder__step <?=implode(' ', $stepClasses)?>"
                     data-step-id="<?=$step['id']?>"
                 >
-                    <header class="cs-product-finder__step-header">
-                        <div class="cs-product-finder__step-title"><?=$step['title']?></div>
-                        <p class="cs-product-finder__step-description"><?=$step['description']?></p>
-                    </header>
+
+                    <?php if (!empty($step['title']) || !empty($step['description'])): ?>
+                        <header class="cs-product-finder__step-header">
+                            <?php if (!empty($step['title'])): ?>
+                                <div class="cs-product-finder__step-title"><?=$step['title']?></div>
+                            <?php endif; ?>
+                            <?php if (!empty($step['description'])): ?>
+                                <p class="cs-product-finder__step-description"><?=$step['description']?></p>
+                            <?php endif; ?>
+                        </header>
+                    <?php endif; ?>
+
                     <div class="cs-product-finder__step-options">
                         <?php foreach($step['options'] as $option): ?>
                         <div

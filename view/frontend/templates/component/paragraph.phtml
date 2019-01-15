@@ -4,10 +4,12 @@ $componentConfiguration = $block->getData();
 
 /** @var \MageSuite\ContentConstructorFrontend\Model\Component\Paragraph $viewModel */
 $viewModel = $block->getViewModel();
+$visibility = $block->getVisibilityClass();
 ?>
-<div class="cs-container cs-container--paragraph">
-    <div class="cs-container__inner">
-        <div class="<?=$block->getVisibilityClass()?>">
+
+<div <?php if (!empty($visibility)): ?> class="<?=$visibility?>" <?php endif; ?>>
+    <div class="cs-container cs-container--paragraph">
+        <div class="cs-container__inner">
             <div class="cs-paragraph cs-paragraph--cols-<?=$viewModel->getColumns()?> cs-paragraph--mode-<?=$componentConfiguration['scenarios']['reading']['id'] ?? ''?> | cs-cms-block">
                 <?=$viewModel->getContent()?>
             </div>

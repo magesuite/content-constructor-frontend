@@ -5,13 +5,16 @@ $viewModel = $block->getViewModel();
 $categories = $viewModel->getCategories();
 $subCategories = $categories['sub_categories'];
 $shouldShowProductsCount = $viewModel->shouldShowProductsCount();
-
+$visibility = $block->getVisibilityClass();
 ?>
-<div class="cs-container cs-container--category-links">
-    <div class="cs-container__inner">
-        <div class="<?=$block->getVisibilityClass()?>">
-            <div class="cs-category-links <?php if(!$viewModel->hasSubcategories()): ?>cs-category-links--no-subcats <?php endif; ?>" data-mage-init='{"collapsible":{"mediaQueryScope":"(max-width: 767px)"}}'>
+
+<div <?php if (!empty($visibility)): ?> class="<?=$visibility?>" <?php endif; ?>>
+    <div class="cs-container cs-container--category-links">
+        <div class="cs-container__inner">
+            <div class="cs-category-links <?php if(!$viewModel->hasSubcategories()): ?>cs-category-links--no-subcats <?php endif; ?><?= $block->getVar('category_links/mix'); ?>" data-mage-init='{"collapsible":{"mediaQueryScope":"(max-width: 767px)"}}'>
+            <?php if($block->getVar('category_links/show_title')): ?>
                 <h2 class="cs-category-links__title"><?= $categories['main_category']['name'] ?></h2>
+            <?php endif; ?>
 
                 <div class="cs-category-links__dropdown cs-category-links-dropdown <?php if(!$viewModel->hasSubcategories()): ?> cs-category-links-dropdown--no-subcats <?php endif; ?>">
                     <?php
@@ -21,13 +24,18 @@ $shouldShowProductsCount = $viewModel->shouldShowProductsCount();
                     </div>
                     <?php endif; ?>
 
-
                     <div class="cs-category-links__list-wrapper | cs-category-links-dropdown__content" data-role="content">
                         <?php if($viewModel->hasSubcategories()): ?>
                         <ul class="cs-category-links__list">
+                            <?php $i = 1; ?>
                             <?php foreach($subCategories as $category): ?>
-                            <?php $i = 0; ?>
-                            <li class="cs-category-links__list-item <?php if($i >= 5): ?>cs-hide-tablet<?php endif; ?>">
+                            <li class="cs-category-links__list-item
+                                <?php
+                                    foreach($block->getVar('category_links/hide_links_breakpoints') as $breakpoint) {
+                                        if($i >= (int)$breakpoint['hide_from']){echo $breakpoint['mix'] . ' ';}
+                                    }
+                                ?>"
+                            >
                                 <a href="<?=$category['url']?>" class="cs-category-links__link">
                                     <?=$category['name']?> <?php if($shouldShowProductsCount): ?><span class="cs-category-links__qty"><?=$category['products_count']?></span><?php endif; ?>
                                 </a>
@@ -40,9 +48,9 @@ $shouldShowProductsCount = $viewModel->shouldShowProductsCount();
                         <ul class="cs-category-links__list-all">
                             <li class="cs-category-links__list-all-item">
                                 <a href="<?=$categories['main_category']['url']?>" class="cs-category-links__link">
-                                    <?= __('All Products') ?> <?php if($shouldShowProductsCount): ?> <span class="cs-category-links__qty"><?=$categories['main_category']['products_count']?></span><?php endif; ?>
+                                    <?php echo __($block->getVar('category_links/all_products/label')); ?> <?php if($shouldShowProductsCount): ?> <span class="cs-category-links__qty"><?=$categories['main_category']['products_count']?></span><?php endif; ?>
                                     <svg class="cs-category-links__list-all-icon">
-                                        <use xlink:href="#icon_arrow-right"></use>
+                                        <use xlink:href="<?php echo $block->getVar('category_links/all_products/icon'); ?>"></use>
                                     </svg>
                                 </a>
                             </li>

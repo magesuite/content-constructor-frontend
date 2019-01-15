@@ -1,8 +1,8 @@
-<?php /** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\CustomHtml */ ?>
-<div class="cs-container cs-container--custom-html">
-    <div class="cs-container__inner">
-        <div class="<?=$block->getVisibilityClass()?>">
-            <?=$block->getMarkup()?>
-        </div>
-    </div>
+<?php
+/** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\CustomHtml */
+$visibility = $block->getVisibilityClass();
+?>
+
+<div <?php if (!empty($visibility)): ?> class="<?=$visibility?>" <?php endif; ?>>
+    <?=$block->getMarkup()?>
 </div>
