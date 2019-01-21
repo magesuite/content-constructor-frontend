@@ -49,7 +49,7 @@ foreach ($slides as $slide) {
                 <?= $itemsPerViewMobile ? 'data-mobile-items-per-view="' . $itemsPerViewMobile . '"' : '' ?>
                  data-is-slider="<?= $isSlider ?>"
                  data-mobile-is-slider="<?= $isSliderMobile ?>"
-                <?= $block->getVar('cms_teaser/mix'); ?>>
+                <?= $block->getVar('cms_teaser/additional_css_classes'); ?>>
 
                 <div class="cs-image-teaser__carousel">
                     <div class="cs-image-teaser__wrapper cs-image-teaser__wrapper--content-display-<?= $displayVariant ?>">
@@ -116,11 +116,9 @@ foreach ($slides as $slide) {
                                                     <div class="cs-image-teaser__cta">
                                                         <span role="button" class="cs-button cs-button--type_long cs-button--look_default">
                                                             <span class="cs-button__span"><?= $slide->getData('ctaLabel') ?></span>
-                                                            <?php if($block->getVar('cms_teaser/cta_button_icon/show')): ?>
-                                                                <svg class="cs-button__icon">
-                                                                    <use xlink:href="<?php echo $block->getVar('cms_teaser/cta_button_icon/path'); ?>"></use>
-                                                                </svg>
-                                                            <?php endif; ?>
+                                                            <svg class="cs-button__icon">
+                                                                <use xlink:href="<?php echo $block->getVar('cms_teaser/cta_button_icon_path'); ?>"></use>
+                                                            </svg>
                                                         </span>
                                                     </div>
                                                 <?php endif; ?>
@@ -135,13 +133,13 @@ foreach ($slides as $slide) {
                     </div>
 
                     <?php if ($block->getVar('cms_teaser/show_navigation') && ($isSlider or $isSliderMobile)): ?>
-                        <button class="cs-image-teaser__nav cs-image-teaser__nav--prev <?= $block->getVar('cms_teaser/navigation/arrows/prev/mix') ?>"
+                        <button class="cs-image-teaser__nav cs-image-teaser__nav--prev <?= $block->getVar('cms_teaser/navigation/arrows/prev/additional_css_classes') ?>"
                                 type="button">
                             <svg class="cs-image-teaser__nav-icon">
                                 <use xlink:href="<?php echo $block->getVar('cms_teaser/navigation/arrows/prev/path'); ?>"></use>
                             </svg>
                         </button>
-                        <button class="cs-image-teaser__nav cs-image-teaser__nav--next <?= $block->getVar('cms_teaser/navigation/arrows/next/mix') ?>"
+                        <button class="cs-image-teaser__nav cs-image-teaser__nav--next <?= $block->getVar('cms_teaser/navigation/arrows/next/additional_css_classes') ?>"
                                 type="button">
                             <svg class="cs-image-teaser__nav-icon">
                                 <use xlink:href="<?php echo $block->getVar('cms_teaser/navigation/arrows/next/path'); ?>"></use>
@@ -152,7 +150,7 @@ foreach ($slides as $slide) {
                 </div>
 
                 <?php if($block->getVar('cms_teaser/pagination/show') && ($isSlider or $isSliderMobile)): ?>
-                    <ul class="cs-image-teaser__pagination <?= $block->getVar('cms_teaser/pagination/mix') ?>"></ul>
+                    <ul class="cs-image-teaser__pagination <?= $block->getVar('cms_teaser/pagination/additional_css_classes') ?>"></ul>
                 <?php endif; ?>
             </div>
         </div>

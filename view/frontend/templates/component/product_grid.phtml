@@ -18,7 +18,7 @@ $isLazyLoaded = $block->getVar('product_grid_carousel/lazyload_heros_images');
                  data-rows-mobile="<?= $viewModel->getRowsMobile() ?>"
                  data-rows-tablet="<?= $viewModel->getRowsTablet() ?>"
                  data-rows-desktop="<?= $viewModel->getRowsDesktop() ?>"
-                 <?= $block->getVar('product_grid/mix'); ?>
+                 <?= $block->getVar('product_grid/additional_css_classes'); ?>
             >
                 <?php
                 $columnsConfiguration = $block->getVar('product_grid/columns_configuration');
@@ -78,12 +78,9 @@ $isLazyLoaded = $block->getVar('product_grid_carousel/lazyload_heros_images');
                                             <span role="button"
                                                   class="cs-button cs-button--type_long cs-button--look_default | cs-products-grid__button">
                                                   <span class="cs-button__span"><?= $hero->getButtonLabel() ?></span>
-
-                                                  <?php if($block->getVar('product_grid/cta_button_icon/show')): ?>
                                                       <svg class="cs-button__icon">
-                                                          <use xlink:href="<?php echo $block->getVar('product_grid/cta_button_icon/path'); ?>"></use>
+                                                          <use xlink:href="<?php echo $block->getVar('product_grid/cta_button_icon_path'); ?>"></use>
                                                       </svg>
-                                                  <?php endif; ?>
                                             </span>
                                         </div>
                                     <?php endif; ?>

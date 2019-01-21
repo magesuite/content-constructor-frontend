@@ -146,8 +146,9 @@ $sizes = $sizesMobile . ', ' . $sizesDesktop;
                                                     <span role="button"
                                                           class="cs-button cs-button--type_long cs-button--look_default">
                                                         <span class="cs-button__span"><?= $slide->getData('ctaLabel') ?></span>
-                                                        <svg class="cs-button__icon"><use
-                                                                    xlink:href="#arrow_next"></use></svg>
+                                                        <svg class="cs-button__icon">
+                                                            <use xlink:href="<?= $block->getVar('image_teaser/cta_button_icon_path') ?>"></use>
+                                                        </svg>
                                                     </span>
                                                     </div>
                                                 <?php endif; ?>
@@ -185,7 +186,7 @@ $sizes = $sizesMobile . ', ' . $sizesDesktop;
                 </div>
 
                 <?php if (($isSlider or $isSliderMobile) && $block->getVar('image_teaser/pagination/show')): ?>
-                    <ul class="cs-image-teaser__pagination <?= $block->getVar('image_teaser/pagination/mix') ?>"></ul>
+                    <ul class="cs-image-teaser__pagination <?= $block->getVar('image_teaser/pagination/additional_css_classes') ?>"></ul>
                 <?php endif; ?>
                 <?php if ($imageTeaser['currentScenario']['teaserWidth']['id'] == 'c' or $imageTeaser['currentScenario']['teaserWidth']['id'] == 'c-s'): ?>
             </div>

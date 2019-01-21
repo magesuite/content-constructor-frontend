@@ -10,7 +10,7 @@ $tag = $viewModel->getHeadingTag();
 <div <?php if (!empty($visibility)): ?> class="<?=$visibility?>" <?php endif; ?>>
     <div class="cs-container cs-container--headline">
         <div class="cs-container__inner">
-            <div class="cs-headline <?= $block->getVar('headline/mix'); ?>">
+            <div class="cs-headline <?= $block->getVar('headline/additional_css_classes'); ?>">
                 <<?=$tag?> class="cs-headline__title"><?= $viewModel->getTitle() ?></<?=$tag?>>
                 <?php if ($viewModel->getSubtitle()): ?>
                     <p class="cs-headline__subtitle"><?= $viewModel->getSubtitle() ?></p>

@@ -10,7 +10,7 @@ $visibility = $block->getVisibilityClass();
 <div <?php if (!empty($visibility)): ?> class="<?=$visibility?>" <?php endif; ?>>
     <div class="cs-container cs-container--button">
         <div class="cs-container__inner">
-            <a href="<?=$viewModel->getHref()?>" class="cs-button-component <?=$block->getVar('button/mix');?>">
+            <a href="<?=$viewModel->getHref()?>" class="cs-button-component <?=$block->getVar('button/additional_css_classes');?>">
                 <span class="cs-button-component__span">
                     <?=$viewModel->getLabel()?>
 
@@ -19,11 +19,9 @@ $visibility = $block->getVisibilityClass();
                     <span class="cs-button-component__amount"><?=$numberOfProducts?></span>
                     <?php endif; ?>
                 </span>
-                <?php if($block->getVar('button/icon/show')): ?>
-                    <svg class="cs-button-component__icon">
-                        <use xlink:href="<?php echo $block->getVar('button/icon/path'); ?>"></use>
-                    </svg>
-                <?php endif; ?>
+                <svg class="cs-button-component__icon">
+                    <use xlink:href="<?php echo $block->getVar('button/icon_path'); ?>"></use>
+                </svg>
             </a>
         </div>
     <div>
