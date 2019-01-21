@@ -11,7 +11,7 @@ $visibility = $block->getVisibilityClass();
 <div <?php if (!empty($visibility)): ?> class="<?=$visibility?>" <?php endif; ?>>
     <div class="cs-container cs-container--category-links">
         <div class="cs-container__inner">
-            <div class="cs-category-links <?php if(!$viewModel->hasSubcategories()): ?>cs-category-links--no-subcats <?php endif; ?><?= $block->getVar('category_links/mix'); ?>" data-mage-init='{"collapsible":{"mediaQueryScope":"(max-width: 767px)"}}'>
+            <div class="cs-category-links <?php if(!$viewModel->hasSubcategories()): ?>cs-category-links--no-subcats <?php endif; ?><?= $block->getVar('category_links/additional_css_classes'); ?>" data-mage-init='{"collapsible":{"mediaQueryScope":"(max-width: 767px)"}}'>
             <?php if($block->getVar('category_links/show_title')): ?>
                 <h2 class="cs-category-links__title"><?= $categories['main_category']['name'] ?></h2>
             <?php endif; ?>

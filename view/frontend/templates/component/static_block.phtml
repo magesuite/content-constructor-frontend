@@ -11,7 +11,7 @@ $resetStyles = $viewModel->getData('resetstyles');
 <div <?php if (!empty($visibility)): ?> class="<?=$visibility?>" <?php endif; ?>>
     <div class="cs-container cs-container--static-block">
         <div class="cs-container__inner">
-            <div class="<?php if (!$resetStyles): ?>cs-static-cms-block<?php endif; ?> cs-cms-block <?php if ($resetStyles): ?>cs-static-cms-block-resetstyles<?php endif; ?> <?=$block->getVar('static_block/mix');?>">
+            <div class="<?php if (!$resetStyles): ?>cs-static-cms-block<?php endif; ?> cs-cms-block <?php if ($resetStyles): ?>cs-static-cms-block-resetstyles<?php endif; ?> <?=$block->getVar('static_block/additional_css_classes');?>">
                 <?=$viewModel->getContent()?>
             </div>
         </div>

@@ -12,7 +12,7 @@ $navIconNextPath = $block->getVar('product_carousel/navigation/arrows/next/path'
 <div <?php if (!empty($visibility)): ?> class="<?=$visibility?>" <?php endif; ?>>
     <div class="cs-container cs-container--products-carousel">
         <div class="cs-container__inner">
-            <div class="cs-products-carousel">
+            <div class="cs-products-carousel <?=$block->getVar('product_carousel/additional_css_classes');?>">
                 <div class="cs-products-carousel__carousel">
                     <div class="cs-products-carousel__wrapper">
                         <ul class="cs-products-carousel__slides">
@@ -29,7 +29,7 @@ $navIconNextPath = $block->getVar('product_carousel/navigation/arrows/next/path'
                     </div>
 
                     <?php if ($block->getVar('product_carousel/navigation/show')): ?>
-                        <button class="cs-products-carousel__nav cs-products-carousel__nav--prev <?= $block->getVar('brand_carousel/navigation/arrows/prev/mix') ?>" type="button">
+                        <button class="cs-products-carousel__nav cs-products-carousel__nav--prev <?= $block->getVar('brand_carousel/navigation/arrows/prev/additional_css_classes') ?>" type="button">
                             <svg class="cs-products-carousel__nav-icon">
                                 <use
                                     xlink:href="<?= $navIconPrevPath ?>"
@@ -37,7 +37,7 @@ $navIconNextPath = $block->getVar('product_carousel/navigation/arrows/next/path'
                                 </use>
                             </svg>
                         </button>
-                        <button class="cs-products-carousel__nav cs-products-carousel__nav--next <?= $block->getVar('brand_carousel/navigation/arrows/next/mix') ?>" type="button">
+                        <button class="cs-products-carousel__nav cs-products-carousel__nav--next <?= $block->getVar('brand_carousel/navigation/arrows/next/additional_css_classes') ?>" type="button">
                             <svg class="cs-products-carousel__nav-icon">
                                 <use
                                     xlink:href="<?= $navIconNextPath ?>"
@@ -48,7 +48,7 @@ $navIconNextPath = $block->getVar('product_carousel/navigation/arrows/next/path'
                     <?php endif; ?>
 
                     <?php if ($block->getVar('product_carousel/show_pagination')): ?>
-                        <ul class="cs-products-carousel__pagination <?= $block->getVar('product_carousel/pagination/mix') ?>"></ul>
+                        <ul class="cs-products-carousel__pagination <?= $block->getVar('product_carousel/pagination/additional_css_classes') ?>"></ul>
                     <?php endif; ?>
                 </div>
             </div>

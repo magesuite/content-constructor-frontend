@@ -6,7 +6,7 @@ $visibility = $block->getVisibilityClass();
 <div <?php if (!empty($visibility)): ?> class="<?=$visibility?>" <?php endif; ?>>
     <div class="cs-container cs-container--separator">
         <div class="cs-container__inner">
-            <hr class="cs-separator <?=$block->getVar('separator/mix');?>">
+            <hr class="cs-separator <?=$block->getVar('separator/additional_css_classes');?>">
         </div>
     </div>
 </div>
