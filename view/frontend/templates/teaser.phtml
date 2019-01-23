@@ -1,0 +1,73 @@
+<?php 
+    /**
+     * Single teaser template
+     *
+     * @var $block \Magento\Framework\View\Element\Template
+     */
+?>
+<?php
+    $teaser = $block->getTeaserData();
+    $teaserId = $block->getTeaserId();
+    $gridClass = $block->getGridClass();
+    $brickClass = $block->getBrickClass();
+
+    $teaserBrickClass = $brickClass . ' ' . $brickClass . '--teaser';
+    if($teaser['size']['x'] == 2) {
+        $teaserBrickClass .= ' ' .$brickClass . '--x2';
+    }
+    if($teaser['size']['y'] == 2) {
+        $teaserBrickClass .= ' ' . $brickClass . '--y2';
+    }
+?>
+
+<<?= $block->getHtmlTag() ?? 'div' ?> class="<?= $teaserBrickClass ?>" data-teaser-id="<?= $teaserId ?>">
+    <div class="<?= $gridClass ?>__teaser <?= $gridClass ?>__teaser--scheme-<?= $teaser['colorScheme'] ?>">
+        <?php if($teaser['href'] != ''): ?>
+            <a href="<?php echo $teaser['href'] ?>" class="<?php /* @escapeNotVerified */ echo $gridClass; ?>__teaser-content-wrapper">
+        <?php else: ?>
+            <div class="<?php /* @escapeNotVerified */ echo $gridClass; ?>__teaser-content-wrapper">
+        <?php endif; ?>
+
+            <figure class="<?php /* @escapeNotVerified */ echo $gridClass; ?>__teaser-figure">
+                <?php // @TODO: unify image structure ?>
+                <img
+                    class="<?php /* @escapeNotVerified */ echo $gridClass; ?>__teaser-image lazyload"
+                    src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                    data-src="<?= $teaser['image']['src'] ?>"
+                    <?php if ($teaser['image']['srcSet']): ?>data-srcset="<?= $teaser['image']['srcSet'] ?>"<?php endif; ?>
+                    alt="<?= isset($teaser['image']['alt']) ? $teaser['image']['alt'] : '' ?>"
+                >
+                <noscript>
+                    <img
+                        class="<?php /* @escapeNotVerified */ echo $gridClass; ?>__teaser-image"
+                        src="<?= $teaser['image']['src'] ?>"
+                        <?php if ($teaser['image']['srcSet']): ?> srcset="<?= $teaser['image']['srcSet'] ?>"<?php endif; ?>
+                        alt="<?= isset($teaser['image']['alt']) ? $teaser['image']['alt'] : '' ?>"
+                    >
+                </noscript>
+            </figure>
+            <div class="<?php /* @escapeNotVerified */ echo $gridClass; ?>__teaser-content <?php /* @escapeNotVerified */ echo $gridClass; ?>__teaser-content--<?php echo $teaser['displayVariant'] ?>">
+                <?php if($teaser['headline'] != '') {
+                    echo '<h4 class="' . $gridClass . '__teaser-headline">'.$teaser['headline'].'</h4>';
+                }
+                if($teaser['subheadline'] != '') {
+                    echo '<span class="' . $gridClass . '__teaser-subheadline">'.$teaser['subheadline'].'</span>';
+                }
+                if($teaser['paragraph'] != '') {
+                    echo '<p class="' . $gridClass . '__teaser-text">'.$teaser['paragraph'].'</p>';
+                }
+                if($teaser['ctaLabel'] != '' && $teaser['href'] != '') {
+                    echo '<span role="button" class="cs-button cs-button--type_long cs-button--look_default">
+                        <span class="cs-button__span">'.$teaser['ctaLabel'].'</span>
+                        <svg class="cs-button__icon"><use xlink:href="#arrow_next"></use></svg>
+                    </span>';
+                } ?>
+            </div>
+
+        <?php if($teaser['href'] != ''): ?>
+            </a>
+        <?php else: ?>
+            </div>
+        <?php endif; ?>
+    </div>
+</<?= $block->getHtmlTag() ?? 'div' ?>>

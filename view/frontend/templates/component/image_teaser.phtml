@@ -49,7 +49,7 @@ if ($imageTeaser['currentScenario']['mobileLayout']['id'] == '1-2-1') {
     $mix .= ' cs-image-teaser--mobile-cfg-big-small-small-big';
 }
 
-if ($imageTeaser['currentScenario']['textPositioning']['id'] == 'over') {
+if (isset($imageTeaser['currentScenario']['textPositioning']['id']) && $imageTeaser['currentScenario']['textPositioning']['id'] == 'over') {
     $displayVariant = 'inside';
 }
 
