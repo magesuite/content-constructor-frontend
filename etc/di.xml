@@ -148,7 +148,13 @@
             <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\StaticBlock</argument>
         </arguments>
     </type>
-    
+
+    <type name="MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser">
+        <arguments>
+            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\DailyDealTeaser</argument>
+        </arguments>
+    </type>
+
     <type name="MageSuite\ContentConstructorFrontend\Service\ComponentPool">
         <arguments>
             <argument name="components" xsi:type="array">
@@ -166,6 +172,7 @@
                 <item name="custom-html" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\CustomHtml</item>
                 <item name="cms-teaser" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\CmsTeaser</item>
                 <item name="product-finder" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\ProductFinder</item>
+                <item name="daily-deal-teaser" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser</item>
             </argument>
         </arguments>
     </type>
