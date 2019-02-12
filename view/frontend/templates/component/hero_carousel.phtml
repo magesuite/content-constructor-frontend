@@ -15,7 +15,7 @@ if ($componentConfiguration['mobileDisplayVariant']['id'] == 'list') {
 
 ?>
 
-<div <?php if (!empty($visibility)): ?> class="<?=$visibility?>" <?php endif; ?>>
+<div <?= empty($visibility) ? '' : 'class="' . $visibility . '"'; ?>>
     <div class="cs-container cs-container--hero">
         <div class="cs-container__inner">
             <div class="cs-hero <?= $mobileDisplayVariantClass ?> <?= $block->getVar('hero_carousel/additional_css_classes'); ?>">
@@ -61,12 +61,17 @@ if ($componentConfiguration['mobileDisplayVariant']['id'] == 'list') {
 
                                                 <?php if ($slide->getHref() and $slide->getData('ctaLabel')): ?>
                                                     <div class="cs-hero__cta">
-                                                <span role="button"
-                                                      class="cs-button cs-button--type_long cs-button--look_default">
-                                                    <span class="cs-button__span"><?= $slide->getData('ctaLabel') ?></span>
-                                                    <svg class="cs-button__icon">
-                                                        <use xlink:href="<?= $block->getVar('hero_carousel/cta_button_icon_path') ?>"></use>
-                                                    </svg>
+                                                <span role="button" class="cs-hero__cta-button">
+                                                    <span class="cs-hero__cta-button-span"><?= $slide->getData('ctaLabel') ?></span>
+                                                    <?= $this->getLayout()
+                                                                ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+                                                                ->setIconUrl($block->getVar('hero_carousel/cta_button_icon_path'))
+                                                                ->setCssClass('cs-hero__cta-button-icon')
+                                                                ->setInlined(true)
+                                                                ->setLazyLoaded(false)
+                                                                ->toHtml(); 
+                                                    ?>
+
                                                 </span>
                                                     </div>
                                                 <?php endif; ?>
@@ -84,15 +89,23 @@ if ($componentConfiguration['mobileDisplayVariant']['id'] == 'list') {
                 <?php if($block->getVar('hero_carousel/navigation/show')): ?>
                     <button class="cs-hero__nav cs-hero__nav--prev <?= $block->getVar('hero_carousel/navigation/arrows/prev/additional_css_classes') ?>"
                             type="button">
-                        <svg class="cs-hero__nav-icon">
-                            <use xlink:href="<?php echo $block->getVar('hero_carousel/navigation/arrows/prev/path'); ?>"></use>
-                        </svg>
+                            <?= $this->getLayout()
+                                        ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+                                        ->setIconUrl($block->getVar('hero_carousel/navigation/arrows/prev/path'))
+                                        ->setCssClass('cs-hero__nav-icon')
+                                        ->setInlined(true)
+                                        ->toHtml(); 
+                            ?>
                     </button>
                     <button class="cs-hero__nav cs-hero__nav--next <?= $block->getVar('hero_carousel/navigation/arrows/next/additional_css_classes') ?>"
                             type="button">
-                        <svg class="cs-hero__nav-icon">
-                            <use xlink:href="<?php echo $block->getVar('hero_carousel/navigation/arrows/next/path'); ?>"></use>
-                        </svg>
+                            <?= $this->getLayout()
+                                        ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+                                        ->setIconUrl($block->getVar('hero_carousel/navigation/arrows/next/path'))
+                                        ->setCssClass('cs-hero__nav-icon')
+                                        ->setInlined(true)
+                                        ->toHtml(); 
+                            ?>
                     </button>
                 <?php endif; ?>
 
