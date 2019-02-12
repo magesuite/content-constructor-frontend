@@ -10,13 +10,13 @@ $linkTag = !empty($hero->getHref()) ? 'a' : 'div';
 $isLazyLoaded = $block->getVar('product_grid/lazyload_heros_images');
 ?>
 
-<div <?php if (!empty($visibility)): ?> class="<?=$visibility?>" <?php endif; ?>>
+<div <?= empty($visibility) ? '' : 'class="' . $visibility . '"'; ?>>
     <div class="cs-container cs-container--products-grid">
         <div class="cs-container__inner">
             <div class="cs-products-grid <?= $viewModel->hasHero() ? 'cs-products-grid--with-hero' : '' ?> <?= $block->getVar('product_grid/additional_css_classes'); ?>"
-                 data-rows-mobile="<?= $viewModel->getRowsMobile() ?>"
-                 data-rows-tablet="<?= $viewModel->getRowsTablet() ?>"
-                 data-rows-desktop="<?= $viewModel->getRowsDesktop() ?>"
+                data-rows-mobile="<?= $viewModel->getRowsMobile() ?>"
+                data-rows-tablet="<?= $viewModel->getRowsTablet() ?>"
+                data-rows-desktop="<?= $viewModel->getRowsDesktop() ?>"
             >
                 <?php
                 $teasersConfiguration = $block->getVar('product_grid/teasers_configuration');
@@ -70,13 +70,18 @@ $isLazyLoaded = $block->getVar('product_grid/lazyload_heros_images');
                                         <?php endif ?>
 
                                         <?php if ($hero->getHref() and $hero->getButtonLabel()): ?>
-                                            <div class="cs-products-grid__hero-cta">
+                                            <div class="cs-grid-layout__teaser-cta cs-products-grid__teaser-cta">
                                                 <span role="button"
-                                                      class="cs-button cs-button--type_long cs-button--look_default | cs-products-grid__button">
-                                                      <span class="cs-button__span"><?= $hero->getButtonLabel() ?></span>
-                                                          <svg class="cs-button__icon">
-                                                              <use xlink:href="<?php echo $block->getVar('product_grid/cta_button_icon_path'); ?>"></use>
-                                                          </svg>
+                                                    class="cs-grid-layout__teaser-cta-button cs-products-grid__hero-cta-button">
+                                                    <span class="cs-grid-layout__teaser-cta-button-span cs-products-grid__hero-cta-button-span"><?= $hero->getButtonLabel() ?></span>
+                                                    <?= $this->getLayout()
+                                                                ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+                                                                ->setIconUrl($block->getVar('product_grid/cta_button_icon_path'))
+                                                                ->setCssClass('cs-grid-layout__teaser-cta-button-icon cs-products-grid__hero-cta-button-icon')
+                                                                ->setInlined(true)
+                                                                ->setLazyLoaded(false)
+                                                                ->toHtml(); 
+                                                    ?>
                                                 </span>
                                             </div>
                                         <?php endif; ?>
