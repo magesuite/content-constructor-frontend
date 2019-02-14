@@ -3,8 +3,6 @@
 $viewModel = $block->getViewModel();
 $visibility = $block->getVisibilityClass();
 $maxContentWidth = $block->getVar('max_content_width');
-$navIconPrevPath = $block->getVar('image_teaser/navigation/arrows/prev/path');
-$navIconNextPath = $block->getVar('image_teaser/navigation/arrows/next/path');
 
 $imageTeaser = $block->getData();
 $itemsPerRow = $imageTeaser['currentScenario']['desktopLayout']['id'];
@@ -144,11 +142,16 @@ $sizes = $sizesMobile . ', ' . $sizesDesktop;
                                                 <?php if ($slide->getHref() and $slide->getData('ctaLabel')): ?>
                                                     <div class="cs-image-teaser__cta">
                                                     <span role="button"
-                                                          class="cs-button cs-button--type_long cs-button--look_default">
-                                                        <span class="cs-button__span"><?= $slide->getData('ctaLabel') ?></span>
-                                                        <svg class="cs-button__icon">
-                                                            <use xlink:href="<?= $block->getVar('image_teaser/cta_button_icon_path') ?>"></use>
-                                                        </svg>
+                                                          class="cs-image-teaser__cta-button">
+                                                        <span class="cs-image-teaser__cta-button-span"><?= $slide->getData('ctaLabel') ?></span>
+                                                        <?= $this->getLayout()
+                                                            ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+                                                            ->setIconUrl($block->getVar('image_teaser/cta_button_icon_path'))
+                                                            ->setCssClass('cs-image-teaser__cta-button-icon')
+                                                            ->setInlined(true)
+                                                            ->setLazyLoaded(false)
+                                                            ->toHtml(); 
+                                                        ?>
                                                     </span>
                                                     </div>
                                                 <?php endif; ?>
@@ -165,21 +168,25 @@ $sizes = $sizesMobile . ', ' . $sizesDesktop;
                     <?php if (($isSlider or $isSliderMobile) && $block->getVar('image_teaser/navigation/show')): ?>
                         <button class="cs-image-teaser__nav cs-image-teaser__nav--prev"
                                 type="button">
-                            <svg class="cs-image-teaser__nav-icon">
-                                <use
-                                    xlink:href="<?= $navIconPrevPath ?>"
-                                    href="<?= $navIconPrevPath ?>">
-                                </use>
-                            </svg>
+                            <?= $this->getLayout()
+                                    ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+                                    ->setIconUrl($block->getVar('image_teaser/navigation/arrows/prev/path'))
+                                    ->setCssClass('cs-image-teaser__nav-icon')
+                                    ->setInlined(true)
+                                    ->setLazyLoaded(false)
+                                    ->toHtml(); 
+                            ?>
                         </button>
                         <button class="cs-image-teaser__nav cs-image-teaser__nav--next"
                                 type="button">
-                            <svg class="cs-image-teaser__nav-icon">
-                                <use
-                                    xlink:href="<?= $navIconNextPath ?>"
-                                    href="<?= $navIconNextPath ?>">
-                                </use>
-                            </svg>
+                            <?= $this->getLayout()
+                                ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+                                ->setIconUrl($block->getVar('image_teaser/navigation/arrows/next/path'))
+                                ->setCssClass('cs-image-teaser__nav-icon')
+                                ->setInlined(true)
+                                ->setLazyLoaded(false)
+                                ->toHtml(); 
+                            ?>
                         </button>
                     <?php endif; ?>
 
