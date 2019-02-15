@@ -128,8 +128,8 @@ $isLazyLoaded = $block->getVar('daily_deal_teaser/lazyload_image');
                             <?php if($block->getVar('daily_deal_teaser/discount_badge/show') && $product['dailyDealOffer']['discountPercentage']): ?>
                             <div class="cs-daily-deal-teaser__discount">
                                 <span class="cs-daily-deal-teaser__badge-wrapper cs-dailydeal__badge cs-dailydeal__badge--dd-discount">
-                                    <span class="cs-badge cs-badge--cut cs-badge--attention cs-daily-deal-teaser__badge">
-                                        <span class="cs-badge__span cs-daily-deal-teaser__badge-text">
+                                    <span class="cs-daily-deal-teaser__badge cs-daily-deal-teaser__badge--discount">
+                                        <span class="cs-daily-deal-teaser__badge-text">
 
                                         <?php if($block->getVar('daily_deal_teaser/discount_badge/show_sale_label')): ?>
                                             <?=__('Sale')?>
