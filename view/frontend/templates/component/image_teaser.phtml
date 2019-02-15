@@ -1,6 +1,8 @@
 <?php
 /** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser */
 $viewModel = $block->getViewModel();
+$visibility = $block->getVisibilityClass();
+$maxContentWidth = $block->getVar('max_content_width');
 
 $imageTeaser = $block->getData();
 $itemsPerRow = $imageTeaser['currentScenario']['desktopLayout']['id'];
@@ -13,7 +15,7 @@ $displayVariant = 'outside';
 $isSlider = false;
 $isSliderMobile = false;
 
-$mix = '';
+$mix = $block->getMix();
 
 if (in_array($imageTeaser['currentScenario']['mobileLayout']['id'], ['large', 'slider', 'col'])) {
     $itemsPerRowMobile = 1;
@@ -45,7 +47,7 @@ if ($imageTeaser['currentScenario']['mobileLayout']['id'] == '1-2-1') {
     $mix .= ' cs-image-teaser--mobile-cfg-big-small-small-big';
 }
 
-if ($imageTeaser['currentScenario']['textPositioning']['id'] == 'over') {
+if (isset($imageTeaser['currentScenario']['textPositioning']['id']) && $imageTeaser['currentScenario']['textPositioning']['id'] == 'over') {
     $displayVariant = 'inside';
 }
 
@@ -56,17 +58,17 @@ if ($imageTeaser['currentScenario']['teaserWidth']['id'] == 'w-s') {
     $sizesMobile = '(max-width: 48em) 80vw';
     $sizesDesktop = (80 / $itemsPerView) . 'vw';
 } else if ($imageTeaser['currentScenario']['teaserWidth']['id'] == 'c') {
-    $sizesDesktop = '(min-width: 1200px) ' . (1200 / $itemsPerView) . 'px, ' . $sizesDesktop;
+    $sizesDesktop = '(min-width: ' . $maxContentWidth . 'px) ' . ($maxContentWidth / $itemsPerView) . 'px, ' . $sizesDesktop;
 }
 
 $sizes = $sizesMobile . ', ' . $sizesDesktop;
 ?>
 
-<div class="cs-container cs-container--edge-to-edge">
-    <?php if ($imageTeaser['currentScenario']['teaserWidth']['id'] == 'c' or $imageTeaser['currentScenario']['teaserWidth']['id'] == 'c-s'): ?>
-    <div class="cs-container__inner">
+<div <?php if (!empty($visibility)): ?> class="<?=$visibility?>" <?php endif; ?>>
+    <div class="cs-container cs-container--image-teaser">
+        <?php if ($imageTeaser['currentScenario']['teaserWidth']['id'] == 'c' or $imageTeaser['currentScenario']['teaserWidth']['id'] == 'c-s'): ?>
+        <div class="cs-container__inner">
         <?php endif; ?>
-        <div class="<?=$block->getVisibilityClass()?>">
             <div class="cs-image-teaser
              cs-image-teaser--items-in-row-<?= $itemsPerRow ?>
              cs-image-teaser--items-in-row-mobile-<?= $itemsPerViewMobile ?>
@@ -140,10 +142,16 @@ $sizes = $sizesMobile . ', ' . $sizesDesktop;
                                                 <?php if ($slide->getHref() and $slide->getData('ctaLabel')): ?>
                                                     <div class="cs-image-teaser__cta">
                                                     <span role="button"
-                                                          class="cs-button cs-button--type_long cs-button--look_default">
-                                                        <span class="cs-button__span"><?= $slide->getData('ctaLabel') ?></span>
-                                                        <svg class="cs-button__icon"><use
-                                                                    xlink:href="#arrow_next"></use></svg>
+                                                          class="cs-image-teaser__cta-button">
+                                                        <span class="cs-image-teaser__cta-button-span"><?= $slide->getData('ctaLabel') ?></span>
+                                                        <?= $this->getLayout()
+                                                            ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+                                                            ->setIconUrl($block->getVar('image_teaser/cta_button_icon_path'))
+                                                            ->setCssClass('cs-image-teaser__cta-button-icon')
+                                                            ->setInlined(true)
+                                                            ->setLazyLoaded(false)
+                                                            ->toHtml(); 
+                                                        ?>
                                                     </span>
                                                     </div>
                                                 <?php endif; ?>
@@ -157,25 +165,35 @@ $sizes = $sizesMobile . ', ' . $sizesDesktop;
                         </ul>
                     </div>
 
-                    <?php if ($isSlider or $isSliderMobile): ?>
+                    <?php if (($isSlider or $isSliderMobile) && $block->getVar('image_teaser/navigation/show')): ?>
                         <button class="cs-image-teaser__nav cs-image-teaser__nav--prev"
                                 type="button">
-                            <svg class="cs-image-teaser__nav-icon">
-                                <use xlink:href="#icon_arrow-left"></use>
-                            </svg>
+                            <?= $this->getLayout()
+                                    ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+                                    ->setIconUrl($block->getVar('image_teaser/navigation/arrows/prev/path'))
+                                    ->setCssClass('cs-image-teaser__nav-icon')
+                                    ->setInlined(true)
+                                    ->setLazyLoaded(false)
+                                    ->toHtml(); 
+                            ?>
                         </button>
                         <button class="cs-image-teaser__nav cs-image-teaser__nav--next"
                                 type="button">
-                            <svg class="cs-image-teaser__nav-icon">
-                                <use xlink:href="#icon_arrow-right"></use>
-                            </svg>
+                            <?= $this->getLayout()
+                                ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+                                ->setIconUrl($block->getVar('image_teaser/navigation/arrows/next/path'))
+                                ->setCssClass('cs-image-teaser__nav-icon')
+                                ->setInlined(true)
+                                ->setLazyLoaded(false)
+                                ->toHtml(); 
+                            ?>
                         </button>
                     <?php endif; ?>
 
                 </div>
 
-                <?php if ($isSliderMobile): ?>
-                    <ul class="cs-image-teaser__pagination"></ul>
+                <?php if (($isSlider or $isSliderMobile) && $block->getVar('image_teaser/pagination/show')): ?>
+                    <ul class="cs-image-teaser__pagination <?= $block->getVar('image_teaser/pagination/additional_css_classes') ?>"></ul>
                 <?php endif; ?>
                 <?php if ($imageTeaser['currentScenario']['teaserWidth']['id'] == 'c' or $imageTeaser['currentScenario']['teaserWidth']['id'] == 'c-s'): ?>
             </div>
