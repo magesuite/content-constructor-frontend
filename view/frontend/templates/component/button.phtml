@@ -5,12 +5,15 @@ $componentConfiguration = $block->getData();
 /** @var \MageSuite\ContentConstructorFrontend\Model\Component\Button $viewModel */
 $viewModel = $block->getViewModel();
 $visibility = $block->getVisibilityClass();
+
+$componentClasses = $block->getSkipSpacing() ? ' cs-button--skip-spacing ' : ''; 
+$componentClasses .= ' ' . $block->getVar('button/additional_css_classes');
 ?>
 
-<div <?php if (!empty($visibility)): ?> class="<?=$visibility?>" <?php endif; ?>>
+<div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
     <div class="cs-container cs-container--button">
         <div class="cs-container__inner">
-            <a href="<?=$viewModel->getHref()?>" class="cs-button-component <?=$block->getVar('button/additional_css_classes');?>">
+            <a href="<?=$viewModel->getHref()?>" class="cs-button-component<?= $componentClasses ?>">
                 <span class="cs-button-component__span">
                     <?=$viewModel->getLabel()?>
 
@@ -20,7 +23,13 @@ $visibility = $block->getVisibilityClass();
                     <?php endif; ?>
                 </span>
                 <svg class="cs-button-component__icon">
-                    <use xlink:href="<?php echo $block->getVar('button/icon_path'); ?>"></use>
+                    <?= $this->getLayout()
+                            ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+                            ->setIconUrl($block->getVar('button/icon_path'))
+                            ->setCssClass('cs-button-component__icon')
+                            ->setInlined(true)
+                            ->toHtml(); 
+                    ?>
                 </svg>
             </a>
         </div>

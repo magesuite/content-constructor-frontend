@@ -5,12 +5,15 @@ $componentConfiguration = $block->getData();
 /** @var \MageSuite\ContentConstructorFrontend\Model\Component\Paragraph $viewModel */
 $viewModel = $block->getViewModel();
 $visibility = $block->getVisibilityClass();
+
+$componentClasses = $block->getSkipSpacing() ? ' cs-paragraph--skip-spacing' : ''; 
+$componentClasses .= ' ' . $block->getVar('paragraph/additional_css_classes');
 ?>
 
-<div <?php if (!empty($visibility)): ?> class="<?=$visibility?>" <?php endif; ?>>
+<div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
     <div class="cs-container cs-container--paragraph">
         <div class="cs-container__inner">
-            <div class="cs-paragraph cs-paragraph--cols-<?=$viewModel->getColumns()?> cs-paragraph--mode-<?=$componentConfiguration['scenarios']['reading']['id'] ?? ''?> <?= $block->getVar('paragraph/additional_css_classes'); ?> | cs-cms-block">
+            <div class="cs-paragraph cs-paragraph--cols-<?=$viewModel->getColumns()?> cs-paragraph--mode-<?=$componentConfiguration['scenarios']['reading']['id'] ?? ''?><?= $componentClasses ?> | cs-cms-block">
                 <?=$viewModel->getContent()?>
             </div>
         </div>
