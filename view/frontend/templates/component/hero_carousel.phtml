@@ -5,20 +5,21 @@ $componentConfiguration = $block->getData();
 /** @var \MageSuite\ContentConstructorFrontend\Model\Component\HeroCarousel $viewModel */
 $viewModel = $block->getViewModel();
 $visibility = $block->getVisibilityClass();
-$mobileDisplayVariantClass = '';
 
+$componentClasses = '';
 if ($componentConfiguration['mobileDisplayVariant']['id'] == 'list') {
-    $mobileDisplayVariantClass = 'cs-hero--as-list-mobile';
+    $componentClasses .= ' cs-hero--as-list-mobile';
 } else if ($componentConfiguration['mobileDisplayVariant']['id'] == 'hidden') {
-    $mobileDisplayVariantClass = 'cs-hero--hidden-mobile';
+    $componentClasses .= ' cs-hero--hidden-mobile';
 }
-
+$componentClasses .= $block->getSkipSpacing() ? ' cs-hero--skip-spacing' : ''; 
+$componentClasses .= ' ' . $block->getVar('hero_carousel/additional_css_classes');
 ?>
 
-<div <?= empty($visibility) ? '' : 'class="' . $visibility . '"'; ?>>
+<div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
     <div class="cs-container cs-container--hero">
         <div class="cs-container__inner">
-            <div class="cs-hero <?= $mobileDisplayVariantClass ?> <?= $block->getVar('hero_carousel/additional_css_classes'); ?>">
+            <div class="cs-hero<?= $componentClasses ?>">
                 <div class="cs-hero__carousel">
                     <div class="cs-hero__wrapper">
                         <ul class="cs-hero__slides">
@@ -64,14 +65,13 @@ if ($componentConfiguration['mobileDisplayVariant']['id'] == 'list') {
                                                 <span role="button" class="cs-hero__cta-button">
                                                     <span class="cs-hero__cta-button-span"><?= $slide->getData('ctaLabel') ?></span>
                                                     <?= $this->getLayout()
-                                                                ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
-                                                                ->setIconUrl($block->getVar('hero_carousel/cta_button_icon_path'))
-                                                                ->setCssClass('cs-hero__cta-button-icon')
-                                                                ->setInlined(true)
-                                                                ->setLazyLoaded(false)
-                                                                ->toHtml(); 
+                                                            ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+                                                            ->setIconUrl($block->getVar('hero_carousel/cta_button_icon_path'))
+                                                            ->setCssClass('cs-hero__cta-button-icon')
+                                                            ->setInlined(true)
+                                                            ->setLazyLoaded(false)
+                                                            ->toHtml(); 
                                                     ?>
-
                                                 </span>
                                                     </div>
                                                 <?php endif; ?>
@@ -87,28 +87,25 @@ if ($componentConfiguration['mobileDisplayVariant']['id'] == 'list') {
                 </div>
 
                 <?php if($block->getVar('hero_carousel/navigation/show')): ?>
-                    <button class="cs-hero__nav cs-hero__nav--prev <?= $block->getVar('hero_carousel/navigation/arrows/prev/additional_css_classes') ?>"
-                            type="button">
-                            <?= $this->getLayout()
-                                        ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
-                                        ->setIconUrl($block->getVar('hero_carousel/navigation/arrows/prev/path'))
-                                        ->setCssClass('cs-hero__nav-icon')
-                                        ->setInlined(true)
-                                        ->toHtml(); 
-                            ?>
+                    <button class="cs-hero__nav cs-hero__nav--prev <?= $block->getVar('hero_carousel/navigation/arrows/prev/additional_css_classes') ?>" type="button">
+                        <?= $this->getLayout()
+                            ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+                            ->setIconUrl($block->getVar('hero_carousel/navigation/arrows/prev/path'))
+                            ->setCssClass("cs-hero__nav-icon")
+                            ->setInlined(true)
+                            ->toHtml(); 
+                        ?>
                     </button>
-                    <button class="cs-hero__nav cs-hero__nav--next <?= $block->getVar('hero_carousel/navigation/arrows/next/additional_css_classes') ?>"
-                            type="button">
-                            <?= $this->getLayout()
-                                        ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
-                                        ->setIconUrl($block->getVar('hero_carousel/navigation/arrows/next/path'))
-                                        ->setCssClass('cs-hero__nav-icon')
-                                        ->setInlined(true)
-                                        ->toHtml(); 
-                            ?>
+                    <button class="cs-hero__nav cs-hero__nav--next <?= $block->getVar('hero_carousel/navigation/arrows/next/additional_css_classes') ?>" type="button">
+                        <?= $this->getLayout()
+                            ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+                            ->setIconUrl($block->getVar('hero_carousel/navigation/arrows/next/path'))
+                            ->setCssClass("cs-hero__nav-icon")
+                            ->setInlined(true)
+                            ->toHtml(); 
+                        ?>
                     </button>
                 <?php endif; ?>
-
 
                 <?php if($block->getVar('hero_carousel/pagination/show')): ?>
                     <ul class="cs-hero__pagination <?= $block->getVar('hero_carousel/pagination/additional_css_classes') ?>"></ul>

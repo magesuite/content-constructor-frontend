@@ -8,10 +8,10 @@ $visibility = $block->getVisibilityClass();
 $steps = $viewModel->getSteps();
 $i = 0;
 
-$componentClasses = empty($block->getVar('product_finder/additional_css_classes')) ? '' :  ' ' . $block->getVar('product_finder/additional_css_classes');
+$componentClasses = $block->getSkipSpacing() ? ' cs-product-finder--skip-spacing' : '';
+$componentClasses .= ' ' . $block->getVar('product_finder/additional_css_classes');
 ?>
-
-<div <?= empty($visibility) ? '' : 'class="' . $visibility . '"'; ?>>
+<div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
     <div class="cs-container cs-container--product-finder">
         <div class="cs-container__inner">
             <div class="cs-product-finder<?= $componentClasses ?>">
@@ -69,12 +69,12 @@ $componentClasses = empty($block->getVar('product_finder/additional_css_classes'
                     </div>
                     <button class="cs-product-finder__back-button">
                         <span class="cs-product-finder__back-button-span"><?=__("Go to previous step")?></span>
-                        <?= $this   ->getLayout()
-                                        ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
-                                        ->setIconUrl($block->getVar('product_finder/button_icon_path'))
-                                        ->setCssClass('cs-product-finder__back-button-icon')
-                                        ->setInlined(true)
-                                        ->toHtml(); 
+                        <?= $this->getLayout()
+                                ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+                                ->setIconUrl($block->getVar('product_finder/button_icon_path'))
+                                ->setCssClass('cs-product-finder__back-button-icon')
+                                ->setInlined(true)
+                                ->toHtml(); 
                         ?>
                     </button>
                 </article>
@@ -82,12 +82,12 @@ $componentClasses = empty($block->getVar('product_finder/additional_css_classes'
                 <?php endforeach; ?>
                 <button class="cs-product-finder__back-button">
                     <span class="cs-product-finder__back-button-span"><?=__("Go to previous step")?></span>
-                    <?= $this   ->getLayout()
-                                ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
-                                ->setIconUrl($block->getVar('product_finder/button_icon_path'))
-                                ->setCssClass('cs-product-finder__back-button-icon')
-                                ->setInlined(true)
-                                ->toHtml(); 
+                    <?= $this->getLayout()
+                            ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+                            ->setIconUrl($block->getVar('product_finder/button_icon_path'))
+                            ->setCssClass('cs-product-finder__back-button-icon')
+                            ->setInlined(true)
+                            ->toHtml(); 
                     ?>
                 </button>
                 <form class="cs-product-finder__form" method="post" action="<?=$viewModel->getRedirectEndpointUrl()?>"></form>

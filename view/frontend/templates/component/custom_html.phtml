@@ -3,6 +3,6 @@
 $visibility = $block->getVisibilityClass();
 ?>
 
-<div <?php if (!empty($visibility)): ?> class="<?=$visibility?>" <?php endif; ?>>
+<div <?= $visibility ? 'class="' . $visibility . '"' : ' '; ?>>
     <?=$block->getMarkup()?>
 </div>

@@ -19,14 +19,16 @@ $labels = [
 
 $isLazyLoaded = $block->getVar('daily_deal_teaser/lazyload_image');
 
+$componentClasses = $block->getSkipSpacing() ? ' cs-daily-deal-teaser--skip-spacing' : ''; 
+$componentClasses .= ' ' . $block->getVar('daily_deal_teaser/additional_css_classes');
 ?>
 
 <?php if (!empty($product)): ?>
 
-    <div <?php if (!empty($visibility)): ?> class="<?=$visibility?>" <?php endif; ?>">
+    <div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
         <div class="cs-container cs-container--daily-deal-teaser">
             <div class="cs-container__inner">
-                <section class="cs-daily-deal-teaser <?= $block->getVar('daily_deal_teaser/additional_css_classes'); ?>">
+                <section class="cs-daily-deal-teaser<?= $componentClasses ?>">
                     <a href="<?= $product['url'] ?>" class="cs-daily-deal-teaser__image-wrapper">
                         <figure class="cs-daily-deal-teaser__figure" role="group">
                             <img
@@ -59,9 +61,13 @@ $isLazyLoaded = $block->getVar('daily_deal_teaser/lazyload_image');
                             <figcaption class="cs-daily-deal-teaser__slogan"><?=__('Short time offer')?></figcaption>
 
                             <figure class="cs-daily-deal-teaser__slogan-icon-wrapper">
-                                <svg class="cs-daily-deal-teaser__slogan-icon">
-                                    <use xlink:href="<?php echo $block->getVar('daily_deal_teaser/slogan/icon_path'); ?>"></use>
-                                </svg>
+                                <?= $this->getLayout()
+                                        ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+                                        ->setIconUrl($block->getVar('daily_deal_teaser/slogan/icon_path'))
+                                        ->setCssClass("cs-daily-deal-teaser__slogan-icon")
+                                        ->setInlined(true)
+                                        ->toHtml(); 
+                                ?>
                             </figure>
                             <?php endif; ?>
                         </figure>
@@ -79,12 +85,12 @@ $isLazyLoaded = $block->getVar('daily_deal_teaser/lazyload_image');
                         <?php if (isset($product['rating']['data']['activeStars']) && $block->getVar('daily_deal_teaser/show_rating')): ?>
                         <div class="cs-daily-deal-teaser__product-rating">
                             <?= $this->getLayout()
-                                ->createBlock(\Magento\Framework\View\Element\Template::class)
-                                ->setMaxStars(5)
-                                ->setActiveStars($product['rating']['data']['activeStars'])
-                                ->setReviewsCount($product['rating']['data']['text'])
-                                ->setTemplate('Magento_Review::rating-stars.phtml')
-                                ->toHtml();
+                                    ->createBlock(\Magento\Framework\View\Element\Template::class)
+                                    ->setMaxStars(5)
+                                    ->setActiveStars($product['rating']['data']['activeStars'])
+                                    ->setReviewsCount($product['rating']['data']['text'])
+                                    ->setTemplate('Magento_Review::rating-stars.phtml')
+                                    ->toHtml();
                             ?>
                         </div>
                         <?php endif; ?>
