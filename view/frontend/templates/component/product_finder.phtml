@@ -38,7 +38,7 @@ $componentClasses .= ' ' . $block->getVar('product_finder/additional_css_classes
                     <?php if (!empty($step['title']) || !empty($step['description'])): ?>
                         <header class="cs-product-finder__step-header">
                             <?php if (!empty($step['title'])): ?>
-                                <h2><?=$step['title']?></h2>
+                                <h2 class="cs-product-finder__step-title"><?=$step['title']?></h2>
                             <?php endif; ?>
                             <?php if (!empty($step['description'])): ?>
                                 <p class="cs-product-finder__step-description"><?=$step['description']?></p>
