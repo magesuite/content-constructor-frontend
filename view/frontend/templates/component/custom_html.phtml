@@ -1,2 +1,8 @@
-<?php /** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\CustomHtml */ ?>
-<?=$block->getMarkup()?>
+<?php
+/** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\CustomHtml */
+$visibility = $block->getVisibilityClass();
+?>
+
+<div <?= $visibility ? 'class="' . $visibility . '"' : ' '; ?>>
+    <?=$block->getMarkup()?>
+</div>

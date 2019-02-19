@@ -8,12 +8,18 @@ $visibility = $block->getVisibilityClass();
 
 $brands = $viewModel->getBrands();
 $isLazyLoaded = $block->getVar('brand_carousel/lazyload_brand_images');
+
+$navIconPrevPath = $block->getVar('brand_carousel/navigation/arrows/prev/path');
+$navIconNextPath = $block->getVar('brand_carousel/navigation/arrows/next/path');
+
+$componentClasses = $block->getSkipSpacing() ? ' cs-brand-carousel--skip-spacing' : ''; 
+$componentClasses .= ' ' . $block->getVar('brand_carousel/additional_css_classes');
 ?>
 
-<div <?= empty($visibility) ? '' : 'class="' . $visibility . '"'; ?>>
+<div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
     <div class="cs-container cs-container--brand-carousel">
         <div class="cs-container__inner">
-            <div class="cs-brand-carousel cs-brand-carousel--slider <?= $block->getVar('brand_carousel/additional_css_classes'); ?>">
+            <div class="cs-brand-carousel cs-brand-carousel--slider<?= $componentClasses ?>">
                 <div class="cs-brand-carousel__carousel">
                     <div class="cs-brand-carousel__wrapper">
                         <ul class="cs-brand-carousel__slides">
@@ -57,28 +63,23 @@ $isLazyLoaded = $block->getVar('brand_carousel/lazyload_brand_images');
                 </div>
 
                 <?php if($block->getVar('brand_carousel/navigation/show')): ?>
-                    <button
-                        class="cs-brand-carousel__nav cs-brand-carousel__nav--prev <?= $block->getVar('brand_carousel/navigation/arrows/prev/additional_css_classes') ?>"
-                        type="button"
-                    >
+                    <button class="cs-brand-carousel__nav cs-brand-carousel__nav--prev <?= $block->getVar('brand_carousel/navigation/arrows/prev/additional_css_classes') ?>" type="button">
                         <?= $this->getLayout()
                             ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
                             ->setIconUrl($block->getVar('brand_carousel/navigation/arrows/prev/path'))
-                            ->setCssClass('cs-brand-carousel__nav-icon')
+                            ->setCssClass("cs-brand-carousel__nav-icon")
                             ->setInlined(true)
                             ->toHtml(); 
-                        ?>    
+                        ?>
                     </button>
-                    <button
-                        class="cs-brand-carousel__nav cs-brand-carousel__nav--next <?= $block->getVar('brand_carousel/navigation/arrows/next/additional_css_classes') ?>"
-                        type="button">
+                    <button class="cs-brand-carousel__nav cs-brand-carousel__nav--next <?= $block->getVar('brand_carousel/navigation/arrows/next/additional_css_classes') ?>" type="button">
                         <?= $this->getLayout()
                             ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
                             ->setIconUrl($block->getVar('brand_carousel/navigation/arrows/next/path'))
-                            ->setCssClass('cs-brand-carousel__nav-icon')
+                            ->setCssClass("cs-brand-carousel__nav-icon")
                             ->setInlined(true)
                             ->toHtml(); 
-                        ?>  
+                        ?>
                     </button>
                 <?php endif; ?>
 

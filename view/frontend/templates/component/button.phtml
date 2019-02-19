@@ -4,19 +4,34 @@ $componentConfiguration = $block->getData();
 
 /** @var \MageSuite\ContentConstructorFrontend\Model\Component\Button $viewModel */
 $viewModel = $block->getViewModel();
+$visibility = $block->getVisibilityClass();
+
+$componentClasses = $block->getSkipSpacing() ? ' cs-button--skip-spacing ' : ''; 
+$componentClasses .= ' ' . $block->getVar('button/additional_css_classes');
 ?>
 
-<div class="<?=$block->getVisibilityClass()?>">
-    <a href="<?=$viewModel->getHref()?>" class="cs-button cs-button--type_more-content">
-        <?=$viewModel->getLabel()?>
+<div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
+    <div class="cs-container cs-container--button">
+        <div class="cs-container__inner">
+            <a href="<?=$viewModel->getHref()?>" class="cs-button-component<?= $componentClasses ?>">
+                <span class="cs-button-component__span">
+                    <?=$viewModel->getLabel()?>
 
-        <?php $numberOfProducts = $viewModel->getNumberOfProducts(); ?>
-        <?php if(is_numeric($numberOfProducts)): ?>
-        <span class="cs-button__span"><?=$numberOfProducts?></span>
-        <?php endif; ?>
-
-        <svg class="cs-button__icon">
-            <use xlink:href="#arrow_next"></use>
-        </svg>
-    </a>
+                    <?php $numberOfProducts = $viewModel->getNumberOfProducts(); ?>
+                    <?php if(is_numeric($numberOfProducts)): ?>
+                    <span class="cs-button-component__amount"><?=$numberOfProducts?></span>
+                    <?php endif; ?>
+                </span>
+                <svg class="cs-button-component__icon">
+                    <?= $this->getLayout()
+                            ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+                            ->setIconUrl($block->getVar('button/icon_path'))
+                            ->setCssClass('cs-button-component__icon')
+                            ->setInlined(true)
+                            ->toHtml(); 
+                    ?>
+                </svg>
+            </a>
+        </div>
+    <div>
 </div>

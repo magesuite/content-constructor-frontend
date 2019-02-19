@@ -424,7 +424,7 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
                 <input type="hidden" name="%s" value="%s">
                 %s
                 <button disabled type="submit" title="%s"
-                class="tocart | cs-button--type_grid-tocart">
+                class="tocart | cs-button cs-button--type_grid-tocart">
                     <span class="cs-button__span">%s</span>
                 </button>
             </form>',

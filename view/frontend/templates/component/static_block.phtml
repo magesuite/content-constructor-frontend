@@ -4,10 +4,16 @@ $componentConfiguration = $block->getData();
 
 /** @var \MageSuite\ContentConstructorFrontend\Model\Component\StaticBlock $viewModel */
 $viewModel = $block->getViewModel();
+$visibility = $block->getVisibilityClass();
 $resetStyles = $viewModel->getData('resetstyles');
 ?>
-<div class="<?=$block->getVisibilityClass()?>">
-    <div class="<?php if (!$resetStyles): ?>cs-static-cms-block<?php endif; ?> cs-cms-block <?php if ($resetStyles): ?>cs-static-cms-block-resetstyles<?php endif; ?>">
-        <?=$viewModel->getContent()?>
+
+<div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
+    <div class="cs-container cs-container--static-block">
+        <div class="cs-container__inner">
+            <div class="<?php if (!$resetStyles): ?>cs-static-cms-block<?php endif; ?> cs-cms-block <?php if ($resetStyles): ?>cs-static-cms-block-resetstyles<?php endif; ?> <?=$block->getVar('static_block/additional_css_classes');?>">
+                <?=$viewModel->getContent()?>
+            </div>
+        </div>
     </div>
 </div>

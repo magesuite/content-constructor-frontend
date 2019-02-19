@@ -5,12 +5,17 @@ $componentConfiguration = $block->getData();
 /** @var \MageSuite\ContentConstructorFrontend\Model\Component\ProductCarousel $viewModel */
 $viewModel = $block->getViewModel();
 $visibility = $block->getVisibilityClass();
+
+$navIconNextPath = $block->getVar('product_carousel/navigation/arrows/next/path');
+
+$componentClasses = $block->getSkipSpacing() ? ' cs-products-carousel--skip-spacing' : ''; 
+$componentClasses .= ' ' . $block->getVar('product_carousel/additional_css_classes');
 ?>
 
-<div <?= empty($visibility) ? '' : 'class="' . $visibility . '"'; ?>>
+<div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
     <div class="cs-container cs-container--products-carousel">
         <div class="cs-container__inner">
-            <div class="cs-products-carousel <?=$block->getVar('product_carousel/additional_css_classes');?>">
+            <div class="cs-products-carousel<?= $componentClasses ?>">
                 <div class="cs-products-carousel__carousel">
                     <div class="cs-products-carousel__wrapper">
                         <ul class="cs-products-carousel__slides">
@@ -27,7 +32,7 @@ $visibility = $block->getVisibilityClass();
                     </div>
 
                     <?php if ($block->getVar('product_carousel/navigation/show')): ?>
-                        <button class="cs-products-carousel__nav cs-products-carousel__nav--prev <?= $block->getVar('brand_carousel/navigation/arrows/prev/additional_css_classes') ?>" type="button">
+                        <button class="cs-products-carousel__nav cs-products-carousel__nav--prev <?= $block->getVar('product_carousel/navigation/arrows/prev/additional_css_classes') ?>" type="button">
                             <?= $this->getLayout()
                                 ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
                                 ->setIconUrl($block->getVar('product_carousel/navigation/arrows/prev/path'))
@@ -36,7 +41,7 @@ $visibility = $block->getVisibilityClass();
                                 ->toHtml(); 
                             ?>
                         </button>
-                        <button class="cs-products-carousel__nav cs-products-carousel__nav--next <?= $block->getVar('brand_carousel/navigation/arrows/next/additional_css_classes') ?>" type="button">
+                        <button class="cs-products-carousel__nav cs-products-carousel__nav--next <?= $block->getVar('product_carousel/navigation/arrows/next/additional_css_classes') ?>" type="button">
                             <?= $this->getLayout()
                                 ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
                                 ->setIconUrl($block->getVar('product_carousel/navigation/arrows/next/path'))
@@ -47,7 +52,7 @@ $visibility = $block->getVisibilityClass();
                         </button>
                     <?php endif; ?>
 
-                    <?php if ($block->getVar('product_carousel/show_pagination')): ?>
+                    <?php if ($block->getVar('product_carousel/pagination/show')): ?>
                         <ul class="cs-products-carousel__pagination <?= $block->getVar('product_carousel/pagination/additional_css_classes') ?>"></ul>
                     <?php endif; ?>
                 </div>

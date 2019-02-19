@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="main.content">
+            <container name="cc-top" htmlTag="div" htmlClass="cs-page-category__cc-top" before="-" />
+            <container name="cc-bottom" htmlTag="div" htmlClass="cs-page-category__cc-bottom" after="-" />
+        </referenceContainer>
+
+        <referenceBlock name="category.products.list">
+            <container name="hotspot.inside.list" as="hotspot.inside.list">
+                <block class="Magento\Framework\View\Element\Template" name="category.teasers" template="MageSuite_ContentConstructorFrontend::product/list/category-teasers.phtml">
+                    <arguments>
+                        <argument name="html_tag" xsi:type="string">li</argument>
+                        <argument name="grid_class" xsi:type="string">cs-grid-layout</argument>
+                        <argument name="brick_class" xsi:type="string">cs-grid-layout__brick</argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceBlock>
+    </body>
+</page>

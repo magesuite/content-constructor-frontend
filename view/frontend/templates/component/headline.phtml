@@ -2,12 +2,23 @@
 /** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\Headline */
 /** @var $viewModel \MageSuite\ContentConstructorFrontend\Model\Component\Headline */
 $viewModel = $block->getViewModel();
+$visibility = $block->getVisibilityClass();
 
 $tag = $viewModel->getHeadingTag();
+
+$componentClasses = $block->getSkipSpacing() ? ' cs-headline--skip-spacing' : ''; 
+$componentClasses .= ' ' . $block->getVar('headline/additional_css_classes');
 ?>
-<div class="<?=$block->getVisibilityClass()?>">
-    <div class="cs-headline">
-        <<?=$tag?> class="cs-headline__title"><?= $viewModel->getTitle() ?></<?=$tag?>>
-        <p class="cs-headline__subtitle"><?= $viewModel->getSubtitle() ?></p>
+
+<div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
+    <div class="cs-container cs-container--headline">
+        <div class="cs-container__inner">
+            <div class="cs-headline<?= $componentClasses ?>">
+                <<?=$tag?> class="cs-headline__title"><?= $viewModel->getTitle() ?></<?=$tag?>>
+                <?php if ($viewModel->getSubtitle()): ?>
+                    <p class="cs-headline__subtitle"><?= $viewModel->getSubtitle() ?></p>
+                <?php endif; ?>
+            </div>
+        </div>
     </div>
 </div>

@@ -1,0 +1,28 @@
+<?php 
+    /**
+     * Product grid teasers template (POP)
+     *
+     * @var $block \Magento\Catalog\Block\Product\ListProduct
+     */
+?>
+<?php
+$teasersConfig = $this->helper('MageSuite\ContentConstructorFrontend\Helper\CategoryGridTeasers')->getConfig();
+
+if($teasersConfig): ?>
+    <?php $i = 1 ?> 
+
+    <?php foreach ($teasersConfig['teasers'] as $teaser): ?>
+        <?= $this->getLayout()
+             ->createBlock(\Magento\Framework\View\Element\Template::class)
+             ->setTeaserData($teaser)
+             ->setTeaserId($i)
+             ->setHtmlTag($block->getHtmlTag())
+             ->setGridClass($block->getGridClass())
+             ->setBrickClass($block->getBrickClass())
+             ->setTemplate('MageSuite_ContentConstructorFrontend::teaser.phtml')
+             ->toHtml(); ?>
+        <?php $i++ ?>
+    <?php endforeach; ?>
+
+    <input type="hidden" class="image-teasers-data" value='<?= json_encode($teasersConfig['json']); ?>'>
+<?php endif; ?>

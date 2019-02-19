@@ -1,5 +1,16 @@
-<?php /** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\Separator */ ?>
-<div class="<?=$block->getVisibilityClass()?>">
-    <hr class="cs-separator">
+<?php
+/** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\Separator */
+$visibility = $block->getVisibilityClass();
+
+$componentClasses = $block->getSkipSpacing() ? ' cs-separator--skip-spacing' : '';
+$componentClasses .= ' ' . $block->getVar('separator/additional_css_classes');
+?>
+
+<div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
+    <div class="cs-container cs-container--separator">
+        <div class="cs-container__inner">
+            <hr class="cs-separator<?= $componentClasses ?>">
+        </div>
+    </div>
 </div>
 
