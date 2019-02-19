@@ -1,0 +1,13 @@
+<?php
+/** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\Headline */
+/** @var $viewModel \MageSuite\ContentConstructorFrontend\Model\Component\Headline */
+$viewModel = $block->getViewModel();
+
+$tag = $viewModel->getHeadingTag();
+?>
+<div class="<?=$block->getVisibilityClass()?>">
+    <div class="cs-headline">
+        <<?=$tag?> class="cs-headline__title"><?= $viewModel->getTitle() ?></<?=$tag?>>
+        <p class="cs-headline__subtitle"><?= $viewModel->getSubtitle() ?></p>
+    </div>
+</div>

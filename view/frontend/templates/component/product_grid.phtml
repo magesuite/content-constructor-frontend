@@ -1,0 +1,106 @@
+<?php
+/** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\ProductGrid */
+$viewModel = $block->getViewModel();
+$visibility = $block->getVisibilityClass();
+
+$hero = $viewModel->getHero();
+$heroImage = $hero->getImage();
+
+$linkTag = !empty($hero->getHref()) ? 'a' : 'div';
+$isLazyLoaded = $block->getVar('product_grid/lazyload_heros_images');
+?>
+
+<div <?= empty($visibility) ? '' : 'class="' . $visibility . '"'; ?>>
+    <div class="cs-container cs-container--products-grid">
+        <div class="cs-container__inner">
+            <div class="cs-products-grid <?= $viewModel->hasHero() ? 'cs-products-grid--with-hero' : '' ?> <?= $block->getVar('product_grid/additional_css_classes'); ?>"
+                data-rows-mobile="<?= $viewModel->getRowsMobile() ?>"
+                data-rows-tablet="<?= $viewModel->getRowsTablet() ?>"
+                data-rows-desktop="<?= $viewModel->getRowsDesktop() ?>"
+            >
+                <?php
+                $teasersConfiguration = $block->getVar('product_grid/teasers_configuration');
+                $teasersConfiguration['gridPosition']['x'] = $viewModel->getHero()->getPosition();
+                ?>
+                <div class="cs-grid-layout cs-products-grid__grid-layout">
+                    <ul class="cs-grid-layout__grid cs-products-grid__grid">
+                        <?php if ($viewModel->hasHero()): ?>
+                        <li class="cs-grid-layout__brick<?= $teasersConfiguration['size']['x'] == '2' ? ' cs-grid-layout__brick--x2' : '' ?><?= $teasersConfiguration['size']['y'] == '2' ? ' cs-grid-layout__brick--y2' : '' ?> cs-grid-layout__brick--teaser cs-products-grid__hero-brick"
+                            data-teaser-id="1">
+                            <div class="cs-grid-layout__teaser cs-grid-layout__teaser--scheme-<?= $hero['colorScheme'] ?> cs-products-grid__hero cs-products-grid__hero--scheme-<?= $hero['colorScheme'] ?>">
+                                <<?= $linkTag ?> <?php if ($hero->getHref()): ?> href="<?= $hero->getHref() ?>" <?php endif; ?>
+                                class="cs-grid-layout__teaser-content-wrapper cs-products-grid__hero-link">
+
+                                <?php if ($heroImage->getSrc()): ?>
+                                    <figure class="cs-grid-layout__teaser-figure cs-products-grid__hero-figure">
+                                        <img
+                                            class="cs-grid-layout__teaser-image cs-products-grid__hero-image <?php if($isLazyLoaded){ echo 'lazyload';} ?>"
+                                            <?php if($isLazyLoaded): ?>
+                                                src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                                                data-src="<?= $heroImage->getSrc() ?>"
+                                            <?php else: ?>
+                                                src="<?= $heroImage->getSrc() ?>"
+                                            <?php endif; ?>
+                                            <?php if ($heroImage->getSrcSet()): ?>data-srcset="<?= $heroImage->getSrcSet() ?>"<?php endif; ?>
+                                            alt="<?= $heroImage->getAlt() ?>"
+                                        >
+                                        <noscript>
+                                            <img
+                                                class="cs-grid-layout__teaser-image cs-products-grid__hero-image"
+                                                src="<?= $heroImage->getSrc() ?>"
+                                                <?php if ($heroImage->getSrcSet()): ?>srcset="<?= $heroImage->getSrcSet() ?>"<?php endif; ?>
+                                                alt="<?= $heroImage->getAlt() ?>"
+                                            >
+                                        </noscript>
+                                    </figure>
+                                <?php endif; ?>
+
+                                <div class="cs-grid-layout__teaser-content cs-grid-layout__teaser-content--variant-<?= $hero->getDisplayVariant() ?> cs-products-grid__hero-content-wrapper cs-products-grid__hero-content-wrapper--variant-<?= $hero->getDisplayVariant() ?>">
+                                    <div class="cs-grid-layout__teaser-content-inner cs-products-grid__hero-content">
+                                        <?php if ($hero->getHeadline()): ?>
+                                            <h2 class="cs-grid-layout__teaser-headline cs-products-grid__hero-headline"><?= $hero->getHeadline() ?></h2>
+                                        <?php endif ?>
+
+                                        <?php if ($hero->getSubheadline()): ?>
+                                            <p class="cs-grid-layout__teaser-subheadline cs-products-grid__hero-subheadline"><?= $hero->getSubheadline() ?></p>
+                                        <?php endif ?>
+
+                                        <?php if ($hero->getParagraph()): ?>
+                                            <p class="cs-grid-layout__teaser-text cs-products-grid__hero-text"><?= $hero->getParagraph() ?></p>
+                                        <?php endif ?>
+
+                                        <?php if ($hero->getHref() and $hero->getButtonLabel()): ?>
+                                            <div class="cs-grid-layout__teaser-cta cs-products-grid__teaser-cta">
+                                                <span role="button"
+                                                    class="cs-grid-layout__teaser-cta-button cs-products-grid__hero-cta-button">
+                                                    <span class="cs-grid-layout__teaser-cta-button-span cs-products-grid__hero-cta-button-span"><?= $hero->getButtonLabel() ?></span>
+                                                    <?= $this->getLayout()
+                                                                ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+                                                                ->setIconUrl($block->getVar('product_grid/cta_button_icon_path'))
+                                                                ->setCssClass('cs-grid-layout__teaser-cta-button-icon cs-products-grid__hero-cta-button-icon')
+                                                                ->setInlined(true)
+                                                                ->setLazyLoaded(false)
+                                                                ->toHtml(); 
+                                                    ?>
+                                                </span>
+                                            </div>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                                </<?= $linkTag ?>>
+                                </div>
+                            </li>
+                        <?php endif; ?>
+                        <?php $iterator = 1 ?>
+                        <?php foreach ($viewModel->getProducts() as $product): ?>
+                            <li class="cs-grid-layout__brick cs-products-grid__item">
+                                <?= $viewModel->renderProductTile($product, $iterator) ?>
+                            </li>
+                        <?php endforeach ?>
+                    </ul>
+                    <input type="hidden" class="image-teasers-data" value='[<?= json_encode($teasersConfiguration) ?>]'>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

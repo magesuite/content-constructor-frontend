@@ -15,8 +15,6 @@
 
     <preference for="MageSuite\ContentConstructor\View\Template" type="MageSuite\ContentConstructorFrontend\Template\Twig" />
 
-    <preference for="MageSuite\ContentConstructor\Factory\ComponentFactory" type="MageSuite\ContentConstructorFrontend\Service\ComponentFactory" />
-
     <preference for="MageSuite\ContentConstructor\ComponentSupport"
                 type="\MageSuite\ContentConstructorFrontend\Config\DefaultComponentSupport" />
 
@@ -47,6 +45,9 @@
     <preference for="MageSuite\ContentConstructor\Components\DailyDealTeaser\DataProvider"
                 type="MageSuite\ContentConstructorFrontend\DataProviders\DailyDealTeaserDataProvider" />
 
+    <preference for="MageSuite\ContentConstructor\Service\ProductTileRenderer"
+                type="MageSuite\ContentConstructorFrontend\Service\ProductTileRenderer" />
+
     <type name="Magento\Catalog\Block\Product\AbstractProduct">
         <plugin name="creativestyle_add_product_object_to_image_data_array" type="MageSuite\ContentConstructorFrontend\Model\Plugin\ProductImage"/>
     </type>
@@ -72,6 +73,106 @@
         <arguments>
             <argument name="filters" xsi:type="array">
                 <item name="new_products" xsi:type="object">MageSuite\ContentConstructorFrontend\Model\Filter\NewProducts</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser">
+        <arguments>
+            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\ImageTeaser</argument>
+        </arguments>
+    </type>
+
+    <type name="MageSuite\ContentConstructorFrontend\Block\Component\HeroCarousel">
+        <arguments>
+            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\HeroCarousel</argument>
+        </arguments>
+    </type>
+
+    <type name="MageSuite\ContentConstructorFrontend\Block\Component\CategoryLinks">
+        <arguments>
+            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\CategoryLinks</argument>
+        </arguments>
+    </type>
+
+    <type name="MageSuite\ContentConstructorFrontend\Block\Component\Button">
+        <arguments>
+            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\Button</argument>
+        </arguments>
+    </type>
+
+    <type name="MageSuite\ContentConstructorFrontend\Block\Component\BrandCarousel">
+        <arguments>
+            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\BrandCarousel</argument>
+        </arguments>
+    </type>
+
+    <type name="MageSuite\ContentConstructorFrontend\Block\Component\CmsTeaser">
+        <arguments>
+            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\CmsTeaser</argument>
+        </arguments>
+    </type>
+
+    <type name="MageSuite\ContentConstructorFrontend\Block\Component\Paragraph">
+        <arguments>
+            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\Paragraph</argument>
+        </arguments>
+    </type>
+
+    <type name="MageSuite\ContentConstructorFrontend\Block\Component\ProductGrid">
+        <arguments>
+            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\ProductGrid</argument>
+        </arguments>
+    </type>
+
+    <type name="MageSuite\ContentConstructorFrontend\Block\Component\ProductCarousel">
+        <arguments>
+            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\ProductCarousel</argument>
+        </arguments>
+    </type>
+
+    <type name="MageSuite\ContentConstructorFrontend\Block\Component\ProductFinder">
+        <arguments>
+            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\ProductFinder</argument>
+        </arguments>
+    </type>
+
+    <type name="MageSuite\ContentConstructorFrontend\Block\Component\Headline">
+        <arguments>
+            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\Headline</argument>
+        </arguments>
+    </type>
+
+    <type name="MageSuite\ContentConstructorFrontend\Block\Component\StaticBlock">
+        <arguments>
+            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\StaticBlock</argument>
+        </arguments>
+    </type>
+
+    <type name="MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser">
+        <arguments>
+            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\DailyDealTeaser</argument>
+        </arguments>
+    </type>
+
+    <type name="MageSuite\ContentConstructorFrontend\Service\ComponentPool">
+        <arguments>
+            <argument name="components" xsi:type="array">
+                <item name="headline" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\Headline</item>
+                <item name="static-cms-block" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\StaticBlock</item>
+                <item name="paragraph" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\Paragraph</item>
+                <item name="product-carousel" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\ProductCarousel</item>
+                <item name="hero-carousel" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\HeroCarousel</item>
+                <item name="brand-carousel" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\BrandCarousel</item>
+                <item name="image-teaser" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser</item>
+                <item name="button" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\Button</item>
+                <item name="category-links" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\CategoryLinks</item>
+                <item name="separator" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\Separator</item>
+                <item name="product-grid" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\ProductGrid</item>
+                <item name="custom-html" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\CustomHtml</item>
+                <item name="cms-teaser" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\CmsTeaser</item>
+                <item name="product-finder" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\ProductFinder</item>
+                <item name="daily-deal-teaser" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser</item>
             </argument>
         </arguments>
     </type>

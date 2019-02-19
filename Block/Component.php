@@ -7,12 +7,12 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
     const CACHE_LIFETIME = 86400;
     const CACHE_KEY = 'component_html_%s_%s';
 
-    protected $component;
-
     /**
-     * @var \MageSuite\ContentConstructorFrontend\Service\ComponentFactory
+     * @var \MageSuite\ContentConstructorFrontend\Service\ComponentPool
      */
-    protected $componentFactory;
+    protected $componentPool;
+
+    protected $component;
 
     /**
      * @var \Magento\Store\Model\StoreManagerInterface
@@ -26,18 +26,19 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
 
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
-        \MageSuite\ContentConstructor\Factory\ComponentFactory $componentFactory,
+        \MageSuite\ContentConstructorFrontend\Service\ComponentPool $componentPool,
         \Magento\Store\Model\StoreManagerInterface $storeManager,
         \Magento\Customer\Model\Session $customerSession,
         array $data = []
-    ) {
+    )
+    {
         parent::__construct($context, $data);
 
         $this->storeManager = $storeManager;
         $this->customerSession = $customerSession;
-        $this->componentFactory = $componentFactory;
+        $this->componentPool = $componentPool;
 
-        $componentHash = substr(md5(serialize($this->getData())), 0 ,8);
+        $componentHash = substr(md5(serialize($this->getData())), 0, 8);
         $store = $this->storeManager->getStore();
 
         $cacheKey = sprintf(
@@ -54,13 +55,13 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
         $serverName = $context->getRequest()->getServer('HTTP_HOST');
         $actionName = $this->getRequest()->getFullActionName();
 
-        if($serverName != null and !empty($serverName)) {
+        if ($serverName != null and !empty($serverName)) {
             $cacheKeyAdditionalElements[] = $serverName;
         }
 
-        $cacheKey .= '_'.md5(implode('|', $cacheKeyAdditionalElements));
+        $cacheKey .= '_' . md5(implode('|', $cacheKeyAdditionalElements));
 
-        if($actionName != 'content_constructor_preview_view') {
+        if ($actionName != 'content_constructor_preview_view') {
             $this->setData('cache_key', $cacheKey);
             $this->setData('cache_lifetime', self::CACHE_LIFETIME);
         }
@@ -68,15 +69,15 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
 
     public function getIdentities()
     {
-        if(!$this->component){
+        if (!$this->component) {
             return [];
         }
 
         $tags = [];
 
-        foreach($this->component->getIdentities() as $identities){
+        foreach ($this->component->getIdentities() as $identities) {
 
-            if(is_string($identities)) {
+            if (is_string($identities)) {
                 $identities = [$identities];
             }
 
@@ -88,19 +89,21 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
 
     public function _toHtml()
     {
-        if(!$this->hasData('type')) {
+        if (!$this->hasData('type')) {
             throw new \InvalidArgumentException("Block must receive it's type in configuration");
         }
 
+        $type = $this->getData('type');
         $componentData = $this->getData('data');
-        $classOverrides = $componentData['class_overrides'] ?? [];
 
-        $this->component = $this->componentFactory->create($this->getData('type'), $classOverrides);
+        $componentClassName = $this->componentPool->getClassName($type);
 
-        if($this->component == null) {
+        if ($componentClassName == null) {
             return '';
         }
 
-        return $this->component->render($componentData);
+        return $this->getLayout()
+            ->createBlock($componentClassName, '', ['data' => $componentData])
+            ->toHtml();
     }
 }

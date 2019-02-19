@@ -1,0 +1,13 @@
+<?php
+/** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\StaticBlock */
+$componentConfiguration = $block->getData();
+
+/** @var \MageSuite\ContentConstructorFrontend\Model\Component\StaticBlock $viewModel */
+$viewModel = $block->getViewModel();
+$resetStyles = $viewModel->getData('resetstyles');
+?>
+<div class="<?=$block->getVisibilityClass()?>">
+    <div class="<?php if (!$resetStyles): ?>cs-static-cms-block<?php endif; ?> cs-cms-block <?php if ($resetStyles): ?>cs-static-cms-block-resetstyles<?php endif; ?>">
+        <?=$viewModel->getContent()?>
+    </div>
+</div>

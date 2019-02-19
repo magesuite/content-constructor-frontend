@@ -1,0 +1,57 @@
+<?php
+/** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\ProductCarousel */
+$componentConfiguration = $block->getData();
+
+/** @var \MageSuite\ContentConstructorFrontend\Model\Component\ProductCarousel $viewModel */
+$viewModel = $block->getViewModel();
+$visibility = $block->getVisibilityClass();
+?>
+
+<div <?= empty($visibility) ? '' : 'class="' . $visibility . '"'; ?>>
+    <div class="cs-container cs-container--products-carousel">
+        <div class="cs-container__inner">
+            <div class="cs-products-carousel <?=$block->getVar('product_carousel/additional_css_classes');?>">
+                <div class="cs-products-carousel__carousel">
+                    <div class="cs-products-carousel__wrapper">
+                        <ul class="cs-products-carousel__slides">
+                            <?php $iterator = 1 ?>
+                            <?php foreach ($viewModel->getProducts() as $product): ?>
+                                <li class="cs-products-carousel__slide">
+                                    <div class="cs-products-carousel__product-tile">
+                                        <?= $viewModel->renderProductTile($product, $iterator) ?>
+                                    </div>
+                                </li>
+                                <?php $iterator++ ?>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+
+                    <?php if ($block->getVar('product_carousel/navigation/show')): ?>
+                        <button class="cs-products-carousel__nav cs-products-carousel__nav--prev <?= $block->getVar('brand_carousel/navigation/arrows/prev/additional_css_classes') ?>" type="button">
+                            <?= $this->getLayout()
+                                ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+                                ->setIconUrl($block->getVar('product_carousel/navigation/arrows/prev/path'))
+                                ->setCssClass("cs-products-carousel__nav-icon")
+                                ->setInlined(true)
+                                ->toHtml(); 
+                            ?>
+                        </button>
+                        <button class="cs-products-carousel__nav cs-products-carousel__nav--next <?= $block->getVar('brand_carousel/navigation/arrows/next/additional_css_classes') ?>" type="button">
+                            <?= $this->getLayout()
+                                ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+                                ->setIconUrl($block->getVar('product_carousel/navigation/arrows/next/path'))
+                                ->setCssClass("cs-products-carousel__nav-icon")
+                                ->setInlined(true)
+                                ->toHtml(); 
+                            ?>
+                        </button>
+                    <?php endif; ?>
+
+                    <?php if ($block->getVar('product_carousel/show_pagination')): ?>
+                        <ul class="cs-products-carousel__pagination <?= $block->getVar('product_carousel/pagination/additional_css_classes') ?>"></ul>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
