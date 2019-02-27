@@ -25,7 +25,6 @@ $componentClasses .= ' ' . $block->getVar('daily_deal_teaser/additional_css_clas
 ?>
 
 <?php if (!empty($product)): ?>
-
     <div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
         <div class="cs-container cs-container--daily-deal-teaser">
             <div class="cs-container__inner">
@@ -168,6 +167,13 @@ $componentClasses .= ' ' . $block->getVar('daily_deal_teaser/additional_css_clas
                                     <button disabled type="submit" title="<?= $label ?>"
                                             class="tocart | cs-button cs-button--type_grid-tocart">
                                         <span class="cs-button__span"><?= $label ?></span>
+                                        <?= $this->getLayout()
+                                            ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+                                            ->setIconUrl($block->getVar('daily_deal_teaser/addtocart_button/icon_path'))
+                                            ->setCssClass("cs-button__icon")
+                                            ->setInlined(true)
+                                            ->toHtml(); 
+                                        ?>
                                     </button>
                                 </form>
                             </div>
