@@ -156,9 +156,21 @@ $componentClasses .= ' ' . $block->getVar('daily_deal_teaser/additional_css_clas
                         </div>
 
                         <?php if($block->getVar('daily_deal_teaser/addtocart_button/show')): ?>
-                        <div class="cs-daily-deal-teaser__addtocart cs-addtocart">
-                            <?=$product['addToCartButtonHtml']?>
-                        </div>
+                            <div class="cs-daily-deal-teaser__addtocart cs-addtocart">
+                                <?php
+                                $addToCartParameters = $viewModel->getAddToCartParameters($product['productObject']);
+                                $label = $product['productObject']->getTypeId() != \Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE ? __('Add to cart') : __('Configure');
+                                ?>
+                                <form data-role="tocart-form" action="<?= $addToCartParameters['action'] ?>" method="post">
+                                    <input type="hidden" name="product" value="<?= $addToCartParameters['productId'] ?>">
+                                    <input type="hidden" name="<?= $addToCartParameters['uencKey'] ?>" value="<?= $addToCartParameters['uencValue'] ?>">
+                                    <?= $addToCartParameters['formKey'] ?>
+                                    <button disabled type="submit" title="<?= $label ?>"
+                                            class="tocart | cs-button cs-button--type_grid-tocart">
+                                        <span class="cs-button__span"><?= $label ?></span>
+                                    </button>
+                                </form>
+                            </div>
                         <?php endif; ?>
                     </aside>
                 </section>

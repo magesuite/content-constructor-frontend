@@ -56,6 +56,7 @@ class DailyDealTeaserDataProvider implements \MageSuite\ContentConstructor\Compo
 
         $product['brandName'] = '';
         $productObject = $this->productRepository->get($product['sku']);
+        $product['productObject'] = $productObject;
 
         if ($brandId = $productObject->getBrand()) {
             $brand = $this->brandsRepository->getById($brandId);
