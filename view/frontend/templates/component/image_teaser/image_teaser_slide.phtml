@@ -1,0 +1,164 @@
+<?php
+$slide = $block->getSlide();
+
+$isSvg = $slide->isSvg();
+$isSlider = $block->getIsSlider();
+$isSliderMobile = $block->getIsSliderMobile();
+$contentPlacement = $block->getContentPlacement();
+$contentAlign = $slide->getContentAlign();
+
+$slogan = $slide->getSlogan();
+$description = $slide->getDescription();
+/**
+ * Call to action properties.
+ */
+$cta = $slide->getCta();
+$ctaHref = $cta['href'];
+$ctaLabel = $cta['label'];
+/**
+ * Image properties with support for conditional lazy loading.
+ */
+$imageSrc = $origImageSrc = $slide->getSrc();
+$hasImage = !empty($imageSrc);
+if ($hasImage && !$isSvg) {
+    $imageSrc = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
+}
+$imageAlt = $slide->getAlt();
+$imageSrcset = $isSvg ? '' : $slide->getSrcSet();
+$imageSizes = $isSvg ? '' : $slide->getSizes();
+$imageWidth = $slide->getWidth();
+$imageHeight = $slide->getHeight();
+/**
+ * Aspect ratio calculations preventing content jumping before images load.
+ */
+$aspectRatio = explode(':', $slide->getImage()['aspect_ratio']);
+$aspectRatioPadding = 0;
+if (count($aspectRatio) === 2) {
+    $aspectRatioPadding = ($aspectRatio[1] / $aspectRatio[0]) * 100;
+}
+/**
+ * Contrast optimizers
+ */
+$contrastOptimizers = $slide->getOptimizers();
+
+$colorScheme = $contrastOptimizers['color_scheme'];
+$mirrorImage = $contrastOptimizers['mirror_image'];
+
+$contrastOptimizersScenarios = $contrastOptimizers['scenarios'];
+$overlay = $contrastOptimizersScenarios['overlay'];
+$gradient = $contrastOptimizersScenarios['gradient'];
+$textShadow = $contrastOptimizersScenarios['text_shadow'];
+$container = $contrastOptimizersScenarios['container'];
+
+?>
+<li class="cs-image-teaser__slide cs-image-teaser__slide--scheme-<?= $colorScheme ?><?= $hasImage ? ' cs-image-teaser__slide--image-uploaded' : '' ?>">
+    <?php if ($aspectRatioPadding and $contentPlacement != 'under'): ?>
+        <div class="cs-image-teaser__aspect-ratio" style="padding-top: <?= $aspectRatioPadding ?>%"></div>
+    <?php endif; ?>
+
+    <?php if ($ctaHref): ?>
+        <a href="<?= $ctaHref ?>" class="cs-image-teaser__slide-wrapper">
+    <?php else: ?>
+        <div class="cs-image-teaser__slide-wrapper">
+    <?php endif; ?>
+
+        <?php if ($aspectRatioPadding and $contentPlacement == 'under'): ?>
+            <div class="cs-image-teaser__aspect-ratio" style="padding-top: <?= $aspectRatioPadding ?>%"></div>
+        <?php endif; ?>
+
+        <?php if ($hasImage): ?>
+            <figure class="cs-image-teaser__figure">
+                <img
+                    class="cs-image-teaser__image<?= ($isSlider and $isSliderMobile) ? ' swiper-lazy' : ' lazyload' ?><?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
+                    src="<?= $imageSrc ?>"
+                    alt="<?= $imageAlt ?>"
+                    <?php if (!$isSvg): ?> 
+                        data-src="<?= $origImageSrc ?>" 
+                    <?php endif; ?>
+                    <?php if ($imageSrcset): ?>
+                        data-srcset="<?= $imageSrcset ?>"
+                    <?php endif; ?>
+                    <?php if ($imageSizes): ?>
+                        sizes="<?= $imageSizes ?>"
+                    <?php endif; ?>
+                    <?php if ($imageWidth): ?> 
+                        width="<?= $imageWidth ?>" 
+                    <?php endif; ?>
+                    <?php if ($imageHeight): ?> 
+                        height="<?= $imageHeight ?>" 
+                    <?php endif; ?>
+                >
+                <noscript>
+                    <img
+                        class="cs-image-teaser__image"
+                        src="<?= $origImageSrc ?>"
+                        alt="<?= $imageAlt ?>"
+                        <?php if ($imageSrcset): ?> 
+                            srcset="<?= $imageSrcset ?>"
+                        <?php endif; ?>
+                        <?php if ($imageSizes): ?> 
+                            sizes="<?= $imageSizes ?>"
+                        <?php endif; ?>
+                        <?php if ($imageWidth): ?> 
+                            width="<?= $imageWidth ?>" 
+                        <?php endif; ?>
+                        <?php if ($imageHeight): ?> 
+                            height="<?= $imageHeight ?>" 
+                        <?php endif; ?>
+                    >
+                </noscript>
+            </figure>
+        <?php endif; ?>
+
+        <?php if ($overlay['enabled']): ?>
+            <div class="cs-image-teaser__overlay" style="opacity: <?= ((int)$overlay['intensity']) / 100 ?>"></div>
+        <?php endif; ?>
+        <?php if ($gradient['enabled']): ?>
+            <div class="cs-image-teaser__gradient cs-image-teaser__gradient--direction-x-<?= $gradient['direction']['x'] ?> cs-image-teaser__gradient--direction-y-<?= $gradient['direction']['y'] ?>" style="opacity: <?= ((int)$gradient['intensity']) / 100 ?>"></div>
+        <?php endif; ?>
+
+        <div class="cs-image-teaser__content-wrapper cs-image-teaser__content-wrapper--content-align-x-<?= $contentAlign['x'] ?> cs-image-teaser__content-wrapper--content-align-y-<?= $contentAlign['y'] ?>"
+            <?php if ($aspectRatio and $contentPlacement == 'under'): ?>
+                style="margin-top: -<?= $aspectRatioPadding ?>%; padding-top: <?= $aspectRatioPadding ?>%"
+            <?php endif; ?>
+        >
+            <div class="cs-image-teaser__content<?= $container['enabled'] ? ' cs-image-teaser__content--container' : '' ?>">
+
+                <?php if ($container['enabled']): ?>
+                    <div class="cs-image-teaser__optimizer-container" style="opacity: <?= ((int)$container['intensity']) / 100 ?>"></div>
+                <?php endif; ?>
+
+                <div class="cs-image-teaser__text-content<?= $textShadow['enabled'] ? ' cs-image-teaser__text-content--text-shadow cs-image-teaser__text-content--text-shadow-' . $textShadow['intensity'] : '' ?>">
+                    <?php if ($slogan): ?>
+                        <h2 class="cs-image-teaser__slogan"><?= $slogan ?></h2>
+                    <?php endif; ?>
+
+                    <?php if ($description): ?>
+                        <p class="cs-image-teaser__description"><?= $description ?></p>
+                    <?php endif; ?>
+                </div>
+
+                <?php if ($ctaHref and $ctaLabel): ?>
+                    <div class="cs-image-teaser__cta">
+                        <span role="button"
+                            class="cs-image-teaser__cta-button">
+                            <span class="cs-image-teaser__cta-button-span"><?= $ctaLabel ?></span>
+                            <?= $this->getLayout()
+                                ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+                                ->setIconUrl($block->getVar('image_teaser/cta_button_icon_path'))
+                                ->setCssClass('cs-image-teaser__cta-button-icon')
+                                ->setInlined(true)
+                                ->setLazyLoaded(false)
+                                ->toHtml(); 
+                            ?>
+                        </span>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+    <?php if ($ctaHref): ?>
+        </a>
+    <?php else: ?>
+        </div>
+    <?php endif; ?>
+</li>

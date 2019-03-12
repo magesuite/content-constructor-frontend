@@ -5,8 +5,7 @@
  * See COPYING.txt for license details.
  */
 -->
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <preference for="MageSuite\ContentConstructor\View\TemplateLocator" type="MageSuite\ContentConstructorFrontend\Template\Locator" />
 
     <preference for="MageSuite\ContentConstructor\Service\MediaResolver" type="MageSuite\ContentConstructorFrontend\Service\MediaResolver" />
@@ -15,38 +14,27 @@
 
     <preference for="MageSuite\ContentConstructor\View\Template" type="MageSuite\ContentConstructorFrontend\Template\Twig" />
 
-    <preference for="MageSuite\ContentConstructor\ComponentSupport"
-                type="\MageSuite\ContentConstructorFrontend\Config\DefaultComponentSupport" />
+    <preference for="MageSuite\ContentConstructor\ComponentSupport" type="\MageSuite\ContentConstructorFrontend\Config\DefaultComponentSupport" />
 
-    <preference for="MageSuite\ContentConstructor\Components\Navigation\DataProvider"
-                type="MageSuite\ContentConstructorFrontend\DataProviders\NavigationDataProvider" />
+    <preference for="MageSuite\ContentConstructor\Components\Navigation\DataProvider" type="MageSuite\ContentConstructorFrontend\DataProviders\NavigationDataProvider" />
 
-    <preference for="MageSuite\ContentConstructor\Components\ProductCarousel\DataProvider"
-                type="MageSuite\ContentConstructorFrontend\DataProviders\ProductCarouselDataProvider" />
+    <preference for="MageSuite\ContentConstructor\Components\ProductCarousel\DataProvider" type="MageSuite\ContentConstructorFrontend\DataProviders\ProductCarouselDataProvider" />
 
-    <preference for="MageSuite\ContentConstructorFrontend\DataProviders\AdditionalProductDataProvider"
-                type="MageSuite\ContentConstructorFrontend\DataProviders\EmptyAdditionalProductDataProvider" />
+    <preference for="MageSuite\ContentConstructorFrontend\DataProviders\AdditionalProductDataProvider" type="MageSuite\ContentConstructorFrontend\DataProviders\EmptyAdditionalProductDataProvider" />
 
-    <preference for="MageSuite\ContentConstructor\Components\BrandCarousel\DataProvider"
-                type="MageSuite\ContentConstructorFrontend\DataProviders\BrandDataProvider" />
+    <preference for="MageSuite\ContentConstructor\Components\BrandCarousel\DataProvider" type="MageSuite\ContentConstructorFrontend\DataProviders\BrandDataProvider" />
 
-    <preference for="MageSuite\ContentConstructor\Components\CategoryLinks\DataProvider"
-                type="MageSuite\ContentConstructorFrontend\DataProviders\CategoryLinksDataProvider" />
+    <preference for="MageSuite\ContentConstructor\Components\CategoryLinks\DataProvider" type="MageSuite\ContentConstructorFrontend\DataProviders\CategoryLinksDataProvider" />
 
-    <preference for="MageSuite\ContentConstructor\Components\Button\DataProvider"
-                type="MageSuite\ContentConstructorFrontend\DataProviders\ButtonDataProvider" />
+    <preference for="MageSuite\ContentConstructor\Components\Button\DataProvider" type="MageSuite\ContentConstructorFrontend\DataProviders\ButtonDataProvider" />
 
-    <preference for="MageSuite\ContentConstructor\Components\CmsTeaser\DataProvider"
-                type="MageSuite\ContentConstructorFrontend\DataProviders\CmsTeaserDataProvider" />
+    <preference for="MageSuite\ContentConstructor\Components\CmsTeaser\DataProvider" type="MageSuite\ContentConstructorFrontend\DataProviders\CmsTeaserDataProvider" />
 
-    <preference for="MageSuite\ContentConstructor\Components\ProductFinder\EndpointUrlProvider"
-                type="MageSuite\ContentConstructorFrontend\Service\ProductFinder\Redirect\EndpointUrlProvider" />
+    <preference for="MageSuite\ContentConstructor\Components\ProductFinder\EndpointUrlProvider" type="MageSuite\ContentConstructorFrontend\Service\ProductFinder\Redirect\EndpointUrlProvider" />
 
-    <preference for="MageSuite\ContentConstructor\Components\DailyDealTeaser\DataProvider"
-                type="MageSuite\ContentConstructorFrontend\DataProviders\DailyDealTeaserDataProvider" />
+    <preference for="MageSuite\ContentConstructor\Components\DailyDealTeaser\DataProvider" type="MageSuite\ContentConstructorFrontend\DataProviders\DailyDealTeaserDataProvider" />
 
-    <preference for="MageSuite\ContentConstructor\Service\ProductTileRenderer"
-                type="MageSuite\ContentConstructorFrontend\Service\ProductTileRenderer" />
+    <preference for="MageSuite\ContentConstructor\Service\ProductTileRenderer" type="MageSuite\ContentConstructorFrontend\Service\ProductTileRenderer" />
 
     <type name="Magento\Catalog\Block\Product\AbstractProduct">
         <plugin name="creativestyle_add_product_object_to_image_data_array" type="MageSuite\ContentConstructorFrontend\Model\Plugin\ProductImage"/>
@@ -59,8 +47,7 @@
     </type>
 
     <type name="Magento\Catalog\Controller\Category\View">
-        <plugin name="redirect_if_one_result"
-                type="MageSuite\ContentConstructorFrontend\Plugin\ProductFinder\RedirectWhenOnlyOneResultWasFound"/>
+        <plugin name="redirect_if_one_result" type="MageSuite\ContentConstructorFrontend\Plugin\ProductFinder\RedirectWhenOnlyOneResultWasFound"/>
     </type>
 
     <type name="MageSuite\ContentConstructorFrontend\Model\Plugin\ProductImage">
@@ -77,9 +64,9 @@
         </arguments>
     </type>
 
-    <type name="MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser">
+    <type name="MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaserLegacy">
         <arguments>
-            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\ImageTeaser</argument>
+            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\ImageTeaserLegacy</argument>
         </arguments>
     </type>
 
@@ -155,6 +142,12 @@
         </arguments>
     </type>
 
+    <type name="MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser">
+        <arguments>
+            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\ImageTeaser</argument>
+        </arguments>
+    </type>
+
     <type name="MageSuite\ContentConstructorFrontend\Service\ComponentPool">
         <arguments>
             <argument name="components" xsi:type="array">
@@ -164,7 +157,8 @@
                 <item name="product-carousel" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\ProductCarousel</item>
                 <item name="hero-carousel" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\HeroCarousel</item>
                 <item name="brand-carousel" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\BrandCarousel</item>
-                <item name="image-teaser" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser</item>
+                <item name="image-teaser" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaserLegacy</item>
+                <item name="image-teaser-2" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser</item>
                 <item name="button" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\Button</item>
                 <item name="category-links" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\CategoryLinks</item>
                 <item name="separator" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\Separator</item>
