@@ -33,8 +33,8 @@ foreach ($slides as $slide) {
     $slide->setData('displayVariant', $textDisplayVariant);
 }
 
-$componentClasses = ' cs-image-teaser--cms-pages';
-$componentClasses .= $block->getSkipSpacing() ? ' cs-image-teaser--skip-spacing' : ''; 
+$componentClasses = ' cs-image-teaser-legacy--cms-pages';
+$componentClasses .= $block->getSkipSpacing() ? ' cs-image-teaser-legacy--skip-spacing' : ''; 
 $componentClasses .= ' ' . $block->getVar('cms_teaser/additional_css_classes');
 ?>
 
@@ -42,9 +42,9 @@ $componentClasses .= ' ' . $block->getVar('cms_teaser/additional_css_classes');
     <div class="cs-container cs-container--cms-teaser">
         <div class="cs-container__inner">
             <div class="cs-image-teaser
-             cs-image-teaser--items-in-row-<?= $itemsPerRow ?>
-             cs-image-teaser--items-in-row-mobile-<?= $itemsPerViewMobile ?>
-             <?= $isSlider ? 'cs-image-teaser--slider' : '' ?>
+             cs-image-teaser-legacy--items-in-row-<?= $itemsPerRow ?>
+             cs-image-teaser-legacy--items-in-row-mobile-<?= $itemsPerViewMobile ?>
+             <?= $isSlider ? 'cs-image-teaser-legacy--slider' : '' ?>
              <?= $componentClasses ?>"
                  data-items-per-view="<?= $itemsPerView ?>"
                 <?= $itemsPerViewMobile ? 'data-mobile-items-per-view="' . $itemsPerViewMobile . '"' : '' ?>
