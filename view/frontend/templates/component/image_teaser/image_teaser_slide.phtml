@@ -145,7 +145,7 @@ $container = $contrastOptimizersScenarios['container'];
                             <span class="cs-image-teaser__cta-button-span"><?= $ctaLabel ?></span>
                             <?= $this->getLayout()
                                 ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
-                                ->setIconUrl($block->getVar('image_teaser/cta_button_icon_path'))
+                                ->setIconUrl($block->getVar('image_teaser/cta_button_icon_path', 'MageSuite_ContentConstructorFrontend'))
                                 ->setCssClass('cs-image-teaser__cta-button-icon')
                                 ->setInlined(true)
                                 ->setLazyLoaded(false)

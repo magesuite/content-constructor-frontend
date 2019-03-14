@@ -26,12 +26,13 @@ class GenericSlide extends \Magento\Framework\DataObject
         $this->mediaResolver = $mediaResolver;
     }
 
-    public function getHref() {
-        if(!empty($this->getData()['href'])) {
-            return $this->getData()['href'] = $this->urlResolver->resolve($this->getData()['href']);
+    public function getCta() {
+        $cta = $this->getData()['cta'];
+        if (isset($cta['href']) && !empty($cta['href'])) {
+            $cta['href'] = $this->urlResolver->resolve($cta['href']);
         }
 
-        return '';
+        return $cta;
     }
 
     public function getSrc()
@@ -55,7 +56,7 @@ class GenericSlide extends \Magento\Framework\DataObject
     public function isSvg() {
         $src = $this->getSrc();
 
-        if(empty($src)) {
+        if (empty($src)) {
             return false;
         }
 
