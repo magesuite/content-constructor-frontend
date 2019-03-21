@@ -60,15 +60,15 @@ $sizes = $sizesMobile . ', ' . $sizesDesktop;
         <?php endif; ?>
             <div class="cs-image-teaser
              cs-image-teaser--items-in-row-<?= $itemsPerRow ?>
-             cs-image-teaser--items-in-row-mobile-<?= $itemsPerViewMobile ?>
+             cs-image-teaser--items-in-row-mobile-<?= $itemsPerRowMobile ?>
              <?= $isSlider ? 'cs-image-teaser--slider' : '' ?>
              <?= $teaserWidth == 'window-slider' ? 'cs-image-teaser--full-width-slider' : '' ?>
              <?= $componentClasses ?>"
-                 data-items-per-view="<?= $itemsPerView ?>"
+                data-items-per-view="<?= $itemsPerView ?>"
                 <?= $itemsPerViewMobile ? 'data-mobile-items-per-view="' . $itemsPerViewMobile . '"' : '' ?>
-                 data-is-slider="<?= $isSlider ?>"
-                 data-mobile-is-slider="<?= $isSliderMobile ?>"
-                 data-layout="<?= $contentPlacement ?>">
+                data-is-slider="<?= $isSlider ?>"
+                data-mobile-is-slider="<?= $isSliderMobile ?>"
+                data-layout="<?= $contentPlacement ?>">
 
                 <div class="cs-image-teaser__carousel">
                     <div class="cs-image-teaser__wrapper cs-image-teaser__wrapper--content-<?= $contentPlacement ?>">
