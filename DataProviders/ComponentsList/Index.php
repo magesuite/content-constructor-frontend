@@ -52,6 +52,46 @@ class Index extends DataProviderComponents
 
         $blocks[] = self::getSeparatorBlock();
 
+        # ===== IMAGE TEASERS LEGACY ===== #
+        $blocks[] = [
+            '_type' => '\Magento\Cms\Block\Widget\Page\Link',
+            '_template' => 'widget/link/link_block.phtml',
+            '_data' => [
+                'section' => 'content',
+                'anchor_text' => 'Image Teaser Legacy Window width',
+                '_path' => 'contentconstructor/components/index/page/itlegacywindowwidth'
+            ]
+        ];
+        $blocks[] = [
+            '_type' => '\Magento\Cms\Block\Widget\Page\Link',
+            '_template' => 'widget/link/link_block.phtml',
+            '_data' => [
+                'section' => 'content',
+                'anchor_text' => 'Image Teaser Legacy Container width',
+                '_path' => 'contentconstructor/components/index/page/itlegacycontainerwidth'
+            ]
+        ];
+        $blocks[] = [
+            '_type' => '\Magento\Cms\Block\Widget\Page\Link',
+            '_template' => 'widget/link/link_block.phtml',
+            '_data' => [
+                'section' => 'content',
+                'anchor_text' => 'Image Teaser Legacy Window width slider',
+                '_path' => 'contentconstructor/components/index/page/itlegacywindowwidthslider'
+            ]
+        ];
+        $blocks[] = [
+            '_type' => '\Magento\Cms\Block\Widget\Page\Link',
+            '_template' => 'widget/link/link_block.phtml',
+            '_data' => [
+                'section' => 'content',
+                'anchor_text' => 'Image Teaser Legacy Container width slider',
+                '_path' => 'contentconstructor/components/index/page/itlegacycontainerwidthslider'
+            ]
+        ];
+
+        $blocks[] = self::getSeparatorBlock();
+
         # ===== IMAGE TEASERS ===== #
         $blocks[] = [
             '_type' => '\Magento\Cms\Block\Widget\Page\Link',
@@ -85,8 +125,17 @@ class Index extends DataProviderComponents
             '_template' => 'widget/link/link_block.phtml',
             '_data' => [
                 'section' => 'content',
-                'anchor_text' => 'Image Teaser Content width slider',
-                '_path' => 'contentconstructor/components/index/page/itcontentwidthslider'
+                'anchor_text' => 'Image Teaser Container width slider',
+                '_path' => 'contentconstructor/components/index/page/itcontainerwidthslider'
+            ]
+        ];
+        $blocks[] = [
+            '_type' => '\Magento\Cms\Block\Widget\Page\Link',
+            '_template' => 'widget/link/link_block.phtml',
+            '_data' => [
+                'section' => 'content',
+                'anchor_text' => 'Contrast Optimizers',
+                '_path' => 'contentconstructor/components/index/page/contrastoptimizers'
             ]
         ];
         $blocks[] = self::getSeparatorBlock();

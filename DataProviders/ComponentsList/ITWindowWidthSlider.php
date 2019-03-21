@@ -7,128 +7,663 @@ class ITWindowWidthSlider extends DataProviderComponents
     public function getBlocks()
     {
         $blocks = [];
-        $blocks[] = Index::getHeadlineBlock('Image teasers for window width slider');
+        $blocks[] = Index::getHeadlineBlock('Image Teasers for window width slider');
 
         $blocks[] = Index::getHeadlineBlock('2 in row');
         $blocks[] = [
-            'id' => 'component2967',
+            'id' => 'componentfeed',
             'section' => 'content',
-            'type' => 'image-teaser',
+            'type' => 'image-teaser-2',
             'data' => [
+                'customCssClass' => '',
                 'items' => [
                     0 => [
-                        'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
-                        'displayVariant' => '1',
-                        'headline' => 'Text vertically centered on the left',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text over image',
-                        'ctaLabel' => 'Dark',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '1920x1022px (960:511)',
-                        'aspectRatio' => '960:511',
-                        'colorScheme' => 'dark',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Top left',
+                        'description' => 'Slider<br>Text over image',
+                        'cta' => [
+                            'label' => 'Dark',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '1',
+                            'y' => '1',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'dark',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     1 => [
-                        'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
-                        'displayVariant' => '2',
-                        'headline' => 'Text on the bottom, left corner',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text over image',
-                        'ctaLabel' => 'Dark',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '1920x1022px (960:511)',
-                        'aspectRatio' => '960:511',
-                        'colorScheme' => 'dark',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Top center',
+                        'description' => 'Slider<br>Text over image',
+                        'cta' => [
+                            'label' => 'Dark',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '2',
+                            'y' => '1',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'dark',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     2 => [
-                        'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
-                        'displayVariant' => '3',
-                        'headline' => 'Text vertically centered in the middle',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text over image',
-                        'ctaLabel' => 'Dark',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '1920x1022px (960:511)',
-                        'aspectRatio' => '960:511',
-                        'colorScheme' => 'dark',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Top right',
+                        'description' => 'Slider<br>Text over image',
+                        'cta' => [
+                            'label' => 'Dark',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '3',
+                            'y' => '1',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'dark',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     3 => [
-                        'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
-                        'displayVariant' => '4',
-                        'headline' => 'Text on the bottom - centered',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text over image',
-                        'ctaLabel' => 'Dark',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '1920x1022px (960:511)',
-                        'aspectRatio' => '960:511',
-                        'colorScheme' => 'dark',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Center left',
+                        'description' => 'Slider<br>Text over image',
+                        'cta' => [
+                            'label' => 'Dark',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '1',
+                            'y' => '2',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'dark',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     4 => [
-                        'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
-                        'displayVariant' => '1',
-                        'headline' => 'Text vertically centered on the left',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text over image',
-                        'ctaLabel' => 'Light',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '1920x1022px (960:511)',
-                        'aspectRatio' => '960:511',
-                        'colorScheme' => 'light',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        ],
+                        'slogan' => 'In the middle',
+                        'description' => 'Slider<br>Text over image',
+                        'cta' => [
+                            'label' => 'Dark',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '2',
+                            'y' => '2',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'dark',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     5 => [
-                        'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
-                        'displayVariant' => '2',
-                        'headline' => 'Text on the bottom, left corner',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text over image',
-                        'ctaLabel' => 'Light',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '1920x1022px (960:511)',
-                        'aspectRatio' => '960:511',
-                        'colorScheme' => 'light',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Center right',
+                        'description' => 'Slider<br>Text over image',
+                        'cta' => [
+                            'label' => 'Light',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '3',
+                            'y' => '2',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'light',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     6 => [
-                        'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
-                        'displayVariant' => '3',
-                        'headline' => 'Text vertically centered in the middle',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text over image',
-                        'ctaLabel' => 'Light',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '1920x1022px (960:511)',
-                        'aspectRatio' => '960:511',
-                        'colorScheme' => 'light',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Bottom left',
+                        'description' => 'Slider<br>Text over image',
+                        'cta' => [
+                            'label' => 'Light',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '1',
+                            'y' => '3',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'light',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     7 => [
-                        'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
-                        'displayVariant' => '4',
-                        'headline' => 'Text on the bottom - centered',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text over image',
-                        'ctaLabel' => 'Light',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '1920x1022px (960:511)',
-                        'aspectRatio' => '960:511',
-                        'colorScheme' => 'light',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Bottom center',
+                        'description' => 'Slider<br>Text over image',
+                        'cta' => [
+                            'label' => 'Light',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '2',
+                            'y' => '3',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'light',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    8 => [
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Bottom right',
+                        'description' => 'Slider<br>Text over image',
+                        'cta' => [
+                            'label' => 'Light',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '3',
+                            'y' => '3',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'light',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                 ],
                 'ignoredItems' => [],
-                'currentScenario' => [
+                'scenario' => [
                     'teaserWidth' => [
-                        'name' => 'Window width Slider',
+                        'name' => 'Browser width Slider',
                         'iconId' => 'tw_window-slider',
                         'disabled' => '',
-                        'teasersLimit' => '',
-                        'id' => 'w-s',
+                        'id' => 'window-slider',
                     ],
                     'desktopLayout' => [
                         'name' => '2 in row',
@@ -137,94 +672,467 @@ class ITWindowWidthSlider extends DataProviderComponents
                         'teasersNum' => '2',
                         'id' => '2',
                     ],
-                    'textPositioning' => [
+                    'contentPlacement' => [
                         'name' => 'Text over image',
                         'iconId' => 'tl_over',
                         'disabled' => '',
-                        'textPosition' => '1',
+                        'contentPlacement' => '1',
                         'id' => 'over',
                     ],
                     'mobileLayout' => [
                         'name' => 'Slider',
                         'iconId' => 'ml_slider',
                         'disabled' => '',
-                        'id' => 'slider',
+                        'id' => 'mobile-slider',
                     ],
                 ],
                 'componentVisibility' => [
                     'mobile' => '1',
-                    'desktop' => '1'
+                    'desktop' => '1',
                 ],
             ],
         ];
-
         $blocks[] = [
-            'id' => 'componentb51e',
+            'id' => 'componentd56a',
             'section' => 'content',
-            'type' => 'image-teaser',
+            'type' => 'image-teaser-2',
             'data' => [
+                'customCssClass' => '',
                 'items' => [
                     0 => [
-                        'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
-                        'displayVariant' => '1',
-                        'headline' => 'Headline',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text below image',
-                        'ctaLabel' => 'Dark',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '1920x1022px (960:511)',
-                        'aspectRatio' => '960:511',
-                        'colorScheme' => 'dark',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Slider',
+                        'description' => 'Text below image',
+                        'cta' => [
+                            'label' => 'Dark',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '1',
+                            'y' => '1',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'dark',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     1 => [
-                        'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
-                        'displayVariant' => '2',
-                        'headline' => 'Headline',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text below image',
-                        'ctaLabel' => 'Light',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '1920x1022px (960:511)',
-                        'aspectRatio' => '960:511',
-                        'colorScheme' => 'light',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Slider',
+                        'description' => 'Text below image',
+                        'cta' => [
+                            'label' => 'Dark',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '1',
+                            'y' => '1',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'dark',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     2 => [
-                        'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
-                        'displayVariant' => '3',
-                        'headline' => 'Headline',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text below image',
-                        'ctaLabel' => 'Light',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '1920x1022px (960:511)',
-                        'aspectRatio' => '960:511',
-                        'colorScheme' => 'light',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Slider',
+                        'description' => 'Text below image',
+                        'cta' => [
+                            'label' => 'Dark',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '1',
+                            'y' => '1',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'dark',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     3 => [
-                        'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
-                        'displayVariant' => '4',
-                        'headline' => 'Headline',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text below image',
-                        'ctaLabel' => 'Light',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '1920x1022px (960:511)',
-                        'aspectRatio' => '960:511',
-                        'colorScheme' => 'light',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Slider',
+                        'description' => 'Text below image',
+                        'cta' => [
+                            'label' => 'Light',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '1',
+                            'y' => '1',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'light',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    4 => [
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Slider',
+                        'description' => 'Text below image',
+                        'cta' => [
+                            'label' => 'Light',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '1',
+                            'y' => '1',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'light',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    5 => [
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Slider',
+                        'description' => 'Text below image',
+                        'cta' => [
+                            'label' => 'Light',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '1',
+                            'y' => '1',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'light',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                 ],
                 'ignoredItems' => [],
-                'currentScenario' => [
+                'scenario' => [
                     'teaserWidth' => [
-                        'name' => 'Window width Slider',
+                        'name' => 'Browser width Slider',
                         'iconId' => 'tw_window-slider',
                         'disabled' => '',
-                        'teasersLimit' => '',
-                        'id' => 'w-s',
+                        'id' => 'window-slider',
                     ],
                     'desktopLayout' => [
                         'name' => '2 in row',
@@ -233,147 +1141,682 @@ class ITWindowWidthSlider extends DataProviderComponents
                         'teasersNum' => '2',
                         'id' => '2',
                     ],
-                    'textPositioning' => [
+                    'contentPlacement' => [
                         'name' => 'Text below image',
                         'iconId' => 'tl_under',
                         'disabled' => '',
-                        'textPosition' => '',
+                        'contentPlacement' => '',
                         'id' => 'under',
                     ],
                     'mobileLayout' => [
                         'name' => 'Slider',
                         'iconId' => 'ml_slider',
                         'disabled' => '',
-                        'id' => 'slider',
+                        'id' => 'mobile-slider',
                     ],
                 ],
                 'componentVisibility' => [
                     'mobile' => '1',
-                    'desktop' => '1'
+                    'desktop' => '1',
                 ],
             ],
         ];
 
         $blocks[] = Index::getHeadlineBlock('3 in row');
         $blocks[] = [
-            'id' => 'component2269',
+            'id' => 'component95e0',
             'section' => 'content',
-            'type' => 'image-teaser',
+            'type' => 'image-teaser-2',
             'data' => [
+                'customCssClass' => '',
                 'items' => [
                     0 => [
-                        'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
-                        'displayVariant' => '1',
-                        'headline' => 'Text vertically centered on the left',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text over image',
-                        'ctaLabel' => 'Dark',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '1920x1022px (960:511)',
-                        'aspectRatio' => '960:511',
-                        'colorScheme' => 'dark',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Top left',
+                        'description' => 'Slider<br>Text over image',
+                        'cta' => [
+                            'label' => 'Light',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '1',
+                            'y' => '1',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'light',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     1 => [
-                        'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
-                        'displayVariant' => '2',
-                        'headline' => 'Text on the bottom, left corner',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text over image',
-                        'ctaLabel' => 'Dark',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '1920x1022px (960:511)',
-                        'aspectRatio' => '960:511',
-                        'colorScheme' => 'dark',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Top center',
+                        'description' => 'Slider<br>Text over image',
+                        'cta' => [
+                            'label' => 'Light',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '2',
+                            'y' => '1',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'light',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     2 => [
-                        'image' => $this->getImage('jan-losert-633960-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('jan-losert-633960-unsplash.jpg'),
-                        'displayVariant' => '3',
-                        'headline' => 'Text vertically centered in the middle',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text over image',
-                        'ctaLabel' => 'Dark',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '1920x1022px (960:511)',
-                        'aspectRatio' => '960:511',
-                        'colorScheme' => 'dark',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Top right',
+                        'description' => 'Slider<br>Text over image',
+                        'cta' => [
+                            'label' => 'Light',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '3',
+                            'y' => '1',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'light',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     3 => [
-                        'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
-                        'displayVariant' => '4',
-                        'headline' => 'Text on the bottom - centered',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text over image',
-                        'ctaLabel' => 'Dark',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '1920x1022px (960:511)',
-                        'aspectRatio' => '960:511',
-                        'colorScheme' => 'dark',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Center left',
+                        'description' => 'Slider<br>Text over image',
+                        'cta' => [
+                            'label' => 'Light',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '1',
+                            'y' => '2',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'light',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     4 => [
-                        'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
-                        'displayVariant' => '1',
-                        'headline' => 'Text vertically centered on the left',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text over image',
-                        'ctaLabel' => 'Light',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '1920x1022px (960:511)',
-                        'aspectRatio' => '960:511',
-                        'colorScheme' => 'light',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        ],
+                        'slogan' => 'In the middle',
+                        'description' => 'Slider<br>Text over image',
+                        'cta' => [
+                            'label' => 'Light',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '2',
+                            'y' => '2',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'light',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     5 => [
-                        'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
-                        'displayVariant' => '2',
-                        'headline' => 'Text on the bottom, left corner',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text over image',
-                        'ctaLabel' => 'Light',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '1920x1022px (960:511)',
-                        'aspectRatio' => '960:511',
-                        'colorScheme' => 'light',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Center right',
+                        'description' => 'Slider<br>Text over image',
+                        'cta' => [
+                            'label' => 'Dark',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '3',
+                            'y' => '2',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'dark',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     6 => [
-                        'image' => $this->getImage('jan-losert-633960-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('jan-losert-633960-unsplash.jpg'),
-                        'displayVariant' => '3',
-                        'headline' => 'Text vertically centered in the middle',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text over image',
-                        'ctaLabel' => 'Light',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '1920x1022px (960:511)',
-                        'aspectRatio' => '960:511',
-                        'colorScheme' => 'light',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Bottom left',
+                        'description' => 'Slider<br>Text over image',
+                        'cta' => [
+                            'label' => 'Dark',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '1',
+                            'y' => '3',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'dark',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     7 => [
-                        'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
-                        'displayVariant' => '4',
-                        'headline' => 'Text on the bottom - centered',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text over image',
-                        'ctaLabel' => 'Light',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '1920x1022px (960:511)',
-                        'aspectRatio' => '960:511',
-                        'colorScheme' => 'light',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Bottom center',
+                        'description' => 'Slider<br>Text over image',
+                        'cta' => [
+                            'label' => 'Dark',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '2',
+                            'y' => '3',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'dark',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    8 => [
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Bottom right',
+                        'description' => 'Slider<br>Text over image',
+                        'cta' => [
+                            'label' => 'Dark',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '3',
+                            'y' => '3',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'dark',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                 ],
                 'ignoredItems' => [],
-                'currentScenario' => [
+                'scenario' => [
                     'teaserWidth' => [
-                        'name' => 'Window width Slider',
+                        'name' => 'Browser width Slider',
                         'iconId' => 'tw_window-slider',
                         'disabled' => '',
-                        'teasersLimit' => '',
-                        'id' => 'w-s',
+                        'id' => 'window-slider',
                     ],
                     'desktopLayout' => [
                         'name' => '3 in row',
@@ -382,120 +1825,467 @@ class ITWindowWidthSlider extends DataProviderComponents
                         'teasersNum' => '3',
                         'id' => '3',
                     ],
-                    'textPositioning' => [
+                    'contentPlacement' => [
                         'name' => 'Text over image',
                         'iconId' => 'tl_over',
                         'disabled' => '',
-                        'textPosition' => '1',
+                        'contentPlacement' => '1',
                         'id' => 'over',
                     ],
                     'mobileLayout' => [
                         'name' => 'Slider',
                         'iconId' => 'ml_slider',
                         'disabled' => '',
-                        'id' => 'slider',
+                        'id' => 'mobile-slider',
                     ],
                 ],
                 'componentVisibility' => [
                     'mobile' => '1',
-                    'desktop' => '1'
+                    'desktop' => '1',
                 ],
             ],
         ];
-
         $blocks[] = [
-            'id' => 'component9f4d',
+            'id' => 'component3773',
             'section' => 'content',
-            'type' => 'image-teaser',
+            'type' => 'image-teaser-2',
             'data' => [
+                'customCssClass' => '',
                 'items' => [
                     0 => [
-                        'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
-                        'displayVariant' => '1',
-                        'headline' => 'Headline',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text below image',
-                        'ctaLabel' => 'Dark',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '1920x1022px (960:511)',
-                        'aspectRatio' => '960:511',
-                        'colorScheme' => 'dark',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Slider',
+                        'description' => 'Text below image',
+                        'cta' => [
+                            'label' => 'Dark',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '1',
+                            'y' => '1',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'dark',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     1 => [
-                        'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
-                        'displayVariant' => '2',
-                        'headline' => 'Headline',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text below image',
-                        'ctaLabel' => 'Dark',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '1920x1022px (960:511)',
-                        'aspectRatio' => '960:511',
-                        'colorScheme' => 'dark',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Slider',
+                        'description' => 'Text below image',
+                        'cta' => [
+                            'label' => 'Dark',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '1',
+                            'y' => '1',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'dark',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     2 => [
-                        'image' => $this->getImage('jan-losert-633960-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('jan-losert-633960-unsplash.jpg'),
-                        'displayVariant' => '3',
-                        'headline' => 'Headline',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text below image',
-                        'ctaLabel' => 'Dark',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '1920x1022px (960:511)',
-                        'aspectRatio' => '960:511',
-                        'colorScheme' => 'dark',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Slider',
+                        'description' => 'Text below image',
+                        'cta' => [
+                            'label' => 'Dark',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '1',
+                            'y' => '1',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'dark',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     3 => [
-                        'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
-                        'displayVariant' => '1',
-                        'headline' => 'Headline',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text below image',
-                        'ctaLabel' => 'Light',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '1920x1022px (960:511)',
-                        'aspectRatio' => '960:511',
-                        'colorScheme' => 'light',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Slider',
+                        'description' => 'Text below image',
+                        'cta' => [
+                            'label' => 'Light',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '1',
+                            'y' => '1',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'light',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     4 => [
-                        'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
-                        'displayVariant' => '1',
-                        'headline' => 'Headline',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text below image',
-                        'ctaLabel' => 'Light',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '1920x1022px (960:511)',
-                        'aspectRatio' => '960:511',
-                        'colorScheme' => 'light',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Slider',
+                        'description' => 'Text below image',
+                        'cta' => [
+                            'label' => 'Light',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '1',
+                            'y' => '1',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'light',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     5 => [
-                        'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
-                        'displayVariant' => '1',
-                        'headline' => 'Headline',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text below image',
-                        'ctaLabel' => 'Light',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '1920x1022px (960:511)',
-                        'aspectRatio' => '960:511',
-                        'colorScheme' => 'light',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Slider',
+                        'description' => 'Text below image',
+                        'cta' => [
+                            'label' => 'Light',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '1',
+                            'y' => '1',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'light',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                 ],
                 'ignoredItems' => [],
-                'currentScenario' => [
+                'scenario' => [
                     'teaserWidth' => [
-                        'name' => 'Window width Slider',
+                        'name' => 'Browser width Slider',
                         'iconId' => 'tw_window-slider',
                         'disabled' => '',
-                        'teasersLimit' => '',
-                        'id' => 'w-s',
+                        'id' => 'window-slider',
                     ],
                     'desktopLayout' => [
                         'name' => '3 in row',
@@ -504,147 +2294,682 @@ class ITWindowWidthSlider extends DataProviderComponents
                         'teasersNum' => '3',
                         'id' => '3',
                     ],
-                    'textPositioning' => [
+                    'contentPlacement' => [
                         'name' => 'Text below image',
                         'iconId' => 'tl_under',
                         'disabled' => '',
-                        'textPosition' => '',
+                        'contentPlacement' => '',
                         'id' => 'under',
                     ],
                     'mobileLayout' => [
                         'name' => 'Slider',
                         'iconId' => 'ml_slider',
                         'disabled' => '',
-                        'id' => 'slider',
+                        'id' => 'mobile-slider',
                     ],
                 ],
                 'componentVisibility' => [
                     'mobile' => '1',
-                    'desktop' => '1'
+                    'desktop' => '1',
                 ],
             ],
         ];
 
         $blocks[] = Index::getHeadlineBlock('4 in row');
         $blocks[] = [
-            'id' => 'component5cbc',
+            'id' => 'component6972',
             'section' => 'content',
-            'type' => 'image-teaser',
+            'type' => 'image-teaser-2',
             'data' => [
+                'customCssClass' => '',
                 'items' => [
                     0 => [
-                        'image' => $this->getImage('howard-lawrence-b-1141813-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('howard-lawrence-b-1141813-unsplash.jpg'),
-                        'displayVariant' => '1',
-                        'headline' => 'Text vertically centered on the left',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text over image',
-                        'ctaLabel' => 'Dark',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '574x571px (574:571)',
-                        'aspectRatio' => '574:571',
-                        'colorScheme' => 'dark',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Top left',
+                        'description' => 'Slider<br>Text over image',
+                        'cta' => [
+                            'label' => 'Dark',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '1',
+                            'y' => '1',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'dark',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     1 => [
-                        'image' => $this->getImage('alexandru-acea-1160461-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('alexandru-acea-1160461-unsplash.jpg'),
-                        'displayVariant' => '2',
-                        'headline' => 'Text on the bottom, left corner',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text over image',
-                        'ctaLabel' => 'Dark',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '574x571px (574:571)',
-                        'aspectRatio' => '574:571',
-                        'colorScheme' => 'dark',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Top center',
+                        'description' => 'Slider<br>Text over image',
+                        'cta' => [
+                            'label' => 'Dark',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '2',
+                            'y' => '1',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'dark',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     2 => [
-                        'image' => $this->getImage('estee-janssens-745861-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('estee-janssens-745861-unsplash.jpg'),
-                        'displayVariant' => '3',
-                        'headline' => 'Text vertically centered in the middle',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text over image',
-                        'ctaLabel' => 'Dark',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '574x571px (574:571)',
-                        'aspectRatio' => '574:571',
-                        'colorScheme' => 'dark',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Top right',
+                        'description' => 'Slider<br>Text over image',
+                        'cta' => [
+                            'label' => 'Dark',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '3',
+                            'y' => '1',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'dark',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     3 => [
-                        'image' => $this->getImage('howard-lawrence-b-1141813-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('howard-lawrence-b-1141813-unsplash.jpg'),
-                        'displayVariant' => '4',
-                        'headline' => 'Text on the bottom - centered',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text over image',
-                        'ctaLabel' => 'Dark',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '574x571px (574:571)',
-                        'aspectRatio' => '574:571',
-                        'colorScheme' => 'dark',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Center left',
+                        'description' => 'Slider<br>Text over image',
+                        'cta' => [
+                            'label' => 'Dark',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '1',
+                            'y' => '2',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'dark',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     4 => [
-                        'image' => $this->getImage('howard-lawrence-b-1141813-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('howard-lawrence-b-1141813-unsplash.jpg'),
-                        'displayVariant' => '1',
-                        'headline' => 'Text vertically centered on the left',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text over image',
-                        'ctaLabel' => 'Light',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '574x571px (574:571)',
-                        'aspectRatio' => '574:571',
-                        'colorScheme' => 'light',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        ],
+                        'slogan' => 'In the middle',
+                        'description' => 'Slider<br>Text over image',
+                        'cta' => [
+                            'label' => 'Dark',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '2',
+                            'y' => '2',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'dark',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     5 => [
-                        'image' => $this->getImage('alexandru-acea-1160461-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('alexandru-acea-1160461-unsplash.jpg'),
-                        'displayVariant' => '2',
-                        'headline' => 'Text on the bottom, left corner',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text over image',
-                        'ctaLabel' => 'Light',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '574x571px (574:571)',
-                        'aspectRatio' => '574:571',
-                        'colorScheme' => 'light',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Center right',
+                        'description' => 'Slider<br>Text over image',
+                        'cta' => [
+                            'label' => 'Light',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '3',
+                            'y' => '2',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'light',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     6 => [
-                        'image' => $this->getImage('estee-janssens-745861-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('estee-janssens-745861-unsplash.jpg'),
-                        'displayVariant' => '3',
-                        'headline' => 'Text vertically centered in the middle',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text over image',
-                        'ctaLabel' => 'Light',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '574x571px (574:571)',
-                        'aspectRatio' => '574:571',
-                        'colorScheme' => 'light',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Bottom left',
+                        'description' => 'Slider<br>Text over image',
+                        'cta' => [
+                            'label' => 'Light',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '1',
+                            'y' => '3',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'light',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     7 => [
-                        'image' => $this->getImage('howard-lawrence-b-1141813-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('howard-lawrence-b-1141813-unsplash.jpg'),
-                        'displayVariant' => '4',
-                        'headline' => 'Text on the bottom - centered',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text over image',
-                        'ctaLabel' => 'Light',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '574x571px (574:571)',
-                        'aspectRatio' => '574:571',
-                        'colorScheme' => 'light',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Bottom center',
+                        'description' => 'Slider<br>Text over image',
+                        'cta' => [
+                            'label' => 'Light',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '2',
+                            'y' => '3',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'light',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    8 => [
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Bottom right',
+                        'description' => 'Slider<br>Text over image',
+                        'cta' => [
+                            'label' => 'Light',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '3',
+                            'y' => '3',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'light',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                 ],
                 'ignoredItems' => [],
-                'currentScenario' => [
+                'scenario' => [
                     'teaserWidth' => [
-                        'name' => 'Window width Slider',
+                        'name' => 'Browser width Slider',
                         'iconId' => 'tw_window-slider',
                         'disabled' => '',
-                        'teasersLimit' => '',
-                        'id' => 'w-s',
+                        'id' => 'window-slider',
                     ],
                     'desktopLayout' => [
                         'name' => '4 in row',
@@ -653,146 +2978,680 @@ class ITWindowWidthSlider extends DataProviderComponents
                         'teasersNum' => '4',
                         'id' => '4',
                     ],
-                    'textPositioning' => [
+                    'contentPlacement' => [
                         'name' => 'Text over image',
                         'iconId' => 'tl_over',
                         'disabled' => '',
-                        'textPosition' => '1',
+                        'contentPlacement' => '1',
                         'id' => 'over',
                     ],
                     'mobileLayout' => [
                         'name' => 'Slider',
                         'iconId' => 'ml_slider',
                         'disabled' => '',
-                        'id' => 'slider',
+                        'id' => 'mobile-slider',
                     ],
                 ],
                 'componentVisibility' => [
                     'mobile' => '1',
-                    'desktop' => '1'
+                    'desktop' => '1',
                 ],
             ],
         ];
-        
         $blocks[] = [
-            'id' => 'component29af',
+            'id' => 'component3773_duplicate',
             'section' => 'content',
-            'type' => 'image-teaser',
+            'type' => 'image-teaser-2',
             'data' => [
+                'customCssClass' => '',
                 'items' => [
                     0 => [
-                        'image' => $this->getImage('howard-lawrence-b-1141813-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('howard-lawrence-b-1141813-unsplash.jpg'),
-                        'displayVariant' => '1',
-                        'headline' => 'Headline',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text below image',
-                        'ctaLabel' => 'Dark',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '574x571px (574:571)',
-                        'aspectRatio' => '574:571',
-                        'colorScheme' => 'dark',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Slider',
+                        'description' => 'Text below image',
+                        'cta' => [
+                            'label' => 'Dark',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '1',
+                            'y' => '1',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'dark',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     1 => [
-                        'image' => $this->getImage('alexandru-acea-1160461-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('alexandru-acea-1160461-unsplash.jpg'),
-                        'displayVariant' => '2',
-                        'headline' => 'Headline',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text below image',
-                        'ctaLabel' => 'Dark',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '574x571px (574:571)',
-                        'aspectRatio' => '574:571',
-                        'colorScheme' => 'dark',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Slider',
+                        'description' => 'Text below image',
+                        'cta' => [
+                            'label' => 'Dark',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '1',
+                            'y' => '1',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'dark',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     2 => [
-                        'image' => $this->getImage('estee-janssens-745861-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('estee-janssens-745861-unsplash.jpg'),
-                        'displayVariant' => '3',
-                        'headline' => 'Headline',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text below image',
-                        'ctaLabel' => 'Dark',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '574x571px (574:571)',
-                        'aspectRatio' => '574:571',
-                        'colorScheme' => 'dark',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Slider',
+                        'description' => 'Text below image',
+                        'cta' => [
+                            'label' => 'Dark',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '1',
+                            'y' => '1',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'dark',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     3 => [
-                        'image' => $this->getImage('howard-lawrence-b-1141813-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('howard-lawrence-b-1141813-unsplash.jpg'),
-                        'displayVariant' => '4',
-                        'headline' => 'Headline',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text below image',
-                        'ctaLabel' => 'Dark',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '574x571px (574:571)',
-                        'aspectRatio' => '574:571',
-                        'colorScheme' => 'dark',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Slider',
+                        'description' => 'Text below image',
+                        'cta' => [
+                            'label' => 'Light',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '1',
+                            'y' => '1',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'light',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     4 => [
-                        'image' => $this->getImage('howard-lawrence-b-1141813-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('howard-lawrence-b-1141813-unsplash.jpg'),
-                        'displayVariant' => '1',
-                        'headline' => 'Headline',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text below image',
-                        'ctaLabel' => 'Light',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '574x571px (574:571)',
-                        'aspectRatio' => '574:571',
-                        'colorScheme' => 'light',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        ],
+                        'slogan' => '',
+                        'description' => '',
+                        'cta' => [
+                            'label' => 'Light',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '1',
+                            'y' => '1',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'light',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     5 => [
-                        'image' => $this->getImage('alexandru-acea-1160461-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('alexandru-acea-1160461-unsplash.jpg'),
-                        'displayVariant' => '2',
-                        'headline' => 'Headline',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text below image',
-                        'ctaLabel' => 'Light',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '574x571px (574:571)',
-                        'aspectRatio' => '574:571',
-                        'colorScheme' => 'light',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        ],
+                        'slogan' => '',
+                        'description' => 'Text below image',
+                        'cta' => [
+                            'label' => 'Light',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '1',
+                            'y' => '1',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'light',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     6 => [
-                        'image' => $this->getImage('estee-janssens-745861-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('estee-janssens-745861-unsplash.jpg'),
-                        'displayVariant' => '3',
-                        'headline' => 'Headline',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text below image',
-                        'ctaLabel' => 'Light',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '574x571px (574:571)',
-                        'aspectRatio' => '574:571',
-                        'colorScheme' => 'light',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Slider',
+                        'description' => '',
+                        'cta' => [
+                            'label' => 'Light',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '1',
+                            'y' => '1',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'light',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                     7 => [
-                        'image' => $this->getImage('howard-lawrence-b-1141813-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('howard-lawrence-b-1141813-unsplash.jpg'),
-                        'displayVariant' => '4',
-                        'headline' => 'Headline',
-                        'subheadline' => 'Slider',
-                        'paragraph' => 'Text below image',
-                        'ctaLabel' => 'Light',
-                        'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="10001"}}',
-                        'sizeInfo' => '574x571px (574:571)',
-                        'aspectRatio' => '574:571',
-                        'colorScheme' => 'light',
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Slider',
+                        'description' => 'Text below image',
+                        'cta' => [
+                            'label' => 'Light',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '1',
+                            'y' => '1',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'light',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    8 => [
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        ],
+                        'slogan' => '',
+                        'description' => '',
+                        'cta' => [
+                            'label' => '',
+                            'href' => '',
+                        ],
+                        'content_align' => [
+                            'x' => '1',
+                            'y' => '1',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'light',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '1',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                 ],
                 'ignoredItems' => [],
-                'currentScenario' => [
+                'scenario' => [
                     'teaserWidth' => [
-                        'name' => 'Window width Slider',
+                        'name' => 'Browser width Slider',
                         'iconId' => 'tw_window-slider',
                         'disabled' => '',
-                        'teasersLimit' => '',
-                        'id' => 'w-s',
+                        'id' => 'window-slider',
                     ],
                     'desktopLayout' => [
                         'name' => '4 in row',
@@ -801,27 +3660,29 @@ class ITWindowWidthSlider extends DataProviderComponents
                         'teasersNum' => '4',
                         'id' => '4',
                     ],
-                    'textPositioning' => [
+                    'contentPlacement' => [
                         'name' => 'Text below image',
                         'iconId' => 'tl_under',
                         'disabled' => '',
-                        'textPosition' => '',
+                        'contentPlacement' => '',
                         'id' => 'under',
                     ],
                     'mobileLayout' => [
                         'name' => 'Slider',
                         'iconId' => 'ml_slider',
                         'disabled' => '',
-                        'id' => 'slider',
+                        'id' => 'mobile-slider',
                     ],
                 ],
                 'componentVisibility' => [
                     'mobile' => '1',
-                    'desktop' => '1'
+                    'desktop' => '1',
                 ],
             ],
         ];
 
+
         return $blocks;
     }
+
 }
