@@ -2,12 +2,12 @@
 
 namespace MageSuite\ContentConstructorFrontend\DataProviders\ComponentsList;
 
-class ITContentWidthSlider extends DataProviderComponents
+class ITLegacyContainerWidthSlider extends DataProviderComponents
 {
     public function getBlocks()
     {
         $blocks = [];
-        $blocks[] = Index::getHeadlineBlock('Image Teasers for Content Width Slider');
+        $blocks[] = Index::getHeadlineBlock('Image Teasers Legacy for container width slider');
 
         $blocks[] = Index::getHeadlineBlock('1 in row');
         $blocks[] = [
