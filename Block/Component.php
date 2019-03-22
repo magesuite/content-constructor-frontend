@@ -12,6 +12,9 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
      */
     protected $componentPool;
 
+    /**
+     * @var \MageSuite\ContentConstructorFrontend\Block\Component\AbstractComponent
+     */
     protected $component;
 
     /**
@@ -75,16 +78,13 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
 
         $tags = [];
 
-        foreach ($this->component->getIdentities() as $identities) {
+        $identities = $this->component->getIdentities();
 
-            if (is_string($identities)) {
-                $identities = [$identities];
-            }
-
-            $tags = array_merge($tags, $identities);
+        if (is_string($identities)) {
+            $identities = [$identities];
         }
 
-        return $tags;
+        return $identities;
     }
 
     public function _toHtml()
@@ -102,8 +102,10 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
             return '';
         }
 
-        return $this->getLayout()
-            ->createBlock($componentClassName, '', ['data' => $componentData])
-            ->toHtml();
+        $this->component = $this
+            ->getLayout()
+            ->createBlock($componentClassName, '', ['data' => $componentData]);
+
+        return $this->component->toHtml();
     }
 }

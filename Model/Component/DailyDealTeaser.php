@@ -14,6 +14,8 @@ class DailyDealTeaser extends \Magento\Framework\DataObject implements ViewModel
      */
     protected $listProductBlock;
 
+    protected $product = null;
+
     public function __construct(
         \MageSuite\ContentConstructorFrontend\DataProviders\DailyDealTeaserDataProvider $dailyDealTeaserDataProvider,
         \Magento\Catalog\Block\Product\ListProduct $listProductBlock,
@@ -27,16 +29,20 @@ class DailyDealTeaser extends \Magento\Framework\DataObject implements ViewModel
     }
 
     public function getProduct() {
-        $configuration = $this->getData();
+        if($this->product == null) {
+            $configuration = $this->getData();
 
-        $configuration['filter_attributes'] = [
-            'daily_deal_enabled' => [
-                'value' => 1,
-                'operator' => 'eq'
-            ]
-        ];
+            $configuration['filter_attributes'] = [
+                'daily_deal_enabled' => [
+                    'value' => 1,
+                    'operator' => 'eq'
+                ]
+            ];
 
-        return $this->dailyDealTeaserDataProvider->getProduct($configuration);
+            $this->product = $this->dailyDealTeaserDataProvider->getProduct($configuration);
+        }
+
+        return $this->product;
     }
 
     public function getAddToCartParameters($product)

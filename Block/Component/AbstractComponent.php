@@ -20,6 +20,8 @@ class AbstractComponent extends \Magento\Framework\View\Element\Template
      */
     protected $viewModel;
 
+    protected $viewModelInstance;
+
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         \MageSuite\ContentConstructorFrontend\Helper\ComponentVisibility $componentVisibilityHelper,
@@ -40,10 +42,18 @@ class AbstractComponent extends \Magento\Framework\View\Element\Template
      */
     public function getViewModel()
     {
-        return $this->objectManager->create($this->viewModel, ['data' => $this->getData()]);
+        if(!$this->viewModelInstance) {
+            $this->viewModelInstance = $this->objectManager->create($this->viewModel, ['data' => $this->getData()]);
+        }
+
+        return $this->viewModelInstance;
     }
 
     public function getVisibilityClass() {
         return $this->componentVisibilityHelper->getVisibilityClass($this->getData());
+    }
+
+    public function getIdentities() {
+        return [];
     }
 }
