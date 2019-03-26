@@ -99,7 +99,7 @@ class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
      * @magentoDbIsolation enabled
      * @magentoAppIsolation enabled
      * @magentoDataFixture loadProductsFixture
-     * @magentoConfigFixture current_store positive_indicators/popular_icon/active 1
+     * @magentoConfigFixture current_store positive_indicators/popular_icon/is_enabled 1
      */
     public function testItReturnsProducts() {
         $this->itGetsProductsFromSpecifiedCategoryIncludingAllSubcategories();
