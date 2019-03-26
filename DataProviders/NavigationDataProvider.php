@@ -108,7 +108,6 @@ class NavigationDataProvider implements \MageSuite\ContentConstructor\Components
             'category_custom_url' => $this->categoryFrontendHelper->prepareCategoryCustomUrl($category->getCategoryCustomUrl()),
             'featured_products_header' => $category->getFeaturedProductsHeader(),
             'featured_products' => $this->categoryFrontendHelper->getFeaturedProducts($category),
-            'category_icon' => $this->categoryFrontendHelper->getCategoryIcon($category),
             'image_teaser' => $this->getImageTeaser($category)
         ];
 
@@ -163,7 +162,6 @@ class NavigationDataProvider implements \MageSuite\ContentConstructor\Components
             'category_identifier',
             'featured_products_header',
             'featured_products',
-            'category_icon',
             'image_teaser_headline',
             'image_teaser_subheadline',
             'image_teaser_paragraph',
