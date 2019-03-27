@@ -65,6 +65,8 @@ if ($imageTeaser['currentScenario']['teaserWidth']['id'] == 'w-s') {
 }
 
 $sizes = $sizesMobile . ', ' . $sizesDesktop;
+
+$jsConfig = isset($imageTeaser['jsConfig']) ? json_encode($imageTeaser['jsConfig']) : '{}';
 ?>
 
 <div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
@@ -78,10 +80,12 @@ $sizes = $sizesMobile . ', ' . $sizesDesktop;
              <?= $isSlider ? 'cs-image-teaser-legacy--slider' : '' ?>
              <?= $imageTeaser['currentScenario']['teaserWidth']['id'] == 'w-s' ? 'cs-image-teaser-legacy--full-width-slider' : '' ?>
              <?= $componentClasses ?>"
-                 data-items-per-view="<?= $itemsPerView ?>"
+                data-items-per-view="<?= $itemsPerView ?>"
                 <?= $itemsPerViewMobile ? 'data-mobile-items-per-view="' . $itemsPerViewMobile . '"' : '' ?>
-                 data-is-slider="<?= $isSlider ?>"
-                 data-mobile-is-slider="<?= $isSliderMobile ?>">
+                data-is-slider="<?= $isSlider ?>"
+                data-mobile-is-slider="<?= $isSliderMobile ?>"
+                data-js-configuration='<?= $jsConfig; ?>'
+            >
 
                 <div class="cs-image-teaser-legacy__carousel">
                     <div class="cs-image-teaser-legacy__wrapper cs-image-teaser-legacy__wrapper--content-display-<?= $displayVariant ?>">
