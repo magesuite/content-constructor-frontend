@@ -1,0 +1,26 @@
+<?php
+/** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\Icon */
+$iconConfiguration = $block->getData();
+$iconConfiguration['jsConfig'] = array_merge(
+    [
+        'carouselBreakpoint' => 1023,
+        'breakpoints' => [
+            639 => [
+                'slidesPerView' => 2,
+                'slidesPerGroup' => 2
+            ],
+            1023 => [
+                'slidesPerView' => 3,
+                'slidesPerGroup' => 3
+            ]
+        ]
+    ], 
+    $iconConfiguration['jsConfig'] ?? []
+);
+
+echo $this->getLayout()
+    ->createBlock('MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser')
+    ->setData($iconConfiguration)
+    ->setMix('cs-image-teaser--icon ' . $block->getMix())
+    ->toHtml(); 
+?>

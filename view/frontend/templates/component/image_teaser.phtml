@@ -15,12 +15,10 @@ $itemsPerRow = $desktopLayout;
 $itemsPerView = $itemsPerRow;
 
 $itemsPerRowMobile = 2;
-$itemsPerViewMobile = 1;
+$itemsPerViewMobile = $block->getItemsPerViewMobile() ?? 1;
 
 $isSlider = false;
 $isSliderMobile = false;
-
-$mix = $block->getMix();
 
 if (in_array($mobileLayout, ['mobile-large', 'mobile-slider', 'mobile-in-columns'])) {
     $itemsPerRowMobile = 1;
@@ -36,7 +34,7 @@ if ($mobileLayout == 'mobile-slider') {
 
 $componentClasses = $block->getMix();
 $componentClasses .= $block->getSkipSpacing() ? ' cs-image-teaser--skip-spacing' : ''; 
-$componentClasses .= ' ' . $block->getVar('image_teaser_next/additional_css_classes');
+$componentClasses .= ' ' . $block->getVar('image_teaser/additional_css_classes');
 
 $contentPlacement = $imageTeaser['scenario']['contentPlacement']['id'];
 
@@ -51,6 +49,8 @@ if ($teaserWidth == 'window-slider') {
 }
 
 $sizes = $sizesMobile . ', ' . $sizesDesktop;
+
+$jsConfig = isset($imageTeaser['jsConfig']) ? json_encode($imageTeaser['jsConfig']) : '{}';
 ?>
 
 <div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
@@ -68,7 +68,9 @@ $sizes = $sizesMobile . ', ' . $sizesDesktop;
                 <?= $itemsPerViewMobile ? 'data-mobile-items-per-view="' . $itemsPerViewMobile . '"' : '' ?>
                 data-is-slider="<?= $isSlider ?>"
                 data-mobile-is-slider="<?= $isSliderMobile ?>"
-                data-layout="<?= $contentPlacement ?>">
+                data-layout="<?= $contentPlacement ?>"
+                data-js-configuration='<?= $jsConfig; ?>'
+            >
 
                 <div class="cs-image-teaser__carousel">
                     <div class="cs-image-teaser__wrapper cs-image-teaser__wrapper--content-<?= $contentPlacement ?>">

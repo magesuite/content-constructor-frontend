@@ -13,8 +13,8 @@ $description = $slide->getDescription();
  * Call to action properties.
  */
 $cta = $slide->getCta();
-$ctaHref = $cta['href'];
-$ctaLabel = $cta['label'];
+$ctaHref = $cta['href'] ?? '';
+$ctaLabel = $cta['label'] ?? '';
 /**
  * Image properties with support for conditional lazy loading.
  */
@@ -31,7 +31,8 @@ $imageHeight = $slide->getHeight();
 /**
  * Aspect ratio calculations preventing content jumping before images load.
  */
-$aspectRatio = explode(':', $slide->getImage()['aspect_ratio']);
+$slideImage = $slide->getImage();
+$aspectRatio = isset($slideImage['aspect_ratio']) ? explode(':', $slideImage['aspect_ratio']) : [];
 $aspectRatioPadding = 0;
 if (count($aspectRatio) === 2) {
     $aspectRatioPadding = ($aspectRatio[1] / $aspectRatio[0]) * 100;
@@ -45,10 +46,10 @@ $colorScheme = $contrastOptimizers['color_scheme'];
 $mirrorImage = $contrastOptimizers['mirror_image'];
 
 $contrastOptimizersScenarios = $contrastOptimizers['scenarios'];
-$overlay = $contrastOptimizersScenarios['overlay'];
-$gradient = $contrastOptimizersScenarios['gradient'];
-$textShadow = $contrastOptimizersScenarios['text_shadow'];
-$container = $contrastOptimizersScenarios['container'];
+$overlay = $contrastOptimizersScenarios['overlay'] ?? null;
+$gradient = $contrastOptimizersScenarios['gradient'] ?? null;
+$textShadow = $contrastOptimizersScenarios['text_shadow'] ?? null;
+$container = $contrastOptimizersScenarios['container'] ?? null;
 
 ?>
 <li class="cs-image-teaser__slide cs-image-teaser__slide--scheme-<?= $colorScheme ?><?= $hasImage ? ' cs-image-teaser__slide--image-uploaded' : '' ?>">
@@ -69,7 +70,7 @@ $container = $contrastOptimizersScenarios['container'];
         <?php if ($hasImage): ?>
             <figure class="cs-image-teaser__figure">
                 <img
-                    class="cs-image-teaser__image<?= ($isSlider and $isSliderMobile) ? ' swiper-lazy' : ' lazyload' ?><?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
+                    class="cs-image-teaser__image<?= ($hasImage && !$isSvg) ? ' lazyload' : ''; ?><?= ($isSlider || $isSliderMobile) ? ' swiper-lazy' : '' ?><?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
                     src="<?= $imageSrc ?>"
                     alt="<?= $imageAlt ?>"
                     <?php if (!$isSvg): ?> 
@@ -110,10 +111,10 @@ $container = $contrastOptimizersScenarios['container'];
             </figure>
         <?php endif; ?>
 
-        <?php if ($overlay['enabled']): ?>
+        <?php if (isset($overlay['enabled']) && $overlay['enabled']): ?>
             <div class="cs-image-teaser__overlay" style="opacity: <?= ((int)$overlay['intensity']) / 100 ?>"></div>
         <?php endif; ?>
-        <?php if ($gradient['enabled']): ?>
+        <?php if (isset($gradient['enabled']) && $gradient['enabled']): ?>
             <div class="cs-image-teaser__gradient cs-image-teaser__gradient--direction-x-<?= $gradient['direction']['x'] ?> cs-image-teaser__gradient--direction-y-<?= $gradient['direction']['y'] ?>" style="opacity: <?= ((int)$gradient['intensity']) / 100 ?>"></div>
         <?php endif; ?>
 
@@ -122,13 +123,13 @@ $container = $contrastOptimizersScenarios['container'];
                 style="margin-top: -<?= $aspectRatioPadding ?>%; padding-top: <?= $aspectRatioPadding ?>%"
             <?php endif; ?>
         >
-            <div class="cs-image-teaser__content<?= $container['enabled'] ? ' cs-image-teaser__content--container' : '' ?>">
+            <div class="cs-image-teaser__content<?= isset($container['enabled']) && $container['enabled'] ? ' cs-image-teaser__content--container' : '' ?>">
 
-                <?php if ($container['enabled']): ?>
+                <?php if (isset($container['enabled']) && $container['enabled']): ?>
                     <div class="cs-image-teaser__optimizer-container" style="opacity: <?= ((int)$container['intensity']) / 100 ?>"></div>
                 <?php endif; ?>
 
-                <div class="cs-image-teaser__text-content<?= $textShadow['enabled'] ? ' cs-image-teaser__text-content--text-shadow cs-image-teaser__text-content--text-shadow-' . $textShadow['intensity'] : '' ?>">
+                <div class="cs-image-teaser__text-content<?= isset($textShadow['enabled']) && $textShadow['enabled'] ? ' cs-image-teaser__text-content--text-shadow cs-image-teaser__text-content--text-shadow-' . $textShadow['intensity'] : '' ?>">
                     <?php if ($slogan): ?>
                         <h2 class="cs-image-teaser__slogan"><?= $slogan ?></h2>
                     <?php endif; ?>
