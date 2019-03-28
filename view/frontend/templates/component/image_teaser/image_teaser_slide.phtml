@@ -70,7 +70,7 @@ $container = $contrastOptimizersScenarios['container'] ?? null;
         <?php if ($hasImage): ?>
             <figure class="cs-image-teaser__figure">
                 <img
-                    class="cs-image-teaser__image<?= ($hasImage && !$isSvg) ? ' lazyload' : ''; ?><?= ($isSlider || $isSliderMobile) ? ' swiper-lazy' : '' ?><?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
+                    class="cs-image-teaser__image<?= !$isSvg ? ' lazyload' : ''; ?><?= (!$isSvg && ($isSlider || $isSliderMobile)) ? ' swiper-lazy' : '' ?><?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
                     src="<?= $imageSrc ?>"
                     alt="<?= $imageAlt ?>"
                     <?php if (!$isSvg): ?> 
