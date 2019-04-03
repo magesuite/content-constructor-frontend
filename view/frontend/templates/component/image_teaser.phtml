@@ -50,11 +50,14 @@ if ($teaserWidth == 'window-slider') {
 
 $sizes = $sizesMobile . ', ' . $sizesDesktop;
 
+$containerClasses = ($teaserWidth == 'window' || $teaserWidth == 'window-slider') ? ' cs-container--image-teaser-window-width' : '';
+$containerClasses = ' ' . $block->getContainerMix();
+
 $jsConfig = isset($imageTeaser['jsConfig']) ? json_encode($imageTeaser['jsConfig']) : '{}';
 ?>
 
 <div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
-    <div class="cs-container cs-container--image-teaser<?= ($teaserWidth == 'window' || $teaserWidth == 'window-slider') ? ' cs-container--image-teaser-window-width' : '' ?>">
+    <div class="cs-container cs-container--image-teaser<?= $containerClasses ?>">
         <?php if ($teaserWidth == 'container' or $teaserWidth == 'container-slider'): ?>
         <div class="cs-container__inner">
         <?php endif; ?>
