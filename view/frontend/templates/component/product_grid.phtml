@@ -94,10 +94,9 @@ $componentClasses .= ' ' . $block->getVar('product_grid/additional_css_classes')
                                 </div>
                             </li>
                         <?php endif; ?>
-                        <?php $iterator = 1 ?>
                         <?php foreach ($viewModel->getProducts() as $product): ?>
                             <li class="cs-grid-layout__brick cs-products-grid__item">
-                                <?= $viewModel->renderProductTile($product, $iterator) ?>
+                                <?= $viewModel->renderProductTile($product, null) ?>
                             </li>
                         <?php endforeach ?>
                     </ul>
