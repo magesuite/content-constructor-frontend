@@ -148,6 +148,13 @@
         </arguments>
     </type>
 
+    <type name="MageSuite\ContentConstructorFrontend\Block\Component\Icon">
+        <arguments>
+            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\Icon</argument>
+        </arguments>
+    </type>
+
+
     <type name="MageSuite\ContentConstructorFrontend\Service\ComponentPool">
         <arguments>
             <argument name="components" xsi:type="array">
@@ -167,6 +174,7 @@
                 <item name="cms-teaser" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\CmsTeaser</item>
                 <item name="product-finder" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\ProductFinder</item>
                 <item name="daily-deal-teaser" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser</item>
+                <item name="icon" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\Icon</item>
             </argument>
         </arguments>
     </type>

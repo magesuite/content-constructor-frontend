@@ -19,14 +19,12 @@ $componentClasses .= ' ' . $block->getVar('product_carousel/additional_css_class
                 <div class="cs-products-carousel__carousel">
                     <div class="cs-products-carousel__wrapper">
                         <ul class="cs-products-carousel__slides">
-                            <?php $iterator = 1 ?>
                             <?php foreach ($viewModel->getProducts() as $product): ?>
                                 <li class="cs-products-carousel__slide">
                                     <div class="cs-products-carousel__product-tile">
-                                        <?= $viewModel->renderProductTile($product, $iterator) ?>
+                                        <?= $viewModel->renderProductTile($product, null) ?>
                                     </div>
                                 </li>
-                                <?php $iterator++ ?>
                             <?php endforeach; ?>
                         </ul>
                     </div>

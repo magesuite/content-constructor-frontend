@@ -27,7 +27,13 @@ class GenericSlide extends \Magento\Framework\DataObject
     }
 
     public function getCta() {
-        $cta = $this->getData()['cta'];
+        $data = $this->getData();
+
+        if (!isset($data['cta'])) {
+            return null;
+        }
+
+        $cta = $data['cta'];
         if (isset($cta['href']) && !empty($cta['href'])) {
             $cta['href'] = $this->urlResolver->resolve($cta['href']);
         }
