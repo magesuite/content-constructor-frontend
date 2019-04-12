@@ -113,7 +113,6 @@ class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
         $this->itReturnsCorrectFlagForPopularIcon();
         $this->itReturnsCorrectProductPrice();
         $this->itReturnsCorrectProductQty();
-        $this->itSortsProperlyByBestsellers();
     }
 
     private function itSortsProperlyByPrice()
