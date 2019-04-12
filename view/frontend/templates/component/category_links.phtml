@@ -36,7 +36,7 @@ $componentClasses .= ' ' . $block->getVar('category_links/additional_css_classes
                             <li class="cs-category-links__list-item
                                 <?php
                                     foreach($block->getVar('category_links/hide_links_breakpoints') as $breakpoint) {
-                                        if($i >= (int)$breakpoint['hide_from']){echo $breakpoint['mix'] . ' ';}
+                                        if($i >= (int)$breakpoint['hide_from']){echo $breakpoint['additional_css_classes'] . ' ';}
                                     }
                                 ?>"
                             >
