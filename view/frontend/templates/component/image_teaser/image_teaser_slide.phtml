@@ -19,8 +19,8 @@ $ctaLabel = $cta['label'] ?? '';
  * Image properties with support for conditional lazy loading.
  */
 $imageSrc = $origImageSrc = $slide->getSrc();
-$hasImage = !empty($imageSrc);
-if ($hasImage && !$isSvg) {
+$hasImage = !empty($origImageSrc);
+if ($hasImage) {
     $imageSrc = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
 }
 $imageAlt = $slide->getAlt();
@@ -70,12 +70,10 @@ $container = $contrastOptimizersScenarios['container'] ?? null;
         <?php if ($hasImage): ?>
             <figure class="cs-image-teaser__figure">
                 <img
-                    class="cs-image-teaser__image<?= !$isSvg ? ' lazyload' : ''; ?><?= (!$isSvg && ($isSlider || $isSliderMobile)) ? ' swiper-lazy' : '' ?><?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
+                    class="cs-image-teaser__image lazyload<?= ($isSlider || $isSliderMobile) ? ' swiper-lazy' : '' ?><?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
                     src="<?= $imageSrc ?>"
                     alt="<?= $imageAlt ?>"
-                    <?php if (!$isSvg): ?> 
-                        data-src="<?= $origImageSrc ?>" 
-                    <?php endif; ?>
+                    data-src="<?= $origImageSrc ?>" 
                     <?php if ($imageSrcset): ?>
                         data-srcset="<?= $imageSrcset ?>"
                     <?php endif; ?>
