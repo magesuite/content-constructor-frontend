@@ -235,7 +235,6 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
         // when skus are defined other criterias are not included
         if (isset($criteria['skus']) and !empty($criteria['skus'])) {
             $skus = $this->prepareSkusArray($criteria['skus']);
-            $skus = $this->removeSpecialCharacters($skus);
 
             $collection->addFieldToFilter('sku', ['in' => $skus]);
 
@@ -517,14 +516,5 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
     protected function prepareSkusArray($skus)
     {
         return array_map('trim', explode(',', $skus));
-    }
-
-    protected function removeSpecialCharacters($skus)
-    {
-        return array_map([$this, 'removeSpecialCharacter'], $skus);
-    }
-
-    public function removeSpecialCharacter($sku) {
-        return str_replace('_', '', $sku);
     }
 }
