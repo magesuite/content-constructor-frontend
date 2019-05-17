@@ -127,15 +127,17 @@ $container = $contrastOptimizersScenarios['container'] ?? null;
                     <div class="cs-image-teaser__optimizer-container" style="opacity: <?= ((int)$container['intensity']) / 100 ?>"></div>
                 <?php endif; ?>
 
-                <div class="cs-image-teaser__text-content<?= isset($textShadow['enabled']) && $textShadow['enabled'] ? ' cs-image-teaser__text-content--text-shadow cs-image-teaser__text-content--text-shadow-' . $textShadow['intensity'] : '' ?>">
-                    <?php if ($slogan): ?>
-                        <h2 class="cs-image-teaser__slogan"><?= $slogan ?></h2>
-                    <?php endif; ?>
+                <?php if ($slogan || $description): ?>
+                    <div class="cs-image-teaser__text-content<?= isset($textShadow['enabled']) && $textShadow['enabled'] ? ' cs-image-teaser__text-content--text-shadow cs-image-teaser__text-content--text-shadow-' . $textShadow['intensity'] : '' ?>">
+                        <?php if ($slogan): ?>
+                            <h2 class="cs-image-teaser__slogan"><?= $slogan ?></h2>
+                        <?php endif; ?>
 
-                    <?php if ($description): ?>
-                        <p class="cs-image-teaser__description"><?= $description ?></p>
-                    <?php endif; ?>
-                </div>
+                        <?php if ($description): ?>
+                            <p class="cs-image-teaser__description"><?= $description ?></p>
+                        <?php endif; ?>
+                    </div>
+                <?php endif; ?>
 
                 <?php if ($ctaHref and $ctaLabel): ?>
                     <div class="cs-image-teaser__cta">
