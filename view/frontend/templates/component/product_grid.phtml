@@ -59,7 +59,7 @@ $componentClasses .= ' ' . $block->getVar('product_grid/additional_css_classes')
                                     </figure>
                                 <?php endif; ?>
 
-                                <div class="cs-grid-layout__teaser-content cs-grid-layout__teaser-content--variant-<?= $hero->getDisplayVariant() ?> cs-products-grid__hero-content-wrapper cs-products-grid__hero-content-wrapper--variant-<?= $hero->getDisplayVariant() ?>">
+                                <div class="cs-grid-layout__teaser-content cs-grid-layout__teaser-content--variant-<?= $hero['displayVariant'] ?> cs-products-grid__hero-content-wrapper cs-products-grid__hero-content-wrapper--variant-<?= $hero['displayVariant'] ?>">
                                     <div class="cs-grid-layout__teaser-content-inner cs-products-grid__hero-content">
                                         <?php if ($hero->getHeadline()): ?>
                                             <h2 class="cs-grid-layout__teaser-headline cs-products-grid__hero-headline"><?= $hero->getHeadline() ?></h2>
