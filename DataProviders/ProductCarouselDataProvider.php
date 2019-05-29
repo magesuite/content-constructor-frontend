@@ -166,6 +166,8 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
         $this->stockData = $this->stockDataHelper->getStockData($products);
 
         if($returnProductsEntities) {
+            $products = $this->sortResults($products, $criteria);
+
             return $products;
         }
 
@@ -394,7 +396,13 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
         $sortedProducts = [];
 
         foreach ($products as $product) {
-            $sortedProducts[array_search($product['sku'], $skus)] = $product;
+            $index = array_search($product['sku'], $skus);
+
+            if($index === false) {
+                continue;
+            }
+
+            $sortedProducts[$index] = $product;
         }
 
         ksort($sortedProducts);
