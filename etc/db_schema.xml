@@ -4,4 +4,12 @@
     <table name="cms_page" resource="default" engine="innodb" comment="CMS Page Table">
         <column xsi:type="mediumtext" name="layout_update_xml" nullable="true" comment="Page Layout Update Content"/>
     </table>
+    <table name="catalog_product_entity_text" resource="default" engine="innodb"
+           comment="Catalog Product Text Attribute Backend Table">
+        <column xsi:type="mediumtext" name="value" nullable="true" comment="Value"/>
+    </table>
+    <table name="catalog_category_entity_text" resource="default" engine="innodb"
+           comment="Catalog Category Text Attribute Backend Table">
+        <column xsi:type="mediumtext" name="value" nullable="true" comment="Value"/>
+    </table>
 </schema>
