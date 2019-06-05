@@ -55,8 +55,8 @@ $container = $contrastOptimizersScenarios['container'] ?? null;
  * Badge
  */
 $badge = $slide->getBadge();
-$badgeValue = $badge['value'] ?? null;
-$badgeAlign = $badge['align'] ?? null;
+$badgeValue = isset($badge['value']) ? $badge['value'] : null;
+$badgeAlign = isset($badge['align']) ? $badge['align'] : null;
 
 ?>
 <li class="cs-image-teaser__slide cs-image-teaser__slide--scheme-<?= $colorScheme ?><?= $hasImage ? ' cs-image-teaser__slide--image-uploaded' : '' ?>">
