@@ -60,7 +60,9 @@ class Slide extends \MageSuite\ContentConstructorFrontend\Model\Component\Generi
         $teaser = $this->getData();
 
         if (isset($teaser['badge']) and isset($teaser['badge']['value']) and !empty($teaser['badge']['value'])) {
-            return $this->directiveFilter->filter($teaser['badge']['value']);
+            $teaser['badge']['value'] = $this->directiveFilter->filter($teaser['badge']['value']);
         }
+
+        return $teaser['badge'];
     }
 }
