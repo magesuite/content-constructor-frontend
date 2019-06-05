@@ -51,6 +51,13 @@ $gradient = $contrastOptimizersScenarios['gradient'] ?? null;
 $textShadow = $contrastOptimizersScenarios['text_shadow'] ?? null;
 $container = $contrastOptimizersScenarios['container'] ?? null;
 
+/**
+ * Label
+ */
+$label = $slide->getLabel();
+$labelValue = $label['value'] ?? null;
+$labelAlign = $label['align'] ?? null;
+
 ?>
 <li class="cs-image-teaser__slide cs-image-teaser__slide--scheme-<?= $colorScheme ?><?= $hasImage ? ' cs-image-teaser__slide--image-uploaded' : '' ?>">
     <?php if ($aspectRatioPadding and $contentPlacement != 'under'): ?>
@@ -106,6 +113,11 @@ $container = $contrastOptimizersScenarios['container'] ?? null;
                         <?php endif; ?>
                     >
                 </noscript>
+                <?php if ($labelValue): ?>
+                    <div class="cs-image-teaser__label cs-image-teaser__label--align-x-<?= $labelAlign['x'] ?> cs-image-teaser__label--align-y-<?= $labelAlign['y'] ?> ">
+                        <span class="cs-image-teaser__label-span"> <?= $labelValue?></span>
+                    </div>
+                <?php endif; ?>
             </figure>
         <?php endif; ?>
 
