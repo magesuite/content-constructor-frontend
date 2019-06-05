@@ -52,11 +52,11 @@ $textShadow = $contrastOptimizersScenarios['text_shadow'] ?? null;
 $container = $contrastOptimizersScenarios['container'] ?? null;
 
 /**
- * Label
+ * Badge
  */
-$label = $slide->getLabel();
-$labelValue = $label['value'] ?? null;
-$labelAlign = $label['align'] ?? null;
+$badge = $slide->getBadge();
+$badgeValue = $badge['value'] ?? null;
+$badgeAlign = $badge['align'] ?? null;
 
 ?>
 <li class="cs-image-teaser__slide cs-image-teaser__slide--scheme-<?= $colorScheme ?><?= $hasImage ? ' cs-image-teaser__slide--image-uploaded' : '' ?>">
@@ -113,9 +113,9 @@ $labelAlign = $label['align'] ?? null;
                         <?php endif; ?>
                     >
                 </noscript>
-                <?php if ($labelValue): ?>
-                    <div class="cs-image-teaser__label cs-image-teaser__label--align-x-<?= $labelAlign['x'] ?> cs-image-teaser__label--align-y-<?= $labelAlign['y'] ?> ">
-                        <span class="cs-image-teaser__label-span"> <?= $labelValue?></span>
+                <?php if ($badgeValue): ?>
+                    <div class="cs-image-teaser__badge cs-image-teaser__badge--align-x-<?= $badgeAlign['x'] ?> cs-image-teaser__badge--align-y-<?= $badgeAlign['y'] ?> ">
+                        <span class="cs-image-teaser__badge-span"> <?= $badgeValue?></span>
                     </div>
                 <?php endif; ?>
             </figure>
