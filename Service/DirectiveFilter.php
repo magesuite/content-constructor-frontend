@@ -16,17 +16,23 @@ class DirectiveFilter extends \Magento\Framework\Filter\Template
      * @var \Magento\Framework\Pricing\Helper\Data
      */
     private $pricingHelper;
+    /**
+     * @var \Psr\Log\LoggerInterface
+     */
+    private $logger;
 
     public function __construct(
         \Magento\Framework\Stdlib\StringUtils $string,
         \Magento\Catalog\Api\ProductRepositoryInterface $productRepository,
         \Magento\Framework\Pricing\Helper\Data $pricingHelper,
+        \Psr\Log\LoggerInterface $logger,
         array $variables = []
     )
     {
         parent::__construct($string, $variables);
         $this->productRepository = $productRepository;
         $this->pricingHelper = $pricingHelper;
+        $this->logger = $logger;
     }
 
     /**
@@ -49,7 +55,8 @@ class DirectiveFilter extends \Magento\Framework\Filter\Template
                     try {
                         $replacedValue = call_user_func($callback, $construction);
                     } catch (\Exception $e) {
-                        throw $e;
+                        $this->logger->error($e->getMessage());
+                        return '';
                     }
                     $value = str_replace($construction[0], $replacedValue, $value);
                 }
