@@ -4,21 +4,14 @@ namespace MageSuite\ContentConstructorFrontend\Model\Component\ImageTeaser;
 
 class Slide extends \MageSuite\ContentConstructorFrontend\Model\Component\GenericSlide
 {
-    /**
-     * @var \MageSuite\ContentConstructorFrontend\Service\DirectiveFilter
-     */
-    private $directiveFilter;
-
     public function __construct(
         \MageSuite\ContentConstructor\Service\UrlResolver $urlResolver,
         \MageSuite\ContentConstructor\Service\MediaResolver $mediaResolver,
-        \MageSuite\ContentConstructorFrontend\Service\DirectiveFilter $directiveFilter,
         array $data = []
     ) {
         parent::__construct($urlResolver, $mediaResolver, $data);
         $this->urlResolver = $urlResolver;
         $this->mediaResolver = $mediaResolver;
-        $this->directiveFilter = $directiveFilter;
     }
 
     public function getSrc()
@@ -53,17 +46,5 @@ class Slide extends \MageSuite\ContentConstructorFrontend\Model\Component\Generi
         }
 
         return  __('Teaser image');
-    }
-
-    public function getBadge()
-    {
-        $teaser = $this->getData();
-
-        if (isset($teaser['badge']) and isset($teaser['badge']['value']) and !empty($teaser['badge']['value'])) {
-            $teaser['badge']['value'] = $this->directiveFilter->filter($teaser['badge']['value']);
-            return $teaser['badge'];
-        }
-
-        return [];
     }
 }
