@@ -51,6 +51,13 @@ $gradient = $contrastOptimizersScenarios['gradient'] ?? null;
 $textShadow = $contrastOptimizersScenarios['text_shadow'] ?? null;
 $container = $contrastOptimizersScenarios['container'] ?? null;
 
+/**
+ * Badge
+ */
+$badge = $slide->getBadge();
+$badgeValue = isset($badge['value']) ? $badge['value'] : null;
+$badgeAlign = isset($badge['align']) ? $badge['align'] : null;
+
 ?>
 <li class="cs-image-teaser__slide cs-image-teaser__slide--scheme-<?= $colorScheme ?><?= $hasImage ? ' cs-image-teaser__slide--image-uploaded' : '' ?>">
     <?php if ($aspectRatioPadding and $contentPlacement != 'under'): ?>
@@ -106,6 +113,11 @@ $container = $contrastOptimizersScenarios['container'] ?? null;
                         <?php endif; ?>
                     >
                 </noscript>
+                <?php if ($badgeValue): ?>
+                    <div class="cs-image-teaser__badge cs-image-teaser__badge--align-x-<?= $badgeAlign['x'] ?> cs-image-teaser__badge--align-y-<?= $badgeAlign['y'] ?> ">
+                        <span class="cs-image-teaser__badge-span"> <?= $badgeValue?></span>
+                    </div>
+                <?php endif; ?>
             </figure>
         <?php endif; ?>
 
