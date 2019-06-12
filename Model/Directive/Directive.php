@@ -24,6 +24,11 @@ class Directive implements DirectiveInterface
         $this->arguments = $arguments;
     }
 
+    public function getArguments()
+    {
+        return $this->arguments;
+    }
+
     public function setIdentifier($identifier)
     {
         $this->identifier = $identifier;
@@ -32,11 +37,6 @@ class Directive implements DirectiveInterface
     public function getIdentifier()
     {
         return $this->identifier;
-    }
-
-    public function getArguments()
-    {
-        return $this->arguments;
     }
 
     public function setOriginalValue($originalValue)

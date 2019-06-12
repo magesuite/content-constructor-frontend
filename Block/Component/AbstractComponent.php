@@ -47,22 +47,25 @@ class AbstractComponent extends \Magento\Framework\View\Element\Template
      */
     public function getViewModel()
     {
-        if(!$this->viewModelInstance) {
+        if (!$this->viewModelInstance) {
             $this->viewModelInstance = $this->objectManager->create($this->viewModel, ['data' => $this->getData()]);
         }
 
         return $this->viewModelInstance;
     }
 
-    public function getVisibilityClass() {
+    public function getVisibilityClass()
+    {
         return $this->componentVisibilityHelper->getVisibilityClass($this->getData());
     }
 
-    public function addIdentities($identities) {
+    public function addIdentities($identities)
+    {
         $this->identities = array_merge($this->identities, $identities);
     }
 
-    public function getIdentities() {
+    public function getIdentities()
+    {
         return $this->identities;
     }
 }
