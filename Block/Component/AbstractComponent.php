@@ -22,6 +22,11 @@ class AbstractComponent extends \Magento\Framework\View\Element\Template
 
     protected $viewModelInstance;
 
+    /**
+     * @var array
+     */
+    protected $identities = [];
+
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         \MageSuite\ContentConstructorFrontend\Helper\ComponentVisibility $componentVisibilityHelper,
@@ -53,7 +58,11 @@ class AbstractComponent extends \Magento\Framework\View\Element\Template
         return $this->componentVisibilityHelper->getVisibilityClass($this->getData());
     }
 
+    public function addIdentities($identities) {
+        $this->identities = array_merge($this->identities, $identities);
+    }
+
     public function getIdentities() {
-        return [];
+        return $this->identities;
     }
 }

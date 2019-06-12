@@ -76,8 +76,6 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
             return [];
         }
 
-        $tags = [];
-
         $identities = $this->component->getIdentities();
 
         if (is_string($identities)) {

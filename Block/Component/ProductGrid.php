@@ -17,7 +17,7 @@ class ProductGrid extends AbstractComponent
             return [];
         }
 
-        $identities = [];
+        $identities = parent::getIdentities();
 
         /** @var \Magento\Catalog\Model\Product $product */
         foreach($products as $product) {
