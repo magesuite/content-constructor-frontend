@@ -159,6 +159,12 @@
         </arguments>
     </type>
 
+    <type name="MageSuite\ContentConstructorFrontend\Block\Component\InstagramFeed">
+        <arguments>
+            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\InstagramFeed</argument>
+        </arguments>
+    </type>
+
 
     <type name="MageSuite\ContentConstructorFrontend\Service\ComponentPool">
         <arguments>
@@ -180,7 +186,11 @@
                 <item name="product-finder" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\ProductFinder</item>
                 <item name="daily-deal-teaser" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser</item>
                 <item name="icon" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\Icon</item>
+<<<<<<< HEAD
                 <item name="teaser-and-text" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\TeaserAndText</item>
+=======
+                <item name="instagram-feed" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\InstagramFeed</item>
+>>>>>>> Prepare configurator for instagram feed
             </argument>
         </arguments>
     </type>
