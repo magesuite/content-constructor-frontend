@@ -28,9 +28,14 @@ class DirectiveApplier
 
         /** @var \MageSuite\ContentConstructorFrontend\Model\Directive\DirectiveInterface $directive */
         foreach($directives as $directive) {
-            $text = str_replace($directive->getOriginalValue(), $directive->getValue(), $text);
+            try {
+                $text = str_replace($directive->getOriginalValue(), $directive->getValue(), $text);
 
-            $this->identities = array_merge($this->identities, $directive->getIdentities());
+                $this->identities = array_merge($this->identities, $directive->getIdentities());
+            }
+            catch(\Exception $e) {
+                $text = str_replace($directive->getOriginalValue(), '', $text);
+            }
         }
 
         return $text;

@@ -48,13 +48,31 @@ class DirectiveApplierTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('first_directive_value' . PHP_EOL . ' some text ' . PHP_EOL . 'second_directive_value', $textAfterDirectivesWereApplied);
     }
 
-    protected function createDirectiveStub(string $originalValue, string $value)
+    public function testItReplacesDirectivesWithEmptyTextWhenExceptionIsThrown()
+    {
+        $text = '{{sample argument1="value1"}}' . PHP_EOL . 'some text';
+
+        $this->directiveParserStub->method('getDirectives')->willReturn([
+            $this->createDirectiveStub('{{sample argument1="value1"}}', 'second_directive_value', true),
+        ]);
+
+        $textAfterDirectivesWereApplied = $this->directiveApplier->apply($text);
+
+        $this->assertEquals('' . PHP_EOL . 'some text', $textAfterDirectivesWereApplied);
+    }
+
+    protected function createDirectiveStub(string $originalValue, string $value, $exceptionThrown = false)
     {
         $directiveStub = $this->getMockBuilder(\MageSuite\ContentConstructorFrontend\Model\Directive\DirectiveInterface::class)
             ->disableOriginalConstructor()
             ->getMock();
 
-        $directiveStub->method('getValue')->willReturn($value);
+        if ($exceptionThrown) {
+            $directiveStub->method('getValue')->willThrowException(new \Exception('Generic exception'));
+        } else {
+            $directiveStub->method('getValue')->willReturn($value);
+        }
+
         $directiveStub->method('getOriginalValue')->willReturn($originalValue);
         $directiveStub->method('getIdentities')->willReturn([]);
 
