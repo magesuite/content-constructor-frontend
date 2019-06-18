@@ -185,4 +185,18 @@
         </arguments>
     </type>
 
+    <type name="MageSuite\ContentConstructorFrontend\Model\Directive\Pool">
+        <arguments>
+            <argument name="directives" xsi:type="array">
+                <item name="sample" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Directive\Directives\Sample</item>
+                <item name="price" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Directive\Directives\Product\Price</item>
+                <item name="discountPercentage" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Directive\Directives\Product\DiscountPercentage</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="MageSuite\ContentConstructorFrontend\Block\Component\AbstractComponent">
+        <plugin name="resolve_directives" type="MageSuite\ContentConstructorFrontend\Plugin\Block\Component\AbstractComponent\ResolveDirectives" />
+    </type>
+
 </config>

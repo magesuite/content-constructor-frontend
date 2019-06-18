@@ -8,19 +8,21 @@ class DailyDealTeaser extends AbstractComponent
 
     public function getIdentities()
     {
+        $identities = parent::getIdentities();
+
         /** @var \MageSuite\ContentConstructorFrontend\Model\Component\DailyDealTeaser $viewModel */
         $viewModel = $this->getViewModel();
 
         $product = $viewModel->getProduct();
 
         if($product == null) {
-            return [];
+            return $identities;
         }
 
         if(!isset($product['productObject'])) {
-            return [];
+            return $identities;
         }
 
-        return $product['productObject']->getIdentities();
+        return array_merge($identities, $product['productObject']->getIdentities());
     }
 }
