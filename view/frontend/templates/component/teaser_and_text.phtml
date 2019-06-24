@@ -1,0 +1,72 @@
+<?php
+/** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\TeaserAndText */
+$viewModel = $block->getViewModel();
+$visibility = $block->getVisibilityClass();
+$maxContentWidth = $block->getVar('max_content_width');
+
+$imageTeaser = $block->getData();
+
+$teaserWidth = $imageTeaser['scenario']['teaserWidth']['id'];
+$mobileLayout = $imageTeaser['scenario']['mobileLayout']['id'];
+
+$componentClasses = $block->getMix();
+$componentClasses .= $block->getSkipSpacing() ? ' cs-image-teaser--skip-spacing' : ''; 
+$componentClasses .= ' ' . $block->getVar('teaser_and_text/additional_css_classes');
+
+$sizesMobile = '(max-width: 48em) 100vw';
+$sizesDesktop = sprintf('%svw', 100);
+
+if ($teaserWidth == 'container') {
+    $sizesDesktop = '(min-width: ' . $maxContentWidth . 'px) ' . ($maxContentWidth / 2) . 'px, ' . $sizesDesktop;
+}
+
+$sizes = $sizesMobile . ', ' . $sizesDesktop;
+
+$containerClasses = ($teaserWidth == 'window') ? ' cs-container--image-teaser-window-width' : '';
+$containerClasses = ' ' . $block->getContainerMix();
+
+$jsConfig = isset($imageTeaser['jsConfig']) ? json_encode($imageTeaser['jsConfig']) : '{}';
+?>
+
+<div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
+    <div class="cs-container cs-container--teaser-and-text <?= $containerClasses ?>">
+        <?php if ($teaserWidth == 'container'): ?>
+        <div class="cs-container__inner">
+        <?php endif; ?>
+            <div class="cs-image-teaser cs-image-teaser--teaser-and-text 
+                cs-image-teaser--items-in-row-2
+                cs-image-teaser--items-in-row-mobile-1
+                <?= $componentClasses ?>"
+                data-items-per-view="2"
+                data-mobile-items-per-view="1"
+                data-is-slider="false"
+                data-mobile-is-slider="false"
+                data-layout="over"
+                data-js-configuration='<?= $jsConfig; ?>'
+            >
+
+                <div class="cs-image-teaser__carousel">
+                    <div class="cs-image-teaser__wrapper cs-image-teaser__wrapper--content-over">
+                        <ul class="cs-image-teaser__slides cs-image-teaser__slides--mobile-<?= $mobileLayout ?>">
+                        
+                            <?php foreach ($viewModel->getSlides() as $slide): ?>
+                                <?= $this->getLayout()
+                                        ->createBlock(\Magento\Framework\View\Element\Template::class)
+                                        ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/image_teaser_slide.phtml')
+                                        ->setSlide($slide)
+                                        ->setIsSlider(false)
+                                        ->setIsSliderMobile(false)
+                                        ->setContentPlacement('over')
+                                        ->toHtml(); 
+                                ?>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                </div>
+
+                <?php if ($teaserWidth == 'container'): ?>
+            </div>
+            <?php endif; ?>
+        </div>
+    </div>
+</div>
