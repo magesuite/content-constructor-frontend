@@ -159,6 +159,12 @@
         </arguments>
     </type>
 
+    <type name="MageSuite\ContentConstructorFrontend\Block\Component\InstagramFeed">
+        <arguments>
+            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\InstagramFeed</argument>
+        </arguments>
+    </type>
+
 
     <type name="MageSuite\ContentConstructorFrontend\Service\ComponentPool">
         <arguments>
@@ -181,6 +187,7 @@
                 <item name="daily-deal-teaser" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser</item>
                 <item name="icon" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\Icon</item>
                 <item name="teaser-and-text" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\TeaserAndText</item>
+                <item name="instagram-feed" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\InstagramFeed</item>
             </argument>
         </arguments>
     </type>
