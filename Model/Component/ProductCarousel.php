@@ -39,7 +39,7 @@ class ProductCarousel extends \Magento\Framework\DataObject
         return $this->products;
     }
 
-    public function renderProductTile($product, $iterator) {
-        return $this->productTileRenderer->render($product, $iterator);
+    public function renderProductTile($product, $iterator, $viewMode = 'grid') {
+        return $this->productTileRenderer->render($product, $iterator, $viewMode);
     }
 }
