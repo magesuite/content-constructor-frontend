@@ -22,7 +22,7 @@ class Index extends DataProviderComponents
         # ===== HERO CARUSEL ===== #
         $blocks[] = [
             '_type' => '\Magento\Cms\Block\Widget\Page\Link',
-            '_template' => 'widget/link/link_block.phtml',
+            '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
             '_data' => [
                 'section' => 'content',
                 'anchor_text' => 'Hero Carousel',
@@ -32,7 +32,7 @@ class Index extends DataProviderComponents
 
         $blocks[] = [
             '_type' => '\Magento\Cms\Block\Widget\Page\Link',
-            '_template' => 'widget/link/link_block.phtml',
+            '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
             '_data' => [
                 'section' => 'content',
                 'anchor_text' => 'Hero Carousel Slider mobile scenario',
@@ -42,7 +42,7 @@ class Index extends DataProviderComponents
 
         $blocks[] = [
             '_type' => '\Magento\Cms\Block\Widget\Page\Link',
-            '_template' => 'widget/link/link_block.phtml',
+            '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
             '_data' => [
                 'section' => 'content',
                 'anchor_text' => 'Hero Carousel Hidden mobile scenario',
@@ -55,7 +55,7 @@ class Index extends DataProviderComponents
         # ===== IMAGE TEASERS LEGACY ===== #
         $blocks[] = [
             '_type' => '\Magento\Cms\Block\Widget\Page\Link',
-            '_template' => 'widget/link/link_block.phtml',
+            '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
             '_data' => [
                 'section' => 'content',
                 'anchor_text' => 'Image Teaser Legacy Window width',
@@ -64,7 +64,7 @@ class Index extends DataProviderComponents
         ];
         $blocks[] = [
             '_type' => '\Magento\Cms\Block\Widget\Page\Link',
-            '_template' => 'widget/link/link_block.phtml',
+            '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
             '_data' => [
                 'section' => 'content',
                 'anchor_text' => 'Image Teaser Legacy Container width',
@@ -73,7 +73,7 @@ class Index extends DataProviderComponents
         ];
         $blocks[] = [
             '_type' => '\Magento\Cms\Block\Widget\Page\Link',
-            '_template' => 'widget/link/link_block.phtml',
+            '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
             '_data' => [
                 'section' => 'content',
                 'anchor_text' => 'Image Teaser Legacy Window width slider',
@@ -82,7 +82,7 @@ class Index extends DataProviderComponents
         ];
         $blocks[] = [
             '_type' => '\Magento\Cms\Block\Widget\Page\Link',
-            '_template' => 'widget/link/link_block.phtml',
+            '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
             '_data' => [
                 'section' => 'content',
                 'anchor_text' => 'Image Teaser Legacy Container width slider',
@@ -95,7 +95,7 @@ class Index extends DataProviderComponents
         # ===== IMAGE TEASERS ===== #
         $blocks[] = [
             '_type' => '\Magento\Cms\Block\Widget\Page\Link',
-            '_template' => 'widget/link/link_block.phtml',
+            '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
             '_data' => [
                 'section' => 'content',
                 'anchor_text' => 'Image Teaser Window width',
@@ -104,7 +104,7 @@ class Index extends DataProviderComponents
         ];
         $blocks[] = [
             '_type' => '\Magento\Cms\Block\Widget\Page\Link',
-            '_template' => 'widget/link/link_block.phtml',
+            '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
             '_data' => [
                 'section' => 'content',
                 'anchor_text' => 'Image Teaser Container width',
@@ -113,7 +113,7 @@ class Index extends DataProviderComponents
         ];
         $blocks[] = [
             '_type' => '\Magento\Cms\Block\Widget\Page\Link',
-            '_template' => 'widget/link/link_block.phtml',
+            '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
             '_data' => [
                 'section' => 'content',
                 'anchor_text' => 'Image Teaser Window width slider',
@@ -122,7 +122,7 @@ class Index extends DataProviderComponents
         ];
         $blocks[] = [
             '_type' => '\Magento\Cms\Block\Widget\Page\Link',
-            '_template' => 'widget/link/link_block.phtml',
+            '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
             '_data' => [
                 'section' => 'content',
                 'anchor_text' => 'Image Teaser Container width slider',
@@ -131,7 +131,7 @@ class Index extends DataProviderComponents
         ];
         $blocks[] = [
             '_type' => '\Magento\Cms\Block\Widget\Page\Link',
-            '_template' => 'widget/link/link_block.phtml',
+            '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
             '_data' => [
                 'section' => 'content',
                 'anchor_text' => 'Contrast Optimizers',
@@ -143,7 +143,7 @@ class Index extends DataProviderComponents
         # ===== PRODUCT GRIDS ===== #
         $blocks[] = [
             '_type' => '\Magento\Cms\Block\Widget\Page\Link',
-            '_template' => 'widget/link/link_block.phtml',
+            '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
             '_data' => [
                 'section' => 'content',
                 'anchor_text' => 'Product Grid without Hero',
@@ -152,7 +152,7 @@ class Index extends DataProviderComponents
         ];
         $blocks[] = [
             '_type' => '\Magento\Cms\Block\Widget\Page\Link',
-            '_template' => 'widget/link/link_block.phtml',
+            '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
             '_data' => [
                 'section' => 'content',
                 'anchor_text' => 'Product Grid with left Hero',
@@ -161,7 +161,7 @@ class Index extends DataProviderComponents
         ];
         $blocks[] = [
             '_type' => '\Magento\Cms\Block\Widget\Page\Link',
-            '_template' => 'widget/link/link_block.phtml',
+            '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
             '_data' => [
                 'section' => 'content',
                 'anchor_text' => 'Product Grid with right Hero',
@@ -173,7 +173,7 @@ class Index extends DataProviderComponents
         # ===== PARAGRAPHS ===== #
         $blocks[] = [
             '_type' => '\Magento\Cms\Block\Widget\Page\Link',
-            '_template' => 'widget/link/link_block.phtml',
+            '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
             '_data' => [
                 'section' => 'content',
                 'anchor_text' => 'Paragraph',
