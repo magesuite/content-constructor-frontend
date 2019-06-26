@@ -1,10 +1,19 @@
 <?php
 /** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\InstagramFeed */
+$data = $block->getData();
+/** @var \MageSuite\ContentConstructorFrontend\Model\Component\InstagramFeed $viewModel */
+$viewModel = $block->getViewModel();
 
-echo $this->getLayout()
-    ->createBlock('MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser')
-    ->setData($block->getData())
-    ->setMix('cs-image-teaser--instagram-feed ' . $block->getMix())
-    ->setContainerMix('cs-container--instagram-feed ' . $block->getContainerMix())
-    ->toHtml(); 
+
+$numberOfSlides = $data['scenario']['numberOfSlides']['id'];
+$data['items'] = $viewModel->getFeedData($numberOfSlides);
+
+if(!empty($data['items'])) {
+   echo $this->getLayout()
+       ->createBlock('MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser')
+       ->setData($data)
+       ->setMix('cs-image-teaser--instagram-feed ' . $block->getMix())
+       ->setContainerMix('cs-container--instagram-feed ' . $block->getContainerMix())
+       ->toHtml();
+}
 ?>
