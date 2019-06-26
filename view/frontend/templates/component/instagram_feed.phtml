@@ -5,7 +5,7 @@ $data = $block->getData();
 $viewModel = $block->getViewModel();
 
 
-$numberOfSlides = $data['scenario']['numberOfSlides']['id'];
+$numberOfSlides = $data['scenario']['numberOfSlides'];
 $data['items'] = $viewModel->getFeedData($numberOfSlides);
 
 if(!empty($data['items'])) {
