@@ -14,11 +14,12 @@ class ProductTileRenderer implements \MageSuite\ContentConstructor\Service\Produ
         $this->layout = $layout;
     }
 
-    public function render(\Magento\Catalog\Api\Data\ProductInterface $product, $iterator)
+    public function render(\Magento\Catalog\Api\Data\ProductInterface $product, $iterator, $viewMode = 'grid')
     {
         return $this->layout
             ->createBlock(\MageSuite\ProductTile\Block\Tile::class)
             ->setIterator($iterator)
+            ->setViewMode($viewMode)
             ->setSection('content-constructor')
             ->render($product);
     }
