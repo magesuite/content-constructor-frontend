@@ -1,0 +1,10 @@
+<?php
+$imageTeaserData = $block->getImageTeaserData();
+$slide = $block->getSlide();
+$contrastOptimizers = $slide->getOptimizers();
+$contrastOptimizersScenarios = $contrastOptimizers['scenarios'];
+$gradient = $contrastOptimizersScenarios['gradient'] ?? null;
+?>
+<?php if (isset($gradient['enabled']) && $gradient['enabled']): ?>
+    <div class="cs-image-teaser__gradient cs-image-teaser__gradient--direction-x-<?= $gradient['direction']['x'] ?> cs-image-teaser__gradient--direction-y-<?= $gradient['direction']['y'] ?>" style="opacity: <?= ((int)$gradient['intensity']) / 100 ?>"></div>
+<?php endif; ?>

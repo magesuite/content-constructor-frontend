@@ -1,0 +1,67 @@
+<?php 
+$imageTeaserData = $block->getImageTeaserData();
+$slide = $block->getSlide();
+$isSvg = $slide->isSvg();
+/**
+ * Image properties with support for conditional lazy loading.
+ */
+$imageSrc = $origImageSrc = $slide->getSrc();
+$hasImage = !empty($origImageSrc);
+if ($hasImage) {
+    $imageSrc = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
+}
+$imageAlt = $slide->getAlt();
+$imageSrcset = $isSvg ? '' : $slide->getSrcSet();
+$imageSizes = $isSvg ? '' : $slide->getSizes();
+$imageWidth = $slide->getWidth();
+$imageHeight = $slide->getHeight();
+$isSlider = $block->getIsSlider();
+$isSliderMobile = $block->getIsSliderMobile();
+
+/**
+ * Contrast optimizers
+ */
+$contrastOptimizers = $slide->getOptimizers();
+$mirrorImage = $contrastOptimizers['mirror_image'];
+?>
+<?php if ($hasImage): ?>
+    <figure class="cs-image-teaser__figure">
+        <img
+            class="cs-image-teaser__image lazyload<?= ($isSlider || $isSliderMobile) ? ' swiper-lazy' : '' ?><?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
+            src="<?= $imageSrc ?>"
+            alt="<?= $imageAlt ?>"
+            data-src="<?= $origImageSrc ?>" 
+            <?php if ($imageSrcset): ?>
+                data-srcset="<?= $imageSrcset ?>"
+            <?php endif; ?>
+            <?php if ($imageSizes): ?>
+                sizes="<?= $imageSizes ?>"
+            <?php endif; ?>
+            <?php if ($imageWidth): ?> 
+                width="<?= $imageWidth ?>" 
+            <?php endif; ?>
+            <?php if ($imageHeight): ?> 
+                height="<?= $imageHeight ?>" 
+            <?php endif; ?>
+        >
+        <noscript>
+            <img
+                class="cs-image-teaser__image"
+                src="<?= $origImageSrc ?>"
+                alt="<?= $imageAlt ?>"
+                <?php if ($imageSrcset): ?> 
+                    srcset="<?= $imageSrcset ?>"
+                <?php endif; ?>
+                <?php if ($imageSizes): ?> 
+                    sizes="<?= $imageSizes ?>"
+                <?php endif; ?>
+                <?php if ($imageWidth): ?> 
+                    width="<?= $imageWidth ?>" 
+                <?php endif; ?>
+                <?php if ($imageHeight): ?> 
+                    height="<?= $imageHeight ?>" 
+                <?php endif; ?>
+            >
+        </noscript>
+    </figure>
+<?php endif; ?>
