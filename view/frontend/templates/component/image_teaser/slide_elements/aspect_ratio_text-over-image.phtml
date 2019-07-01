@@ -1,0 +1,17 @@
+<?php
+$imageTeaserData = $block->getImageTeaserData();
+$slide = $block->getSlide();
+$contentPlacement = $block->getContentPlacement();
+/**
+ * Aspect ratio calculations preventing content jumping before images load.
+ */
+
+$slideImage = $slide->getImage();
+$aspectRatio = isset($slideImage['aspect_ratio']) ? explode(':', $slideImage['aspect_ratio']) : [];
+$aspectRatioPadding = 0;
+if (count($aspectRatio) === 2) {
+    $aspectRatioPadding = ($aspectRatio[1] / $aspectRatio[0]) * 100;
+} ?>
+<?php if ($aspectRatioPadding and $contentPlacement != 'under'): ?>
+    <div class="cs-image-teaser__aspect-ratio" style="padding-top: <?= $aspectRatioPadding ?>%"></div>
+<?php endif; ?>

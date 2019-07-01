@@ -1,0 +1,10 @@
+<?php
+$imageTeaserData = $block->getImageTeaserData();
+$slide = $block->getSlide();
+$contrastOptimizers = $slide->getOptimizers();
+$contrastOptimizersScenarios = $contrastOptimizers['scenarios'];
+$overlay = $contrastOptimizersScenarios['overlay'] ?? null;
+?>
+<?php if (isset($overlay['enabled']) && $overlay['enabled']): ?>
+    <div class="cs-image-teaser__overlay" style="opacity: <?= ((int)$overlay['intensity']) / 100 ?>"></div>
+<?php endif; ?>

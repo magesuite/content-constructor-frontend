@@ -1,0 +1,8 @@
+<?php
+$imageTeaserData = $block->getImageTeaserData();
+$slide = $block->getSlide();
+$description = $slide->getDescription();
+?>
+<?php if ($description): ?>
+    <div class="cs-image-teaser__description"><?= $description ?></div>
+<?php endif; ?>

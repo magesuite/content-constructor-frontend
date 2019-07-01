@@ -1,0 +1,8 @@
+<?php
+$imageTeaserData = $block->getImageTeaserData();
+$isSlider = $block->getIsSlider();
+$isSliderMobile = $block->getIsSliderMobile();
+?>
+<?php if (($isSlider or $isSliderMobile) && $block->getVar('image_teaser/pagination/show')): ?>
+    <ul class="cs-image-teaser__pagination <?= $block->getVar('image_teaser/pagination/additional_css_classes') ?>"></ul>
+<?php endif; ?>
