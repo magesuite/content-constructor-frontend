@@ -51,10 +51,13 @@ if ($teaserWidth == 'window-slider') {
 $sizes = $sizesMobile . ', ' . $sizesDesktop;
 
 $containerClasses = ($teaserWidth == 'window' || $teaserWidth == 'window-slider') ? ' cs-container--image-teaser-window-width' : '';
-$containerClasses = ' ' . $block->getContainerMix();
+
+$containerClasses = $containerClasses . ' ' . $block->getContainerMix();
 if (isset($imageTeaser['cc_css_classes'])):
     $containerClasses .= ' ' . $imageTeaser['cc_css_classes'];
 endif;
+
+$windowWidthClass = ($teaserWidth == 'window' || $teaserWidth == 'window-slider') ? ' cs-image-teaser--window-width' : '';
 
 $jsConfig = isset($imageTeaser['jsConfig']) ? json_encode($imageTeaser['jsConfig']) : '{}';
 ?>
@@ -85,7 +88,7 @@ $jsConfig = isset($imageTeaser['jsConfig']) ? json_encode($imageTeaser['jsConfig
                 ->toHtml(); 
             ?>
 
-            <div class="cs-image-teaser
+            <div class="cs-image-teaser <?= $windowWidthClass ?>
              cs-image-teaser--items-in-row-<?= $itemsPerRow ?>
              cs-image-teaser--items-in-row-mobile-<?= $itemsPerRowMobile ?>
              <?= $isSlider ? 'cs-image-teaser--slider' : '' ?>
