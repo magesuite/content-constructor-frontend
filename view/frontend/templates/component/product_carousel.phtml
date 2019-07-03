@@ -11,7 +11,7 @@ $navIconNextPath = $block->getVar('product_carousel/navigation/arrows/next/path'
 $componentClasses = $block->getSkipSpacing() ? ' cs-products-carousel--skip-spacing' : ''; 
 $componentClasses .= ' ' . $block->getVar('product_carousel/additional_css_classes');
 
-$viewMode = $block->getData('view_mode');
+$viewMode = $block->getData('view_mode') ?? 'grid';
 $isList = $viewMode == 'list' ? true : false;
 $isSliderMobile = $block->getData('carousel_on_mobile');
 ?>
@@ -56,6 +56,12 @@ $isSliderMobile = $block->getData('carousel_on_mobile');
 
                     <?php if (($viewMode == 'grid' or $isSliderMobile) && $block->getVar('product_carousel/pagination/show')): ?>
                         <ul class="cs-products-carousel__pagination <?= $block->getVar('product_carousel/pagination/additional_css_classes') ?>"></ul>
+                    <?php endif; ?>
+
+                    <?php if (($viewMode == 'grid' or $isSliderMobile) && $block->getVar('product_carousel/scrollbar/show')): ?> 
+                        <div class="cs-products-carousel__scrollbar">
+                            <div class="cs-products-carousel__scrollbar--drag"></div>
+                        </div>
                     <?php endif; ?>
                 </div>
             </div>
