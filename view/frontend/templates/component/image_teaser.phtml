@@ -174,12 +174,14 @@ $jsConfig = isset($imageTeaser['jsConfig']) ? json_encode($imageTeaser['jsConfig
                         <?= $this->getLayout()
                             ->createBlock(\Magento\Framework\View\Element\Template::class)
                             ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/elements/nav-prev.phtml')
+                            ->setIcon($block->getVar('image_teaser/navigation/arrows/prev/path'))
                             ->setImageTeaserData($imageTeaser)
                             ->toHtml(); 
                         ?>
                         <?= $this->getLayout()
                             ->createBlock(\Magento\Framework\View\Element\Template::class)
                             ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/elements/nav-next.phtml')
+                            ->setIcon($block->getVar('image_teaser/navigation/arrows/next/path'))
                             ->setImageTeaserData($imageTeaser)
                             ->toHtml(); 
                         ?>
@@ -213,6 +215,7 @@ $jsConfig = isset($imageTeaser['jsConfig']) ? json_encode($imageTeaser['jsConfig
                     ->setImageTeaserData($imageTeaser)
                     ->setIsSlider($isSlider)
                     ->setIsSliderMobile($isSliderMobile)
+                    ->setShowPagination($block->getVar('image_teaser/pagination/show'))
                     ->toHtml(); 
                 ?>
 
@@ -225,9 +228,9 @@ $jsConfig = isset($imageTeaser['jsConfig']) ? json_encode($imageTeaser['jsConfig
                     ->setContentPlacement($contentPlacement)
                     ->toHtml(); 
                 ?>
-                <?php if ($teaserWidth == 'container' or $teaserWidth == 'container-slider'): ?>
             </div>
 
+            <?php if ($teaserWidth == 'container' or $teaserWidth == 'container-slider'): ?>
             <?= $this->getLayout()
                 ->createBlock(\Magento\Framework\View\Element\Template::class)
                 ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/elements/hotspots/after_component.phtml')
