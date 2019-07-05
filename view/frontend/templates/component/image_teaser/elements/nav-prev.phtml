@@ -1,10 +1,11 @@
 <?php
 $imageTeaserData = $block->getImageTeaserData();
 ?>
+
 <button class="cs-image-teaser__nav cs-image-teaser__nav--prev" type="button">
     <?= $this->getLayout()
             ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
-            ->setIconUrl($block->getVar('image_teaser/navigation/arrows/prev/path'))
+            ->setIconUrl($block->getIcon())
             ->setCssClass('cs-image-teaser__nav-icon')
             ->setInlined(true)
             ->setLazyLoaded(false)
