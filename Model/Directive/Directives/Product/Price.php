@@ -9,14 +9,21 @@ class Price extends AbstractProductDirective
      */
     protected $pricingHelper;
 
+    /**
+     * @var \Magento\Directory\Model\Currency
+     */
+    protected $currency;
+
     public function __construct(
         \Magento\Catalog\Api\ProductRepositoryInterface $productRepository,
-        \Magento\Framework\Pricing\Helper\Data $pricingHelper
+        \Magento\Framework\Pricing\Helper\Data $pricingHelper,
+        \Magento\Directory\Model\Currency $currency
     )
     {
         parent::__construct($productRepository);
 
         $this->pricingHelper = $pricingHelper;
+        $this->currency = $currency;
     }
 
     public function getValue()
@@ -27,7 +34,7 @@ class Price extends AbstractProductDirective
         $arguments = $this->getArguments();
 
         if (isset($arguments['withCurrency']) and !filter_var($arguments['withCurrency'], FILTER_VALIDATE_BOOLEAN)) {
-            return $price;
+            return $this->currency->format($price, ['display' => \Zend_Currency::NO_SYMBOL], false);
         }
 
         return $this->pricingHelper->currency($price, true, false);

@@ -44,7 +44,7 @@ class PriceTest extends \PHPUnit\Framework\TestCase
 
         $price = $this->directive->getValue();
 
-        $this->assertEquals(10.00, $price);
+        $this->assertEquals('10.00', $price);
     }
 
     /**

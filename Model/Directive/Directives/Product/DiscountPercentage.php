@@ -27,6 +27,8 @@ class DiscountPercentage extends AbstractProductDirective
     {
         $product = $this->getProduct();
 
-        return (int)$this->productHelper->getSalePercentage($product);
+        $salePercentage = $this->productHelper->getSalePercentage($product);
+
+        return (int)$salePercentage;
     }
 }
