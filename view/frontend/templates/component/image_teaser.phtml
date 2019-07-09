@@ -230,7 +230,6 @@ $jsConfig = isset($imageTeaser['jsConfig']) ? json_encode($imageTeaser['jsConfig
                 ?>
             </div>
 
-            <?php if ($teaserWidth == 'container' or $teaserWidth == 'container-slider'): ?>
             <?= $this->getLayout()
                 ->createBlock(\Magento\Framework\View\Element\Template::class)
                 ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/elements/hotspots/after_component.phtml')
@@ -240,8 +239,10 @@ $jsConfig = isset($imageTeaser['jsConfig']) ? json_encode($imageTeaser['jsConfig
                 ->setContentPlacement($contentPlacement)
                 ->toHtml(); 
             ?>
-            <?php endif; ?>
-        </div>
+
+        <?php if ($teaserWidth == 'container' or $teaserWidth == 'container-slider'): ?>
+            </div>
+        <?php endif; ?>
     </div>
 
     <?= $this->getLayout()
