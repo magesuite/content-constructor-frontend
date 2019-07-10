@@ -60,10 +60,30 @@ endif;
 $windowWidthClass = ($teaserWidth == 'window' || $teaserWidth == 'window-slider') ? ' cs-image-teaser--window-width' : '';
 
 $jsConfig = isset($imageTeaser['jsConfig']) ? json_encode($imageTeaser['jsConfig']) : '{}';
+
+$categoryTeaser = $block->getCategoryTeaser();
+
+if ($categoryTeaser) {
+    $teaser = $block->getTeaserData();
+    $teaserId = $block->getTeaserId();
+    $gridClass = $block->getGridClass();
+    $brickClass = $block->getBrickClass();
+
+    $teaserBrickClass = $brickClass . ' ' . $brickClass . '--teaser';
+    if($teaser['size']['x'] == 2) {
+        $teaserBrickClass .= ' ' .$brickClass . '--x2';
+    }
+    if($teaser['size']['y'] == 2) {
+        $teaserBrickClass .= ' ' . $brickClass . '--y2';
+    }
+}
 ?>
 
+<?php if ($categoryTeaser): ?>
+<li class="<?= $teaserBrickClass ?>" data-teaser-id="<?= $teaserId ?>">
+<?php else: ?>
 <div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
-
+<?php endif; ?>
     <?= $this->getLayout()
         ->createBlock(\Magento\Framework\View\Element\Template::class)
         ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/elements/hotspots/before_container.phtml')
@@ -254,4 +274,8 @@ $jsConfig = isset($imageTeaser['jsConfig']) ? json_encode($imageTeaser['jsConfig
         ->setContentPlacement($contentPlacement)
         ->toHtml(); 
     ?>
+<?php if ($categoryTeaser): ?>
+</li>
+<?php else: ?>
 </div>
+<?php endif; ?>

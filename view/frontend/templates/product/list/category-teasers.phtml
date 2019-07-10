@@ -2,25 +2,69 @@
     /**
      * Product grid teasers template (POP)
      *
+     * If a teaser is using old setup, render old teaser template 
+     * else render using new image-teaser component 
+     * (additional settings are set before passing it to image-teaser: 
+     * required for image-teaser component and responsible for positioning in grid)
+     *
      * @var $block \Magento\Catalog\Block\Product\ListProduct
      */
 ?>
 <?php
 $teasersConfig = $this->helper('MageSuite\ContentConstructorFrontend\Helper\CategoryGridTeasers')->getConfig();
 
-if($teasersConfig): ?>
+if ($teasersConfig): ?>
     <?php $i = 1 ?> 
 
     <?php foreach ($teasersConfig['teasers'] as $teaser): ?>
-        <?= $this->getLayout()
-             ->createBlock(\Magento\Framework\View\Element\Template::class)
-             ->setTeaserData($teaser)
-             ->setTeaserId($i)
-             ->setHtmlTag($block->getHtmlTag())
-             ->setGridClass($block->getGridClass())
-             ->setBrickClass($block->getBrickClass())
-             ->setTemplate('MageSuite_ContentConstructorFrontend::teaser.phtml')
-             ->toHtml(); ?>
+
+        <?php if (isset($teaser['displayVariant'])): ?>
+            <?= $this->getLayout()
+                ->createBlock(\Magento\Framework\View\Element\Template::class)
+                ->setTeaserData($teaser)
+                ->setTeaserId($i)
+                ->setHtmlTag($block->getHtmlTag())
+                ->setGridClass($block->getGridClass())
+                ->setBrickClass($block->getBrickClass())
+                ->setTemplate('MageSuite_ContentConstructorFrontend::teaser.phtml')
+                ->toHtml(); ?>
+        <?php else: ?>
+            <?php 
+            $newTeaserConfig = array(
+                "scenario" => array(
+                    'desktopLayout' => array(
+                        'id' => 1,
+                    ),
+                    'mobileLayout' => array(
+                        'id' => 'mobile-large',
+                    ),
+                    'contentPlacement' => array(
+                        'id' => 'over',
+                    ),
+                    'teaserWidth' => array(
+                        'id' => 'window',
+                    )
+                ),
+                "items" => array(
+                    0 => $teaser,
+                ),
+            );
+            ?>
+
+            <?= $this->getLayout()
+                ->createBlock('MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser')
+                ->setData($newTeaserConfig)
+                ->setCategoryTeaser(true)
+                ->setTeaserId($i)
+                ->setTeaserData($teaser)
+                ->setGridClass($block->getGridClass())
+                ->setBrickClass($block->getBrickClass())
+                ->setMix('cs-image-teaser--category-teaser ' . $block->getMix())
+                ->setContainerMix('cs-container--category-teaser ' . $block->getContainerMix())
+                ->toHtml();
+            ?>
+        <?php endif; ?>
+
         <?php $i++ ?>
     <?php endforeach; ?>
 
