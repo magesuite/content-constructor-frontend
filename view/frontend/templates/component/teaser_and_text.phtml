@@ -24,6 +24,9 @@ $sizes = $sizesMobile . ', ' . $sizesDesktop;
 
 $containerClasses = ($teaserWidth == 'window') ? ' cs-container--image-teaser-window-width' : '';
 $containerClasses = ' ' . $block->getContainerMix();
+if (isset($imageTeaser['cc_css_classes'])):
+    $containerClasses .= ' ' . $imageTeaser['cc_css_classes'];
+endif;
 
 $jsConfig = isset($imageTeaser['jsConfig']) ? json_encode($imageTeaser['jsConfig']) : '{}';
 ?>
