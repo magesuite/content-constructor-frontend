@@ -47,6 +47,9 @@ class InstagramFeedDataProvider
             $feedData = [];
 
             foreach ($response['data'] as $item) {
+                if($item['type'] != 'image'){
+                    continue;
+                }
                 $item['image']['decoded'] = $item['images']['standard_resolution']['url'];
                 $item['cta']['href'] = $item['link'];
                 $feedData[] = $item;
