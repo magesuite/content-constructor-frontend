@@ -35,6 +35,13 @@ class Image extends \Magento\Framework\DataObject
         }
     }
 
+    public function getWebpSrcSet()
+    {
+        $srcSet = $this->getSrcSet();
+
+        return $this->mediaResolver->resolveWebpSrcSet($srcSet);
+    }
+
     public function getAlt()
     {
         $hero = $this->getData();

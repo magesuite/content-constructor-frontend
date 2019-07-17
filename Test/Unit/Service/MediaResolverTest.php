@@ -91,6 +91,19 @@ class MediaResolverTest extends \PHPUnit\Framework\TestCase
         );
     }
 
+    public function testItCorrectlyResolvesSrcSetIncludingWebp()
+    {
+        $this->assertEquals(
+            'http://localhost/pub/media/wysiwyg/test.jpg.webp 1920w, http://localhost/pub/media/wysiwyg/.thumbs/480/test.jpg.webp 480w, http://localhost/pub/media/wysiwyg/.thumbs/768/test.jpg.webp 768w',
+            $this->mediaResolver->resolveWebpSrcSet('http://localhost/pub/media/wysiwyg/test.jpg 1920w, http://localhost/pub/media/wysiwyg/.thumbs/480/test.jpg 480w, http://localhost/pub/media/wysiwyg/.thumbs/768/test.jpg 768w')
+        );
+
+        $this->assertEquals(
+            'http://localhost/pub/media/wysiwyg/.thumbs/480/test.jpg.webp, http://localhost/pub/media/wysiwyg/.thumbs/960/test.jpg.webp 2x',
+            $this->mediaResolver->resolveWebpSrcSet('http://localhost/pub/media/wysiwyg/.thumbs/480/test.jpg, http://localhost/pub/media/wysiwyg/.thumbs/960/test.jpg 2x')
+        );
+    }
+
     public function testItReturnsUrlDirectlyInDensityBasedSrcSetWhenItsPassed() {
         $this->assertEquals(
             'https://example.com/image.png',
