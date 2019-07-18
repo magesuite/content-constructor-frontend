@@ -36,7 +36,7 @@ class ComponentsList extends \Magento\Framework\View\Element\Template
      * @var \Magento\Catalog\Helper\Category
      */
     protected $categoryHelper;
-    
+
     private $providers = [
         'herocarousel-large' => 'HeroCarouselLarge',
         'herocarousel-slider' => 'HeroCarouselSlider',
@@ -50,10 +50,14 @@ class ComponentsList extends \Magento\Framework\View\Element\Template
         'itwindowwidthslider' => 'ITWindowWidthSlider',
         'itcontainerwidthslider' => 'ITContainerWidthSlider',
         'contrastoptimizers' => 'ContrastOptimizers',
+        'ttwindowwidth' => 'TTWindowWidth',
+        'ttcontainerwidth' => 'TTContainerWidth',
+        'icon' => 'Icon',
         'productgridnohero' => 'ProductGridNoHero',
         'productgridheroleft' => 'ProductGridHeroLeft',
         'productgridheroright' => 'ProductGridHeroRight',
-        'paragraph' => 'Paragraph',
+        'headline' => 'Headline',
+        'paragraph' => 'Paragraph'
     ];
 
     public function __construct(
@@ -145,14 +149,14 @@ class ComponentsList extends \Magento\Framework\View\Element\Template
 
     private function getContent() {
         $content = <<<EOD
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis quos at minima, eius, placeat similique eos! 
-Aspernatur dolor, obcaecati. Non voluptas laborum voluptatem tempore? Tempora eum iste ipsum, vitae dicta placeat, beatae 
-delectus, nobis consectetur omnis blanditiis! Placeat, vero, quasi!</p>
-<p><strong>Consequuntur natus quas</strong>, dolor libero at provident adipisci minima amet minus eum molestias numquam, 
-sunt suscipit tenetur, dolores quae, possimus dolore sapiente officiis magni voluptas obcaecati. Distinctio, sed amet aut 
-quo id itaque laboriosam optio cumque sequi saepe recusandae? Ratione ad repellendus totam laborum odio cum ipsum in iste 
-laudantium, reiciendis quo explicabo beatae, vitae! Fugiat deserunt earum nam facilis qui, quidem neque architecto. 
-Necessitatibus, quos itaque accusantium vitae aperiam eligendi autem unde doloribus odit possimus. Omnis ipsum, expedita rerum blanditiis repellat.</p>
+<h1>H1&nbsp;Lorem ipsum dolor sit amet</h1>
+<h2>H2&nbsp;Lorem ipsum dolor sit amet</h2>
+<h3>H3&nbsp;Lorem ipsum dolor sit amet</h3>
+<h4>H4&nbsp;Lorem ipsum dolor sit amet</h4>
+<h5>H5&nbsp;Lorem ipsum dolor sit amet</h5>
+<h6>H6&nbsp;Lorem ipsum dolor sit amet</h6>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#">Perferendis</a> quos at minima, eius, placeat similique eos! Aspernatur dolor, obcaecati. Non voluptas laborum voluptatem tempore? Tempora eum iste ipsum, vitae dicta placeat, beatae delectus, nobis consectetur omnis blanditiis! Placeat, vero, quasi!</p>
+<p><strong>Consequuntur natus quas</strong>, dolor libero at provident adipisci minima <em>amet minus eum molestias numquam</em>, sunt suscipit tenetur, <span style="text-decoration: underline;">dolores quae, possimus dolore sapient</span>e officiis magni voluptas obcaecati. Distinctio, sed amet aut quo id itaque laboriosam optio cumque sequi saepe recusandae? Ratione ad repellendus totam laborum odio cum ipsum in iste laudantium, reiciendis quo explicabo beatae, vitae! Fugiat deserunt earum nam facilis qui, quidem neque architecto. Necessitatibus, quos itaque accusantium vitae aperiam eligendi autem unde doloribus odit possimus. Omnis ipsum, expedita rerum blanditiis repellat.</p>
 <ol>
 <li>Lorem ipsum dolor sit amet</li>
 <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
@@ -194,7 +198,7 @@ dolor fugiat quibusdam vel dolores deserunt!</p>
 </ul>
 <p>Doloremque repellendus dignissimos fugiat numquam odio cumque reiciendis cupiditate molestias unde corporis eaque, ipsum, 
 consectetur dolorum quam voluptatibus maiores sequi perferendis! Quas pariatur officiis atque consequatur assumenda omnis, 
-libero nihil, vero eaque nisi exercitationem delectus! Corporis beatae dignissimos, iste sequi quas minus molestias placeat praesentium non porrooooo.</p>
+libero nihil, vero eaque nisi exercitationem delectus! Corporis beatae dignissimos, iste sequi quas minus molestias placeat praesentium non porro.</p>
 EOD;
         return $content;
     }
