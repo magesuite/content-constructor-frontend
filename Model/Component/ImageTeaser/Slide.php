@@ -32,7 +32,6 @@ class Slide extends \MageSuite\ContentConstructorFrontend\Model\Component\Generi
         }
     }
 
-
     public function getAlt()
     {
         $teaser = $this->getData();

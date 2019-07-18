@@ -59,6 +59,13 @@ class GenericSlide extends \Magento\Framework\DataObject
         }
     }
 
+    public function getWebpSrcSet()
+    {
+        $srcSet = $this->getSrcSet();
+
+        return $this->mediaResolver->resolveWebpSrcSet($srcSet);
+    }
+
     public function isSvg() {
         $src = $this->getSrc();
 
