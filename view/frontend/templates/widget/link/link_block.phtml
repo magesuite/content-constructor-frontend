@@ -1,10 +1,10 @@
 <?php
 /**
  * @var \Magento\Cms\Block\Widget\Page\Link $block
- * Overwritten simple vlass to add cs-container__inner class for proper alignment
+ * Overwritten simple class to add cs-container and cs-container__inner class for proper alignment of links
  */
 ?>
-<div class="widget block block-cms-link cs-container__inner">
+<div class="widget block block-cms-link cs-container cs-container__inner">
     <a <?= /* @noEscape */ $block->getLinkAttributes() ?>>
         <span><?= $block->escapeHtml($block->getLabel()) ?></span>
     </a>
