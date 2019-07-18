@@ -140,6 +140,40 @@ class Index extends DataProviderComponents
         ];
         $blocks[] = self::getSeparatorBlock();
 
+        # ===== TEASERS & TEXTS ===== #
+        $blocks[] = [
+            '_type' => '\Magento\Cms\Block\Widget\Page\Link',
+            '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
+            '_data' => [
+                'section' => 'content',
+                'anchor_text' => 'Teaser & Text Window width',
+                '_path' => 'contentconstructor/components/index/page/ttwindowwidth'
+            ],
+        ];
+        $blocks[] = [
+            '_type' => '\Magento\Cms\Block\Widget\Page\Link',
+            '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
+            '_data' => [
+                'section' => 'content',
+                'anchor_text' => 'Teaser & Text Container width',
+                '_path' => 'contentconstructor/components/index/page/ttcontainerwidth'
+            ],
+        ];
+        $blocks[] = self::getSeparatorBlock();
+
+        # ===== ICONS ===== #
+
+        $blocks[] = [
+            '_type' => '\Magento\Cms\Block\Widget\Page\Link',
+            '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
+            '_data' => [
+                'section' => 'content',
+                'anchor_text' => 'Icon',
+                '_path' => 'contentconstructor/components/index/page/icon'
+            ],
+        ];
+        $blocks[] = self::getSeparatorBlock();
+
         # ===== PRODUCT GRIDS ===== #
         $blocks[] = [
             '_type' => '\Magento\Cms\Block\Widget\Page\Link',
@@ -171,6 +205,16 @@ class Index extends DataProviderComponents
         $blocks[] = self::getSeparatorBlock();
 
         # ===== PARAGRAPHS ===== #
+        $blocks[] = [
+            '_type' => '\Magento\Cms\Block\Widget\Page\Link',
+            '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
+            '_data' => [
+                'section' => 'content',
+                'anchor_text' => 'Headline',
+                '_path' => 'contentconstructor/components/index/page/headline'
+            ],
+        ];
+
         $blocks[] = [
             '_type' => '\Magento\Cms\Block\Widget\Page\Link',
             '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
