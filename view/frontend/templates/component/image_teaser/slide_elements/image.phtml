@@ -1,7 +1,9 @@
 <?php 
 $imageTeaserData = $block->getImageTeaserData();
+$imageTypeHelper = $this->helper(\MageSuite\ThemeHelpers\Helper\ImageType::class);
 $slide = $block->getSlide();
 $isSvg = $slide->isSvg();
+
 /**
  * Image properties with support for conditional lazy loading.
  */
@@ -23,16 +25,58 @@ $isSliderMobile = $block->getIsSliderMobile();
  */
 $contrastOptimizers = $slide->getOptimizers();
 $mirrorImage = $contrastOptimizers['mirror_image'];
+
+/**
+ * WebP support
+ */
+$isWebpSupported = $imageTypeHelper->supportsWebp($origImageSrc);
+$imageMimeType = $imageTypeHelper->getMimeType($origImageSrc);
+if ($isWebpSupported) {
+    $imageWebpSrcSet = $slide->getWebpSrcSet();
+}
 ?>
 <?php if ($hasImage): ?>
-    <figure class="cs-image-teaser__figure">
+    <picture class="cs-image-teaser__figure">
+        <?php if ($isWebpSupported): ?>
+            <source
+                type="image/webp"
+                class="cs-image-teaser__image lazyload<?= ($isSlider || $isSliderMobile) ? ' swiper-lazy' : '' ?><?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
+                alt="<?= $imageAlt ?>"
+                data-srcset="<?= $imageWebpSrcSet ?>"
+                <?php if ($imageSizes): ?>
+                    sizes="<?= $imageSizes ?>"
+                <?php endif; ?>
+                <?php if ($imageWidth): ?> 
+                    width="<?= $imageWidth ?>" 
+                <?php endif; ?>
+                <?php if ($imageHeight): ?> 
+                    height="<?= $imageHeight ?>" 
+                <?php endif; ?>
+            >
+        <?php endif; ?>
+        <source
+            type="<?= $imageMimeType ?>"
+            class="cs-image-teaser__image lazyload<?= ($isSlider || $isSliderMobile) ? ' swiper-lazy' : '' ?><?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
+            alt="<?= $imageAlt ?>"
+            data-srcset="<?= $imageSrcset ?>"
+            <?php if ($imageSizes): ?>
+                sizes="<?= $imageSizes ?>"
+            <?php endif; ?>
+            <?php if ($imageWidth): ?> 
+                width="<?= $imageWidth ?>" 
+            <?php endif; ?>
+            <?php if ($imageHeight): ?>
+                height="<?= $imageHeight ?>" 
+            <?php endif; ?>           
+        >
         <img
             class="cs-image-teaser__image lazyload<?= ($isSlider || $isSliderMobile) ? ' swiper-lazy' : '' ?><?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
-            src="<?= $imageSrc ?>"
             alt="<?= $imageAlt ?>"
-            data-src="<?= $origImageSrc ?>" 
             <?php if ($imageSrcset): ?>
                 data-srcset="<?= $imageSrcset ?>"
+            <?php else: ?>
+                src="<?= $imageSrc ?>"
+                data-src="<?= $origImageSrc ?>" 
             <?php endif; ?>
             <?php if ($imageSizes): ?>
                 sizes="<?= $imageSizes ?>"
@@ -47,8 +91,8 @@ $mirrorImage = $contrastOptimizers['mirror_image'];
         <noscript>
             <img
                 class="cs-image-teaser__image"
-                src="<?= $origImageSrc ?>"
                 alt="<?= $imageAlt ?>"
+                src="<?= $origImageSrc ?>"
                 <?php if ($imageSrcset): ?> 
                     srcset="<?= $imageSrcset ?>"
                 <?php endif; ?>
@@ -63,5 +107,5 @@ $mirrorImage = $contrastOptimizers['mirror_image'];
                 <?php endif; ?>
             >
         </noscript>
-    </figure>
+    </picture>
 <?php endif; ?>
