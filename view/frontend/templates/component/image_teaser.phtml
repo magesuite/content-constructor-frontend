@@ -61,12 +61,11 @@ $windowWidthClass = ($teaserWidth == 'window' || $teaserWidth == 'window-slider'
 
 $jsConfig = isset($imageTeaser['jsConfig']) ? json_encode($imageTeaser['jsConfig']) : '{}';
 
-$categoryTeaser = $block->getCategoryTeaser();
+$gridTeaser = $block->getGridTeaser();
 
-if ($categoryTeaser) {
+if ($gridTeaser) {
     $teaser = $block->getTeaserData();
     $teaserId = $block->getTeaserId();
-    $gridClass = $block->getGridClass();
     $brickClass = $block->getBrickClass();
 
     $teaserBrickClass = $brickClass . ' ' . $brickClass . '--teaser';
@@ -79,7 +78,7 @@ if ($categoryTeaser) {
 }
 ?>
 
-<?php if ($categoryTeaser): ?>
+<?php if ($gridTeaser): ?>
 <li class="<?= $teaserBrickClass ?>" data-teaser-id="<?= $teaserId ?>">
 <?php else: ?>
 <div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
@@ -274,7 +273,7 @@ if ($categoryTeaser) {
         ->setContentPlacement($contentPlacement)
         ->toHtml(); 
     ?>
-<?php if ($categoryTeaser): ?>
+<?php if ($gridTeaser): ?>
 </li>
 <?php else: ?>
 </div>
