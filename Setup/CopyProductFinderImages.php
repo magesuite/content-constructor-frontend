@@ -2,7 +2,7 @@
 
 namespace MageSuite\ContentConstructorFrontend\Setup;
 
-class CopyCreativeComponentsImages implements \Magento\Framework\Setup\InstallDataInterface
+class CopyProductFinderImages implements \Magento\Framework\Setup\InstallDataInterface
 {
     /**
      * @var \Magento\Framework\App\Filesystem\DirectoryList;
@@ -20,13 +20,13 @@ class CopyCreativeComponentsImages implements \Magento\Framework\Setup\InstallDa
     )
     {
         $mediaDir = $this->directoryList->getPath('media');
-        $sourceDir = __DIR__ . '/../assets/creative_components';
+        $sourceDir = __DIR__ . '/../assets/creative_components/product_finder';
 
         if (!is_writeable($mediaDir)) {
             return;
         }
-        if (!file_exists($mediaDir . '/creative_components')) {
-            mkdir($mediaDir . '/creative_components', 0755, true);
+        if (!file_exists($mediaDir . '/creative_components/product_finder')) {
+            mkdir($mediaDir . '/creative_components/product_finder', 0755, true);
         }
 
         $directory = opendir($sourceDir);
@@ -35,7 +35,7 @@ class CopyCreativeComponentsImages implements \Magento\Framework\Setup\InstallDa
             if (is_dir($sourceDir . '/' . $file)) {
                 continue;
             }
-            copy($sourceDir . '/' . $file, $mediaDir . '/creative_components/' . $file);
+            copy($sourceDir . '/' . $file, $mediaDir . '/creative_components/product_finder/' . $file);
         }
     }
 }
