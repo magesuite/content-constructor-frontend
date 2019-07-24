@@ -7,7 +7,7 @@ class UpgradeData implements \Magento\Framework\Setup\UpgradeDataInterface
     /**
      * @var \Magento\Eav\Setup\EavSetupFactory
      */
-    private $eavSetupFactory;
+    protected $eavSetupFactory;
 
     /**
      * @var \Magento\Framework\Setup\ModuleDataSetupInterface
@@ -22,18 +22,25 @@ class UpgradeData implements \Magento\Framework\Setup\UpgradeDataInterface
     /**
      * @var CopyCreativeComponentsImages
      */
-    private $copyCreativeComponentsImages;
+    protected $copyCreativeComponentsImages;
+
+    /**
+     * @var CopyCreativeComponentsImages
+     */
+    protected $copyProductFinderImages;
 
     public function __construct(
         \Magento\Eav\Setup\EavSetupFactory $eavSetupFactory,
         \Magento\Framework\Setup\ModuleDataSetupInterface $moduleDataSetupInterface,
-        CopyCreativeComponentsImages $copyCreativeComponentsImages
+        CopyCreativeComponentsImages $copyCreativeComponentsImages,
+        CopyProductFinderImages $copyProductFinderImages
     )
     {
         $this->eavSetupFactory = $eavSetupFactory;
         $this->moduleDataSetupInterface = $moduleDataSetupInterface;
         $this->eavSetup = $this->eavSetupFactory->create(['setup' => $this->moduleDataSetupInterface]);
         $this->copyCreativeComponentsImages = $copyCreativeComponentsImages;
+        $this->copyProductFinderImages = $copyProductFinderImages;
     }
 
     public function upgrade(
@@ -63,6 +70,10 @@ class UpgradeData implements \Magento\Framework\Setup\UpgradeDataInterface
 
         if (version_compare($context->getVersion(), '1.0.1', '<')) {
             $this->copyCreativeComponentsImages->install($setup, $context);
+        }
+
+        if (version_compare($context->getVersion(), '1.0.3', '<')) {
+            $this->copyProductFinderImages->install($setup, $context);
         }
 
         $setup->endSetup();

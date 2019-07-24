@@ -2,35 +2,34 @@
 
 namespace MageSuite\ContentConstructorFrontend\Block;
 
-use MageSuite\ContentConstructorFrontend\DataProviders\ComponentsList\Index;
-use Magento\Framework\App\Request\Http;
 
 class ComponentsList extends \Magento\Framework\View\Element\Template
 {
-    /**
-     * @var Http
-     */
-    private $request;
 
     /**
      * @var \Magento\Cms\Model\BlockFactory
      */
-    private $blockFactory;
+    protected $blockFactory;
 
     /**
      * @var \Magento\Cms\Api\BlockRepositoryInterface
      */
-    private $blockRepository;
+    protected $blockRepository;
 
     /**
      * @var \Magento\Cms\Model\PageFactory
      */
-    private $pageFactory;
+    protected $pageFactory;
 
     /**
      * @var \Magento\Cms\Api\PageRepositoryInterface
      */
-    private $pageRepository;
+    protected $pageRepository;
+
+    /**
+     * @var \Magento\Framework\App\Request\Http
+     */
+    protected $request;
 
     /**
      * @var \Magento\Catalog\Helper\Category
@@ -57,7 +56,9 @@ class ComponentsList extends \Magento\Framework\View\Element\Template
         'productgridheroleft' => 'ProductGridHeroLeft',
         'productgridheroright' => 'ProductGridHeroRight',
         'headline' => 'Headline',
-        'paragraph' => 'Paragraph'
+        'paragraph' => 'Paragraph',
+        'productfinder' => 'ProductFinder',
+        'instagram' => 'Instagram'
     ];
 
     public function __construct(
@@ -66,7 +67,7 @@ class ComponentsList extends \Magento\Framework\View\Element\Template
         \Magento\Cms\Api\BlockRepositoryInterface $blockRepository,
         \Magento\Cms\Model\PageFactory $pageFactory,
         \Magento\Cms\Api\PageRepositoryInterface $pageRepository,
-        Http $request,
+        \Magento\Framework\App\Request\Http $request,
         \Magento\Catalog\Helper\Category $categoryHelper,
         array $data = []
     )
@@ -93,7 +94,7 @@ class ComponentsList extends \Magento\Framework\View\Element\Template
         $page = $this->request->get('page');
 
         if (!isset($this->providers[$page])) {
-            $provider = new Index($this->categoryHelper);
+            $provider = new \MageSuite\ContentConstructorFrontend\DataProviders\ComponentsList\Index($this->categoryHelper);
         } else {
             $providerClass = '\MageSuite\ContentConstructorFrontend\DataProviders\ComponentsList\\' . $this->providers[$page];
             $provider = new $providerClass();

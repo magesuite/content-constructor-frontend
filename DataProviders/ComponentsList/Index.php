@@ -162,7 +162,6 @@ class Index extends DataProviderComponents
         $blocks[] = self::getSeparatorBlock();
 
         # ===== ICONS ===== #
-
         $blocks[] = [
             '_type' => '\Magento\Cms\Block\Widget\Page\Link',
             '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
@@ -222,6 +221,30 @@ class Index extends DataProviderComponents
                 'section' => 'content',
                 'anchor_text' => 'Paragraph',
                 '_path' => 'contentconstructor/components/index/page/paragraph'
+            ],
+        ];
+        $blocks[] = self::getSeparatorBlock();
+
+        # ===== PRODUCT FINDER ===== #
+        $blocks[] = [
+            '_type' => '\Magento\Cms\Block\Widget\Page\Link',
+            '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
+            '_data' => [
+                'section' => 'content',
+                'anchor_text' => 'Product Finder',
+                '_path' => 'contentconstructor/components/index/page/productfinder'
+            ],
+        ];
+        $blocks[] = self::getSeparatorBlock();
+
+        # ===== INSTAGRAM ===== #
+        $blocks[] = [
+            '_type' => '\Magento\Cms\Block\Widget\Page\Link',
+            '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
+            '_data' => [
+                'section' => 'content',
+                'anchor_text' => 'Instagram',
+                '_path' => 'contentconstructor/components/index/page/instagram'
             ],
         ];
 
