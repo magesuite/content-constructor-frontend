@@ -72,10 +72,10 @@ if ($isWebpSupported) {
         <img
             class="cs-image-teaser__image lazyload<?= ($isSlider || $isSliderMobile) ? ' swiper-lazy' : '' ?><?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
             alt="<?= $imageAlt ?>"
+            src="<?= $imageSrc ?>"
             <?php if ($imageSrcset): ?>
                 data-srcset="<?= $imageSrcset ?>"
             <?php else: ?>
-                src="<?= $imageSrc ?>"
                 data-src="<?= $origImageSrc ?>" 
             <?php endif; ?>
             <?php if ($imageSizes): ?>
