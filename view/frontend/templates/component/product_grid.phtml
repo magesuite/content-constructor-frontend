@@ -5,8 +5,7 @@ $visibility = $block->getVisibilityClass();
 
 $items = $viewModel->getItems();
 
-$componentClasses = ' cs-products-grid--with-hero';
-$componentClasses .= $block->getSkipSpacing() ? ' cs-products-grid--skip-spacing' : ''; 
+$componentClasses = $block->getSkipSpacing() ? ' cs-products-grid--skip-spacing' : ''; 
 $componentClasses .= ' ' . $block->getVar('product_grid/additional_css_classes');
 ?>
 
