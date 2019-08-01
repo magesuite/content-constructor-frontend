@@ -32,10 +32,16 @@ class CopyCreativeComponentsImages implements \Magento\Framework\Setup\InstallDa
         $directory = opendir($sourceDir);
 
         while (($file = readdir($directory)) != false) {
-            if (is_dir($sourceDir . '/' . $file)) {
+            $sourcePath = $sourceDir . '/' . $file;
+            $destinationPath = $mediaDir . '/creative_components/' . $file;
+
+            if (is_dir($sourcePath)) {
                 continue;
             }
-            copy($sourceDir . '/' . $file, $mediaDir . '/creative_components/' . $file);
+            if (file_exists($destinationPath)) {
+                continue;
+            }
+            copy($sourcePath, $destinationPath);
         }
     }
 }

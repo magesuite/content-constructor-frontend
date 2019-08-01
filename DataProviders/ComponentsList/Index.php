@@ -98,8 +98,8 @@ class Index extends DataProviderComponents
             '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
             '_data' => [
                 'section' => 'content',
-                'anchor_text' => 'Image Teaser Window width',
-                '_path' => 'contentconstructor/components/index/page/itwindowwidth'
+                'anchor_text' => 'Image Teaser Browser width',
+                '_path' => 'contentconstructor/components/index/page/itbrowserwidth'
             ]
         ];
         $blocks[] = [
@@ -107,8 +107,8 @@ class Index extends DataProviderComponents
             '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
             '_data' => [
                 'section' => 'content',
-                'anchor_text' => 'Image Teaser Container width',
-                '_path' => 'contentconstructor/components/index/page/itcontainerwidth'
+                'anchor_text' => 'Image Teaser Content width',
+                '_path' => 'contentconstructor/components/index/page/itcontentwidth'
             ]
         ];
         $blocks[] = [
@@ -116,8 +116,8 @@ class Index extends DataProviderComponents
             '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
             '_data' => [
                 'section' => 'content',
-                'anchor_text' => 'Image Teaser Window width slider',
-                '_path' => 'contentconstructor/components/index/page/itwindowwidthslider'
+                'anchor_text' => 'Image Teaser Browser width slider',
+                '_path' => 'contentconstructor/components/index/page/itbrowserwidthslider'
             ]
         ];
         $blocks[] = [
@@ -125,8 +125,8 @@ class Index extends DataProviderComponents
             '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
             '_data' => [
                 'section' => 'content',
-                'anchor_text' => 'Image Teaser Container width slider',
-                '_path' => 'contentconstructor/components/index/page/itcontainerwidthslider'
+                'anchor_text' => 'Image Teaser Content width slider',
+                '_path' => 'contentconstructor/components/index/page/itcontentwidthslider'
             ]
         ];
         $blocks[] = [
@@ -146,8 +146,8 @@ class Index extends DataProviderComponents
             '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
             '_data' => [
                 'section' => 'content',
-                'anchor_text' => 'Teaser & Text Window width',
-                '_path' => 'contentconstructor/components/index/page/ttwindowwidth'
+                'anchor_text' => 'Teaser & Text Browser width',
+                '_path' => 'contentconstructor/components/index/page/ttbrowserwidth'
             ],
         ];
         $blocks[] = [
@@ -155,8 +155,8 @@ class Index extends DataProviderComponents
             '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
             '_data' => [
                 'section' => 'content',
-                'anchor_text' => 'Teaser & Text Container width',
-                '_path' => 'contentconstructor/components/index/page/ttcontainerwidth'
+                'anchor_text' => 'Teaser & Text Content width',
+                '_path' => 'contentconstructor/components/index/page/ttcontentwidth'
             ],
         ];
         $blocks[] = self::getSeparatorBlock();
@@ -179,8 +179,8 @@ class Index extends DataProviderComponents
             '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
             '_data' => [
                 'section' => 'content',
-                'anchor_text' => 'Product Grid without Hero',
-                '_path' => 'contentconstructor/components/index/page/productgridnohero'
+                'anchor_text' => 'Product grid without image teaser',
+                '_path' => 'contentconstructor/components/index/page/productgridnoit'
             ],
         ];
         $blocks[] = [
@@ -188,8 +188,8 @@ class Index extends DataProviderComponents
             '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
             '_data' => [
                 'section' => 'content',
-                'anchor_text' => 'Product Grid with left Hero',
-                '_path' => 'contentconstructor/components/index/page/productgridheroleft'
+                'anchor_text' => 'Product grid with image teaser on the left',
+                '_path' => 'contentconstructor/components/index/page/productgriditleft'
             ],
         ];
         $blocks[] = [
@@ -197,8 +197,17 @@ class Index extends DataProviderComponents
             '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
             '_data' => [
                 'section' => 'content',
-                'anchor_text' => 'Product Grid with right Hero',
-                '_path' => 'contentconstructor/components/index/page/productgridheroright'
+                'anchor_text' => 'Product grid with image teaser on the right',
+                '_path' => 'contentconstructor/components/index/page/productgriditright'
+            ],
+        ];
+        $blocks[] = [
+            '_type' => '\Magento\Cms\Block\Widget\Page\Link',
+            '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
+            '_data' => [
+                'section' => 'content',
+                'anchor_text' => 'Product grid with image teaser in the middle',
+                '_path' => 'contentconstructor/components/index/page/productgriditcenter'
             ],
         ];
         $blocks[] = self::getSeparatorBlock();
