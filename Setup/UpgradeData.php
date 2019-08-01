@@ -76,6 +76,10 @@ class UpgradeData implements \Magento\Framework\Setup\UpgradeDataInterface
             $this->copyProductFinderImages->install($setup, $context);
         }
 
+        if (version_compare($context->getVersion(), '1.0.4', '<')) {
+            $this->copyCreativeComponentsImages->install($setup, $context);
+        }
+
         $setup->endSetup();
     }
 }

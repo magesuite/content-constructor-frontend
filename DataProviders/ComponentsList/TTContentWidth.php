@@ -2,18 +2,18 @@
 
 namespace MageSuite\ContentConstructorFrontend\DataProviders\ComponentsList;
 
-class TTWindowWidth extends DataProviderComponents
+class TTContentWidth extends DataProviderComponents
 {
     public function getBlocks()
     {
         $blocks = [
             0 => [
-                'id' => 'component421f',
+                'id' => 'componentb317',
                 'section' => 'content',
                 'type' => 'headline',
                 'data' => [
                     'title' => 'Teaser & text component',
-                    'subtitle' => 'Window width',
+                    'subtitle' => 'Content width',
                     'headingTag' => 'h2',
                     'componentVisibility' => [
                         'mobile' => '1',
@@ -22,7 +22,7 @@ class TTWindowWidth extends DataProviderComponents
                 ],
             ],
             1 => [
-                'id' => 'componentcb4e',
+                'id' => 'component6cce',
                 'section' => 'content',
                 'type' => 'headline',
                 'data' => [
@@ -36,7 +36,7 @@ class TTWindowWidth extends DataProviderComponents
                 ],
             ],
             2 => [
-                'id' => 'component80a7',
+                'id' => 'component7ac0',
                 'section' => 'content',
                 'type' => 'teaser-and-text',
                 'data' => [
@@ -44,9 +44,9 @@ class TTWindowWidth extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
-                                'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => '',
                             'description' => '',
@@ -90,10 +90,10 @@ class TTWindowWidth extends DataProviderComponents
                                     ],
                                     'gradient' => [
                                         'enabled' => '1',
-                                        'intensity' => '90',
+                                        'intensity' => '60',
                                         'direction' => [
-                                            'x' => '1',
-                                            'y' => '2',
+                                            'x' => '2',
+                                            'y' => '1',
                                         ],
                                         'configurator' => [
                                             'icon' => '#contrast_gradient',
@@ -147,8 +147,8 @@ class TTWindowWidth extends DataProviderComponents
                                 'decoded' => '',
                                 'aspect_ratio' => '',
                             ],
-                            'slogan' => 'Top - left',
-                            'description' => 'Gradient shadow left 90%',
+                            'slogan' => 'Top-left',
+                            'description' => 'Gradient shadow top 60%',
                             'cta' => [
                                 'label' => 'Dark',
                                 'href' => '#',
@@ -245,10 +245,10 @@ class TTWindowWidth extends DataProviderComponents
                     ],
                     'scenario' => [
                         'teaserWidth' => [
-                            'name' => 'Browser width',
-                            'iconId' => 'tw_window-width',
+                            'name' => 'Content width',
+                            'iconId' => 'tw_content-width',
                             'disabled' => '',
-                            'id' => 'window',
+                            'id' => 'container',
                         ],
                         'desktopLayout' => [
                         ],
@@ -268,8 +268,9 @@ class TTWindowWidth extends DataProviderComponents
                 ],
             ],
             3 => [
-                'id' => 'component6792',
+                'id' => 'component600d',
                 'section' => 'content',
+                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
@@ -375,19 +376,19 @@ class TTWindowWidth extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
-                                'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
-                            'slogan' => 'Container 50%<br>Dark text style<br>Bottom - right',
-                            'description' => '',
+                            'slogan' => '',
+                            'description' => 'Container 50%<br>Dark text style<br>Top - left',
                             'cta' => [
                                 'label' => 'More',
                                 'href' => '',
                             ],
                             'content_align' => [
-                                'x' => '3',
-                                'y' => '3',
+                                'x' => '1',
+                                'y' => '1',
                             ],
                             'sizeSelect' => '2x1',
                             'size' => [
@@ -477,10 +478,10 @@ class TTWindowWidth extends DataProviderComponents
                     ],
                     'scenario' => [
                         'teaserWidth' => [
-                            'name' => 'Browser width',
-                            'iconId' => 'tw_window-width',
+                            'name' => 'Content width',
+                            'iconId' => 'tw_content-width',
                             'disabled' => '',
-                            'id' => 'window',
+                            'id' => 'container',
                         ],
                         'desktopLayout' => [
                         ],
@@ -500,17 +501,18 @@ class TTWindowWidth extends DataProviderComponents
                 ],
             ],
             4 => [
-                'id' => 'component3655',
+                'id' => 'component16b3',
                 'section' => 'content',
+                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
                     'items' => [
                         0 => [
                             'image' => [
-                                'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
-                                'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => '',
                             'description' => '',
@@ -612,7 +614,7 @@ class TTWindowWidth extends DataProviderComponents
                                 'aspect_ratio' => '',
                             ],
                             'slogan' => '',
-                            'description' => 'Top - right<br>Dark text style',
+                            'description' => 'Top-right<br>Dark text style',
                             'cta' => [
                                 'label' => '',
                                 'href' => '',
@@ -709,10 +711,10 @@ class TTWindowWidth extends DataProviderComponents
                     ],
                     'scenario' => [
                         'teaserWidth' => [
-                            'name' => 'Browser width',
-                            'iconId' => 'tw_window-width',
+                            'name' => 'Content width',
+                            'iconId' => 'tw_content-width',
                             'disabled' => '',
-                            'id' => 'window',
+                            'id' => 'container',
                         ],
                         'desktopLayout' => [
                         ],
@@ -732,8 +734,9 @@ class TTWindowWidth extends DataProviderComponents
                 ],
             ],
             5 => [
-                'id' => 'component4571',
+                'id' => 'component9136',
                 'section' => 'content',
+                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
@@ -747,7 +750,7 @@ class TTWindowWidth extends DataProviderComponents
                             'slogan' => '',
                             'description' => '',
                             'cta' => [
-                                'label' => 'Center - left',
+                                'label' => 'Center-left',
                                 'href' => '#',
                             ],
                             'content_align' => [
@@ -839,9 +842,9 @@ class TTWindowWidth extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
-                                'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => '',
                             'description' => '',
@@ -941,10 +944,10 @@ class TTWindowWidth extends DataProviderComponents
                     ],
                     'scenario' => [
                         'teaserWidth' => [
-                            'name' => 'Browser width',
-                            'iconId' => 'tw_window-width',
+                            'name' => 'Content width',
+                            'iconId' => 'tw_content-width',
                             'disabled' => '',
-                            'id' => 'window',
+                            'id' => 'container',
                         ],
                         'desktopLayout' => [
                         ],
@@ -964,17 +967,18 @@ class TTWindowWidth extends DataProviderComponents
                 ],
             ],
             6 => [
-                'id' => 'component005e',
+                'id' => 'component8b33',
                 'section' => 'content',
+                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
                     'items' => [
                         0 => [
                             'image' => [
-                                'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
-                                'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => '',
                             'description' => '',
@@ -1173,10 +1177,10 @@ class TTWindowWidth extends DataProviderComponents
                     ],
                     'scenario' => [
                         'teaserWidth' => [
-                            'name' => 'Browser width',
-                            'iconId' => 'tw_window-width',
+                            'name' => 'Content width',
+                            'iconId' => 'tw_content-width',
                             'disabled' => '',
-                            'id' => 'window',
+                            'id' => 'container',
                         ],
                         'desktopLayout' => [
                         ],
@@ -1196,8 +1200,9 @@ class TTWindowWidth extends DataProviderComponents
                 ],
             ],
             7 => [
-                'id' => 'component2228',
+                'id' => 'component605a',
                 'section' => 'content',
+                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
@@ -1208,8 +1213,8 @@ class TTWindowWidth extends DataProviderComponents
                                 'decoded' => '',
                                 'aspect_ratio' => '',
                             ],
-                            'slogan' => 'Center - right',
-                            'description' => 'Gradient shadow right 70%',
+                            'slogan' => 'Center-right',
+                            'description' => 'Gradient shadow bottom 80%',
                             'cta' => [
                                 'label' => 'Light',
                                 'href' => '#',
@@ -1303,9 +1308,9 @@ class TTWindowWidth extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
-                                'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => '',
                             'description' => '',
@@ -1349,10 +1354,10 @@ class TTWindowWidth extends DataProviderComponents
                                     ],
                                     'gradient' => [
                                         'enabled' => '1',
-                                        'intensity' => '70',
+                                        'intensity' => '80',
                                         'direction' => [
-                                            'x' => '3',
-                                            'y' => '2',
+                                            'x' => '2',
+                                            'y' => '3',
                                         ],
                                         'configurator' => [
                                             'icon' => '#contrast_gradient',
@@ -1405,10 +1410,10 @@ class TTWindowWidth extends DataProviderComponents
                     ],
                     'scenario' => [
                         'teaserWidth' => [
-                            'name' => 'Browser width',
-                            'iconId' => 'tw_window-width',
+                            'name' => 'Content width',
+                            'iconId' => 'tw_content-width',
                             'disabled' => '',
-                            'id' => 'window',
+                            'id' => 'container',
                         ],
                         'desktopLayout' => [
                         ],
@@ -1428,26 +1433,27 @@ class TTWindowWidth extends DataProviderComponents
                 ],
             ],
             8 => [
-                'id' => 'component1fd1',
+                'id' => 'componentfeba',
                 'section' => 'content',
+                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
                     'items' => [
                         0 => [
                             'image' => [
-                                'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
-                                'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
-                            'slogan' => 'Container 20%<br>Light text style<br>Top - center<br>Mirror image',
-                            'description' => '',
+                            'slogan' => '',
+                            'description' => 'Container 20%<br>Light text style<br>Top - right<br>Mirror image<br>',
                             'cta' => [
                                 'label' => 'More',
                                 'href' => '',
                             ],
                             'content_align' => [
-                                'x' => '2',
+                                'x' => '3',
                                 'y' => '1',
                             ],
                             'sizeSelect' => '2x1',
@@ -1494,7 +1500,7 @@ class TTWindowWidth extends DataProviderComponents
                                     ],
                                     'container' => [
                                         'enabled' => '1',
-                                        'intensity' => '50',
+                                        'intensity' => '20',
                                         'direction' => 'disabled',
                                         'configurator' => [
                                             'icon' => '#contrast_container',
@@ -1539,7 +1545,7 @@ class TTWindowWidth extends DataProviderComponents
                                 'decoded' => '',
                                 'aspect_ratio' => '',
                             ],
-                            'slogan' => 'Bottom - left',
+                            'slogan' => 'Bottom-left',
                             'description' => '',
                             'cta' => [
                                 'label' => 'Light',
@@ -1637,10 +1643,10 @@ class TTWindowWidth extends DataProviderComponents
                     ],
                     'scenario' => [
                         'teaserWidth' => [
-                            'name' => 'Browser width',
-                            'iconId' => 'tw_window-width',
+                            'name' => 'Content width',
+                            'iconId' => 'tw_content-width',
                             'disabled' => '',
-                            'id' => 'window',
+                            'id' => 'container',
                         ],
                         'desktopLayout' => [
                         ],
@@ -1660,8 +1666,9 @@ class TTWindowWidth extends DataProviderComponents
                 ],
             ],
             9 => [
-                'id' => 'component2cb8',
+                'id' => 'component4015',
                 'section' => 'content',
+                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
@@ -1673,7 +1680,7 @@ class TTWindowWidth extends DataProviderComponents
                                 'aspect_ratio' => '',
                             ],
                             'slogan' => '',
-                            'description' => 'Bottom - center<br>Light text style',
+                            'description' => 'Bottom -  center<br>Light text style',
                             'cta' => [
                                 'label' => '',
                                 'href' => '',
@@ -1767,9 +1774,9 @@ class TTWindowWidth extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
-                                'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => '',
                             'description' => '',
@@ -1869,10 +1876,10 @@ class TTWindowWidth extends DataProviderComponents
                     ],
                     'scenario' => [
                         'teaserWidth' => [
-                            'name' => 'Browser width',
-                            'iconId' => 'tw_window-width',
+                            'name' => 'Content width',
+                            'iconId' => 'tw_content-width',
                             'disabled' => '',
-                            'id' => 'window',
+                            'id' => 'container',
                         ],
                         'desktopLayout' => [
                         ],
@@ -1892,17 +1899,18 @@ class TTWindowWidth extends DataProviderComponents
                 ],
             ],
             10 => [
-                'id' => 'componentca2d',
+                'id' => 'component4ba5',
                 'section' => 'content',
+                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
                     'items' => [
                         0 => [
                             'image' => [
-                                'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
-                                'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => '',
                             'description' => '',
@@ -2101,10 +2109,10 @@ class TTWindowWidth extends DataProviderComponents
                     ],
                     'scenario' => [
                         'teaserWidth' => [
-                            'name' => 'Browser width',
-                            'iconId' => 'tw_window-width',
+                            'name' => 'Content width',
+                            'iconId' => 'tw_content-width',
                             'disabled' => '',
-                            'id' => 'window',
+                            'id' => 'container',
                         ],
                         'desktopLayout' => [
                         ],
@@ -2124,7 +2132,7 @@ class TTWindowWidth extends DataProviderComponents
                 ],
             ],
             11 => [
-                'id' => 'component3d74',
+                'id' => 'componentb6dc',
                 'section' => 'content',
                 'type' => 'headline',
                 'data' => [
@@ -2138,17 +2146,18 @@ class TTWindowWidth extends DataProviderComponents
                 ],
             ],
             12 => [
-                'id' => 'component5224',
+                'id' => 'componentaa0a',
                 'section' => 'content',
+                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
                     'items' => [
                         0 => [
                             'image' => [
-                                'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
-                                'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => '',
                             'description' => '',
@@ -2183,7 +2192,7 @@ class TTWindowWidth extends DataProviderComponents
                                     ],
                                     'overlay' => [
                                         'enabled' => '1',
-                                        'intensity' => '50',
+                                        'intensity' => '30',
                                         'direction' => 'disabled',
                                         'configurator' => [
                                             'icon' => '#contrast_overlay',
@@ -2250,7 +2259,7 @@ class TTWindowWidth extends DataProviderComponents
                                 'aspect_ratio' => '',
                             ],
                             'slogan' => 'Top - left',
-                            'description' => 'Overlay 50%',
+                            'description' => 'Overlay 30%',
                             'cta' => [
                                 'label' => 'Dark',
                                 'href' => '#',
@@ -2347,10 +2356,10 @@ class TTWindowWidth extends DataProviderComponents
                     ],
                     'scenario' => [
                         'teaserWidth' => [
-                            'name' => 'Browser width',
-                            'iconId' => 'tw_window-width',
+                            'name' => 'Content width',
+                            'iconId' => 'tw_content-width',
                             'disabled' => '',
-                            'id' => 'window',
+                            'id' => 'container',
                         ],
                         'desktopLayout' => [
                         ],
@@ -2370,8 +2379,9 @@ class TTWindowWidth extends DataProviderComponents
                 ],
             ],
             13 => [
-                'id' => 'component626a',
+                'id' => 'componentfeb6',
                 'section' => 'content',
+                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
@@ -2477,18 +2487,18 @@ class TTWindowWidth extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
-                                'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => '',
-                            'description' => 'Text shadow 100%<br>Center - right<br>Dark text style',
+                            'description' => 'Text shadow 80%<br>In the middle<br>Dark text style',
                             'cta' => [
                                 'label' => 'More',
                                 'href' => '',
                             ],
                             'content_align' => [
-                                'x' => '3',
+                                'x' => '2',
                                 'y' => '2',
                             ],
                             'sizeSelect' => '2x1',
@@ -2544,7 +2554,7 @@ class TTWindowWidth extends DataProviderComponents
                                     ],
                                     'text_shadow' => [
                                         'enabled' => '1',
-                                        'intensity' => '100',
+                                        'intensity' => '80',
                                         'direction' => 'disabled',
                                         'configurator' => [
                                             'icon' => '#contrast_text-shadow',
@@ -2579,10 +2589,10 @@ class TTWindowWidth extends DataProviderComponents
                     ],
                     'scenario' => [
                         'teaserWidth' => [
-                            'name' => 'Browser width',
-                            'iconId' => 'tw_window-width',
+                            'name' => 'Content width',
+                            'iconId' => 'tw_content-width',
                             'disabled' => '',
-                            'id' => 'window',
+                            'id' => 'container',
                         ],
                         'desktopLayout' => [
                         ],
@@ -2602,17 +2612,18 @@ class TTWindowWidth extends DataProviderComponents
                 ],
             ],
             14 => [
-                'id' => 'component8fe2',
+                'id' => 'component25a8',
                 'section' => 'content',
+                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
                     'items' => [
                         0 => [
                             'image' => [
-                                'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
-                                'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => '',
                             'description' => '',
@@ -2717,7 +2728,7 @@ class TTWindowWidth extends DataProviderComponents
                             'description' => 'Top - right<br>Dark text style',
                             'cta' => [
                                 'label' => '',
-                                'href' => '',
+                                'href' => '#',
                             ],
                             'content_align' => [
                                 'x' => '3',
@@ -2811,10 +2822,10 @@ class TTWindowWidth extends DataProviderComponents
                     ],
                     'scenario' => [
                         'teaserWidth' => [
-                            'name' => 'Browser width',
-                            'iconId' => 'tw_window-width',
+                            'name' => 'Content width',
+                            'iconId' => 'tw_content-width',
                             'disabled' => '',
-                            'id' => 'window',
+                            'id' => 'container',
                         ],
                         'desktopLayout' => [
                         ],
@@ -2834,8 +2845,9 @@ class TTWindowWidth extends DataProviderComponents
                 ],
             ],
             15 => [
-                'id' => 'component18dc',
+                'id' => 'component1590',
                 'section' => 'content',
+                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
@@ -2941,9 +2953,9 @@ class TTWindowWidth extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
-                                'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => '',
                             'description' => '',
@@ -3043,10 +3055,10 @@ class TTWindowWidth extends DataProviderComponents
                     ],
                     'scenario' => [
                         'teaserWidth' => [
-                            'name' => 'Browser width',
-                            'iconId' => 'tw_window-width',
+                            'name' => 'Content width',
+                            'iconId' => 'tw_content-width',
                             'disabled' => '',
-                            'id' => 'window',
+                            'id' => 'container',
                         ],
                         'desktopLayout' => [
                         ],
@@ -3066,17 +3078,18 @@ class TTWindowWidth extends DataProviderComponents
                 ],
             ],
             16 => [
-                'id' => 'component70d0',
+                'id' => 'componentf8ff',
                 'section' => 'content',
+                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
                     'items' => [
                         0 => [
                             'image' => [
-                                'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
-                                'aspect_ratio' => '960:511',
-                                'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                                'aspect_ratio' => '',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => '',
                             'description' => '',
@@ -3275,10 +3288,10 @@ class TTWindowWidth extends DataProviderComponents
                     ],
                     'scenario' => [
                         'teaserWidth' => [
-                            'name' => 'Browser width',
-                            'iconId' => 'tw_window-width',
+                            'name' => 'Content width',
+                            'iconId' => 'tw_content-width',
                             'disabled' => '',
-                            'id' => 'window',
+                            'id' => 'container',
                         ],
                         'desktopLayout' => [
                         ],
@@ -3298,8 +3311,9 @@ class TTWindowWidth extends DataProviderComponents
                 ],
             ],
             17 => [
-                'id' => 'component0dea',
+                'id' => 'component0fae',
                 'section' => 'content',
+                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
@@ -3311,7 +3325,7 @@ class TTWindowWidth extends DataProviderComponents
                                 'aspect_ratio' => '',
                             ],
                             'slogan' => 'Center - right',
-                            'description' => 'Overlay 70%',
+                            'description' => 'Overlay 60%',
                             'cta' => [
                                 'label' => 'Light',
                                 'href' => '#',
@@ -3405,9 +3419,9 @@ class TTWindowWidth extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
-                                'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => '',
                             'description' => '',
@@ -3442,7 +3456,7 @@ class TTWindowWidth extends DataProviderComponents
                                     ],
                                     'overlay' => [
                                         'enabled' => '1',
-                                        'intensity' => '70',
+                                        'intensity' => '60',
                                         'direction' => 'disabled',
                                         'configurator' => [
                                             'icon' => '#contrast_overlay',
@@ -3507,10 +3521,10 @@ class TTWindowWidth extends DataProviderComponents
                     ],
                     'scenario' => [
                         'teaserWidth' => [
-                            'name' => 'Browser width',
-                            'iconId' => 'tw_window-width',
+                            'name' => 'Content width',
+                            'iconId' => 'tw_content-width',
                             'disabled' => '',
-                            'id' => 'window',
+                            'id' => 'container',
                         ],
                         'desktopLayout' => [
                         ],
@@ -3530,27 +3544,28 @@ class TTWindowWidth extends DataProviderComponents
                 ],
             ],
             18 => [
-                'id' => 'component13ac',
+                'id' => 'component6565',
                 'section' => 'content',
+                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
                     'items' => [
                         0 => [
                             'image' => [
-                                'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
-                                'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => '',
-                            'description' => 'Text shadow 100%<br>Center - left<br>Light text style',
+                            'description' => 'Text shadow 50%<br>Bottom - left<br>Light text style',
                             'cta' => [
                                 'label' => 'More',
                                 'href' => '',
                             ],
                             'content_align' => [
                                 'x' => '1',
-                                'y' => '2',
+                                'y' => '3',
                             ],
                             'sizeSelect' => '2x1',
                             'size' => [
@@ -3605,7 +3620,7 @@ class TTWindowWidth extends DataProviderComponents
                                     ],
                                     'text_shadow' => [
                                         'enabled' => '1',
-                                        'intensity' => '100',
+                                        'intensity' => '50',
                                         'direction' => 'disabled',
                                         'configurator' => [
                                             'icon' => '#contrast_text-shadow',
@@ -3644,7 +3659,7 @@ class TTWindowWidth extends DataProviderComponents
                             'slogan' => 'Bottom - left',
                             'description' => '',
                             'cta' => [
-                                'label' => 'Light ',
+                                'label' => 'Light',
                                 'href' => '#',
                             ],
                             'content_align' => [
@@ -3739,10 +3754,10 @@ class TTWindowWidth extends DataProviderComponents
                     ],
                     'scenario' => [
                         'teaserWidth' => [
-                            'name' => 'Browser width',
-                            'iconId' => 'tw_window-width',
+                            'name' => 'Content width',
+                            'iconId' => 'tw_content-width',
                             'disabled' => '',
-                            'id' => 'window',
+                            'id' => 'container',
                         ],
                         'desktopLayout' => [
                         ],
@@ -3762,8 +3777,9 @@ class TTWindowWidth extends DataProviderComponents
                 ],
             ],
             19 => [
-                'id' => 'component0c5a',
+                'id' => 'component6547',
                 'section' => 'content',
+                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
@@ -3869,9 +3885,9 @@ class TTWindowWidth extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
-                                'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => '',
                             'description' => '',
@@ -3971,10 +3987,10 @@ class TTWindowWidth extends DataProviderComponents
                     ],
                     'scenario' => [
                         'teaserWidth' => [
-                            'name' => 'Browser width',
-                            'iconId' => 'tw_window-width',
+                            'name' => 'Content width',
+                            'iconId' => 'tw_content-width',
                             'disabled' => '',
-                            'id' => 'window',
+                            'id' => 'container',
                         ],
                         'desktopLayout' => [
                         ],
@@ -3994,17 +4010,18 @@ class TTWindowWidth extends DataProviderComponents
                 ],
             ],
             20 => [
-                'id' => 'component5381',
+                'id' => 'component5966',
                 'section' => 'content',
+                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
                     'items' => [
                         0 => [
                             'image' => [
-                                'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
-                                'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => '',
                             'description' => '',
@@ -4203,10 +4220,10 @@ class TTWindowWidth extends DataProviderComponents
                     ],
                     'scenario' => [
                         'teaserWidth' => [
-                            'name' => 'Browser width',
-                            'iconId' => 'tw_window-width',
+                            'name' => 'Content width',
+                            'iconId' => 'tw_content-width',
                             'disabled' => '',
-                            'id' => 'window',
+                            'id' => 'container',
                         ],
                         'desktopLayout' => [
                         ],
