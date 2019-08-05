@@ -75,9 +75,8 @@ if ($isWebpSupported) {
             src="<?= $imageSrc ?>"
             <?php if ($imageSrcset): ?>
                 data-srcset="<?= $imageSrcset ?>"
-            <?php else: ?>
-                data-src="<?= $origImageSrc ?>" 
             <?php endif; ?>
+            data-src="<?= $origImageSrc ?>"
             <?php if ($imageSizes): ?>
                 sizes="<?= $imageSizes ?>"
             <?php endif; ?>
