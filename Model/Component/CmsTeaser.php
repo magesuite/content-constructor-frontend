@@ -45,9 +45,9 @@ class CmsTeaser extends \Magento\Framework\DataObject implements ViewModel
                     ],
                     'cta' => [
                         'href' => $page['href'],
-                        'label' => $page['headline']
+                        'label' => ''
                     ],
-                    'slogan' => '',
+                    'slogan' => $page['headline'],
                     'description' => ''
                 ];
 
