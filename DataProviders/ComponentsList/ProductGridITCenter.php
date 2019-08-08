@@ -11,7 +11,6 @@ class ProductGridITCenter extends DataProviderComponents
                 'id' => 'component9505',
                 'section' => 'content',
                 'type' => 'headline',
-                'name' => 'Headline',
                 'data' => [
                     'title' => 'Product grid with image teaser in the middle',
                     'subtitle' => '',
@@ -25,7 +24,6 @@ class ProductGridITCenter extends DataProviderComponents
             1 => [
                 'id' => 'componente24d',
                 'section' => 'content',
-                'name' => 'Headline',
                 'type' => 'headline',
                 'data' => [
                     'title' => '1/1/1',
@@ -40,7 +38,6 @@ class ProductGridITCenter extends DataProviderComponents
             2 => [
                 'id' => 'component36de',
                 'section' => 'content',
-                'name' => 'Products grid',
                 'type' => 'product-grid',
                 'data' => [
                     'category_id' => '20',
@@ -51,7 +48,7 @@ class ProductGridITCenter extends DataProviderComponents
                     'rows_tablet' => '1',
                     'rows_mobile' => '1',
                     'skus' => '',
-                    'limit' => '2',
+                    'limit' => '3',
                     'useTeaser' => 'true',
                     'scenario' => [
                         'contentPlacement' => [
@@ -167,7 +164,6 @@ class ProductGridITCenter extends DataProviderComponents
             3 => [
                 'id' => 'component61f0',
                 'section' => 'content',
-                'name' => 'Headline',
                 'type' => 'headline',
                 'data' => [
                     'title' => '2/2/2',
@@ -182,7 +178,6 @@ class ProductGridITCenter extends DataProviderComponents
             4 => [
                 'id' => 'component82d5',
                 'section' => 'content',
-                'name' => 'Products grid',
                 'type' => 'product-grid',
                 'data' => [
                     'category_id' => '20',
@@ -309,7 +304,6 @@ class ProductGridITCenter extends DataProviderComponents
             5 => [
                 'id' => 'component307c',
                 'section' => 'content',
-                'name' => 'Headline',
                 'type' => 'headline',
                 'data' => [
                     'title' => '3/3/3',
@@ -324,7 +318,6 @@ class ProductGridITCenter extends DataProviderComponents
             6 => [
                 'id' => 'component0a15',
                 'section' => 'content',
-                'name' => 'Products grid',
                 'type' => 'product-grid',
                 'data' => [
                     'category_id' => '20',
@@ -451,7 +444,6 @@ class ProductGridITCenter extends DataProviderComponents
             7 => [
                 'id' => 'component7f92',
                 'section' => 'content',
-                'name' => 'Headline',
                 'type' => 'headline',
                 'data' => [
                     'title' => '4/4/4',
@@ -466,7 +458,6 @@ class ProductGridITCenter extends DataProviderComponents
             8 => [
                 'id' => 'component4b7f',
                 'section' => 'content',
-                'name' => 'Products grid',
                 'type' => 'product-grid',
                 'data' => [
                     'category_id' => '20',
@@ -477,7 +468,7 @@ class ProductGridITCenter extends DataProviderComponents
                     'rows_tablet' => '4',
                     'rows_mobile' => '4',
                     'skus' => '',
-                    'limit' => '14',
+                    'limit' => '12',
                     'useTeaser' => 'true',
                     'scenario' => [
                         'contentPlacement' => [
@@ -593,7 +584,6 @@ class ProductGridITCenter extends DataProviderComponents
             9 => [
                 'id' => 'component8045',
                 'section' => 'content',
-                'name' => 'Headline',
                 'type' => 'headline',
                 'data' => [
                     'title' => '5/5/5',
@@ -608,7 +598,6 @@ class ProductGridITCenter extends DataProviderComponents
             10 => [
                 'id' => 'component5ebf',
                 'section' => 'content',
-                'name' => 'Products grid',
                 'type' => 'product-grid',
                 'data' => [
                     'category_id' => '20',
@@ -619,7 +608,7 @@ class ProductGridITCenter extends DataProviderComponents
                     'rows_tablet' => '5',
                     'rows_mobile' => '5',
                     'skus' => '',
-                    'limit' => '18',
+                    'limit' => '16',
                     'useTeaser' => 'true',
                     'scenario' => [
                         'contentPlacement' => [
@@ -735,7 +724,6 @@ class ProductGridITCenter extends DataProviderComponents
             11 => [
                 'id' => 'component44ff',
                 'section' => 'content',
-                'name' => 'Headline',
                 'type' => 'headline',
                 'data' => [
                     'title' => '2/3/4',
@@ -750,7 +738,6 @@ class ProductGridITCenter extends DataProviderComponents
             12 => [
                 'id' => 'componentb35a',
                 'section' => 'content',
-                'name' => 'Products grid',
                 'type' => 'product-grid',
                 'data' => [
                     'category_id' => '20',
@@ -877,7 +864,6 @@ class ProductGridITCenter extends DataProviderComponents
             13 => [
                 'id' => 'componentcebf',
                 'section' => 'content',
-                'name' => 'Headline',
                 'type' => 'headline',
                 'data' => [
                     'title' => '4/3/2',
@@ -892,7 +878,6 @@ class ProductGridITCenter extends DataProviderComponents
             14 => [
                 'id' => 'component6c62',
                 'section' => 'content',
-                'name' => 'Products grid',
                 'type' => 'product-grid',
                 'data' => [
                     'category_id' => '20',
@@ -1019,7 +1004,6 @@ class ProductGridITCenter extends DataProviderComponents
             15 => [
                 'id' => 'componentb489',
                 'section' => 'content',
-                'name' => 'Headline',
                 'type' => 'headline',
                 'data' => [
                     'title' => '6/8/10',
@@ -1034,7 +1018,6 @@ class ProductGridITCenter extends DataProviderComponents
             16 => [
                 'id' => 'component98f5',
                 'section' => 'content',
-                'name' => 'Products grid',
                 'type' => 'product-grid',
                 'data' => [
                     'category_id' => '20',
@@ -1045,7 +1028,7 @@ class ProductGridITCenter extends DataProviderComponents
                     'rows_tablet' => '8',
                     'rows_mobile' => '6',
                     'skus' => '',
-                    'limit' => '38',
+                    'limit' => '39',
                     'useTeaser' => 'true',
                     'scenario' => [
                         'contentPlacement' => [
@@ -1161,7 +1144,6 @@ class ProductGridITCenter extends DataProviderComponents
             17 => [
                 'id' => 'componentc1c2',
                 'section' => 'content',
-                'name' => 'Headline',
                 'type' => 'headline',
                 'data' => [
                     'title' => '9/5/2',
@@ -1176,7 +1158,6 @@ class ProductGridITCenter extends DataProviderComponents
             18 => [
                 'id' => 'component9995',
                 'section' => 'content',
-                'name' => 'Products grid',
                 'type' => 'product-grid',
                 'data' => [
                     'category_id' => '20',
