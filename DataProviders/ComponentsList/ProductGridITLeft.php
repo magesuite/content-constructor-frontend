@@ -48,7 +48,7 @@ class ProductGridITLeft extends DataProviderComponents
                     'rows_tablet' => '1',
                     'rows_mobile' => '1',
                     'skus' => '',
-                    'limit' => '2',
+                    'limit' => '3',
                     'useTeaser' => 'true',
                     'scenario' => [
                         'contentPlacement' => [
@@ -200,7 +200,7 @@ class ProductGridITLeft extends DataProviderComponents
                             'image' => [
                                 'decoded' => $this->getDecodedImage('eneko-urunuela-646064-unsplash.jpg'),
                                 'aspect_ratio' => '369:953',
-                                'image' => 'http://creativeshop.me/media/image_teaser/345678a.png',
+                                'image' => $this->getImage('eneko-urunuela-646064-unsplash.jpg'),
                             ],
                             'slogan' => 'Top - center',
                             'description' => 'Show in mobiles: No',
@@ -468,7 +468,7 @@ class ProductGridITLeft extends DataProviderComponents
                     'rows_tablet' => '4',
                     'rows_mobile' => '4',
                     'skus' => '',
-                    'limit' => '14',
+                    'limit' => '12',
                     'useTeaser' => 'true',
                     'scenario' => [
                         'contentPlacement' => [
@@ -608,7 +608,7 @@ class ProductGridITLeft extends DataProviderComponents
                     'rows_tablet' => '5',
                     'rows_mobile' => '5',
                     'skus' => '',
-                    'limit' => '18',
+                    'limit' => '16',
                     'useTeaser' => 'true',
                     'scenario' => [
                         'contentPlacement' => [
@@ -898,9 +898,10 @@ class ProductGridITLeft extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'decoded' => $this->getDecodedImage('eneko-urunuela-646064-unsplash.jpg'),
+                                'raw' => 'https://test.magesuite.io/csadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImltYWdlX3RlYXNlci8zNDU2NzhhLnBuZyJ9fQ,,/key/5d4ff01228e2518050a565b91cad9eee5fa39df9ecada33b3416a137740f55de/',
+                                'decoded' => '{{media url="image_teaser/345678a.png"}}',
                                 'aspect_ratio' => '369:953',
-                                'image' => $this->getImage('eneko-urunuela-646064-unsplash.jpg'),
+                                'image' => 'http://creativeshop.me/media/image_teaser/345678a.png',
                             ],
                             'slogan' => 'Bottom - left',
                             'description' => '',
@@ -1028,7 +1029,7 @@ class ProductGridITLeft extends DataProviderComponents
                     'rows_tablet' => '8',
                     'rows_mobile' => '6',
                     'skus' => '',
-                    'limit' => '38',
+                    'limit' => '39',
                     'useTeaser' => 'true',
                     'scenario' => [
                         'contentPlacement' => [

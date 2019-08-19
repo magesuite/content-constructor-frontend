@@ -48,7 +48,7 @@ class ProductGridITRight extends DataProviderComponents
                     'rows_tablet' => '1',
                     'rows_mobile' => '1',
                     'skus' => '',
-                    'limit' => '2',
+                    'limit' => '3',
                     'useTeaser' => 'true',
                     'scenario' => [
                         'contentPlacement' => [
@@ -60,7 +60,7 @@ class ProductGridITRight extends DataProviderComponents
                             'image' => [
                                 'decoded' =>  $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
-                                'image' => 'http://creativeshop.me/media/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Top - left',
                             'description' => 'Overlay 50%<br>Show in mobiles: No',
@@ -200,7 +200,7 @@ class ProductGridITRight extends DataProviderComponents
                             'image' => [
                                 'decoded' => $this->getDecodedImage('eneko-urunuela-646064-unsplash.jpg'),
                                 'aspect_ratio' => '369:953',
-                                'image' => 'http://creativeshop.me/media/image_teaser/345678a.png',
+                                'image' => $this->getImage('eneko-urunuela-646064-unsplash.jpg'),
                             ],
                             'slogan' => 'Top - center',
                             'description' => 'Show in mobiles: No',
@@ -492,10 +492,10 @@ class ProductGridITRight extends DataProviderComponents
                                 'x' => '1',
                                 'y' => '2',
                             ],
-                            'sizeSelect' => '2x2',
+                            'sizeSelect' => '2x1',
                             'size' => [
                                 'x' => '2',
-                                'y' => '2',
+                                'y' => '1',
                             ],
                             'row' => '1',
                             'position' => 'right',
@@ -608,7 +608,7 @@ class ProductGridITRight extends DataProviderComponents
                     'rows_tablet' => '5',
                     'rows_mobile' => '5',
                     'skus' => '',
-                    'limit' => '18',
+                    'limit' => '16',
                     'useTeaser' => 'true',
                     'scenario' => [
                         'contentPlacement' => [
@@ -1028,7 +1028,7 @@ class ProductGridITRight extends DataProviderComponents
                     'rows_tablet' => '8',
                     'rows_mobile' => '6',
                     'skus' => '',
-                    'limit' => '38',
+                    'limit' => '39',
                     'useTeaser' => 'true',
                     'scenario' => [
                         'contentPlacement' => [
