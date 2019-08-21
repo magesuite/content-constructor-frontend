@@ -8,109 +8,82 @@ $visibility = $block->getVisibilityClass();
 
 $componentClasses = '';
 if ($componentConfiguration['mobileDisplayVariant']['id'] == 'list') {
-    $componentClasses .= ' cs-hero--as-list-mobile';
+    $componentClasses .= ' cs-image-teaser--as-list-mobile';
 } else if ($componentConfiguration['mobileDisplayVariant']['id'] == 'hidden') {
-    $componentClasses .= ' cs-hero--hidden-mobile';
+    $componentClasses .= ' cs-image-teaser--hidden-mobile';
 }
-$componentClasses .= $block->getSkipSpacing() ? ' cs-hero--skip-spacing' : ''; 
 $componentClasses .= ' ' . $block->getVar('hero_carousel/additional_css_classes');
+
+// Map data from deprecated Image Teaser for backward compatibility
+if (!isset($componentConfiguration['scenario'])) {
+    foreach ($componentConfiguration['items'] as $key => $item) {
+        $originalItem = $componentConfiguration['items'][$key];
+        $mappedItem = array(
+            'image' => array(
+                'raw' => $originalItem['image'],
+                'decoded' => $originalItem['decodedImage'],
+                'aspect_ratio' => $originalItem['aspectRatio'],
+                'image' => $originalItem['image']
+            ),
+            'slogan' => $originalItem['headline'],
+            'description' => $originalItem['subheadline'] . $originalItem['paragraph'],
+            'cta' => array(
+                'label' => $originalItem['ctaLabel'],
+                'href' => $originalItem['href'],
+            ),
+            'content_align' => array(
+                'x' => 1,
+                'y' => 2
+            ),
+            'size' => array(
+                'x' => 2,
+                'y' => 1
+            ),
+            'row' => 1,
+            'position' => 'left',
+            'isAvailableForMobile' => 1,
+            'optimizers' => array(
+                'color_scheme' => $originalItem['colorScheme'],
+                'mirror_image' => null,
+                'scenarios' => array(
+                    'none' => array(
+                        'enabled' => 1
+                    )
+                )
+            ),
+            'teaserType' => 'full',
+            'componentVisibility' => array(
+                'mobile' => 1,
+                'desktop' => 1
+            )
+        );
+        $componentConfiguration['items'][$key] = $mappedItem;
+    }
+}
+
+// Provide fixed Image Teaser component configuration items
+$componentConfiguration['scenario'] = array(
+    'teaserWidth' => array (
+        'id' => $block->getVar('hero_carousel/teaser_width'),
+    ),
+    'contentPlacement' => array(
+        'id' => $block->getVar('hero_carousel/content_placement')
+    ),
+    'mobileLayout' => array(
+        'id' => $componentConfiguration['mobileDisplayVariant']['id'] === 'list' ? 'mobile-large' : 'mobile-slider'
+    ),
+    'desktopLayout' => array(
+        'id' => 1
+    )
+);
+$componentConfiguration['jsConfig'] = $block->getVar('hero_carousel/js_config');
+
+if (isset($componentConfiguration)) {
+    echo $this->getLayout()
+        ->createBlock(MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser::class)
+        ->setData($componentConfiguration)
+        ->setMix('cs-image-teaser--hero-teaser' . $componentClasses)
+        ->setContainerMix('cs-container--hero-teaser')
+        ->toHtml();
+}
 ?>
-
-<div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
-    <div class="cs-container cs-container--hero">
-        <div class="cs-container__inner">
-            <div class="cs-hero<?= $componentClasses ?>">
-                <div class="cs-hero__carousel">
-                    <div class="cs-hero__wrapper">
-                        <ul class="cs-hero__slides">
-
-                            <?php foreach ($viewModel->getSlides() as $slide): ?>
-                                <?php
-                                $imageSrc = $slide->getSrc();
-                                $href = $slide->getHref();
-                                ?>
-                                <li class="cs-hero__slide cs-hero__slide--scheme-<?= $slide->getData('colorScheme') ?> <?= $imageSrc ? 'cs-hero__slide--image-uploaded' : '' ?>">
-                                    <?php if ($href): ?>
-                                    <a href="<?= $href ?>" class="cs-hero__slide-link">
-                                        <?php endif; ?>
-
-                                        <?php if ($imageSrc): ?>
-                                            <figure class="cs-hero__figure">
-                                                <img
-                                                        class="cs-hero__image"
-                                                        src="<?= $imageSrc ?>"
-                                                        srcset="<?= $slide->getSrcSet() ?>"
-                                                        sizes="<?= $block->getVar('hero_carousel/sizes'); ?>"
-                                                        alt="<?= $slide->getAlt() ?>"
-                                                >
-                                            </figure>
-                                        <?php endif; ?>
-
-                                        <div class="cs-hero__content-wrapper cs-hero__content-wrapper--<?= $slide->getData('displayVariant') ?>">
-                                            <div class="cs-hero__content">
-                                                <?php if ($slide->getHeadline()): ?>
-                                                    <h2 class="cs-hero__headline"><?= $slide->getHeadline() ?></h2>
-                                                <?php endif; ?>
-
-                                                <?php if ($slide->getSubheadline()): ?>
-                                                    <p class="cs-hero__subheadline"><?= $slide->getSubheadline() ?></p>
-                                                <?php endif; ?>
-
-                                                <?php if ($slide->getParagraph()): ?>
-                                                    <p class="cs-hero__text"><?= $slide->getParagraph() ?></p>
-                                                <?php endif; ?>
-
-                                                <?php if ($slide->getHref() and $slide->getData('ctaLabel')): ?>
-                                                    <div class="cs-hero__cta">
-                                                <span role="button" class="cs-hero__cta-button">
-                                                    <span class="cs-hero__cta-button-span"><?= $slide->getData('ctaLabel') ?></span>
-                                                    <?= $this->getLayout()
-                                                            ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
-                                                            ->setIconUrl($block->getVar('hero_carousel/cta_button_icon_path'))
-                                                            ->setCssClass('cs-hero__cta-button-icon')
-                                                            ->setInlined(true)
-                                                            ->setLazyLoaded(false)
-                                                            ->toHtml(); 
-                                                    ?>
-                                                </span>
-                                                    </div>
-                                                <?php endif; ?>
-                                            </div>
-                                        </div>
-                                        <?php if ($href): ?>
-                                    </a>
-                                <?php endif; ?>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div>
-                </div>
-
-                <?php if($block->getVar('hero_carousel/navigation/show')): ?>
-                    <button class="cs-hero__nav cs-hero__nav--prev <?= $block->getVar('hero_carousel/navigation/arrows/prev/additional_css_classes') ?>" type="button">
-                        <?= $this->getLayout()
-                            ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
-                            ->setIconUrl($block->getVar('hero_carousel/navigation/arrows/prev/path'))
-                            ->setCssClass("cs-hero__nav-icon")
-                            ->setInlined(true)
-                            ->toHtml(); 
-                        ?>
-                    </button>
-                    <button class="cs-hero__nav cs-hero__nav--next <?= $block->getVar('hero_carousel/navigation/arrows/next/additional_css_classes') ?>" type="button">
-                        <?= $this->getLayout()
-                            ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
-                            ->setIconUrl($block->getVar('hero_carousel/navigation/arrows/next/path'))
-                            ->setCssClass("cs-hero__nav-icon")
-                            ->setInlined(true)
-                            ->toHtml(); 
-                        ?>
-                    </button>
-                <?php endif; ?>
-
-                <?php if($block->getVar('hero_carousel/pagination/show')): ?>
-                    <ul class="cs-hero__pagination <?= $block->getVar('hero_carousel/pagination/additional_css_classes') ?>"></ul>
-                <?php endif; ?>
-            </div>
-        </div>
-    </div>
-</div>
