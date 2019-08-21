@@ -13,9 +13,7 @@ class Store extends \MageSuite\ContentConstructorFrontend\Model\Directive\Direct
      * Store constructor.
      * @param \Magento\Framework\UrlInterface $urlInterface
      */
-    public function __construct(
-        \Magento\Framework\UrlInterface $urlInterface
-    )
+    public function __construct(\Magento\Framework\UrlInterface $urlInterface)
     {
         $this->urlInterface = $urlInterface;
     }
