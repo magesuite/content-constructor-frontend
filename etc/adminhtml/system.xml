@@ -21,7 +21,7 @@
             </group>
             <group id="instagram_component" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Instagram Data Feed Component Configuration</label>
-                <field id="access_token" translate="label" type="text" sortOrder="10" showInDefault="1" >
+                <field id="access_token" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
                     <label>Access Token</label>
                 </field>
             </group>

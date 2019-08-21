@@ -15,6 +15,6 @@ class Configuration
 
     public function getInstagramAccessToken()
     {
-        return $this->scopeInterface->getValue('cc_frontend_extension/instagram_component/access_token');
+        return $this->scopeInterface->getValue('cc_frontend_extension/instagram_component/access_token', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
     }
 }
