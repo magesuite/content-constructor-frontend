@@ -9,8 +9,6 @@ $visibility = $block->getVisibilityClass();
 $componentClasses = '';
 if ($componentConfiguration['mobileDisplayVariant']['id'] == 'list') {
     $componentClasses .= ' cs-image-teaser--as-list-mobile';
-} else if ($componentConfiguration['mobileDisplayVariant']['id'] == 'hidden') {
-    $componentClasses .= ' cs-image-teaser--hidden-mobile';
 }
 $componentClasses .= ' ' . $block->getVar('hero_carousel/additional_css_classes');
 
