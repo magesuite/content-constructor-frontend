@@ -1,0 +1,10 @@
+<?php
+/** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\Mosaic */
+
+echo $this->getLayout()
+    ->createBlock('MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser')
+    ->setData($block->getData())
+    ->setMix('cs-image-teaser--mosaic ' . $block->getMix())
+    ->setContainerMix('cs-container--mosaic ' . $block->getContainerMix())
+    ->toHtml();
+?>

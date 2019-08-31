@@ -11,6 +11,8 @@ $mobileLayout = $imageTeaser['scenario']['mobileLayout']['id'];
 
 $teaserWidth = $imageTeaser['scenario']['teaserWidth']['id'];
 
+$mosaicProportions = isset($imageTeaser['scenario']['proportions']) && isset($imageTeaser['scenario']['proportions']['id']) ? $imageTeaser['scenario']['proportions']['id'] : '';
+
 $itemsPerRow = $desktopLayout;
 $itemsPerView = $itemsPerRow;
 
@@ -153,7 +155,7 @@ if ($gridTeaser) {
                             ->toHtml(); 
                         ?>
 
-                        <ul class="cs-image-teaser__slides">
+                        <ul class="cs-image-teaser__slides <?= $mosaicProportions != '' ? ' cs-image-teaser__slides--mosaic-scenario-' . $mosaicProportions : '' ?>">
                             <?php foreach ($viewModel->getSlides() as $slide): ?>
                                 <?= $this->getLayout()
                                     ->createBlock(\Magento\Framework\View\Element\Template::class)
