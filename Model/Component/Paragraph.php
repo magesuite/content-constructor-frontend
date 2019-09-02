@@ -27,6 +27,10 @@ class Paragraph extends \Magento\Framework\DataObject
     public function getContent() {
         $configuration = $this->getData();
 
+        if (isset($configuration['migrated'])) {
+            return $configuration['content'];
+        }
+
         $id = isset($configuration['blockId']) ? $configuration['blockId'] : $configuration['identifier'];
 
         $block = $this->blockFactory->createBlock(
