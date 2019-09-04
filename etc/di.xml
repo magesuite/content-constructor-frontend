@@ -165,11 +165,6 @@
         </arguments>
     </type>
 
-    <type name="MageSuite\ContentConstructorFrontend\Block\Component\Mosaic">
-        <arguments>
-            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\Mosaic</argument>
-        </arguments>
-    </type>
 
     <type name="MageSuite\ContentConstructorFrontend\Service\ComponentPool">
         <arguments>
@@ -193,15 +188,13 @@
                 <item name="icon" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\Icon</item>
                 <item name="teaser-and-text" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\TeaserAndText</item>
                 <item name="instagram-feed" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\InstagramFeed</item>
-                <item name="mosaic" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\Mosaic</item>
             </argument>
         </arguments>
     </type>
 
-    <type name="MageSuite\ContentConstructorFrontend\Model\Directive\Pool">
+    <type name="MageSuite\DynamicDirectives\Model\Pool">
         <arguments>
             <argument name="directives" xsi:type="array">
-                <item name="sample" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Directive\Directives\Sample</item>
                 <item name="price" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Directive\Directives\Product\Price</item>
                 <item name="discountPercentage" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Directive\Directives\Product\DiscountPercentage</item>
                 <item name="store" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Directive\Directives\Store</item>

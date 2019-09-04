@@ -2,7 +2,7 @@
 
 namespace MageSuite\ContentConstructorFrontend\Model\Directive\Directives\Product;
 
-class AbstractProductDirective extends \MageSuite\ContentConstructorFrontend\Model\Directive\Directive
+class AbstractProductDirective extends \MageSuite\DynamicDirectives\Model\Directive
 {
     /**
      * @var \Magento\Catalog\Api\ProductRepositoryInterface

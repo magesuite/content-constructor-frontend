@@ -9,7 +9,7 @@ class ResolveDirectives
      */
     protected $directiveApplier;
 
-    public function __construct(\MageSuite\ContentConstructorFrontend\Service\DirectiveApplier $directiveApplier)
+    public function __construct(\MageSuite\DynamicDirectives\Service\DirectiveApplier $directiveApplier)
     {
         $this->directiveApplier = $directiveApplier;
     }
