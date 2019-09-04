@@ -2,7 +2,7 @@
 
 namespace MageSuite\ContentConstructorFrontend\Model\Directive\Directives;
 
-class Store extends \MageSuite\ContentConstructorFrontend\Model\Directive\Directive
+class Store extends \MageSuite\DynamicDirectives\Model\Directive
 {
     /**
      * @var \Magento\Framework\UrlInterface
