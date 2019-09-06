@@ -34,15 +34,24 @@ $imageMimeType = $imageTypeHelper->getMimeType($origImageSrc);
 if ($isWebpSupported) {
     $imageWebpSrcSet = $slide->getWebpSrcSet();
 }
+
+/**
+ * Conditional lazy loading
+ */
+$isLazyLoaded = !strpos($imageTeaserData['type'], 'HeroCarousel');
+$dataPrefix = $isLazyLoaded ? 'data-' : '';
 ?>
 <?php if ($hasImage): ?>
     <picture class="cs-image-teaser__figure">
         <?php if ($isWebpSupported): ?>
             <source
                 type="image/webp"
-                class="cs-image-teaser__image lazyload<?= ($isSlider || $isSliderMobile) ? ' swiper-lazy' : '' ?><?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
+                class="cs-image-teaser__image
+                    <?= $isLazyLoaded ? ' lazyload' : '' ?>
+                    <?= ($isSlider || $isSliderMobile) && $isLazyLoaded ? ' swiper-lazy' : '' ?>
+                    <?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
                 alt="<?= $imageAlt ?>"
-                data-srcset="<?= $imageWebpSrcSet ?>"
+                <?= $dataPrefix ?>srcset="<?= $imageWebpSrcSet ?>"
                 <?php if ($imageSizes): ?>
                     sizes="<?= $imageSizes ?>"
                 <?php endif; ?>
@@ -56,9 +65,12 @@ if ($isWebpSupported) {
         <?php endif; ?>
         <source
             type="<?= $imageMimeType ?>"
-            class="cs-image-teaser__image lazyload<?= ($isSlider || $isSliderMobile) ? ' swiper-lazy' : '' ?><?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
+            class="cs-image-teaser__image
+                <?= $isLazyLoaded ? ' lazyload' : '' ?>
+                <?= ($isSlider || $isSliderMobile) && $isLazyLoaded ? ' swiper-lazy' : '' ?>
+                <?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
             alt="<?= $imageAlt ?>"
-            data-srcset="<?= $imageSrcset ?>"
+            <?= $dataPrefix ?>srcset="<?= $imageSrcset ?>"
             <?php if ($imageSizes): ?>
                 sizes="<?= $imageSizes ?>"
             <?php endif; ?>
@@ -70,13 +82,16 @@ if ($isWebpSupported) {
             <?php endif; ?>           
         >
         <img
-            class="cs-image-teaser__image lazyload<?= ($isSlider || $isSliderMobile) ? ' swiper-lazy' : '' ?><?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
+            class="cs-image-teaser__image
+                <?= $isLazyLoaded ? ' lazyload' : '' ?>
+                <?= ($isSlider || $isSliderMobile) && $isLazyLoaded ? ' swiper-lazy' : '' ?>
+                <?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
             alt="<?= $imageAlt ?>"
             src="<?= $imageSrc ?>"
             <?php if ($imageSrcset): ?>
-                data-srcset="<?= $imageSrcset ?>"
+                <?= $dataPrefix ?>srcset="<?= $imageSrcset ?>"
             <?php endif; ?>
-            data-src="<?= $origImageSrc ?>"
+            <?= $dataPrefix ?>src="<?= $origImageSrc ?>"
             <?php if ($imageSizes): ?>
                 sizes="<?= $imageSizes ?>"
             <?php endif; ?>
@@ -92,7 +107,7 @@ if ($isWebpSupported) {
                 class="cs-image-teaser__image"
                 alt="<?= $imageAlt ?>"
                 src="<?= $origImageSrc ?>"
-                <?php if ($imageSrcset): ?> 
+                <?php if ($imageSrcset): ?>
                     srcset="<?= $imageSrcset ?>"
                 <?php endif; ?>
                 <?php if ($imageSizes): ?> 
