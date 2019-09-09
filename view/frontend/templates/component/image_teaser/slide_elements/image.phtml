@@ -38,7 +38,7 @@ if ($isWebpSupported) {
 /**
  * Conditional lazy loading
  */
-$isLazyLoaded = !strpos($imageTeaserData['type'], 'HeroCarousel');
+$isLazyLoaded = isset($imageTeaserData['type']) ? !strpos($imageTeaserData['type'], 'HeroCarousel') : false;
 $dataPrefix = $isLazyLoaded ? 'data-' : '';
 ?>
 <?php if ($hasImage): ?>
