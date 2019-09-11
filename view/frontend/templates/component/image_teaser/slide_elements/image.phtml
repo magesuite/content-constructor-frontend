@@ -87,7 +87,7 @@ $dataPrefix = $isLazyLoaded ? 'data-' : '';
                 <?= ($isSlider || $isSliderMobile) && $isLazyLoaded ? ' swiper-lazy' : '' ?>
                 <?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
             alt="<?= $imageAlt ?>"
-            src="<?= $imageSrc ?>"
+            src="<?= $origImageSrc ?>"
             <?php if ($imageSrcset): ?>
                 <?= $dataPrefix ?>srcset="<?= $imageSrcset ?>"
             <?php endif; ?>
