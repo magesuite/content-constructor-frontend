@@ -10,7 +10,7 @@ $componentConfiguration['scenario'] = array_merge(
     [
         'teaserWidth' => ['id' => 'container'],
         'desktopLayout' => ['id' => $componentConfiguration['currentScenario']['desktopLayout']['id']],
-        'contentPlacement' => ['id' => 'over'],
+        'contentPlacement' => ['id' => $block->getVar('cms_teaser/content_placement')],
         'mobileLayout' => ['id' => $componentConfiguration['currentScenario']['mobileLayout']['id']]
     ],
     $componentConfiguration['scenario'] ?? []
