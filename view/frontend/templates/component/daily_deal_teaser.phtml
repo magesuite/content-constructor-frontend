@@ -115,9 +115,15 @@ $componentClasses .= ' ' . $block->getVar('daily_deal_teaser/additional_css_clas
 
                                 <div class="cs-daily-deal-teaser__progress-bar">
                                     <div class="cs-cart-bonus__progress-wrapper cs-daily-deal-teaser__progress-bar-content">
-                                        <?php $percentage = ( ((int)$product['dailyDealOffer']['items'] / (int)$product['dailyDealOffer']['initialAmount']) * 100) / 100 ?>
-                                        <div class="cs-cart-bonus__progress-done cs-daily-deal-teaser__progress" style="transform: scaleX(<?=$percentage?>)"></div>
-                                        <div class="cs-cart-bonus__progress-possible cs-daily-deal-teaser__progress-bg"></div>
+                                        <?php 
+                                        $percentage=(((int)$product['dailyDealOffer']['initialAmount'] / (int)$product['dailyDealOffer']['items']) * 100) / 100;
+                                        $transforming=(1 - $percentage) / 2 / $percentage * 100
+                                        ?>
+                                        <div class="cs-daily-deal-teaser__progress-bg">
+                                            <div class="cs-daily-deal-teaser__progress-possible">
+                                                <div class="cs-cart-bonus__progress-done cs-daily-deal-teaser__progress" style="transform: scaleX(<?=$percentage?>) translateX(<?=-$transforming?>%)"></div>
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <span class="cs-daily-deal-teaser__available">
