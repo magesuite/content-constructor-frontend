@@ -14,21 +14,35 @@ class Paragraph extends \Magento\Framework\DataObject
      */
     protected $blockFactory;
 
+    /**
+     * @var \Magento\Cms\Model\Template\FilterProvider
+     */
+    protected $filterProvider;
+
+    /**
+     * @var \Psr\Log\LoggerInterface
+     */
+    protected $logger;
+
     public function __construct(
         \Magento\Framework\View\Element\BlockFactory $blockFactory,
+        \Magento\Cms\Model\Template\FilterProvider $filterProvider,
+        \Psr\Log\LoggerInterface $logger,
         array $data = []
     )
     {
         parent::__construct($data);
 
         $this->blockFactory = $blockFactory;
+        $this->filterProvider = $filterProvider;
+        $this->logger = $logger;
     }
 
     public function getContent() {
         $configuration = $this->getData();
 
         if (isset($configuration['migrated'])) {
-            return $configuration['content'];
+           return $this->renderContentWithDirectives($configuration['content']);
         }
 
         $id = isset($configuration['blockId']) ? $configuration['blockId'] : $configuration['identifier'];
@@ -53,5 +67,15 @@ class Paragraph extends \Magento\Framework\DataObject
     public function getIdentities()
     {
         return $this->identities;
+    }
+
+    protected function renderContentWithDirectives($content) {
+        try {
+            return $this->filterProvider->getPageFilter()->filter($content);
+        }
+        catch(\Exception $e) {
+            $this->logger->warning($e->getMessage());
+            return '';
+        }
     }
 }
