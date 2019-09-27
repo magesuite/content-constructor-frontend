@@ -36,6 +36,14 @@
 
     <preference for="MageSuite\ContentConstructor\Service\ProductTileRenderer" type="MageSuite\ContentConstructorFrontend\Service\ProductTileRenderer" />
 
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="non_migrated_image_teaser_finder" xsi:type="object">MageSuite\ContentConstructorFrontend\Console\Command\ImageTeaserNotMigrationCommand</item>
+            </argument>
+        </arguments>
+    </type>
+
     <type name="Magento\Catalog\Block\Product\AbstractProduct">
         <plugin name="creativestyle_add_product_object_to_image_data_array" type="MageSuite\ContentConstructorFrontend\Model\Plugin\ProductImage"/>
     </type>
