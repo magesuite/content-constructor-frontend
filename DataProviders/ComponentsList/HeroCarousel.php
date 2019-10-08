@@ -6,10 +6,93 @@ abstract class HeroCarousel extends DataProviderComponents
 {
     protected $mobileDisplayVariant = '';
     protected $subtitle = '';
+    protected $optimizers = [
+        'color_scheme' => 'dark',
+        'mirror_image' => '',
+        'scenarios' => [
+            'none' => [
+                'enabled' => '1',
+                'intensity' => 'disabled',
+                'direction' => 'disabled',
+                'configurator' => [
+                    'icon' => '#contrast_none',
+                    'label' => 'None'
+                ]
+            ],
+            'overlay' => [
+                'enabled' => '',
+                'intensity' => '50',
+                'direction' => 'disabled',
+                'configurator' => [
+                    'icon' => '#contrast_overlay',
+                    'label' => 'Overlay'
+                ]
+            ],
+            'gradient' => [
+                'enabled' => '',
+                'intensity' => '50',
+                'direction' => [
+                    'x' => 1,
+                    'y' => 1
+                ],
+                'configurator' => [
+                    'icon' => '#contrast_gradient',
+                    'label' => 'Gradient shadow'
+                ]
+            ],
+            'container' => [
+                'enabled' => '',
+                'intensity' => '50',
+                'direction' => 'disabled',
+                'configurator' => [
+                    'icon' => '#contrast_container',
+                    'label' => 'Container'
+                ]
+            ],
+            'text_shadow' => [
+                'enabled' => '',
+                'intensity' => '50',
+                'direction' => 'disabled',
+                'configurator' => [
+                    'icon' => '#contrast_text-shadow',
+                    'label' => 'Text shadow'
+                ]
+            ]
+        ]
+    ];
     
-    public function getBlocks(){
+    public function getBlocks()
+    {
         $blocks = [];
         $blocks[] = Index::getHeadlineBlock('Hero Carousel scenarios', $this->subtitle);
+
+        $imageTeaseConfiguration = [
+            'image' => [
+                'decoded' => $this->getDecodedImage('henry-ascroft-1154105-unsplash.jpg'),
+                'aspect_ratio' => '583:390',
+                'image' => $this->getImage('henry-ascroft-1154105-unsplash.jpg'),
+            ],
+            'slogan' => 'Text vertically centered on the left',
+            'description' => 'Test description - description',
+            'cta' => [
+                'label' => 'Dark',
+                'href' => 'http://www.creativestyle.pl/'
+            ],
+            'content_align' => [
+                'x' => 1,
+                'y' => 2
+            ],
+            'sizeSelect' => '2x1',
+            'size' => [
+                'x' => 2,
+                'y' => 1
+            ],
+            'row' => '1',
+            'position' => 'left',
+            'isAvailableForMobile' => '1',
+            'optimizers' => $this->optimizers,
+            'teaserType' => 'full',
+        ];
 
         $blocks['componentea06'] = [
             'id' => 'componentea06',
@@ -18,60 +101,58 @@ abstract class HeroCarousel extends DataProviderComponents
             'data' => [
                 'mobileDisplayVariant' => $this->mobileDisplayVariant,
                 'items' => [
-                    0 => [
-                        'image' => $this->getImage('henry-ascroft-1154105-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('henry-ascroft-1154105-unsplash.jpg'),
-                        'displayVariant' => 'variant-1',
-                        'colorScheme' => 'dark',
-                        'headline' => 'Text vertically centered on the left',
-                        'subheadline' => 'Test subheadline',
-                        'paragraph' => 'Test paragraph',
-                        'sizeInfo' => '1166x780px (583:390)',
-                        'aspectRatio' => '583:390',
-                        'ctaLabel' => 'Dark',
-                        'href' => 'http://www.creativestyle.pl/'
-
-                    ],
-                    1 => [
-                        'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
-                        'displayVariant' => 'variant-2',
-                        'colorScheme' => 'dark',
-                        'headline' => 'Text on the bottom, left corner',
-                        'subheadline' => 'Test subheadline',
-                        'paragraph' => 'Test paragraph',
-                        'sizeInfo' => '1163x780px (1163:780)',
-                        'aspectRatio' => '1163:780',
-                        'ctaLabel' => 'Dark',
-                        'href' => 'http://www.creativestyle.pl/'
-                    ],
-                    2 => [
-                        'image' => $this->getImage('henry-ascroft-1154105-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('henry-ascroft-1154105-unsplash.jpg'),
-                        'displayVariant' => 'variant-3',
-                        'colorScheme' => 'dark',
-                        'headline' => 'Text vertically centered in the middle',
-                        'subheadline' => 'Test subheadline',
-                        'paragraph' => 'Test paragraph',
-                        'sizeInfo' => '1166x780px (583:390)',
-                        'aspectRatio' => '583:390',
-                        'ctaLabel' => 'Dark',
-                        'href' => 'http://www.creativestyle.pl/'
-                    ],
-                    3 => [
-                        'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
-                        'displayVariant' => 'variant-4',
-                        'colorScheme' => 'dark',
-                        'headline' => 'Text on the bottom - centered',
-                        'subheadline' => 'Test subheadline',
-                        'paragraph' => 'Test paragraph',
-                        'sizeInfo' => '1163x780px (1163:780)',
-                        'aspectRatio' => '1163:780',
-                        'ctaLabel' => 'Dark',
-                        'href' => 'http://www.creativestyle.pl/'
-                    ],
+                    0 => $imageTeaseConfiguration,
+                    1 => array_merge(
+                        $imageTeaseConfiguration,
+                        [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
+                                'aspect_ratio' => '1163:780',
+                                'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                            ],
+                            'slogan' => 'Text on the bottom, left corner',
+                            'content_align' => [
+                                'x' => 1,
+                                'y' => 3
+                            ],
+                        ]
+                    ),
+                    2 => array_merge(
+                        $imageTeaseConfiguration,
+                        [
+                            'slogan' => 'Text vertically centered in the middle',
+                            'content_align' => [
+                                'x' => 2,
+                                'y' => 2
+                            ],
+                        ]
+                    ),
+                    3 => array_merge(
+                        $imageTeaseConfiguration,
+                        [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
+                                'aspect_ratio' => '1163:780',
+                                'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                            ],
+                            'slogan' => 'Text on the bottom - centered',
+                            'content_align' => [
+                                'x' => 2,
+                                'y' => 3
+                            ],
+                        ]
+                    ),
                 ],
+                'scenario' => [
+                    'teaserWidth' => [],
+                    'desktopLayout' => [],
+                    'contentPlacement' => [],
+                    'mobileLayout' => []
+                ],
+                'componentVisibility' => [
+                    'mobile' => '1',
+                    'desktop' => '1'
+                ]
             ],
         ];
 
@@ -82,59 +163,104 @@ abstract class HeroCarousel extends DataProviderComponents
             'data' => [
                 'mobileDisplayVariant' => $this->mobileDisplayVariant,
                 'items' => [
-                    0 => [
-                        'image' => $this->getImage('henry-ascroft-1154105-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('henry-ascroft-1154105-unsplash.jpg'),
-                        'displayVariant' => 'variant-1',
-                        'colorScheme' => 'light',
-                        'headline' => 'Test headline',
-                        'subheadline' => 'Test subheadline',
-                        'paragraph' => 'Text vertically centered on the left ',
-                        'sizeInfo' => '1166x780px (583:390)',
-                        'aspectRatio' => '583:390',
-                        'ctaLabel' => 'Light',
-                        'href' => 'http://www.creativestyle.pl/'
-                    ],
-                    1 => [
-                        'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
-                        'displayVariant' => 'variant-2',
-                        'colorScheme' => 'light',
-                        'headline' => 'Test headline',
-                        'subheadline' => 'Test subheadline',
-                        'paragraph' => 'Text on the bottom, left corner',
-                        'sizeInfo' => '1163x780px (1163:780)',
-                        'aspectRatio' => '1163:780',
-                        'ctaLabel' => 'Light',
-                        'href' => 'http://www.creativestyle.pl/'
-                    ],
-                    2 => [
-                        'image' => $this->getImage('henry-ascroft-1154105-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('henry-ascroft-1154105-unsplash.jpg'),
-                        'displayVariant' => 'variant-3',
-                        'colorScheme' => 'light',
-                        'headline' => 'Test headline',
-                        'subheadline' => 'Test subheadline',
-                        'paragraph' => 'Text vertically centered in the middle',
-                        'sizeInfo' => '1166x780px (583:390)',
-                        'aspectRatio' => '583:390',
-                        'ctaLabel' => 'Light',
-                        'href' => 'http://www.creativestyle.pl/'
-                    ],
-                    3 => [
-                        'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
-                        'displayVariant' => 'variant-4',
-                        'colorScheme' => 'light',
-                        'headline' => 'Test headline',
-                        'subheadline' => 'Test subheadline',
-                        'paragraph' => 'Text on the bottom, centered',
-                        'sizeInfo' => '1163x780px (1163:780)',
-                        'aspectRatio' => '1163:780',
-                        'ctaLabel' => 'Light',
-                        'href' => 'http://www.creativestyle.pl/'
-                    ],
+                    0 => array_merge(
+                        $imageTeaseConfiguration,
+                        [
+                            'slogan' => 'Test headline',
+                            'description' => 'Text vertically centered on the left',
+                            'content_align' => [
+                                'x' => 1,
+                                'y' => 2
+                            ],
+                            'cta' => [
+                                'label' => 'Light',
+                            ],
+                            'optimizers' => array_merge(
+                                $this->optimizers,
+                                ['color_scheme' => 'light']
+                            ),
+                        ]
+                    ),
+                    1 => array_merge(
+                        $imageTeaseConfiguration,
+                        [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
+                                'aspect_ratio' => '1163:780',
+                                'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                            ],
+                            'slogan' => 'Test headline',
+                            'description' => 'Text on the bottom, left corner',
+                            'content_align' => [
+                                'x' => 1,
+                                'y' => 3
+                            ],
+                            'cta' => [
+                                'label' => 'Light',
+                            ],
+                            'optimizers' => array_merge(
+                                $this->optimizers,
+                                ['color_scheme' => 'light']
+                            ),
+                        ]
+                    ),
+                    2 => array_merge(
+                        $imageTeaseConfiguration,
+                        [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('henry-ascroft-1154105-unsplash.jpg'),
+                                'aspect_ratio' => '583:390',
+                                'image' => $this->getImage('henry-ascroft-1154105-unsplash.jpg'),
+                            ],
+                            'slogan' => 'Test headline',
+                            'description' => 'Text vertically centered in the middle',
+                            'content_align' => [
+                                'x' => 2,
+                                'y' => 2
+                            ],
+                            'cta' => [
+                                'label' => 'Light',
+                            ],
+                            'optimizers' => array_merge(
+                                $this->optimizers,
+                                ['color_scheme' => 'light']
+                            ),
+                        ]
+                    ),
+                    3 => array_merge(
+                        $imageTeaseConfiguration,
+                        [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
+                                'aspect_ratio' => '1163:780',
+                                'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                            ],
+                            'slogan' => 'Test headline',
+                            'description' => 'Text on the bottom, centered',
+                            'content_align' => [
+                                'x' => 2,
+                                'y' => 3
+                            ],
+                            'cta' => [
+                                'label' => 'Light',
+                            ],
+                            'optimizers' => array_merge(
+                                $this->optimizers,
+                                ['color_scheme' => 'light']
+                            ),
+                        ]
+                    ),
                 ],
+                'scenario' => [
+                    'teaserWidth' => [],
+                    'desktopLayout' => [],
+                    'contentPlacement' => [],
+                    'mobileLayout' => []
+                ],
+                'componentVisibility' => [
+                    'mobile' => '1',
+                    'desktop' => '1'
+                ]
             ],
         ];
 
@@ -145,59 +271,113 @@ abstract class HeroCarousel extends DataProviderComponents
             'data' => [
                 'mobileDisplayVariant' => $this->mobileDisplayVariant,
                 'items' => [
-                    0 => [
-                        'image' => $this->getImage('henry-ascroft-1154105-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('henry-ascroft-1154105-unsplash.jpg'),
-                        'displayVariant' => 'variant-1',
-                        'colorScheme' => 'light',
-                        'headline' => '',
-                        'subheadline' => '',
-                        'paragraph' => '',
-                        'ctaLabel' => '',
-                        'href' => '',
-                        'sizeInfo' => '1166x780px (583:390)',
-                        'aspectRatio' => '583:390',
-                    ],
-                    1 => [
-                        'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
-                        'displayVariant' => 'variant-1',
-                        'colorScheme' => 'light',
-                        'headline' => '',
-                        'subheadline' => '',
-                        'paragraph' => '',
-                        'ctaLabel' => '',
-                        'href' => '',
-                        'sizeInfo' => '1163x780px (1163:780)',
-                        'aspectRatio' => '1163:780',
-                    ],
-                    2 => [
-                        'image' => $this->getImage('henry-ascroft-1154105-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('henry-ascroft-1154105-unsplash.jpg'),
-                        'displayVariant' => 'variant-1',
-                        'colorScheme' => 'light',
-                        'headline' => '',
-                        'subheadline' => '',
-                        'paragraph' => '',
-                        'ctaLabel' => '',
-                        'href' => '',
-                        'sizeInfo' => '1166x780px (583:390)',
-                        'aspectRatio' => '583:390',
-                    ],
-                    3 => [
-                        'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
-                        'displayVariant' => 'variant-1',
-                        'colorScheme' => 'light',
-                        'headline' => '',
-                        'subheadline' => '',
-                        'paragraph' => '',
-                        'ctaLabel' => '',
-                        'href' => '',
-                        'sizeInfo' => '1163x780px (1163:780)',
-                        'aspectRatio' => '1163:780',
-                    ],
+                    0 => array_merge(
+                        $imageTeaseConfiguration,
+                        [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('henry-ascroft-1154105-unsplash.jpg'),
+                                'aspect_ratio' => '583:390',
+                                'image' => $this->getImage('henry-ascroft-1154105-unsplash.jpg'),
+                            ],
+                            'slogan' => '',
+                            'description' => '',
+                            'content_align' => [
+                                'x' => 1,
+                                'y' => 2
+                            ],
+                            'cta' => [
+                                'label' => '',
+                                'href' => ''
+                            ],
+                            'optimizers' => array_merge(
+                                $this->optimizers,
+                                ['color_scheme' => 'light']
+                            ),
+                        ]
+                    ),
+                    1 => array_merge(
+                        $imageTeaseConfiguration,
+                        [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
+                                'aspect_ratio' => '1163:780',
+                                'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                            ],
+                            'slogan' => '',
+                            'description' => '',
+                            'content_align' => [
+                                'x' => 1,
+                                'y' => 2
+                            ],
+                            'cta' => [
+                                'label' => '',
+                                'href' => ''
+                            ],
+                            'optimizers' => array_merge(
+                                $this->optimizers,
+                                ['color_scheme' => 'light']
+                            ),
+                        ]
+                    ),
+                    2 => array_merge(
+                        $imageTeaseConfiguration,
+                        [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('henry-ascroft-1154105-unsplash.jpg'),
+                                'aspect_ratio' => '583:390',
+                                'image' => $this->getImage('henry-ascroft-1154105-unsplash.jpg'),
+                            ],
+                            'slogan' => '',
+                            'description' => '',
+                            'content_align' => [
+                                'x' => 1,
+                                'y' => 2
+                            ],
+                            'cta' => [
+                                'label' => '',
+                                'href' => ''
+                            ],
+                            'optimizers' => array_merge(
+                                $this->optimizers,
+                                ['color_scheme' => 'light']
+                            ),
+                        ]
+                    ),
+                    3 => array_merge(
+                        $imageTeaseConfiguration,
+                        [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
+                                'aspect_ratio' => '1163:780',
+                                'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                            ],
+                            'slogan' => '',
+                            'description' => '',
+                            'content_align' => [
+                                'x' => 1,
+                                'y' => 2
+                            ],
+                            'cta' => [
+                                'label' => '',
+                                'href' => ''
+                            ],
+                            'optimizers' => array_merge(
+                                $this->optimizers,
+                                ['color_scheme' => 'light']
+                            ),
+                        ]
+                    ),
                 ],
+                'scenario' => [
+                    'teaserWidth' => [],
+                    'desktopLayout' => [],
+                    'contentPlacement' => [],
+                    'mobileLayout' => []
+                ],
+                'componentVisibility' => [
+                    'mobile' => '1',
+                    'desktop' => '1'
+                ]
             ],
         ];
 
@@ -208,176 +388,297 @@ abstract class HeroCarousel extends DataProviderComponents
             'data' => [
                 'mobileDisplayVariant' => $this->mobileDisplayVariant,
                 'items' => [
-                    0 => [
-                        'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
-                        'displayVariant' => 'variant-1',
-                        'colorScheme' => 'dark',
-                        'headline' => 'Headline only',
-                        'subheadline' => '',
-                        'paragraph' => '',
-                        'ctaLabel' => '',
-                        'href' => '',
-                        'sizeInfo' => '1163x780px (1163:780)',
-                        'aspectRatio' => '1163:780',
-                    ],
-                    1 => [
-                        'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
-                        'displayVariant' => 'variant-2',
-                        'colorScheme' => 'dark',
-                        'headline' => 'Headline only',
-                        'subheadline' => '',
-                        'paragraph' => '',
-                        'ctaLabel' => '',
-                        'href' => '',
-                        'sizeInfo' => '1163x780px (1163:780)',
-                        'aspectRatio' => '1163:780',
-                    ],
-                    2 => [
-                        'image' => $this->getImage('henry-ascroft-1154105-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('henry-ascroft-1154105-unsplash.jpg'),
-                        'displayVariant' => 'variant-3',
-                        'colorScheme' => 'light',
-                        'headline' => 'Headline only',
-                        'subheadline' => '',
-                        'paragraph' => '',
-                        'ctaLabel' => '',
-                        'href' => '',
-                        'sizeInfo' => '1166x780px (583:390)',
-                        'aspectRatio' => '583:390',
-                    ],
-                    3 => [
-                        'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
-                        'displayVariant' => 'variant-4',
-                        'colorScheme' => 'dark',
-                        'headline' => 'Headline only',
-                        'subheadline' => '',
-                        'paragraph' => '',
-                        'ctaLabel' => '',
-                        'href' => '',
-                        'sizeInfo' => '1163x780px (1163:780)',
-                        'aspectRatio' => '1163:780',
-                    ],
-                    4 => [
-                        'image' => $this->getImage('henry-ascroft-1154105-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('henry-ascroft-1154105-unsplash.jpg'),
-                        'displayVariant' => 'variant-1',
-                        'colorScheme' => 'dark',
-                        'headline' => 'Headline',
-                        'subheadline' => 'Subheadline',
-                        'paragraph' => '',
-                        'ctaLabel' => '',
-                        'href' => '',
-                        'sizeInfo' => '1166x780px (583:390)',
-                        'aspectRatio' => '583:390',
-                    ],
-                    5 => [
-                        'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
-                        'displayVariant' => 'variant-2',
-                        'colorScheme' => 'dark',
-                        'headline' => 'Headline',
-                        'subheadline' => 'Subheadline',
-                        'paragraph' => '',
-                        'ctaLabel' => '',
-                        'href' => '',
-                        'sizeInfo' => '1163x780px (1163:780)',
-                        'aspectRatio' => '1163:780',
-                    ],
-                    6 => [
-                        'image' => $this->getImage('henry-ascroft-1154105-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('henry-ascroft-1154105-unsplash.jpg'),
-                        'displayVariant' => 'variant-3',
-                        'colorScheme' => 'light',
-                        'headline' => 'Headline',
-                        'subheadline' => 'Subheadline',
-                        'paragraph' => '',
-                        'ctaLabel' => '',
-                        'href' => '',
-                        'sizeInfo' => '1166x780px (583:390)',
-                        'aspectRatio' => '583:390',
-                    ],
-                    7 => [
-                        'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
-                        'displayVariant' => 'variant-4',
-                        'colorScheme' => 'dark',
-                        'headline' => 'Headline',
-                        'subheadline' => 'Subheadline',
-                        'paragraph' => '',
-                        'ctaLabel' => '',
-                        'href' => '',
-                        'sizeInfo' => '1163x780px (1163:780)',
-                        'aspectRatio' => '1163:780',
-                    ],
-                    8 => [
-                        'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
-                        'displayVariant' => 'variant-2',
-                        'colorScheme' => 'dark',
-                        'headline' => '',
-                        'subheadline' => '',
-                        'paragraph' => 'Only really long paragraph here. Only really long paragraph here. Only really long paragraph here. Only really long paragraph here. Only really long paragraph here. Only really long paragraph here. ',
-                        'ctaLabel' => '',
-                        'href' => '',
-                        'sizeInfo' => '1163x780px (1163:780)',
-                        'aspectRatio' => '1163:780',
-                    ],
-                    9 => [
-                        'image' => $this->getImage('henry-ascroft-1154105-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('henry-ascroft-1154105-unsplash.jpg'),
-                        'displayVariant' => 'variant-2',
-                        'colorScheme' => 'light',
-                        'headline' => '',
-                        'subheadline' => '',
-                        'paragraph' => '',
-                        'ctaLabel' => 'Button only',
-                        'href' => 'http://www.creativestyle.pl/',
-                        'sizeInfo' => '1166x780px (583:390)',
-                        'aspectRatio' => '583:390',
-                    ],
-                    10 => [
-                        'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
-                        'displayVariant' => 'variant-4',
-                        'colorScheme' => 'dark',
-                        'headline' => 'Headline',
-                        'subheadline' => 'Subheadline',
-                        'paragraph' => '',
-                        'ctaLabel' => '',
-                        'href' => '',
-                        'sizeInfo' => '1163x780px (1163:780)',
-                        'aspectRatio' => '1163:780',
-                    ],
-                    11 => [
-                        'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
-                        'displayVariant' => 'variant-2',
-                        'colorScheme' => 'dark',
-                        'headline' => '',
-                        'subheadline' => '',
-                        'paragraph' => 'Only really long paragraph here. Only really long paragraph here. Only really long paragraph here. Only really long paragraph here. Only really long paragraph here. Only really long paragraph here. ',
-                        'ctaLabel' => '',
-                        'href' => '',
-                        'sizeInfo' => '1163x780px (1163:780)',
-                        'aspectRatio' => '1163:780',
-                    ],
-                    12 => [
-                        'image' => $this->getImage('henry-ascroft-1154105-unsplash.jpg'),
-                        'decodedImage' => $this->getDecodedImage('henry-ascroft-1154105-unsplash.jpg'),
-                        'displayVariant' => 'variant-2',
-                        'colorScheme' => 'light',
-                        'headline' => '',
-                        'subheadline' => '',
-                        'paragraph' => '',
-                        'ctaLabel' => 'Button only',
-                        'href' => 'http://www.creativestyle.pl/',
-                        'sizeInfo' => '1166x780px (583:390)',
-                        'aspectRatio' => '583:390',
-                    ],
+                    0 => array_merge(
+                        $imageTeaseConfiguration,
+                        [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
+                                'aspect_ratio' => '1163:780',
+                                'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                            ],
+                            'slogan' => 'Slogan only',
+                            'description' => '',
+                            'content_align' => [
+                                'x' => 1,
+                                'y' => 2
+                            ],
+                            'cta' => [
+                                'label' => '',
+                                'href' => ''
+                            ],
+                        ]
+                    ),
+                    1 => array_merge(
+                        $imageTeaseConfiguration,
+                        [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
+                                'aspect_ratio' => '1163:780',
+                                'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                            ],
+                            'slogan' => 'Slogan only',
+                            'description' => '',
+                            'content_align' => [
+                                'x' => 1,
+                                'y' => 2
+                            ],
+                            'cta' => [
+                                'label' => '',
+                                'href' => ''
+                            ],
+                        ]
+                    ),
+                    2 => array_merge(
+                        $imageTeaseConfiguration,
+                        [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('henry-ascroft-1154105-unsplash.jpg'),
+                                'aspect_ratio' => '583:390',
+                                'image' => $this->getImage('henry-ascroft-1154105-unsplash.jpg'),
+                            ],
+                            'slogan' => 'Slogan only',
+                            'description' => '',
+                            'content_align' => [
+                                'x' => 1,
+                                'y' => 2
+                            ],
+                            'cta' => [
+                                'label' => '',
+                                'href' => ''
+                            ],
+                            'optimizers' => array_merge(
+                                $this->optimizers,
+                                ['color_scheme' => 'light']
+                            ),
+                        ]
+                    ),
+                    3 => array_merge(
+                        $imageTeaseConfiguration,
+                        [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
+                                'aspect_ratio' => '1163:780',
+                                'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                            ],
+                            'slogan' => 'Slogan only',
+                            'description' => '',
+                            'content_align' => [
+                                'x' => 1,
+                                'y' => 2
+                            ],
+                            'cta' => [
+                                'label' => '',
+                                'href' => ''
+                            ],
+                        ]
+                    ),
+                    4 => array_merge(
+                        $imageTeaseConfiguration,
+                        [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('henry-ascroft-1154105-unsplash.jpg'),
+                                'aspect_ratio' => '583:390',
+                                'image' => $this->getImage('henry-ascroft-1154105-unsplash.jpg'),
+                            ],
+                            'slogan' => 'Slogan',
+                            'description' => 'Description',
+                            'content_align' => [
+                                'x' => 1,
+                                'y' => 2
+                            ],
+                            'cta' => [
+                                'label' => '',
+                                'href' => ''
+                            ],
+                        ]
+                    ),
+                    5 => array_merge(
+                        $imageTeaseConfiguration,
+                        [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
+                                'aspect_ratio' => '1163:780',
+                                'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                            ],
+                            'slogan' => 'Slogan',
+                            'description' => 'Description',
+                            'content_align' => [
+                                'x' => 1,
+                                'y' => 2
+                            ],
+                            'cta' => [
+                                'label' => '',
+                                'href' => ''
+                            ],
+                        ]
+                    ),
+                    6 => array_merge(
+                        $imageTeaseConfiguration,
+                        [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('henry-ascroft-1154105-unsplash.jpg'),
+                                'aspect_ratio' => '583:390',
+                                'image' => $this->getImage('henry-ascroft-1154105-unsplash.jpg'),
+                            ],
+                            'slogan' => 'Slogan',
+                            'description' => 'Description',
+                            'content_align' => [
+                                'x' => 1,
+                                'y' => 2
+                            ],
+                            'cta' => [
+                                'label' => '',
+                                'href' => ''
+                            ],
+                            'optimizers' => array_merge(
+                                $this->optimizers,
+                                ['color_scheme' => 'light']
+                            ),
+                        ]
+                    ),
+                    7 => array_merge(
+                        $imageTeaseConfiguration,
+                        [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
+                                'aspect_ratio' => '1163:780',
+                                'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                            ],
+                            'slogan' => 'Slogan',
+                            'description' => 'Description',
+                            'content_align' => [
+                                'x' => 1,
+                                'y' => 2
+                            ],
+                            'cta' => [
+                                'label' => '',
+                                'href' => ''
+                            ],
+                            'optimizers' => array_merge(
+                                $this->optimizers,
+                                ['color_scheme' => 'light']
+                            ),
+                        ]
+                    ),
+                    8 => array_merge(
+                        $imageTeaseConfiguration,
+                        [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
+                                'aspect_ratio' => '1163:780',
+                                'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                            ],
+                            'slogan' => '',
+                            'description' => 'Only really long description here. Only really long description here. Only really long description here. Only really long description here. Only really long description here. Only really long description here.',
+                            'content_align' => [
+                                'x' => 1,
+                                'y' => 2
+                            ],
+                            'cta' => [
+                                'label' => '',
+                                'href' => ''
+                            ],
+                        ]
+                    ),
+                    9 => array_merge(
+                        $imageTeaseConfiguration,
+                        [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('henry-ascroft-1154105-unsplash.jpg'),
+                                'aspect_ratio' => '583:390',
+                                'image' => $this->getImage('henry-ascroft-1154105-unsplash.jpg'),
+                            ],
+                            'slogan' => '',
+                            'description' => '',
+                            'content_align' => [
+                                'x' => 1,
+                                'y' => 2
+                            ],
+                            'cta' => [
+                                'label' => 'Button only',
+                                'href' => 'http://www.creativestyle.pl/'
+                            ],
+                            'optimizers' => array_merge(
+                                $this->optimizers,
+                                ['color_scheme' => 'light']
+                            ),
+                        ]
+                    ),
+                    10 => array_merge(
+                        $imageTeaseConfiguration,
+                        [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
+                                'aspect_ratio' => '1163:780',
+                                'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                            ],
+                            'slogan' => 'Slogan',
+                            'description' => 'Description',
+                            'content_align' => [
+                                'x' => 1,
+                                'y' => 2
+                            ],
+                            'cta' => [
+                                'label' => 'Button only',
+                                'href' => 'http://www.creativestyle.pl/'
+                            ],
+                        ]
+                    ),
+                    11 => array_merge(
+                        $imageTeaseConfiguration,
+                        [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
+                                'aspect_ratio' => '1163:780',
+                                'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
+                            ],
+                            'slogan' => '',
+                            'description' => 'Only really long description here. Only really long description here. Only really long description here. Only really long description here. Only really long description here. Only really long description here.',
+                            'content_align' => [
+                                'x' => 1,
+                                'y' => 2
+                            ],
+                            'cta' => [
+                                'label' => '',
+                                'href' => ''
+                            ],
+                        ]
+                    ),
+                    12 => array_merge(
+                        $imageTeaseConfiguration,
+                        [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('henry-ascroft-1154105-unsplash.jpg'),
+                                'aspect_ratio' => '583:390',
+                                'image' => $this->getImage('henry-ascroft-1154105-unsplash.jpg'),
+                            ],
+                            'slogan' => '',
+                            'description' => '',
+                            'content_align' => [
+                                'x' => 1,
+                                'y' => 2
+                            ],
+                            'cta' => [
+                                'label' => 'Button only',
+                                'href' => 'http://www.creativestyle.pl/'
+                            ],
+                            'optimizers' => array_merge(
+                                $this->optimizers,
+                                ['color_scheme' => 'light']
+                            ),
+                        ]
+                    ),
                 ],
+                'scenario' => [
+                    'teaserWidth' => [],
+                    'desktopLayout' => [],
+                    'contentPlacement' => [],
+                    'mobileLayout' => []
+                ],
+                'componentVisibility' => [
+                    'mobile' => '1',
+                    'desktop' => '1'
+                ]
             ],
         ];
 
