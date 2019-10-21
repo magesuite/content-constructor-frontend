@@ -5,6 +5,7 @@ $visibility = $block->getVisibilityClass();
 $maxContentWidth = $block->getVar('max_content_width');
 
 $imageTeaser = $block->getData();
+$slides = $viewModel->getSlides();
 
 $desktopLayout = $imageTeaser['scenario']['desktopLayout']['id'];
 $mobileLayout = $imageTeaser['scenario']['mobileLayout']['id'];
@@ -26,11 +27,11 @@ if (in_array($mobileLayout, ['mobile-large', 'mobile-slider', 'mobile-in-columns
     $itemsPerRowMobile = 1;
 }
 
-if ($teaserWidth == 'window-slider' || $teaserWidth == 'container-slider') {
+if (($teaserWidth == 'window-slider' || $teaserWidth == 'container-slider') && count($slides) > 1) {
     $isSlider = true;
 }
 
-if ($mobileLayout == 'mobile-slider') {
+if ($mobileLayout == 'mobile-slider' && count($slides) > 1) {
     $isSliderMobile = true;
 }
 
@@ -156,7 +157,7 @@ if ($gridTeaser) {
                         ?>
 
                         <ul class="cs-image-teaser__slides <?= $mosaicProportions != '' ? ' cs-image-teaser__slides--mosaic-scenario-' . $mosaicProportions : '' ?>">
-                            <?php foreach ($viewModel->getSlides() as $slide): ?>
+                            <?php foreach ($slides as $slide): ?>
                                 <?= $this->getLayout()
                                     ->createBlock(\Magento\Framework\View\Element\Template::class)
                                     ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/image_teaser_slide.phtml')
