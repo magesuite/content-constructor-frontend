@@ -400,11 +400,11 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
     {
         $sortingType = null;
 
-        if (isset($criteria['skus']) and !empty($criteria['skus'])) {
+        if (isset($criteria['skus']) && !empty($criteria['skus'])) {
             $sortingType = 'skus';
         }
 
-        if ($this->state->getAreaCode() == 'frontend' and isset($criteria['product_ids']) and !empty($criteria['product_ids'])) {
+        if ($this->state->getAreaCode() == \Magento\Framework\App\Area::AREA_FRONTEND && isset($criteria['product_ids']) && !empty($criteria['product_ids'])) {
             $sortingType = 'product_ids';
         }
 
