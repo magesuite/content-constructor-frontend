@@ -208,6 +208,7 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
     {
         $productData = [
             'id' => $product->getId(),
+            'entity_id' => $product->getId(),
             'sku' => $product->getSku(),
             'name' => $product->getName(),
             'url' => $product->getProductUrl(),
@@ -545,6 +546,10 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
 
     protected function prepareSortingArray($skus)
     {
-        return array_map('trim', explode(',', $skus));
+        if(!is_array($skus)){
+            $skus = explode(',', $skus);
+        }
+
+        return array_map('trim', $skus);
     }
 }
