@@ -13,6 +13,11 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
         'bestsellers_amount' => 'bestseller_score_by_amount'
     ];
 
+    protected $sortingTypeMapping = [
+        'skus' => 'sku',
+        'product_ids' => 'entity_id'
+    ];
+
     protected $stockData = [];
 
     /**
@@ -69,6 +74,10 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
      * @var \Magento\Store\Model\StoreManagerInterface
      */
     protected $storeManager;
+    /**
+     * @var \Magento\Framework\App\State
+     */
+    protected $state;
 
     /**
      * @var \Magento\Catalog\Block\Product\ListProduct
@@ -126,7 +135,8 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
         \MageSuite\ContentConstructorFrontend\Model\Filter\Pool $filtersPool,
         \MageSuite\DailyDeal\Helper\OfferData $dailyDealHelper,
         \Magento\Catalog\Api\CategoryRepositoryInterface $categoryRepository,
-        \Magento\CatalogInventory\Api\StockStateInterface $stockInterface
+        \Magento\CatalogInventory\Api\StockStateInterface $stockInterface,
+        \Magento\Framework\App\State $state
     )
     {
         $this->productCollectionFactory = $productCollectionFactory;
@@ -148,6 +158,7 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
         $this->dailyDealHelper = $dailyDealHelper;
         $this->categoryRepository = $categoryRepository;
         $this->stockInterface = $stockInterface;
+        $this->state = $state;
     }
 
     /**
@@ -236,7 +247,7 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
 
         // when skus are defined other criterias are not included
         if (isset($criteria['skus']) and !empty($criteria['skus'])) {
-            $skus = $this->prepareSkusArray($criteria['skus']);
+            $skus = $this->prepareSortingArray($criteria['skus']);
 
             $collection->addFieldToFilter('sku', ['in' => $skus]);
 
@@ -387,16 +398,27 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
      */
     protected function sortResults($products, $criteria)
     {
-        if (!isset($criteria['skus']) or empty($criteria['skus'])) {
+        $sortingType = null;
+
+        if (isset($criteria['skus']) && !empty($criteria['skus'])) {
+            $sortingType = 'skus';
+        }
+
+        if ($this->state->getAreaCode() == \Magento\Framework\App\Area::AREA_FRONTEND && isset($criteria['product_ids']) && !empty($criteria['product_ids'])) {
+            $sortingType = 'product_ids';
+        }
+
+        if(!$sortingType){
             return $products;
         }
 
-        $skus = $this->prepareSkusArray($criteria['skus']);
+        $sortingData = $this->prepareSortingArray($criteria[$sortingType]);
 
+        $sortingField = $this->sortingTypeMapping[$sortingType];
         $sortedProducts = [];
 
         foreach ($products as $product) {
-            $index = array_search($product['sku'], $skus);
+            $index = array_search($product[$sortingField], $sortingData);
 
             if($index === false) {
                 continue;
@@ -521,7 +543,7 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
         return $collection;
     }
 
-    protected function prepareSkusArray($skus)
+    protected function prepareSortingArray($skus)
     {
         return array_map('trim', explode(',', $skus));
     }
