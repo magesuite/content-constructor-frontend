@@ -179,6 +179,12 @@
         </arguments>
     </type>
 
+    <type name="MageSuite\ContentConstructorFrontend\Block\Component\Accordion">
+        <arguments>
+            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\Accordion</argument>
+        </arguments>
+    </type>
+
 
     <type name="MageSuite\ContentConstructorFrontend\Service\ComponentPool">
         <arguments>

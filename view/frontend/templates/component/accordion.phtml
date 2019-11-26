@@ -1,19 +1,18 @@
 <?php
-/** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\Accordion */
-$componentConfiguration = $block->getData();
+/** @var \MageSuite\ContentConstructorFrontend\Model\Component\Accordion $viewModel */
+$viewModel = $block->getViewModel();
+
 $visibility = $block->getVisibilityClass();
 $componentClasses = $block->getSkipSpacing() ? ' cs-accordion--skip-spacing ' : '';
 
 $areGroupsSupported = $block->getVar('accordion/support_groups', 'MageSuite_ContentConstructor');
-$groups = $componentConfiguration['groups'];
+$groups = $viewModel->getGroups();
 
-$accordionOptionsComponent = [
-    "openedState" => "cs-accordion__item--active",
-    "multipleCollapsible" => $componentConfiguration['multiple_collapsible'],
-    "active" => $componentConfiguration['expand_first'] ? "0" : ""
-];
 $accordionOptionsGlobal = $block->getVar('accordion/accordion_options', 'MageSuite_ContentConstructor') ?? [];
-$accordionOptions = array_merge($accordionOptionsComponent, $accordionOptionsGlobal);
+
+$accordionOptions = $viewModel->getAccordionComponentOptions($accordionOptionsGlobal);
+
+$expandFirst = $viewModel->getExpandFirst();
 ?>
 
 <div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
@@ -22,8 +21,11 @@ $accordionOptions = array_merge($accordionOptionsComponent, $accordionOptionsGlo
             <?php if (count($groups)): ?>
                 <div class="cs-accordion<?= $componentClasses ?>">
                     <ul class="cs-accordion__groups">
-                        <?php foreach ($groups as $group): ?>
-                            <li class="cs-accordion__group">
+                        <?php foreach ($groups as $group):
+                            $areGroupsSupported = 1;
+                            $group['headline'] = '<>?,.!@@@#%test ,headline??!,;"~` Weiß, Goldmann, Göbel, Weiss, Göthe, Goethe und Götz';?>
+
+                            <li class="cs-accordion__group <?php echo ($areGroupsSupported  and !empty($group['headline'])) ? $viewModel->getGroupAdditionalClass($group['headline']) : '' ;?>">
                                 <?php if($areGroupsSupported && !empty($group['headline'])): ?>
                                     <div class="cs-accordion__group-headline">
                                         <span class="cs-accordion__group-headline-span"><?= $group['headline']; ?></span>
@@ -31,11 +33,11 @@ $accordionOptions = array_merge($accordionOptionsComponent, $accordionOptionsGlo
                                 <?php endif; ?>
 
                                 <ul class="cs-accordion__items" data-mage-init='{
-                                    "accordion": <?= json_encode($accordionOptions) ?>
+                                    "accordion": <?= $accordionOptions ?>
                                 }'>
                                     <?php $i = 0; ?>
                                     <?php foreach ($group['items'] as $item): ?>
-                                        <li class="cs-accordion__item<?php if($componentConfiguration['expand_first'] && $i == 0): ?> cs-accordion__item--active<?php endif; ?>" data-role="collapsible">
+                                        <li class="cs-accordion__item<?php if($expandFirst && $i == 0): ?> cs-accordion__item--active<?php endif; ?>" data-role="collapsible">
                                             <div class="cs-accordion__item-headline" data-role="trigger">
                                                 <span class="cs-accordion__item-headline-span">
                                                     <?= $block->escapeHtml($item['headline']) ?>
@@ -49,7 +51,7 @@ $accordionOptions = array_merge($accordionOptionsComponent, $accordionOptionsGlo
                                                 <span>
                                             </div>
                                             <div class="cs-accordion__item-content" data-role="content">
-                                                <?= $item['content']; ?>
+                                                <?= $viewModel->renderWysiwygContent($item['content']); ?>
                                             </div>
                                         </li>
                                         <?php $i++; ?>
