@@ -21,10 +21,7 @@ $expandFirst = $viewModel->getExpandFirst();
             <?php if (count($groups)): ?>
                 <div class="cs-accordion<?= $componentClasses ?>">
                     <ul class="cs-accordion__groups">
-                        <?php foreach ($groups as $group):
-                            $areGroupsSupported = 1;
-                            $group['headline'] = '<>?,.!@@@#%test ,headline??!,;"~` Weiß, Goldmann, Göbel, Weiss, Göthe, Goethe und Götz';?>
-
+                        <?php foreach ($groups as $group):?>
                             <li class="cs-accordion__group <?php echo ($areGroupsSupported  and !empty($group['headline'])) ? $viewModel->getGroupAdditionalClass($group['headline']) : '' ;?>">
                                 <?php if($areGroupsSupported && !empty($group['headline'])): ?>
                                     <div class="cs-accordion__group-headline">
