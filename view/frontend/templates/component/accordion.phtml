@@ -10,7 +10,7 @@ $groups = $viewModel->getGroups();
 
 $accordionGlobalOptions = $block->getVar('accordion/accordion_options', 'MageSuite_ContentConstructor') ?? [];
 
-$accordionGlobalOptions = $viewModel->getAccordionGlobalOptions($accordionGlobalOptions);
+$accordionOptions = $viewModel->getAccordionComponentOptions($accordionGlobalOptions);
 
 $expandFirst = $viewModel->getExpandFirst();
 ?>
@@ -30,7 +30,7 @@ $expandFirst = $viewModel->getExpandFirst();
                                 <?php endif; ?>
 
                                 <ul class="cs-accordion__items" data-mage-init='{
-                                    "accordion": <?= $accordionGlobalOptions ?>
+                                    "accordion": <?= $accordionOptions ?>
                                 }'>
                                     <?php $i = 0; ?>
                                     <?php foreach ($group['items'] as $item): ?>

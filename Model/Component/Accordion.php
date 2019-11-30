@@ -39,7 +39,7 @@ class Accordion extends \Magento\Framework\DataObject implements ViewModel
         }
     }
 
-    public function getAccordionGlobalOptions($accordionOptionsGlobal)
+    public function getAccordionComponentOptions($accordionGlobalOptions)
     {
         $baseOptions = [
             "openedState" => "cs-accordion__item--active",
@@ -47,7 +47,7 @@ class Accordion extends \Magento\Framework\DataObject implements ViewModel
             "active" => $this->getExpandFirst() ? "0" : ""
         ];
 
-        return json_encode(array_merge($baseOptions, $accordionOptionsGlobal));
+        return json_encode(array_merge($baseOptions, $accordionGlobalOptions));
     }
 
     public function getGroupAdditionalClass($headline)
