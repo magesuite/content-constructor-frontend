@@ -8,9 +8,9 @@ $componentClasses = $block->getSkipSpacing() ? ' cs-accordion--skip-spacing ' : 
 $areGroupsSupported = $block->getVar('accordion/support_groups', 'MageSuite_ContentConstructor');
 $groups = $viewModel->getGroups();
 
-$accordionOptionsGlobal = $block->getVar('accordion/accordion_options', 'MageSuite_ContentConstructor') ?? [];
+$accordionGlobalOptions = $block->getVar('accordion/accordion_options', 'MageSuite_ContentConstructor') ?? [];
 
-$accordionOptions = $viewModel->getAccordionComponentOptions($accordionOptionsGlobal);
+$accordionGlobalOptions = $viewModel->getAccordionGlobalOptions($accordionGlobalOptions);
 
 $expandFirst = $viewModel->getExpandFirst();
 ?>
@@ -30,7 +30,7 @@ $expandFirst = $viewModel->getExpandFirst();
                                 <?php endif; ?>
 
                                 <ul class="cs-accordion__items" data-mage-init='{
-                                    "accordion": <?= $accordionOptions ?>
+                                    "accordion": <?= $accordionGlobalOptions ?>
                                 }'>
                                     <?php $i = 0; ?>
                                     <?php foreach ($group['items'] as $item): ?>
