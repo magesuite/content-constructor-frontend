@@ -13,20 +13,20 @@ class Accordion extends \Magento\Framework\DataObject implements ViewModel
      */
     protected $logger;
     /**
-     * @var \Magento\Framework\Locale\Resolver
+     * @var \MageSuite\ContentConstructorFrontend\Service\AccordionGroupClassResolver
      */
-    protected $localeResolver;
+    protected $accordionGroupClassResolver;
 
     public function __construct(
         \Magento\Cms\Model\Template\FilterProvider $filterProvider,
         \Psr\Log\LoggerInterface $logger,
-        \Magento\Framework\Locale\Resolver $localeResolver,
+        \MageSuite\ContentConstructorFrontend\Service\AccordionGroupClassResolver $accordionGroupClassResolver,
         array $data = []
     ){
         parent::__construct($data);
         $this->filterProvider = $filterProvider;
         $this->logger = $logger;
-        $this->localeResolver = $localeResolver;
+        $this->accordionGroupClassResolver = $accordionGroupClassResolver;
     }
 
     public function renderWysiwygContent($content)
@@ -52,29 +52,6 @@ class Accordion extends \Magento\Framework\DataObject implements ViewModel
 
     public function getGroupAdditionalClass($headline)
     {
-        $headline = $this->transliterate($headline);
-        $headline = $this->removeSpecialCharacters($headline);
-
-        $headline = explode(' ', strtolower($headline));
-
-        $headline =  array_slice($headline, 0, 3);
-
-        return 'group-' . implode('-', $headline);
-    }
-
-    private function transliterate($headline)
-    {
-        setlocale(LC_ALL, $this->localeResolver->getLocale());
-
-        $headline = iconv('UTF-8', 'ASCII//TRANSLIT', $headline);
-
-        setlocale(LC_ALL, locale_get_default());
-
-        return $headline;
-    }
-
-    private function removeSpecialCharacters($headline)
-    {
-        return preg_replace('/[^A-Za-z0-9\- ]/', '', $headline);
+        return $this->accordionGroupClassResolver->resolveGroupClass($headline);
     }
 }
