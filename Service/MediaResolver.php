@@ -12,25 +12,24 @@ class MediaResolver implements \MageSuite\ContentConstructor\Service\MediaResolv
     /**
      * @var \Magento\Store\Model\StoreManagerInterface
      */
-    private $storeManager;
+    protected $storeManager;
 
     /**
      * @var \Magento\Framework\App\Filesystem\DirectoryList
      */
-    private $directoryList;
+    protected $directoryList;
 
     /**
      * @var \Magento\Framework\App\CacheInterface
      */
-    private $cache;
+    protected $cache;
 
     public function __construct(
         \Magento\Store\Model\StoreManagerInterface $storeManager,
         \Magento\Framework\App\Filesystem\DirectoryList $directoryList,
         \Magento\Framework\App\CacheInterface $cache,
         \Magento\Cms\Model\Template\FilterProvider $filterProvider
-    )
-    {
+    ) {
         $this->storeManager = $storeManager;
         $this->directoryList = $directoryList;
         $this->cache = $cache;
@@ -39,7 +38,7 @@ class MediaResolver implements \MageSuite\ContentConstructor\Service\MediaResolv
 
     public function resolve($mediaPath)
     {
-        if($this->isDirectUrl($mediaPath)) {
+        if ($this->isDirectUrl($mediaPath)) {
             return $mediaPath;
         }
 
@@ -48,11 +47,12 @@ class MediaResolver implements \MageSuite\ContentConstructor\Service\MediaResolv
         return $this->getUrl($url);
     }
 
-    public function resolveWebpSrcSet($originalSrcSet) {
+    public function resolveWebpSrcSet($originalSrcSet)
+    {
         $elements = explode(',', $originalSrcSet);
 
         $withWebp = [];
-        foreach($elements as $element) {
+        foreach ($elements as $element) {
             $element = trim($element);
 
             $parts = explode(' ', $element);
@@ -67,7 +67,7 @@ class MediaResolver implements \MageSuite\ContentConstructor\Service\MediaResolv
 
     public function resolveSrcSet($mediaPath)
     {
-        if($this->isDirectUrl($mediaPath)) {
+        if ($this->isDirectUrl($mediaPath)) {
             return $mediaPath;
         }
 
@@ -87,7 +87,7 @@ class MediaResolver implements \MageSuite\ContentConstructor\Service\MediaResolv
 
     public function resolveSrcSetByDensity($mediaPath)
     {
-        if($this->isDirectUrl($mediaPath)) {
+        if ($this->isDirectUrl($mediaPath)) {
             return $mediaPath;
         }
 
@@ -132,9 +132,13 @@ class MediaResolver implements \MageSuite\ContentConstructor\Service\MediaResolv
     {
         if (preg_match('/\bhttps?:\/\//i', $mediaPath)) {
             $path = parse_url($mediaPath, PHP_URL_PATH);
-            return str_replace( '/media/', '', $path);
+            return str_replace('/media/', '', $path);
         } else {
             preg_match_all('/url="(?<url>.*?)"/si', $mediaPath, $results, PREG_PATTERN_ORDER);
+        }
+
+        if (!isset($results['url'][0])) {
+            return $mediaPath;
         }
 
         return $results['url'][0];
@@ -150,7 +154,7 @@ class MediaResolver implements \MageSuite\ContentConstructor\Service\MediaResolv
         $originalImageName = pathinfo($originalImagePath, PATHINFO_BASENAME);
         $originalImageDirectory = dirname($originalImagePath);
 
-        if (!$this->imageFileExist($originalImagePath) OR $this->isGif($originalImagePath)) {
+        if (!$this->imageFileExist($originalImagePath) or $this->isGif($originalImagePath)) {
             return '';
         }
 
@@ -187,7 +191,7 @@ class MediaResolver implements \MageSuite\ContentConstructor\Service\MediaResolv
         $originalImageName = pathinfo($originalImagePath, PATHINFO_BASENAME);
         $originalImageDirectory = dirname($originalImagePath);
 
-        if (!$this->imageFileExist($originalImagePath) OR $this->isGif($originalImagePath)) {
+        if (!$this->imageFileExist($originalImagePath) or $this->isGif($originalImagePath)) {
             return '';
         }
 
@@ -217,15 +221,17 @@ class MediaResolver implements \MageSuite\ContentConstructor\Service\MediaResolv
         return vsprintf('%s, %s 2x', $srcSet);
     }
 
-    protected function imageFileExist($originalImagePath) {
-        if (!file_exists($originalImagePath) OR !is_file($originalImagePath)) {
+    protected function imageFileExist($originalImagePath)
+    {
+        if (!file_exists($originalImagePath) or !is_file($originalImagePath)) {
             return false;
         }
 
         return true;
     }
 
-    protected function isGif($originalImagePath) {
+    protected function isGif($originalImagePath)
+    {
         $pathParts = pathinfo($originalImagePath);
 
         return $pathParts['extension'] === 'gif';
@@ -259,8 +265,8 @@ class MediaResolver implements \MageSuite\ContentConstructor\Service\MediaResolv
         return sprintf('%s %sw', $url, $width);
     }
 
-    protected function isDirectUrl($url) {
+    protected function isDirectUrl($url)
+    {
         return filter_var($url, FILTER_VALIDATE_URL);
     }
-
 }
