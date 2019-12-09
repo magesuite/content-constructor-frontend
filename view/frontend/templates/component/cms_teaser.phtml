@@ -25,7 +25,7 @@ foreach ($componentConfiguration['items'] as $key => &$item) {
 $itemsOptions = $block->getVar('cms_teaser/items_options');
 if ($itemsOptions) {
     foreach ($componentConfiguration['items'] as $key => &$item) {
-        $componentConfiguration['items'][$key] = array_merge($item, $itemsOptions);
+        $componentConfiguration['items'][$key] = array_merge_recursive($item, $itemsOptions);
     }
 }
 
