@@ -25,6 +25,6 @@ class AccordionGroupClassResolverTest extends \PHPUnit\Framework\TestCase
     {
         $headline = 'Weiß, Goldmann, Göbel, Weiss, Göthe, Goethe und Götz';
         
-        $this->assertEquals('group-weiss-goldmann-gobel', $this->accordionGroupClassResolver->resolveGroupClass($headline));
+        $this->assertEquals('group-weiss-goldmann-gbel', $this->accordionGroupClassResolver->resolveGroupClass($headline));
     }
 }
