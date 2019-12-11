@@ -23,8 +23,8 @@ class AccordionGroupClassResolverTest extends \PHPUnit\Framework\TestCase
 
     public function testReturnCorrectCssClass()
     {
-        $headline = 'Weiß, Goldmann, Göbel, Weiss, Göthe, Goethe und Götz';
+        $headline = 'Weiß, Goldmann, Goebel, Weiss, Göthe, Goethe und Götz';
         
-        $this->assertEquals('group-weiss-goldmann-gbel', $this->accordionGroupClassResolver->resolveGroupClass($headline));
+        $this->assertEquals('group-weiss-goldmann-goebel', $this->accordionGroupClassResolver->resolveGroupClass($headline));
     }
 }
