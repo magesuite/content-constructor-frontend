@@ -50,7 +50,7 @@ class Accordion extends \Magento\Framework\DataObject implements ViewModel
         return json_encode(array_merge($baseOptions, $accordionGlobalOptions));
     }
 
-    public function getGroupAdditionalClass($headline)
+    public function getGroupId($headline)
     {
         return $this->accordionGroupClassResolver->resolveGroupClass($headline);
     }

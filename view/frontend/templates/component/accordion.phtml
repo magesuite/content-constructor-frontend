@@ -22,7 +22,7 @@ $expandFirst = $viewModel->getExpandFirst();
                 <div class="cs-accordion<?= $componentClasses ?>">
                     <ul class="cs-accordion__groups">
                         <?php foreach ($groups as $group):?>
-                            <li class="cs-accordion__group <?php echo ($areGroupsSupported  and !empty($group['headline'])) ? $viewModel->getGroupAdditionalClass($group['headline']) : '' ;?>">
+                            <li class="cs-accordion__group" <?php echo ($areGroupsSupported  and !empty($group['headline'])) ? 'id="' . $viewModel->getGroupId($group['headline']) .'"': '' ;?>>
                                 <?php if($areGroupsSupported && !empty($group['headline'])): ?>
                                     <div class="cs-accordion__group-headline">
                                         <span class="cs-accordion__group-headline-span"><?= $group['headline']; ?></span>
