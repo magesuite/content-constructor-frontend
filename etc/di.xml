@@ -12,8 +12,6 @@
 
     <preference for="MageSuite\ContentConstructor\Service\UrlResolver" type="MageSuite\ContentConstructorFrontend\Service\UrlResolver" />
 
-    <preference for="MageSuite\ContentConstructor\View\Template" type="MageSuite\ContentConstructorFrontend\Template\Twig" />
-
     <preference for="MageSuite\ContentConstructor\ComponentSupport" type="\MageSuite\ContentConstructorFrontend\Config\DefaultComponentSupport" />
 
     <preference for="MageSuite\ContentConstructor\Components\Navigation\DataProvider" type="MageSuite\ContentConstructorFrontend\DataProviders\NavigationDataProvider" />
