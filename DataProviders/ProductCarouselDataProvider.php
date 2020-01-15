@@ -345,19 +345,24 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
             return false;
         }
 
-        $reviewCount = (int)$ratingSummary->getReviewsCount();
+        $reviewsCount = $product->getReviewsCount();
+        // Since 2.3.3 rating summary is being returned directly, not as an object.
+        if (is_object($ratingSummary)) {
+            $reviewsCount = $ratingSummary->getReviewsCount();
+            $ratingSummary = $ratingSummary->getRatingSummary();
+        }
 
-        if (!$reviewCount) {
+        if (!$reviewsCount) {
             return false;
         }
 
-        $activeStars = ($ratingSummary->getRatingSummary()) ? (round($ratingSummary->getRatingSummary() / 10) / 2) : 0;
+        $activeStars = $ratingSummary ? (round($ratingSummary / 10) / 2) : 0;
 
         $reviewData = [
             'data' => [
                 'maxStars' => 5,
                 'activeStars' => $activeStars,
-                'text' => '(' . (int)$ratingSummary->getReviewsCount() . ')'
+                'text' => '(' . $reviewsCount . ')'
 
             ]
         ];
