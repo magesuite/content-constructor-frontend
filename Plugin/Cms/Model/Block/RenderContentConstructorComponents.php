@@ -1,0 +1,46 @@
+<?php
+
+namespace MageSuite\ContentConstructorFrontend\Plugin\Cms\Model\Block;
+
+class RenderContentConstructorComponents
+{
+    /**
+     * @var \Magento\Framework\View\Element\BlockFactory
+     */
+    protected $blockFactory;
+
+    public function __construct(\Magento\Framework\View\Element\BlockFactory $blockFactory)
+    {
+        $this->blockFactory = $blockFactory;
+    }
+
+    public function aroundGetContent(\Magento\Cms\Model\Block $subject, callable $proceed)
+    {
+        $contentConstructorContent = $subject->getContentConstructorContent();
+
+        if (empty($contentConstructorContent)) {
+            return $proceed();
+        }
+
+        $components = json_decode($contentConstructorContent, true);
+
+        if (empty($components)) {
+            return $proceed();
+        }
+
+        $html = '';
+
+        foreach ($components as $component) {
+            try {
+                $componentBlock = $this->blockFactory->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component::class, [
+                    'data' => $component
+                ]);
+
+                $html .= $componentBlock->toHtml();
+            } catch (\Exception $exception) {
+            }
+        }
+
+        return $html;
+    }
+}
