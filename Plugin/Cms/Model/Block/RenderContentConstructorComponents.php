@@ -9,9 +9,18 @@ class RenderContentConstructorComponents
      */
     protected $blockFactory;
 
-    public function __construct(\Magento\Framework\View\Element\BlockFactory $blockFactory)
+    /**
+     * @var \Psr\Log\LoggerInterface
+     */
+    protected $logger;
+
+    public function __construct(
+        \Magento\Framework\View\Element\BlockFactory $blockFactory,
+        \Psr\Log\LoggerInterface $logger
+    )
     {
         $this->blockFactory = $blockFactory;
+        $this->logger = $logger;
     }
 
     public function aroundGetContent(\Magento\Cms\Model\Block $subject, callable $proceed)
@@ -38,6 +47,7 @@ class RenderContentConstructorComponents
 
                 $html .= $componentBlock->toHtml();
             } catch (\Exception $exception) {
+                $this->logger->warning($exception->getMessage());
             }
         }
 
