@@ -12,4 +12,7 @@
            comment="Catalog Category Text Attribute Backend Table">
         <column xsi:type="mediumtext" name="value" nullable="true" comment="Value"/>
     </table>
+    <table name="cms_block" resource="default" engine="innodb" comment="CMS Block Table">
+        <column xsi:type="mediumtext" name="content_constructor_content" nullable="true" comment="Content Constructor content"/>
+    </table>
 </schema>
