@@ -1,0 +1,26 @@
+"Page not found.","ページが見つかりません。"
+"Add to cart","カートに入れる"
+Configure,構成
+"Teaser image","ティーザー画像"
+"Additional filter must implement interface FilterInterface","追加フィルターはFilterInterfaceを実装しなければなりません"
+"Additional sorter must implement interface SorterInterface","追加sorterはSorterInterfaceを実装しなければなりません"
+"All Products","全ての商品"
+Day,日
+Days,日
+Hour,時
+Hours,時
+Min,分
+Sec,秒
+"Short time offer","ショートタイムオファー"
+"Time left","分残り"
+"Available items","利用可能なアイテム"
+Sale,セール
+"Go to previous step","前に戻る"
+"MageSuite Content Constructor","MageSuite コンテンツコンストラクター"
+MageSuite,MageSuite
+"Content Constructor","コンテンツコンストラクター"
+Configuration,設定
+"Enable components list test page","コンポーネントリストページで有効"
+"Sort subcategories alphabetically","サブカテゴリをアルファベット順にソートする"
+"Instagram Data Feed Component Configuration","Instagram データフィードコンポーネント設定"
+"Access Token","アクセストークン"
