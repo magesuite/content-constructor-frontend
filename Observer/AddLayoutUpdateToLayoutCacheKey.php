@@ -42,7 +42,8 @@ class AddLayoutUpdateToLayoutCacheKey implements \Magento\Framework\Event\Observ
             return;
         }
 
-        $updateLayoutXml = $this->componentConfigurationToXmlMapper->map($contentConstructorContent);
+        $configuration = json_decode($contentConstructorContent, true);
+        $updateLayoutXml = $this->componentConfigurationToXmlMapper->map($configuration);
         $this->layoutCacheKey->addCacheKeys(md5($updateLayoutXml));
     }
 }
