@@ -42,13 +42,13 @@ class CategoryGridTeasers extends \Magento\Framework\App\Helper\AbstractHelper
     }
 
     public function getConfig() {
-        $layoutUpdateXml = $this->getLayoutUpdateXml();
+        $contentConstructorContent = $this->getContentConstructorContent();
 
-        if(empty($layoutUpdateXml)) {
+        if(empty($contentConstructorContent)) {
             return null;
         }
 
-        $components = $this->xmlToComponentConfigurationMapper->map($layoutUpdateXml);
+        $components = json_decode($contentConstructorContent, true);
         $gridComponent = $this->getGridComponent($components);
 
         if($gridComponent == null) {
@@ -96,12 +96,12 @@ class CategoryGridTeasers extends \Magento\Framework\App\Helper\AbstractHelper
         return $configuration;
     }
 
-    protected function getLayoutUpdateXml() {
+    protected function getContentConstructorContent() {
         /** @var \Magento\Catalog\Model\Category $currentCategory */
         $currentCategory = $this->registry->registry('current_category');
 
         if($currentCategory != null) {
-            return $currentCategory->getCustomLayoutUpdate();
+            return $currentCategory->getContentConstructorContent();
         }
 
         /** @var \MageSuite\BrandManagement\Model\Brands $currentBrand */

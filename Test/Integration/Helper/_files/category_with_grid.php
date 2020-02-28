@@ -42,6 +42,8 @@ $category
     ->setPosition(1)
     ->setAvailableSortBy(['position']);
 
-$category->setCustomLayoutUpdate($xml);
+/** @var \MageSuite\ContentConstructorAdmin\Repository\Xml\XmlToComponentConfigurationMapper $xmlMapper */
+$xmlMapper = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()->create(\MageSuite\ContentConstructorAdmin\Repository\Xml\XmlToComponentConfigurationMapper::class);
+$category->setContentConstructorContent(json_encode($xmlMapper->map($xml)));
 $category->save();
 
