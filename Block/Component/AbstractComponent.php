@@ -68,4 +68,11 @@ class AbstractComponent extends \Magento\Framework\View\Element\Template
     {
         return $this->identities;
     }
+
+    public function toHtml()
+    {
+        if ($this->componentVisibilityHelper->isComponentVisibleAtAll($this->getData())) {
+            return parent::toHtml();
+        }
+    }
 }
