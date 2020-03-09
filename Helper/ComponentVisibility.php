@@ -43,6 +43,10 @@ class ComponentVisibility extends \Magento\Framework\App\Helper\AbstractHelper
 
     public function isComponentVisibleAtAll($componentConfiguration)
     {
+        if (!isset($componentConfiguration['componentVisibility'])) {
+            return true;
+        }
+
         $mobileComponentVisibility = $componentConfiguration['componentVisibility']['mobile'];
         $desktopComponentVisibility = $componentConfiguration['componentVisibility']['desktop'];
 
