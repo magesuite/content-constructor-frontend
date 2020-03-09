@@ -74,5 +74,7 @@ class AbstractComponent extends \Magento\Framework\View\Element\Template
         if ($this->componentVisibilityHelper->isComponentVisibleAtAll($this->getData())) {
             return parent::toHtml();
         }
+
+        return '';
     }
 }
