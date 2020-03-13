@@ -1,10 +1,11 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceContainer name="main.content">
-            <container name="cc-top" htmlTag="div" htmlClass="cs-page-category__cc-top" before="-" />
-            <container name="cc-bottom" htmlTag="div" htmlClass="cs-page-category__cc-bottom" after="-" />
-        </referenceContainer>
+        <!-- Initializing ContentConstructor containers and then moving them into “main.content” sets their order properly -->
+        <container name="cc-top" htmlTag="div" htmlClass="cs-page-category__cc-top"/>
+        <container name="cc-bottom" htmlTag="div" htmlClass="cs-page-category__cc-bottom"/>
+        <move element="cc-top" destination="main.content" before="columns"/>
+        <move element="cc-bottom" destination="main.content" after="columns"/>
 
         <referenceBlock name="category.products.list">
             <container name="hotspot.inside.list" as="hotspot.inside.list">
