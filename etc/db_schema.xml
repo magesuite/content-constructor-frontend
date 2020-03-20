@@ -3,6 +3,7 @@
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
     <table name="cms_page" resource="default" engine="innodb" comment="CMS Page Table">
         <column xsi:type="mediumtext" name="layout_update_xml" nullable="true" comment="Page Layout Update Content"/>
+        <column xsi:type="mediumtext" name="layout_update_xml_backup" nullable="true" comment="Backup of old Layout Update XML"/>
         <column xsi:type="mediumtext" name="content_constructor_content" nullable="true" comment="Content Constructor Content"/>
     </table>
     <table name="catalog_product_entity_text" resource="default" engine="innodb"
