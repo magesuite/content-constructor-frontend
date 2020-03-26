@@ -14,12 +14,19 @@ class AddConstructorContentToCategoryLayout implements \Magento\Framework\Event\
      */
     protected $registry;
 
+    /**
+     * @var \Magento\Framework\View\Layout\LayoutCacheKeyInterface
+     */
+    protected $layoutCacheKey;
+
     public function __construct(
         \MageSuite\ContentConstructorAdmin\Repository\Xml\ComponentConfigurationToXmlMapper $configurationToXmlMapper,
-        \Magento\Framework\Registry $registry
+        \Magento\Framework\Registry $registry,
+        \Magento\Framework\View\Layout\LayoutCacheKeyInterface $layoutCacheKey
     ) {
         $this->configurationToXmlMapper = $configurationToXmlMapper;
         $this->registry = $registry;
+        $this->layoutCacheKey = $layoutCacheKey;
     }
 
     public function execute(\Magento\Framework\Event\Observer $observer)
@@ -35,6 +42,7 @@ class AddConstructorContentToCategoryLayout implements \Magento\Framework\Event\
             /** @var \Magento\Framework\View\Layout $layout */
             $layout = $event->getData("layout");
             $layout->getUpdate()->addUpdate($layoutUpdateXml);
+            $this->layoutCacheKey->addCacheKeys(md5($layoutUpdateXml));
         }
     }
 }
