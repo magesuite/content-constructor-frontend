@@ -31,6 +31,7 @@ class AddLayoutUpdateToLayoutCacheKey implements \Magento\Framework\Event\Observ
      */
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
+        /** @var \Magento\Cms\Model\Page $page */
         $page = $observer->getEvent()->getPage();
 
         if ($page == null) {
@@ -44,6 +45,10 @@ class AddLayoutUpdateToLayoutCacheKey implements \Magento\Framework\Event\Observ
 
         $configuration = json_decode($contentConstructorContent, true);
         $updateLayoutXml = $this->componentConfigurationToXmlMapper->map($configuration);
+
+        $currentLayoutUpdateXml = $page->getLayoutUpdateXml();
+
+        $page->setLayoutUpdateXml($currentLayoutUpdateXml .$updateLayoutXml);
         $this->layoutCacheKey->addCacheKeys(md5($updateLayoutXml));
     }
 }
