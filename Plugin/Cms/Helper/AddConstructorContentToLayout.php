@@ -25,5 +25,7 @@ class AddConstructorContentToLayout
     public function afterPrepareResultPage(\Magento\Cms\Helper\Page $subject, \Magento\Framework\View\Result\Page $resultPage)
     {
         $this->layoutContentUpdateService->addContentConstructorToUpdateLayout($resultPage, $this->page);
+
+        return $resultPage;
     }
 }
