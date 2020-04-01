@@ -9,9 +9,18 @@ class AddLayoutUpdateToLayoutCacheKey implements \Magento\Framework\Event\Observ
      */
     protected $layoutCacheKey;
 
-    public function __construct(\Magento\Framework\View\Layout\LayoutCacheKeyInterface $layoutCacheKey)
+    /**
+     * @var \MageSuite\ContentConstructorAdmin\Repository\Xml\ComponentConfigurationToXmlMapper
+     */
+    protected $componentConfigurationToXmlMapper;
+
+    public function __construct(
+        \Magento\Framework\View\Layout\LayoutCacheKeyInterface $layoutCacheKey,
+        \MageSuite\ContentConstructorAdmin\Repository\Xml\ComponentConfigurationToXmlMapper $componentConfigurationToXmlMapper
+    )
     {
         $this->layoutCacheKey = $layoutCacheKey;
+        $this->componentConfigurationToXmlMapper = $componentConfigurationToXmlMapper;
     }
 
     /**
@@ -22,18 +31,24 @@ class AddLayoutUpdateToLayoutCacheKey implements \Magento\Framework\Event\Observ
      */
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
+        /** @var \Magento\Cms\Model\Page $page */
         $page = $observer->getEvent()->getPage();
 
-        if($page == null) {
+        if ($page == null) {
             return;
         }
 
-        $layoutUpdate = $page->getLayoutUpdateXml();
-
-        if(empty($layoutUpdate))  {
+        $contentConstructorContent = $page->getContentConstructorContent();
+        if (empty($contentConstructorContent)) {
             return;
         }
 
-        $this->layoutCacheKey->addCacheKeys(md5($layoutUpdate));
+        $configuration = json_decode($contentConstructorContent, true);
+        $updateLayoutXml = $this->componentConfigurationToXmlMapper->map($configuration);
+
+        $currentLayoutUpdateXml = $page->getLayoutUpdateXml();
+
+        $page->setLayoutUpdateXml($currentLayoutUpdateXml .$updateLayoutXml);
+        $this->layoutCacheKey->addCacheKeys(md5($updateLayoutXml));
     }
 }

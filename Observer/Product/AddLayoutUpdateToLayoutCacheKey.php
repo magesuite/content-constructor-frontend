@@ -9,9 +9,18 @@ class AddLayoutUpdateToLayoutCacheKey implements \Magento\Framework\Event\Observ
      */
     protected $layoutCacheKey;
 
-    public function __construct(\Magento\Framework\View\Layout\LayoutCacheKeyInterface $layoutCacheKey)
+    /**
+     * @var \MageSuite\ContentConstructorAdmin\Repository\Xml\ComponentConfigurationToXmlMapper
+     */
+    protected $componentConfigurationToXmlMapper;
+
+    public function __construct(
+        \Magento\Framework\View\Layout\LayoutCacheKeyInterface $layoutCacheKey,
+        \MageSuite\ContentConstructorAdmin\Repository\Xml\ComponentConfigurationToXmlMapper $componentConfigurationToXmlMapper
+    )
     {
         $this->layoutCacheKey = $layoutCacheKey;
+        $this->componentConfigurationToXmlMapper = $componentConfigurationToXmlMapper;
     }
 
     /**
@@ -24,16 +33,17 @@ class AddLayoutUpdateToLayoutCacheKey implements \Magento\Framework\Event\Observ
     {
         $product = $observer->getEvent()->getProduct();
 
-        if($product == null) {
+        if ($product == null) {
             return;
         }
 
-        $layoutUpdate = $product->getCustomLayoutUpdate();
-
-        if(empty($layoutUpdate))  {
+        $contentConstructorContent = $product->getContentConstucotrContent();
+        if (empty($contentConstructorContent)) {
             return;
         }
 
-        $this->layoutCacheKey->addCacheKeys(md5($layoutUpdate));
+        $configuration = json_decode($contentConstructorContent, true);
+        $updateLayoutXml = $this->componentConfigurationToXmlMapper->map($configuration);
+        $this->layoutCacheKey->addCacheKeys(md5($updateLayoutXml));
     }
 }
