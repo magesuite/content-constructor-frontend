@@ -1,4 +1,4 @@
-<?php 
+<?php
 $imageTeaserData = $block->getImageTeaserData();
 $imageTypeHelper = $this->helper(\MageSuite\ThemeHelpers\Helper\ImageType::class);
 $slide = $block->getSlide();
@@ -7,12 +7,11 @@ $isSvg = $slide->isSvg();
 /**
  * Image properties with support for conditional lazy loading.
  */
-$imageSrc = $origImageSrc = $slide->getSrc();
+
+$origImageSrc = $block->escapeUrl($slide->getSrc());
 $hasImage = !empty($origImageSrc);
-if ($hasImage) {
-    $imageSrc = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
-}
-$imageAlt = $slide->getAlt();
+$placeholderImageSrc = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
+$imageAlt = $block->escapeHtmlAttr($slide->getAlt());
 $imageSrcset = $isSvg ? '' : $slide->getSrcSet();
 $imageSizes = $isSvg ? '' : $slide->getSizes();
 $imageWidth = $slide->getWidth();
@@ -41,8 +40,8 @@ if ($isWebpSupported) {
 $isLazyLoaded = isset($imageTeaserData['type'])
     ? !((bool) strpos($imageTeaserData['type'], 'HeroCarousel'))
     : true;
-$dataPrefix = $isLazyLoaded ? 'data-' : '';
 ?>
+
 <?php if ($hasImage): ?>
     <picture class="cs-image-teaser__figure">
         <?php if ($isWebpSupported): ?>
@@ -52,16 +51,22 @@ $dataPrefix = $isLazyLoaded ? 'data-' : '';
                     <?= $isLazyLoaded ? ' lazyload' : '' ?>
                     <?= ($isSlider || $isSliderMobile) && $isLazyLoaded ? ' swiper-lazy' : '' ?>
                     <?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
-                alt="<?= $imageAlt ?>"
-                <?= $dataPrefix ?>srcset="<?= $imageWebpSrcSet ?>"
+
+                <?php if ($isLazyLoaded): ?>
+                    srcset="<?= $placeholderImageSrc ?>"
+                    data-srcset="<?= $imageWebpSrcSet ?>"
+                <?php else: ?>
+                    srcset="<?= $imageWebpSrcSet ?>"
+                <?php endif; ?>
+
                 <?php if ($imageSizes): ?>
                     sizes="<?= $imageSizes ?>"
                 <?php endif; ?>
-                <?php if ($imageWidth): ?> 
-                    width="<?= $imageWidth ?>" 
+                <?php if ($imageWidth): ?>
+                    width="<?= $imageWidth ?>"
                 <?php endif; ?>
-                <?php if ($imageHeight): ?> 
-                    height="<?= $imageHeight ?>" 
+                <?php if ($imageHeight): ?>
+                    height="<?= $imageHeight ?>"
                 <?php endif; ?>
             >
         <?php endif; ?>
@@ -71,17 +76,30 @@ $dataPrefix = $isLazyLoaded ? 'data-' : '';
                 <?= $isLazyLoaded ? ' lazyload' : '' ?>
                 <?= ($isSlider || $isSliderMobile) && $isLazyLoaded ? ' swiper-lazy' : '' ?>
                 <?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
-            alt="<?= $imageAlt ?>"
-            <?= $dataPrefix ?>srcset="<?= $imageSrcset ?>"
+
+            <?php if ($isLazyLoaded): ?>
+                data-src="<?= $origImageSrc ?>"
+                src="<?= $placeholderImageSrc ?>"
+                <?php if ($imageSrcset): ?>
+                    srcset="<?= $placeholderImageSrc ?>"
+                    data-srcset="<?= $imageSrcset ?>"
+                <?php endif; ?>
+            <?php else: ?>
+                src="<?= $origImageSrc ?>"
+                <?php if ($imageSrcset): ?>
+                    srcset="<?= $imageSrcset ?>"
+                <?php endif; ?>
+            <?php endif; ?>
+
             <?php if ($imageSizes): ?>
                 sizes="<?= $imageSizes ?>"
             <?php endif; ?>
-            <?php if ($imageWidth): ?> 
-                width="<?= $imageWidth ?>" 
+            <?php if ($imageWidth): ?>
+                width="<?= $imageWidth ?>"
             <?php endif; ?>
             <?php if ($imageHeight): ?>
-                height="<?= $imageHeight ?>" 
-            <?php endif; ?>           
+                height="<?= $imageHeight ?>"
+            <?php endif; ?>
         >
         <img
             class="cs-image-teaser__image
@@ -89,19 +107,29 @@ $dataPrefix = $isLazyLoaded ? 'data-' : '';
                 <?= ($isSlider || $isSliderMobile) && $isLazyLoaded ? ' swiper-lazy' : '' ?>
                 <?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
             alt="<?= $imageAlt ?>"
-            src="<?= $isLazyLoaded ? $imageSrc : $origImageSrc ?>"
-            <?php if ($imageSrcset): ?>
-                <?= $dataPrefix ?>srcset="<?= $imageSrcset ?>"
+
+            <?php if ($isLazyLoaded): ?>
+                data-src="<?= $origImageSrc ?>"
+                src="<?= $placeholderImageSrc ?>"
+                <?php if ($imageSrcset): ?>
+                    srcset="<?= $placeholderImageSrc ?>"
+                    data-srcset="<?= $imageSrcset ?>"
+                <?php endif; ?>
+            <?php else: ?>
+                src="<?= $origImageSrc ?>"
+                <?php if ($imageSrcset): ?>
+                    srcset="<?= $imageSrcset ?>"
+                <?php endif; ?>
             <?php endif; ?>
-            <?= $dataPrefix ?>src="<?= $origImageSrc ?>"
+
             <?php if ($imageSizes): ?>
                 sizes="<?= $imageSizes ?>"
             <?php endif; ?>
-            <?php if ($imageWidth): ?> 
-                width="<?= $imageWidth ?>" 
+            <?php if ($imageWidth): ?>
+                width="<?= $imageWidth ?>"
             <?php endif; ?>
-            <?php if ($imageHeight): ?> 
-                height="<?= $imageHeight ?>" 
+            <?php if ($imageHeight): ?>
+                height="<?= $imageHeight ?>"
             <?php endif; ?>
         >
         <noscript>
@@ -112,14 +140,14 @@ $dataPrefix = $isLazyLoaded ? 'data-' : '';
                 <?php if ($imageSrcset): ?>
                     srcset="<?= $imageSrcset ?>"
                 <?php endif; ?>
-                <?php if ($imageSizes): ?> 
+                <?php if ($imageSizes): ?>
                     sizes="<?= $imageSizes ?>"
                 <?php endif; ?>
-                <?php if ($imageWidth): ?> 
-                    width="<?= $imageWidth ?>" 
+                <?php if ($imageWidth): ?>
+                    width="<?= $imageWidth ?>"
                 <?php endif; ?>
-                <?php if ($imageHeight): ?> 
-                    height="<?= $imageHeight ?>" 
+                <?php if ($imageHeight): ?>
+                    height="<?= $imageHeight ?>"
                 <?php endif; ?>
             >
         </noscript>
