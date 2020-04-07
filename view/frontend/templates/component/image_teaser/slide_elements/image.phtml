@@ -11,8 +11,13 @@ $isSvg = $slide->isSvg();
 $origImageSrc = $block->escapeUrl($slide->getSrc());
 $hasImage = !empty($origImageSrc);
 $placeholderImageSrc = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
+$imageSrcset = $slide->getSrcSet();
+
+if (empty($imageSrcset) || $isSvg) {
+    $imageSrcset = $origImageSrc;
+}
+
 $imageAlt = $block->escapeHtmlAttr($slide->getAlt());
-$imageSrcset = $isSvg ? '' : $slide->getSrcSet();
 $imageSizes = $isSvg ? '' : $slide->getSizes();
 $imageWidth = $slide->getWidth();
 $imageHeight = $slide->getHeight();
@@ -97,19 +102,11 @@ $isLazyLoaded = isset($imageTeaserData['type'])
                 <?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
 
             <?php if ($isLazyLoaded): ?>
-                data-src="<?= $origImageSrc ?>"
-                src="<?= $placeholderImageSrc ?>"
-                <?php if ($imageSrcset): ?>
-                    srcset="<?= $placeholderImageSrc ?>"
-                    data-srcset="<?= $imageSrcset ?>"
-                <?php endif; ?>
+                srcset="<?= $placeholderImageSrc ?>"
+                data-srcset="<?= $imageSrcset ?>"
             <?php else: ?>
-                src="<?= $origImageSrc ?>"
-                <?php if ($imageSrcset): ?>
-                    srcset="<?= $imageSrcset ?>"
-                <?php endif; ?>
+                srcset="<?= $imageSrcset ?>"
             <?php endif; ?>
-
             <?php if ($imageSizes): ?>
                 sizes="<?= $imageSizes ?>"
             <?php endif; ?>
@@ -129,15 +126,11 @@ $isLazyLoaded = isset($imageTeaserData['type'])
 
             <?php if ($isLazyLoaded): ?>
                 src="<?= $origImageSrc ?>"
-                <?php if ($imageSrcset): ?>
-                    srcset="<?= $placeholderImageSrc ?>"
-                    data-srcset="<?= $imageSrcset ?>"
-                <?php endif; ?>
+                srcset="<?= $placeholderImageSrc ?>"
+                data-srcset="<?= $imageSrcset ?>"
             <?php else: ?>
                 src="<?= $origImageSrc ?>"
-                <?php if ($imageSrcset): ?>
-                    srcset="<?= $imageSrcset ?>"
-                <?php endif; ?>
+                srcset="<?= $imageSrcset ?>"
             <?php endif; ?>
 
             <?php if ($imageSizes): ?>
