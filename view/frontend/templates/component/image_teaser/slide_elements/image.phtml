@@ -48,25 +48,6 @@ $isLazyLoaded = isset($imageTeaserData['type'])
 ?>
 
 <?php if ($hasImage): ?>
-    <noscript>
-        <img
-            class="cs-image-teaser__image"
-            alt="<?= $imageAlt ?>"
-            src="<?= $origImageSrc ?>"
-            <?php if ($imageSrcset): ?>
-                srcset="<?= $imageSrcset ?>"
-            <?php endif; ?>
-            <?php if ($imageSizes): ?>
-                sizes="<?= $imageSizes ?>"
-            <?php endif; ?>
-            <?php if ($imageWidth): ?>
-                width="<?= $imageWidth ?>"
-            <?php endif; ?>
-            <?php if ($imageHeight): ?>
-                height="<?= $imageHeight ?>"
-            <?php endif; ?>
-        >
-    </noscript>
     <picture class="cs-image-teaser__figure">
         <?php if ($isWebpSupported): ?>
             <source
@@ -144,4 +125,23 @@ $isLazyLoaded = isset($imageTeaserData['type'])
             <?php endif; ?>
         >
     </picture>
+    <noscript>
+        <img
+            class="cs-image-teaser__image"
+            alt="<?= $imageAlt ?>"
+            src="<?= $origImageSrc ?>"
+            <?php if ($imageSrcset): ?>
+                srcset="<?= $imageSrcset ?>"
+            <?php endif; ?>
+            <?php if ($imageSizes): ?>
+                sizes="<?= $imageSizes ?>"
+            <?php endif; ?>
+            <?php if ($imageWidth): ?>
+                width="<?= $imageWidth ?>"
+            <?php endif; ?>
+            <?php if ($imageHeight): ?>
+                height="<?= $imageHeight ?>"
+            <?php endif; ?>
+        >
+    </noscript>
 <?php endif; ?>
