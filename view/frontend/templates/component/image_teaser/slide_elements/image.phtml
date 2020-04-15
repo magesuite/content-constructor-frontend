@@ -106,7 +106,8 @@ $isLazyLoaded = isset($imageTeaserData['type'])
             alt="<?= $imageAlt ?>"
 
             <?php if ($isLazyLoaded): ?>
-                src="<?= $origImageSrc ?>"
+                src="<?= $placeholderImageSrc ?>"
+                data-src="<?= $origImageSrc ?>"
                 srcset="<?= $placeholderImageSrc ?>"
                 data-srcset="<?= $imageSrcset ?>"
             <?php else: ?>
