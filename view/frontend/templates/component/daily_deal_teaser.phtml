@@ -7,20 +7,9 @@ $visibility = $block->getVisibilityClass();
 
 $product = $viewModel->getProduct();
 
-$labels = [
-    'day' =>  __('Day'),
-    'days' =>  __('Days'),
-    'hour' =>  __('Hour'),
-    'hours' =>  __('Hours'),
-    'minute' =>  __('Min'),
-    'minutes' =>  __('Min'),
-    'second' =>  __('Sec'),
-    'seconds' =>  __('Sec')
-];
+$layout = $this->getLayout();
 
-$isLazyLoaded = $block->getVar('daily_deal_teaser/lazyload_image');
-
-$componentClasses = $block->getSkipSpacing() ? ' cs-daily-deal-teaser--skip-spacing' : ''; 
+$componentClasses = $block->getSkipSpacing() ? ' cs-daily-deal-teaser--skip-spacing' : '';
 $componentClasses .= ' ' . $block->getVar('daily_deal_teaser/additional_css_classes');
 ?>
 
@@ -28,166 +17,41 @@ $componentClasses .= ' ' . $block->getVar('daily_deal_teaser/additional_css_clas
     <div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
         <div class="cs-container cs-container--daily-deal-teaser">
             <div class="cs-container__inner">
-                <section class="cs-daily-deal-teaser<?= $componentClasses ?>">
-                    <a href="<?= $product['url'] ?>" class="cs-daily-deal-teaser__image-wrapper">
-                        <figure class="cs-daily-deal-teaser__figure" role="group">
-                            <img
-                                class="cs-daily-deal-teaser__image | <?php if($isLazyLoaded){ echo 'lazyload';} ?>"
-                                <?php if($isLazyLoaded): ?>
-                                src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-                                data-src="<?=$product['image']['src'] ?>"
-                                <?php else: ?>
-                                src="<?=$product['image']['src'] ?>"
-                                <?php endif; ?>
-                                alt="<?= $product['name'] ?>"
-                                <?php if (isset($product['image']['srcset'])): ?>data-srcset="<?=$product['image']['srcset']?>"<?php endif; ?>
-                                <?php if (isset($product['image']['sizes'])): ?>sizes="<?=$product['image']['sizes']?>"<?php endif; ?>
-                                <?php if (isset($product['image']['width'])): ?>width="<?=$product['image']['width']?>"<?php endif; ?>
-                                <?php if (isset($product['image']['height'])): ?>height="<?=$product['image']['height']?>"<?php endif; ?>
-                            >
-                            <noscript>
-                                <img
-                                    class="cs-daily-deal-teaser__image"
-                                    src="<?= $product['image']['src'] ?>"
-                                    alt="<?= $product['name'] ?>"
-                                    <?php if (isset($product['image']['srcset'])): ?>data-srcset="<?=$product['image']['srcset']?>"<?php endif; ?>
-                                    <?php if (isset($product['image']['sizes'])): ?>sizes="<?=$product['image']['sizes']?>"<?php endif; ?>
-                                    <?php if (isset($product['image']['width'])): ?>width="<?=$product['image']['width']?>"<?php endif; ?>
-                                    <?php if (isset($product['image']['height'])): ?>height="<?=$product['image']['height']?>"<?php endif; ?>
-                                >
-                            </noscript>
-
-                            <?php if($block->getVar('daily_deal_teaser/slogan/show')): ?>
-                            <figcaption class="cs-daily-deal-teaser__slogan"><?=__('Short time offer')?></figcaption>
-
-                            <figure class="cs-daily-deal-teaser__slogan-icon-wrapper">
-                                <?= $this->getLayout()
-                                        ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
-                                        ->setIconUrl($block->getVar('daily_deal_teaser/slogan/icon_path'))
-                                        ->setCssClass("cs-daily-deal-teaser__slogan-icon")
-                                        ->setInlined(true)
-                                        ->toHtml(); 
-                                ?>
-                            </figure>
-                            <?php endif; ?>
-                        </figure>
-                    </a>
-
-                    <div class="cs-daily-deal-teaser__details">
-                        <?php if (isset($product['brandName']) && $block->getVar('daily_deal_teaser/show_brand')): ?>
-                        <p class="cs-daily-deal-teaser__product-brand"><?=$product['brandName']?></p>
-                        <?php endif; ?>
-
-                        <p class="cs-daily-deal-teaser__product-name">
-                            <a href="<?=$product['url']?>" class="cs-daily-deal-teaser__product-link"><?=$product['name']?></a>
-                        </p>
-
-                        <?php if (isset($product['rating']['data']['activeStars']) && $block->getVar('daily_deal_teaser/show_rating')): ?>
-                        <div class="cs-daily-deal-teaser__product-rating">
-                            <?= $this->getLayout()
-                                    ->createBlock(\Magento\Framework\View\Element\Template::class)
-                                    ->setMaxStars(5)
-                                    ->setActiveStars($product['rating']['data']['activeStars'])
-                                    ->setReviewsCount($product['rating']['data']['text'])
-                                    ->setTemplate('Magento_Review::rating-stars.phtml')
-                                    ->toHtml();
+                <div class="cs-daily-deal-teaser<?= $componentClasses ?>">
+                    <aside class="cs-daily-deal-teaser__aside-image">
+                            <?= $layout
+                                ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser::class)
+                                ->setTemplate('MageSuite_ContentConstructorFrontend::component/daily_deal_teaser/image.phtml')
+                                ->toHtml();
+                            ?>
+                    </aside>
+                    <section class="cs-daily-deal-teaser__main">
+                        <div class="cs-daily-deal-teaser__details">
+                            <?= $layout
+                                ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser::class)
+                                ->setTemplate('MageSuite_ContentConstructorFrontend::component/daily_deal_teaser/details.phtml')
+                                ->toHtml();
                             ?>
                         </div>
-                        <?php endif; ?>
 
-                        <?php if(isset($product['swatches'])): ?>
-                        <div class="cs-daily-deal-teaser__product-swatches"><?=$product['swatches']?></div>
-                        <?php endif; ?>
-
-                        <div class="cs-daily-deal-teaser__dd-details">
-                            <div class="cs-daily-deal-teaser__dd-column">
-                                <p class="cs-daily-deal-teaser__dd-headline cs-daily-deal-teaser__dd-headline--countdown"><?=__('Time left')?></p>
-
-                                <div class="cs-dailydeal cs-dailydeal--teaser">
-                                    <div class="cs-dailydeal__countdown" data-dailydeal-end="<?=$product['dailyDealOffer']['to']?>"></div>
-                                    <input type="hidden" name="cs-dailydeal__countdown-labels" class="cs-dailydeal__countdown-labels" value='<?=json_encode($labels)?>'>
-                                </div>
-                            </div>
-
-                            <?php if($block->getVar('daily_deal_teaser/show_available_amount_section') && isset($product['dailyDealOffer']['initialAmount']) && ($product['dailyDealOffer']['initialAmount'] > 0)): ?>
-                            <div class="cs-daily-deal-teaser__dd-column">
-                                <p class="cs-daily-deal-teaser__dd-headline cs-daily-deal-teaser__dd-headline--limit"><?=__('Available items')?></p>
-
-                                <div class="cs-daily-deal-teaser__progress-bar">
-                                    <div class="cs-cart-bonus__progress-wrapper cs-daily-deal-teaser__progress-bar-content">
-                                        <?php 
-                                        $percentage=(((int)$product['dailyDealOffer']['items'] / (int)$product['dailyDealOffer']['initialAmount']) * 100) / 100;
-                                        $transforming=(1 - $percentage) / 2 / $percentage * 100
-                                        ?>
-                                        <div class="cs-daily-deal-teaser__progress-bg">
-                                            <div class="cs-daily-deal-teaser__progress-possible">
-                                                <div class="cs-cart-bonus__progress-done cs-daily-deal-teaser__progress" style="transform: scaleX(<?=$percentage?>) translateX(<?=-$transforming?>%)"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <span class="cs-daily-deal-teaser__available">
-                                        <?=$product['dailyDealOffer']['items']?> / <?=$product['dailyDealOffer']['initialAmount']?>
-                                    </span>
-                                </div>
-                            </div>
-                            <?php endif; ?>
+                        <div class="cs-daily-deal-teaser__description">
+                            <?= $layout
+                                ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser::class)
+                                ->setTemplate('MageSuite_ContentConstructorFrontend::component/daily_deal_teaser/description.phtml')
+                                ->toHtml();
+                            ?>
                         </div>
-                    </div>
-
-                    <aside class="cs-daily-deal-teaser__actions">
-                        <div class="cs-daily-deal-teaser__price-details">
-                            <?php if($block->getVar('daily_deal_teaser/discount_badge/show') && $product['dailyDealOffer']['discountPercentage']): ?>
-                            <div class="cs-daily-deal-teaser__discount">
-                                <span class="cs-daily-deal-teaser__badge-wrapper cs-dailydeal__badge cs-dailydeal__badge--dd-discount">
-                                    <span class="cs-daily-deal-teaser__badge cs-daily-deal-teaser__badge--discount">
-                                        <span class="cs-daily-deal-teaser__badge-text">
-
-                                        <?php if($block->getVar('daily_deal_teaser/discount_badge/show_sale_label')): ?>
-                                            <?=__('Sale')?>
-                                        <?php endif; ?>
-
-                                        <?php if($block->getVar('daily_deal_teaser/discount_badge/show_percentage')): ?>
-                                            <?= $block->getVar('daily_deal_teaser/discount_badge/prefix'); ?><?=$product['dailyDealOffer']['discountPercentage']?><?= $block->getVar('daily_deal_teaser/discount_badge/suffix'); ?>
-                                        <?php endif; ?>
-
-                                        </span>
-                                    </span>
-                                </span>
-                            </div>
-                            <?php endif; ?>
-
-                            <div class="cs-daily-deal-teaser__price"><?=$product['price']?></div>
-                        </div>
-
-                        <?php if($block->getVar('daily_deal_teaser/addtocart_button/show')): ?>
-                            <div class="cs-daily-deal-teaser__addtocart cs-addtocart">
-                                <?php
-                                $addToCartParameters = $viewModel->getAddToCartParameters($product['productObject']);
-                                $label = $product['productObject']->getTypeId() != \Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE ? __('Add to cart') : __('Configure');
+                        <div class="cs-daily-deal-teaser__actions">
+                            <?= $layout
+                                    ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser::class)
+                                    ->setTemplate('MageSuite_ContentConstructorFrontend::component/daily_deal_teaser/actions.phtml')
+                                    ->toHtml();
                                 ?>
-                                <form data-role="tocart-form" action="<?= $addToCartParameters['action'] ?>" method="post">
-                                    <input type="hidden" name="product" value="<?= $addToCartParameters['productId'] ?>">
-                                    <input type="hidden" name="<?= $addToCartParameters['uencKey'] ?>" value="<?= $addToCartParameters['uencValue'] ?>">
-                                    <?= $addToCartParameters['formKey'] ?>
-                                    <button disabled type="submit" title="<?= $label ?>"
-                                            class="tocart | cs-button cs-button--type_grid-tocart">
-                                        <span class="cs-button__span"><?= $label ?></span>
-                                        <?= $this->getLayout()
-                                            ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
-                                            ->setIconUrl($block->getVar('daily_deal_teaser/addtocart_button/icon_path'))
-                                            ->setCssClass("cs-button__icon")
-                                            ->setInlined(true)
-                                            ->toHtml(); 
-                                        ?>
-                                    </button>
-                                </form>
-                            </div>
-                        <?php endif; ?>
-                    </aside>
-                </section>
+                        </div>
+                    </section>
+                </div>
 
-                <?php if($block->getVar('daily_deal_teaser/expired_notice/show')): ?>
+                <?php if ($block->getVar('daily_deal_teaser/expired_notice/show')): ?>
                 <div class="cs-daily-deal-teaser cs-daily-deal-teaser--expired">
                     <?= $block->getVar('daily_deal_teaser/expired_notice/content'); ?>
                 </div>

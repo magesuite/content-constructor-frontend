@@ -1,0 +1,58 @@
+<?php
+/** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser */
+/** @var $viewModel \MageSuite\ContentConstructorFrontend\Model\Component\DailyDealTeaser */
+$viewModel = $block->getViewModel();
+
+$product = $viewModel->getProduct();
+
+$isLazyLoaded = $block->getVar('daily_deal_teaser/lazyload_image');
+?>
+
+<a href="<?= $product['url'] ?>" class="cs-daily-deal-teaser__image-wrapper">
+    <?php if ($block->getVar('daily_deal_teaser/discount_badge/show') && $product['dailyDealOffer']['discountPercentage']): ?>
+            <div class="cs-daily-deal-teaser__discount">
+                <span class="cs-daily-deal-teaser__badge-wrapper cs-dailydeal__badge cs-dailydeal__badge--dd-discount">
+                    <span class="cs-daily-deal-teaser__badge cs-daily-deal-teaser__badge--discount">
+                        <span class="cs-daily-deal-teaser__badge-text">
+
+                        <?php if ($block->getVar('daily_deal_teaser/discount_badge/show_sale_label')): ?>
+                            <?=__('Sale')?>
+                        <?php endif; ?>
+
+                        <?php if ($block->getVar('daily_deal_teaser/discount_badge/show_percentage')): ?>
+                            <?= $block->getVar('daily_deal_teaser/discount_badge/prefix'); ?><?=$product['dailyDealOffer']['discountPercentage']?><?= $block->getVar('daily_deal_teaser/discount_badge/suffix'); ?>
+                        <?php endif; ?>
+
+                        </span>
+                    </span>
+                </span>
+            </div>
+        <?php endif; ?>
+        <figure class="cs-daily-deal-teaser__figure" role="group">
+            <img
+                class="cs-daily-deal-teaser__image | <?php if ($isLazyLoaded){ echo 'lazyload';} ?>"
+                <?php if ($isLazyLoaded): ?>
+                src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                data-src="<?=$product['image']['src'] ?>"
+                <?php else: ?>
+                src="<?=$product['image']['src'] ?>"
+                <?php endif; ?>
+                alt="<?= $product['name'] ?>"
+                <?php if (isset($product['image']['srcset'])): ?>data-srcset="<?=$product['image']['srcset']?>"<?php endif; ?>
+                <?php if (isset($product['image']['sizes'])): ?>sizes="<?=$product['image']['sizes']?>"<?php endif; ?>
+                <?php if (isset($product['image']['width'])): ?>width="<?=$product['image']['width']?>"<?php endif; ?>
+                <?php if (isset($product['image']['height'])): ?>height="<?=$product['image']['height']?>"<?php endif; ?>
+            >
+            <noscript>
+                <img
+                    class="cs-daily-deal-teaser__image"
+                    src="<?= $product['image']['src'] ?>"
+                    alt="<?= $product['name'] ?>"
+                    <?php if (isset($product['image']['srcset'])): ?>data-srcset="<?=$product['image']['srcset']?>"<?php endif; ?>
+                    <?php if (isset($product['image']['sizes'])): ?>sizes="<?=$product['image']['sizes']?>"<?php endif; ?>
+                    <?php if (isset($product['image']['width'])): ?>width="<?=$product['image']['width']?>"<?php endif; ?>
+                    <?php if (isset($product['image']['height'])): ?>height="<?=$product['image']['height']?>"<?php endif; ?>
+                >
+            </noscript>
+        </figure>
+</a>
