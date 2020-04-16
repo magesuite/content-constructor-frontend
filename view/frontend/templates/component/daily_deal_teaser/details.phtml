@@ -1,0 +1,37 @@
+<?php
+/** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser */
+/** @var $viewModel \MageSuite\ContentConstructorFrontend\Model\Component\DailyDealTeaser */
+
+$viewModel = $block->getViewModel();
+$product = $viewModel->getProduct();
+?>
+
+<div class="cs-daily-deal-teaser__details-main">
+    <?php if (isset($product['brandName']) && $block->getVar('daily_deal_teaser/show_brand')): ?>
+        <p class="cs-daily-deal-teaser__product-brand"><?=$product['brandName']?></p>
+    <?php endif; ?>
+
+    <p class="cs-daily-deal-teaser__product-name">
+        <a href="<?=$product['url']?>" class="cs-daily-deal-teaser__product-link"><?=$product['name']?></a>
+    </p>
+
+    <?php if (isset($product['rating']['data']['activeStars']) && $block->getVar('daily_deal_teaser/show_rating')): ?>
+        <div class="cs-daily-deal-teaser__product-rating">
+            <?= $this->getLayout()
+                    ->createBlock(\Magento\Framework\View\Element\Template::class)
+                    ->setMaxStars(5)
+                    ->setActiveStars($product['rating']['data']['activeStars'])
+                    ->setReviewsCount($product['rating']['data']['text'])
+                    ->setTemplate('Magento_Review::rating-stars.phtml')
+                    ->toHtml();
+            ?>
+        </div>
+    <?php endif; ?>
+
+    <?php if (isset($product['swatches'])): ?>
+        <div class="cs-daily-deal-teaser__product-swatches"><?=$product['swatches']?></div>
+    <?php endif; ?>
+    </div>
+    <div class="cs-daily-deal-teaser__details-price">
+        <div class="cs-daily-deal-teaser__price"><?=$product['price']?></div>
+    </div>
