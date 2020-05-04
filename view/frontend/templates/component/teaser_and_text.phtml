@@ -23,10 +23,13 @@ if ($teaserWidth == 'container') {
 $sizes = $sizesMobile . ', ' . $sizesDesktop;
 
 $containerClasses = ($teaserWidth == 'window') ? ' cs-container--image-teaser-window-width' : '';
-$containerClasses = ' ' . $block->getContainerMix();
+
+$containerClasses = $containerClasses .' ' . $block->getContainerMix();
 if (isset($imageTeaser['cc_css_classes'])):
     $containerClasses .= ' ' . $imageTeaser['cc_css_classes'];
 endif;
+
+$windowWidthClass = ($teaserWidth == 'window') ? ' cs-image-teaser--window-width' : '';
 
 $jsConfig = isset($imageTeaser['jsConfig']) ? json_encode($imageTeaser['jsConfig']) : '{}';
 ?>
@@ -36,7 +39,7 @@ $jsConfig = isset($imageTeaser['jsConfig']) ? json_encode($imageTeaser['jsConfig
         <?php if ($teaserWidth == 'container'): ?>
         <div class="cs-container__inner">
         <?php endif; ?>
-            <div class="cs-image-teaser cs-image-teaser--teaser-and-text 
+            <div class="cs-image-teaser cs-image-teaser--teaser-and-text <?= $windowWidthClass ?> 
                 cs-image-teaser--items-in-row-2
                 cs-image-teaser--items-in-row-mobile-1
                 <?= $componentClasses ?>"
