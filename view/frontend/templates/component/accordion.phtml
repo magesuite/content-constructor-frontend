@@ -9,8 +9,9 @@ $areGroupsSupported = $block->getVar('accordion/support_groups', 'MageSuite_Cont
 $groups = $viewModel->getGroups();
 
 $accordionGlobalOptions = $block->getVar('accordion/accordion_options', 'MageSuite_ContentConstructor') ?? [];
-
 $accordionOptions = $viewModel->getAccordionComponentOptions($accordionGlobalOptions);
+
+$accordionItemIcon = $block->getVar('accordion/arrow_icon', 'MageSuite_ContentConstructorFrontend');
 
 $expandFirst = $viewModel->getExpandFirst();
 ?>
@@ -35,16 +36,18 @@ $expandFirst = $viewModel->getExpandFirst();
                                     <?php $i = 0; ?>
                                     <?php foreach ($group['items'] as $item): ?>
                                         <li class="cs-accordion__item<?php if($expandFirst && $i == 0): ?> cs-accordion__item--active<?php endif; ?>" data-role="collapsible">
-                                            <div class="cs-accordion__item-headline" data-role="trigger">
+                                            <div class="cs-accordion__item-headline<?= !$accordionItemIcon ? ' cs-accordion__item-headline--icon' : '' ?>" data-role="title">
                                                 <span class="cs-accordion__item-headline-span">
                                                     <?= $block->escapeHtml($item['headline']) ?>
+                                                    <?php if ($accordionItemIcon): ?>
                                                     <?= $this->getLayout()
                                                             ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
-                                                            ->setIconUrl($block->getVar('accordion/arrow_icon', 'MageSuite_ContentConstructorFrontend'))
+                                                            ->setIconUrl($accordionItemIcon)
                                                             ->setCssClass('cs-accordion__item-headline-icon')
                                                             ->setInlined(true)
                                                             ->toHtml(); 
                                                     ?>
+                                                    <?php endif; ?>
                                                 <span>
                                             </div>
                                             <div class="cs-accordion__item-content" data-role="content">
