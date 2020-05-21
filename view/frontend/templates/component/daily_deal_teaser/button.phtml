@@ -1,0 +1,10 @@
+<?php
+/** Template injects MageSuite button, customization can be done by overriding it */
+?>
+<div class="cs-daily-deal-teaser__addtocart-wrapper">
+    <?= $this->getLayout()
+            ->createBlock("Magento\Framework\View\Element\Template")
+            ->setTemplate("Magento_Catalog::addtocart/button.phtml")
+            ->toHtml();
+    ?>
+</div>

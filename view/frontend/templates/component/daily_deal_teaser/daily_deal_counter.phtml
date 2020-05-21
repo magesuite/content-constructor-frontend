@@ -1,0 +1,28 @@
+<?php
+/** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser */
+/** @var $viewModel \MageSuite\ContentConstructorFrontend\Model\Component\DailyDealTeaser */
+
+$viewModel = $block->getViewModel();
+$product = $viewModel->getProduct();
+
+$labels = [
+    'day' =>  __('Day'),
+    'days' =>  __('Days'),
+    'hour' =>  __('Hour'),
+    'hours' =>  __('Hours'),
+    'minute' =>  __('Min'),
+    'minutes' =>  __('Min'),
+    'second' =>  __('Sec'),
+    'seconds' =>  __('Sec')
+];
+
+?>
+
+<div class="cs-daily-deal-teaser__dd-detail cs-daily-deal-teaser__dd-detail--countdown">
+    <p class="cs-daily-deal-teaser__dd-headline cs-daily-deal-teaser__dd-headline--countdown"><?=__('Time left')?></p>
+
+    <div class="cs-dailydeal cs-dailydeal--teaser">
+        <div class="cs-dailydeal__countdown" data-dailydeal-end="<?=$product['dailyDealOffer']['to']?>"></div>
+        <input type="hidden" name="cs-dailydeal__countdown-labels" class="cs-dailydeal__countdown-labels" value='<?=json_encode($labels)?>'>
+    </div>
+</div>

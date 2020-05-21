@@ -1,0 +1,25 @@
+<?php
+/** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser */
+/** @var $viewModel \MageSuite\ContentConstructorFrontend\Model\Component\DailyDealTeaser */
+$viewModel = $block->getViewModel();
+$product = $viewModel->getProduct();
+?>
+
+
+<?php if ($block->getVar('daily_deal_teaser/addtocart_button/show')): ?>
+    <div class="cs-daily-deal-teaser__addtocart cs-addtocart">
+        <?php
+        $addToCartParameters = $viewModel->getAddToCartParameters($product['productObject']);
+        ?>
+        <form data-role="tocart-form" action="<?= $addToCartParameters['action'] ?>" method="post">
+            <input type="hidden" name="product" value="<?= $addToCartParameters['productId'] ?>">
+            <input type="hidden" name="<?= $addToCartParameters['uencKey'] ?>" value="<?= $addToCartParameters['uencValue'] ?>">
+            <?= $addToCartParameters['formKey'] ?>
+                <?= $this->getLayout()
+                    ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser::class)
+                    ->setTemplate('MageSuite_ContentConstructorFrontend::component/daily_deal_teaser/button.phtml')
+                    ->toHtml();
+                ?>
+        </form>
+    </div>
+<?php endif; ?>
