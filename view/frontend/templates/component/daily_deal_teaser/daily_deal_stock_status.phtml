@@ -1,0 +1,32 @@
+<?php
+/** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser */
+/** @var $viewModel \MageSuite\ContentConstructorFrontend\Model\Component\DailyDealTeaser */
+
+$viewModel = $block->getViewModel();
+$product = $viewModel->getProduct();
+
+?>
+
+<?php if ($block->getVar('daily_deal_teaser/show_available_amount_section') && isset($product['dailyDealOffer']['initialAmount']) && ($product['dailyDealOffer']['initialAmount'] > 0)): ?>
+    <div class="cs-daily-deal-teaser__dd-detail cs-daily-deal-teaser__dd-detail--progress-bar">
+        <p class="cs-daily-deal-teaser__dd-headline cs-daily-deal-teaser__dd-headline--limit"><?=__('Available items')?></p>
+
+        <div class="cs-daily-deal-teaser__progress-bar">
+            <div class="cs-cart-bonus__progress-wrapper cs-daily-deal-teaser__progress-bar-content">
+                <?php 
+                $percentage=(((int)$product['dailyDealOffer']['items'] / (int)$product['dailyDealOffer']['initialAmount']) * 100) / 100;
+                $transforming=(1 - $percentage) / 2 / $percentage * 100
+                ?>
+                <div class="cs-daily-deal-teaser__progress-bg">
+                    <div class="cs-daily-deal-teaser__progress-possible">
+                        <div class="cs-cart-bonus__progress-done cs-daily-deal-teaser__progress" style="transform: scaleX(<?=$percentage?>) translateX(<?=-$transforming?>%)"></div>
+                    </div>
+                </div>
+            </div>
+
+            <span class="cs-daily-deal-teaser__available">
+                <?=$product['dailyDealOffer']['items']?> / <?=$product['dailyDealOffer']['initialAmount']?>
+            </span>
+        </div>
+    </div>
+<?php endif; ?>
