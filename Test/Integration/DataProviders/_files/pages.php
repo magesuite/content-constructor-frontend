@@ -51,7 +51,9 @@ $page->setTitle('Cms Test Tag Page444')
     ->setCmsImageTeaser('image4.jpg')
     ->save();
 
-@mkdir(BP . '/pub/media/cmsteaser');
+if(!file_exists(BP . '/pub/media/cmsteaser')) {
+    @mkdir(BP . '/pub/media/cmsteaser');
+}
 copy(__DIR__ . '/image1.jpg', BP . '/pub/media/cmsteaser/image1.jpg');
 copy(__DIR__ . '/image2.jpg', BP . '/pub/media/cmsteaser/image2.jpg');
 copy(__DIR__ . '/image3.jpg', BP . '/pub/media/cmsteaser/image3.jpg');
