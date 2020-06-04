@@ -7,27 +7,27 @@ class DailyDealTeaserDataProvider implements \MageSuite\ContentConstructor\Compo
     /**
      * @var \Magento\Catalog\Api\ProductRepositoryInterface
      */
-    private $productRepository;
+    protected $productRepository;
 
     /**
      * @var \MageSuite\ContentConstructor\Components\ProductCarousel\DataProvider
      */
-    private $dataProvider;
+    protected $dataProvider;
 
     /**
      * @var \MageSuite\BrandManagement\Api\BrandsRepositoryInterface
      */
-    private $brandsRepository;
+    protected $brandsRepository;
 
     /**
      * @var \MageSuite\ContentConstructor\Service\MediaResolver
      */
-    private $mediaResolver;
+    protected $mediaResolver;
 
     /**
      * @var \MageSuite\Frontend\Helper\Product
      */
-    private $productHelper;
+    protected $productHelper;
 
     public function __construct(
         \Magento\Catalog\Api\ProductRepositoryInterface $productRepository,
@@ -35,8 +35,7 @@ class DailyDealTeaserDataProvider implements \MageSuite\ContentConstructor\Compo
         \MageSuite\BrandManagement\Api\BrandsRepositoryInterface $brandsRepository,
         \MageSuite\ContentConstructor\Service\MediaResolver $mediaResolver,
         \MageSuite\Frontend\Helper\Product $productHelper
-    )
-    {
+    ) {
         $this->productRepository = $productRepository;
         $this->dataProvider = $dataProvider;
         $this->brandsRepository = $brandsRepository;
@@ -73,6 +72,9 @@ class DailyDealTeaserDataProvider implements \MageSuite\ContentConstructor\Compo
             $product['dailyDealOffer']['discountPercentage'] = $this->productHelper->getSalePercentage($productObject, $product['dailyDealOffer']['price']);
         }
 
+        if (isset($product['dailyDealOffer']['dailyDiscount']) && $product['dailyDealOffer']['dailyDiscount']) {
+            $product['dailyDealOffer']['discountPercentage'] = $product['dailyDealOffer']['dailyDiscount'];
+        }
 
         return $product;
     }
