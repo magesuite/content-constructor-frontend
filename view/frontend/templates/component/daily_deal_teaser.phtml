@@ -22,6 +22,7 @@ $componentClasses .= ' ' . $block->getVar('daily_deal_teaser/additional_css_clas
                             <?= $layout
                                 ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser::class)
                                 ->setTemplate('MageSuite_ContentConstructorFrontend::component/daily_deal_teaser/image.phtml')
+                                ->setData($block->getData())
                                 ->toHtml();
                             ?>
                     </aside>
@@ -30,6 +31,7 @@ $componentClasses .= ' ' . $block->getVar('daily_deal_teaser/additional_css_clas
                             <?= $layout
                                 ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser::class)
                                 ->setTemplate('MageSuite_ContentConstructorFrontend::component/daily_deal_teaser/product_details.phtml')
+                                ->setData($block->getData())
                                 ->toHtml();
                             ?>
                         </div>
@@ -38,6 +40,7 @@ $componentClasses .= ' ' . $block->getVar('daily_deal_teaser/additional_css_clas
                             <?= $layout
                                 ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser::class)
                                 ->setTemplate('MageSuite_ContentConstructorFrontend::component/daily_deal_teaser/product_description.phtml')
+                                ->setData($block->getData())
                                 ->toHtml();
                             ?>
                         </div>
@@ -45,16 +48,19 @@ $componentClasses .= ' ' . $block->getVar('daily_deal_teaser/additional_css_clas
                             <?= $layout
                                     ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser::class)
                                     ->setTemplate('MageSuite_ContentConstructorFrontend::component/daily_deal_teaser/daily_deal_stock_status.phtml')
+                                    ->setData($block->getData())
                                     ->toHtml();
                                 ?>
                             <?= $layout
                                     ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser::class)
                                     ->setTemplate('MageSuite_ContentConstructorFrontend::component/daily_deal_teaser/daily_deal_counter.phtml')
+                                    ->setData($block->getData())
                                     ->toHtml();
                                 ?>
                             <?= $layout
                                     ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser::class)
                                     ->setTemplate('MageSuite_ContentConstructorFrontend::component/daily_deal_teaser/cta.phtml')
+                                    ->setData($block->getData())
                                     ->toHtml();
                                 ?>
                         </div>
