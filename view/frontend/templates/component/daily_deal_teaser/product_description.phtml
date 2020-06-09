@@ -1,1 +1,7 @@
-<div class="cs-daily-deal-teaser__description-inner"></div>
+<?php
+/** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser */
+/** @var $viewModel \MageSuite\ContentConstructorFrontend\Model\Component\DailyDealTeaser */
+$viewModel = $block->getViewModel();
+$product = $viewModel->getProduct();
+?>
+<div class="cs-daily-deal-teaser__description-inner"><?= $product['shortDescription']; ?></div>

@@ -225,6 +225,7 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
             'popularIconFlag' => $this->getPopularIconFlag($product),
             'isFreeShipped' => $this->isFreeShipped($product),
             'identities' => $product->getIdentities(),
+            'shortDescription' => $product->getShortDescription(),
             'dailyDealOffer' => $this->dailyDealHelper->prepareOfferData($product)
         ];
 
