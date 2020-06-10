@@ -40,7 +40,7 @@ class ProductGridITCenter extends DataProviderComponents
                 'section' => 'content',
                 'type' => 'product-grid',
                 'data' => [
-                    'category_id' => '20',
+                    'category_id' => '',
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -180,7 +180,7 @@ class ProductGridITCenter extends DataProviderComponents
                 'section' => 'content',
                 'type' => 'product-grid',
                 'data' => [
-                    'category_id' => '20',
+                    'category_id' => '',
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -320,7 +320,7 @@ class ProductGridITCenter extends DataProviderComponents
                 'section' => 'content',
                 'type' => 'product-grid',
                 'data' => [
-                    'category_id' => '20',
+                    'category_id' => '',
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -460,7 +460,7 @@ class ProductGridITCenter extends DataProviderComponents
                 'section' => 'content',
                 'type' => 'product-grid',
                 'data' => [
-                    'category_id' => '20',
+                    'category_id' => '',
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -600,7 +600,7 @@ class ProductGridITCenter extends DataProviderComponents
                 'section' => 'content',
                 'type' => 'product-grid',
                 'data' => [
-                    'category_id' => '20',
+                    'category_id' => '',
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -740,7 +740,7 @@ class ProductGridITCenter extends DataProviderComponents
                 'section' => 'content',
                 'type' => 'product-grid',
                 'data' => [
-                    'category_id' => '20',
+                    'category_id' => '',
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -880,7 +880,7 @@ class ProductGridITCenter extends DataProviderComponents
                 'section' => 'content',
                 'type' => 'product-grid',
                 'data' => [
-                    'category_id' => '20',
+                    'category_id' => '',
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -1020,7 +1020,7 @@ class ProductGridITCenter extends DataProviderComponents
                 'section' => 'content',
                 'type' => 'product-grid',
                 'data' => [
-                    'category_id' => '20',
+                    'category_id' => '',
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -1160,7 +1160,7 @@ class ProductGridITCenter extends DataProviderComponents
                 'section' => 'content',
                 'type' => 'product-grid',
                 'data' => [
-                    'category_id' => '20',
+                    'category_id' => '',
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
