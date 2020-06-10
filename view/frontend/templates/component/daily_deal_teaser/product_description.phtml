@@ -4,4 +4,8 @@
 $viewModel = $block->getViewModel();
 $product = $viewModel->getProduct();
 ?>
-<div class="cs-daily-deal-teaser__description-inner"><?= $product['shortDescription']; ?></div>
+<div class="cs-daily-deal-teaser__description-inner">
+    <div class="cs-daily-deal-teaser__description-list">
+        <?= $product['shortDescription']; ?>
+    </div>
+</div>
