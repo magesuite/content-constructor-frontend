@@ -40,8 +40,8 @@ class CmsTeaserDataProvider implements \MageSuite\ContentConstructor\Components\
         $pagesCollection = $this->cmsPageCollectionFactory->create();
 
         $pagesCollection->addStoreFilter($currentStore);
+        $pagesCollection->addFieldToFilter('is_active', 1);
         $pagesCollection->setPageSize($limit);
-
         $this->buildCollectionFilters($configuration, $pagesCollection);
 
         $pagesData = [];
