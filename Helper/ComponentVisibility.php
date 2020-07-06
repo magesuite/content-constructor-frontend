@@ -26,8 +26,8 @@ class ComponentVisibility extends \Magento\Framework\App\Helper\AbstractHelper
             return '';
         }
 
-        $mobileComponentVisibility = $componentConfiguration['componentVisibility']['mobile'];
-        $desktopComponentVisibility = $componentConfiguration['componentVisibility']['desktop'];
+        $mobileComponentVisibility = $componentConfiguration['componentVisibility']['mobile'] ?? false;
+        $desktopComponentVisibility = $componentConfiguration['componentVisibility']['desktop'] ?? false;
         $visibilityClasses = [];
 
         if (!$mobileComponentVisibility) {
@@ -47,8 +47,8 @@ class ComponentVisibility extends \Magento\Framework\App\Helper\AbstractHelper
             return true;
         }
 
-        $mobileComponentVisibility = $componentConfiguration['componentVisibility']['mobile'];
-        $desktopComponentVisibility = $componentConfiguration['componentVisibility']['desktop'];
+        $mobileComponentVisibility = $componentConfiguration['componentVisibility']['mobile'] ?? false;
+        $desktopComponentVisibility = $componentConfiguration['componentVisibility']['desktop'] ?? false;
 
         return $mobileComponentVisibility || $desktopComponentVisibility;
     }
