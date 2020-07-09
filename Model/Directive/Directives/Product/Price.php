@@ -31,12 +31,22 @@ class Price extends AbstractProductDirective
         $product = $this->getProduct();
         $price = $product->getFinalPrice();
 
+        if($price == 0) {
+            return "";
+        }
+
         $arguments = $this->getArguments();
 
         if (isset($arguments['withCurrency']) and !filter_var($arguments['withCurrency'], FILTER_VALIDATE_BOOLEAN)) {
-            return $this->currency->format($price, ['display' => \Zend_Currency::NO_SYMBOL], false);
+            $formattedPrice = $this->currency->format($price, ['display' => \Zend_Currency::NO_SYMBOL], false);
+        } else {
+            $formattedPrice = $this->pricingHelper->currency($price, true, false);
         }
 
-        return $this->pricingHelper->currency($price, true, false);
+        if (isset($arguments['format']) and strpos($arguments['format'], "%s") !== false) {
+            $formattedPrice = sprintf($arguments['format'], $formattedPrice);
+        }
+
+        return $formattedPrice;
     }
 }
