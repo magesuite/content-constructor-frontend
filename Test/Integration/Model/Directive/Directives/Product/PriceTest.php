@@ -59,4 +59,36 @@ class PriceTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals(['cat_p_1'], $identities);
     }
+
+    /**
+     * @magentoDbIsolation enabled
+     * @magentoDataFixture Magento/Catalog/_files/products.php
+     */
+    public function testItReturnsProductPriceWithFormat()
+    {
+        $this->directive->setArguments(['sku' => 'simple', 'format' => 'Less than %s']);
+
+        $price = $this->directive->getValue();
+
+        $this->assertEquals('Less than $10.00', $price);
+    }
+
+    /**
+     * @magentoAppIsolation enabled
+     * @magentoDataFixture Magento/ConfigurableProduct/_files/configurable_products.php
+     * @magentoDataFixture loadConfigurableProduct
+     */
+    public function testItReturnsEmptyTextWithSoldOutProduct()
+    {
+        $this->directive->setArguments(['sku' => 'configurable', 'format' => 'Less than %s']);
+
+        $price = $this->directive->getValue();
+
+        $this->assertEquals('', $price);
+    }
+
+    public static function loadConfigurableProduct()
+    {
+        require __DIR__ . '/../../../../_files/configurable_product.php';
+    }
 }
