@@ -27,7 +27,7 @@ class ContrastOptimizers extends DataProviderComponents
                         'description' => '',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '2',
@@ -102,7 +102,7 @@ class ContrastOptimizers extends DataProviderComponents
                         'description' => '',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '2',
@@ -291,7 +291,7 @@ class ContrastOptimizers extends DataProviderComponents
                         'description' => 'Top-center shadow',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '2',
@@ -363,7 +363,7 @@ class ContrastOptimizers extends DataProviderComponents
                         'description' => 'Top-right shadow',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '3',
@@ -435,7 +435,7 @@ class ContrastOptimizers extends DataProviderComponents
                         'description' => 'Center-left shadow',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -507,7 +507,7 @@ class ContrastOptimizers extends DataProviderComponents
                         'description' => 'Center-right shadow',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '3',
@@ -579,7 +579,7 @@ class ContrastOptimizers extends DataProviderComponents
                         'description' => 'Bottom-left shadow',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -651,7 +651,7 @@ class ContrastOptimizers extends DataProviderComponents
                             'description' => 'Bottom-center shadow',
                             'cta' => [
                                 'label' => 'Dark',
-                                'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                                'href' => '#',
                             ],
                             'content_align' => [
                                 'x' => '2',
@@ -723,7 +723,7 @@ class ContrastOptimizers extends DataProviderComponents
                         'description' => 'Bottom-right shadow',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '3',
@@ -839,7 +839,7 @@ class ContrastOptimizers extends DataProviderComponents
                         'description' => 'Top-left shadow',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -910,7 +910,7 @@ class ContrastOptimizers extends DataProviderComponents
                         'description' => 'Top-center shadow',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '2',
@@ -981,7 +981,7 @@ class ContrastOptimizers extends DataProviderComponents
                         'description' => 'Top-right shadow',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '3',
@@ -1053,7 +1053,7 @@ class ContrastOptimizers extends DataProviderComponents
                             'description' => 'Center-left shadow',
                             'cta' => [
                                 'label' => 'Light',
-                                'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                                'href' => '#',
                             ],
                             'content_align' => [
                                 'x' => '1',
@@ -1124,7 +1124,7 @@ class ContrastOptimizers extends DataProviderComponents
                         'description' => 'Center-right shadow',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '3',
@@ -1195,7 +1195,7 @@ class ContrastOptimizers extends DataProviderComponents
                         'description' => 'Bottom-left shadow',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -1266,7 +1266,7 @@ class ContrastOptimizers extends DataProviderComponents
                         'description' => 'Bottom-center shadow',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '2',
@@ -1337,7 +1337,7 @@ class ContrastOptimizers extends DataProviderComponents
                         'description' => 'Bottom-right shadow',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '3',
@@ -1453,7 +1453,7 @@ class ContrastOptimizers extends DataProviderComponents
                         'description' => 'Center-right text',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '3',
@@ -1524,7 +1524,7 @@ class ContrastOptimizers extends DataProviderComponents
                         'description' => 'Bottom-right text',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '3',
@@ -1638,7 +1638,7 @@ class ContrastOptimizers extends DataProviderComponents
                         'description' => 'Bottom-left text',
                         'cta' => [
                             'label' => 'More',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -1709,7 +1709,7 @@ class ContrastOptimizers extends DataProviderComponents
                         'description' => 'Top-left text',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -1825,7 +1825,7 @@ class ContrastOptimizers extends DataProviderComponents
                         'description' => 'Center-right text',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '3',
@@ -1897,7 +1897,7 @@ class ContrastOptimizers extends DataProviderComponents
                         'description' => 'Top-left text',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',

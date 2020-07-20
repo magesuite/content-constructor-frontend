@@ -26,7 +26,7 @@ class Paragraph extends DataProviderComponents
                 'section' => 'content',
                 'type' => 'paragraph',
                 'data' => [
-                    'blockId' => 10001,
+                    'identifier' => 'test-block-identifier',
                     'title' => 'dont split',
                     'columns' => 'none',
                     'scenarios' => [
@@ -62,7 +62,7 @@ class Paragraph extends DataProviderComponents
                 'name' => 'Paragraph',
                 'type' => 'paragraph',
                 'data' => [
-                    'blockId' => 10001,
+                    'identifier' => 'test-block-identifier',
                     'title' => 'paragraph 2 columns',
                     'columns' => '2',
                     'scenarios' => [
@@ -97,7 +97,7 @@ class Paragraph extends DataProviderComponents
                 'section' => 'content',
                 'type' => 'paragraph',
                 'data' => [
-                    'blockId' => 10001,
+                    'identifier' => 'test-block-identifier',
                     'title' => 'split 3',
                     'columns' => '3',
                     'scenarios' => [
@@ -132,7 +132,7 @@ class Paragraph extends DataProviderComponents
                 'section' => 'content',
                 'type' => 'paragraph',
                 'data' => [
-                    'blockId' => 10001,
+                    'identifier' => 'test-block-identifier',
                     'title' => 'paragraph 4 columns',
                     'columns' => '4',
                     'scenarios' => [
@@ -167,7 +167,7 @@ class Paragraph extends DataProviderComponents
                 'section' => 'content',
                 'type' => 'paragraph',
                 'data' => [
-                    'blockId' => 10001,
+                    'identifier' => 'test-block-identifier',
                     'title' => 'optimal reading',
                     'columns' => 'none',
                     'scenarios' => [

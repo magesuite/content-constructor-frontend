@@ -27,7 +27,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in column<br>Text over image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -98,7 +98,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in column<br>Text over image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '2',
@@ -169,7 +169,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in column<br>Text over image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '3',
@@ -240,7 +240,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in column<br>Text over image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -311,7 +311,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in column<br>Text over image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '2',
@@ -382,7 +382,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in column<br>Text over image',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '3',
@@ -453,7 +453,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in column<br>Text over image',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -524,7 +524,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in column<br>Text over image',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '2',
@@ -595,7 +595,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in column<br>Text over image',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '3',
@@ -711,7 +711,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in column<br>Text ver image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -782,7 +782,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in column<br>Text ver image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '2',
@@ -853,7 +853,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in column<br>Text ver image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '3',
@@ -924,7 +924,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in column<br>Text ver image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -995,7 +995,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in column<br>Text ver image',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '2',
@@ -1066,7 +1066,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in column<br>Text ver image',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '3',
@@ -1137,7 +1137,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in column<br>Text ver image',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -1208,7 +1208,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in column<br>Text ver image',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '2',
@@ -1279,7 +1279,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in column<br>Text ver image',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '3',
@@ -1464,7 +1464,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Text below image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -1535,7 +1535,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Text below image',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -1649,7 +1649,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Slider<br>Text over image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -1720,7 +1720,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Slider<br>Text over image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '2',
@@ -1791,7 +1791,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Slider<br>Text over image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '3',
@@ -1862,7 +1862,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Slider<br>Text over image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -1933,7 +1933,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Slider<br>Text over image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '2',
@@ -2004,7 +2004,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Slider<br>Text over image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '3',
@@ -2075,7 +2075,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Slider<br>Text over image',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -2146,7 +2146,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Slider<br>Text over image',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '2',
@@ -2217,7 +2217,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Slider<br>Text over image',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '3',
@@ -2402,7 +2402,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in row<br>Text over image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -2473,7 +2473,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in row<br>Text over image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '2',
@@ -2544,7 +2544,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in row<br>Text over image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '3',
@@ -2615,7 +2615,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in row<br>Text over image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -2686,7 +2686,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in row<br>Text over image',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '2',
@@ -2757,7 +2757,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in row<br>Text over image',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '3',
@@ -2828,7 +2828,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in row<br>Text over image',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -2899,7 +2899,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in row<br>Text over image',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '2',
@@ -2970,7 +2970,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in row<br>Text over image',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '3',
@@ -3157,7 +3157,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in column<br>Text over image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -3228,7 +3228,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in column<br>Text over image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '2',
@@ -3299,7 +3299,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in column<br>Text over image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '3',
@@ -3370,7 +3370,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in column<br>Text over image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -3441,7 +3441,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in column<br>Text over image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '2',
@@ -3512,7 +3512,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in column<br>Text over image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '3',
@@ -3583,7 +3583,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in column<br>Text over image',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -3654,7 +3654,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in column<br>Text over image',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '2',
@@ -3725,7 +3725,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Teasers in column<br>Text over image',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '3',
@@ -3839,7 +3839,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Text below image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -3910,7 +3910,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Text below image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -3981,7 +3981,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Text below image',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -4095,7 +4095,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Slider<br>Text over image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -4166,7 +4166,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Slider<br>Text over image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '2',
@@ -4237,7 +4237,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Slider<br>Text over image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '3',
@@ -4308,7 +4308,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Slider<br>Text over image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -4379,7 +4379,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Slider<br>Text over image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '2',
@@ -4450,7 +4450,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Slider<br>Text over image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '3',
@@ -4521,7 +4521,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Slider<br>Text over image',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -4592,7 +4592,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Slider<br>Text over image',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '2',
@@ -4663,7 +4663,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Slider<br>Text over image',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '3',
@@ -4779,7 +4779,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Text below image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -4850,7 +4850,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Text below image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -4921,7 +4921,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Text below image',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -4992,7 +4992,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Text below image',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -5106,7 +5106,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Slider<br>Text over image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -5177,7 +5177,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Slider<br>Text over image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '2',
@@ -5248,7 +5248,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Slider<br>Text over image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '3',
@@ -5319,7 +5319,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Slider<br>Text over image',
                         'cta' => [
                             'label' => 'Dark',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -5390,7 +5390,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Slider<br>Text over image',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '2',
@@ -5461,7 +5461,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Slider<br>Text over image',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '3',
@@ -5532,7 +5532,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Slider<br>Text over image',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '1',
@@ -5602,7 +5602,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Slider<br>Text over image',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '2',
@@ -5673,7 +5673,7 @@ class ITBrowserWidth extends DataProviderComponents
                         'description' => 'Slider<br>Text over image',
                         'cta' => [
                             'label' => 'Light',
-                            'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="2" type_name="CMS Page Link"}}',
+                            'href' => '#',
                         ],
                         'content_align' => [
                             'x' => '3',
