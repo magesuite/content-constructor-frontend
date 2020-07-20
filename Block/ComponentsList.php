@@ -2,9 +2,13 @@
 
 namespace MageSuite\ContentConstructorFrontend\Block;
 
-
 class ComponentsList extends \Magento\Framework\View\Element\Template
 {
+
+    /**
+     * @var \Magento\Framework\App\Request\Http
+     */
+    protected $request;
 
     /**
      * @var \Magento\Cms\Model\BlockFactory
@@ -17,6 +21,11 @@ class ComponentsList extends \Magento\Framework\View\Element\Template
     protected $blockRepository;
 
     /**
+     * @var \Magento\Cms\Model\GetBlockByIdentifier
+     */
+    protected $getBlockByIdentifier;
+
+    /**
      * @var \Magento\Cms\Model\PageFactory
      */
     protected $pageFactory;
@@ -27,9 +36,9 @@ class ComponentsList extends \Magento\Framework\View\Element\Template
     protected $pageRepository;
 
     /**
-     * @var \Magento\Framework\App\Request\Http
+     * @var \Magento\Cms\Model\GetPageByIdentifier
      */
-    protected $request;
+    protected $getPageByIdentifier;
 
     /**
      * @var \Magento\Catalog\Helper\Category
@@ -64,22 +73,26 @@ class ComponentsList extends \Magento\Framework\View\Element\Template
 
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
+        \Magento\Framework\App\Request\Http $request,
         \Magento\Cms\Model\BlockFactory $blockFactory,
         \Magento\Cms\Api\BlockRepositoryInterface $blockRepository,
+        \Magento\Cms\Model\GetBlockByIdentifier $getBlockByIdentifier,
         \Magento\Cms\Model\PageFactory $pageFactory,
         \Magento\Cms\Api\PageRepositoryInterface $pageRepository,
-        \Magento\Framework\App\Request\Http $request,
+        \Magento\Cms\Model\GetPageByIdentifier $getPageByIdentifier,
         \Magento\Catalog\Helper\Category $categoryHelper,
         array $data = []
     )
     {
         parent::__construct($context, $data);
 
+        $this->request = $request;
         $this->blockFactory = $blockFactory;
         $this->blockRepository = $blockRepository;
+        $this->getBlockByIdentifier = $getBlockByIdentifier;
         $this->pageFactory = $pageFactory;
         $this->pageRepository = $pageRepository;
-        $this->request = $request;
+        $this->getPageByIdentifier = $getPageByIdentifier;
         $this->categoryHelper = $categoryHelper;
     }
 
@@ -107,14 +120,13 @@ class ComponentsList extends \Magento\Framework\View\Element\Template
     /**
      * @throws \Magento\Framework\Exception\LocalizedException
      */
-    private function createCmsPage()
+    protected function createCmsPage()
     {
         try {
-            $this->pageRepository->getById(10001);
+            $this->getPageByIdentifier->execute('test-page-identifier', 0);
         } catch (\Magento\Framework\Exception\LocalizedException $e) {
             $page = $this->pageFactory->create();
             $page->setData([
-                'page_id' => 10001,
                 'title' => 'Test Page Title',
                 'identifier' => 'test-page-identifier',
                 'stores' => [0],
@@ -127,18 +139,17 @@ class ComponentsList extends \Magento\Framework\View\Element\Template
     /**
      * @throws \Magento\Framework\Exception\LocalizedException
      */
-    private function createCmsBlock()
+    protected function createCmsBlock()
     {
         try {
-            $block = $this->blockRepository->getById(10001);
-            if($block->getContent() != $this->getContent()) {
+            $block = $this->getBlockByIdentifier->execute('test-block-identifier', 0);
+            if ($block->getContent() != $this->getContent()) {
                 $block->setContent($this->getContent());
                 $this->blockRepository->save($block);
             }
         } catch (\Magento\Framework\Exception\LocalizedException $e) {
             $block = $this->blockFactory->create();
             $block->setData([
-                'block_id' => 10001,
                 'title' => 'Test Block Title',
                 'identifier' => 'test-block-identifier',
                 'content' => $this->getContent(),
@@ -149,7 +160,8 @@ class ComponentsList extends \Magento\Framework\View\Element\Template
         }
     }
 
-    private function getContent() {
+    protected function getContent()
+    {
         $content = <<<EOD
 <h1>H1&nbsp;Lorem ipsum dolor sit amet</h1>
 <h2>H2&nbsp;Lorem ipsum dolor sit amet</h2>
