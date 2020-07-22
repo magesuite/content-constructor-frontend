@@ -47,11 +47,11 @@ class InstagramFeedDataProvider
             $feedData = [];
 
             foreach ($response['data'] as $item) {
-                if($item['type'] == 'video'){
+                if($item['media_type'] == 'VIDEO'){
                     continue;
                 }
-                $item['image']['decoded'] = $item['images']['standard_resolution']['url'];
-                $item['cta']['href'] = $item['link'];
+                $item['image']['decoded'] = $item['media_url'];
+                $item['cta']['href'] = $item['permalink'];
                 $feedData[] = $item;
             }
 
@@ -68,7 +68,7 @@ class InstagramFeedDataProvider
     public function sortByDate($feedData)
     {
         usort($feedData, function($a, $b) {
-            return $b['created_time'] <=> $a['created_time'];
+            return $b['timestamp'] <=> $a['timestamp'];
         });
 
         return $feedData;
@@ -82,16 +82,31 @@ class InstagramFeedDataProvider
             return [];
         }
 
+        $userId = $this->configuration->getInstagramUserId();
+
+        if(!$userId) {
+            $userId = $this->getUserId($token);
+            $this->configuration->setInstagramUserId($userId);
+        }
+
+        if(!$userId){
+            return [];
+        }
+
         $response = $this->client->get(
-            'https://api.instagram.com/v1/users/self/media/recent',
-            [
-                'query' => [
-                    'access_token' => $token
-                ]
-            ]
+            sprintf('https://graph.instagram.com/%d/media?fields=media_type,media_url,permalink,timestamp&access_token=%s&limit=50', $userId, $token)
         );
 
         return json_decode($response->getBody()->getContents(), true);
     }
 
+    protected function getUserId($token){
+        $response = $this->client->get(
+            sprintf('https://graph.instagram.com/me?fields=id&access_token=%s', $token)
+        );
+
+        $result = json_decode($response->getBody()->getContents(), true);
+
+        return isset($result["id"]) ? $result["id"] : "";
+    }
 }

@@ -24,6 +24,9 @@
                 <field id="access_token" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
                     <label>Access Token</label>
                 </field>
+                <field id="user_id" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>User ID</label>
+                </field>
             </group>
         </section>
     </system>
