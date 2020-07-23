@@ -4,6 +4,8 @@ namespace MageSuite\ContentConstructorFrontend\DataProviders;
 
 class InstagramFeedDataProvider
 {
+    const MEDIA_TYPE_VIDEO = 'VIDEO';
+
     /**
      * @var \GuzzleHttp\Client
      */
@@ -47,11 +49,11 @@ class InstagramFeedDataProvider
             $feedData = [];
 
             foreach ($response['data'] as $item) {
-                if($item['type'] == 'video'){
+                if($item['media_type'] == self::MEDIA_TYPE_VIDEO){
                     continue;
                 }
-                $item['image']['decoded'] = $item['images']['standard_resolution']['url'];
-                $item['cta']['href'] = $item['link'];
+                $item['image']['decoded'] = $item['media_url'];
+                $item['cta']['href'] = $item['permalink'];
                 $feedData[] = $item;
             }
 
@@ -68,7 +70,7 @@ class InstagramFeedDataProvider
     public function sortByDate($feedData)
     {
         usort($feedData, function($a, $b) {
-            return $b['created_time'] <=> $a['created_time'];
+            return $b['timestamp'] <=> $a['timestamp'];
         });
 
         return $feedData;
@@ -82,16 +84,31 @@ class InstagramFeedDataProvider
             return [];
         }
 
+        $userId = $this->configuration->getInstagramUserId();
+
+        if(!$userId) {
+            $userId = $this->getUserId($token);
+            $this->configuration->setInstagramUserId($userId);
+        }
+
+        if(!$userId){
+            return [];
+        }
+
         $response = $this->client->get(
-            'https://api.instagram.com/v1/users/self/media/recent',
-            [
-                'query' => [
-                    'access_token' => $token
-                ]
-            ]
+            $this->configuration->getInstagramMediaApiUrl($userId, $token)
         );
 
         return json_decode($response->getBody()->getContents(), true);
     }
 
+    protected function getUserId($token){
+        $response = $this->client->get(
+            $this->configuration->getInstagramUserIdApiUrl($token)
+        );
+
+        $result = json_decode($response->getBody()->getContents(), true);
+
+        return isset($result["id"]) ? $result["id"] : "";
+    }
 }
