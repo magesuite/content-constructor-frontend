@@ -4,6 +4,8 @@ namespace MageSuite\ContentConstructorFrontend\DataProviders;
 
 class InstagramFeedDataProvider
 {
+    const MEDIA_TYPE_VIDEO = 'VIDEO';
+
     /**
      * @var \GuzzleHttp\Client
      */
@@ -47,7 +49,7 @@ class InstagramFeedDataProvider
             $feedData = [];
 
             foreach ($response['data'] as $item) {
-                if($item['media_type'] == 'VIDEO'){
+                if($item['media_type'] == self::MEDIA_TYPE_VIDEO){
                     continue;
                 }
                 $item['image']['decoded'] = $item['media_url'];
@@ -94,7 +96,7 @@ class InstagramFeedDataProvider
         }
 
         $response = $this->client->get(
-            sprintf('https://graph.instagram.com/%d/media?fields=media_type,media_url,permalink,timestamp&access_token=%s&limit=50', $userId, $token)
+            $this->configuration->getInstagramMediaApiUrl($userId, $token)
         );
 
         return json_decode($response->getBody()->getContents(), true);
@@ -102,7 +104,7 @@ class InstagramFeedDataProvider
 
     protected function getUserId($token){
         $response = $this->client->get(
-            sprintf('https://graph.instagram.com/me?fields=id&access_token=%s', $token)
+            $this->configuration->getInstagramUserIdApiUrl($token)
         );
 
         $result = json_decode($response->getBody()->getContents(), true);

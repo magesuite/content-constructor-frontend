@@ -26,6 +26,13 @@
                 </field>
                 <field id="user_id" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
                     <label>User ID</label>
+                    <description>This field can be empty, it will be updated after the first query.</description>
+                </field>
+                <field id="media_api_url" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Media Api Url</label>
+                </field>
+                <field id="user_id_api_url" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>User ID Api Url</label>
                 </field>
             </group>
         </section>
