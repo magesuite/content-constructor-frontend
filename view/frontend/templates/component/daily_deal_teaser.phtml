@@ -13,7 +13,7 @@ $componentClasses = $block->getSkipSpacing() ? ' cs-daily-deal-teaser--skip-spac
 $componentClasses .= ' ' . $block->getVar('daily_deal_teaser/additional_css_classes');
 ?>
 
-<?php if (!empty($product)): ?>
+<?php if (!empty($product) && $product['productObject']->getIsSalable()): ?>
     <div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
         <div class="cs-container cs-container--daily-deal-teaser">
             <div class="cs-container__inner">
