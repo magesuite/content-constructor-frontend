@@ -57,6 +57,4 @@ class DailyDealTeaser extends \Magento\Framework\DataObject implements ViewModel
             'formKey' => $this->listProductBlock->getBlockHtml('formkey'),
         ];
     }
-
-
 }
