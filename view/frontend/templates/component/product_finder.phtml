@@ -10,11 +10,17 @@ $i = 0;
 
 $componentClasses = $block->getSkipSpacing() ? ' cs-product-finder--skip-spacing' : '';
 $componentClasses .= ' ' . $block->getVar('product_finder/additional_css_classes');
+
+$jsSettings = json_encode($block->getVar('product_finder/js') ?: '{}');
 ?>
+
+<link rel="stylesheet" href="<?= $block->getViewFileUrl('css/product-finder.css'); ?>"/>
+<script defer-ignore></script>
+
 <div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
     <div class="cs-container cs-container--product-finder">
         <div class="cs-container__inner">
-            <div class="cs-product-finder<?= $componentClasses ?>">
+            <div class="cs-product-finder<?= $componentClasses ?>" data-mage-init='{ "ccProductFinder": <?= $jsSettings ?> }'>
             <?php foreach($steps as $step): ?>
                 <?php
 

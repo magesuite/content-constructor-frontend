@@ -14,12 +14,16 @@ $componentClasses .= ' ' . $block->getVar('product_carousel/additional_css_class
 $viewMode = $block->getData('view_mode') ?? 'grid';
 $isList = $viewMode == 'list' ? true : false;
 $isSliderMobile = $block->getData('carousel_on_mobile');
+$jsSettings = json_encode($block->getVar('product_carousel/js') ?: '{}');
 ?>
+
+<link rel="stylesheet" href="<?= $block->getViewFileUrl('css/products-carousel.css'); ?>"/>
+<script defer-ignore></script>
 
 <div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
     <div class="cs-container cs-container--products-carousel">
         <div class="cs-container__inner">
-            <div class="cs-products-carousel<?= $componentClasses ?>" data-mobile-is-slider="<?= $isSliderMobile; ?>" data-view-mode=<?= $viewMode; ?>>
+            <div class="cs-products-carousel<?= $componentClasses ?>" data-mobile-is-slider="<?= $isSliderMobile; ?>" data-view-mode=<?= $viewMode; ?> data-mage-init='{ "ccProductsCarousel": <?= $jsSettings ?> }'>
                 <div class="cs-products-carousel__carousel">
                     <div class="cs-products-carousel__wrapper">
                         <ul class="<?php if ($isList): ?>cs-products-list <?php endif; ?><?php if ($isSliderMobile == 'true'): ?>cs-products-list--carousel <?php endif; ?>cs-products-carousel__slides">
