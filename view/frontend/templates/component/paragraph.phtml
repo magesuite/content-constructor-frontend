@@ -10,13 +10,10 @@ $componentClasses = $block->getSkipSpacing() ? ' cs-paragraph--skip-spacing' : '
 $componentClasses .= ' ' . $block->getVar('paragraph/additional_css_classes');
 ?>
 
-<link rel="stylesheet" href="<?= $block->getViewFileUrl('css/paragraph.css'); ?>"/>
-<script defer-ignore></script>
-
 <div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
     <div class="cs-container cs-container--paragraph">
         <div class="cs-container__inner">
-            <div class="cs-paragraph cs-paragraph--cols-<?=$viewModel->getColumns()?> cs-paragraph--mode-<?=$componentConfiguration['scenarios']['reading']['id'] ?? ''?><?= $componentClasses ?> | cs-cms-block" data-mage-init='{ "ccParagraph": {} }'>
+            <div class="cs-paragraph cs-paragraph--cols-<?=$viewModel->getColumns()?> cs-paragraph--mode-<?=$componentConfiguration['scenarios']['reading']['id'] ?? ''?><?= $componentClasses ?> | cs-cms-block">
                 <?=$viewModel->getContent()?>
             </div>
         </div>

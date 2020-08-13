@@ -11,18 +11,13 @@ $layout = $this->getLayout();
 
 $componentClasses = $block->getSkipSpacing() ? ' cs-daily-deal-teaser--skip-spacing' : '';
 $componentClasses .= ' ' . $block->getVar('daily_deal_teaser/additional_css_classes');
-
-$jsSettings = json_encode($block->getVar('daily_deal_teaser/js') ?: '{}');
 ?>
 
 <?php if (!empty($product) && $product['productObject']->getIsSalable()): ?>
-    <link rel="stylesheet" href="<?= $block->getViewFileUrl('css/daily-deal-teaser.css'); ?>"/>
-    <script defer-ignore></script>
-    
     <div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
         <div class="cs-container cs-container--daily-deal-teaser">
             <div class="cs-container__inner">
-                <div class="cs-daily-deal-teaser<?= $componentClasses ?>" data-mage-init='{ "ccDailyDealTeaser": <?= $jsSettings ?> }'>
+                <div class="cs-daily-deal-teaser<?= $componentClasses ?>">
                     <aside class="cs-daily-deal-teaser__aside-image">
                             <?= $layout
                                 ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser::class)

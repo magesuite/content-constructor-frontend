@@ -14,17 +14,13 @@ $accordionOptions = $viewModel->getAccordionComponentOptions($accordionGlobalOpt
 $accordionItemIcon = $block->getVar('accordion/arrow_icon', 'MageSuite_ContentConstructorFrontend');
 
 $expandFirst = $viewModel->getExpandFirst();
-$jsSettings = json_encode($block->getVar('accordion/js') ?: '{}');
 ?>
-
-<link rel="stylesheet" href="<?= $block->getViewFileUrl('css/accordion.css'); ?>"/>
-<script defer-ignore></script>
 
 <div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
     <div class="cs-container cs-container--accordion">
         <div class="cs-container__inner">
             <?php if (count($groups)): ?>
-                <div class="cs-accordion<?= $componentClasses ?>" data-mage-init='{ "ccAccordion": <?= $jsSettings ?> }'>
+                <div class="cs-accordion<?= $componentClasses ?>">
                     <ul class="cs-accordion__groups">
                         <?php foreach ($groups as $group):?>
                             <li class="cs-accordion__group" <?php echo ($areGroupsSupported  and !empty($group['headline'])) ? 'id="' . $viewModel->getGroupId($group['headline']) .'"': '' ;?>>
@@ -49,7 +45,7 @@ $jsSettings = json_encode($block->getVar('accordion/js') ?: '{}');
                                                             ->setIconUrl($accordionItemIcon)
                                                             ->setCssClass('cs-accordion__item-headline-icon')
                                                             ->setInlined(true)
-                                                            ->toHtml();
+                                                            ->toHtml(); 
                                                     ?>
                                                     <?php endif; ?>
                                                 <span>

@@ -32,7 +32,6 @@ endif;
 $windowWidthClass = ($teaserWidth == 'window') ? ' cs-image-teaser--window-width' : '';
 
 $jsConfig = isset($imageTeaser['jsConfig']) ? json_encode($imageTeaser['jsConfig']) : '{}';
-$jsSettings = json_encode($block->getVar('teaser_and_text/js') ?: '{}');
 ?>
 
 <div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
@@ -50,7 +49,6 @@ $jsSettings = json_encode($block->getVar('teaser_and_text/js') ?: '{}');
                 data-mobile-is-slider="false"
                 data-layout="over"
                 data-js-configuration='<?= $jsConfig; ?>'
-                data-mage-init='{ "ccImageTeaser": <?= $jsSettings ?> }'
             >
 
                 <div class="cs-image-teaser__carousel">

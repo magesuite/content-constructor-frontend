@@ -7,11 +7,7 @@ $items = $viewModel->getItems();
 
 $componentClasses = $block->getSkipSpacing() ? ' cs-products-grid--skip-spacing' : ''; 
 $componentClasses .= ' ' . $block->getVar('product_grid/additional_css_classes');
-$productsGridJsSettings = json_encode($block->getVar('grid_layout/product_grid/js') ?: '{}');
 ?>
-
-<link rel="stylesheet" href="<?= $block->getViewFileUrl('css/grid-layout.css'); ?>"/>
-<script defer-ignore></script>
 
 <div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
     <div class="cs-container cs-container--products-grid">
@@ -20,7 +16,6 @@ $productsGridJsSettings = json_encode($block->getVar('grid_layout/product_grid/j
                  data-rows-mobile="<?= $viewModel->getRowsMobile() ?>"
                  data-rows-tablet="<?= $viewModel->getRowsTablet() ?>"
                  data-rows-desktop="<?= $viewModel->getRowsDesktop() ?>"
-                 data-mage-init='{ "mgsGridLayout": <?= $productsGridJsSettings ?> }'
             >
                 <?php
                 $teasersConfiguration = $viewModel->getTeasersConfiguration();

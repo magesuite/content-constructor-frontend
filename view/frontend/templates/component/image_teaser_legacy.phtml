@@ -69,9 +69,6 @@ $sizes = $sizesMobile . ', ' . $sizesDesktop;
 $jsConfig = isset($imageTeaser['jsConfig']) ? json_encode($imageTeaser['jsConfig']) : '{}';
 ?>
 
-<link rel="stylesheet" href="<?= $block->getViewFileUrl('css/image-teaser-legacy.css'); ?>"/>
-<script defer-ignore></script>
-
 <div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
     <div class="cs-container cs-container--image-teaser-legacy">
         <?php if ($imageTeaser['currentScenario']['teaserWidth']['id'] == 'c' or $imageTeaser['currentScenario']['teaserWidth']['id'] == 'c-s'): ?>
@@ -88,7 +85,6 @@ $jsConfig = isset($imageTeaser['jsConfig']) ? json_encode($imageTeaser['jsConfig
                 data-is-slider="<?= $isSlider ?>"
                 data-mobile-is-slider="<?= $isSliderMobile ?>"
                 data-js-configuration='<?= $jsConfig; ?>'
-                data-mage-init='{ "ccImageTeaserLegacy": {} }'
             >
 
                 <div class="cs-image-teaser-legacy__carousel">
