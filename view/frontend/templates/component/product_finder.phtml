@@ -14,8 +14,7 @@ $componentClasses .= ' ' . $block->getVar('product_finder/additional_css_classes
 $jsSettings = json_encode($block->getVar('product_finder/js') ?: '{}');
 ?>
 
-<link rel="stylesheet" href="<?= $block->getViewFileUrl('css/product-finder.css'); ?>"/>
-<script defer-ignore></script>
+<?= $block->getCssOnce('css/product-finder.css'); ?>
 
 <div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
     <div class="cs-container cs-container--product-finder">
@@ -80,7 +79,7 @@ $jsSettings = json_encode($block->getVar('product_finder/js') ?: '{}');
                                 ->setIconUrl($block->getVar('product_finder/button_icon_path'))
                                 ->setCssClass('cs-product-finder__back-button-icon')
                                 ->setInlined(true)
-                                ->toHtml(); 
+                                ->toHtml();
                         ?>
                     </button>
                 </article>
@@ -93,7 +92,7 @@ $jsSettings = json_encode($block->getVar('product_finder/js') ?: '{}');
                             ->setIconUrl($block->getVar('product_finder/button_icon_path'))
                             ->setCssClass('cs-product-finder__back-button-icon')
                             ->setInlined(true)
-                            ->toHtml(); 
+                            ->toHtml();
                     ?>
                 </button>
                 <form class="cs-product-finder__form" method="post" action="<?=$viewModel->getRedirectEndpointUrl()?>"></form>

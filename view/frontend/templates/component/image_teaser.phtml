@@ -82,8 +82,7 @@ if ($gridTeaser) {
 }
 ?>
 
-<link rel="stylesheet" href="<?= $block->getViewFileUrl('css/image-teaser.css'); ?>"/>
-<script defer-ignore></script>
+<?= $block->getCssOnce('css/image-teaser.css'); ?>
 
 <?php if ($gridTeaser): ?>
 <li class="<?= $teaserBrickClass ?>" data-teaser-id="<?= $teaserId ?>">

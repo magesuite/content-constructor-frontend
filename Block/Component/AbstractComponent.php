@@ -16,6 +16,11 @@ class AbstractComponent extends \Magento\Framework\View\Element\Template
     protected $objectManager;
 
     /**
+     * @var \MageSuite\ContentConstructorFrontend\Model\Component\RenderedStylesState
+     */
+    protected $renderedStyles;
+
+    /**
      * @var string
      */
     protected $viewModel;
@@ -31,6 +36,7 @@ class AbstractComponent extends \Magento\Framework\View\Element\Template
         \Magento\Framework\View\Element\Template\Context $context,
         \MageSuite\ContentConstructorFrontend\Helper\ComponentVisibility $componentVisibilityHelper,
         \Magento\Framework\ObjectManagerInterface $objectManager,
+        \MageSuite\ContentConstructorFrontend\Model\Component\RenderedStylesState $renderedStyles,
         string $viewModel = '',
         array $data = []
     )
@@ -39,6 +45,7 @@ class AbstractComponent extends \Magento\Framework\View\Element\Template
 
         $this->componentVisibilityHelper = $componentVisibilityHelper;
         $this->objectManager = $objectManager;
+        $this->renderedStyles = $renderedStyles;
         $this->viewModel = $viewModel;
     }
 
@@ -57,6 +64,18 @@ class AbstractComponent extends \Magento\Framework\View\Element\Template
     public function getVisibilityClass()
     {
         return $this->componentVisibilityHelper->getVisibilityClass($this->getData());
+    }
+
+    public function getCssOnce($cssPath) {
+        $css = '';
+
+        if (!$this->renderedStyles->wasRendered($cssPath)) {
+            $this->renderedStyles->addRendered($cssPath);
+            $css = '<link rel="stylesheet" href="' . $this->getViewFileUrl($cssPath) . '"/>
+            <script>/* defer-ignore */</script>';
+        }
+
+        return $css;
     }
 
     public function addIdentities($identities)

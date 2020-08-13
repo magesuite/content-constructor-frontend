@@ -13,8 +13,7 @@ $componentClasses .= $block->getSkipSpacing() ? ' cs-category-links--skip-spacin
 $componentClasses .= ' ' . $block->getVar('category_links/additional_css_classes');
 ?>
 
-<link rel="stylesheet" href="<?= $block->getViewFileUrl('css/category-links.css'); ?>"/>
-<script defer-ignore></script>
+<?= $block->getCssOnce('css/category-links.css'); ?>
 
 <div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
     <div class="cs-container cs-container--category-links">

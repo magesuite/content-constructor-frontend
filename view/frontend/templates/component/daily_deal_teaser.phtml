@@ -16,9 +16,8 @@ $jsSettings = json_encode($block->getVar('daily_deal_teaser/js') ?: '{}');
 ?>
 
 <?php if (!empty($product) && $product['productObject']->getIsSalable()): ?>
-    <link rel="stylesheet" href="<?= $block->getViewFileUrl('css/daily-deal-teaser.css'); ?>"/>
-    <script defer-ignore></script>
-    
+    <?= $block->getCssOnce('css/daily-deal-teaser.css'); ?>
+
     <div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
         <div class="cs-container cs-container--daily-deal-teaser">
             <div class="cs-container__inner">

@@ -6,8 +6,7 @@ $componentClasses = $block->getSkipSpacing() ? ' cs-separator--skip-spacing' : '
 $componentClasses .= ' ' . $block->getVar('separator/additional_css_classes');
 ?>
 
-<link rel="stylesheet" href="<?= $block->getViewFileUrl('css/separator.css'); ?>"/>
-<script defer-ignore></script>
+<?= $block->getCssOnce('css/separator.css'); ?>
 
 <div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
     <div class="cs-container cs-container--separator">

@@ -6,12 +6,11 @@ $componentConfiguration = $block->getData();
 $viewModel = $block->getViewModel();
 $visibility = $block->getVisibilityClass();
 
-$componentClasses = $block->getSkipSpacing() ? ' cs-paragraph--skip-spacing' : ''; 
+$componentClasses = $block->getSkipSpacing() ? ' cs-paragraph--skip-spacing' : '';
 $componentClasses .= ' ' . $block->getVar('paragraph/additional_css_classes');
 ?>
 
-<link rel="stylesheet" href="<?= $block->getViewFileUrl('css/paragraph.css'); ?>"/>
-<script defer-ignore></script>
+<?= $block->getCssOnce('css/paragraph.css'); ?>
 
 <div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
     <div class="cs-container cs-container--paragraph">

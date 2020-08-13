@@ -12,14 +12,13 @@ $isLazyLoaded = $block->getVar('brand_carousel/lazyload_brand_images');
 $navIconPrevPath = $block->getVar('brand_carousel/navigation/arrows/prev/path');
 $navIconNextPath = $block->getVar('brand_carousel/navigation/arrows/next/path');
 
-$componentClasses = $block->getSkipSpacing() ? ' cs-brand-carousel--skip-spacing' : ''; 
+$componentClasses = $block->getSkipSpacing() ? ' cs-brand-carousel--skip-spacing' : '';
 $componentClasses .= ' ' . $block->getVar('brand_carousel/additional_css_classes');
 
 $jsSettings = json_encode($block->getVar('brand_carousel/js') ?: '{}');
 ?>
 
-<link rel="stylesheet" href="<?= $block->getViewFileUrl('css/brand-carousel.css'); ?>"/>
-<script defer-ignore></script>
+<?= $block->getCssOnce('css/brand-carousel.css'); ?>
 
 <div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
     <div class="cs-container cs-container--brand-carousel">
@@ -74,7 +73,7 @@ $jsSettings = json_encode($block->getVar('brand_carousel/js') ?: '{}');
                             ->setIconUrl($block->getVar('brand_carousel/navigation/arrows/prev/path'))
                             ->setCssClass("cs-brand-carousel__nav-icon")
                             ->setInlined(true)
-                            ->toHtml(); 
+                            ->toHtml();
                         ?>
                     </button>
                     <button class="cs-brand-carousel__nav cs-brand-carousel__nav--next <?= $block->getVar('brand_carousel/navigation/arrows/next/additional_css_classes') ?>" type="button">
@@ -83,7 +82,7 @@ $jsSettings = json_encode($block->getVar('brand_carousel/js') ?: '{}');
                             ->setIconUrl($block->getVar('brand_carousel/navigation/arrows/next/path'))
                             ->setCssClass("cs-brand-carousel__nav-icon")
                             ->setInlined(true)
-                            ->toHtml(); 
+                            ->toHtml();
                         ?>
                     </button>
                 <?php endif; ?>

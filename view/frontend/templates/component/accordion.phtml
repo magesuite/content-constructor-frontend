@@ -17,8 +17,7 @@ $expandFirst = $viewModel->getExpandFirst();
 $jsSettings = json_encode($block->getVar('accordion/js') ?: '{}');
 ?>
 
-<link rel="stylesheet" href="<?= $block->getViewFileUrl('css/accordion.css'); ?>"/>
-<script defer-ignore></script>
+<?= $block->getCssOnce('css/accordion.css'); ?>
 
 <div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
     <div class="cs-container cs-container--accordion">
