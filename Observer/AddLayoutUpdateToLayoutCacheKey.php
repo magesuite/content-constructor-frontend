@@ -17,8 +17,7 @@ class AddLayoutUpdateToLayoutCacheKey implements \Magento\Framework\Event\Observ
     public function __construct(
         \Magento\Framework\View\Layout\LayoutCacheKeyInterface $layoutCacheKey,
         \MageSuite\ContentConstructorAdmin\Repository\Xml\ComponentConfigurationToXmlMapper $componentConfigurationToXmlMapper
-    )
-    {
+    ) {
         $this->layoutCacheKey = $layoutCacheKey;
         $this->componentConfigurationToXmlMapper = $componentConfigurationToXmlMapper;
     }
@@ -39,6 +38,7 @@ class AddLayoutUpdateToLayoutCacheKey implements \Magento\Framework\Event\Observ
         }
 
         $contentConstructorContent = $page->getContentConstructorContent();
+
         if (empty($contentConstructorContent)) {
             return;
         }
@@ -48,7 +48,7 @@ class AddLayoutUpdateToLayoutCacheKey implements \Magento\Framework\Event\Observ
 
         $currentLayoutUpdateXml = $page->getLayoutUpdateXml();
 
-        $page->setLayoutUpdateXml($currentLayoutUpdateXml .$updateLayoutXml);
+        $page->setLayoutUpdateXml($currentLayoutUpdateXml . $updateLayoutXml);
         $this->layoutCacheKey->addCacheKeys(md5($updateLayoutXml));
     }
 }

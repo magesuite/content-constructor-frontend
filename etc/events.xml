@@ -6,4 +6,10 @@
     <event name="catalog_controller_product_view">
         <observer name="add_layout_update_to_cache_key" instance="MageSuite\ContentConstructorFrontend\Observer\Product\AddLayoutUpdateToLayoutCacheKey" />
     </event>
+    <event name="catalog_controller_category_view">
+        <observer name="add_layout_update_to_cache_key" instance="MageSuite\ContentConstructorFrontend\Observer\Category\AddLayoutUpdateToLayoutCacheKey" />
+    </event>
+    <event name="brand_controller_index_index">
+        <observer name="add_layout_update_to_cache_key" instance="MageSuite\ContentConstructorFrontend\Observer\Brand\AddLayoutUpdateToLayoutCacheKey" />
+    </event>
 </config>
