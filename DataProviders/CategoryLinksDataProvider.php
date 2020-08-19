@@ -43,7 +43,10 @@ class CategoryLinksDataProvider implements \MageSuite\ContentConstructor\Compone
                 continue;
             }
 
-            $subCategories[] = $this->getCategoryData($this->getCategoryById($subCategoryId, $categories));
+            $subcategoryData = $this->getCategoryData($this->getCategoryById($subCategoryId, $categories));
+            if($subcategoryData['is_active']==1) {
+                $subCategories[] = $subcategoryData;
+            }
         }
 
         return [
@@ -57,7 +60,8 @@ class CategoryLinksDataProvider implements \MageSuite\ContentConstructor\Compone
         return [
             'name' => $category->getName(),
             'url' => $category->getUrl(),
-            'products_count' => $this->categoryHelper->getNumberOfProducts($category)
+            'products_count' => $this->categoryHelper->getNumberOfProducts($category),
+            'is_active' => $category->getIsActive()
         ];
     }
 
@@ -86,6 +90,7 @@ class CategoryLinksDataProvider implements \MageSuite\ContentConstructor\Compone
         $categoryCollection = $this->categoryCollectionFactory->create();
         $categoryCollection->addIdFilter($categoriesIds);
         $categoryCollection->addAttributeToSelect('name');
+        $categoryCollection->addAttributeToSelect('is_active');
 
         return $categoryCollection->getItems();
     }
