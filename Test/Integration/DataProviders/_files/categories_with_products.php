@@ -124,6 +124,22 @@ $category
     ->save()
     ->reindex();
 
+$category = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()->create('Magento\Catalog\Model\Category');
+$category->isObjectNew(true);
+$category
+    ->setId(338)
+    ->setCreatedAt('2014-06-23 09:50:07')
+    ->setName('Fourth subcategory - inactive')
+    ->setParentId(333)
+    ->setPath('1/2/333/338')
+    ->setLevel(4)
+    ->setAvailableSortBy('name')
+    ->setDefaultSortBy('name')
+    ->setIsActive(false)
+    ->setPosition(1)
+    ->setAvailableSortBy(['position'])
+    ->save()
+    ->reindex();
 
 $category = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()->create('Magento\Catalog\Model\Category');
 $category->isObjectNew(true);
