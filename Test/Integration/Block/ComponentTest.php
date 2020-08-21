@@ -19,7 +19,7 @@ class ComponentTest extends \PHPUnit\Framework\TestCase
      */
     protected $objectManager;
 
-    public function setUp() {
+    public function setUp(): void {
         $this->objectManager = \Magento\TestFramework\ObjectManager::getInstance();
 
         $this->block = $this->objectManager->create(\MageSuite\ContentConstructorFrontend\Block\Component::class);
