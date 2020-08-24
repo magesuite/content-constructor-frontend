@@ -34,6 +34,8 @@ $windowWidthClass = ($teaserWidth == 'window') ? ' cs-image-teaser--window-width
 $jsConfig = isset($imageTeaser['jsConfig']) ? json_encode($imageTeaser['jsConfig']) : '{}';
 ?>
 
+<?= $block->getCssOnce('css/image-teaser.css'); ?>
+
 <div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
     <div class="cs-container cs-container--teaser-and-text <?= $containerClasses ?>">
         <?php if ($teaserWidth == 'container'): ?>
