@@ -37,7 +37,9 @@ class ParagraphTest extends \PHPUnit\Framework\TestCase
 
         $renderedContent = $this->block->toHtml();
 
-        $this->assertContains('<h1>Fixture Block Title</h1>
+        $assertContains = method_exists($this, 'assertStringContainsString') ? 'assertStringContainsString' : 'assertContains';
+
+        $this->$assertContains('<h1>Fixture Block Title</h1>
 <a href="http://localhost/index.php/">store url</a>
 <p>Config value: "http://localhost/".</p>
 <p>Custom variable: "".</p>', $renderedContent);

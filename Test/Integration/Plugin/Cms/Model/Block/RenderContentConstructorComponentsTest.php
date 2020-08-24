@@ -39,7 +39,9 @@ class RenderContentConstructorComponentsTest extends \PHPUnit\Framework\TestCase
             ['data' => ['block_id' => 'block_with_content_constructor']]
         );
 
-        $this->assertRegExp('/<h2.*?>Test<\/h2>/', $block->toHtml());
+        $assertRegExp = method_exists($this, 'assertMatchesRegularExpression') ? 'assertMatchesRegularExpression' : 'assertRegExp';
+
+        $this->$assertRegExp('/<h2.*?>Test<\/h2>/', $block->toHtml());
     }
 
     public static function loadBlock()
