@@ -35,6 +35,8 @@ $jsConfig = isset($imageTeaser['jsConfig']) ? json_encode($imageTeaser['jsConfig
 $jsSettings = json_encode($block->getVar('teaser_and_text/js') ?: '{}');
 ?>
 
+<?= $block->getCssOnce('css/image-teaser.css'); ?>
+
 <div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
     <div class="cs-container cs-container--teaser-and-text <?= $containerClasses ?>">
         <?php if ($teaserWidth == 'container'): ?>
