@@ -266,7 +266,7 @@ class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(60, $result[0]['dailyDealOffer']['initialAmount']);
         $this->assertEquals(1521417600, $result[0]['dailyDealOffer']['from']);
         $this->assertEquals(1931932800, $result[0]['dailyDealOffer']['to']);
-        $this->assertEquals('5.0000', $result[0]['dailyDealOffer']['price']);
+        $this->assertEquals(5.00, $result[0]['dailyDealOffer']['price'], '', 2);
         $this->assertEquals('none', $result[0]['dailyDealOffer']['displayType']);
     }
 
