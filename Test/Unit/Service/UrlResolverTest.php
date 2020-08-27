@@ -29,7 +29,7 @@ class UrlResolverTest extends \PHPUnit\Framework\TestCase
      */
     private $pageRepositoryStub;
 
-    public function setUp() {
+    public function setUp(): void {
         $this->objectManager = \Magento\TestFramework\ObjectManager::getInstance();
 
         $this->productRepositoryStub = $this->getMockBuilder(\Magento\Catalog\Api\ProductRepositoryInterface::class)->getMock();
@@ -61,7 +61,7 @@ class UrlResolverTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals('http://localhost/pub/media/wysiwyg/file.pdf', $url);
     }
-    
+
     public function testItReturnsEmptyStringWhenUnknownWidgetTypeIsPassed() {
         $url = $this->urlResolver->resolve('{{widget type="unknown-widget-type"}}');
 

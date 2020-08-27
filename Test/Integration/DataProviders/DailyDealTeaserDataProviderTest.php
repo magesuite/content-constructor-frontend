@@ -14,7 +14,7 @@ class DailyDealTeaserDataProviderTest extends \PHPUnit\Framework\TestCase
      */
     private $dataProvider;
 
-    public function setUp() {
+    public function setUp(): void {
         $this->objectManager = \Magento\TestFramework\ObjectManager::getInstance();
 
         $this->dataProvider = $this->objectManager
@@ -64,7 +64,7 @@ class DailyDealTeaserDataProviderTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(60, $result['dailyDealOffer']['initialAmount']);
         $this->assertEquals(1521417600, $result['dailyDealOffer']['from']);
         $this->assertEquals(1931932800, $result['dailyDealOffer']['to']);
-        $this->assertEquals('5.0000', $result['dailyDealOffer']['price']);
+        $this->assertEquals(5.00, $result['dailyDealOffer']['price'], '', 2);
         $this->assertEquals('none', $result['dailyDealOffer']['displayType']);
     }
 

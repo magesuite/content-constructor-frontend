@@ -47,7 +47,7 @@ class CategoryLinksDataProviderTest extends \PHPUnit\Framework\TestCase
      */
     private $dataProvider;
 
-    public function setUp() {
+    public function setUp(): void {
         $this->objectManager = \Magento\TestFramework\ObjectManager::getInstance();
 
         $this->dataProvider = $this->objectManager

@@ -14,7 +14,7 @@ class AccordionGroupClassResolverTest extends \PHPUnit\Framework\TestCase
      */
     private $accordionGroupClassResolver;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->objectManager = \Magento\TestFramework\ObjectManager::getInstance();
 
@@ -24,7 +24,7 @@ class AccordionGroupClassResolverTest extends \PHPUnit\Framework\TestCase
     public function testReturnCorrectCssClass()
     {
         $headline = 'Weiß, Goldmann, Goebel, Weiss, Göthe, Goethe und Götz';
-        
+
         $this->assertEquals('group-weiss-goldmann-goebel', $this->accordionGroupClassResolver->resolveGroupClass($headline));
     }
 }

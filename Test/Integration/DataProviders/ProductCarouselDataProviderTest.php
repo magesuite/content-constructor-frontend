@@ -28,7 +28,7 @@ class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
      */
     private $productRepository;
 
-    public function setUp() {
+    public function setUp(): void {
         $this->objectManager = \Magento\TestFramework\ObjectManager::getInstance();
 
         $this->dataProvider = $this->objectManager
@@ -147,10 +147,12 @@ class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
         $this->assertCount(1, $result);
         $this->assertArrayHasKey('price', $result[0]);
 
-        $this->assertContains('id="product-price-334"', $result[0]['price']);
-        $this->assertContains('data-price-amount="100"', $result[0]['price']);
-        $this->assertContains('data-price-type="finalPrice"', $result[0]['price']);
-        $this->assertContains('<span class="price">$100.00</span>', $result[0]['price']);
+        $assertContains = method_exists($this, 'assertStringContainsString') ? 'assertStringContainsString' : 'assertContains';
+
+        $this->$assertContains('id="product-price-334"', $result[0]['price']);
+        $this->$assertContains('data-price-amount="100"', $result[0]['price']);
+        $this->$assertContains('data-price-type="finalPrice"', $result[0]['price']);
+        $this->$assertContains('<span class="price">$100.00</span>', $result[0]['price']);
     }
 
     public function itReturnsCorrectProductQty()
@@ -264,7 +266,7 @@ class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(60, $result[0]['dailyDealOffer']['initialAmount']);
         $this->assertEquals(1521417600, $result[0]['dailyDealOffer']['from']);
         $this->assertEquals(1931932800, $result[0]['dailyDealOffer']['to']);
-        $this->assertEquals('5.0000', $result[0]['dailyDealOffer']['price']);
+        $this->assertEquals(5.00, $result[0]['dailyDealOffer']['price'], '', 2);
         $this->assertEquals('none', $result[0]['dailyDealOffer']['displayType']);
     }
 

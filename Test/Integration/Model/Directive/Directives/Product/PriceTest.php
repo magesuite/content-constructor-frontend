@@ -14,7 +14,7 @@ class PriceTest extends \PHPUnit\Framework\TestCase
      */
     protected $directive;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->objectManager = \Magento\TestFramework\ObjectManager::getInstance();
 
