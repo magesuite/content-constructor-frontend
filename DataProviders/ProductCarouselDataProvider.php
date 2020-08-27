@@ -310,7 +310,6 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
 
         $collection->addAttributeToSelect($this->catalogConfig->getProductAttributes())
             ->setStore($this->storeManager->getStore())
-            ->addMinimalPrice()
             ->addFinalPrice()
             ->addTaxPercents()
             ->addStoreFilter()
