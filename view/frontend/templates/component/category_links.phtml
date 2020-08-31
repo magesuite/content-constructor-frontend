@@ -7,6 +7,7 @@ $subCategories = $categories['sub_categories'];
 $shouldShowProductsCount = $viewModel->shouldShowProductsCount();
 $visibility = $block->getVisibilityClass();
 $hasSubcategories = $viewModel->hasSubcategories();
+$shouldHideLinkToAllProducts = $viewModel->shouldHideLinkToAllProducts();
 
 $componentClasses = $hasSubcategories ? ' ' : " cs-category-links--no-subcats";
 $componentClasses .= $block->getSkipSpacing() ? ' cs-category-links--skip-spacing' : '';
@@ -52,6 +53,7 @@ $componentClasses .= ' ' . $block->getVar('category_links/additional_css_classes
                         </ul>
                         <?php endif; ?>
 
+                        <?php if(!$shouldHideLinkToAllProducts): ?>
                         <ul class="cs-category-links__list-all">
                             <li class="cs-category-links__list-all-item">
                                 <a href="<?=$categories['main_category']['url']?>" class="cs-category-links__link">
@@ -67,6 +69,7 @@ $componentClasses .= ' ' . $block->getVar('category_links/additional_css_classes
                                 </a>
                             </li>
                         </ul>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
