@@ -46,4 +46,8 @@ class CategoryLinks extends \Magento\Framework\DataObject implements ViewModel
     public function shouldShowProductsCount() {
         return $this->getData('shownumbers');
     }
+
+    public function shouldHideLinkToAllProducts() {
+        return $this->getData('hide_link_to_all_products');
+    }
 }
