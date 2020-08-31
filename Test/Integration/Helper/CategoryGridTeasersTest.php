@@ -28,7 +28,7 @@ class CategoryGridTeasersTest extends \PHPUnit\Framework\TestCase
      */
     protected $categoryRepository;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->objectManager = \Magento\TestFramework\ObjectManager::getInstance();
         $this->helper = $this->objectManager->get(\MageSuite\ContentConstructorFrontend\Helper\CategoryGridTeasers::class);
@@ -37,7 +37,7 @@ class CategoryGridTeasersTest extends \PHPUnit\Framework\TestCase
 
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         $this->registry->unregister(self::CURRENT_CATEGORY_REGISTRY_KEY);
     }

@@ -19,7 +19,7 @@ class ComponentTest extends \PHPUnit\Framework\TestCase
      */
     protected $objectManager;
 
-    public function setUp() {
+    public function setUp(): void {
         $this->objectManager = \Magento\TestFramework\ObjectManager::getInstance();
 
         $this->block = $this->objectManager->create(\MageSuite\ContentConstructorFrontend\Block\Component::class);
@@ -30,10 +30,9 @@ class ComponentTest extends \PHPUnit\Framework\TestCase
         $this->assertInstanceOf(\Magento\Framework\View\Element\BlockInterface::class, $this->block);
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testItThrowsExceptionWhenNoTypeIsPassed() {
+        $this->expectException(\InvalidArgumentException::class);
+
         $this->block->toHtml();
     }
 
@@ -77,8 +76,10 @@ class ComponentTest extends \PHPUnit\Framework\TestCase
 
         $htmlOutput = $this->block->toHtml();
 
-        $this->assertContains('>Main<', $htmlOutput);
-        $this->assertContains('>Sub<', $htmlOutput);
+        $assertContains = method_exists($this, 'assertStringContainsString') ? 'assertStringContainsString' : 'assertContains';
+
+        $this->$assertContains('>Main<', $htmlOutput);
+        $this->$assertContains('>Sub<', $htmlOutput);
     }
 
     public static function componentVisibilityDataProvider()

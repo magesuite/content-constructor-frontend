@@ -19,7 +19,7 @@ class MediaResolverTest extends \PHPUnit\Framework\TestCase
      */
     private $mediaResolver;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->objectManager = \Magento\TestFramework\ObjectManager::getInstance();
 
