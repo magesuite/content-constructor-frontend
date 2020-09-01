@@ -22,15 +22,13 @@ $componentClasses .= ' ' . $block->getVar('button/additional_css_classes');
                     <span class="cs-button-component__amount"><?=$numberOfProducts?></span>
                     <?php endif; ?>
                 </span>
-                <svg class="cs-button-component__icon">
-                    <?= $this->getLayout()
-                            ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
-                            ->setIconUrl($block->getVar('button/icon_path'))
-                            ->setCssClass('cs-button-component__icon')
-                            ->setInlined(true)
-                            ->toHtml(); 
-                    ?>
-                </svg>
+                <?= $this->getLayout()
+                        ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+                        ->setIconUrl($block->getVar('button/icon_path'))
+                        ->setCssClass('cs-button-component__icon')
+                        ->setInlined(true)
+                        ->toHtml(); 
+                ?>
             </a>
         </div>
     </div>
