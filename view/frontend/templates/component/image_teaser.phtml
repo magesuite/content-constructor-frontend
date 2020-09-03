@@ -86,8 +86,6 @@ if ($gridTeaser) {
 
 <?php if ($gridTeaser): ?>
 <li class="<?= $teaserBrickClass ?>" data-teaser-id="<?= $teaserId ?>">
-<?php else: ?>
-<div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
 <?php endif; ?>
     <?= $this->getLayout()
         ->createBlock(\Magento\Framework\View\Element\Template::class)
@@ -99,7 +97,7 @@ if ($gridTeaser) {
         ->toHtml();
     ?>
 
-    <div class="cs-container cs-container--image-teaser<?= $containerClasses ?>">
+    <div class="cs-container cs-container--image-teaser<?= $containerClasses ?><?= $visibility ? ' ' .$visibility : ''; ?>">
         <?php if ($teaserWidth == 'container' or $teaserWidth == 'container-slider'): ?>
             <div class="cs-container__inner">
         <?php endif; ?>
@@ -282,6 +280,4 @@ if ($gridTeaser) {
     ?>
 <?php if ($gridTeaser): ?>
 </li>
-<?php else: ?>
-</div>
 <?php endif; ?>

@@ -16,42 +16,41 @@ $componentClasses .= ' ' . $block->getVar('category_links/additional_css_classes
 
 <?= $block->getCssOnce('css/category-links.css'); ?>
 
-<div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
-    <div class="cs-container cs-container--category-links">
-        <div class="cs-container__inner">
-            <div class="cs-category-links<?= $componentClasses ?>" <?php if($hasSubcategories): ?>data-mage-init='{"collapsible":{"mediaQueryScope":"(max-width: 767px)"},"ccCategoryLinks":{}}'<?php endif;?>>
-            <?php if($block->getVar('category_links/show_title')): ?>
-                <h2 class="cs-category-links__title"><?= $categories['main_category']['name'] ?></h2>
-            <?php endif; ?>
+<div class="cs-container cs-container--category-links<?= $visibility ? ' ' .$visibility : ''; ?>">
+    <div class="cs-container__inner">
+        <div class="cs-category-links<?= $componentClasses ?>" <?php if($hasSubcategories): ?>data-mage-init='{"collapsible":{"mediaQueryScope":"(max-width: 767px)"},"ccCategoryLinks":{}}'<?php endif;?>>
+        <?php if($block->getVar('category_links/show_title')): ?>
+            <h2 class="cs-category-links__title"><?= $categories['main_category']['name'] ?></h2>
+        <?php endif; ?>
 
-                <div class="cs-category-links__dropdown cs-category-links-dropdown <?php if(!$hasSubcategories): ?> cs-category-links-dropdown--no-subcats <?php endif; ?>">
-                    <?php
-                    if($hasSubcategories): ?>
-                    <div class="cs-category-links__subtitle | cs-category-links-dropdown__trigger" data-role="title">
-                        <?=__('All Products')?> <?php if($shouldShowProductsCount): ?><span class="cs-category-links__qty"><?=$categories['main_category']['products_count']?></span><?php endif; ?>
-                    </div>
+            <div class="cs-category-links__dropdown cs-category-links-dropdown <?php if(!$hasSubcategories): ?> cs-category-links-dropdown--no-subcats <?php endif; ?>">
+                <?php
+                if($hasSubcategories): ?>
+                <div class="cs-category-links__subtitle | cs-category-links-dropdown__trigger" data-role="title">
+                    <?=__('All Products')?> <?php if($shouldShowProductsCount): ?><span class="cs-category-links__qty"><?=$categories['main_category']['products_count']?></span><?php endif; ?>
+                </div>
+                <?php endif; ?>
+
+                <div class="cs-category-links__list-wrapper | cs-category-links-dropdown__content" data-role="content">
+                    <?php if($hasSubcategories): ?>
+                    <ul class="cs-category-links__list">
+                        <?php $i = 1; ?>
+                        <?php foreach($subCategories as $category): ?>
+                        <li class="cs-category-links__list-item
+                            <?php
+                                foreach($block->getVar('category_links/hide_links_breakpoints') as $breakpoint) {
+                                    if($i >= (int)$breakpoint['hide_from']){echo $breakpoint['additional_css_classes'] . ' ';}
+                                }
+                            ?>"
+                        >
+                            <a href="<?=$category['url']?>" class="cs-category-links__link">
+                                <?=$category['name']?> <?php if($shouldShowProductsCount): ?><span class="cs-category-links__qty"><?=$category['products_count']?></span><?php endif; ?>
+                            </a>
+                        </li>
+                        <?php $i++; ?>
+                        <?php endforeach; ?>
+                    </ul>
                     <?php endif; ?>
-
-                    <div class="cs-category-links__list-wrapper | cs-category-links-dropdown__content" data-role="content">
-                        <?php if($hasSubcategories): ?>
-                        <ul class="cs-category-links__list">
-                            <?php $i = 1; ?>
-                            <?php foreach($subCategories as $category): ?>
-                            <li class="cs-category-links__list-item
-                                <?php
-                                    foreach($block->getVar('category_links/hide_links_breakpoints') as $breakpoint) {
-                                        if($i >= (int)$breakpoint['hide_from']){echo $breakpoint['additional_css_classes'] . ' ';}
-                                    }
-                                ?>"
-                            >
-                                <a href="<?=$category['url']?>" class="cs-category-links__link">
-                                    <?=$category['name']?> <?php if($shouldShowProductsCount): ?><span class="cs-category-links__qty"><?=$category['products_count']?></span><?php endif; ?>
-                                </a>
-                            </li>
-                            <?php $i++; ?>
-                            <?php endforeach; ?>
-                        </ul>
-                        <?php endif; ?>
 
                         <?php if(!$shouldHideLinkToAllProducts): ?>
                         <ul class="cs-category-links__list-all">

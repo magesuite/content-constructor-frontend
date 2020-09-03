@@ -19,52 +19,50 @@ $jsSettings = json_encode($block->getVar('accordion/js') ?: '{}');
 
 <?= $block->getCssOnce('css/accordion.css'); ?>
 
-<div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
-    <div class="cs-container cs-container--accordion">
-        <div class="cs-container__inner">
-            <?php if (count($groups)): ?>
-                <div class="cs-accordion<?= $componentClasses ?>" data-mage-init='{ "ccAccordion": <?= $jsSettings ?> }'>
-                    <ul class="cs-accordion__groups">
-                        <?php foreach ($groups as $group):?>
-                            <li class="cs-accordion__group" <?php echo ($areGroupsSupported  and !empty($group['headline'])) ? 'id="' . $viewModel->getGroupId($group['headline']) .'"': '' ;?>>
-                                <?php if($areGroupsSupported && !empty($group['headline'])): ?>
-                                    <div class="cs-accordion__group-headline">
-                                        <span class="cs-accordion__group-headline-span"><?= $group['headline']; ?></span>
-                                    </div>
-                                <?php endif; ?>
+<div class="cs-container cs-container--accordion<?= $visibility ? ' ' .$visibility : ''; ?>">
+    <div class="cs-container__inner">
+        <?php if (count($groups)): ?>
+            <div class="cs-accordion<?= $componentClasses ?>" data-mage-init='{ "ccAccordion": <?= $jsSettings ?> }'>
+                <ul class="cs-accordion__groups">
+                    <?php foreach ($groups as $group):?>
+                        <li class="cs-accordion__group" <?php echo ($areGroupsSupported  and !empty($group['headline'])) ? 'id="' . $viewModel->getGroupId($group['headline']) .'"': '' ;?>>
+                            <?php if($areGroupsSupported && !empty($group['headline'])): ?>
+                                <div class="cs-accordion__group-headline">
+                                    <span class="cs-accordion__group-headline-span"><?= $group['headline']; ?></span>
+                                </div>
+                            <?php endif; ?>
 
-                                <ul class="cs-accordion__items" data-mage-init='{
-                                    "accordion": <?= $accordionOptions ?>
-                                }'>
-                                    <?php $i = 0; ?>
-                                    <?php foreach ($group['items'] as $item): ?>
-                                        <li class="cs-accordion__item<?php if($expandFirst && $i == 0): ?> cs-accordion__item--active<?php endif; ?>" data-role="collapsible">
-                                            <div class="cs-accordion__item-headline<?= !$accordionItemIcon ? ' cs-accordion__item-headline--icon' : '' ?>" data-role="title">
-                                                <span class="cs-accordion__item-headline-span">
-                                                    <?= $block->escapeHtml($item['headline']) ?>
-                                                    <?php if ($accordionItemIcon): ?>
-                                                    <?= $this->getLayout()
-                                                            ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
-                                                            ->setIconUrl($accordionItemIcon)
-                                                            ->setCssClass('cs-accordion__item-headline-icon')
-                                                            ->setInlined(true)
-                                                            ->toHtml();
-                                                    ?>
-                                                    <?php endif; ?>
-                                                <span>
-                                            </div>
-                                            <div class="cs-accordion__item-content" data-role="content">
-                                                <?= $viewModel->renderWysiwygContent($item['content']); ?>
-                                            </div>
-                                        </li>
-                                        <?php $i++; ?>
-                                    <?php endforeach; ?>
-                                </ul>
-                            </li>
-                        <?php endforeach; ?>
-                    </ul>
-                </div>
-            <?php endif; ?>
-        </div>
+                            <ul class="cs-accordion__items" data-mage-init='{
+                                "accordion": <?= $accordionOptions ?>
+                            }'>
+                                <?php $i = 0; ?>
+                                <?php foreach ($group['items'] as $item): ?>
+                                    <li class="cs-accordion__item<?php if($expandFirst && $i == 0): ?> cs-accordion__item--active<?php endif; ?>" data-role="collapsible">
+                                        <div class="cs-accordion__item-headline<?= !$accordionItemIcon ? ' cs-accordion__item-headline--icon' : '' ?>" data-role="title">
+                                            <span class="cs-accordion__item-headline-span">
+                                                <?= $block->escapeHtml($item['headline']) ?>
+                                                <?php if ($accordionItemIcon): ?>
+                                                <?= $this->getLayout()
+                                                        ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+                                                        ->setIconUrl($accordionItemIcon)
+                                                        ->setCssClass('cs-accordion__item-headline-icon')
+                                                        ->setInlined(true)
+                                                        ->toHtml();
+                                                ?>
+                                                <?php endif; ?>
+                                            <span>
+                                        </div>
+                                        <div class="cs-accordion__item-content" data-role="content">
+                                            <?= $viewModel->renderWysiwygContent($item['content']); ?>
+                                        </div>
+                                    </li>
+                                    <?php $i++; ?>
+                                <?php endforeach; ?>
+                            </ul>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        <?php endif; ?>
     </div>
 </div>

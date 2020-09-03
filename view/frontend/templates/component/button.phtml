@@ -10,12 +10,11 @@ $componentClasses = $block->getSkipSpacing() ? ' cs-button--skip-spacing ' : '';
 $componentClasses .= ' ' . $block->getVar('button/additional_css_classes');
 ?>
 
-<div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
-    <div class="cs-container cs-container--button">
-        <div class="cs-container__inner">
-            <a href="<?=$viewModel->getHref()?>" class="cs-button-component<?= $componentClasses ?>">
-                <span class="cs-button-component__span">
-                    <?=$viewModel->getLabel()?>
+<div class="cs-container cs-container--button<?= $visibility ? ' ' .$visibility : ''; ?>">
+    <div class="cs-container__inner">
+        <a href="<?=$viewModel->getHref()?>" class="cs-button-component<?= $componentClasses ?>">
+            <span class="cs-button-component__span">
+                <?=$viewModel->getLabel()?>
 
                     <?php $numberOfProducts = $viewModel->getNumberOfProducts(); ?>
                     <?php if(is_numeric($numberOfProducts)): ?>
