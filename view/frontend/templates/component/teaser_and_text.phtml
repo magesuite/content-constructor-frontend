@@ -37,46 +37,44 @@ $jsSettings = json_encode($block->getVar('teaser_and_text/js') ?: '{}');
 
 <?= $block->getCssOnce('css/image-teaser.css'); ?>
 
-<div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
-    <div class="cs-container cs-container--teaser-and-text <?= $containerClasses ?>">
-        <?php if ($teaserWidth == 'container'): ?>
-        <div class="cs-container__inner">
-        <?php endif; ?>
-            <div class="cs-image-teaser cs-image-teaser--teaser-and-text <?= $windowWidthClass ?> 
-                cs-image-teaser--items-in-row-2
-                cs-image-teaser--items-in-row-mobile-1
-                <?= $componentClasses ?>"
-                data-items-per-view="2"
-                data-mobile-items-per-view="1"
-                data-is-slider="false"
-                data-mobile-is-slider="false"
-                data-layout="over"
-                data-js-configuration='<?= $jsConfig; ?>'
-                data-mage-init='{ "ccImageTeaser": <?= $jsSettings ?> }'
-            >
+<div class="cs-container cs-container--teaser-and-text <?= $containerClasses ?><?= $visibility ? ' ' .$visibility : ''; ?>">
+    <?php if ($teaserWidth == 'container'): ?>
+    <div class="cs-container__inner">
+    <?php endif; ?>
+        <div class="cs-image-teaser cs-image-teaser--teaser-and-text <?= $windowWidthClass ?> 
+            cs-image-teaser--items-in-row-2
+            cs-image-teaser--items-in-row-mobile-1
+            <?= $componentClasses ?>"
+            data-items-per-view="2"
+            data-mobile-items-per-view="1"
+            data-is-slider="false"
+            data-mobile-is-slider="false"
+            data-layout="over"
+            data-js-configuration='<?= $jsConfig; ?>'
+            data-mage-init='{ "ccImageTeaser": <?= $jsSettings ?> }'
+        >
 
-                <div class="cs-image-teaser__carousel">
-                    <div class="cs-image-teaser__wrapper cs-image-teaser__wrapper--content-over">
-                        <ul class="cs-image-teaser__slides cs-image-teaser__slides--mobile-<?= $mobileLayout ?>">
-                        
-                            <?php foreach ($viewModel->getSlides() as $slide): ?>
-                                <?= $this->getLayout()
-                                        ->createBlock(\Magento\Framework\View\Element\Template::class)
-                                        ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/image_teaser_slide.phtml')
-                                        ->setSlide($slide)
-                                        ->setIsSlider(false)
-                                        ->setIsSliderMobile(false)
-                                        ->setContentPlacement('over')
-                                        ->toHtml(); 
-                                ?>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div>
+            <div class="cs-image-teaser__carousel">
+                <div class="cs-image-teaser__wrapper cs-image-teaser__wrapper--content-over">
+                    <ul class="cs-image-teaser__slides cs-image-teaser__slides--mobile-<?= $mobileLayout ?>">
+                    
+                        <?php foreach ($viewModel->getSlides() as $slide): ?>
+                            <?= $this->getLayout()
+                                    ->createBlock(\Magento\Framework\View\Element\Template::class)
+                                    ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/image_teaser_slide.phtml')
+                                    ->setSlide($slide)
+                                    ->setIsSlider(false)
+                                    ->setIsSliderMobile(false)
+                                    ->setContentPlacement('over')
+                                    ->toHtml(); 
+                            ?>
+                        <?php endforeach; ?>
+                    </ul>
                 </div>
-
-                <?php if ($teaserWidth == 'container'): ?>
             </div>
-            <?php endif; ?>
+
+            <?php if ($teaserWidth == 'container'): ?>
         </div>
+        <?php endif; ?>
     </div>
 </div>

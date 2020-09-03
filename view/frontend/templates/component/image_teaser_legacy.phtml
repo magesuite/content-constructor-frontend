@@ -71,140 +71,138 @@ $jsConfig = isset($imageTeaser['jsConfig']) ? json_encode($imageTeaser['jsConfig
 
 <?= $block->getCssOnce('css/image-teaser-legacy.css'); ?>
 
-<div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
-    <div class="cs-container cs-container--image-teaser-legacy">
-        <?php if ($imageTeaser['currentScenario']['teaserWidth']['id'] == 'c' or $imageTeaser['currentScenario']['teaserWidth']['id'] == 'c-s'): ?>
-        <div class="cs-container__inner">
-        <?php endif; ?>
-            <div class="cs-image-teaser-legacy
-             cs-image-teaser-legacy--items-in-row-<?= $itemsPerRow ?>
-             cs-image-teaser-legacy--items-in-row-mobile-<?= $itemsPerViewMobile ?>
-             <?= $isSlider ? 'cs-image-teaser-legacy--slider' : '' ?>
-             <?= $imageTeaser['currentScenario']['teaserWidth']['id'] == 'w-s' ? 'cs-image-teaser-legacy--full-width-slider' : '' ?>
-             <?= $componentClasses ?>"
-                data-items-per-view="<?= $itemsPerView ?>"
-                <?= $itemsPerViewMobile ? 'data-mobile-items-per-view="' . $itemsPerViewMobile . '"' : '' ?>
-                data-is-slider="<?= $isSlider ?>"
-                data-mobile-is-slider="<?= $isSliderMobile ?>"
-                data-js-configuration='<?= $jsConfig; ?>'
-                data-mage-init='{ "ccImageTeaserLegacy": {} }'
-            >
+<div class="cs-container cs-container--image-teaser-legacy<?= $visibility ? ' ' .$visibility : ''; ?>">
+    <?php if ($imageTeaser['currentScenario']['teaserWidth']['id'] == 'c' or $imageTeaser['currentScenario']['teaserWidth']['id'] == 'c-s'): ?>
+    <div class="cs-container__inner">
+    <?php endif; ?>
+        <div class="cs-image-teaser-legacy
+            cs-image-teaser-legacy--items-in-row-<?= $itemsPerRow ?>
+            cs-image-teaser-legacy--items-in-row-mobile-<?= $itemsPerViewMobile ?>
+            <?= $isSlider ? 'cs-image-teaser-legacy--slider' : '' ?>
+            <?= $imageTeaser['currentScenario']['teaserWidth']['id'] == 'w-s' ? 'cs-image-teaser-legacy--full-width-slider' : '' ?>
+            <?= $componentClasses ?>"
+            data-items-per-view="<?= $itemsPerView ?>"
+            <?= $itemsPerViewMobile ? 'data-mobile-items-per-view="' . $itemsPerViewMobile . '"' : '' ?>
+            data-is-slider="<?= $isSlider ?>"
+            data-mobile-is-slider="<?= $isSliderMobile ?>"
+            data-js-configuration='<?= $jsConfig; ?>'
+            data-mage-init='{ "ccImageTeaserLegacy": {} }'
+        >
 
-                <div class="cs-image-teaser-legacy__carousel">
-                    <div class="cs-image-teaser-legacy__wrapper cs-image-teaser-legacy__wrapper--content-display-<?= $displayVariant ?>">
-                        <ul class="cs-image-teaser-legacy__slides">
+            <div class="cs-image-teaser-legacy__carousel">
+                <div class="cs-image-teaser-legacy__wrapper cs-image-teaser-legacy__wrapper--content-display-<?= $displayVariant ?>">
+                    <ul class="cs-image-teaser-legacy__slides">
 
-                            <?php foreach ($viewModel->getSlides() as $slide): ?>
-                                <li class="cs-image-teaser-legacy__slide cs-image-teaser-legacy__slide--scheme-<?= $slide->getData('colorScheme') ?> <?= $slide->getSrc() ? 'cs-image-teaser-legacy__slide--image-uploaded' : '' ?>">
-                                    <?php if ($slide->getHref()): ?>
-                                    <a href="<?= $slide->getHref() ?>" class="cs-image-teaser-legacy__slide-link">
-                                        <?php endif; ?>
+                        <?php foreach ($viewModel->getSlides() as $slide): ?>
+                            <li class="cs-image-teaser-legacy__slide cs-image-teaser-legacy__slide--scheme-<?= $slide->getData('colorScheme') ?> <?= $slide->getSrc() ? 'cs-image-teaser-legacy__slide--image-uploaded' : '' ?>">
+                                <?php if ($slide->getHref()): ?>
+                                <a href="<?= $slide->getHref() ?>" class="cs-image-teaser-legacy__slide-link">
+                                    <?php endif; ?>
 
-                                        <?php
-                                        $imageSrc = $slide->getSrc();
+                                    <?php
+                                    $imageSrc = $slide->getSrc();
 
-                                        if ($imageSrc and !$slide->isSvg()) {
-                                            $imageSrc = ($isSlider and $isSliderMobile) ? '' : 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
-                                        }
-                                        ?>
-                                        <?php if ($slide->getSrc()): ?>
-                                            <figure class="cs-image-teaser-legacy__figure">
+                                    if ($imageSrc and !$slide->isSvg()) {
+                                        $imageSrc = ($isSlider and $isSliderMobile) ? '' : 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
+                                    }
+                                    ?>
+                                    <?php if ($slide->getSrc()): ?>
+                                        <figure class="cs-image-teaser-legacy__figure">
+                                            <img
+                                                    class="cs-image-teaser-legacy__image | <?= ($isSlider and $isSliderMobile) ? 'swiper-lazy' : 'lazyload' ?>"
+                                                    src="<?= $imageSrc ?>"
+                                                <?php if (!$slide->isSvg()): ?> data-src="<?= $slide->getSrc() ?>" <?php endif; ?>
+                                                <?php if ($slide->getSrcSet() and !$slide->isSvg()): ?>
+                                                    data-srcset="<?= $slide->getSrcSet() ?>"
+                                                <?php endif; ?>
+                                                    <?php if ($sizes and !$slide->isSvg()): ?>sizes="<?= $sizes ?>"<?php endif; ?>
+                                                    alt="<?= $slide->getAlt() ?>"
+                                                <?php if ($slide->getWidth()): ?> width="<?= $slide->getWidth() ?>" <?php endif; ?>
+                                                <?php if ($slide->getHeight()): ?> height="<?= $slide->getHeight() ?>" <?php endif; ?>
+                                            >
+                                            <noscript>
                                                 <img
-                                                        class="cs-image-teaser-legacy__image | <?= ($isSlider and $isSliderMobile) ? 'swiper-lazy' : 'lazyload' ?>"
-                                                        src="<?= $imageSrc ?>"
-                                                    <?php if (!$slide->isSvg()): ?> data-src="<?= $slide->getSrc() ?>" <?php endif; ?>
-                                                    <?php if ($slide->getSrcSet() and !$slide->isSvg()): ?>
-                                                        data-srcset="<?= $slide->getSrcSet() ?>"
-                                                    <?php endif; ?>
-                                                        <?php if ($sizes and !$slide->isSvg()): ?>sizes="<?= $sizes ?>"<?php endif; ?>
+                                                        class="cs-image-teaser-legacy__image"
+                                                        src="<?= $slide->getSrc() ?>"
+                                                        <?php if ($slide->getSrcSet()): ?>srcset="<?= $slide->getSrcSet() ?>" <?php endif; ?>
+                                                        <?php if ($sizes): ?>sizes="<?= $sizes ?>"<?php endif; ?>
                                                         alt="<?= $slide->getAlt() ?>"
                                                     <?php if ($slide->getWidth()): ?> width="<?= $slide->getWidth() ?>" <?php endif; ?>
                                                     <?php if ($slide->getHeight()): ?> height="<?= $slide->getHeight() ?>" <?php endif; ?>
                                                 >
-                                                <noscript>
-                                                    <img
-                                                            class="cs-image-teaser-legacy__image"
-                                                            src="<?= $slide->getSrc() ?>"
-                                                            <?php if ($slide->getSrcSet()): ?>srcset="<?= $slide->getSrcSet() ?>" <?php endif; ?>
-                                                            <?php if ($sizes): ?>sizes="<?= $sizes ?>"<?php endif; ?>
-                                                            alt="<?= $slide->getAlt() ?>"
-                                                        <?php if ($slide->getWidth()): ?> width="<?= $slide->getWidth() ?>" <?php endif; ?>
-                                                        <?php if ($slide->getHeight()): ?> height="<?= $slide->getHeight() ?>" <?php endif; ?>
-                                                    >
-                                                </noscript>
-                                            </figure>
-                                        <?php endif; ?>
+                                            </noscript>
+                                        </figure>
+                                    <?php endif; ?>
 
-                                        <div class="cs-image-teaser-legacy__content-wrapper cs-image-teaser-legacy__content-wrapper--content-display-scenario-<?= $slide->getData('displayVariant') ?>">
-                                            <div class="cs-image-teaser-legacy__content">
-                                                <?php if ($slide->getHeadline()): ?>
-                                                    <h2 class="cs-image-teaser-legacy__headline"><?= $slide->getHeadline() ?></h2>
-                                                <?php endif; ?>
+                                    <div class="cs-image-teaser-legacy__content-wrapper cs-image-teaser-legacy__content-wrapper--content-display-scenario-<?= $slide->getData('displayVariant') ?>">
+                                        <div class="cs-image-teaser-legacy__content">
+                                            <?php if ($slide->getHeadline()): ?>
+                                                <h2 class="cs-image-teaser-legacy__headline"><?= $slide->getHeadline() ?></h2>
+                                            <?php endif; ?>
 
-                                                <?php if ($slide->getSubheadline()): ?>
-                                                    <p class="cs-image-teaser-legacy__subheadline"><?= $slide->getSubheadline() ?></p>
-                                                <?php endif; ?>
+                                            <?php if ($slide->getSubheadline()): ?>
+                                                <p class="cs-image-teaser-legacy__subheadline"><?= $slide->getSubheadline() ?></p>
+                                            <?php endif; ?>
 
-                                                <?php if ($slide->getParagraph()): ?>
-                                                    <p class="cs-image-teaser-legacy__text"><?= $slide->getParagraph() ?></p>
-                                                <?php endif; ?>
+                                            <?php if ($slide->getParagraph()): ?>
+                                                <p class="cs-image-teaser-legacy__text"><?= $slide->getParagraph() ?></p>
+                                            <?php endif; ?>
 
-                                                <?php if ($slide->getHref() and $slide->getData('ctaLabel')): ?>
-                                                    <div class="cs-image-teaser-legacy__cta">
-                                                    <span role="button"
-                                                          class="cs-image-teaser-legacy__cta-button">
-                                                        <span class="cs-image-teaser-legacy__cta-button-span"><?= $slide->getData('ctaLabel') ?></span>
-                                                        <?= $this->getLayout()
-                                                            ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
-                                                            ->setIconUrl($block->getVar('image_teaser/cta_button_icon_path'))
-                                                            ->setCssClass('cs-image-teaser-legacy__cta-button-icon')
-                                                            ->setInlined(true)
-                                                            ->toHtml();
-                                                        ?>
-                                                    </span>
-                                                    </div>
-                                                <?php endif; ?>
-                                            </div>
+                                            <?php if ($slide->getHref() and $slide->getData('ctaLabel')): ?>
+                                                <div class="cs-image-teaser-legacy__cta">
+                                                <span role="button"
+                                                        class="cs-image-teaser-legacy__cta-button">
+                                                    <span class="cs-image-teaser-legacy__cta-button-span"><?= $slide->getData('ctaLabel') ?></span>
+                                                    <?= $this->getLayout()
+                                                        ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+                                                        ->setIconUrl($block->getVar('image_teaser/cta_button_icon_path'))
+                                                        ->setCssClass('cs-image-teaser-legacy__cta-button-icon')
+                                                        ->setInlined(true)
+                                                        ->toHtml();
+                                                    ?>
+                                                </span>
+                                                </div>
+                                            <?php endif; ?>
                                         </div>
-                                        <?php if ($slide->getHref()): ?>
-                                    </a>
-                                <?php endif; ?>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div>
+                                    </div>
+                                    <?php if ($slide->getHref()): ?>
+                                </a>
+                            <?php endif; ?>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
 
-                    <?php if (($isSlider or $isSliderMobile) && $block->getVar('image_teaser/navigation/show')): ?>
-                        <button class="cs-image-teaser-legacy__nav cs-image-teaser-legacy__nav--prev"
-                                type="button">
-                            <?= $this->getLayout()
-                                    ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
-                                    ->setIconUrl($block->getVar('image_teaser/navigation/arrows/prev/path'))
-                                    ->setCssClass('cs-image-teaser-legacy__nav-icon')
-                                    ->setInlined(true)
-                                    ->toHtml();
-                            ?>
-                        </button>
-                        <button class="cs-image-teaser-legacy__nav cs-image-teaser-legacy__nav--next"
-                                type="button">
-                            <?= $this->getLayout()
+                <?php if (($isSlider or $isSliderMobile) && $block->getVar('image_teaser/navigation/show')): ?>
+                    <button class="cs-image-teaser-legacy__nav cs-image-teaser-legacy__nav--prev"
+                            type="button">
+                        <?= $this->getLayout()
                                 ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
-                                ->setIconUrl($block->getVar('image_teaser/navigation/arrows/next/path'))
+                                ->setIconUrl($block->getVar('image_teaser/navigation/arrows/prev/path'))
                                 ->setCssClass('cs-image-teaser-legacy__nav-icon')
                                 ->setInlined(true)
                                 ->toHtml();
-                            ?>
-                        </button>
-                    <?php endif; ?>
-
-                </div>
-
-                <?php if (($isSlider or $isSliderMobile) && $block->getVar('image_teaser/pagination/show')): ?>
-                    <ul class="cs-image-teaser-legacy__pagination <?= $block->getVar('image_teaser/pagination/additional_css_classes') ?>"></ul>
+                        ?>
+                    </button>
+                    <button class="cs-image-teaser-legacy__nav cs-image-teaser-legacy__nav--next"
+                            type="button">
+                        <?= $this->getLayout()
+                            ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+                            ->setIconUrl($block->getVar('image_teaser/navigation/arrows/next/path'))
+                            ->setCssClass('cs-image-teaser-legacy__nav-icon')
+                            ->setInlined(true)
+                            ->toHtml();
+                        ?>
+                    </button>
                 <?php endif; ?>
-                <?php if ($imageTeaser['currentScenario']['teaserWidth']['id'] == 'c' or $imageTeaser['currentScenario']['teaserWidth']['id'] == 'c-s'): ?>
+
             </div>
+
+            <?php if (($isSlider or $isSliderMobile) && $block->getVar('image_teaser/pagination/show')): ?>
+                <ul class="cs-image-teaser-legacy__pagination <?= $block->getVar('image_teaser/pagination/additional_css_classes') ?>"></ul>
             <?php endif; ?>
+            <?php if ($imageTeaser['currentScenario']['teaserWidth']['id'] == 'c' or $imageTeaser['currentScenario']['teaserWidth']['id'] == 'c-s'): ?>
         </div>
+        <?php endif; ?>
     </div>
 </div>

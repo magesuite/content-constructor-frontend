@@ -16,75 +16,61 @@ $jsSettings = json_encode($block->getVar('product_finder/js') ?: '{}');
 
 <?= $block->getCssOnce('css/product-finder.css'); ?>
 
-<div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
-    <div class="cs-container cs-container--product-finder">
-        <div class="cs-container__inner">
-            <div class="cs-product-finder<?= $componentClasses ?>" data-mage-init='{ "ccProductFinder": <?= $jsSettings ?> }'>
-            <?php foreach($steps as $step): ?>
-                <?php
+<div class="cs-container cs-container--product-finder<?= $visibility ? ' ' .$visibility : ''; ?>">
+    <div class="cs-container__inner">
+        <div class="cs-product-finder<?= $componentClasses ?>" data-mage-init='{ "ccProductFinder": <?= $jsSettings ?> }'>
+        <?php foreach($steps as $step): ?>
+            <?php
 
-                    $stepOptionsPerRow = array_merge($viewModel->getData('optionsPerRow'), isset($step['optionsPerRow']) ? $step['optionsPerRow'] : []);
-                    $stepClasses = [];
+                $stepOptionsPerRow = array_merge($viewModel->getData('optionsPerRow'), isset($step['optionsPerRow']) ? $step['optionsPerRow'] : []);
+                $stepClasses = [];
 
-                    $stepClasses[] = "cs-product-finder__step--options-mobile_".$stepOptionsPerRow['mobile'];
-                    $stepClasses[] = "cs-product-finder__step--options-tablet_".$stepOptionsPerRow['tablet'];
-                    $stepClasses[] = " cs-product-finder__step--options-desktop_".$stepOptionsPerRow['desktop'];
-                    $stepClasses[] = $step['additional_css_class'];
+                $stepClasses[] = "cs-product-finder__step--options-mobile_".$stepOptionsPerRow['mobile'];
+                $stepClasses[] = "cs-product-finder__step--options-tablet_".$stepOptionsPerRow['tablet'];
+                $stepClasses[] = " cs-product-finder__step--options-desktop_".$stepOptionsPerRow['desktop'];
+                $stepClasses[] = $step['additional_css_class'];
 
-                    if($i == 0) {
-                        $stepClasses[] = 'cs-product-finder__step--current';
-                    }
-                ?>
-                <article
-                    class="cs-product-finder__step <?=implode(' ', $stepClasses)?>"
-                    data-step-id="<?=$step['id']?>"
-                >
+                if($i == 0) {
+                    $stepClasses[] = 'cs-product-finder__step--current';
+                }
+            ?>
+            <article
+                class="cs-product-finder__step <?=implode(' ', $stepClasses)?>"
+                data-step-id="<?=$step['id']?>"
+            >
 
-                    <?php if (!empty($step['title']) || !empty($step['description'])): ?>
-                        <header class="cs-product-finder__step-header">
-                            <?php if (!empty($step['title'])): ?>
-                                <h2 class="cs-product-finder__step-title"><?=$step['title']?></h2>
+                <?php if (!empty($step['title']) || !empty($step['description'])): ?>
+                    <header class="cs-product-finder__step-header">
+                        <?php if (!empty($step['title'])): ?>
+                            <h2 class="cs-product-finder__step-title"><?=$step['title']?></h2>
+                        <?php endif; ?>
+                        <?php if (!empty($step['description'])): ?>
+                            <p class="cs-product-finder__step-description"><?=$step['description']?></p>
+                        <?php endif; ?>
+                    </header>
+                <?php endif; ?>
+
+                <div class="cs-product-finder__step-options">
+                    <?php foreach($step['options'] as $option): ?>
+                    <div
+                        class="cs-product-finder__step-option"
+                        data-next-step-id="<?=isset($option['next_step']) ? $option['next_step'] : '' ?>"
+                        data-attributes='<?=json_encode($option['attributes'])?>'
+                        data-category-id='<?=isset($option['category_id']) ? $option['category_id'] : '' ?>'
+                        data-category-only='<?=isset($option['category_only']) ? $option['category_only'] : '' ?>'
+                    >
+                        <div class="cs-product-finder__option-sizer"></div>
+                        <div class="cs-product-finder__option-content">
+                            <?php if($option['image']): ?>
+                            <img class="cs-product-finder__option-image" src="<?=$option['image']?>">
                             <?php endif; ?>
-                            <?php if (!empty($step['description'])): ?>
-                                <p class="cs-product-finder__step-description"><?=$step['description']?></p>
+                            <?php if($option['label']): ?>
+                            <p class="cs-product-finder__option-label"><?=$option['label']?></p>
                             <?php endif; ?>
-                        </header>
-                    <?php endif; ?>
-
-                    <div class="cs-product-finder__step-options">
-                        <?php foreach($step['options'] as $option): ?>
-                        <div
-                            class="cs-product-finder__step-option"
-                            data-next-step-id="<?=isset($option['next_step']) ? $option['next_step'] : '' ?>"
-                            data-attributes='<?=json_encode($option['attributes'])?>'
-                            data-category-id='<?=isset($option['category_id']) ? $option['category_id'] : '' ?>'
-                            data-category-only='<?=isset($option['category_only']) ? $option['category_only'] : '' ?>'
-                        >
-                            <div class="cs-product-finder__option-sizer"></div>
-                            <div class="cs-product-finder__option-content">
-                                <?php if($option['image']): ?>
-                                <img class="cs-product-finder__option-image" src="<?=$option['image']?>">
-                                <?php endif; ?>
-                                <?php if($option['label']): ?>
-                                <p class="cs-product-finder__option-label"><?=$option['label']?></p>
-                                <?php endif; ?>
-                            </div>
                         </div>
-                        <?php endforeach; ?>
                     </div>
-                    <button class="cs-product-finder__back-button">
-                        <span class="cs-product-finder__back-button-span"><?=__("Go to previous step")?></span>
-                        <?= $this->getLayout()
-                                ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
-                                ->setIconUrl($block->getVar('product_finder/button_icon_path'))
-                                ->setCssClass('cs-product-finder__back-button-icon')
-                                ->setInlined(true)
-                                ->toHtml();
-                        ?>
-                    </button>
-                </article>
-                <?php $i++; ?>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
+                </div>
                 <button class="cs-product-finder__back-button">
                     <span class="cs-product-finder__back-button-span"><?=__("Go to previous step")?></span>
                     <?= $this->getLayout()
@@ -95,8 +81,20 @@ $jsSettings = json_encode($block->getVar('product_finder/js') ?: '{}');
                             ->toHtml();
                     ?>
                 </button>
-                <form class="cs-product-finder__form" method="post" action="<?=$viewModel->getRedirectEndpointUrl()?>"></form>
-            </div>
+            </article>
+            <?php $i++; ?>
+            <?php endforeach; ?>
+            <button class="cs-product-finder__back-button">
+                <span class="cs-product-finder__back-button-span"><?=__("Go to previous step")?></span>
+                <?= $this->getLayout()
+                        ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+                        ->setIconUrl($block->getVar('product_finder/button_icon_path'))
+                        ->setCssClass('cs-product-finder__back-button-icon')
+                        ->setInlined(true)
+                        ->toHtml();
+                ?>
+            </button>
+            <form class="cs-product-finder__form" method="post" action="<?=$viewModel->getRedirectEndpointUrl()?>"></form>
         </div>
     </div>
 </div>

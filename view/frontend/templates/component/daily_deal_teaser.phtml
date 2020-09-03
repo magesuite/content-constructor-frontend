@@ -18,65 +18,63 @@ $jsSettings = json_encode($block->getVar('daily_deal_teaser/js') ?: '{}');
 <?php if (!empty($product) && $product['productObject']->getIsSalable()): ?>
     <?= $block->getCssOnce('css/daily-deal-teaser.css'); ?>
 
-    <div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
-        <div class="cs-container cs-container--daily-deal-teaser">
-            <div class="cs-container__inner">
-                <div class="cs-daily-deal-teaser<?= $componentClasses ?>" data-mage-init='{ "ccDailyDealTeaser": <?= $jsSettings ?> }'>
-                    <aside class="cs-daily-deal-teaser__aside-image">
-                            <?= $layout
-                                ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser::class)
-                                ->setTemplate('MageSuite_ContentConstructorFrontend::component/daily_deal_teaser/image.phtml')
-                                ->setData($block->getData())
-                                ->toHtml();
-                            ?>
-                    </aside>
-                    <section class="cs-daily-deal-teaser__main">
-                        <div class="cs-daily-deal-teaser__details">
-                            <?= $layout
-                                ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser::class)
-                                ->setTemplate('MageSuite_ContentConstructorFrontend::component/daily_deal_teaser/product_details.phtml')
-                                ->setData($block->getData())
-                                ->toHtml();
-                            ?>
-                        </div>
+    <div class="cs-container cs-container--daily-deal-teaser<?= $visibility ? ' ' .$visibility : ''; ?>">
+        <div class="cs-container__inner">
+            <div class="cs-daily-deal-teaser<?= $componentClasses ?>" data-mage-init='{ "ccDailyDealTeaser": <?= $jsSettings ?> }'>
+                <aside class="cs-daily-deal-teaser__aside-image">
+                        <?= $layout
+                            ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser::class)
+                            ->setTemplate('MageSuite_ContentConstructorFrontend::component/daily_deal_teaser/image.phtml')
+                            ->setData($block->getData())
+                            ->toHtml();
+                        ?>
+                </aside>
+                <section class="cs-daily-deal-teaser__main">
+                    <div class="cs-daily-deal-teaser__details">
+                        <?= $layout
+                            ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser::class)
+                            ->setTemplate('MageSuite_ContentConstructorFrontend::component/daily_deal_teaser/product_details.phtml')
+                            ->setData($block->getData())
+                            ->toHtml();
+                        ?>
+                    </div>
 
-                        <div class="cs-daily-deal-teaser__description">
-                            <?= $layout
+                    <div class="cs-daily-deal-teaser__description">
+                        <?= $layout
+                            ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser::class)
+                            ->setTemplate('MageSuite_ContentConstructorFrontend::component/daily_deal_teaser/product_description.phtml')
+                            ->setData($block->getData())
+                            ->toHtml();
+                        ?>
+                    </div>
+                    <div class="cs-daily-deal-teaser__actions">
+                        <?= $layout
                                 ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser::class)
-                                ->setTemplate('MageSuite_ContentConstructorFrontend::component/daily_deal_teaser/product_description.phtml')
+                                ->setTemplate('MageSuite_ContentConstructorFrontend::component/daily_deal_teaser/daily_deal_stock_status.phtml')
                                 ->setData($block->getData())
                                 ->toHtml();
                             ?>
-                        </div>
-                        <div class="cs-daily-deal-teaser__actions">
-                            <?= $layout
-                                    ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser::class)
-                                    ->setTemplate('MageSuite_ContentConstructorFrontend::component/daily_deal_teaser/daily_deal_stock_status.phtml')
-                                    ->setData($block->getData())
-                                    ->toHtml();
-                                ?>
-                            <?= $layout
-                                    ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser::class)
-                                    ->setTemplate('MageSuite_ContentConstructorFrontend::component/daily_deal_teaser/daily_deal_counter.phtml')
-                                    ->setData($block->getData())
-                                    ->toHtml();
-                                ?>
-                            <?= $layout
-                                    ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser::class)
-                                    ->setTemplate('MageSuite_ContentConstructorFrontend::component/daily_deal_teaser/cta.phtml')
-                                    ->setData($block->getData())
-                                    ->toHtml();
-                                ?>
-                        </div>
-                    </section>
-                </div>
-
-                <?php if ($block->getVar('daily_deal_teaser/expired_notice/show')): ?>
-                <div class="cs-daily-deal-teaser cs-daily-deal-teaser--expired">
-                    <?= $block->getVar('daily_deal_teaser/expired_notice/content'); ?>
-                </div>
-                <?php endif; ?>
+                        <?= $layout
+                                ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser::class)
+                                ->setTemplate('MageSuite_ContentConstructorFrontend::component/daily_deal_teaser/daily_deal_counter.phtml')
+                                ->setData($block->getData())
+                                ->toHtml();
+                            ?>
+                        <?= $layout
+                                ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser::class)
+                                ->setTemplate('MageSuite_ContentConstructorFrontend::component/daily_deal_teaser/cta.phtml')
+                                ->setData($block->getData())
+                                ->toHtml();
+                            ?>
+                    </div>
+                </section>
             </div>
+
+            <?php if ($block->getVar('daily_deal_teaser/expired_notice/show')): ?>
+            <div class="cs-daily-deal-teaser cs-daily-deal-teaser--expired">
+                <?= $block->getVar('daily_deal_teaser/expired_notice/content'); ?>
+            </div>
+            <?php endif; ?>
         </div>
     </div>
 

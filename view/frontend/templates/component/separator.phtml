@@ -8,11 +8,8 @@ $componentClasses .= ' ' . $block->getVar('separator/additional_css_classes');
 
 <?= $block->getCssOnce('css/separator.css'); ?>
 
-<div <?= $visibility ? 'class="' . $visibility . '"' : ''; ?>>
-    <div class="cs-container cs-container--separator">
-        <div class="cs-container__inner">
-            <hr class="cs-separator<?= $componentClasses ?>" data-mage-init='{ "ccSeparator": {} }'>
-        </div>
+<div class="cs-container cs-container--separator<?= $visibility ? ' ' .$visibility : ''; ?>">
+    <div class="cs-container__inner">
+        <hr class="cs-separator<?= $componentClasses ?>" data-mage-init='{ "ccSeparator": {} }'>
     </div>
 </div>
-
