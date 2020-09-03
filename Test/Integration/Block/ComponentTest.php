@@ -6,7 +6,7 @@ class ComponentTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var \MageSuite\ContentConstructorFrontend\Block\Component
-    */
+     */
     protected $block;
 
     /**
@@ -86,16 +86,15 @@ class ComponentTest extends \PHPUnit\Framework\TestCase
     {
         $expectedHtml = <<<HTML
 
-<div >
-    <div class="cs-container cs-container--headline">
-        <div class="cs-container__inner">
-            <div class="cs-headline ">
-                <h2 class="cs-headline__title">Headline H2</h2>
-                                    <p class="cs-headline__subtitle">Subheadline</p>
-                            </div>
-        </div>
+<div class="cs-container cs-container--headline">
+    <div class="cs-container__inner">
+        <div class="cs-headline ">
+            <h2 class="cs-headline__title">Headline H2</h2>
+                            <p class="cs-headline__subtitle">Subheadline</p>
+                    </div>
     </div>
 </div>
+
 
 HTML;
 
@@ -115,7 +114,7 @@ HTML;
                 $expectedHtml
             ],
             [
-               [
+                [
                     'mobile' => "0",
                     'desktop' => "1"
                 ],
