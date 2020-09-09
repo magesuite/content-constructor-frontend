@@ -4,11 +4,6 @@ namespace MageSuite\ContentConstructorFrontend\Model\Component;
 
 class ProductTeaser extends \Magento\Framework\DataObject implements ViewModel
 {
-    /**
-     * @var \Magento\Catalog\Block\Product\ListProduct
-     */
-    protected $listProductBlock;
-
     protected $product = null;
 
     /**
