@@ -177,12 +177,6 @@
         </arguments>
     </type>
 
-    <type name="MageSuite\ContentConstructorFrontend\Block\Component\ProductTeaser">
-        <arguments>
-            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\ProductTeaser</argument>
-        </arguments>
-    </type>
-
 
     <type name="MageSuite\ContentConstructorFrontend\Service\ComponentPool">
         <arguments>
@@ -208,7 +202,6 @@
                 <item name="instagram-feed" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\InstagramFeed</item>
                 <item name="mosaic" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\Mosaic</item>
                 <item name="accordion" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\Accordion</item>
-                <item name="product-teaser" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\ProductTeaser</item>
             </argument>
         </arguments>
     </type>
