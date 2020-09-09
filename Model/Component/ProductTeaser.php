@@ -5,11 +5,6 @@ namespace MageSuite\ContentConstructorFrontend\Model\Component;
 class ProductTeaser extends \Magento\Framework\DataObject implements ViewModel
 {
     /**
-     * @var \MageSuite\ContentConstructorFrontend\DataProviders\DailyDealTeaserDataProvider
-     */
-    protected $dailyDealTeaserDataProvider;
-
-    /**
      * @var \Magento\Catalog\Block\Product\ListProduct
      */
     protected $listProductBlock;
