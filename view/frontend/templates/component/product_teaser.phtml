@@ -1,0 +1,24 @@
+<?php
+/** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\ProductTeaser */
+/** @var $viewModel \MageSuite\ContentConstructorFrontend\Model\Component\ProductTeaser */
+$viewModel = $block->getViewModel();
+
+$productData = $viewModel->getProductData();
+$product = $viewModel->getProductObject();
+
+?>
+
+<a href="<?=$productData['url']?>">
+<?=$product->getName()?>
+<?=$product->getSku()?>
+<?=$product->getDescription()?>
+
+    <img src="<?=$productData['image']?>" />
+</a>
+
+
+Rating: <?=$productData['rating']['data']['activeStars']?>/<?=$productData['rating']['data']['maxStars']?> <?=$productData['rating']['data']['text']?>
+
+<?=$productData['swatches']?>
+<?=$productData['price']?>
+<?=$productData['addToCartButtonHtml']?>

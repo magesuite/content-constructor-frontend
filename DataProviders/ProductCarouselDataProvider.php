@@ -209,6 +209,7 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
         $productData = [
             'id' => $product->getId(),
             'entity_id' => $product->getId(),
+            'object' => $product,
             'sku' => $product->getSku(),
             'name' => $product->getName(),
             'url' => $product->getProductUrl(),
