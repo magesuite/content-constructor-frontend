@@ -3,4 +3,8 @@
     <type name="Magento\Catalog\Helper\Product\View">
         <plugin name="add_xml_layout_update" type="MageSuite\ContentConstructorFrontend\Plugin\Catalog\Helper\Product\AddConstructorContentToLayout" sortOrder="1" />
     </type>
+
+    <type name="Magento\Framework\App\Response\Http">
+        <plugin name="remove_duplicated_css" type="MageSuite\ContentConstructorFrontend\Plugin\Theme\Controller\Result\RemoveDuplicatedCss"/>
+    </type>
 </config>
