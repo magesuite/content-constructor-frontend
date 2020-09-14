@@ -90,6 +90,11 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
     private $productHelper;
 
     /**
+     * @var \MageSuite\Discount\Helper\Discount
+     */
+    protected $discountHelper;
+
+    /**
      * @var \MageSuite\ProductPositiveIndicators\Helper\Product
      */
     private $productIndicatorHelper;
@@ -136,7 +141,8 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
         \MageSuite\DailyDeal\Helper\OfferData $dailyDealHelper,
         \Magento\Catalog\Api\CategoryRepositoryInterface $categoryRepository,
         \Magento\CatalogInventory\Api\StockStateInterface $stockInterface,
-        \Magento\Framework\App\State $state
+        \Magento\Framework\App\State $state,
+        \MageSuite\Discount\Helper\Discount $discountHelper
     )
     {
         $this->productCollectionFactory = $productCollectionFactory;
@@ -159,6 +165,7 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
         $this->categoryRepository = $categoryRepository;
         $this->stockInterface = $stockInterface;
         $this->state = $state;
+        $this->discountHelper = $discountHelper;
     }
 
     /**
@@ -303,7 +310,6 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
 
         $collection->addAttributeToSelect($this->catalogConfig->getProductAttributes())
             ->setStore($this->storeManager->getStore())
-            ->addMinimalPrice()
             ->addFinalPrice()
             ->addTaxPercents()
             ->addStoreFilter()
@@ -482,7 +488,7 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
 
     public function getSalePercentage($product)
     {
-        return $this->productHelper->getSalePercentage($product);
+        return $this->discountHelper->getSalePercentage($product);
     }
 
     public function getPopularIconFlag($product)
