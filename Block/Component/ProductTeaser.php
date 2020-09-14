@@ -13,6 +13,8 @@ class ProductTeaser extends AbstractComponent
 
         $product = $viewModel->getProductData();
 
-        return $product['identities'];
+        return isset($product['identities']) && is_array($product['identities']) ?
+            $product['identities'] :
+            [];
     }
 }
