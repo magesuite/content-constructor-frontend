@@ -5,29 +5,27 @@ namespace MageSuite\ContentConstructorFrontend\Model\Directive\Directives\Produc
 class DiscountPercentage extends AbstractProductDirective
 {
     /**
-     * @var \MageSuite\Frontend\Helper\Product
+     * @var \MageSuite\Discount\Helper\Discount
      */
-    protected $productHelper;
+    protected $discountHelper;
 
     public function __construct(
         \Magento\Catalog\Api\ProductRepositoryInterface $productRepository,
-        \MageSuite\Frontend\Helper\Product $productHelper
-    )
-    {
+        \MageSuite\Discount\Helper\Discount $discountHelper
+    ) {
         parent::__construct($productRepository);
 
-        $this->productHelper = $productHelper;
+        $this->discountHelper = $discountHelper;
     }
 
     /**
      * @return int
-     * @todo Extract discount logic to separate extension
      */
     public function getValue()
     {
         $product = $this->getProduct();
 
-        $salePercentage = $this->productHelper->getSalePercentage($product);
+        $salePercentage = $this->discountHelper->getSalePercentage($product);
 
         return (int)$salePercentage;
     }

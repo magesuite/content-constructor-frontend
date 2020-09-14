@@ -82,34 +82,41 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
     /**
      * @var \Magento\Catalog\Block\Product\ListProduct
      */
-    private $listProductBlock;
+    protected $listProductBlock;
 
     /**
      * @var \MageSuite\Frontend\Helper\Product
      */
-    private $productHelper;
+    protected $productHelper;
+
+    /**
+     * @var \MageSuite\Discount\Helper\Discount
+     */
+    protected $discountHelper;
 
     /**
      * @var \MageSuite\ProductPositiveIndicators\Helper\Product
      */
-    private $productIndicatorHelper;
+    protected $productIndicatorHelper;
+
     /**
      * @var \MageSuite\ContentConstructorFrontend\Model\Sort\Pool
      */
-    private $sortersPool;
+    protected $sortersPool;
+
     /**
      * @var \MageSuite\ContentConstructorFrontend\Model\Filter\Pool
      */
-    private $filtersPool;
+    protected $filtersPool;
 
     /**
      * @var \MageSuite\DailyDeal\Helper\OfferData
      */
-    private $dailyDealHelper;
+    protected $dailyDealHelper;
     /**
      * @var \Magento\Catalog\Api\CategoryRepositoryInterface
      */
-    private $categoryRepository;
+    protected $categoryRepository;
 
     /**
      * @var \Magento\CatalogInventory\Api\StockStateInterface
@@ -130,6 +137,7 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
         \Magento\Store\Model\StoreManagerInterface $storeManager,
         \Magento\Catalog\Block\Product\ListProduct $listProductBlock,
         \MageSuite\Frontend\Helper\Product $productHelper,
+        \MageSuite\Discount\Helper\Discount $discountHelper,
         \MageSuite\ProductPositiveIndicators\Helper\Product $productIndicatorHelper,
         \MageSuite\ContentConstructorFrontend\Model\Sort\Pool $sortersPool,
         \MageSuite\ContentConstructorFrontend\Model\Filter\Pool $filtersPool,
@@ -137,8 +145,7 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
         \Magento\Catalog\Api\CategoryRepositoryInterface $categoryRepository,
         \Magento\CatalogInventory\Api\StockStateInterface $stockInterface,
         \Magento\Framework\App\State $state
-    )
-    {
+    ) {
         $this->productCollectionFactory = $productCollectionFactory;
         $this->imageHelper = $imageHelper;
         $this->review = $review;
@@ -152,6 +159,7 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
         $this->storeManager = $storeManager;
         $this->listProductBlock = $listProductBlock;
         $this->productHelper = $productHelper;
+        $this->discountHelper = $discountHelper;
         $this->productIndicatorHelper = $productIndicatorHelper;
         $this->sortersPool = $sortersPool;
         $this->filtersPool = $filtersPool;
@@ -482,7 +490,7 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
 
     public function getSalePercentage($product)
     {
-        return $this->productHelper->getSalePercentage($product);
+        return $this->discountHelper->getSalePercentage($product);
     }
 
     public function getPopularIconFlag($product)
