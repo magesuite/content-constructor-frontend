@@ -49,6 +49,10 @@ class RemoveDuplicatedCssTest extends \PHPUnit\Framework\TestCase
                 '<link rel="stylesheet" href="https://example.com/component.min.css"/><script>/* defer-ignore */</script>
 <link rel="stylesheet" href="https://example.com/other-component.min.css"/><script>/* defer-ignore */</script>'
             ],
+            [
+                '<link rel="stylesheet" href="https://example.com/component.min.css">',
+                '<link rel="stylesheet" href="https://example.com/component.min.css">'
+            ],
         ];
     }
 }

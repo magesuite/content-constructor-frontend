@@ -19,7 +19,7 @@ class RemoveDuplicatedCss
      */
     public function execute($html) {
         $stylesOpeningMarkup = '<link rel="stylesheet"';
-        $stylesClosing = '"/>';
+        $stylesClosing = '>';
         $stylesOpeningPosition = strpos($html, $stylesOpeningMarkup);
 
         while ($stylesOpeningPosition !== false) {
