@@ -1,17 +1,20 @@
 {
-  "name": "creativestyle/magesuite-content-constructor-frontend",
-  "description": "Content Constructor Frontend Magento 2 Extension",
-  "type": "magento2-module",
-  "homepage": "https://creativestyle.de",
-  "license": "OSL-3.0",
-  "require": {
-    "creativestyle/magesuite-dynamic-directives": "^1.0.0"
-  },
-  "autoload": {
-    "files": [ "registration.php" ],
-    "psr-4": {
-      "MageSuite\\ContentConstructorFrontend\\": "",
-      "Creativestyle\\ContentConstructorFrontendExtension\\": "Legacy"
+    "name": "creativestyle/magesuite-content-constructor-frontend",
+    "description": "Content Constructor Frontend Magento 2 Extension",
+    "type": "magento2-module",
+    "homepage": "https://creativestyle.de",
+    "license": "OSL-3.0",
+    "require": {
+        "creativestyle/magesuite-dynamic-directives": "^1.0.0",
+        "creativestyle/magesuite-discount": "^1.0.0"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "MageSuite\\ContentConstructorFrontend\\": "",
+            "Creativestyle\\ContentConstructorFrontendExtension\\": "Legacy"
+        }
     }
-  }
 }
