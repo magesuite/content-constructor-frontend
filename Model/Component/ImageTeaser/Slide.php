@@ -38,10 +38,10 @@ class Slide extends \MageSuite\ContentConstructorFrontend\Model\Component\Generi
 
         if (isset($teaser['image']['alt']) and !empty($teaser['image']['alt'])) {
             return $teaser['image']['alt'];
-        } else if (isset($teaser['headline']) and !empty($teaser['headline'])) {
-            return $teaser['headline'];
-        } else if (isset($teaser['subheadline']) and !empty($teaser['subheadline'])) {
-            return $teaser['subheadline'];
+        } else if (isset($teaser['slogan']) and !empty($teaser['slogan'])) {
+            return $teaser['slogan'];
+        } else if (isset($teaser['description']) and !empty($teaser['description'])) {
+            return $teaser['description'];
         }
 
         return  __('Teaser image');
