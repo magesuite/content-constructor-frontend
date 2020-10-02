@@ -1,4 +1,7 @@
 <?php
+/** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\Accordion */
+$componentConfiguration = $block->getData();
+
 /** @var \MageSuite\ContentConstructorFrontend\Model\Component\Accordion $viewModel */
 $viewModel = $block->getViewModel();
 
@@ -20,7 +23,7 @@ $expandFirst = $viewModel->getExpandFirst();
     <div class="cs-container cs-container--accordion">
         <div class="cs-container__inner">
             <?php if (count($groups)): ?>
-                <div class="cs-accordion<?= $componentClasses ?>">
+                <div class="cs-accordion cs-accordion--mode-<?=$componentConfiguration['scenarios']['reading']['id'] ?? ''?><?= $componentClasses ?>">
                     <ul class="cs-accordion__groups">
                         <?php foreach ($groups as $group):?>
                             <li class="cs-accordion__group" <?php echo ($areGroupsSupported  and !empty($group['headline'])) ? 'id="' . $viewModel->getGroupId($group['headline']) .'"': '' ;?>>
