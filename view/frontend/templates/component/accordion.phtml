@@ -1,4 +1,7 @@
 <?php
+/** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\Accordion */
+$componentConfiguration = $block->getData();
+
 /** @var \MageSuite\ContentConstructorFrontend\Model\Component\Accordion $viewModel */
 $viewModel = $block->getViewModel();
 
@@ -22,7 +25,9 @@ $jsSettings = json_encode($block->getVar('accordion/js') ?: '{}');
 <div class="cs-container cs-container--accordion<?= $visibility ? ' ' .$visibility : ''; ?>">
     <div class="cs-container__inner">
         <?php if (count($groups)): ?>
-            <div class="cs-accordion<?= $componentClasses ?>" data-mage-init='{ "ccAccordion": <?= $jsSettings ?> }'>
+            <div class="cs-accordion cs-accordion--mode-<?=$componentConfiguration['scenarios']['reading']['id'] ?? ''?><?= $componentClasses ?>" 
+                 data-mage-init='{ "ccAccordion": <?= $jsSettings ?> }'
+            >
                 <ul class="cs-accordion__groups">
                     <?php foreach ($groups as $group):?>
                         <li class="cs-accordion__group" <?php echo ($areGroupsSupported  and !empty($group['headline'])) ? 'id="' . $viewModel->getGroupId($group['headline']) .'"': '' ;?>>
