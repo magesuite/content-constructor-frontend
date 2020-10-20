@@ -28,16 +28,11 @@ class DailyDealTeaser extends \Magento\Framework\DataObject implements ViewModel
         $this->listProductBlock = $listProductBlock;
     }
 
-    public function getProduct() {
+    public function getProduct()
+    {
         if($this->product == null) {
             $configuration = $this->getData();
-
-            $configuration['filter_attributes'] = [
-                'daily_deal_enabled' => [
-                    'value' => 1,
-                    'operator' => 'eq'
-                ]
-            ];
+            $configuration['filter'] = \MageSuite\ContentConstructorFrontend\Model\Filter\DailyDeal::IDENTIFIER;
 
             $this->product = $this->dailyDealTeaserDataProvider->getProduct($configuration);
         }
