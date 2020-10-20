@@ -60,6 +60,7 @@
         <arguments>
             <argument name="filters" xsi:type="array">
                 <item name="new_products" xsi:type="object">MageSuite\ContentConstructorFrontend\Model\Filter\NewProducts</item>
+                <item name="daily_deal" xsi:type="object">MageSuite\ContentConstructorFrontend\Model\Filter\DailyDeal</item>
             </argument>
         </arguments>
     </type>
