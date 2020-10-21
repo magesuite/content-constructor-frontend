@@ -4,7 +4,7 @@
 
 $viewModel = $block->getViewModel();
 $product = $viewModel->getProduct();
-
+$jsSettings = json_encode($block->getVar('daily_deal_teaser/js') ?: '{}');
 ?>
 
 <div class="cs-daily-deal-teaser__dd-detail cs-daily-deal-teaser__dd-detail--countdown">
@@ -19,6 +19,7 @@ $product = $viewModel->getProduct();
         data-phrase-minutes="<?= __('Min') ?>"
         data-phrase-second="<?= __('Sec') ?>"
         data-phrase-seconds="<?= __('Sec') ?>"
+        data-mage-init='{ "ccDailyDealTeaser": <?= $jsSettings ?> }'
         >
         <div class="cs-dailydeal__countdown" data-dailydeal-end="<?=$product['dailyDealOffer']['to']?>"></div>
         <input type="hidden" name="cs-dailydeal__countdown-labels" class="cs-dailydeal__countdown-labels">
