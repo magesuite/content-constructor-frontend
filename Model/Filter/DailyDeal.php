@@ -28,13 +28,8 @@ class DailyDeal implements FilterInterface
 
     public function filter($collection)
     {
-        $currentDate = date('Y-m-d H:i:s');
-
         $collection->addIsInStockFilter()
-            ->addAttributeToFilter('daily_deal_enabled', ['eq' => 1])
-            ->addAttributeToFilter('daily_deal_limit', ['gt' => 0])
-            ->addAttributeToFilter('daily_deal_from', ['lt' => $currentDate])
-            ->addAttributeToFilter('daily_deal_to', ['gt' => $currentDate]);
+            ->addAttributeToFilter('daily_deal_enabled', ['eq' => 1]);
 
         return $collection;
     }
