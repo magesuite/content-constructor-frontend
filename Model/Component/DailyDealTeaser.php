@@ -4,6 +4,7 @@ namespace MageSuite\ContentConstructorFrontend\Model\Component;
 
 class DailyDealTeaser extends \Magento\Framework\DataObject implements ViewModel
 {
+
     /**
      * @var \MageSuite\ContentConstructorFrontend\DataProviders\DailyDealTeaserDataProvider
      */
