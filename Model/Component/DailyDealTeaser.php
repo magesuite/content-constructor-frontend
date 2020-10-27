@@ -4,7 +4,6 @@ namespace MageSuite\ContentConstructorFrontend\Model\Component;
 
 class DailyDealTeaser extends \Magento\Framework\DataObject implements ViewModel
 {
-    const CACHE_TAG = 'daily_deal_teaser';
 
     /**
      * @var \MageSuite\ContentConstructorFrontend\DataProviders\DailyDealTeaserDataProvider

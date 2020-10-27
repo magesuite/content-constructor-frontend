@@ -9,7 +9,7 @@ class DailyDealTeaser extends AbstractComponent implements \Magento\Framework\Da
     public function getIdentities()
     {
         $identities = parent::getIdentities();
-        $identities[] = \MageSuite\ContentConstructorFrontend\Model\Component\DailyDealTeaser::CACHE_TAG;
+        $identities[] = \MageSuite\DailyDeal\Model\Offer::CACHE_TAG;
 
         /** @var \MageSuite\ContentConstructorFrontend\Model\Component\DailyDealTeaser $viewModel */
         $viewModel = $this->getViewModel();
