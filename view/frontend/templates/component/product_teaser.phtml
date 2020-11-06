@@ -6,19 +6,79 @@ $viewModel = $block->getViewModel();
 $productData = $viewModel->getProductData();
 $product = $viewModel->getProductObject();
 
+$componentClasses = $block->getSkipSpacing() ? ' cs-product-teaser--skip-spacing' : '';
+$componentClasses .= ' ' . $block->getVar('product_teaser/additional_css_classes');
+$visibility = $block->getVisibilityClass();
+
+$showDescription = $block->getVar('product_teaser/show_description');
+$showSwatches = $block->getVar('product_teaser/show_swatches');
+$showSKU = $block->getVar('product_teaser/show_sku');
+$showRatings = $block->getVar('product_teaser/show_ratings');
+$showPrice = $block->getVar('product_teaser/show_price');
+$showAddToCart = $block->getVar('product_teaser/show_addtocart');
 ?>
 
-<a href="<?=$productData['url']?>">
-<?=$product->getName()?>
-<?=$product->getSku()?>
-<?=$product->getDescription()?>
+<?php if($productData && $product): ?>
+<?= $block->getCssOnce('css/product-teaser.css'); ?>
 
-    <img src="<?=$productData['image']?>" />
-</a>
+<div class="cs-container cs-container--product-teaser<?= $visibility ? ' ' .$visibility : ''; ?>">
+    <div class="cs-container__inner">
+        <div class="cs-product-teaser<?= $componentClasses; ?>">
+            <a href="<?=$productData['url']?>" class="cs-product-teaser__image">
+                <img class="lazyload" data-src="<?=$productData['image']?>" />
+            </a>
+            <div class="cs-product-teaser__details">
+                <a href="<?=$productData['url']?>" class="cs-product-teaser__name">
+                    <?= $product->getName(); ?>
+                </a>
 
+                <?php if ($showDescription && $product->getShortDescription()): ?>
+                <div class="cs-product-teaser__description">
+                    <?= $product->getShortDescription() ?>
+                </div>
+                <?php endif; ?>
 
-Rating: <?=$productData['rating']['data']['activeStars']?>/<?=$productData['rating']['data']['maxStars']?> <?=$productData['rating']['data']['text']?>
+                <?php if ($showSwatches && $productData['swatches']): ?>
+                <div class="cs-product-teaser__swatches">
+                    <?= $productData['swatches']; ?>
+                </div>
+                <?php endif; ?>
 
-<?=$productData['swatches']?>
-<?=$productData['price']?>
-<?=$productData['addToCartButtonHtml']?>
+                    
+                <div class="cs-product-teaser__info">
+                    <?php if ($showRatings && $productData['rating']['data']['maxStars']): ?>
+                    <div class="cs-product-teaser__ratings">
+                        <?= $this->getLayout()
+                            ->createBlock(\Magento\Framework\View\Element\Template::class)
+                            ->setMaxStars($productData['rating']['data']['maxStars'])
+                            ->setActiveStars($productData['rating']['data']['activeStars'])
+                            ->setReviewsCount(str_replace(array( '(', ')' ), '', $productData['rating']['data']['text']))
+                            ->setHideReviewsCount(false)
+                            ->setReviewsLink(true)
+                            ->setReviewsUrl($productData['url'])
+                            ->setTemplate('Magento_Review::rating-stars.phtml')
+                            ->toHtml();
+                        ?>
+                    </div>
+                    <?php endif; ?>
+
+                    <?php if ($showSKU && $product->getSku()): ?>
+                    <div class="cs-product-teaser__sku">
+                        <span class="cs-product-teaser__sku-label"><?= __('SKU:'); ?></span>
+                        <span class="cs-product-teaser__sku-data"><?=$product->getSku()?></span>
+                    </div>
+                    <?php endif; ?>
+                </div>
+                <div class="cs-product-teaser__action">
+                    <?php if ($showPrice && $productData['price']): ?>
+                    <div class="cs-product-teaser__price"><?= $productData['price']; ?></div>
+                    <?php endif; ?>
+                    <?php if ($showAddToCart): ?>
+                    <div class="cs-product-teaser__addtocart"><?= $productData['addToCartButtonHtml']; ?></div>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php endif; ?>
