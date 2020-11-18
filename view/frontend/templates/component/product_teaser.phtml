@@ -8,11 +8,15 @@ $product = $viewModel->getProductObject();
 ?>
 
 <?php if($productData && $product): ?>
-<?php 
+<?php
+    $imageHelper = $this->helper(\Magento\Catalog\Helper\Image::class);
+    $productImageUrl = $imageHelper->init($product, 'product_teaser')->getUrl();
+    $productImage2xUrl = $imageHelper->init($product, 'product_teaser_2x')->getUrl();
+
     $componentClasses = $block->getSkipSpacing() ? ' cs-product-teaser--skip-spacing' : '';
     $componentClasses .= ' ' . $block->getVar('product_teaser/additional_css_classes');
     $visibility = $block->getVisibilityClass();
-    
+
     $showSwatches = $block->getVar('product_teaser/show_swatches');
     $showSKU = $block->getVar('product_teaser/show_sku');
     $showRatings = $block->getVar('product_teaser/show_rating');
@@ -22,22 +26,52 @@ $product = $viewModel->getProductObject();
     $showDescription = $block->getVar('product_teaser/description/show');
     $descriptionAttribute = $block->getVar('product_teaser/description/attribute_code');
     $description = $descriptionAttribute ? $product->getData($descriptionAttribute) : '';
+
+    $loaderImage = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
+
+    $imageTypeHelper = $this->helper(\MageSuite\ThemeHelpers\Helper\ImageType::class);
+    $isWebpSupported = $imageTypeHelper->supportsWebp($productImageUrl);
 ?>
 <?= $block->getCssOnce('css/product-teaser.css'); ?>
 <div class="cs-container cs-container--product-teaser<?= $visibility ? ' ' .$visibility : ''; ?>">
     <div class="cs-container__inner">
         <div class="cs-product-teaser<?= $componentClasses; ?>">
-            <a href="<?= $productData['url'] ?>" class="cs-product-teaser__image">
-                <img class="lazyload" data-src="<?= $productData['image'] ?>" />
+            <a href="<?= $productData['url']; ?>" class="cs-product-teaser__link">
+                <figure class="cs-product-teaser__thumbnail">
+                    <picture class="cs-product-teaser__image">
+                        <?php if ($isWebpSupported): ?>
+                            <source type="image/webp"
+                                srcset="<?= $loaderImage ?>"
+                                data-srcset="<?= $productImageUrl . '.webp 1x, ' . $productImage2xUrl . '.webp 2x' ?>"
+                            >
+                        <?php endif; ?>
+                        <source srcset="<?= $loaderImage ?>"
+                            data-srcset="<?= $productImageUrl . ' 1x, ' . $productImage2xUrl . ' 2x' ?>"
+                        >
+                        <img src="<?= $loaderImage ?>"
+                            class="lazyload"
+                            data-src="<?= $productImageUrl ?>"
+                            data-srcset="<?= $productImageUrl . ' 1x, ' . $productImage2xUrl . ' 2x' ?>"
+                            alt="<?= $product->getName(); ?>"
+                        >
+                    </picture>
+                    <noscript>
+                        <img class="cs-product-teaser__image"
+                            src="<?= $productImageUrl ?>"
+                            srcset="<?= $productImageUrl . ' 1x, ' . $productImage2xUrl . ' 2x' ?>"
+                            alt="<?= $product->getName(); ?>"
+                        >
+                    </noscript>
+                </figure>
             </a>
             <div class="cs-product-teaser__details">
-                <a href="<?= $productData['url'] ?>" class="cs-product-teaser__name">
+                <a href="<?= $productData['url']; ?>" class="cs-product-teaser__name">
                     <?= $product->getName(); ?>
                 </a>
 
                 <?php if ($showDescription && $description): ?>
                     <div class="cs-product-teaser__description">
-                        <?= $description ?>
+                        <?= $description; ?>
                     </div>
                 <?php endif; ?>
 
