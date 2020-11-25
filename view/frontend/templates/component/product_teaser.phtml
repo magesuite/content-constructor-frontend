@@ -111,7 +111,21 @@ $product = $viewModel->getProductObject();
                         <div class="cs-product-teaser__price"><?= $productData['price']; ?></div>
                     <?php endif; ?>
                     <?php if ($showAddToCart): ?>
-                        <div class="cs-product-teaser__addtocart"><?= $productData['addToCartButtonHtml']; ?></div>
+                        <div class="cs-product-teaser__addtocart cs-addtocart">
+                            <?php
+                            $addToCartParameters = $viewModel->getAddToCartParameters($product);
+                            ?>
+                            <form data-role="tocart-form" action="<?= $addToCartParameters['action'] ?>" method="post">
+                                <input type="hidden" name="product" value="<?= $addToCartParameters['productId'] ?>">
+                                <input type="hidden" name="<?= $addToCartParameters['uencKey'] ?>" value="<?= $addToCartParameters['uencValue'] ?>">
+                                <?= $addToCartParameters['formKey'] ?>
+                                <?= $this->getLayout()
+                                    ->createBlock("Magento\Framework\View\Element\Template")
+                                    ->setTemplate("Magento_Catalog::addtocart/button.phtml")
+                                    ->toHtml();
+                                ?>
+                            </form>
+                        </div>
                     <?php endif; ?>
                 </div>
             </div>
