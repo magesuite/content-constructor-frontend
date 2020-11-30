@@ -97,7 +97,7 @@ if ($gridTeaser) {
         ->toHtml();
     ?>
 
-    <div class="cs-container cs-container--image-teaser<?= $containerClasses ?><?= $visibility ? ' ' .$visibility : ''; ?>">
+    <div class="cs-container cs-container--image-teaser<?= $isSlider ? ' cs-container--image-teaser-slider' : '' ?><?= $containerClasses ?><?= $visibility ? ' ' .$visibility : ''; ?>">
         <?php if ($teaserWidth == 'container' or $teaserWidth == 'container-slider'): ?>
             <div class="cs-container__inner">
         <?php endif; ?>
