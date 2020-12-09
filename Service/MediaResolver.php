@@ -178,7 +178,7 @@ class MediaResolver implements \MageSuite\ContentConstructor\Service\MediaResolv
             $srcSet[] = $this->buildSrcSetElement($this->getUrlByPath($resizedFilePath), $resizedImageWidth);
         }
 
-        return implode($srcSet, ', ');
+        return implode(', ', $srcSet);
     }
 
     /**
