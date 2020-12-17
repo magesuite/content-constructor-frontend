@@ -52,10 +52,7 @@ $isLazyLoaded = isset($imageTeaserData['type'])
         <?php if ($isWebpSupported): ?>
             <source
                 type="image/webp"
-                class="cs-image-teaser__image
-                    <?= $isLazyLoaded ? ' lazyload' : '' ?>
-                    <?= ($isSlider || $isSliderMobile) && $isLazyLoaded ? ' swiper-lazy' : '' ?>
-                    <?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
+                class="cs-image-teaser__image<?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
 
                 <?php if ($isLazyLoaded): ?>
                     srcset="<?= $placeholderImageSrc ?>"
@@ -77,10 +74,7 @@ $isLazyLoaded = isset($imageTeaserData['type'])
         <?php endif; ?>
         <source
             type="<?= $imageMimeType ?>"
-            class="cs-image-teaser__image
-                <?= $isLazyLoaded ? ' lazyload' : '' ?>
-                <?= ($isSlider || $isSliderMobile) && $isLazyLoaded ? ' swiper-lazy' : '' ?>
-                <?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
+            class="cs-image-teaser__image<?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
 
             <?php if ($isLazyLoaded): ?>
                 srcset="<?= $placeholderImageSrc ?>"
@@ -99,16 +93,12 @@ $isLazyLoaded = isset($imageTeaserData['type'])
             <?php endif; ?>
         >
         <img
-            class="cs-image-teaser__image
-                <?= $isLazyLoaded ? ' lazyload' : '' ?>
-                <?= ($isSlider || $isSliderMobile) && $isLazyLoaded ? ' swiper-lazy' : '' ?>
-                <?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
+            class="cs-image-teaser__image<?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?><?= $isLazyLoaded ? ' lazyload' : '' ?>"
             alt="<?= $imageAlt ?>"
 
             <?php if ($isLazyLoaded): ?>
                 src="<?= $placeholderImageSrc ?>"
                 data-src="<?= $origImageSrc ?>"
-                srcset="<?= $placeholderImageSrc ?>"
                 data-srcset="<?= $imageSrcset ?>"
             <?php else: ?>
                 src="<?= $origImageSrc ?>"
@@ -128,9 +118,10 @@ $isLazyLoaded = isset($imageTeaserData['type'])
     </picture>
     <noscript>
         <img
-            class="cs-image-teaser__image"
+            class="cs-image-teaser__image<?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
             alt="<?= $imageAlt ?>"
             src="<?= $origImageSrc ?>"
+
             <?php if ($imageSrcset): ?>
                 srcset="<?= $imageSrcset ?>"
             <?php endif; ?>
