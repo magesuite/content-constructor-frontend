@@ -7,6 +7,8 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
     const CACHE_LIFETIME = 86400;
     const CACHE_KEY = 'component_html_%s_%s';
 
+    const CACHE_IDENTIFIER_PREFIX = 'identifier_';
+
     /**
      * @var \MageSuite\ContentConstructorFrontend\Service\ComponentPool
      */
@@ -72,8 +74,11 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
 
     public function getIdentities()
     {
+        $identitiesIdentifier = self::CACHE_IDENTIFIER_PREFIX . $this->getCacheKey();
+
         if (!$this->component) {
-            return [];
+            $identitiesString = $this->_cache->load($identitiesIdentifier);
+            return $identitiesString ? explode(',', $identitiesString) : [];
         }
 
         $identities = $this->component->getIdentities();
@@ -81,6 +86,9 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
         if (is_string($identities)) {
             $identities = [$identities];
         }
+
+        $identitiesString = implode(',', $identities);
+        $this->_cache->save($identitiesString, $identitiesIdentifier, $identities);
 
         return $identities;
     }
