@@ -212,6 +212,66 @@ class Index extends DataProviderComponents
         ];
         $blocks[] = self::getSeparatorBlock();
 
+        # ===== MOSAIC ===== #
+        $blocks[] = [
+            '_type' => '\Magento\Cms\Block\Widget\Page\Link',
+            '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
+            '_data' => [
+                'section' => 'content',
+                'anchor_text' => 'Mosaic - Content width 2/3 Teaser on Left',
+                '_path' => 'contentconstructor/components/index/page/mosaiccontentwidth23teaserleft'
+            ],
+        ];
+        $blocks[] = [
+            '_type' => '\Magento\Cms\Block\Widget\Page\Link',
+            '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
+            '_data' => [
+                'section' => 'content',
+                'anchor_text' => 'Mosaic - Content width 2/3 Teaser on Right',
+                '_path' => 'contentconstructor/components/index/page/mosaiccontentwidth23teaserright'
+            ],
+        ];
+        $blocks[] = [
+            '_type' => '\Magento\Cms\Block\Widget\Page\Link',
+            '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
+            '_data' => [
+                'section' => 'content',
+                'anchor_text' => 'Mosaic - Browser width 2/3 Teaser on Left',
+                '_path' => 'contentconstructor/components/index/page/mosaicbrowserwidth23teaserleft'
+            ],
+        ];
+        $blocks[] = [
+            '_type' => '\Magento\Cms\Block\Widget\Page\Link',
+            '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
+            '_data' => [
+                'section' => 'content',
+                'anchor_text' => 'Mosaic - Browser width 2/3 Teaser on Right',
+                '_path' => 'contentconstructor/components/index/page/mosaicbrowserwidth23teaserright'
+            ],
+        ];
+        $blocks[] = self::getSeparatorBlock();
+
+        # ===== ACCORDION ===== #
+        $blocks[] = [
+            '_type' => '\Magento\Cms\Block\Widget\Page\Link',
+            '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
+            '_data' => [
+                'section' => 'content',
+                'anchor_text' => 'Accordion - Container Width',
+                '_path' => 'contentconstructor/components/index/page/accordioncontainerwidth'
+            ],
+        ];
+        $blocks[] = [
+            '_type' => '\Magento\Cms\Block\Widget\Page\Link',
+            '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
+            '_data' => [
+                'section' => 'content',
+                'anchor_text' => 'Accordion - Optimal Reading Width',
+                '_path' => 'contentconstructor/components/index/page/accordionoptimalreadingwidth'
+            ],
+        ];
+        $blocks[] = self::getSeparatorBlock();
+
         # ===== PARAGRAPHS ===== #
         $blocks[] = [
             '_type' => '\Magento\Cms\Block\Widget\Page\Link',
