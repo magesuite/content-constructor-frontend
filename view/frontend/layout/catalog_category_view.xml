@@ -14,9 +14,16 @@
                         <argument name="html_tag" xsi:type="string">li</argument>
                         <argument name="grid_class" xsi:type="string">cs-grid-layout</argument>
                         <argument name="brick_class" xsi:type="string">cs-grid-layout__brick</argument>
+                        <argument name="pagination_view_model" xsi:type="object">MageSuite\ContentConstructorFrontend\ViewModel\PaginationViewModel</argument>
                     </arguments>
                 </block>
             </container>
+        </referenceBlock>
+
+        <referenceBlock name="category.products.list">
+            <arguments>
+                <argument name="pagination_view_model" xsi:type="object">MageSuite\ContentConstructorFrontend\ViewModel\PaginationViewModel</argument>
+            </arguments>
         </referenceBlock>
     </body>
 </page>
