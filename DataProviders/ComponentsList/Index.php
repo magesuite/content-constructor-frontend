@@ -25,7 +25,7 @@ class Index extends DataProviderComponents
             '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
             '_data' => [
                 'section' => 'content',
-                'anchor_text' => 'Hero Carousel',
+                'anchor_text' => 'Hero Carousel Large teaser mobile scenario',
                 '_path' => 'contentconstructor/components/index/page/herocarousel-large'
             ]
         ];
@@ -37,16 +37,6 @@ class Index extends DataProviderComponents
                 'section' => 'content',
                 'anchor_text' => 'Hero Carousel Slider mobile scenario',
                 '_path' => 'contentconstructor/components/index/page/herocarousel-slider'
-            ]
-        ];
-
-        $blocks[] = [
-            '_type' => '\Magento\Cms\Block\Widget\Page\Link',
-            '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
-            '_data' => [
-                'section' => 'content',
-                'anchor_text' => 'Hero Carousel Hidden mobile scenario',
-                '_path' => 'contentconstructor/components/index/page/herocarousel-hidden'
             ]
         ];
 

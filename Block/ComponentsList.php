@@ -48,7 +48,6 @@ class ComponentsList extends \Magento\Framework\View\Element\Template
     private $providers = [
         'herocarousel-large' => 'HeroCarouselLarge',
         'herocarousel-slider' => 'HeroCarouselSlider',
-        'herocarousel-hidden' => 'HeroCarouselHidden',
         'itlegacywindowwidth' => 'ITLegacyWindowWidth',
         'itlegacycontainerwidth' => 'ITLegacyContainerWidth',
         'itlegacywindowwidthslider' => 'ITLegacyWindowWidthSlider',
