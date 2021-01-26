@@ -22,6 +22,20 @@ class TTContentWidth extends DataProviderComponents
                 ],
             ],
             1 => [
+                'type' => 'static-cms-block',
+                'id' => 'component5583',
+                'section' => 'content',
+                'data' => [
+                    'identifier' => 'testparagraph22',
+                    'title' => 'testparagraph22',
+                    'resetstyles' => false,
+                    'componentVisibility' => [
+                        'mobile' => true,
+                        'desktop' => true,
+                    ],
+                ],
+            ],
+            2 => [
                 'id' => 'component6cce',
                 'section' => 'content',
                 'type' => 'headline',
@@ -35,9 +49,10 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            2 => [
+            3 => [
                 'id' => 'component7ac0',
                 'section' => 'content',
+                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
@@ -267,7 +282,7 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            3 => [
+            4 => [
                 'id' => 'component600d',
                 'section' => 'content',
                 'name' => 'Teaser and text',
@@ -500,7 +515,7 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            4 => [
+            5 => [
                 'id' => 'component16b3',
                 'section' => 'content',
                 'name' => 'Teaser and text',
@@ -733,7 +748,7 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            5 => [
+            6 => [
                 'id' => 'component9136',
                 'section' => 'content',
                 'name' => 'Teaser and text',
@@ -966,7 +981,7 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            6 => [
+            7 => [
                 'id' => 'component8b33',
                 'section' => 'content',
                 'name' => 'Teaser and text',
@@ -1199,7 +1214,7 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            7 => [
+            8 => [
                 'id' => 'component605a',
                 'section' => 'content',
                 'name' => 'Teaser and text',
@@ -1432,7 +1447,7 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            8 => [
+            9 => [
                 'id' => 'componentfeba',
                 'section' => 'content',
                 'name' => 'Teaser and text',
@@ -1665,7 +1680,7 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            9 => [
+            10 => [
                 'id' => 'component4015',
                 'section' => 'content',
                 'name' => 'Teaser and text',
@@ -1898,7 +1913,7 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            10 => [
+            11 => [
                 'id' => 'component4ba5',
                 'section' => 'content',
                 'name' => 'Teaser and text',
@@ -2131,7 +2146,7 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            11 => [
+            12 => [
                 'id' => 'componentb6dc',
                 'section' => 'content',
                 'type' => 'headline',
@@ -2145,7 +2160,7 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            12 => [
+            13 => [
                 'id' => 'componentaa0a',
                 'section' => 'content',
                 'name' => 'Teaser and text',
@@ -2378,7 +2393,7 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            13 => [
+            14 => [
                 'id' => 'componentfeb6',
                 'section' => 'content',
                 'name' => 'Teaser and text',
@@ -2611,7 +2626,7 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            14 => [
+            15 => [
                 'id' => 'component25a8',
                 'section' => 'content',
                 'name' => 'Teaser and text',
@@ -2844,7 +2859,7 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            15 => [
+            16 => [
                 'id' => 'component1590',
                 'section' => 'content',
                 'name' => 'Teaser and text',
@@ -3077,7 +3092,7 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            16 => [
+            17 => [
                 'id' => 'componentf8ff',
                 'section' => 'content',
                 'name' => 'Teaser and text',
@@ -3310,7 +3325,7 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            17 => [
+            18 => [
                 'id' => 'component0fae',
                 'section' => 'content',
                 'name' => 'Teaser and text',
@@ -3543,7 +3558,7 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            18 => [
+            19 => [
                 'id' => 'component6565',
                 'section' => 'content',
                 'name' => 'Teaser and text',
@@ -3776,7 +3791,7 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            19 => [
+            20 => [
                 'id' => 'component6547',
                 'section' => 'content',
                 'name' => 'Teaser and text',
@@ -4009,7 +4024,7 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            20 => [
+            21 => [
                 'id' => 'component5966',
                 'section' => 'content',
                 'name' => 'Teaser and text',
