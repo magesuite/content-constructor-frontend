@@ -22,20 +22,6 @@ class TTContentWidth extends DataProviderComponents
                 ],
             ],
             1 => [
-                'type' => 'static-cms-block',
-                'id' => 'component5583',
-                'section' => 'content',
-                'data' => [
-                    'identifier' => 'testparagraph22',
-                    'title' => 'testparagraph22',
-                    'resetstyles' => false,
-                    'componentVisibility' => [
-                        'mobile' => true,
-                        'desktop' => true,
-                    ],
-                ],
-            ],
-            2 => [
                 'id' => 'component6cce',
                 'section' => 'content',
                 'type' => 'headline',
@@ -49,10 +35,9 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            3 => [
+            2 => [
                 'id' => 'component7ac0',
                 'section' => 'content',
-                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
@@ -282,10 +267,9 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            4 => [
+            3 => [
                 'id' => 'component600d',
                 'section' => 'content',
-                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
@@ -515,10 +499,9 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            5 => [
+            4 => [
                 'id' => 'component16b3',
                 'section' => 'content',
-                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
@@ -748,10 +731,9 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            6 => [
+            5 => [
                 'id' => 'component9136',
                 'section' => 'content',
-                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
@@ -981,10 +963,9 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            7 => [
+            6 => [
                 'id' => 'component8b33',
                 'section' => 'content',
-                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
@@ -1214,10 +1195,9 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            8 => [
+            7 => [
                 'id' => 'component605a',
                 'section' => 'content',
-                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
@@ -1447,10 +1427,9 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            9 => [
+            8 => [
                 'id' => 'componentfeba',
                 'section' => 'content',
-                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
@@ -1680,10 +1659,9 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            10 => [
+            9 => [
                 'id' => 'component4015',
                 'section' => 'content',
-                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
@@ -1913,10 +1891,9 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            11 => [
+            10 => [
                 'id' => 'component4ba5',
                 'section' => 'content',
-                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
@@ -2146,7 +2123,625 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
+            11 => [
+                'type' => 'teaser-and-text',
+                'id' => 'componentdd66',
+                'section' => 'content',
+                'data' => [
+                    'customCssClass' => '',
+                    'items' => [
+                        0 => [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                                'aspect_ratio' => '960:511',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                            ],
+                            'slogan' => 'Left-center',
+                            'description' => 'no contrast optimizer, dark',
+                            'cta' => [
+                                'label' => 'More',
+                                'href' => '/',
+                            ],
+                            'content_align' => [
+                                'x' => 1,
+                                'y' => 2,
+                            ],
+                            'sizeSelect' => '2x1',
+                            'size' => [
+                                'x' => 2,
+                                'y' => 1,
+                            ],
+                            'row' => 1,
+                            'position' => 'left',
+                            'isAvailableForMobile' => 1,
+                            'optimizers' => [
+                                'color_scheme' => 'dark',
+                                'mirror_image' => false,
+                                'scenarios' => [
+                                    'none' => [
+                                        'enabled' => true,
+                                        'intensity' => 'disabled',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_none',
+                                            'label' => 'None',
+                                        ],
+                                    ],
+                                    'overlay' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                    ],
+                                    'gradient' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => [
+                                            'x' => 1,
+                                            'y' => 1,
+                                        ],
+                                        'configurator' => [
+                                            'icon' => '#contrast_gradient',
+                                            'label' => 'Gradient shadow',
+                                        ],
+                                    ],
+                                    'container' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                    ],
+                                    'text_shadow' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_text-shadow',
+                                            'label' => 'Text shadow',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'teaserType' => 'full',
+                            'cc_css_classes' => '',
+                        ],
+                        1 => [
+                            'image' => [
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
+                                'mobile' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                                'tablet' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                            ],
+                            'slogan' => 'Left-center',
+                            'description' => 'Dark',
+                            'cta' => [
+                                'label' => 'More',
+                                'href' => '/',
+                            ],
+                            'content_align' => [
+                                'x' => 1,
+                                'y' => 2,
+                            ],
+                            'sizeSelect' => '2x1',
+                            'size' => [
+                                'x' => 2,
+                                'y' => 1,
+                            ],
+                            'row' => 1,
+                            'position' => 'left',
+                            'isAvailableForMobile' => 1,
+                            'optimizers' => [
+                                'color_scheme' => 'dark',
+                                'mirror_image' => false,
+                                'scenarios' => [
+                                    'none' => [
+                                        'enabled' => true,
+                                        'intensity' => 'disabled',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_none',
+                                            'label' => 'None',
+                                        ],
+                                    ],
+                                    'overlay' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                    ],
+                                    'gradient' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => [
+                                            'x' => 1,
+                                            'y' => 1,
+                                        ],
+                                        'configurator' => [
+                                            'icon' => '#contrast_gradient',
+                                            'label' => 'Gradient shadow',
+                                        ],
+                                    ],
+                                    'container' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                    ],
+                                    'text_shadow' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_text-shadow',
+                                            'label' => 'Text shadow',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'teaserType' => 'text-only',
+                            'cc_css_classes' => '',
+                        ],
+                    ],
+                    'ignoredItems' => [
+                    ],
+                    'scenario' => [
+                        'teaserWidth' => [
+                            'name' => 'Content width',
+                            'iconId' => 'tw_content-width',
+                            'disabled' => false,
+                            'id' => 'container',
+                        ],
+                        'desktopLayout' => [
+                        ],
+                        'contentPlacement' => [
+                        ],
+                        'mobileLayout' => [
+                            'name' => 'Image (top) - text (bottom)',
+                            'iconId' => 'mb_1',
+                            'disabled' => false,
+                            'id' => 'image-text',
+                        ],
+                    ],
+                    'componentVisibility' => [
+                        'mobile' => true,
+                        'desktop' => true,
+                    ],
+                ],
+            ],
             12 => [
+                'type' => 'teaser-and-text',
+                'id' => 'component1d0d',
+                'section' => 'content',
+                'data' => [
+                    'customCssClass' => '',
+                    'items' => [
+                        0 => [
+                            'image' => [
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
+                                'mobile' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                                'tablet' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                            ],
+                            'slogan' => 'Bottom-center',
+                            'description' => 'Light',
+                            'cta' => [
+                                'label' => 'More',
+                                'href' => '.',
+                            ],
+                            'content_align' => [
+                                'x' => 2,
+                                'y' => 3,
+                            ],
+                            'sizeSelect' => '2x1',
+                            'size' => [
+                                'x' => 2,
+                                'y' => 1,
+                            ],
+                            'row' => 1,
+                            'position' => 'left',
+                            'isAvailableForMobile' => 1,
+                            'optimizers' => [
+                                'color_scheme' => 'light',
+                                'mirror_image' => false,
+                                'scenarios' => [
+                                    'none' => [
+                                        'enabled' => true,
+                                        'intensity' => 'disabled',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_none',
+                                            'label' => 'None',
+                                        ],
+                                    ],
+                                    'overlay' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                    ],
+                                    'gradient' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => [
+                                            'x' => 1,
+                                            'y' => 1,
+                                        ],
+                                        'configurator' => [
+                                            'icon' => '#contrast_gradient',
+                                            'label' => 'Gradient shadow',
+                                        ],
+                                    ],
+                                    'container' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                    ],
+                                    'text_shadow' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_text-shadow',
+                                            'label' => 'Text shadow',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'teaserType' => 'text-only',
+                            'cc_css_classes' => '',
+                        ],
+                        1 => [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                                'aspect_ratio' => '960:511',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                            ],
+                            'slogan' => 'Top-center',
+                            'description' => 'overlay light 50 %',
+                            'cta' => [
+                                'label' => 'More',
+                                'href' => '/',
+                            ],
+                            'content_align' => [
+                                'x' => 2,
+                                'y' => 1,
+                            ],
+                            'sizeSelect' => '2x1',
+                            'size' => [
+                                'x' => 2,
+                                'y' => 1,
+                            ],
+                            'row' => 1,
+                            'position' => 'left',
+                            'isAvailableForMobile' => 1,
+                            'optimizers' => [
+                                'color_scheme' => 'light',
+                                'mirror_image' => false,
+                                'scenarios' => [
+                                    'none' => [
+                                        'enabled' => false,
+                                        'intensity' => 'disabled',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_none',
+                                            'label' => 'None',
+                                        ],
+                                    ],
+                                    'overlay' => [
+                                        'enabled' => true,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                    ],
+                                    'gradient' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => [
+                                            'x' => 1,
+                                            'y' => 1,
+                                        ],
+                                        'configurator' => [
+                                            'icon' => '#contrast_gradient',
+                                            'label' => 'Gradient shadow',
+                                        ],
+                                    ],
+                                    'container' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                    ],
+                                    'text_shadow' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_text-shadow',
+                                            'label' => 'Text shadow',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'teaserType' => 'full',
+                            'cc_css_classes' => '',
+                        ],
+                    ],
+                    'ignoredItems' => [
+                    ],
+                    'scenario' => [
+                        'teaserWidth' => [
+                            'name' => 'Content width',
+                            'iconId' => 'tw_content-width',
+                            'disabled' => false,
+                            'id' => 'container',
+                        ],
+                        'desktopLayout' => [
+                        ],
+                        'contentPlacement' => [
+                        ],
+                        'mobileLayout' => [
+                            'name' => 'Image (top) - text (bottom)',
+                            'iconId' => 'mb_1',
+                            'disabled' => false,
+                            'id' => 'image-text',
+                        ],
+                    ],
+                    'componentVisibility' => [
+                        'mobile' => true,
+                        'desktop' => true,
+                    ],
+                ],
+            ],
+            13 => [
+                'type' => 'teaser-and-text',
+                'id' => 'component585e',
+                'section' => 'content',
+                'data' => [
+                    'customCssClass' => '',
+                    'items' => [
+                        0 => [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                                'aspect_ratio' => '960:511',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                            ],
+                            'slogan' => 'Center-bottom',
+                            'description' => 'Gradient shadow dark<br>70% top center direction',
+                            'cta' => [
+                                'label' => 'More',
+                                'href' => '/',
+                            ],
+                            'content_align' => [
+                                'x' => 2,
+                                'y' => 3,
+                            ],
+                            'sizeSelect' => '2x1',
+                            'size' => [
+                                'x' => 2,
+                                'y' => 1,
+                            ],
+                            'row' => 1,
+                            'position' => 'left',
+                            'isAvailableForMobile' => 1,
+                            'optimizers' => [
+                                'color_scheme' => 'dark',
+                                'mirror_image' => false,
+                                'scenarios' => [
+                                    'none' => [
+                                        'enabled' => false,
+                                        'intensity' => 'disabled',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_none',
+                                            'label' => 'None',
+                                        ],
+                                    ],
+                                    'overlay' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                    ],
+                                    'gradient' => [
+                                        'enabled' => true,
+                                        'intensity' => 70,
+                                        'direction' => [
+                                            'x' => 2,
+                                            'y' => 1,
+                                        ],
+                                        'configurator' => [
+                                            'icon' => '#contrast_gradient',
+                                            'label' => 'Gradient shadow',
+                                        ],
+                                    ],
+                                    'container' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                    ],
+                                    'text_shadow' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_text-shadow',
+                                            'label' => 'Text shadow',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'teaserType' => 'full',
+                            'cc_css_classes' => '',
+                        ],
+                        1 => [
+                            'image' => [
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
+                                'mobile' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                                'tablet' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                            ],
+                            'slogan' => 'Left-center',
+                            'description' => 'Dark',
+                            'cta' => [
+                                'label' => 'More',
+                                'href' => '/',
+                            ],
+                            'content_align' => [
+                                'x' => 1,
+                                'y' => 2,
+                            ],
+                            'sizeSelect' => '2x1',
+                            'size' => [
+                                'x' => 2,
+                                'y' => 1,
+                            ],
+                            'row' => 1,
+                            'position' => 'left',
+                            'isAvailableForMobile' => 1,
+                            'optimizers' => [
+                                'color_scheme' => 'dark',
+                                'mirror_image' => false,
+                                'scenarios' => [
+                                    'none' => [
+                                        'enabled' => true,
+                                        'intensity' => 'disabled',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_none',
+                                            'label' => 'None',
+                                        ],
+                                    ],
+                                    'overlay' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                    ],
+                                    'gradient' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => [
+                                            'x' => 1,
+                                            'y' => 1,
+                                        ],
+                                        'configurator' => [
+                                            'icon' => '#contrast_gradient',
+                                            'label' => 'Gradient shadow',
+                                        ],
+                                    ],
+                                    'container' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                    ],
+                                    'text_shadow' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_text-shadow',
+                                            'label' => 'Text shadow',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'teaserType' => 'text-only',
+                            'cc_css_classes' => '',
+                        ],
+                    ],
+                    'ignoredItems' => [
+                    ],
+                    'scenario' => [
+                        'teaserWidth' => [
+                            'name' => 'Content width',
+                            'iconId' => 'tw_content-width',
+                            'disabled' => false,
+                            'id' => 'container',
+                        ],
+                        'desktopLayout' => [
+                        ],
+                        'contentPlacement' => [
+                        ],
+                        'mobileLayout' => [
+                            'name' => 'Image (top) - text (bottom)',
+                            'iconId' => 'mb_1',
+                            'disabled' => false,
+                            'id' => 'image-text',
+                        ],
+                    ],
+                    'componentVisibility' => [
+                        'mobile' => true,
+                        'desktop' => true,
+                    ],
+                ],
+            ],
+            14 => [
                 'id' => 'componentb6dc',
                 'section' => 'content',
                 'type' => 'headline',
@@ -2160,10 +2755,9 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            13 => [
+            15 => [
                 'id' => 'componentaa0a',
                 'section' => 'content',
-                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
@@ -2393,10 +2987,9 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            14 => [
+            16 => [
                 'id' => 'componentfeb6',
                 'section' => 'content',
-                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
@@ -2626,10 +3219,9 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            15 => [
+            17 => [
                 'id' => 'component25a8',
                 'section' => 'content',
-                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
@@ -2859,10 +3451,9 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            16 => [
+            18 => [
                 'id' => 'component1590',
                 'section' => 'content',
-                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
@@ -3092,10 +3683,9 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            17 => [
+            19 => [
                 'id' => 'componentf8ff',
                 'section' => 'content',
-                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
@@ -3103,7 +3693,7 @@ class TTContentWidth extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
-                                'aspect_ratio' => '',
+                                'aspect_ratio' => '960:511',
                                 'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => '',
@@ -3325,10 +3915,9 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            18 => [
+            20 => [
                 'id' => 'component0fae',
                 'section' => 'content',
-                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
@@ -3558,10 +4147,9 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            19 => [
+            21 => [
                 'id' => 'component6565',
                 'section' => 'content',
-                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
@@ -3791,10 +4379,9 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            20 => [
+            22 => [
                 'id' => 'component6547',
                 'section' => 'content',
-                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
@@ -4024,10 +4611,9 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
-            21 => [
+            23 => [
                 'id' => 'component5966',
                 'section' => 'content',
-                'name' => 'Teaser and text',
                 'type' => 'teaser-and-text',
                 'data' => [
                     'customCssClass' => '',
@@ -4254,6 +4840,624 @@ class TTContentWidth extends DataProviderComponents
                     'componentVisibility' => [
                         'mobile' => '1',
                         'desktop' => '1',
+                    ],
+                ],
+            ],
+            24 => [
+                'type' => 'teaser-and-text',
+                'id' => 'component5b5f',
+                'section' => 'content',
+                'data' => [
+                    'customCssClass' => '',
+                    'items' => [
+                        0 => [
+                            'image' => [
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
+                                'mobile' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                                'tablet' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                            ],
+                            'slogan' => 'Right-center',
+                            'description' => 'Light',
+                            'cta' => [
+                                'label' => 'More',
+                                'href' => '/',
+                            ],
+                            'content_align' => [
+                                'x' => 3,
+                                'y' => 2,
+                            ],
+                            'sizeSelect' => '2x1',
+                            'size' => [
+                                'x' => 2,
+                                'y' => 1,
+                            ],
+                            'row' => 1,
+                            'position' => 'left',
+                            'isAvailableForMobile' => 1,
+                            'optimizers' => [
+                                'color_scheme' => 'light',
+                                'mirror_image' => false,
+                                'scenarios' => [
+                                    'none' => [
+                                        'enabled' => true,
+                                        'intensity' => 'disabled',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_none',
+                                            'label' => 'None',
+                                        ],
+                                    ],
+                                    'overlay' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                    ],
+                                    'gradient' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => [
+                                            'x' => 1,
+                                            'y' => 1,
+                                        ],
+                                        'configurator' => [
+                                            'icon' => '#contrast_gradient',
+                                            'label' => 'Gradient shadow',
+                                        ],
+                                    ],
+                                    'container' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                    ],
+                                    'text_shadow' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_text-shadow',
+                                            'label' => 'Text shadow',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'teaserType' => 'text-only',
+                            'cc_css_classes' => '',
+                        ],
+                        1 => [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                                'aspect_ratio' => '960:511',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                            ],
+                            'slogan' => 'Right-center',
+                            'description' => 'No optimizer, light',
+                            'cta' => [
+                                'label' => 'More',
+                                'href' => '/',
+                            ],
+                            'content_align' => [
+                                'x' => 3,
+                                'y' => 2,
+                            ],
+                            'sizeSelect' => '2x1',
+                            'size' => [
+                                'x' => 2,
+                                'y' => 1,
+                            ],
+                            'row' => 1,
+                            'position' => 'left',
+                            'isAvailableForMobile' => 1,
+                            'optimizers' => [
+                                'color_scheme' => 'light',
+                                'mirror_image' => false,
+                                'scenarios' => [
+                                    'none' => [
+                                        'enabled' => true,
+                                        'intensity' => 'disabled',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_none',
+                                            'label' => 'None',
+                                        ],
+                                    ],
+                                    'overlay' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                    ],
+                                    'gradient' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => [
+                                            'x' => 1,
+                                            'y' => 1,
+                                        ],
+                                        'configurator' => [
+                                            'icon' => '#contrast_gradient',
+                                            'label' => 'Gradient shadow',
+                                        ],
+                                    ],
+                                    'container' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                    ],
+                                    'text_shadow' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_text-shadow',
+                                            'label' => 'Text shadow',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'teaserType' => 'full',
+                            'cc_css_classes' => '',
+                        ],
+                    ],
+                    'ignoredItems' => [
+                    ],
+                    'scenario' => [
+                        'teaserWidth' => [
+                            'name' => 'Content width',
+                            'iconId' => 'tw_content-width',
+                            'disabled' => false,
+                            'id' => 'container',
+                        ],
+                        'desktopLayout' => [
+                        ],
+                        'contentPlacement' => [
+                        ],
+                        'mobileLayout' => [
+                            'name' => 'Text (top) - image (bottom)',
+                            'iconId' => 'mb_2',
+                            'disabled' => false,
+                            'id' => 'text-image',
+                        ],
+                    ],
+                    'componentVisibility' => [
+                        'mobile' => true,
+                        'desktop' => true,
+                    ],
+                ],
+            ],
+            25 => [
+                'type' => 'teaser-and-text',
+                'id' => 'component9fbc',
+                'section' => 'content',
+                'data' => [
+                    'customCssClass' => '',
+                    'items' => [
+                        0 => [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                                'aspect_ratio' => '960:511',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                            ],
+                            'slogan' => 'Right-bottom',
+                            'description' => 'Overlay dark 70%',
+                            'cta' => [
+                                'label' => 'More',
+                                'href' => '/',
+                            ],
+                            'content_align' => [
+                                'x' => 3,
+                                'y' => 3,
+                            ],
+                            'sizeSelect' => '2x1',
+                            'size' => [
+                                'x' => 2,
+                                'y' => 1,
+                            ],
+                            'row' => 1,
+                            'position' => 'left',
+                            'isAvailableForMobile' => 1,
+                            'optimizers' => [
+                                'color_scheme' => 'dark',
+                                'mirror_image' => false,
+                                'scenarios' => [
+                                    'none' => [
+                                        'enabled' => false,
+                                        'intensity' => 'disabled',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_none',
+                                            'label' => 'None',
+                                        ],
+                                    ],
+                                    'overlay' => [
+                                        'enabled' => true,
+                                        'intensity' => 70,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                    ],
+                                    'gradient' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => [
+                                            'x' => 1,
+                                            'y' => 1,
+                                        ],
+                                        'configurator' => [
+                                            'icon' => '#contrast_gradient',
+                                            'label' => 'Gradient shadow',
+                                        ],
+                                    ],
+                                    'container' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                    ],
+                                    'text_shadow' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_text-shadow',
+                                            'label' => 'Text shadow',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'teaserType' => 'full',
+                            'cc_css_classes' => '',
+                        ],
+                        1 => [
+                            'image' => [
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
+                                'mobile' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                                'tablet' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                            ],
+                            'slogan' => 'Left-bottom',
+                            'description' => 'Dark',
+                            'cta' => [
+                                'label' => 'More',
+                                'href' => '/',
+                            ],
+                            'content_align' => [
+                                'x' => 1,
+                                'y' => 3,
+                            ],
+                            'sizeSelect' => '2x1',
+                            'size' => [
+                                'x' => 2,
+                                'y' => 1,
+                            ],
+                            'row' => 1,
+                            'position' => 'left',
+                            'isAvailableForMobile' => 1,
+                            'optimizers' => [
+                                'color_scheme' => 'dark',
+                                'mirror_image' => false,
+                                'scenarios' => [
+                                    'none' => [
+                                        'enabled' => true,
+                                        'intensity' => 'disabled',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_none',
+                                            'label' => 'None',
+                                        ],
+                                    ],
+                                    'overlay' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                    ],
+                                    'gradient' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => [
+                                            'x' => 1,
+                                            'y' => 1,
+                                        ],
+                                        'configurator' => [
+                                            'icon' => '#contrast_gradient',
+                                            'label' => 'Gradient shadow',
+                                        ],
+                                    ],
+                                    'container' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                    ],
+                                    'text_shadow' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_text-shadow',
+                                            'label' => 'Text shadow',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'teaserType' => 'text-only',
+                            'cc_css_classes' => '',
+                        ],
+                    ],
+                    'ignoredItems' => [
+                    ],
+                    'scenario' => [
+                        'teaserWidth' => [
+                            'name' => 'Content width',
+                            'iconId' => 'tw_content-width',
+                            'disabled' => false,
+                            'id' => 'container',
+                        ],
+                        'desktopLayout' => [
+                        ],
+                        'contentPlacement' => [
+                        ],
+                        'mobileLayout' => [
+                            'name' => 'Text (top) - image (bottom)',
+                            'iconId' => 'mb_2',
+                            'disabled' => false,
+                            'id' => 'text-image',
+                        ],
+                    ],
+                    'componentVisibility' => [
+                        'mobile' => true,
+                        'desktop' => true,
+                    ],
+                ],
+            ],
+            26 => [
+                'type' => 'teaser-and-text',
+                'id' => 'componentcaf3',
+                'section' => 'content',
+                'data' => [
+                    'customCssClass' => '',
+                    'items' => [
+                        0 => [
+                            'image' => [
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
+                                'mobile' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                                'tablet' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                            ],
+                            'slogan' => 'Right-center',
+                            'description' => 'Dark',
+                            'cta' => [
+                                'label' => 'More',
+                                'href' => '/',
+                            ],
+                            'content_align' => [
+                                'x' => 3,
+                                'y' => 2,
+                            ],
+                            'sizeSelect' => '2x1',
+                            'size' => [
+                                'x' => 2,
+                                'y' => 1,
+                            ],
+                            'row' => 1,
+                            'position' => 'left',
+                            'isAvailableForMobile' => 1,
+                            'optimizers' => [
+                                'color_scheme' => 'dark',
+                                'mirror_image' => false,
+                                'scenarios' => [
+                                    'none' => [
+                                        'enabled' => true,
+                                        'intensity' => 'disabled',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_none',
+                                            'label' => 'None',
+                                        ],
+                                    ],
+                                    'overlay' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                    ],
+                                    'gradient' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => [
+                                            'x' => 1,
+                                            'y' => 1,
+                                        ],
+                                        'configurator' => [
+                                            'icon' => '#contrast_gradient',
+                                            'label' => 'Gradient shadow',
+                                        ],
+                                    ],
+                                    'container' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                    ],
+                                    'text_shadow' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_text-shadow',
+                                            'label' => 'Text shadow',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'teaserType' => 'text-only',
+                            'cc_css_classes' => '',
+                        ],
+                        1 => [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                                'aspect_ratio' => '960:511',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                            ],
+                            'slogan' => 'Right-top',
+                            'description' => 'gradient shadow light<br>70% right center direction',
+                            'cta' => [
+                                'label' => 'More',
+                                'href' => '/',
+                            ],
+                            'content_align' => [
+                                'x' => 3,
+                                'y' => 1,
+                            ],
+                            'sizeSelect' => '2x1',
+                            'size' => [
+                                'x' => 2,
+                                'y' => 1,
+                            ],
+                            'row' => 1,
+                            'position' => 'left',
+                            'isAvailableForMobile' => 1,
+                            'optimizers' => [
+                                'color_scheme' => 'light',
+                                'mirror_image' => false,
+                                'scenarios' => [
+                                    'none' => [
+                                        'enabled' => false,
+                                        'intensity' => 'disabled',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_none',
+                                            'label' => 'None',
+                                        ],
+                                    ],
+                                    'overlay' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                    ],
+                                    'gradient' => [
+                                        'enabled' => true,
+                                        'intensity' => 70,
+                                        'direction' => [
+                                            'x' => 3,
+                                            'y' => 2,
+                                        ],
+                                        'configurator' => [
+                                            'icon' => '#contrast_gradient',
+                                            'label' => 'Gradient shadow',
+                                        ],
+                                    ],
+                                    'container' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                    ],
+                                    'text_shadow' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_text-shadow',
+                                            'label' => 'Text shadow',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'teaserType' => 'full',
+                            'cc_css_classes' => '',
+                        ],
+                    ],
+                    'ignoredItems' => [
+                    ],
+                    'scenario' => [
+                        'teaserWidth' => [
+                            'name' => 'Content width',
+                            'iconId' => 'tw_content-width',
+                            'disabled' => false,
+                            'id' => 'container',
+                        ],
+                        'desktopLayout' => [
+                        ],
+                        'contentPlacement' => [
+                        ],
+                        'mobileLayout' => [
+                            'name' => 'Text (top) - image (bottom)',
+                            'iconId' => 'mb_2',
+                            'disabled' => false,
+                            'id' => 'text-image',
+                        ],
+                    ],
+                    'componentVisibility' => [
+                        'mobile' => true,
+                        'desktop' => true,
                     ],
                 ],
             ],
