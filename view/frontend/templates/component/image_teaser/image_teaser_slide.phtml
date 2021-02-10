@@ -31,23 +31,23 @@ if (count($aspectRatio) === 2) {
  */
 $contrastOptimizers = $slide->getOptimizers();
 
-$colorScheme = $contrastOptimizers['color_scheme'];
-$mirrorImage = $contrastOptimizers['mirror_image'];
+$colorScheme = $contrastOptimizers['color_scheme'] ?? null;
+$mirrorImage = $contrastOptimizers['mirror_image'] ?? null;
 
-$contrastOptimizersScenarios = $contrastOptimizers['scenarios'];
+$contrastOptimizersScenarios = $contrastOptimizers['scenarios'] ?? null;
 $textShadow = $contrastOptimizersScenarios['text_shadow'] ?? null;
 $container = $contrastOptimizersScenarios['container'] ?? null;
 
 ?>
 <li class="cs-image-teaser__slide cs-image-teaser__slide--scheme-<?= $colorScheme ?><?= $hasImage ? ' cs-image-teaser__slide--image-uploaded' : '' ?> <?= $slide->getCcCssClasses() ?>">
-    
+
     <?= $this->getLayout()
         ->createBlock(\Magento\Framework\View\Element\Template::class)
         ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/aspect_ratio_text-over-image.phtml')
         ->setImageTeaserData($imageTeaserData)
         ->setSlide($slide)
         ->setContentPlacement($contentPlacement)
-        ->toHtml(); 
+        ->toHtml();
     ?>
 
     <?= $this->getLayout()
@@ -58,7 +58,7 @@ $container = $contrastOptimizersScenarios['container'] ?? null;
         ->setIsSlider($isSlider)
         ->setIsSliderMobile($isSliderMobile)
         ->setContentPlacement($contentPlacement)
-        ->toHtml(); 
+        ->toHtml();
     ?>
 
     <?php if ($ctaHref): ?>
@@ -73,7 +73,7 @@ $container = $contrastOptimizersScenarios['container'] ?? null;
             ->setImageTeaserData($imageTeaserData)
             ->setSlide($slide)
             ->setContentPlacement($contentPlacement)
-            ->toHtml(); 
+            ->toHtml();
         ?>
 
         <?= $this->getLayout()
@@ -83,7 +83,7 @@ $container = $contrastOptimizersScenarios['container'] ?? null;
             ->setSlide($slide)
             ->setIsSlider($isSlider)
             ->setIsSliderMobile($isSliderMobile)
-            ->toHtml(); 
+            ->toHtml();
         ?>
 
         <?= $this->getLayout()
@@ -91,7 +91,7 @@ $container = $contrastOptimizersScenarios['container'] ?? null;
             ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/contrast_overlay.phtml')
             ->setImageTeaserData($imageTeaserData)
             ->setSlide($slide)
-            ->toHtml(); 
+            ->toHtml();
         ?>
 
         <?= $this->getLayout()
@@ -99,7 +99,7 @@ $container = $contrastOptimizersScenarios['container'] ?? null;
             ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/contrast_gradient.phtml')
             ->setImageTeaserData($imageTeaserData)
             ->setSlide($slide)
-            ->toHtml(); 
+            ->toHtml();
         ?>
 
         <?= $this->getLayout()
@@ -110,7 +110,7 @@ $container = $contrastOptimizersScenarios['container'] ?? null;
             ->setIsSlider($isSlider)
             ->setIsSliderMobile($isSliderMobile)
             ->setContentPlacement($contentPlacement)
-            ->toHtml(); 
+            ->toHtml();
         ?>
 
         <div class="cs-image-teaser__content-wrapper cs-image-teaser__content-wrapper--content-align-x-<?= $contentAlign['x'] ?> cs-image-teaser__content-wrapper--content-align-y-<?= $contentAlign['y'] ?>"
@@ -127,7 +127,7 @@ $container = $contrastOptimizersScenarios['container'] ?? null;
                 ->setIsSlider($isSlider)
                 ->setIsSliderMobile($isSliderMobile)
                 ->setContentPlacement($contentPlacement)
-                ->toHtml(); 
+                ->toHtml();
             ?>
 
             <div class="cs-image-teaser__content<?= isset($container['enabled']) && $container['enabled'] ? ' cs-image-teaser__content--container' : '' ?>">
@@ -137,7 +137,7 @@ $container = $contrastOptimizersScenarios['container'] ?? null;
                     ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/contrast_container.phtml')
                     ->setImageTeaserData($imageTeaserData)
                     ->setSlide($slide)
-                    ->toHtml(); 
+                    ->toHtml();
                 ?>
 
                 <?= $this->getLayout()
@@ -148,23 +148,23 @@ $container = $contrastOptimizersScenarios['container'] ?? null;
                     ->setIsSlider($isSlider)
                     ->setIsSliderMobile($isSliderMobile)
                     ->setContentPlacement($contentPlacement)
-                    ->toHtml(); 
+                    ->toHtml();
                 ?>
-                
+
                 <div class="cs-image-teaser__text-content<?= isset($textShadow['enabled']) && $textShadow['enabled'] ? ' cs-image-teaser__text-content--text-shadow cs-image-teaser__text-content--text-shadow-' . $textShadow['intensity'] : '' ?>">
                     <?= $this->getLayout()
                         ->createBlock(\Magento\Framework\View\Element\Template::class)
                         ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/slogan.phtml')
                         ->setImageTeaserData($imageTeaserData)
                         ->setSlide($slide)
-                        ->toHtml(); 
+                        ->toHtml();
                     ?>
                     <?= $this->getLayout()
                         ->createBlock(\Magento\Framework\View\Element\Template::class)
                         ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/description.phtml')
                         ->setImageTeaserData($imageTeaserData)
                         ->setSlide($slide)
-                        ->toHtml(); 
+                        ->toHtml();
                     ?>
                 </div>
 
@@ -176,15 +176,15 @@ $container = $contrastOptimizersScenarios['container'] ?? null;
                     ->setIsSlider($isSlider)
                     ->setIsSliderMobile($isSliderMobile)
                     ->setContentPlacement($contentPlacement)
-                    ->toHtml(); 
+                    ->toHtml();
                 ?>
-                
+
                 <?= $this->getLayout()
                     ->createBlock(\Magento\Framework\View\Element\Template::class)
                     ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/cta.phtml')
                     ->setImageTeaserData($imageTeaserData)
                     ->setSlide($slide)
-                    ->toHtml(); 
+                    ->toHtml();
                 ?>
             </div>
 
@@ -196,7 +196,7 @@ $container = $contrastOptimizersScenarios['container'] ?? null;
                 ->setIsSlider($isSlider)
                 ->setIsSliderMobile($isSliderMobile)
                 ->setContentPlacement($contentPlacement)
-                ->toHtml(); 
+                ->toHtml();
             ?>
         </div>
 
@@ -208,7 +208,7 @@ $container = $contrastOptimizersScenarios['container'] ?? null;
             ->setIsSlider($isSlider)
             ->setIsSliderMobile($isSliderMobile)
             ->setContentPlacement($contentPlacement)
-            ->toHtml(); 
+            ->toHtml();
         ?>
     <?php if ($ctaHref): ?>
         </a>
@@ -224,6 +224,6 @@ $container = $contrastOptimizersScenarios['container'] ?? null;
         ->setIsSlider($isSlider)
         ->setIsSliderMobile($isSliderMobile)
         ->setContentPlacement($contentPlacement)
-        ->toHtml(); 
+        ->toHtml();
     ?>
 </li>

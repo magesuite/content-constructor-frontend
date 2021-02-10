@@ -28,7 +28,7 @@ $isSliderMobile = $block->getIsSliderMobile();
  * Contrast optimizers
  */
 $contrastOptimizers = $slide->getOptimizers();
-$mirrorImage = $contrastOptimizers['mirror_image'];
+$mirrorImage = $contrastOptimizers['mirror_image'] ?? null;
 
 /**
  * WebP support

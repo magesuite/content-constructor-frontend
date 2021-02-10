@@ -2,7 +2,7 @@
 $imageTeaserData = $block->getImageTeaserData();
 $slide = $block->getSlide();
 $contrastOptimizers = $slide->getOptimizers();
-$contrastOptimizersScenarios = $contrastOptimizers['scenarios'];
+$contrastOptimizersScenarios = $contrastOptimizers['scenarios'] ?? null;
 $gradient = $contrastOptimizersScenarios['gradient'] ?? null;
 ?>
 <?php if (isset($gradient['enabled']) && $gradient['enabled']): ?>
