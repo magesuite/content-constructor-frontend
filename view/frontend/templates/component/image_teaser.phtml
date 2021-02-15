@@ -73,6 +73,10 @@ if ($gridTeaser) {
     $brickClass = $block->getBrickClass();
 
     $teaserBrickClass = $brickClass . ' ' . $brickClass . '--teaser';
+
+    if($teaser['position'] == 'right') {
+        $teaserBrickClass .= ' ' .$brickClass . '--right';
+    }
     if($teaser['size']['x'] == 2) {
         $teaserBrickClass .= ' ' .$brickClass . '--x2';
     }
@@ -85,7 +89,7 @@ if ($gridTeaser) {
 <?= $block->getCssOnce('css/image-teaser.css'); ?>
 
 <?php if ($gridTeaser): ?>
-<li class="<?= $teaserBrickClass ?>" data-teaser-id="<?= $teaserId ?>">
+<li class="<?= $teaserBrickClass ?>" id="grid-teaser-<?= $teaserId ?>">
 <?php endif; ?>
     <?= $this->getLayout()
         ->createBlock(\Magento\Framework\View\Element\Template::class)

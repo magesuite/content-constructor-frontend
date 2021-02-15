@@ -1,12 +1,6 @@
 <?php
     /**
      * Product grid teasers template (POP)
-     *
-     * If a teaser is using old setup, render old teaser template
-     * else render using new image-teaser component
-     * (additional settings are set before passing it to image-teaser:
-     * required for image-teaser component and responsible for positioning in grid)
-     *
      * @var $block \Magento\Catalog\Block\Product\ListProduct
      * @var $paginationViewModel \MageSuite\ContentConstructorFrontend\ViewModel\PaginationViewModel
      */
@@ -14,59 +8,57 @@
 <?php
 $paginationViewModel = $block->getPaginationViewModel();
 $teasersConfig = $this->helper('MageSuite\ContentConstructorFrontend\Helper\CategoryGridTeasers')->getConfig();
-if ($teasersConfig): ?>
+$showOnlyOnFirstPage = isset($teasersConfig['showOnlyOnFirstPage']) ? $teasersConfig['showOnlyOnFirstPage'] : false;
+
+if ($teasersConfig && ($paginationViewModel->isFirstPage() || !$showOnlyOnFirstPage)) : ?>
     <?php $i = 1 ?>
 
     <?php foreach ($teasersConfig['teasers'] as $teaser): ?>
-
-        <?php if (isset($teaser['displayVariant'])): ?>
-            <?= $this->getLayout()
-                ->createBlock(\Magento\Framework\View\Element\Template::class)
-                ->setTeaserData($teaser)
-                ->setTeaserId($i)
-                ->setHtmlTag($block->getHtmlTag())
-                ->setGridClass($block->getGridClass())
-                ->setBrickClass($block->getBrickClass())
-                ->setTemplate('MageSuite_ContentConstructorFrontend::teaser.phtml')
-                ->toHtml(); ?>
-        <?php else: ?>
-            <?php
-            $newTeaserConfig = array(
-                "scenario" => array(
-                    'desktopLayout' => array(
-                        'id' => 1,
-                    ),
-                    'mobileLayout' => array(
-                        'id' => 'mobile-large',
-                    ),
-                    'contentPlacement' => array(
-                        'id' => 'over',
-                    ),
-                    'teaserWidth' => array(
-                        'id' => 'window',
-                    )
+        <?php 
+        $newTeaserConfig = array(
+            "scenario" => array(
+                'desktopLayout' => array(
+                    'id' => 1,
                 ),
-                "items" => array(
-                    0 => $teaser,
+                'mobileLayout' => array(
+                    'id' => 'mobile-large',
                 ),
-            );
-            ?>
+                'contentPlacement' => array(
+                    'id' => 'over',
+                ),
+                'teaserWidth' => array(
+                    'id' => 'window',
+                )
+            ),
+            "items" => array(
+                0 => $teaser,
+            ),
+        );
+        ?>
 
-            <?= $this->getLayout()
-                ->createBlock('MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser')
-                ->setData($newTeaserConfig)
-                ->setGridTeaser(true)
-                ->setTeaserId($i)
-                ->setTeaserData($teaser)
-                ->setBrickClass($block->getBrickClass())
-                ->setMix('cs-image-teaser--grid-teaser ' . $block->getMix())
-                ->setContainerMix('cs-container--grid-teaser ' . $block->getContainerMix())
-                ->toHtml();
-            ?>
-        <?php endif; ?>
+        <?php /*  $this->getLayout()
+            ->createBlock('MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser')
+            ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/image_teaser_slide.phtml')
+            ->setSlide($teaser)
+            ->setImageTeaser($newTeaserConfig)
+            ->setIsSlider(false)
+            ->setIsSliderMobile(false)
+            ->setContentPlacement($newTeaserConfig['scenario']['contentPlacement']['id'])
+            ->toHtml();
+        */ ?>
+
+        <?= $this->getLayout()
+            ->createBlock('MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser')
+            ->setData($newTeaserConfig)
+            ->setGridTeaser(true)
+            ->setTeaserId($i)
+            ->setTeaserData($teaser)
+            ->setBrickClass($block->getBrickClass())
+            ->setMix('cs-image-teaser--grid-teaser ' . $block->getMix())
+            ->setContainerMix('cs-container--grid-teaser ' . $block->getContainerMix())
+            ->toHtml();
+        ?>
 
         <?php $i++ ?>
     <?php endforeach; ?>
-
-    <input type="hidden" class="image-teasers-data" value='<?= json_encode($teasersConfig['json']); ?>'>
 <?php endif; ?>

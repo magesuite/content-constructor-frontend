@@ -1,29 +1,22 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <!-- Initializing ContentConstructor containers and then moving them into “main.content” sets their order properly -->
-        <container name="cc-top" htmlTag="div" htmlClass="cs-page-category__cc-top"/>
-        <container name="cc-bottom" htmlTag="div" htmlClass="cs-page-category__cc-bottom"/>
-        <move element="cc-top" destination="main.content" before="columns"/>
-        <move element="cc-bottom" destination="main.content" after="columns"/>
+        <!-- Initializing ContentConstructor containers -->
+        <referenceContainer name="main.content">
+            <container name="cc-top" htmlTag="div" htmlClass="cs-page-category__cc-top" before="columns"/>
+            <container name="cc-bottom" htmlTag="div" htmlClass="cs-page-category__cc-bottom" after="columns"/>
+        </referenceContainer>
 
         <referenceBlock name="category.products.list">
-            <container name="hotspot.inside.list" as="hotspot.inside.list">
-                <block class="Magento\Framework\View\Element\Template" name="category.teasers" template="MageSuite_ContentConstructorFrontend::product/list/category-teasers.phtml">
-                    <arguments>
-                        <argument name="html_tag" xsi:type="string">li</argument>
-                        <argument name="grid_class" xsi:type="string">cs-grid-layout</argument>
-                        <argument name="brick_class" xsi:type="string">cs-grid-layout__brick</argument>
-                        <argument name="pagination_view_model" xsi:type="object">MageSuite\ContentConstructorFrontend\ViewModel\PaginationViewModel</argument>
-                    </arguments>
-                </block>
-            </container>
-        </referenceBlock>
-
-        <referenceBlock name="category.products.list">
-            <arguments>
-                <argument name="pagination_view_model" xsi:type="object">MageSuite\ContentConstructorFrontend\ViewModel\PaginationViewModel</argument>
-            </arguments>
+            <block class="Magento\Framework\View\Element\Template" name="category.teasers" template="MageSuite_ContentConstructorFrontend::product/list/category-teasers.phtml">
+                <arguments>
+                    <argument name="html_tag" xsi:type="string">li</argument>
+                    <argument name="grid_class" xsi:type="string">cs-grid-layout</argument>
+                    <argument name="brick_class" xsi:type="string">cs-grid-layout__brick</argument>
+                    <argument name="pagination_view_model" xsi:type="object">MageSuite\ContentConstructorFrontend\ViewModel\PaginationViewModel</argument>
+                </arguments>
+            </block>
+            <block name="category.teasers.css" as="grid.teasers.css" template="MageSuite_ContentConstructorFrontend::component/image_teaser/grid-teaser-css.phtml" />
         </referenceBlock>
     </body>
 </page>

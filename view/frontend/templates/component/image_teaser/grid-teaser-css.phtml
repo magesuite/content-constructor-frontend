@@ -1,0 +1,113 @@
+<?php
+    $teasersData = $block->getTeaserData() ?? $this->helper('MageSuite\ContentConstructorFrontend\Helper\CategoryGridTeasers')->getConfig();
+    $teasers = $teasersData['teasers'];
+    $projectBreakpoints = $block->getVar('breakpoints', 'Magento_Theme');
+    $pageLayout = $this->helper(\MageSuite\ThemeHelpers\Helper\PageLayout::class)->getPageLayout();
+    $columnsCfgPath = $pageLayout == '1column' ? 'columns/one-column' : 'columns/multiple-columns';
+    $columnsCfg = $block->getVar($columnsCfgPath, 'MageSuite_ContentConstructor');
+    $teaserIndex = 1;
+    $productsCount = $block->getProductsOnPage();
+    $productsGridRowsConfig = $block->getRowsConfig();
+    $isProductsGrid = $block->getIsProductsGrid();
+?>
+<style type="text/css">
+    <?php if($teasers) {
+        foreach($teasers as $teaser) {
+            if ($isProductsGrid) {
+                $teaserIndex = $block->getTeaserIds()[$teaserIndex - 1];
+            }
+            $teaserSelector = '#grid-teaser-' . $teaserIndex;
+            $row = $teaser['row'];
+            // $row = $teaserIndex == 2 ? 11 : $teaser['row'];
+            $position = $teaser['position'];
+            $size = $teaser['size']; ?>
+            
+            <?= $teaserSelector ?> {
+                grid-row-start: <?= $row ?>;
+                grid-column-start: 1;
+            }
+    
+            <?php
+                /**
+                 * Set initial value for column.
+                 * It will prevent printing every single breakpoint unnecesarily.
+                 * It will print only values that has actually changed for given breakpoint.
+                 * F.e. if for breakpoints phone - laptop $column is still calculated to 1, there's no need to print 'phoneLg' and 'tablet' media queries. 
+                 * */ 
+                $prevColumn = 1; 
+                $prevOverflows = false;
+                $currentRows = 1;
+            ?>
+            <?php foreach($projectBreakpoints as $breakpointName => $breakpoint) { ?>
+                <?php
+                    /**
+                    * Set column based on $position that doesn't have int values but keywords 'left'/'center'/'right'
+                    */
+                    $column = 1;
+                    if ($position == 'right') {
+                        $column = $columnsCfg[$breakpointName];
+                    } else if ($position == 'center') {
+                        $column = ceil($columnsCfg[$breakpointName] / 2);
+                    }
+    
+                    // Prevent grid blowouts
+                    if ($column > $columnsCfg[$breakpointName]) {
+                        $column = $columnsCfg[$breakpointName];
+                    } else if ($column > 1 && $column == $columnsCfg[$breakpointName] && $size['x'] > 1) {
+                        $column = $column - ($size['x'] - 1);
+                    }
+
+                    if ($column < 1) {
+                        $column = 1;
+                    }
+                ?>
+    
+                <?php if ($prevColumn != $column) { ?>
+                    @media (min-width: <?= $breakpoint ?>px) {
+                        <?= $teaserSelector ?> {
+                            grid-column-start: <?= $column ?>;
+                        }
+                    }
+                    <?php $prevColumn = $column; 
+                } ?>
+
+                <?php
+                    /**
+                     * Hide teaser if its $row value is:
+                     * - bigger than current rows available for given breakpoint;
+                     * - bigger or equal than current rows available for given breakpoint AND size of given teaser takes more than 1 row (Y-axis) 
+                     */
+                    if ($isProductsGrid) {
+                        if (isset($productsGridRowsConfig[$breakpointName])) {
+                            $currentRows = $productsGridRowsConfig[$breakpointName];
+                        }
+                    } else {
+                        $currentRows = ceil($productsCount / $columnsCfg[$breakpointName]); 
+                    }
+
+                    $overflows = $size['y'] > 1 ? $row >= $currentRows : $row > $currentRows; 
+                ?>
+                <?php if ($prevOverflows != $overflows) { ?>
+                    @media (min-width: <?= $breakpoint ?>px) {
+                        <?= $teaserSelector ?> {
+                            display: <?= $overflows ? 'none' : 'block'; ?>
+                        }
+                    }
+                    <?php $prevOverflows = $overflows;
+                } 
+            }
+
+            // hide for mobiles if checked an option in CC
+            if (!$teaser['isAvailableForMobile']) { ?>
+                @media (max-width: <?= $projectBreakpoints['tablet'] - 1 ?>px) {
+                    <?= $teaserSelector ?> {
+                        display: none;
+                    }
+                }
+            <?php }
+
+            $teaserIndex++;
+        }
+    } ?>
+</style>
+    

@@ -7,7 +7,9 @@ $items = $viewModel->getItems();
 
 $componentClasses = $block->getSkipSpacing() ? ' cs-products-grid--skip-spacing' : '';
 $componentClasses .= ' ' . $block->getVar('product_grid/additional_css_classes');
-$productsGridJsSettings = json_encode($block->getVar('grid_layout/product_grid/js') ?: '{}');
+
+$gridId = substr(str_shuffle('0123456789abcdefghijkmnopqrstuvwxyz'),1,5);
+$projectBreakpoints = $block->getVar('breakpoints', 'Magento_Theme');
 ?>
 
 <?= $block->getCssOnce('css/products-grid.css'); ?>
@@ -15,17 +17,13 @@ $productsGridJsSettings = json_encode($block->getVar('grid_layout/product_grid/j
 
 <div class="cs-container cs-container--products-grid<?= $visibility ? ' ' .$visibility : ''; ?>">
     <div class="cs-container__inner">
-        <div class="cs-products-grid<?= $componentClasses ?>"
-                data-rows-mobile="<?= $viewModel->getRowsMobile() ?>"
-                data-rows-tablet="<?= $viewModel->getRowsTablet() ?>"
-                data-rows-desktop="<?= $viewModel->getRowsDesktop() ?>"
-                data-mage-init='{ "mgsGridLayout": <?= $productsGridJsSettings ?> }'
-        >
+        <div class="cs-products-grid<?= $componentClasses ?>">
             <?php
             $teasersConfiguration = $viewModel->getTeasersConfiguration();
+            $teaserIds = [];
             ?>
             <div class="cs-grid-layout cs-products-grid__grid-layout">
-                <ul class="cs-grid-layout__grid cs-products-grid__grid">
+                <ul class="cs-grid-layout__grid cs-products-grid__grid" id="products-grid-<?= $gridId ?>">
                     <?php if(!empty($items) && $viewModel->useTeaser()): ?>
                         <?php
                             $newTeaserConfig = [
@@ -45,18 +43,21 @@ $productsGridJsSettings = json_encode($block->getVar('grid_layout/product_grid/j
                                 ],
                                 "items" => $items
                             ];
+                            $teaserId = substr(str_shuffle('0123456789abcdefghijkmnopqrstuvwxyz'),1,5);
                         ?>
 
                         <?= $this->getLayout()
                             ->createBlock('MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser')
                             ->setData($newTeaserConfig)
                             ->setGridTeaser(true)
-                            ->setTeaserId('0')
+                            ->setTeaserId($teaserId)
                             ->setTeaserData($items[0])
                             ->setBrickClass('cs-grid-layout__brick')
                             ->setMix('cs-image-teaser--grid-teaser ' . $block->getMix())
                             ->setContainerMix('cs-container--grid-teaser ' . $block->getContainerMix())
                             ->toHtml();
+
+                            array_push($teaserIds, $teaserId);
                         ?>
                     <?php endif; ?>
                     <?php foreach ($viewModel->getProducts() as $product): ?>
@@ -66,9 +67,39 @@ $productsGridJsSettings = json_encode($block->getVar('grid_layout/product_grid/j
                     <?php endforeach ?>
                 </ul>
                 <?php if(!empty($items) && $viewModel->useTeaser()): ?>
-                    <input type="hidden" class="image-teasers-data" value='[<?= json_encode($teasersConfiguration) ?>]'>
+                    <?= $this->getLayout()
+                        ->createBlock('Magento\Framework\View\Element\Template')
+                        ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/grid-teaser-css.phtml')
+                        ->setTeaserData(['teasers' => $items])
+                        ->setTeaserIds($teaserIds)
+                        ->setRowsConfig([
+                            'smallest' => $viewModel->getRowsMobile(),
+                            'tablet' => $viewModel->getRowsTablet(),
+                            'desktop' => $viewModel->getRowsDesktop()
+                        ])
+                        ->setIsProductsGrid(true)
+                        ->setProductsOnPage(count($viewModel->getProducts()))
+                        ->toHtml(); ?>
                 <?php endif; ?>
             </div>
         </div>
+
+        <style type="text/css">
+            #products-grid-<?= $gridId ?> {
+                grid-template-rows: repeat(<?= $viewModel->getRowsMobile() ?>, minmax(0, 1fr));
+            }
+
+            @media (min-width: <?= $projectBreakpoints['tablet'] ?>px) {
+                #products-grid-<?= $gridId ?> {
+                    grid-template-rows: repeat(<?= $viewModel->getRowsTablet() ?>, minmax(0, 1fr));
+                }
+            }
+
+            @media (min-width: <?= $projectBreakpoints['laptop'] ?>px) {
+                #products-grid-<?= $gridId ?> {
+                    grid-template-rows: repeat(<?= $viewModel->getRowsDesktop() ?>, minmax(0, 1fr));
+                }
+            }
+        </style>
     </div>
 </div>
