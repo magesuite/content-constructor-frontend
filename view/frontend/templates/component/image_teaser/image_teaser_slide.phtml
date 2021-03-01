@@ -113,7 +113,7 @@ $openLinkInNewTab = $block->getOpenLinkInNewTab();
             ->toHtml();
         ?>
 
-        <div class="cs-image-teaser__content-wrapper cs-image-teaser__content-wrapper--content-align-x-<?= $contentAlign['x'] ?> cs-image-teaser__content-wrapper--content-align-y-<?= $contentAlign['y'] ?>"
+        <div class="cs-image-teaser__content-wrapper <?= isset($contentAlign['x']) ? 'cs-image-teaser__content-wrapper--content-align-x-' . $contentAlign['x'] : '';?> <?= isset($contentAlign['y']) ? ' cs-image-teaser__content-wrapper--content-align-y-' . $contentAlign['y'] : '';?>"
             <?php if ($aspectRatio and $contentPlacement == 'under'): ?>
                 style="margin-top: -<?= $aspectRatioPadding ?>%; padding-top: <?= $aspectRatioPadding ?>%"
             <?php endif; ?>
