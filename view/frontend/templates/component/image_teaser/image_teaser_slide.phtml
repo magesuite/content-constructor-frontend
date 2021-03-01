@@ -37,7 +37,7 @@ $mirrorImage = $contrastOptimizers['mirror_image'] ?? null;
 $contrastOptimizersScenarios = $contrastOptimizers['scenarios'] ?? null;
 $textShadow = $contrastOptimizersScenarios['text_shadow'] ?? null;
 $container = $contrastOptimizersScenarios['container'] ?? null;
-
+$openLinkInNewTab = $block->getOpenLinkInNewTab();
 ?>
 <li class="cs-image-teaser__slide cs-image-teaser__slide--scheme-<?= $colorScheme ?><?= $hasImage ? ' cs-image-teaser__slide--image-uploaded' : '' ?> <?= $slide->getCcCssClasses() ?>">
 
@@ -62,7 +62,7 @@ $container = $contrastOptimizersScenarios['container'] ?? null;
     ?>
 
     <?php if ($ctaHref): ?>
-        <a href="<?= $ctaHref ?>" class="cs-image-teaser__slide-wrapper">
+        <a href="<?= $ctaHref ?>" <?= $openLinkInNewTab ? 'target="_blank" rel="noopener"' : ''?> class="cs-image-teaser__slide-wrapper">
     <?php else: ?>
         <div class="cs-image-teaser__slide-wrapper">
     <?php endif; ?>
