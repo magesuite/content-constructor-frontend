@@ -13,17 +13,23 @@ class ProductCarousel extends AbstractComponent
 
         $products = $viewModel->getProducts();
 
-        if(empty($products)) {
+        if (empty($products)) {
             return [];
         }
 
         $identities = parent::getIdentities();
 
         /** @var \Magento\Catalog\Model\Product $product */
-        foreach($products as $product) {
+        foreach ($products as $product) {
             $identities = array_merge($identities, $product->getIdentities());
+
+            if (!is_array($product->getProductIdentitiesFromElasticsearch())) {
+                continue;
+            }
+
+            $identities = array_merge($identities, $product->getProductIdentitiesFromElasticsearch());
         }
 
-        return $identities;
+        return array_unique($identities);
     }
 }

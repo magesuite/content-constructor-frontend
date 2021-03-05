@@ -301,4 +301,30 @@ class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals('', $resultButton);
     }
+
+    /**
+     * Following scenario will break price index on purpose in order to check if all products entities
+     * are still returned correctly based on data returned from ElasticSearch
+     * @magentoAppArea frontend
+     * @magentoDbIsolation enabled
+     * @magentoAppIsolation enabled
+     * @magentoDataFixture loadProductsFixture
+     * @magentoDataFixture Magento/ConfigurableProduct/_files/product_configurable.php
+     */
+    public function testItReturnsIdentitiesBasedOnElasticSearchResponse() {
+        $connection = $this->objectManager->get(\Magento\Framework\App\ResourceConnection::class)
+            ->getConnection();
+
+        $priceIndexTable = $connection->getTableName('catalog_product_index_price');
+        $connection->delete($priceIndexTable, ['entity_id = ?' => 333]);
+
+        $result = $this->dataProvider->getProducts(['category_id' => 333], true);
+        $product = $result[334];
+
+        $this->assertCount(2, $result);
+        $this->assertEquals(
+            ['cat_p_335', 'cat_p_334', 'cat_p_333'],
+            $product->getProductIdentitiesFromElasticsearch()
+        );
+    }
 }
