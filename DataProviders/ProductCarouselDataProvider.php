@@ -74,6 +74,7 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
      * @var \Magento\Store\Model\StoreManagerInterface
      */
     protected $storeManager;
+
     /**
      * @var \Magento\Framework\App\State
      */
@@ -110,7 +111,9 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
     /**
      * @var \MageSuite\DailyDeal\Helper\OfferData
      */
-    private $dailyDealHelper;
+
+    protected $dailyDealHelper;
+
     /**
      * @var \Magento\Catalog\Api\CategoryRepositoryInterface
      */
@@ -181,9 +184,12 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
 
         $products = $collection->getItems();
 
+        $productIdentitiesFromElasticSearch = $this->getProductIdentitiesFromElasticSearch($collection);
+        $collection->setDataToAll('product_identities_from_elasticsearch', $productIdentitiesFromElasticSearch);
+
         $this->stockData = $this->stockDataHelper->getStockData($products);
 
-        if($returnProductsEntities) {
+        if ($returnProductsEntities) {
             $products = $this->sortResults($products, $criteria);
 
             return $products;
@@ -198,7 +204,7 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
         foreach ($products as $product) {
             $productData = $this->mapProductToArray($product);
 
-            if($collection->hasFlag('virtual_category_applied')) {
+            if ($collection->hasFlag('virtual_category_applied')) {
                 $productData['identities'] = array_merge($productData['identities'], ['virtual_category']);
             }
 
@@ -422,7 +428,7 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
             $sortingType = 'product_ids';
         }
 
-        if(!$sortingType){
+        if (!$sortingType) {
             return $products;
         }
 
@@ -434,7 +440,7 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
         foreach ($products as $product) {
             $index = array_search($product[$sortingField], $sortingData);
 
-            if($index === false) {
+            if ($index === false) {
                 continue;
             }
 
@@ -559,10 +565,48 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
 
     protected function prepareSortingArray($skus)
     {
-        if(!is_array($skus)){
+        if (!is_array($skus)) {
             $skus = explode(',', $skus);
         }
 
         return array_map('trim', $skus);
+    }
+
+    protected function getProductIdentitiesFromElasticSearch(\Smile\ElasticsuiteCatalog\Model\ResourceModel\Product\Fulltext\Collection $collection)
+    {
+        $conditionWithProductIds = $this->getWhereConditionWithProductIds($collection);
+
+        preg_match('/\(([0-9, ]+?)\)/', $conditionWithProductIds, $idsFromCondition);
+
+        if (!isset($idsFromCondition[1])) {
+            return [];
+        }
+
+        $productIds = explode(',', $idsFromCondition[1]);
+        $productIds = array_map('intval', $productIds);
+
+        $identities = array_map(
+            function ($productId) {
+                return sprintf('%s_%s', \Magento\Catalog\Model\Product::CACHE_TAG, $productId);
+            },
+            $productIds
+        );
+
+        return $identities;
+    }
+
+    protected function getWhereConditionWithProductIds(\Smile\ElasticsuiteCatalog\Model\ResourceModel\Product\Fulltext\Collection $collection)
+    {
+        $conditions = $collection->getSelect()->getPart('where');
+
+        foreach($conditions as $condition) {
+            if(strpos($condition, 'entity_id IN') == false) {
+                continue;
+            }
+
+            return $condition;
+        }
+
+        return '';
     }
 }
