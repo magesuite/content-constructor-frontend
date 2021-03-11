@@ -8,14 +8,14 @@ class BrandDataProviderTest extends \PHPUnit\Framework\TestCase
         [
             'href' => 'http://localhost/index.php/brands/urlkey',
             'image' => [
-                'src' => 'http://localhost/pub/media/brands/testimage.png',
+                'src' => 'http://localhost/media/brands/testimage.png',
                 'alt' => 'test_brand_name'
             ]
         ],
         [
             'href' => 'http://localhost/index.php/brands/urlkey2',
             'image' => [
-                'src' => 'http://localhost/pub/media/brands/testimage.png',
+                'src' => 'http://localhost/media/brands/testimage.png',
                 'alt' => 'test_brand_name2'
             ]
         ]
@@ -46,6 +46,9 @@ class BrandDataProviderTest extends \PHPUnit\Framework\TestCase
     public function testItReturnsBrandsCorrectly()
     {
         $brands = $this->dataProvider->getBrands();
+        foreach ($brands as $index => $brand) {
+            $brands[$index]['image']['src'] = str_replace('pub/', '', $brand['image']['src']);
+        }
 
         $this->assertEquals($this->expectedBrands, $brands);
     }

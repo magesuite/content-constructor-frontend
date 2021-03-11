@@ -12,12 +12,12 @@ class MediaResolverTest extends \PHPUnit\Framework\TestCase
     /**
      * @var \Magento\TestFramework\ObjectManager
      */
-    private $objectManager;
+    protected $objectManager;
 
     /**
      * @var \MageSuite\ContentConstructorFrontend\Service\MediaResolver
      */
-    private $mediaResolver;
+    protected $mediaResolver;
 
     public function setUp(): void
     {
@@ -42,18 +42,23 @@ class MediaResolverTest extends \PHPUnit\Framework\TestCase
 
     public function testItCorrectlyResolvesMediaPath()
     {
+        $url = $this->mediaResolver->resolve('{{media url="wysiwyg/test.png"}}');
+        $url = str_replace('pub/', '', $url);
         $this->assertEquals(
-            'http://localhost/pub/media/wysiwyg/test.png',
-            $this->mediaResolver->resolve('{{media url="wysiwyg/test.png"}}')
+            'http://localhost/media/wysiwyg/test.png',
+            $url
         );
 
+        $url = $this->mediaResolver->resolve('{{media url="wysiwyg/test.gif"}}');
+        $url = str_replace('pub/', '', $url);
         $this->assertEquals(
-            'http://localhost/pub/media/wysiwyg/test.gif',
-            $this->mediaResolver->resolve('{{media url="wysiwyg/test.gif"}}')
+            'http://localhost/media/wysiwyg/test.gif',
+            $url
         );
     }
 
-    public function testItReturnsUrlDirectlyWhenItsPassed() {
+    public function testItReturnsUrlDirectlyWhenItsPassed()
+    {
         $this->assertEquals(
             'https://example.com/image.png',
             $this->mediaResolver->resolve('https://example.com/image.png')
@@ -66,13 +71,16 @@ class MediaResolverTest extends \PHPUnit\Framework\TestCase
 
         $this->directoryListStub->method('getPath')->willReturn($wysiwygUploadDirectoryPath);
 
+        $srcSet = $this->mediaResolver->resolveSrcSet('{{media url="wysiwyg/test.jpg"}}');
+        $srcSet = str_replace('pub/', '', $srcSet);
         $this->assertEquals(
-            'http://localhost/pub/media/wysiwyg/test.jpg 1920w, http://localhost/pub/media/wysiwyg/.thumbs/480/test.jpg 480w, http://localhost/pub/media/wysiwyg/.thumbs/768/test.jpg 768w',
-            $this->mediaResolver->resolveSrcSet('{{media url="wysiwyg/test.jpg"}}')
+            'http://localhost/media/wysiwyg/test.jpg 1920w, http://localhost/media/wysiwyg/.thumbs/480/test.jpg 480w, http://localhost/media/wysiwyg/.thumbs/768/test.jpg 768w',
+            $srcSet
         );
     }
 
-    public function testItReturnsUrlDirectlyInSrcSetWhenItsPassed() {
+    public function testItReturnsUrlDirectlyInSrcSetWhenItsPassed()
+    {
         $this->assertEquals(
             'https://example.com/image.png',
             $this->mediaResolver->resolveSrcSet('https://example.com/image.png')
@@ -85,26 +93,33 @@ class MediaResolverTest extends \PHPUnit\Framework\TestCase
 
         $this->directoryListStub->method('getPath')->willReturn($wysiwygUploadDirectoryPath);
 
+        $srcSet = $this->mediaResolver->resolveSrcSetByDensity('{{media url="wysiwyg/test.jpg"}}');
+        $srcSet = str_replace('pub/', '', $srcSet);
         $this->assertEquals(
-            'http://localhost/pub/media/wysiwyg/.thumbs/480/test.jpg, http://localhost/pub/media/wysiwyg/.thumbs/960/test.jpg 2x',
-            $this->mediaResolver->resolveSrcSetByDensity('{{media url="wysiwyg/test.jpg"}}')
+            'http://localhost/media/wysiwyg/.thumbs/480/test.jpg, http://localhost/media/wysiwyg/.thumbs/960/test.jpg 2x',
+            $srcSet
         );
     }
 
     public function testItCorrectlyResolvesSrcSetIncludingWebp()
     {
+        $srcSet = $this->mediaResolver->resolveWebpSrcSet('http://localhost/pub/media/wysiwyg/test.jpg 1920w, http://localhost/pub/media/wysiwyg/.thumbs/480/test.jpg 480w, http://localhost/pub/media/wysiwyg/.thumbs/768/test.jpg 768w');
+        $srcSet = str_replace('pub/', '', $srcSet);
         $this->assertEquals(
-            'http://localhost/pub/media/wysiwyg/test.jpg.webp 1920w, http://localhost/pub/media/wysiwyg/.thumbs/480/test.jpg.webp 480w, http://localhost/pub/media/wysiwyg/.thumbs/768/test.jpg.webp 768w',
-            $this->mediaResolver->resolveWebpSrcSet('http://localhost/pub/media/wysiwyg/test.jpg 1920w, http://localhost/pub/media/wysiwyg/.thumbs/480/test.jpg 480w, http://localhost/pub/media/wysiwyg/.thumbs/768/test.jpg 768w')
+            'http://localhost/media/wysiwyg/test.jpg.webp 1920w, http://localhost/media/wysiwyg/.thumbs/480/test.jpg.webp 480w, http://localhost/media/wysiwyg/.thumbs/768/test.jpg.webp 768w',
+            $srcSet
         );
 
+        $srcSet = $this->mediaResolver->resolveWebpSrcSet('http://localhost/pub/media/wysiwyg/.thumbs/480/test.jpg, http://localhost/pub/media/wysiwyg/.thumbs/960/test.jpg 2x');
+        $srcSet = str_replace('pub/', '', $srcSet);
         $this->assertEquals(
-            'http://localhost/pub/media/wysiwyg/.thumbs/480/test.jpg.webp, http://localhost/pub/media/wysiwyg/.thumbs/960/test.jpg.webp 2x',
-            $this->mediaResolver->resolveWebpSrcSet('http://localhost/pub/media/wysiwyg/.thumbs/480/test.jpg, http://localhost/pub/media/wysiwyg/.thumbs/960/test.jpg 2x')
+            'http://localhost/media/wysiwyg/.thumbs/480/test.jpg.webp, http://localhost/media/wysiwyg/.thumbs/960/test.jpg.webp 2x',
+            $srcSet
         );
     }
 
-    public function testItReturnsUrlDirectlyInDensityBasedSrcSetWhenItsPassed() {
+    public function testItReturnsUrlDirectlyInDensityBasedSrcSetWhenItsPassed()
+    {
         $this->assertEquals(
             'https://example.com/image.png',
             $this->mediaResolver->resolveSrcSetByDensity('https://example.com/image.png')
@@ -147,13 +162,14 @@ class MediaResolverTest extends \PHPUnit\Framework\TestCase
 
         $expectedOutput = [
             'key' => [
-                'subkey' => 'http://localhost/pub/media/wysiwyg/test.png'
+                'subkey' => 'http://localhost/media/wysiwyg/test.png'
             ],
             'other_key' => 'some_string',
             2 => 2
         ];
 
         $result = $this->mediaResolver->resolveInArray($input);
+        $result['key']['subkey'] = str_replace('pub/', '', $result['key']['subkey']);
 
         $this->assertEquals($expectedOutput, $result);
     }
