@@ -81,7 +81,17 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
             return $identitiesString ? explode(',', $identitiesString) : [];
         }
 
-        $identities = $this->component->getIdentities();
+        try {
+            $identities = $this->component->getIdentities();
+        }
+        catch(\Exception | \Error $e) {
+            $this->_logger->critical(sprintf(
+                'Error during Content Constructor component identities fetching: %s',
+                $e->getMessage()
+            ));
+
+            $identities = [];
+        }
 
         if (is_string($identities)) {
             $identities = [$identities];
@@ -108,10 +118,22 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
             return '';
         }
 
-        $this->component = $this
-            ->getLayout()
-            ->createBlock($componentClassName, '', ['data' => $componentData]);
+        try {
+            $this->component = $this
+                ->getLayout()
+                ->createBlock($componentClassName, '', ['data' => $componentData]);
 
-        return $this->component->toHtml();
+            $html = $this->component->toHtml();
+        }
+        catch(\Exception | \Error $e) {
+            $this->_logger->critical(sprintf(
+                'Error during Content Constructor component rendering: %s',
+                $e->getMessage()
+            ));
+
+            $html = '';
+        }
+
+        return $html;
     }
 }

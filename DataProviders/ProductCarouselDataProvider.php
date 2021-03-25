@@ -556,8 +556,16 @@ class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Compo
     protected function applyVirtualCategoryFilters($collection, $category)
     {
         $queryFilter = $category->getVirtualRule()->getCategorySearchQuery($category);
-        $collection->addQueryFilter($queryFilter);
 
+        if($queryFilter == null) {
+            throw new \Magento\Framework\Exception\LocalizedException(__(
+                'Query filter for virtual category was not generated properly. Category might be disabled or misconfigured. Category ID %1 %2',
+                $category->getId(),
+                $category->getName()
+            ));
+        }
+
+        $collection->addQueryFilter($queryFilter);
         $collection->setFlag('virtual_category_applied', true);
 
         return $collection;
