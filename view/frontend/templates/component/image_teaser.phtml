@@ -161,6 +161,7 @@ $openLinkInNewTab = $block->getOpenLinkInNewTab() ? true : false;
                         ?>
 
                         <ul class="cs-image-teaser__slides <?= $mosaicProportions != '' ? ' cs-image-teaser__slides--mosaic-scenario-' . $mosaicProportions : '' ?>">
+                            <?php $slideIndex = 0; ?>
                             <?php foreach ($slides as $slide): ?>
                                 <?= $this->getLayout()
                                     ->createBlock(\Magento\Framework\View\Element\Template::class)
@@ -171,8 +172,10 @@ $openLinkInNewTab = $block->getOpenLinkInNewTab() ? true : false;
                                     ->setIsSliderMobile($isSliderMobile)
                                     ->setContentPlacement($contentPlacement)
                                     ->setOpenLinkInNewTab($openLinkInNewTab)
+                                    ->setSlideIndex($slideIndex)
                                     ->toHtml();
                                 ?>
+                                <?php $slideIndex++; ?>
                             <?php endforeach; ?>
                         </ul>
 

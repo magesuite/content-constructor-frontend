@@ -1,5 +1,6 @@
 <?php
 $slide = $block->getSlide();
+$slideIndex = $block->getSlideIndex();
 $imageTeaserData = $block->getImageTeaser();
 
 $isSlider = $block->getIsSlider();
@@ -83,6 +84,7 @@ $openLinkInNewTab = $block->getOpenLinkInNewTab();
             ->setSlide($slide)
             ->setIsSlider($isSlider)
             ->setIsSliderMobile($isSliderMobile)
+            ->setSlideIndex($slideIndex)
             ->toHtml();
         ?>
 
