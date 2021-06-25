@@ -15,7 +15,7 @@ $productsGridJsSettings = json_encode($block->getVar('grid_layout/product_grid/j
 
 <div class="cs-container cs-container--products-grid<?= $visibility ? ' ' .$visibility : ''; ?>">
     <div class="cs-container__inner">
-        <div class="cs-products-grid<?= $componentClasses ?>"
+        <div class="cs-products-grid<?php if ($viewModel->useTeaser()): ?> cs-products-grid--teaser<?php endif; ?><?= $componentClasses ?>"
                 data-rows-mobile="<?= $viewModel->getRowsMobile() ?>"
                 data-rows-tablet="<?= $viewModel->getRowsTablet() ?>"
                 data-rows-desktop="<?= $viewModel->getRowsDesktop() ?>"
