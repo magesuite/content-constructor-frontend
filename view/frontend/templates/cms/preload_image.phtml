@@ -1,0 +1,9 @@
+<?php
+/** @var $viewModel \MageSuite\ContentConstructorFrontend\ViewModel\CmsPreloadImage */
+$viewModel = $block->getViewModel();
+$imageWidth = $block->getImageWidth();
+$preloadImageUrl = $viewModel->getPreloadImageUrl($imageWidth);
+?>
+<?php if ($preloadImageUrl): ?>
+    <link rel="preload" href="<?= $preloadImageUrl ?>" as="image">
+<?php endif;?>
