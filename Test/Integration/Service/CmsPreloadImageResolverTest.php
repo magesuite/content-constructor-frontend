@@ -40,7 +40,7 @@ class CmsPreloadImageResolverTest extends \Magento\TestFramework\TestCase\Abstra
      * @magentoDataFixture loadPage
      * @magentoAppArea frontend
      */
-    public function testItSkipNotMAtchingCCComponents()
+    public function testItSkipNotMatchingCCComponents()
     {
         $this->dispatch('/page-with-headline');
 
