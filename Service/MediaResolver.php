@@ -176,7 +176,7 @@ class MediaResolver implements \MageSuite\ContentConstructor\Service\MediaResolv
 
         list($originalImageWidth) = getimagesize($originalImagePath);
 
-        $srcSet[] = $this->buildSrcSetElement($this->getUrl($originalImageUrl), $originalImageWidth);
+        $srcSet[$originalImageWidth] = $this->getUrl($originalImageUrl);
 
         $thumbsDirectory = $originalImageDirectory . '/.thumbs';
 
