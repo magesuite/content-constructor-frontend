@@ -77,7 +77,7 @@ class CmsPreloadImageResolver
 
         foreach ($components as $component) {
             if (array_key_exists($component['type'], $this->allowedComponents)) {
-                if (!$component['data']['componentVisibility']['mobile'] || !$component['data']['componentVisibility']['desktop']) {
+                if (!$component['data']['componentVisibility']['mobile']) {
                     continue;
                 }
 
