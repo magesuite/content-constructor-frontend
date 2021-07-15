@@ -51,6 +51,24 @@ class CmsPreloadImageResolverTest extends \Magento\TestFramework\TestCase\Abstra
         $this->assertTrue($hasPreloadLink);
     }
 
+    /**
+     * @magentoAppIsolation enabled
+     * @magentoDbIsolation enabled
+     * @magentoDataFixture copyImages
+     * @magentoDataFixture loadPage
+     * @magentoAppArea frontend
+     */
+    public function testItCheckComponentVisibilityCorrectly()
+    {
+        $this->dispatch('/page-with-hidden-component');
+
+        $body = $this->getResponse()->getBody();
+
+        $hasPreloadLink = strpos($body, '<link rel="preload" href="http://localhost/media/wysiwyg/.thumbs/480/magento_image_third.png" as="image">') !== false;
+
+        $this->assertTrue($hasPreloadLink);
+    }
+
     public static function loadPage()
     {
         include __DIR__ . '/../_files/page.php';

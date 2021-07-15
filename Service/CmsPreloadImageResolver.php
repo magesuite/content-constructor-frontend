@@ -6,11 +6,6 @@ class CmsPreloadImageResolver
 {
     const PRELOAD_IMAGE_PATH = 'data/items/0/image/decoded';
 
-    protected $allowedComponents = [
-        'hero-carousel',
-        'image-teaser-2',
-        'mosaic'
-    ];
     /**
      * @var \MageSuite\ContentConstructor\Service\MediaResolver
      */
@@ -19,13 +14,19 @@ class CmsPreloadImageResolver
      * @var \Magento\Framework\Stdlib\ArrayManager
      */
     protected $arrayManager;
+    /**
+     * @var array
+     */
+    protected $allowedComponents;
 
     public function __construct(
         \MageSuite\ContentConstructor\Service\MediaResolver $mediaResolver,
-        \Magento\Framework\Stdlib\ArrayManager $arrayManager
+        \Magento\Framework\Stdlib\ArrayManager $arrayManager,
+        $allowedComponents = []
     ) {
         $this->mediaResolver = $mediaResolver;
         $this->arrayManager = $arrayManager;
+        $this->allowedComponents = $allowedComponents;
     }
 
     public function resolve($contentConstructorContent, $imageWidth)
@@ -75,7 +76,11 @@ class CmsPreloadImageResolver
         $components = json_decode($contentConstructorContent, true);
 
         foreach ($components as $component) {
-            if (in_array($component['type'], $this->allowedComponents)) {
+            if (array_key_exists($component['type'], $this->allowedComponents)) {
+                if (!$component['data']['componentVisibility']['mobile'] || !$component['data']['componentVisibility']['desktop']) {
+                    continue;
+                }
+
                 return $component;
             }
         }
