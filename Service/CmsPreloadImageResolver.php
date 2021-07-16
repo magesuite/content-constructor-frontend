@@ -76,7 +76,7 @@ class CmsPreloadImageResolver
         $components = json_decode($contentConstructorContent, true);
 
         foreach ($components as $component) {
-            if (array_key_exists($component['type'], $this->allowedComponents)) {
+            if (in_array($component['type'], $this->allowedComponents)) {
                 if (!$component['data']['componentVisibility']['mobile']) {
                     continue;
                 }

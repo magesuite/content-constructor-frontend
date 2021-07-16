@@ -11,9 +11,9 @@
     <type name="MageSuite\ContentConstructorFrontend\Service\CmsPreloadImageResolver">
         <arguments>
             <argument name="allowedComponents" xsi:type="array">
-                <item name="hero-carousel" xsi:type="null"/>
-                <item name="image-teaser-2" xsi:type="null"/>
-                <item name="mosaic" xsi:type="null"/>
+                <item name="0" xsi:type="string">hero-carousel</item>
+                <item name="1" xsi:type="string">image-teaser-2</item>
+                <item name="2" xsi:type="string">mosaic</item>
             </argument>
         </arguments>
     </type>
