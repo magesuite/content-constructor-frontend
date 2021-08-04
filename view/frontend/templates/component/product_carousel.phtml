@@ -11,6 +11,11 @@ $navIconNextPath = $block->getVar('product_carousel/navigation/arrows/next/path'
 $componentClasses = $block->getSkipSpacing() ? ' cs-products-carousel--skip-spacing' : '';
 $componentClasses .= ' ' . $block->getVar('product_carousel/additional_css_classes');
 
+$containerClasses = $block->getContainerMix();
+if (isset($componentConfiguration['cc_css_classes'])):
+    $containerClasses .= ' ' . $componentConfiguration['cc_css_classes'];
+endif;
+
 $viewMode = $block->getData('view_mode') ?? 'grid';
 $isList = $viewMode == 'list' ? true : false;
 $isSliderMobile = $block->getData('carousel_on_mobile');
@@ -19,7 +24,7 @@ $jsSettings = json_encode($block->getVar('product_carousel/js') ?: '{}');
 
 <?= $block->getCssOnce('css/products-carousel.css'); ?>
 
-<div class="cs-container cs-container--products-carousel<?= $visibility ? ' ' .$visibility : ''; ?>">
+<div class="cs-container cs-container--products-carousel<?= $containerClasses ?><?= $visibility ? ' ' .$visibility : ''; ?>">
     <div class="cs-container__inner">
         <div class="cs-products-carousel<?= $componentClasses ?>" data-mobile-is-slider="<?= $isSliderMobile; ?>" data-view-mode=<?= $viewMode; ?> data-mage-init='{ "ccProductsCarousel": <?= $jsSettings ?> }'>
             <div class="cs-products-carousel__carousel">

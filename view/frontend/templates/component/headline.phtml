@@ -4,13 +4,19 @@
 $viewModel = $block->getViewModel();
 $visibility = $block->getVisibilityClass();
 
+$componentConfiguration = $block->getData();
 $tag = $viewModel->getHeadingTag();
 
 $componentClasses = $block->getSkipSpacing() ? ' cs-headline--skip-spacing' : ''; 
 $componentClasses .= ' ' . $block->getVar('headline/additional_css_classes');
+
+$containerClasses = $block->getContainerMix();
+if (isset($componentConfiguration['cc_css_classes'])):
+    $containerClasses .= ' ' . $componentConfiguration['cc_css_classes'];
+endif;
 ?>
 
-<div class="cs-container cs-container--headline<?= $visibility ? ' ' .$visibility : ''; ?>">
+<div class="cs-container cs-container--headline<?= $containerClasses ?><?= $visibility ? ' ' .$visibility : ''; ?>">
     <div class="cs-container__inner">
         <div class="cs-headline<?= $componentClasses ?>">
             <<?=$tag?> class="cs-headline__title"><?= $viewModel->getTitle() ?></<?=$tag?>>

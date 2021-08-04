@@ -18,11 +18,16 @@ $accordionItemIcon = $block->getVar('accordion/arrow_icon', 'MageSuite_ContentCo
 
 $expandFirst = $viewModel->getExpandFirst();
 $jsSettings = json_encode($block->getVar('accordion/js') ?: '{}');
+
+$containerClasses = $block->getContainerMix();
+if (isset($componentConfiguration['cc_css_classes'])):
+    $containerClasses .= ' ' . $componentConfiguration['cc_css_classes'];
+endif;
 ?>
 
 <?= $block->getCssOnce('css/accordion.css'); ?>
 
-<div class="cs-container cs-container--accordion<?= $visibility ? ' ' .$visibility : ''; ?>">
+<div class="cs-container cs-container--accordion<?= $containerClasses ?><?= $visibility ? ' ' .$visibility : ''; ?>">
     <div class="cs-container__inner">
         <?php if (count($groups)): ?>
             <div class="cs-accordion cs-accordion--mode-<?=$componentConfiguration['scenarios']['reading']['id'] ?? ''?><?= $componentClasses ?>" 
