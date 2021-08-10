@@ -18,6 +18,7 @@ class CmsPreloadImageResolverTest extends \Magento\TestFramework\TestCase\Abstra
     /**
      * @magentoAppIsolation enabled
      * @magentoDbIsolation enabled
+     * @magentoConfigFixture current_store cc_frontend_extension/preload_image/enabled 1
      * @magentoDataFixture copyImages
      * @magentoDataFixture loadPage
      * @magentoAppArea frontend
@@ -28,7 +29,7 @@ class CmsPreloadImageResolverTest extends \Magento\TestFramework\TestCase\Abstra
 
         $body = $this->getResponse()->getBody();
 
-        $hasPreloadLink = strpos($body, '<link rel="preload" href="http://localhost/media/wysiwyg/.thumbs/480/magento_image.png" as="image">') !== false;
+        $hasPreloadLink = strpos($body, '<link rel="preload" href="http://localhost/media/wysiwyg/.thumbs/480/magento_image.png" imagesrcset="') !== false;
 
         $this->assertTrue($hasPreloadLink);
     }
@@ -36,6 +37,7 @@ class CmsPreloadImageResolverTest extends \Magento\TestFramework\TestCase\Abstra
     /**
      * @magentoAppIsolation enabled
      * @magentoDbIsolation enabled
+     * @magentoConfigFixture current_store cc_frontend_extension/preload_image/enabled 1
      * @magentoDataFixture copyImages
      * @magentoDataFixture loadPage
      * @magentoAppArea frontend
@@ -46,7 +48,7 @@ class CmsPreloadImageResolverTest extends \Magento\TestFramework\TestCase\Abstra
 
         $body = $this->getResponse()->getBody();
 
-        $hasPreloadLink = strpos($body, '<link rel="preload" href="http://localhost/media/wysiwyg/.thumbs/480/magento_image_second.png" as="image">') !== false;
+        $hasPreloadLink = strpos($body, '<link rel="preload" href="http://localhost/media/wysiwyg/.thumbs/480/magento_image_second.png" imagesrcset="') !== false;
 
         $this->assertTrue($hasPreloadLink);
     }
@@ -54,6 +56,7 @@ class CmsPreloadImageResolverTest extends \Magento\TestFramework\TestCase\Abstra
     /**
      * @magentoAppIsolation enabled
      * @magentoDbIsolation enabled
+     * @magentoConfigFixture current_store cc_frontend_extension/preload_image/enabled 1
      * @magentoDataFixture copyImages
      * @magentoDataFixture loadPage
      * @magentoAppArea frontend
@@ -64,7 +67,7 @@ class CmsPreloadImageResolverTest extends \Magento\TestFramework\TestCase\Abstra
 
         $body = $this->getResponse()->getBody();
 
-        $hasPreloadLink = strpos($body, '<link rel="preload" href="http://localhost/media/wysiwyg/.thumbs/480/magento_image_third.png" as="image">') !== false;
+        $hasPreloadLink = strpos($body, '<link rel="preload" href="http://localhost/media/wysiwyg/.thumbs/480/magento_image_third.png" imagesrcset="') !== false;
 
         $this->assertTrue($hasPreloadLink);
     }

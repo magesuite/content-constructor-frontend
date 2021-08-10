@@ -7,6 +7,7 @@ class Configuration
     const INSTAGRAM_USER_ID = 'cc_frontend_extension/instagram_component/user_id';
     const INSTAGRAM_MEDIA_API_URL = 'cc_frontend_extension/instagram_component/media_api_url';
     const INSTAGRAM_USER_ID_API_URL = 'cc_frontend_extension/instagram_component/user_id_api_url';
+    const PRELOAD_IMAGE_ENABLED_PATH = 'cc_frontend_extension/preload_image/enabled';
 
     /**
      * @var \Magento\Framework\App\Config\ScopeConfigInterface
@@ -21,8 +22,7 @@ class Configuration
     public function __construct(
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeInterface,
         \Magento\Framework\App\Config\Storage\WriterInterface $configWriter
-    )
-    {
+    ) {
         $this->scopeInterface = $scopeInterface;
         $this->configWriter = $configWriter;
     }
@@ -52,5 +52,10 @@ class Configuration
     {
         $config = $this->scopeInterface->getValue(self::INSTAGRAM_USER_ID_API_URL, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
         return sprintf($config, $token);
+    }
+
+    public function isPreloadImageEnabled()
+    {
+        return $this->scopeInterface->isSetFlag(self::PRELOAD_IMAGE_ENABLED_PATH, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
     }
 }

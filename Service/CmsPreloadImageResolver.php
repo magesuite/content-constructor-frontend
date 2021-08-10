@@ -34,11 +34,15 @@ class CmsPreloadImageResolver
         if (empty($contentConstructorContent)) {
             return null;
         }
+        [$previewImage, $srcSet] = $this->getPreloadImageData($contentConstructorContent, $imageWidth);
 
-        return $this->getPreloadImageUrl($contentConstructorContent, $imageWidth);
+        return [
+            'preload_image' => $previewImage,
+            'src_set' => $srcSet
+        ];
     }
 
-    public function getPreloadImageUrl($contentConstructorContent, $imageWidth)
+    public function getPreloadImageData($contentConstructorContent, $imageWidth)
     {
         $component = $this->fetchMatchingComponent($contentConstructorContent);
 
@@ -52,10 +56,10 @@ class CmsPreloadImageResolver
             return null;
         }
 
-        return $this->resolveSrcSet($image, $imageWidth);
+        return [$this->resolvePreviewImage($image, $imageWidth), $this->resolveSrcSet($image)];
     }
 
-    public function resolveSrcSet($image, $imageWidth)
+    public function resolvePreviewImage($image, $imageWidth)
     {
         $srcSet = $this->mediaResolver->resolveSrcSetArray($image);
 
@@ -64,6 +68,11 @@ class CmsPreloadImageResolver
         }
 
         return $srcSet[$imageWidth];
+    }
+
+    public function resolveSrcSet($image)
+    {
+        return $this->mediaResolver->resolveSrcSet($image);
     }
 
     public function fetchMatchingImage($component)
