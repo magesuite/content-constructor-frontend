@@ -5,7 +5,7 @@
             <block class="Magento\Framework\View\Element\Template" name="cms.head.preload.image" template="MageSuite_ContentConstructorFrontend::cms/preload_image.phtml">
                 <arguments>
                     <argument name="view_model" xsi:type="object">MageSuite\ContentConstructorFrontend\ViewModel\CmsPreloadImage</argument>
-                    <argument name="image_width" xsi:type="string">480</argument>
+                    <argument name="image_width" xsi:type="string">768</argument>
                 </arguments>
             </block>
         </referenceBlock>
