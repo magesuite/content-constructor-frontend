@@ -29,9 +29,11 @@ class CmsPreloadImageResolverTest extends \Magento\TestFramework\TestCase\Abstra
 
         $body = $this->getResponse()->getBody();
 
-        $hasPreloadLink = strpos($body, '<link rel="preload" href="http://localhost/media/wysiwyg/.thumbs/480/magento_image.png" imagesrcset="') !== false;
+        $hasPreloadLinkFirstPart = strpos($body, '<link rel="preload" href="http://localhost/') !== false;
+        $hasPreloadLinkSecondPart = strpos($body, 'media/wysiwyg/.thumbs/768/magento_image.png" imagesrcset="') !== false;
 
-        $this->assertTrue($hasPreloadLink);
+        $this->assertTrue($hasPreloadLinkFirstPart);
+        $this->assertTrue($hasPreloadLinkSecondPart);
     }
 
     /**
@@ -48,9 +50,11 @@ class CmsPreloadImageResolverTest extends \Magento\TestFramework\TestCase\Abstra
 
         $body = $this->getResponse()->getBody();
 
-        $hasPreloadLink = strpos($body, '<link rel="preload" href="http://localhost/media/wysiwyg/.thumbs/480/magento_image_second.png" imagesrcset="') !== false;
+        $hasPreloadLinkFirstPart = strpos($body, '<link rel="preload" href="http://localhost/') !== false;
+        $hasPreloadLinkSecondPart = strpos($body, 'media/wysiwyg/.thumbs/768/magento_image_second.png" imagesrcset="') !== false;
 
-        $this->assertTrue($hasPreloadLink);
+        $this->assertTrue($hasPreloadLinkFirstPart);
+        $this->assertTrue($hasPreloadLinkSecondPart);
     }
 
     /**
@@ -67,9 +71,11 @@ class CmsPreloadImageResolverTest extends \Magento\TestFramework\TestCase\Abstra
 
         $body = $this->getResponse()->getBody();
 
-        $hasPreloadLink = strpos($body, '<link rel="preload" href="http://localhost/media/wysiwyg/.thumbs/480/magento_image_third.png" imagesrcset="') !== false;
+        $hasPreloadLinkFirstPart = strpos($body, '<link rel="preload" href="http://localhost/') !== false;
+        $hasPreloadLinkSecondPart = strpos($body, 'media/wysiwyg/.thumbs/768/magento_image_third.png" imagesrcset="') !== false;
 
-        $this->assertTrue($hasPreloadLink);
+        $this->assertTrue($hasPreloadLinkFirstPart);
+        $this->assertTrue($hasPreloadLinkSecondPart);
     }
 
     public static function loadPage()
