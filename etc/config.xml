@@ -6,6 +6,9 @@
                 <media_api_url><![CDATA[https://graph.instagram.com/%d/media?fields=media_type,media_url,permalink,timestamp&access_token=%s&limit=50]]></media_api_url>
                 <user_id_api_url><![CDATA[https://graph.instagram.com/me?fields=id&access_token=%s]]></user_id_api_url>
             </instagram_component>
+            <preload_image>
+                <enabled>0</enabled>
+            </preload_image>
         </cc_frontend_extension>
     </default>
 </config>

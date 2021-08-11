@@ -34,6 +34,16 @@
                     <label>User ID Api Url</label>
                 </field>
             </group>
+            <group id="preload_image" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>CMS Preoad Image</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>
+                        <![CDATA[When enabled, it preloads first image from Image Teaser, Hero or Mosaic component on CMS page - <a href="https://web.dev/optimize-lcp/#preload-important-resources" target="_blank" rel=”noopener”>Read more</a>]]>
+                    </comment>
+                </field>
+            </group>
         </section>
     </system>
 </config>

@@ -7,4 +7,14 @@
     <type name="Magento\Framework\App\Response\Http">
         <plugin name="remove_duplicated_css" type="MageSuite\ContentConstructorFrontend\Plugin\Theme\Controller\Result\RemoveDuplicatedCss"/>
     </type>
+
+    <type name="MageSuite\ContentConstructorFrontend\Service\CmsPreloadImageResolver">
+        <arguments>
+            <argument name="allowedComponents" xsi:type="array">
+                <item name="0" xsi:type="string">hero-carousel</item>
+                <item name="1" xsi:type="string">image-teaser-2</item>
+                <item name="2" xsi:type="string">mosaic</item>
+            </argument>
+        </arguments>
+    </type>
 </config>
