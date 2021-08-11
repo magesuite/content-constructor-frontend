@@ -13,7 +13,11 @@ class CmsPreloadImage implements \Magento\Framework\View\Element\Block\ArgumentI
      * @var \MageSuite\ContentConstructorFrontend\Service\CmsPreloadImageResolver
      */
     protected $cmsPreloadImageResolver;
-    protected \MageSuite\ContentConstructorFrontend\Helper\Configuration $configuration;
+
+    /**
+     * @var \MageSuite\ContentConstructorFrontend\Helper\Configuration
+     */
+    protected $configuration;
 
     public function __construct(
         \Magento\Cms\Model\Page $cmsPage,
