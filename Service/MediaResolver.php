@@ -85,6 +85,26 @@ class MediaResolver implements \MageSuite\ContentConstructor\Service\MediaResolv
         return $srcSet;
     }
 
+    public function resolveSrcSetArray($mediaPath)
+    {
+        if ($this->isDirectUrl($mediaPath)) {
+            return $mediaPath;
+        }
+
+        $originalImageUrl = $this->parseMediaUrl($mediaPath);
+        $cacheIdentifier = 'src_set_array' . md5($originalImageUrl);
+
+        $srcSet = $this->cache->load($cacheIdentifier);
+
+        if ($srcSet == null) {
+            $srcSet = json_encode($this->buildSrcSetArray($originalImageUrl));
+
+            $this->cache->save($srcSet, $cacheIdentifier, ['src_sets']);
+        }
+
+        return json_decode($srcSet, true);
+    }
+
     public function resolveSrcSetByDensity($mediaPath)
     {
         if ($this->isDirectUrl($mediaPath)) {
@@ -144,23 +164,19 @@ class MediaResolver implements \MageSuite\ContentConstructor\Service\MediaResolv
         return $results['url'][0];
     }
 
-    /**
-     * @param $originalImageUrl
-     * @return string
-     */
-    protected function buildSrcSet($originalImageUrl)
+    public function buildSrcSetArray($originalImageUrl)
     {
         $originalImagePath = $this->getMediaDirectoryPath() . $originalImageUrl;
         $originalImageName = pathinfo($originalImagePath, PATHINFO_BASENAME);
         $originalImageDirectory = dirname($originalImagePath);
 
         if (!$this->imageFileExist($originalImagePath) or $this->isGif($originalImagePath)) {
-            return '';
+            return [];
         }
 
         list($originalImageWidth) = getimagesize($originalImagePath);
 
-        $srcSet[] = $this->buildSrcSetElement($this->getUrl($originalImageUrl), $originalImageWidth);
+        $srcSet[$originalImageWidth] = $this->getUrl($originalImageUrl);
 
         $thumbsDirectory = $originalImageDirectory . '/.thumbs';
 
@@ -175,7 +191,28 @@ class MediaResolver implements \MageSuite\ContentConstructor\Service\MediaResolv
                 continue;
             }
 
-            $srcSet[] = $this->buildSrcSetElement($this->getUrlByPath($resizedFilePath), $resizedImageWidth);
+            $srcSet[$resizedImageWidth] = $this->getUrlByPath($resizedFilePath);
+        }
+
+        return $srcSet;
+    }
+
+    /**
+     * @param $originalImageUrl
+     * @return string
+     */
+    public function buildSrcSet($originalImageUrl)
+    {
+        $srcSetArray = $this->buildSrcSetArray($originalImageUrl);
+
+        if (empty($srcSetArray)) {
+            return '';
+        }
+
+        $srcSet = [];
+
+        foreach ($srcSetArray as $width => $url) {
+            $srcSet[] = $this->buildSrcSetElement($url, $width);
         }
 
         return implode($srcSet, ', ');
