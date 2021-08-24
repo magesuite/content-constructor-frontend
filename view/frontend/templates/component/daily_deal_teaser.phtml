@@ -1,5 +1,7 @@
 <?php
 /** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser */
+$componentConfiguration = $block->getData();
+
 /** @var $viewModel \MageSuite\ContentConstructorFrontend\Model\Component\DailyDealTeaser */
 $viewModel = $block->getViewModel();
 
@@ -12,12 +14,16 @@ $layout = $this->getLayout();
 $componentClasses = $block->getSkipSpacing() ? ' cs-daily-deal-teaser--skip-spacing' : '';
 $componentClasses .= ' ' . $block->getVar('daily_deal_teaser/additional_css_classes');
 
+$containerClasses = $block->getContainerMix();
+if (isset($componentConfiguration['cc_css_classes'])):
+    $containerClasses .= ' ' . $componentConfiguration['cc_css_classes'];
+endif;
 ?>
 
 <?php if (!empty($product) && $product['productObject']->getIsSalable()): ?>
     <?= $block->getCssOnce('css/daily-deal-teaser.css'); ?>
 
-    <div class="cs-container cs-container--daily-deal-teaser<?= $visibility ? ' ' .$visibility : ''; ?>">
+    <div class="cs-container cs-container--daily-deal-teaser<?= $containerClasses ?><?= $visibility ? ' ' .$visibility : ''; ?>">
         <div class="cs-container__inner">
             <div class="cs-daily-deal-teaser<?= $componentClasses ?>">
                 <aside class="cs-daily-deal-teaser__aside-image">

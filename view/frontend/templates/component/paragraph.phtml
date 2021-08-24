@@ -8,11 +8,16 @@ $visibility = $block->getVisibilityClass();
 
 $componentClasses = $block->getSkipSpacing() ? ' cs-paragraph--skip-spacing' : '';
 $componentClasses .= ' ' . $block->getVar('paragraph/additional_css_classes');
+
+$containerClasses = $block->getContainerMix();
+if (isset($componentConfiguration['cc_css_classes'])):
+    $containerClasses .= ' ' . $componentConfiguration['cc_css_classes'];
+endif;
 ?>
 
 <?= $block->getCssOnce('css/paragraph.css'); ?>
 
-<div class="cs-container cs-container--paragraph<?= $visibility ? ' ' .$visibility : ''; ?>">
+<div class="cs-container cs-container--paragraph<?= $containerClasses ?><?= $visibility ? ' ' .$visibility : ''; ?>">
     <div class="cs-container__inner">
         <div class="cs-paragraph cs-paragraph--cols-<?=$viewModel->getColumns()?> cs-paragraph--mode-<?=$componentConfiguration['scenarios']['reading']['id'] ?? ''?><?= $componentClasses ?> | cs-cms-block" data-mage-init='{ "ccParagraph": {} }'>
             <?=$viewModel->getContent()?>

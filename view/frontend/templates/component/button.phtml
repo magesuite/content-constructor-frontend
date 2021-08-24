@@ -8,9 +8,14 @@ $visibility = $block->getVisibilityClass();
 
 $componentClasses = $block->getSkipSpacing() ? ' cs-button--skip-spacing ' : ''; 
 $componentClasses .= ' ' . $block->getVar('button/additional_css_classes');
+
+$containerClasses = $block->getContainerMix();
+if (isset($componentConfiguration['cc_css_classes'])):
+    $containerClasses .= ' ' . $componentConfiguration['cc_css_classes'];
+endif;
 ?>
 
-<div class="cs-container cs-container--button<?= $visibility ? ' ' .$visibility : ''; ?>">
+<div class="cs-container cs-container--button<?= $containerClasses ?><?= $visibility ? ' ' .$visibility : ''; ?>">
     <div class="cs-container__inner">
         <a href="<?=$viewModel->getHref()?>" class="cs-button-component<?= $componentClasses ?>">
             <span class="cs-button-component__span">

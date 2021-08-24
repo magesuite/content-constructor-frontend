@@ -1,5 +1,7 @@
 <?php
 /** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\ProductTeaser */
+$componentConfiguration = $block->getData();
+
 /** @var $viewModel \MageSuite\ContentConstructorFrontend\Model\Component\ProductTeaser */
 $viewModel = $block->getViewModel();
 
@@ -17,6 +19,11 @@ $product = $viewModel->getProductObject();
     $componentClasses .= ' ' . $block->getVar('product_teaser/additional_css_classes');
     $visibility = $block->getVisibilityClass();
 
+    $containerClasses = $block->getContainerMix();
+    if (isset($componentConfiguration['cc_css_classes'])):
+        $containerClasses .= ' ' . $componentConfiguration['cc_css_classes'];
+    endif;
+
     $showSwatches = $block->getVar('product_teaser/show_swatches');
     $showSKU = $block->getVar('product_teaser/show_sku');
     $showRatings = $block->getVar('product_teaser/show_rating');
@@ -33,7 +40,7 @@ $product = $viewModel->getProductObject();
     $isWebpSupported = $imageTypeHelper->supportsWebp($productImageUrl);
 ?>
 <?= $block->getCssOnce('css/product-teaser.css'); ?>
-<div class="cs-container cs-container--product-teaser<?= $visibility ? ' ' .$visibility : ''; ?>">
+<div class="cs-container cs-container--product-teaser<?= $containerClasses ?><?= $visibility ? ' ' .$visibility : ''; ?>">
     <div class="cs-container__inner">
         <div class="cs-product-teaser<?= $componentClasses; ?>">
             <a href="<?= $productData['url']; ?>" class="cs-product-teaser__link">

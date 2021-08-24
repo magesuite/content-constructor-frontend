@@ -1,5 +1,7 @@
 <?php
 /** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\ProductGrid */
+$componentConfiguration = $block->getData();
+
 $viewModel = $block->getViewModel();
 $visibility = $block->getVisibilityClass();
 
@@ -8,12 +10,17 @@ $items = $viewModel->getItems();
 $componentClasses = $block->getSkipSpacing() ? ' cs-products-grid--skip-spacing' : '';
 $componentClasses .= ' ' . $block->getVar('product_grid/additional_css_classes');
 $productsGridJsSettings = json_encode($block->getVar('grid_layout/product_grid/js') ?: '{}');
+
+$containerClasses = $block->getContainerMix();
+if (isset($componentConfiguration['cc_css_classes'])):
+    $containerClasses .= ' ' . $componentConfiguration['cc_css_classes'];
+endif;
 ?>
 
 <?= $block->getCssOnce('css/products-grid.css'); ?>
 <?= $block->getCssOnce('css/grid-layout.css'); ?>
 
-<div class="cs-container cs-container--products-grid<?= $visibility ? ' ' .$visibility : ''; ?>">
+<div class="cs-container cs-container--products-grid<?= $containerClasses ?><?= $visibility ? ' ' .$visibility : ''; ?>">
     <div class="cs-container__inner">
         <div class="cs-products-grid<?php if ($viewModel->useTeaser()): ?> cs-products-grid--teaser<?php endif; ?><?= $componentClasses ?>"
                 data-rows-mobile="<?= $viewModel->getRowsMobile() ?>"

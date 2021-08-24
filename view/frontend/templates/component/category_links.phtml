@@ -1,5 +1,7 @@
 <?php
 /** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\CategoryLinks */
+$componentConfiguration = $block->getData();
+
 /** @var \MageSuite\ContentConstructorFrontend\Model\Component\CategoryLinks $viewModel */
 $viewModel = $block->getViewModel();
 $categories = $viewModel->getCategories();
@@ -12,11 +14,16 @@ $shouldHideLinkToAllProducts = $viewModel->shouldHideLinkToAllProducts();
 $componentClasses = $hasSubcategories ? ' ' : " cs-category-links--no-subcats";
 $componentClasses .= $block->getSkipSpacing() ? ' cs-category-links--skip-spacing' : '';
 $componentClasses .= ' ' . $block->getVar('category_links/additional_css_classes');
+
+$containerClasses = $block->getContainerMix();
+if (isset($componentConfiguration['cc_css_classes'])):
+    $containerClasses .= ' ' . $componentConfiguration['cc_css_classes'];
+endif;
 ?>
 
 <?= $block->getCssOnce('css/category-links.css'); ?>
 
-<div class="cs-container cs-container--category-links<?= $visibility ? ' ' .$visibility : ''; ?>">
+<div class="cs-container cs-container--category-links<?= $containerClasses ?><?= $visibility ? ' ' .$visibility : ''; ?>">
     <div class="cs-container__inner">
         <div class="cs-category-links<?= $componentClasses ?>" <?php if($hasSubcategories): ?>data-mage-init='{"collapsible":{"mediaQueryScope":"(max-width: 767px)"},"ccCategoryLinks":{}}'<?php endif;?>>
         <?php if($block->getVar('category_links/show_title')): ?>
