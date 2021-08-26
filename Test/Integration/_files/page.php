@@ -485,6 +485,7 @@ $page->setTitle('Cms Page 100')
     ->setIdentifier('page-test')
     ->setStores([0])
     ->setIsActive(1)
+    ->setContent('')
     ->setContentConstructorContent(json_encode($contentConstructorContent));
 $pageRepository->save($page);
 
@@ -862,6 +863,7 @@ $page->setTitle('Cms Page with headline at the beginning')
     ->setIdentifier('page-with-headline')
     ->setStores([0])
     ->setIsActive(1)
+    ->setContent('')
     ->setContentConstructorContent(json_encode($contentConstructorContent));
 $pageRepository->save($page);
 
@@ -1239,5 +1241,6 @@ $page->setTitle('Cms Page with hidden component')
     ->setIdentifier('page-with-hidden-component')
     ->setStores([0])
     ->setIsActive(1)
+    ->setContent('')
     ->setContentConstructorContent(json_encode($contentConstructorContent));
 $pageRepository->save($page);
