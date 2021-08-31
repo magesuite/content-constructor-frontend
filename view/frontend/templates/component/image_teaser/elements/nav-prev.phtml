@@ -7,6 +7,7 @@ $imageTeaserData = $block->getImageTeaserData();
             ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
             ->setIconUrl($block->getIcon())
             ->setCssClass('cs-image-teaser__nav-icon')
+            ->setAltText(__('Previous'))
             ->setInlined(true)
             ->setLazyLoaded(false)
             ->toHtml(); 
