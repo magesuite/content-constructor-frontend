@@ -91,6 +91,7 @@ class CategoryLinksDataProvider implements \MageSuite\ContentConstructor\Compone
         $categoryCollection->addIdFilter($categoriesIds);
         $categoryCollection->addAttributeToSelect('name');
         $categoryCollection->addAttributeToSelect('is_active');
+        $categoryCollection->addAttributeToSelect('url_key');
 
         return $categoryCollection->getItems();
     }
