@@ -2,7 +2,7 @@
 
 namespace MageSuite\ContentConstructorFrontend\DataProviders;
 
-class ProductCarouselDataProvider implements \MageSuite\ContentConstructor\Components\ProductCarousel\DataProvider
+class ProductCarouselDataProvider
 {
     /**
      * Fields from old sorting solution, preserved only to achieve backwards compatibility for existing components

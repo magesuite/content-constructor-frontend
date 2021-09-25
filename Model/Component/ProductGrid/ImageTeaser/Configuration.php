@@ -5,11 +5,11 @@ namespace MageSuite\ContentConstructorFrontend\Model\Component\ProductGrid\Image
 class Configuration
 {
     /**
-     * @var \MageSuite\ContentConstructor\Service\UrlResolver
+     * @var \MageSuite\ContentConstructorFrontend\Service\UrlResolver
      */
     protected $urlResolver;
 
-    public function __construct(\MageSuite\ContentConstructor\Service\UrlResolver $urlResolver)
+    public function __construct(\MageSuite\ContentConstructorFrontend\Service\UrlResolver $urlResolver)
     {
         $this->urlResolver = $urlResolver;
     }

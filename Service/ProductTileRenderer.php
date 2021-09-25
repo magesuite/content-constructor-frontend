@@ -2,7 +2,7 @@
 
 namespace MageSuite\ContentConstructorFrontend\Service;
 
-class ProductTileRenderer implements \MageSuite\ContentConstructor\Service\ProductTileRenderer
+class ProductTileRenderer
 {
     /**
      * @var \Magento\Framework\View\Layout

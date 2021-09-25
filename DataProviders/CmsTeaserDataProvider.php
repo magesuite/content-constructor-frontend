@@ -2,7 +2,7 @@
 
 namespace MageSuite\ContentConstructorFrontend\DataProviders;
 
-class CmsTeaserDataProvider implements \MageSuite\ContentConstructor\Components\CmsTeaser\DataProvider
+class CmsTeaserDataProvider
 {
     /**
      * @var \Magento\Store\Model\StoreManagerInterface

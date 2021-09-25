@@ -56,13 +56,6 @@ class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
         }
     }
 
-    public function testItImplementsProductCarouselDataProviderInterface() {
-        $this->assertInstanceOf(
-            \MageSuite\ContentConstructor\Components\ProductCarousel\DataProvider::class,
-            $this->dataProvider
-        );
-    }
-
     public function testItReturnsEmptyArrayWhenNoResultsAreFound() {
         $this->assertEquals([], $this->dataProvider->getProducts(['category_id' => 444]));
     }

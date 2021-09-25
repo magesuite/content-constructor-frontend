@@ -2,7 +2,7 @@
 
 namespace MageSuite\ContentConstructorFrontend\DataProviders;
 
-class CategoryLinksDataProvider implements \MageSuite\ContentConstructor\Components\CategoryLinks\DataProvider
+class CategoryLinksDataProvider
 {
     /**
      * @var \Magento\Catalog\Api\CategoryRepositoryInterface

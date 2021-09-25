@@ -2,7 +2,7 @@
 
 namespace MageSuite\ContentConstructorFrontend\DataProviders;
 
-class NavigationDataProvider implements \MageSuite\ContentConstructor\Components\Navigation\DataProvider
+class NavigationDataProvider
 {
 
     const MEDIA_CATEGORY_PATH = 'pub/media/catalog/category';

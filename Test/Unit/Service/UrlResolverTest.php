@@ -49,7 +49,7 @@ class UrlResolverTest extends \PHPUnit\Framework\TestCase
 
     public function testItImplementsUrlResolverInterface()
     {
-        $this->assertInstanceOf(\MageSuite\ContentConstructor\Service\UrlResolver::class, $this->urlResolver);
+        $this->assertInstanceOf(\MageSuite\ContentConstructorFrontend\Service\UrlResolver::class, $this->urlResolver);
     }
 
     public function testItProperlyResolvesUrlType()

@@ -5,18 +5,18 @@ namespace MageSuite\ContentConstructorFrontend\Model\Component;
 class GenericSlide extends \Magento\Framework\DataObject
 {
     /**
-     * @var \MageSuite\ContentConstructor\Service\UrlResolver
+     * @var \MageSuite\ContentConstructorFrontend\Service\UrlResolver
      */
     protected $urlResolver;
 
     /**
-     * @var \MageSuite\ContentConstructor\Service\MediaResolver
+     * @var \MageSuite\ContentConstructorFrontend\Service\MediaResolver
      */
     protected $mediaResolver;
 
     public function __construct(
-        \MageSuite\ContentConstructor\Service\UrlResolver $urlResolver,
-        \MageSuite\ContentConstructor\Service\MediaResolver $mediaResolver,
+        \MageSuite\ContentConstructorFrontend\Service\UrlResolver $urlResolver,
+        \MageSuite\ContentConstructorFrontend\Service\MediaResolver $mediaResolver,
         array $data = []
     )
     {

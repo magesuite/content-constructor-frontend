@@ -5,8 +5,8 @@ namespace MageSuite\ContentConstructorFrontend\Model\Component\ImageTeaser;
 class Slide extends \MageSuite\ContentConstructorFrontend\Model\Component\GenericSlide
 {
     public function __construct(
-        \MageSuite\ContentConstructor\Service\UrlResolver $urlResolver,
-        \MageSuite\ContentConstructor\Service\MediaResolver $mediaResolver,
+        \MageSuite\ContentConstructorFrontend\Service\UrlResolver $urlResolver,
+        \MageSuite\ContentConstructorFrontend\Service\MediaResolver $mediaResolver,
         array $data = []
     ) {
         parent::__construct($urlResolver, $mediaResolver, $data);

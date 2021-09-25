@@ -2,7 +2,7 @@
 
 namespace MageSuite\ContentConstructorFrontend\Service;
 
-class MediaResolver implements \MageSuite\ContentConstructor\Service\MediaResolver
+class MediaResolver
 {
     /**
      * @var \Magento\Cms\Model\Template\FilterProvider

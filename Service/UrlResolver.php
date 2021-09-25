@@ -2,13 +2,12 @@
 
 namespace MageSuite\ContentConstructorFrontend\Service;
 
-class UrlResolver implements \MageSuite\ContentConstructor\Service\UrlResolver
+class UrlResolver
 {
-
     protected $classesToTypes = [
-        'Magento\Catalog\Block\Category\Widget\Link' => self::TYPE_CATEGORY,
-        'Magento\Catalog\Block\Product\Widget\Link' => self::TYPE_PRODUCT,
-        'Magento\Cms\Block\Widget\Page\Link' => self::TYPE_PAGE
+        \Magento\Catalog\Block\Category\Widget\Link::class => self::TYPE_CATEGORY,
+        \Magento\Catalog\Block\Product\Widget\Link::class => self::TYPE_PRODUCT,
+        \Magento\Cms\Block\Widget\Page\Link::class => self::TYPE_PAGE
     ];
 
     const TYPE_CATEGORY = 'category';
@@ -52,8 +51,7 @@ class UrlResolver implements \MageSuite\ContentConstructor\Service\UrlResolver
         \Magento\Cms\Api\PageRepositoryInterface $pageRepository,
         \MageSuite\ContentConstructorFrontend\Service\MediaResolver $mediaResolver,
         \Magento\Framework\UrlInterface $urlBuilder
-    )
-    {
+    ) {
         $this->productRepository = $productRepository;
         $this->categoryRepository = $categoryRepository;
         $this->urlBuilder = $urlBuilder;
@@ -67,17 +65,17 @@ class UrlResolver implements \MageSuite\ContentConstructor\Service\UrlResolver
      */
     public function resolve(string $resourceIdentifier)
     {
-        if($this->isMediaUrl($resourceIdentifier)) {
+        if ($this->isMediaUrl($resourceIdentifier)) {
             return $this->getMediaUrl($resourceIdentifier);
         }
 
-        if($this->isDirectUrl($resourceIdentifier)) {
+        if ($this->isDirectUrl($resourceIdentifier)) {
             return $resourceIdentifier;
         }
 
         $type = $this->getEntityType($resourceIdentifier);
 
-        if($type == null or empty($type)) {
+        if ($type == null or empty($type)) {
             return '';
         }
 
@@ -88,29 +86,35 @@ class UrlResolver implements \MageSuite\ContentConstructor\Service\UrlResolver
         return $this->$functionName($id);
     }
 
-    protected function isDirectUrl(string $resourceIdentifier) {
+    protected function isDirectUrl(string $resourceIdentifier)
+    {
         return !preg_match(self::WIDGET_REGEXP, $resourceIdentifier);
     }
 
-    protected function isMediaUrl(string $resourceIdentifier) {
+    protected function isMediaUrl(string $resourceIdentifier)
+    {
         return preg_match(self::MEDIA_REGEXP, $resourceIdentifier);
     }
 
-    protected function getMediaUrl($resourceIdentifier) {
+    protected function getMediaUrl($resourceIdentifier)
+    {
         return $this->mediaResolver->resolve($resourceIdentifier);
     }
 
-    protected function getProductUrl($id) {
+    protected function getProductUrl($id)
+    {
         $product = $this->productRepository->getById($id);
 
         return $product->getUrlModel()->getUrl($product);
     }
 
-    protected function getCategoryUrl($id) {
+    protected function getCategoryUrl($id)
+    {
         return $this->categoryRepository->get($id)->getUrl();
     }
 
-    protected function getPageUrl($id) {
+    protected function getPageUrl($id)
+    {
         $page = $this->pageRepository->getById($id);
 
         return $this->urlBuilder->getUrl(null, ['_direct' => $page->getIdentifier()]);
@@ -118,15 +122,16 @@ class UrlResolver implements \MageSuite\ContentConstructor\Service\UrlResolver
 
     public function getEntityId($string, $type)
     {
-        if($type == self::TYPE_PAGE) {
+        if ($type == self::TYPE_PAGE) {
             return $this->getPageId($string);
         }
 
         return $this->getProductOrCategoryId($string, $type);
     }
 
-    public function getEntityType($string) {
-        if($this->isDirectUrl($string)) {
+    public function getEntityType($string)
+    {
+        if ($this->isDirectUrl($string)) {
             return self::TYPE_DIRECT;
         }
 

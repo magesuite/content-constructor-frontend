@@ -37,7 +37,7 @@ class MediaResolverTest extends \PHPUnit\Framework\TestCase
 
     public function testItImplementsMediaResolverInterface()
     {
-        $this->assertInstanceOf(\MageSuite\ContentConstructor\Service\MediaResolver::class, $this->mediaResolver);
+        $this->assertInstanceOf(\MageSuite\ContentConstructorFrontend\Service\MediaResolver::class, $this->mediaResolver);
     }
 
     public function testItCorrectlyResolvesMediaPath()

@@ -12,7 +12,7 @@ class ProductGrid extends \Magento\Framework\DataObject implements ViewModel
     protected $productTileRenderer;
 
     /**
-     * @var \MageSuite\ContentConstructor\Components\ProductCarousel\DataProvider
+     * @var \MageSuite\ContentConstructorFrontend\DataProviders\ProductCarouselDataProvider
      */
     protected $dataProvider;
 
@@ -33,7 +33,7 @@ class ProductGrid extends \Magento\Framework\DataObject implements ViewModel
 
     public function __construct(
         \MageSuite\ContentConstructorFrontend\Service\ProductTileRenderer $productTileRenderer,
-        \MageSuite\ContentConstructor\Components\ProductCarousel\DataProvider $dataProvider,
+        \MageSuite\ContentConstructorFrontend\DataProviders\ProductCarouselDataProvider $dataProvider,
         \MageSuite\ContentConstructorFrontend\Model\Component\ProductGrid\ImageTeaser\Configuration $imageTeaserConfiguration,
         array $data = []
     ){

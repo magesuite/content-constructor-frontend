@@ -7,7 +7,7 @@ class CmsPreloadImageResolver
     const PRELOAD_IMAGE_PATH = 'data/items/0/image/decoded';
 
     /**
-     * @var \MageSuite\ContentConstructor\Service\MediaResolver
+     * @var \MageSuite\ContentConstructorFrontend\Service\MediaResolver
      */
     protected $mediaResolver;
     /**
@@ -20,7 +20,7 @@ class CmsPreloadImageResolver
     protected $allowedComponents;
 
     public function __construct(
-        \MageSuite\ContentConstructor\Service\MediaResolver $mediaResolver,
+        \MageSuite\ContentConstructorFrontend\Service\MediaResolver $mediaResolver,
         \Magento\Framework\Stdlib\ArrayManager $arrayManager,
         $allowedComponents = []
     ) {
