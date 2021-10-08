@@ -17,11 +17,11 @@ class CategoryGridTeasers extends \Magento\Framework\App\Helper\AbstractHelper
      */
     private $xmlToComponentConfigurationMapper;
     /**
-     * @var \MageSuite\ContentConstructor\Service\MediaResolver
+     * @var \MageSuite\ContentConstructorFrontend\Service\MediaResolver
      */
     private $mediaResolver;
     /**
-     * @var \MageSuite\ContentConstructor\Service\UrlResolver
+     * @var \MageSuite\ContentConstructorFrontend\Service\UrlResolver
      */
     private $urlResolver;
 
@@ -29,8 +29,8 @@ class CategoryGridTeasers extends \Magento\Framework\App\Helper\AbstractHelper
         \Magento\Framework\App\Helper\Context $context,
         \Magento\Framework\Registry $registry,
         \MageSuite\ContentConstructorAdmin\Repository\Xml\XmlToComponentConfigurationMapper $xmlToComponentConfigurationMapper,
-        \MageSuite\ContentConstructor\Service\MediaResolver $mediaResolver,
-        \MageSuite\ContentConstructor\Service\UrlResolver $urlResolver
+        \MageSuite\ContentConstructorFrontend\Service\MediaResolver $mediaResolver,
+        \MageSuite\ContentConstructorFrontend\Service\UrlResolver $urlResolver
     )
     {
         parent::__construct($context);

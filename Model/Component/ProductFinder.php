@@ -10,13 +10,13 @@ class ProductFinder extends \Magento\Framework\DataObject
     protected $endpointUrlProvider;
 
     /**
-     * @var \MageSuite\ContentConstructor\Service\MediaResolver
+     * @var \MageSuite\ContentConstructorFrontend\Service\MediaResolver
      */
     protected $mediaResolver;
 
     public function __construct(
         \MageSuite\ContentConstructorFrontend\Service\ProductFinder\Redirect\EndpointUrlProvider $endpointUrlProvider,
-        \MageSuite\ContentConstructor\Service\MediaResolver $mediaResolver,
+        \MageSuite\ContentConstructorFrontend\Service\MediaResolver $mediaResolver,
         array $data = []
     )
     {

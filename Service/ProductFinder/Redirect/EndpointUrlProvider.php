@@ -2,7 +2,7 @@
 
 namespace MageSuite\ContentConstructorFrontend\Service\ProductFinder\Redirect;
 
-class EndpointUrlProvider implements \MageSuite\ContentConstructor\Components\ProductFinder\EndpointUrlProvider
+class EndpointUrlProvider
 {
     /**
      * @var \Magento\Framework\UrlInterface

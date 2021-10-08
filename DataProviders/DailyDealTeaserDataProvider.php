@@ -2,7 +2,7 @@
 
 namespace MageSuite\ContentConstructorFrontend\DataProviders;
 
-class DailyDealTeaserDataProvider implements \MageSuite\ContentConstructor\Components\DailyDealTeaser\DataProvider
+class DailyDealTeaserDataProvider
 {
     /**
      * @var \Magento\Catalog\Api\ProductRepositoryInterface
@@ -10,7 +10,7 @@ class DailyDealTeaserDataProvider implements \MageSuite\ContentConstructor\Compo
     protected $productRepository;
 
     /**
-     * @var \MageSuite\ContentConstructor\Components\ProductCarousel\DataProvider
+     * @var \MageSuite\ContentConstructorFrontend\DataProviders\ProductCarouselDataProvider
      */
     protected $dataProvider;
 
@@ -20,7 +20,7 @@ class DailyDealTeaserDataProvider implements \MageSuite\ContentConstructor\Compo
     protected $brandsRepository;
 
     /**
-     * @var \MageSuite\ContentConstructor\Service\MediaResolver
+     * @var \MageSuite\ContentConstructorFrontend\Service\MediaResolver
      */
     protected $mediaResolver;
 
@@ -31,9 +31,9 @@ class DailyDealTeaserDataProvider implements \MageSuite\ContentConstructor\Compo
 
     public function __construct(
         \Magento\Catalog\Api\ProductRepositoryInterface $productRepository,
-        \MageSuite\ContentConstructor\Components\ProductCarousel\DataProvider $dataProvider,
+        \MageSuite\ContentConstructorFrontend\DataProviders\ProductCarouselDataProvider $dataProvider,
         \MageSuite\BrandManagement\Api\BrandsRepositoryInterface $brandsRepository,
-        \MageSuite\ContentConstructor\Service\MediaResolver $mediaResolver,
+        \MageSuite\ContentConstructorFrontend\Service\MediaResolver $mediaResolver,
         \MageSuite\Discount\Helper\Discount $discountHelper
     ) {
         $this->productRepository = $productRepository;

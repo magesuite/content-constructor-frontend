@@ -19,7 +19,7 @@ class ComponentPool
     /**
      * @param $componentName
      * @param $classOverrides
-     * @return \MageSuite\ContentConstructor\Component
+     * @return \MageSuite\ContentConstructorFrontend\Api\Data\ComponentInterface
      */
     public function getClassName(string $componentName)
     {

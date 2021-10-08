@@ -2,7 +2,7 @@
 
 namespace MageSuite\ContentConstructorFrontend\Config;
 
-class DefaultComponentSupport implements \MageSuite\ContentConstructor\ComponentSupport
+class DefaultComponentSupport implements \MageSuite\ContentConstructorFrontend\Api\ComponentSupportInterface
 {
     /**
      * All components are supported by default

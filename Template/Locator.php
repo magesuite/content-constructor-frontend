@@ -2,12 +2,12 @@
 
 namespace MageSuite\ContentConstructorFrontend\Template;
 
-class Locator implements \MageSuite\ContentConstructor\View\TemplateLocator
+class Locator
 {
     /**
      * @var \MageSuite\Frontend\Template\Locator
      */
-    private $locator;
+    protected $locator;
 
     public function __construct(\MageSuite\Frontend\Template\Locator $locator)
     {

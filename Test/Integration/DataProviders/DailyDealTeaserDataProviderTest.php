@@ -22,13 +22,6 @@ class DailyDealTeaserDataProviderTest extends \PHPUnit\Framework\TestCase
 
     }
 
-    public function testItImplementsProductCarouselDataProviderInterface() {
-        $this->assertInstanceOf(
-            \MageSuite\ContentConstructor\Components\DailyDealTeaser\DataProvider::class,
-            $this->dataProvider
-        );
-    }
-
     /**
      * @magentoAppArea frontend
      * @magentoDbIsolation enabled

@@ -2,12 +2,12 @@
 
 namespace MageSuite\ContentConstructorFrontend\DataProviders;
 
-class BrandDataProvider implements \MageSuite\ContentConstructor\Components\BrandCarousel\DataProvider
+class BrandDataProvider
 {
     /**
      * @var \MageSuite\BrandManagement\Model\ResourceModel\Brands\CollectionFactory
      */
-    private $brandCollection;
+    protected $brandCollection;
 
     /**
      * @var \MageSuite\BrandManagement\Model\BrandsRepository
@@ -23,39 +23,31 @@ class BrandDataProvider implements \MageSuite\ContentConstructor\Components\Bran
         \MageSuite\BrandManagement\Model\ResourceModel\Brands\CollectionFactory $brandCollection,
         \MageSuite\BrandManagement\Model\BrandsRepository $brandsRepository,
         \Magento\Store\Model\StoreManagerInterface $storeManager
-    )
-    {
+    ) {
         $this->brandCollection = $brandCollection;
         $this->brandsRepository = $brandsRepository;
         $this->storeManager = $storeManager;
     }
 
-    public function getBrands() {
+    public function getBrands()
+    {
         $brands = $this->brandCollection->create();
 
         $data = [];
 
-        if(empty($brands)) {
+        if (empty($brands)) {
             return $data;
         }
 
-        foreach($brands as $brand) {
+        foreach ($brands as $brand) {
             $storeId = $this->storeManager->getStore()->getId();
             $brand = $this->brandsRepository->getById($brand->getEntityId(), $storeId);
 
-            if(!$brand->getEnabled()) {
+            if (!$brand->getEnabled()) {
                 continue;
             }
 
-            if(!$brand->getShowInBrandCarousel()) {
-                continue;
-            }
-
-            if(empty($brand->getBrandIconUrl())) {
-                continue;
-            }
-
-            if(empty($brand->getBrandUrl())) {
+            if (!$brand->getShowInBrandCarousel() || empty($brand->getBrandIconUrl()) || empty($brand->getBrandUrl())) {
                 continue;
             }
 
