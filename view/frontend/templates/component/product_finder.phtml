@@ -67,7 +67,7 @@ endif;
                         <div class="cs-product-finder__option-sizer"></div>
                         <div class="cs-product-finder__option-content">
                             <?php if($option['image']): ?>
-                            <img class="cs-product-finder__option-image" src="<?=$option['image']?>">
+                            <img class="cs-product-finder__option-image" src="<?=$option['image']?>" alt="<?= $option['label'] ?: __('Option') ?>">
                             <?php endif; ?>
                             <?php if($option['label']): ?>
                             <p class="cs-product-finder__option-label"><?=$option['label']?></p>
