@@ -41,7 +41,7 @@ $jsSettings = json_encode($block->getVar('product_carousel/js') ?: '{}');
                 </div>
 
                 <?php if (($viewMode == 'grid' or $isSliderMobile) && $block->getVar('product_carousel/navigation/show')): ?>
-                    <button class="cs-products-carousel__nav cs-products-carousel__nav--prev <?= $block->getVar('product_carousel/navigation/arrows/prev/additional_css_classes') ?>" type="button">
+                    <button class="cs-products-carousel__nav cs-products-carousel__nav--prev <?= $block->getVar('product_carousel/navigation/arrows/prev/additional_css_classes') ?>" type="button" aria-label="<?= __('Previous') ?>">
                         <?= $this->getLayout()
                             ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
                             ->setIconUrl($block->getVar('product_carousel/navigation/arrows/prev/path'))
@@ -50,7 +50,7 @@ $jsSettings = json_encode($block->getVar('product_carousel/js') ?: '{}');
                             ->toHtml();
                         ?>
                     </button>
-                    <button class="cs-products-carousel__nav cs-products-carousel__nav--next <?= $block->getVar('product_carousel/navigation/arrows/next/additional_css_classes') ?>" type="button">
+                    <button class="cs-products-carousel__nav cs-products-carousel__nav--next <?= $block->getVar('product_carousel/navigation/arrows/next/additional_css_classes') ?>" type="button" aria-label="<?= __('Next') ?>">
                         <?= $this->getLayout()
                             ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
                             ->setIconUrl($block->getVar('product_carousel/navigation/arrows/next/path'))

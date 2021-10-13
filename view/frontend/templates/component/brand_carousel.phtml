@@ -67,7 +67,7 @@ $jsSettings = json_encode($block->getVar('brand_carousel/js') ?: '{}');
                 </div>
 
                 <?php if($block->getVar('brand_carousel/navigation/show')): ?>
-                    <button class="cs-brand-carousel__nav cs-brand-carousel__nav--prev <?= $block->getVar('brand_carousel/navigation/arrows/prev/additional_css_classes') ?>" type="button">
+                    <button class="cs-brand-carousel__nav cs-brand-carousel__nav--prev <?= $block->getVar('brand_carousel/navigation/arrows/prev/additional_css_classes') ?>" type="button" aria-label="<?= __('Previous') ?>">
                         <?= $this->getLayout()
                             ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
                             ->setIconUrl($block->getVar('brand_carousel/navigation/arrows/prev/path'))
@@ -76,7 +76,7 @@ $jsSettings = json_encode($block->getVar('brand_carousel/js') ?: '{}');
                             ->toHtml();
                         ?>
                     </button>
-                    <button class="cs-brand-carousel__nav cs-brand-carousel__nav--next <?= $block->getVar('brand_carousel/navigation/arrows/next/additional_css_classes') ?>" type="button">
+                    <button class="cs-brand-carousel__nav cs-brand-carousel__nav--next <?= $block->getVar('brand_carousel/navigation/arrows/next/additional_css_classes') ?>" type="button" aria-label="<?= __('Next') ?>">
                         <?= $this->getLayout()
                             ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
                             ->setIconUrl($block->getVar('brand_carousel/navigation/arrows/next/path'))
