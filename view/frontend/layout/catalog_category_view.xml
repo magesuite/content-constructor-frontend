@@ -8,22 +8,27 @@
         <move element="cc-bottom" destination="main.content" after="columns"/>
 
         <referenceBlock name="category.products.list">
-            <container name="hotspot.inside.list" as="hotspot.inside.list">
-                <block class="Magento\Framework\View\Element\Template" name="category.teasers" template="MageSuite_ContentConstructorFrontend::product/list/category-teasers.phtml">
-                    <arguments>
-                        <argument name="html_tag" xsi:type="string">li</argument>
-                        <argument name="grid_class" xsi:type="string">cs-grid-layout</argument>
-                        <argument name="brick_class" xsi:type="string">cs-grid-layout__brick</argument>
-                        <argument name="pagination_view_model" xsi:type="object">MageSuite\ContentConstructorFrontend\ViewModel\PaginationViewModel</argument>
-                    </arguments>
-                </block>
-            </container>
-        </referenceBlock>
-
-        <referenceBlock name="category.products.list">
             <arguments>
                 <argument name="pagination_view_model" xsi:type="object">MageSuite\ContentConstructorFrontend\ViewModel\PaginationViewModel</argument>
             </arguments>
+
+            <block class="Magento\Framework\View\Element\Template" name="category.teasers" template="MageSuite_ContentConstructorFrontend::product/list/category-teasers.phtml">
+                <arguments>
+                    <argument name="html_tag" xsi:type="string">li</argument>
+                    <argument name="grid_class" xsi:type="string">cs-grid-layout</argument>
+                    <argument name="brick_class" xsi:type="string">cs-grid-layout__brick</argument>
+                    <argument name="pagination_view_model" xsi:type="object">MageSuite\ContentConstructorFrontend\ViewModel\PaginationViewModel</argument>
+                    <argument name="show_teasers_only_on_first_page" xsi:type="boolean">false</argument>
+                </arguments>
+            </block>
+
+            <block class="MageSuite\ContentConstructorFrontend\Block\TeaserCss" name="grid.teasers.css" template="MageSuite_ContentConstructorFrontend::teasers-css.phtml">
+                <arguments>
+                    <argument name="brick_class" xsi:type="string">cs-grid-layout__brick</argument>
+                    <argument name="pagination_view_model" xsi:type="object">MageSuite\ContentConstructorFrontend\ViewModel\PaginationViewModel</argument>
+                    <argument name="show_teasers_only_on_first_page" xsi:type="boolean">false</argument>
+                </arguments>
+            </block>
         </referenceBlock>
     </body>
 </page>

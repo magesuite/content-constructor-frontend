@@ -2,12 +2,12 @@
 $imageTeaserData = $block->getImageTeaserData();
 ?>
 
-<button class="cs-image-teaser__nav cs-image-teaser__nav--prev" type="button">
+<button class="cs-image-teaser__nav cs-image-teaser__nav--prev cs-slider-navigation__trigger cs-slider-navigation__trigger--prev" type="button">
     <?= $this->getLayout()
             ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
             ->setIconUrl($block->getIcon())
-            ->setCssClass('cs-image-teaser__nav-icon')
-            ->setAltText(__('Previous'))
+            ->setCssClass('cs-slider-navigation__trigger-icon')
+            ->setAltText(__('Previous slide(s)'))
             ->setInlined(true)
             ->setLazyLoaded(false)
             ->toHtml(); 

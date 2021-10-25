@@ -2,14 +2,14 @@
 $imageTeaserData = $block->getImageTeaserData();
 ?>
 
-<button class="cs-image-teaser__nav cs-image-teaser__nav--next" type="button">
+<button class="cs-image-teaser__nav cs-image-teaser__nav--next cs-slider-navigation__trigger cs-slider-navigation__trigger--next" type="button">
     <?= $this->getLayout()
-        ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
-        ->setIconUrl($block->getIcon())
-        ->setCssClass('cs-image-teaser__nav-icon')
-        ->setAltText(__('Next'))
-        ->setInlined(true)
-        ->setLazyLoaded(false)
-        ->toHtml(); 
+            ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+            ->setIconUrl($block->getIcon())
+            ->setCssClass('cs-slider-navigation__trigger-icon')
+            ->setAltText(__('Next slide(s)'))
+            ->setInlined(true)
+            ->setLazyLoaded(false)
+            ->toHtml(); 
     ?>
 </button>

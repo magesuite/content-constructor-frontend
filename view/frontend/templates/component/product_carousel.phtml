@@ -7,6 +7,7 @@ $viewModel = $block->getViewModel();
 $visibility = $block->getVisibilityClass();
 
 $navIconNextPath = $block->getVar('product_carousel/navigation/arrows/next/path');
+$useWholeScreen = $block->getVar('product_carousel/use_whole_screen') == 'true';
 
 $componentClasses = $block->getSkipSpacing() ? ' cs-products-carousel--skip-spacing' : '';
 $componentClasses .= ' ' . $block->getVar('product_carousel/additional_css_classes');
@@ -16,61 +17,72 @@ if (isset($componentConfiguration['cc_css_classes'])):
     $containerClasses .= ' ' . $componentConfiguration['cc_css_classes'];
 endif;
 
+if ($useWholeScreen) {
+    $containerClasses .= ' cs-container--no-padding';
+    $componentClasses .= ' cs-products-carousel--use-whole-screen';
+}
+
 $viewMode = $block->getData('view_mode') ?? 'grid';
+$products = $viewModel->getProducts();
 $isList = $viewMode == 'list' ? true : false;
 $isSliderMobile = $block->getData('carousel_on_mobile');
-$jsSettings = json_encode($block->getVar('product_carousel/js') ?: '{}');
+
+// Build JS config
+$jsSettings = $block->getVar('product_carousel/js');
+if (empty($jsSettings)) {
+    $jsSettings = [];
+}
+$jsSettings['usePagination'] = filter_var($block->getVar('product_carousel/pagination/use'), FILTER_VALIDATE_BOOL);
+$jsSettings['itemsCount'] = count($products);
 ?>
 
 <?= $block->getCssOnce('css/products-carousel.css'); ?>
 
 <div class="cs-container cs-container--products-carousel<?= $containerClasses ?><?= $visibility ? ' ' .$visibility : ''; ?>">
-    <div class="cs-container__inner">
-        <div class="cs-products-carousel<?= $componentClasses ?>" data-mobile-is-slider="<?= $isSliderMobile; ?>" data-view-mode=<?= $viewMode; ?> data-mage-init='{ "ccProductsCarousel": <?= $jsSettings ?> }'>
-            <div class="cs-products-carousel__carousel">
-                <div class="cs-products-carousel__wrapper">
-                    <ul class="<?php if ($isList): ?>cs-products-list <?php endif; ?><?php if ($isSliderMobile == 'true'): ?>cs-products-list--carousel <?php endif; ?>cs-products-carousel__slides">
-                        <?php foreach ($viewModel->getProducts() as $product): ?>
-                            <li class="<?php if ($isList): ?>cs-products-list__item <?php endif; ?>cs-products-carousel__slide">
-                                <div class="cs-products-carousel__product-tile">
-                                    <?= $viewModel->renderProductTile($product, null) ?>
-                                </div>
-                            </li>
-                        <?php endforeach; ?>
-                    </ul>
-                </div>
+    <?php if(!$useWholeScreen): ?>
+        <div class="cs-container__inner">
+    <?php endif; ?>
+        <div class="cs-products-carousel<?= $componentClasses ?>" data-mobile-is-slider="<?= $isSliderMobile; ?>" data-view-mode=<?= $viewMode; ?> data-mage-init='{ "ccProductsCarousel": <?= json_encode($jsSettings) ?> }'>
+            <div class="cs-products-carousel__slides-wrapper">
+                <ul class="<?php if ($isList): ?>cs-products-list <?php endif; ?><?php if ($isSliderMobile == 'true'): ?>cs-products-list--carousel <?php endif; ?>cs-products-carousel__slides">
+                    <?php foreach ($products as $product): ?>
+                        <li class="<?php if ($isList): ?>cs-products-list__item <?php endif; ?>cs-products-carousel__slide">
+                            <div class="cs-products-carousel__product-tile">
+                                <?= $viewModel->renderProductTile($product, null) ?>
+                            </div>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
 
-                <?php if (($viewMode == 'grid' or $isSliderMobile) && $block->getVar('product_carousel/navigation/show')): ?>
-                    <button class="cs-products-carousel__nav cs-products-carousel__nav--prev <?= $block->getVar('product_carousel/navigation/arrows/prev/additional_css_classes') ?>" type="button">
+                <?php if ($block->getVar('product_carousel/navigation/show')): ?>
+                    <button class="cs-products-carousel__nav cs-products-carousel__nav--prev cs-slider-navigation__trigger cs-slider-navigation__trigger--prev <?= $block->getVar('product_carousel/navigation/arrows/prev/additional_css_classes') ?>" type="button">
                         <?= $this->getLayout()
                             ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
                             ->setIconUrl($block->getVar('product_carousel/navigation/arrows/prev/path'))
-                            ->setCssClass("cs-products-carousel__nav-icon")
+                            ->setCssClass('cs-slider-navigation__trigger-icon')
+                            ->setAltText(__('Previous slide(s)'))
                             ->setInlined(true)
                             ->toHtml();
                         ?>
                     </button>
-                    <button class="cs-products-carousel__nav cs-products-carousel__nav--next <?= $block->getVar('product_carousel/navigation/arrows/next/additional_css_classes') ?>" type="button">
+                    <button class="cs-products-carousel__nav cs-products-carousel__nav--next cs-slider-navigation__trigger cs-slider-navigation__trigger--next <?= $block->getVar('product_carousel/navigation/arrows/next/additional_css_classes') ?>" type="button">
                         <?= $this->getLayout()
                             ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
                             ->setIconUrl($block->getVar('product_carousel/navigation/arrows/next/path'))
-                            ->setCssClass("cs-products-carousel__nav-icon")
+                            ->setCssClass('cs-slider-navigation__trigger-icon')
+                            ->setAltText(__('Next slide(s)'))
                             ->setInlined(true)
                             ->toHtml();
                         ?>
                     </button>
                 <?php endif; ?>
-
-                <?php if (($viewMode == 'grid' or $isSliderMobile) && $block->getVar('product_carousel/pagination/show')): ?>
-                    <ul class="cs-products-carousel__pagination <?= $block->getVar('product_carousel/pagination/additional_css_classes') ?>"></ul>
-                <?php endif; ?>
-
-                <?php if (($viewMode == 'grid' or $isSliderMobile) && $block->getVar('product_carousel/scrollbar/show')): ?>
-                    <div class="cs-products-carousel__scrollbar">
-                        <div class="cs-products-carousel__scrollbar--drag"></div>
-                    </div>
-                <?php endif; ?>
             </div>
+
+            <?php if ($block->getVar('product_carousel/pagination/use')): ?>
+                <div class="cs-slider-pagination cs-image-teaser__pagination <?= $block->getVar('product_carousel/pagination/additional_css_classes') ?>"></div>
+            <?php endif; ?>
         </div>
-    </div>
+    <?php if(!$useWholeScreen): ?>
+        </div>
+    <?php endif; ?>
 </div>

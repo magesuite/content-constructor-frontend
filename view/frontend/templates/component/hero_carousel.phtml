@@ -74,7 +74,12 @@ $componentConfiguration['scenario'] = array(
         'id' => 1
     )
 );
-$componentConfiguration['jsConfig'] = $block->getVar('hero_carousel/js_config');
+
+// Build JS config
+$jsSettings = $block->getVar('hero_carousel/js');
+if (empty($jsSettings)) {
+    $jsSettings = [];
+}
 
 if (isset($componentConfiguration)) {
     echo $this->getLayout()
@@ -82,6 +87,7 @@ if (isset($componentConfiguration)) {
         ->setData($componentConfiguration)
         ->setMix('cs-image-teaser--hero-teaser' . $componentClasses)
         ->setContainerMix('cs-container--hero-teaser')
+        ->setAdditionalJsSettings($jsSettings)
         ->toHtml();
 }
 ?>
