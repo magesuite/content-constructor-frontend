@@ -23,6 +23,9 @@ class DailyDealTeaser extends AbstractComponent implements \Magento\Framework\Da
             return $identities;
         }
 
-        return array_merge($identities, $product['productObject']->getIdentities());
+        $identities = array_merge($identities, $product['productObject']->getIdentities());
+        $identities = array_diff($identities, [\Magento\Catalog\Model\Product::CACHE_TAG]);
+
+        return $identities;
     }
 }

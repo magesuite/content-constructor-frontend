@@ -30,6 +30,8 @@ class ProductGrid extends AbstractComponent
             $identities = array_merge($identities, $product->getProductIdentitiesFromElasticsearch());
         }
 
+        $identities = array_diff($identities, [\Magento\Catalog\Model\Product::CACHE_TAG]);
+
         return array_unique($identities);
     }
 }
