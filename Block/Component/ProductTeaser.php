@@ -10,11 +10,10 @@ class ProductTeaser extends AbstractComponent
     {
         /** @var \MageSuite\ContentConstructorFrontend\Model\Component\ProductTeaser $viewModel */
         $viewModel = $this->getViewModel();
-
         $product = $viewModel->getProductData();
+        $identities = isset($product['identities']) ? (array)$product['identities'] : [];
+        $identities = array_diff($identities, [\Magento\Catalog\Model\Product::CACHE_TAG]);
 
-        return isset($product['identities']) && is_array($product['identities']) ?
-            $product['identities'] :
-            [];
+        return $identities;
     }
 }
