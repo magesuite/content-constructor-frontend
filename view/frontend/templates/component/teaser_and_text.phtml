@@ -5,7 +5,7 @@ $componentConfiguration = $block->getData(); ?>
 /** @var \MageSuite\ContentConstructorFrontend\Model\Component\TeaserAndText $viewModel */
 $viewModel = $block->getViewModel();
 
-$componentConfiguration['scenario'] = array_merge(
+$componentConfiguration['scenario'] = array_merge_recursive(
     [
         'desktopLayout' => ['id' => '2'],
         'contentPlacement' => ['id' => 'over']
@@ -13,7 +13,6 @@ $componentConfiguration['scenario'] = array_merge(
     $componentConfiguration['scenario'] ?? []
 );
 
-// $componentConfiguration['items'] = $viewModel->getSlides();
 ?>
 
 <?= $this->getLayout()
