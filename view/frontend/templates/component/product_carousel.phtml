@@ -29,6 +29,7 @@ if (empty($jsSettings)) {
 }
 $jsSettings['usePagination'] = filter_var($block->getVar('product_carousel/js/usePagination'), FILTER_VALIDATE_BOOL);
 $jsSettings['itemsCount'] = count($products);
+$jsSettings['columnsConfig'] = $block->getVar('columns/one-column', 'MageSuite_ContentConstructor');
 
 // modify css classes
 if ($useWholeScreen) {

@@ -19,6 +19,8 @@ $jsSettings = $block->getVar('brand_carousel/js');
 if (empty($jsSettings)) {
     $jsSettings = [];
 }
+$jsSettings['itemsCount'] = count($brands);
+$jsSettings['columnsConfig'] = $block->getVar('brand_carousel/slides_per_view', 'MageSuite_ContentConstructorFrontend');
 
 // modify css classes
 if ($useWholeScreen) {

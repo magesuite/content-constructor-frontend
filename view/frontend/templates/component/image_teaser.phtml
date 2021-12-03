@@ -171,7 +171,7 @@ $openLinkInNewTab = $block->getOpenLinkInNewTab() ? true : false;
                         ?>
                     <?php endif; ?>
 
-                    <ul class="cs-image-teaser__slides cs-image-teaser__slides<?= $mosaicProportions != '' ? ' cs-image-teaser__slides--mosaic-scenario-' . $mosaicProportions : '' ?> ">
+                    <ul class="cs-image-teaser__slides cs-image-teaser__slides<?= $mosaicProportions != '' ? ' cs-image-teaser__slides--mosaic-scenario-' . $mosaicProportions : '' ?> <?= $componentType == 'teaser_and_text' ? 'cs-image-teaser__slides--mobile_' . $mobileLayout : '' ?>">
                         <?php $slideIndex = 0; ?>
                         <?php foreach ($slides as $slide): ?>
                             <?= $this->getLayout()
