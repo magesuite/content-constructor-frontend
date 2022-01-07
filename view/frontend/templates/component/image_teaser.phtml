@@ -83,6 +83,7 @@ if ($block->getVar($componentType.'/use_whole_screen') == 'true') {
 // Build JS config
 $jsSettings['itemsPerView'] = (int)$itemsPerRow;
 $jsSettings['itemsCount'] = count($slides);
+$jsSettings['componentType'] = $componentType;
 
 // Merge JS config from other components if provided
 $additionalJsSettings = $block->getAdditionalJsSettings();

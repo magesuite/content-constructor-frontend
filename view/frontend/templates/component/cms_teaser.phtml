@@ -32,6 +32,7 @@ if ($itemsOptions) {
 echo $this->getLayout()
     ->createBlock('MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser')
     ->setData($componentConfiguration)
+    ->setComponentType('cms_teaser')
     ->setMix('cs-image-teaser--cms-teaser ' . $block->getMix())
     ->setContainerMix('cs-container--cms-teaser ' . $block->getContainerMix())
     ->toHtml();
