@@ -48,7 +48,6 @@ if ($isWebpSupported) {
         <?php if ($isWebpSupported): ?>
             <source
                 type="image/webp"
-                class="cs-image-teaser__image<?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
                 srcset="<?= $imageWebpSrcSet ?>"
                 <?php if ($imageSizes): ?>
                     sizes="<?= $imageSizes ?>"
@@ -63,7 +62,6 @@ if ($isWebpSupported) {
         <?php endif; ?>
         <source
             type="<?= $imageMimeType ?>"
-            class="cs-image-teaser__image<?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
             srcset="<?= $imageSrcset ?>"
             <?php if ($imageSizes): ?>
                 sizes="<?= $imageSizes ?>"
