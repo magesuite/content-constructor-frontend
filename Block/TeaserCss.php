@@ -155,7 +155,7 @@ class TeaserCss extends \Magento\Framework\View\Element\Template
             if ($position === 'right') {
                 $column = $columnsCfg[$breakpointName];
                 if ($size['x'] > 1 && $column > 1) {
-                    $column = $column - ($size['x'] - 1);
+                    $column = $column - ($size['x'] - 2);
                 }
             }
             if ($position === 'center') {
