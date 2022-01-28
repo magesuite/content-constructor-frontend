@@ -1,0 +1,84 @@
+<?php
+/**
+ * Style generator for all the teasers of given instance (either POP or Single PG component)
+ *
+ * @var $block \MageSuite\ContentConstructorFrontend\Block\TeaserCss
+ */
+?>
+<?php if ($pgId = $block->getPgId()):?>
+<?php $projectBreakpoints = $block->getBreakpoints(); ?>
+<style type="text/css">
+    <?php $pgRowsConfig = $block->getRowsConfig(); ?>
+    #<?= $pgId ?> {
+        grid-template-rows: repeat(<?= $pgRowsConfig['mobile'] ?>, minmax(0, min-content));
+    }
+    @media (min-width: <?= $projectBreakpoints->getInnerIterator()->offsetGet('tablet') ?>px) {
+        #<?= $pgId ?> {
+            grid-template-rows: repeat(<?= $pgRowsConfig['tablet'] ?>, minmax(0, min-content));
+        }
+    }
+    @media (min-width: <?= $projectBreakpoints->getInnerIterator()->offsetGet('laptop') ?>px) {
+        #<?= $pgId ?> {
+            grid-template-rows: repeat(<?= $pgRowsConfig['desktop'] ?>, minmax(0, min-content));
+        }
+    }
+</style>
+<?php endif;?>
+<?php
+if ($block->canRenderTeaser()) {
+    $teasers = $block->getTeasers();
+    ?>
+    <style type="text/css">
+        <?php foreach ($teasers as $i => $teaser) {
+            $teaserSelector = $block->getTeaserSelector($i);
+            // default teaser row/col position
+            printf('
+                %s {
+                    grid-row-start:  %s;
+                    grid-column-start: 1;
+                }',
+                $teaserSelector,
+                $teaser['gridPosition']['y']
+            );
+        // set teaser column position depending on breakpoint
+            foreach ($block->getTeaserColumns($teaser) as $column) {
+                printf('
+                    @media (min-width: %spx) {
+                        %s {
+                            grid-column-start: %s;
+                        }
+                    }',
+                    $column['breakpoint'],
+                    $teaserSelector,
+                    $column['column']
+                );
+            }
+            // hide teasers if they would overflow grid
+            foreach ($block->getTeaserOverflows($teaser) as $overflow) {
+                printf('
+                    @media (min-width: %spx) %s {
+                        %s {
+                            display: %s;
+                        }
+                    }',
+                    $overflow['minWidth'],
+                    $overflow['maxWidth'] ? 'and (max-width: ' . $overflow['maxWidth'] . 'px)' : '',
+                    $teaserSelector,
+                    $overflow['overflows'] ? 'none' : 'block'
+                );
+            }
+            // hide for mobiles if checked an option in CC
+            if (!$teaser['mobile']) {
+                printf('
+                    @media (max-width: %spx) {
+                        %s {
+                            display: none;
+                        }
+                    }',
+                    $projectBreakpoints->offsetGet('tablet') - 1,
+                    $teaserSelector
+                );
+            }
+    } ?>
+    </style>
+<?php } ?>

@@ -6,11 +6,12 @@ $componentConfiguration = $block->getData();
 $viewModel = $block->getViewModel();
 $visibility = $block->getVisibilityClass();
 
-$componentClasses = '';
+$componentClasses = 'cs-image-teaser--hero-teaser';
 if ($componentConfiguration['mobileDisplayVariant']['id'] == 'list') {
     $componentClasses .= ' cs-image-teaser--as-list-mobile';
 }
 $componentClasses .= ' ' . $block->getVar('hero_carousel/additional_css_classes');
+$containerClasses = 'cs-container--hero-teaser';
 
 // Map data from deprecated Image Teaser for backward compatibility
 if (!isset($componentConfiguration['scenario'])) {
@@ -74,14 +75,29 @@ $componentConfiguration['scenario'] = array(
         'id' => 1
     )
 );
-$componentConfiguration['jsConfig'] = $block->getVar('hero_carousel/js_config');
+
+// Build JS config
+$jsSettings = $block->getVar('hero_carousel/js');
+if (empty($jsSettings)) {
+    $jsSettings = [];
+}
+
+if ($block->getVar('hero_carousel/use_whole_screen') == 'true') {
+    if ($block->getVar('hero_carousel/teaser_width') != 'container') {
+        $containerClasses .= ' cs-container--use-whole-screen';
+        $jsSettings['useWholeScreen'] = true;
+    }
+    $componentClasses .= ' cs-image-teaser--use-whole-screen';
+}
 
 if (isset($componentConfiguration)) {
     echo $this->getLayout()
         ->createBlock(MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser::class)
         ->setData($componentConfiguration)
-        ->setMix('cs-image-teaser--hero-teaser' . $componentClasses)
-        ->setContainerMix('cs-container--hero-teaser')
+        ->setComponentType('hero_carousel')
+        ->setMix($componentClasses)
+        ->setContainerMix($containerClasses)
+        ->setAdditionalJsSettings($jsSettings)
         ->toHtml();
 }
 ?>

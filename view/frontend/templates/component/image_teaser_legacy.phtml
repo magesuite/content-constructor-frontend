@@ -198,7 +198,7 @@ $jsConfig = isset($imageTeaser['jsConfig']) ? json_encode($imageTeaser['jsConfig
 
             </div>
 
-            <?php if (($isSlider or $isSliderMobile) && $block->getVar('image_teaser/pagination/show')): ?>
+            <?php if (($isSlider or $isSliderMobile) && $block->getVar('image_teaser/js/usePagination')): ?>
                 <ul class="cs-image-teaser-legacy__pagination <?= $block->getVar('image_teaser/pagination/additional_css_classes') ?>"></ul>
             <?php endif; ?>
             <?php if ($imageTeaser['currentScenario']['teaserWidth']['id'] == 'c' or $imageTeaser['currentScenario']['teaserWidth']['id'] == 'c-s'): ?>

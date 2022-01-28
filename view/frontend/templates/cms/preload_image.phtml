@@ -6,5 +6,5 @@ $preloadImage = $viewModel->getPreloadImage($imageWidth);
 $preloadImageSrcSet = $viewModel->getPreloadImageSrcSet($imageWidth);
 ?>
 <?php if ($preloadImage && $preloadImageSrcSet): ?>
-    <link rel="preload" href="<?= $preloadImage ;?>" imagesrcset="<?= $preloadImageSrcSet ;?>" as="image">
+    <link rel="preload" href="<?= $preloadImage ;?>" imagesrcset="<?= $preloadImageSrcSet ;?>" as="image" importance="high">
 <?php endif;?>

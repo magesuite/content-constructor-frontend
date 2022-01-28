@@ -7,90 +7,99 @@ $viewModel = $block->getViewModel();
 $visibility = $block->getVisibilityClass();
 
 $brands = $viewModel->getBrands();
-$isLazyLoaded = $block->getVar('brand_carousel/lazyload_brand_images');
 
-$navIconPrevPath = $block->getVar('brand_carousel/navigation/arrows/prev/path');
-$navIconNextPath = $block->getVar('brand_carousel/navigation/arrows/next/path');
+$containerClasses = $block->getContainerMix();
 
 $componentClasses = $block->getSkipSpacing() ? ' cs-brand-carousel--skip-spacing' : '';
 $componentClasses .= ' ' . $block->getVar('brand_carousel/additional_css_classes');
 
-$jsSettings = json_encode($block->getVar('brand_carousel/js') ?: '{}');
+$useWholeScreen = $block->getVar('brand_carousel/use_whole_screen') == 'true';
+
+$jsSettings = $block->getVar('brand_carousel/js');
+if (empty($jsSettings)) {
+    $jsSettings = [];
+}
+$jsSettings['itemsCount'] = count($brands);
+$jsSettings['columnsConfig'] = $block->getVar('brand_carousel/slides_per_view', 'MageSuite_ContentConstructorFrontend');
+$jsSettings['componentType'] = 'brand_carousel';
+
+// modify css classes
+if ($useWholeScreen) {
+    $containerClasses .= ' cs-container--no-padding';
+    $componentClasses .= ' cs-brand-carousel--use-whole-screen';
+    $jsSettings['useWholeScreen'] = true;
+}
 ?>
 
 <?php if($brands && count($brands) > 0): ?>
     <?= $block->getCssOnce('css/brand-carousel.css'); ?>
 
-    <div class="cs-container cs-container--brand-carousel<?= $visibility ? ' ' .$visibility : ''; ?>">
-        <div class="cs-container__inner">
-            <div class="cs-brand-carousel cs-brand-carousel--slider<?= $componentClasses ?>" data-mage-init='{ "ccBrandCarousel": <?= $jsSettings ?> }'>
-                <div class="cs-brand-carousel__carousel">
-                    <div class="cs-brand-carousel__wrapper">
-                        <ul class="cs-brand-carousel__slides">
-                            <?php foreach($brands as $brand): ?>
+    <div class="cs-container cs-container--brand-carousel <?= $containerClasses ?><?= $visibility ? ' ' .$visibility : ''; ?>">
+        <?php if(!$useWholeScreen): ?>
+            <div class="cs-container__inner">
+        <?php endif; ?>
+            <div class="cs-brand-carousel cs-brand-carousel--slider<?= $componentClasses ?>" data-mage-init='{ "ccBrandCarousel": <?= json_encode($jsSettings) ?> }'>
+                <div class="cs-brand-carousel__slides-wrapper">
+                    <?php if ($block->getVar('brand_carousel/navigation/show')): ?>
+                        <button class="cs-brand-carousel__nav cs-brand-carousel__nav--prev cs-slider-navigation cs-slider-navigation--prev <?= $block->getVar('brand_carousel/navigation/arrows/prev/additional_css_classes') ?>" disabled type="button">
+                            <?= $this->getLayout()
+                                ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+                                ->setIconUrl($block->getVar('brand_carousel/navigation/arrows/prev/path'))
+                                ->setCssClass('cs-slider-navigation__icon')
+                                ->setAltText(__('Previous slide(s)'))
+                                ->setInlined(true)
+                                ->toHtml();
+                            ?>
+                        </button>
+                    <?php endif; ?>
+                    <ul class="cs-brand-carousel__slides">
+                        <?php foreach($brands as $brand): ?>
                             <li class="cs-brand-carousel__slide">
                                 <?php if($brand['href'] && $block->getVar('brand_carousel/link_brands') ): ?>
-                                <a href="<?=$brand['href']?>" class="cs-brand-carousel__slide-link">
+                                    <a href="<?=$brand['href']?>" class="cs-brand-carousel__slide-link">
                                 <?php endif; ?>
                                     <?php if($brand['image']['src']): ?>
-                                    <figure class="cs-brand-carousel__figure">
-                                        <img
-                                            class="cs-brand-carousel__image <?php if($isLazyLoaded){ echo 'lazyload';} ?>"
-                                            <?php if($isLazyLoaded): ?>
-                                                src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-                                                data-src="<?=$brand['image']['src']?>"
-                                            <?php else: ?>
-                                                src="<?=$brand['image']['src']?>"
-                                            <?php endif; ?>
-                                            alt="<?=$brand['image']['alt']?>"
-                                            <?php if(isset($brand['image']['width'])): ?>width="<?=$brand['image']['width']?>" <?php endif; ?>
-                                            <?php if(isset($brand['image']['height'])): ?>height="<?=$brand['image']['height']?>" <?php endif; ?>
-                                        >
-                                        <noscript>
+                                        <figure class="cs-brand-carousel__figure">
                                             <img
                                                 class="cs-brand-carousel__image"
                                                 src="<?=$brand['image']['src']?>"
                                                 alt="<?=$brand['image']['alt']?>"
-                                                <?php if(isset($brand['image']['width'])): ?>width="<?=$brand['image']['width']?>" <?php endif; ?>
-                                                <?php if(isset($brand['image']['height'])): ?>height="<?=$brand['image']['height']?>" <?php endif; ?>
+                                                <?php if(isset($brand['image']['width'])): ?>
+                                                    width="<?=$brand['image']['width']?>"
+                                                <?php endif; ?>
+                                                <?php if(isset($brand['image']['height'])): ?>
+                                                    height="<?=$brand['image']['height']?>"
+                                                <?php endif; ?>
+                                                loading="lazy"
                                             >
-                                        </noscript>
-                                    </figure>
+                                        </figure>
                                     <?php endif; ?>
                                 <?php if($brand['href'] && $block->getVar('brand_carousel/link_brands')): ?>
-                                </a>
+                                    </a>
                                 <?php endif; ?>
                             </li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div>
+                        <?php endforeach; ?>
+                    </ul>
+                    <?php if ($block->getVar('brand_carousel/navigation/show')): ?>
+                        <button class="cs-brand-carousel__nav cs-brand-carousel__nav--next cs-slider-navigation cs-slider-navigation--next <?= $block->getVar('brand_carousel/navigation/arrows/next/additional_css_classes') ?>" type="button">
+                            <?= $this->getLayout()
+                                ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+                                ->setIconUrl($block->getVar('brand_carousel/navigation/arrows/next/path'))
+                                ->setCssClass('cs-slider-navigation__icon')
+                                ->setAltText(__('Next slide(s)'))
+                                ->setInlined(true)
+                                ->toHtml();
+                            ?>
+                        </button>
+                    <?php endif; ?>
                 </div>
 
-                <?php if($block->getVar('brand_carousel/navigation/show')): ?>
-                    <button class="cs-brand-carousel__nav cs-brand-carousel__nav--prev <?= $block->getVar('brand_carousel/navigation/arrows/prev/additional_css_classes') ?>" type="button" aria-label="<?= __('Previous') ?>">
-                        <?= $this->getLayout()
-                            ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
-                            ->setIconUrl($block->getVar('brand_carousel/navigation/arrows/prev/path'))
-                            ->setCssClass("cs-brand-carousel__nav-icon")
-                            ->setInlined(true)
-                            ->toHtml();
-                        ?>
-                    </button>
-                    <button class="cs-brand-carousel__nav cs-brand-carousel__nav--next <?= $block->getVar('brand_carousel/navigation/arrows/next/additional_css_classes') ?>" type="button" aria-label="<?= __('Next') ?>">
-                        <?= $this->getLayout()
-                            ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
-                            ->setIconUrl($block->getVar('brand_carousel/navigation/arrows/next/path'))
-                            ->setCssClass("cs-brand-carousel__nav-icon")
-                            ->setInlined(true)
-                            ->toHtml();
-                        ?>
-                    </button>
-                <?php endif; ?>
-
-                <?php if($block->getVar('brand_carousel/pagination/show')): ?>
-                    <ul class="cs-brand-carousel__pagination <?= $block->getVar('brand_carousel/pagination/additional_css_classes') ?>"></ul>
+                <?php if ($block->getVar('brand_carousel/js/usePagination')): ?>
+                    <div class="cs-slider-pagination cs-brand-carousel__pagination <?= $block->getVar('brand_carousel/pagination/additional_css_classes') ?>"></div>
                 <?php endif; ?>
             </div>
-        </div>
+        <?php if(!$useWholeScreen): ?>
+            </div>
+        <?php endif; ?>
     </div>
 <?php endif; ?>

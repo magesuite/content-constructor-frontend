@@ -15,6 +15,21 @@ $cta = $slide->getCta();
 $ctaHref = $cta['href'] ?? '';
 
 /**
+ * Video
+ */
+$inPlaceVideo = $slide['ytVideo'];
+$hasModalVideo = $ctaHref && (strpos($ctaHref, 'youtube.com') !== false || strpos($ctaHref, 'youtu.be') !== false);
+$hasInPlaceVideo = $inPlaceVideo && $inPlaceVideo['url'] && !empty($inPlaceVideo['url']);
+$videoJsOptions = [];
+if ($hasInPlaceVideo) {
+    $videoJsOptions['useModal'] = false;
+    $videoJsOptions['inplaceVideo'] = $inPlaceVideo;
+} else {
+    $videoJsOptions['useModal'] = true;
+    $videoJsOptions['modalVideo'] = $block->getVar('video_player', 'MageSuite_ContentConstructorFrontend');
+}
+
+/**
  * Image properties with support for conditional lazy loading.
  */
 $hasImage = !empty($slide->getSrc());
@@ -22,11 +37,7 @@ $hasImage = !empty($slide->getSrc());
  * Aspect ratio calculations preventing content jumping before images load.
  */
 $slideImage = $slide->getImage();
-$aspectRatio = isset($slideImage['aspect_ratio']) ? explode(':', $slideImage['aspect_ratio']) : [];
-$aspectRatioPadding = 0;
-if (count($aspectRatio) === 2) {
-    $aspectRatioPadding = ($aspectRatio[1] / $aspectRatio[0]) * 100;
-}
+$aspectRatio = isset($slideImage['aspect_ratio']) ? str_replace(':', '/', $slideImage['aspect_ratio']) : '';
 /**
  * Contrast optimizers
  */
@@ -39,18 +50,24 @@ $contrastOptimizersScenarios = $contrastOptimizers['scenarios'] ?? null;
 $textShadow = $contrastOptimizersScenarios['text_shadow'] ?? null;
 $container = $contrastOptimizersScenarios['container'] ?? null;
 $openLinkInNewTab = $block->getOpenLinkInNewTab();
+
+/**
+ * Slide CSS classes
+ */
+$slideClasses = 'cs-image-teaser__slide cs-image-teaser__slide--scheme-'.$colorScheme;
+if ($hasImage) {
+    $slideClasses .= ' cs-image-teaser__slide--image-uploaded';
+}
+if (!$ctaHref && $hasInPlaceVideo) {
+    $slideClasses .= ' cs-image-teaser__slide--inplace-video';
+}
+if ($hasModalVideo) {
+    $slideClasses .= ' cs-image-teaser__slide--modal-video';
+}
+$slideClasses .= ' '.$slide->getCcCssClasses()
+
 ?>
-<li class="cs-image-teaser__slide cs-image-teaser__slide--scheme-<?= $colorScheme ?><?= $hasImage ? ' cs-image-teaser__slide--image-uploaded' : '' ?> <?= $slide->getCcCssClasses() ?>">
-
-    <?= $this->getLayout()
-        ->createBlock(\Magento\Framework\View\Element\Template::class)
-        ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/aspect_ratio_text-over-image.phtml')
-        ->setImageTeaserData($imageTeaserData)
-        ->setSlide($slide)
-        ->setContentPlacement($contentPlacement)
-        ->toHtml();
-    ?>
-
+<li class="<?= $slideClasses ?>">
     <?= $this->getLayout()
         ->createBlock(\Magento\Framework\View\Element\Template::class)
         ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/hotspots/before_slide-wrapper.phtml')
@@ -63,20 +80,9 @@ $openLinkInNewTab = $block->getOpenLinkInNewTab();
     ?>
 
     <?php if ($ctaHref): ?>
-        <a href="<?= $ctaHref ?>" <?= $openLinkInNewTab ? 'target="_blank" rel="noopener"' : ''?> class="cs-image-teaser__slide-wrapper">
-    <?php else: ?>
-        <div class="cs-image-teaser__slide-wrapper">
+        <a href="<?= $ctaHref ?>" <?= $openLinkInNewTab ? 'target="_blank" rel="noopener noreferrer"' : ''?> class="cs-image-teaser__link">
     <?php endif; ?>
-
-        <?= $this->getLayout()
-            ->createBlock(\Magento\Framework\View\Element\Template::class)
-            ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/aspect_ratio_text-under-image.phtml')
-            ->setImageTeaserData($imageTeaserData)
-            ->setSlide($slide)
-            ->setContentPlacement($contentPlacement)
-            ->toHtml();
-        ?>
-
+    <figure class="cs-image-teaser__figure">
         <?= $this->getLayout()
             ->createBlock(\Magento\Framework\View\Element\Template::class)
             ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/image.phtml')
@@ -85,58 +91,15 @@ $openLinkInNewTab = $block->getOpenLinkInNewTab();
             ->setIsSlider($isSlider)
             ->setIsSliderMobile($isSliderMobile)
             ->setSlideIndex($slideIndex)
+            ->setAspectRatio($aspectRatio)
             ->toHtml();
         ?>
 
-        <?= $this->getLayout()
-            ->createBlock(\Magento\Framework\View\Element\Template::class)
-            ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/contrast_overlay.phtml')
-            ->setImageTeaserData($imageTeaserData)
-            ->setSlide($slide)
-            ->toHtml();
-        ?>
-
-        <?= $this->getLayout()
-            ->createBlock(\Magento\Framework\View\Element\Template::class)
-            ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/contrast_gradient.phtml')
-            ->setImageTeaserData($imageTeaserData)
-            ->setSlide($slide)
-            ->toHtml();
-        ?>
-
-        <?= $this->getLayout()
-            ->createBlock(\Magento\Framework\View\Element\Template::class)
-            ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/hotspots/before_content-wrapper.phtml')
-            ->setImageTeaserData($imageTeaserData)
-            ->setSlide($slide)
-            ->setIsSlider($isSlider)
-            ->setIsSliderMobile($isSliderMobile)
-            ->setContentPlacement($contentPlacement)
-            ->toHtml();
-        ?>
-
-        <div class="cs-image-teaser__content-wrapper <?= isset($contentAlign['x']) ? 'cs-image-teaser__content-wrapper--content-align-x-' . $contentAlign['x'] : '';?> <?= isset($contentAlign['y']) ? ' cs-image-teaser__content-wrapper--content-align-y-' . $contentAlign['y'] : '';?>"
-            <?php if ($aspectRatio and $contentPlacement == 'under'): ?>
-                style="margin-top: -<?= $aspectRatioPadding ?>%; padding-top: <?= $aspectRatioPadding ?>%"
-            <?php endif; ?>
-        >
-
-            <?= $this->getLayout()
-                ->createBlock(\Magento\Framework\View\Element\Template::class)
-                ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/hotspots/before_content.phtml')
-                ->setImageTeaserData($imageTeaserData)
-                ->setSlide($slide)
-                ->setIsSlider($isSlider)
-                ->setIsSliderMobile($isSliderMobile)
-                ->setContentPlacement($contentPlacement)
-                ->toHtml();
-            ?>
-
-            <div class="cs-image-teaser__content<?= isset($container['enabled']) && $container['enabled'] ? ' cs-image-teaser__content--container' : '' ?>">
-
+        <?php if($slide->getSlogan() || $slide->getDescription() || $ctaHref): ?>
+            <figcaption class="cs-image-teaser__content-wrapper <?= isset($contentAlign['x']) ? 'cs-image-teaser__content-wrapper--content-align-x-' . $contentAlign['x'] : '';?> <?= isset($contentAlign['y']) ? ' cs-image-teaser__content-wrapper--content-align-y-' . $contentAlign['y'] : '';?> cs-image-teaser__content-wrapper--<?= $contentPlacement ?>">
                 <?= $this->getLayout()
                     ->createBlock(\Magento\Framework\View\Element\Template::class)
-                    ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/contrast_container.phtml')
+                    ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/contrast_overlay.phtml')
                     ->setImageTeaserData($imageTeaserData)
                     ->setSlide($slide)
                     ->toHtml();
@@ -144,7 +107,15 @@ $openLinkInNewTab = $block->getOpenLinkInNewTab();
 
                 <?= $this->getLayout()
                     ->createBlock(\Magento\Framework\View\Element\Template::class)
-                    ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/hotspots/before_text-content.phtml')
+                    ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/contrast_gradient.phtml')
+                    ->setImageTeaserData($imageTeaserData)
+                    ->setSlide($slide)
+                    ->toHtml();
+                ?>
+
+                <?= $this->getLayout()
+                    ->createBlock(\Magento\Framework\View\Element\Template::class)
+                    ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/hotspots/before_content.phtml')
                     ->setImageTeaserData($imageTeaserData)
                     ->setSlide($slide)
                     ->setIsSlider($isSlider)
@@ -152,27 +123,61 @@ $openLinkInNewTab = $block->getOpenLinkInNewTab();
                     ->setContentPlacement($contentPlacement)
                     ->toHtml();
                 ?>
-
-                <div class="cs-image-teaser__text-content<?= isset($textShadow['enabled']) && $textShadow['enabled'] ? ' cs-image-teaser__text-content--text-shadow cs-image-teaser__text-content--text-shadow-' . $textShadow['intensity'] : '' ?>">
+                <div class="cs-image-teaser__content<?= isset($container['enabled']) && $container['enabled'] ? ' cs-image-teaser__content--container' : '' ?>">
                     <?= $this->getLayout()
                         ->createBlock(\Magento\Framework\View\Element\Template::class)
-                        ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/slogan.phtml')
+                        ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/contrast_container.phtml')
                         ->setImageTeaserData($imageTeaserData)
                         ->setSlide($slide)
                         ->toHtml();
                     ?>
                     <?= $this->getLayout()
                         ->createBlock(\Magento\Framework\View\Element\Template::class)
-                        ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/description.phtml')
+                        ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/hotspots/before_text-content.phtml')
+                        ->setImageTeaserData($imageTeaserData)
+                        ->setSlide($slide)
+                        ->setIsSlider($isSlider)
+                        ->setIsSliderMobile($isSliderMobile)
+                        ->setContentPlacement($contentPlacement)
+                        ->toHtml();
+                    ?>
+                    <div class="cs-image-teaser__text-content<?= isset($textShadow['enabled']) && $textShadow['enabled'] ? ' cs-image-teaser__text-content--text-shadow cs-image-teaser__text-content--text-shadow-' . $textShadow['intensity'] : '' ?>">
+                        <?= $this->getLayout()
+                            ->createBlock(\Magento\Framework\View\Element\Template::class)
+                            ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/slogan.phtml')
+                            ->setImageTeaserData($imageTeaserData)
+                            ->setSlide($slide)
+                            ->toHtml();
+                        ?>
+                        <?= $this->getLayout()
+                            ->createBlock(\Magento\Framework\View\Element\Template::class)
+                            ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/description.phtml')
+                            ->setImageTeaserData($imageTeaserData)
+                            ->setSlide($slide)
+                            ->toHtml();
+                        ?>
+                    </div>
+                    <?= $this->getLayout()
+                        ->createBlock(\Magento\Framework\View\Element\Template::class)
+                        ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/hotspots/after_text-content.phtml')
+                        ->setImageTeaserData($imageTeaserData)
+                        ->setSlide($slide)
+                        ->setIsSlider($isSlider)
+                        ->setIsSliderMobile($isSliderMobile)
+                        ->setContentPlacement($contentPlacement)
+                        ->toHtml();
+                    ?>
+                    <?= $this->getLayout()
+                        ->createBlock(\Magento\Framework\View\Element\Template::class)
+                        ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/cta.phtml')
                         ->setImageTeaserData($imageTeaserData)
                         ->setSlide($slide)
                         ->toHtml();
                     ?>
                 </div>
-
                 <?= $this->getLayout()
                     ->createBlock(\Magento\Framework\View\Element\Template::class)
-                    ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/hotspots/after_text-content.phtml')
+                    ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/hotspots/after_content.phtml')
                     ->setImageTeaserData($imageTeaserData)
                     ->setSlide($slide)
                     ->setIsSlider($isSlider)
@@ -180,42 +185,11 @@ $openLinkInNewTab = $block->getOpenLinkInNewTab();
                     ->setContentPlacement($contentPlacement)
                     ->toHtml();
                 ?>
-
-                <?= $this->getLayout()
-                    ->createBlock(\Magento\Framework\View\Element\Template::class)
-                    ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/cta.phtml')
-                    ->setImageTeaserData($imageTeaserData)
-                    ->setSlide($slide)
-                    ->toHtml();
-                ?>
-            </div>
-
-            <?= $this->getLayout()
-                ->createBlock(\Magento\Framework\View\Element\Template::class)
-                ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/hotspots/after_content.phtml')
-                ->setImageTeaserData($imageTeaserData)
-                ->setSlide($slide)
-                ->setIsSlider($isSlider)
-                ->setIsSliderMobile($isSliderMobile)
-                ->setContentPlacement($contentPlacement)
-                ->toHtml();
-            ?>
-        </div>
-
-        <?= $this->getLayout()
-            ->createBlock(\Magento\Framework\View\Element\Template::class)
-            ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/hotspots/after_content-wrapper.phtml')
-            ->setImageTeaserData($imageTeaserData)
-            ->setSlide($slide)
-            ->setIsSlider($isSlider)
-            ->setIsSliderMobile($isSliderMobile)
-            ->setContentPlacement($contentPlacement)
-            ->toHtml();
-        ?>
+            </figcaption>
+        <?php endif; ?>
+    </figure>
     <?php if ($ctaHref): ?>
         </a>
-    <?php else: ?>
-        </div>
     <?php endif; ?>
 
     <?= $this->getLayout()
