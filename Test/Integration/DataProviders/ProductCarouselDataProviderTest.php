@@ -108,11 +108,15 @@ class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
         $this->itReturnsOnlyInStockProducts();
         $this->itReturnsOnlyVisibleProducts();
         $this->itLimitsProperly();
-        $this->itReturnsProductsBySku();
 //        $this->itFiltersProperlyByNewestProduct();
         $this->itReturnsCorrectFlagForPopularIcon();
         $this->itReturnsCorrectProductPrice();
         $this->itReturnsCorrectProductQty();
+        $this->itReturnsProductsBySku();
+        $this->itReturnsProductsByIds();
+        $this->itReturnsProductsBySkuDirectlyFromDatabase();
+        $this->itReturnsProductsByIdsDirectlyFromDatabase();
+        $this->itReturnsOnlySaleableProductsDirectlyFromDatabase();
     }
 
     private function itSortsProperlyByPrice()
@@ -224,9 +228,70 @@ class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
         $this->assertCount(3, $result, __FUNCTION__.' Only visible products should be returned');
     }
 
+    protected function itReturnsProductsByIds()
+    {
+        $result = $this->dataProvider->getProducts(['product_ids' => [333, 334]]);
+
+        $this->assertCount(2, $result, __FUNCTION__ . ' Two ids were provided, so only two products should be returned');
+
+        $cheapest = array_shift($result);
+        $mostExpensive = array_shift($result);
+
+        $this->assertEquals('Cheapest product', $cheapest['name'], __FUNCTION__ . ' Products should be sorted by provided ids list');
+        $this->assertEquals('The most expensive product', $mostExpensive['name'], __FUNCTION__ . ' Products should be sorted by provided ids list');
+    }
+
+    protected function itReturnsProductsByIdsDirectlyFromDatabase()
+    {
+        $result = $this->dataProvider->getProducts([
+            'product_ids' => [333, 334],
+            'collection_type' => \MageSuite\ContentConstructorFrontend\DataProviders\ProductCarouselDataProvider::COLLECTION_TYPE_DATABASE
+        ]);
+
+        $this->assertCount(2, $result, __FUNCTION__ . ' Two ids were provided, so only two products should be returned');
+
+        $cheapest = array_shift($result);
+        $mostExpensive = array_shift($result);
+
+        $this->assertEquals('Cheapest product', $cheapest['name'], __FUNCTION__ . ' Products should be sorted by provided ids list');
+        $this->assertEquals('The most expensive product', $mostExpensive['name'], __FUNCTION__ . ' Products should be sorted by provided ids list');
+    }
+
+    protected function itReturnsOnlySaleableProductsDirectlyFromDatabase()
+    {
+        $result = $this->dataProvider->getProducts([
+            'product_ids' => [337, 333, 334],
+            'collection_type' => \MageSuite\ContentConstructorFrontend\DataProviders\ProductCarouselDataProvider::COLLECTION_TYPE_DATABASE
+        ]);
+
+        $this->assertCount(2, $result, __FUNCTION__ . ' Only products in stock should be provided');
+
+        $cheapest = array_shift($result);
+        $mostExpensive = array_shift($result);
+
+        $this->assertEquals('Cheapest product', $cheapest['name'], __FUNCTION__ . ' Products should be sorted by provided ids list');
+        $this->assertEquals('The most expensive product', $mostExpensive['name'], __FUNCTION__ . ' Products should be sorted by provided ids list');
+    }
+
     protected function itReturnsProductsBySku()
     {
         $result = $this->dataProvider->getProducts(['skus' => 'cheapest, the_most_expensive']);
+
+        $this->assertCount(2, $result, __FUNCTION__ . ' Only two skus were provided, so only two products should be returned');
+
+        $cheapest = array_shift($result);
+        $mostExpensive = array_shift($result);
+
+        $this->assertEquals('Cheapest product', $cheapest['name'], __FUNCTION__ . ' Products should be sorted by provided sku list');
+        $this->assertEquals('The most expensive product', $mostExpensive['name'], __FUNCTION__ . ' Products should be sorted by provided sku list');
+    }
+
+    protected function itReturnsProductsBySkuDirectlyFromDatabase()
+    {
+        $result = $this->dataProvider->getProducts([
+            'skus' => 'cheapest, the_most_expensive',
+            'collection_type' => \MageSuite\ContentConstructorFrontend\DataProviders\ProductCarouselDataProvider::COLLECTION_TYPE_DATABASE
+        ]);
 
         $this->assertCount(2, $result, __FUNCTION__ . ' Only two skus were provided, so only two products should be returned');
 
