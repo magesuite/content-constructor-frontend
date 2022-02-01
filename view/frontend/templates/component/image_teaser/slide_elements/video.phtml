@@ -1,0 +1,7 @@
+<?php
+$imageTeaserData = $block->getImageTeaserData();
+$slide = $block->getSlide();
+$videoTeaserData = $block->getVideoTeaserData();
+$aspectRatio = $block->getAspectRatio();
+?>
+<div data-video-teaser="<?= $block->escapeHtml(json_encode($videoTeaserData)); ?>" <?php if($aspectRatio): ?>style="aspect-ratio: <?= $aspectRatio ?>"<?php endif ?>></div>
