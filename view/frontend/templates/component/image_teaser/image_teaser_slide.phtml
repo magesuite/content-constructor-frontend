@@ -15,21 +15,6 @@ $cta = $slide->getCta();
 $ctaHref = $cta['href'] ?? '';
 
 /**
- * Video
- */
-$inPlaceVideo = $slide['ytVideo'];
-$hasModalVideo = $ctaHref && (strpos($ctaHref, 'youtube.com') !== false || strpos($ctaHref, 'youtu.be') !== false);
-$hasInPlaceVideo = $inPlaceVideo && $inPlaceVideo['url'] && !empty($inPlaceVideo['url']);
-$videoJsOptions = [];
-if ($hasInPlaceVideo) {
-    $videoJsOptions['useModal'] = false;
-    $videoJsOptions['inplaceVideo'] = $inPlaceVideo;
-} else {
-    $videoJsOptions['useModal'] = true;
-    $videoJsOptions['modalVideo'] = $block->getVar('video_player', 'MageSuite_ContentConstructorFrontend');
-}
-
-/**
  * Image properties with support for conditional lazy loading.
  */
 $hasImage = !empty($slide->getSrc());
@@ -52,20 +37,22 @@ $container = $contrastOptimizersScenarios['container'] ?? null;
 $openLinkInNewTab = $block->getOpenLinkInNewTab();
 
 /**
+ * Video Teaser
+ */
+$videoTeaserData = $slide->getVideo();
+$hasVideoTeaser = !empty($videoTeaserData['url']) && !empty($videoTeaserData['type']);
+
+/**
  * Slide CSS classes
  */
 $slideClasses = 'cs-image-teaser__slide cs-image-teaser__slide--scheme-'.$colorScheme;
 if ($hasImage) {
     $slideClasses .= ' cs-image-teaser__slide--image-uploaded';
 }
-if (!$ctaHref && $hasInPlaceVideo) {
-    $slideClasses .= ' cs-image-teaser__slide--inplace-video';
+if ($hasVideoTeaser) {
+    $slideClasses .= ' cs-image-teaser__slide--has-video-teaser';
 }
-if ($hasModalVideo) {
-    $slideClasses .= ' cs-image-teaser__slide--modal-video';
-}
-$slideClasses .= ' '.$slide->getCcCssClasses()
-
+$slideClasses .= ' '.$slide->getCcCssClasses();
 ?>
 <li class="<?= $slideClasses ?>">
     <?= $this->getLayout()
@@ -80,9 +67,21 @@ $slideClasses .= ' '.$slide->getCcCssClasses()
     ?>
 
     <?php if ($ctaHref): ?>
-        <a href="<?= $ctaHref ?>" <?= $openLinkInNewTab ? 'target="_blank" rel="noopener noreferrer"' : ''?> class="cs-image-teaser__link">
+        <a href="<?= $block->escapeHtml($ctaHref) ?>" <?= $openLinkInNewTab ? 'target="_blank" rel="noopener noreferrer"' : ''?> class="cs-image-teaser__link">
     <?php endif; ?>
     <figure class="cs-image-teaser__figure">
+        <?php if($hasVideoTeaser): ?>
+            <?= $this->getLayout()
+                ->createBlock(\Magento\Framework\View\Element\Template::class)
+                ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/video.phtml')
+                ->setImageTeaserData($imageTeaserData)
+                ->setSlide($slide)
+                ->setVideoTeaserData($videoTeaserData)
+                ->setAspectRatio($aspectRatio)
+                ->toHtml();
+            ?>
+        <?php endif; ?>
+
         <?= $this->getLayout()
             ->createBlock(\Magento\Framework\View\Element\Template::class)
             ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/image.phtml')
