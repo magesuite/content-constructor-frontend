@@ -6,7 +6,8 @@
     "license": "OSL-3.0",
     "require": {
         "creativestyle/magesuite-dynamic-directives": "^1.0.0",
-        "creativestyle/magesuite-discount": "^1.0.0"
+        "creativestyle/magesuite-discount": "^1.0.0",
+        "creativestyle/magesuite-content-constructor-admin": "^4.0.0"
     },
     "autoload": {
         "files": [
