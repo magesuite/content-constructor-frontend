@@ -4,6 +4,8 @@ namespace MageSuite\ContentConstructorFrontend\DataProviders;
 
 class ProductCarouselDataProvider
 {
+    const COLLECTION_TYPE_ELASTICSEARCH = 'elasticsearch';
+    const COLLECTION_TYPE_DATABASE = 'database';
     /**
      * Fields from old sorting solution, preserved only to achieve backwards compatibility for existing components
      * @var array
@@ -81,6 +83,11 @@ class ProductCarouselDataProvider
     protected $state;
 
     /**
+     * @var \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory
+     */
+    protected $databaseProductCollectionFactory;
+
+    /**
      * @var \Magento\Catalog\Block\Product\ListProduct
      */
     private $listProductBlock;
@@ -126,6 +133,7 @@ class ProductCarouselDataProvider
 
     public function __construct(
         \Smile\ElasticsuiteCatalog\Model\ResourceModel\Product\Fulltext\CollectionFactory $productCollectionFactory,
+        \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $databaseProductCollectionFactory,
         \Magento\Catalog\Helper\Image $imageHelper,
         \Magento\Review\Model\Review $review,
         \Magento\Wishlist\Helper\Data $wishlistHelper,
@@ -169,6 +177,7 @@ class ProductCarouselDataProvider
         $this->stockInterface = $stockInterface;
         $this->state = $state;
         $this->discountHelper = $discountHelper;
+        $this->databaseProductCollectionFactory = $databaseProductCollectionFactory;
     }
 
     /**
@@ -184,8 +193,10 @@ class ProductCarouselDataProvider
 
         $products = $collection->getItems();
 
-        $productIdentitiesFromElasticSearch = $this->getProductIdentitiesFromElasticSearch($collection);
-        $collection->setDataToAll('product_identities_from_elasticsearch', $productIdentitiesFromElasticSearch);
+        if($collection instanceof \Smile\ElasticsuiteCatalog\Model\ResourceModel\Product\Fulltext\Collection) {
+            $productIdentitiesFromElasticSearch = $this->getProductIdentitiesFromElasticSearch($collection);
+            $collection->setDataToAll('product_identities_from_elasticsearch', $productIdentitiesFromElasticSearch);
+        }
 
         $this->stockData = $this->stockDataHelper->getStockData($products);
 
@@ -248,7 +259,8 @@ class ProductCarouselDataProvider
 
     protected function buildCollectionSearchCriteria($criteria)
     {
-        $collection = $this->initializeCollection();
+        $collectionType = $criteria['collection_type'] ?? self::COLLECTION_TYPE_ELASTICSEARCH;
+        $collection = $this->initializeCollection($collectionType);
 
         $showOutOfStock = $this->scopeInterface->getValue(
             'cataloginventory/options/show_out_of_stock',
@@ -270,8 +282,10 @@ class ProductCarouselDataProvider
             return $collection;
         }
 
-        if (!$showOutOfStock) {
+        if (!$showOutOfStock && $collectionType === self::COLLECTION_TYPE_ELASTICSEARCH) {
             $collection->addIsInStockFilter();
+        } else if(!$showOutOfStock && $collectionType === self::COLLECTION_TYPE_DATABASE) {
+            $collection->addAttributeToFilter('is_saleable', true);
         }
 
         if (isset($criteria['category_id'])) {
@@ -311,9 +325,13 @@ class ProductCarouselDataProvider
     /**
      * @return \Smile\ElasticsuiteCatalog\Model\ResourceModel\Product\Fulltext\Collection
      */
-    protected function initializeCollection()
+    protected function initializeCollection($type = self::COLLECTION_TYPE_ELASTICSEARCH)
     {
-        $collection = $this->productCollectionFactory->create();
+        if($type === self::COLLECTION_TYPE_ELASTICSEARCH) {
+            $collection = $this->productCollectionFactory->create();
+        } else {
+            $collection = $this->databaseProductCollectionFactory->create();
+        }
 
         $collection->addAttributeToSelect($this->catalogConfig->getProductAttributes())
             ->setStore($this->storeManager->getStore())
