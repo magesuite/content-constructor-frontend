@@ -1,7 +1,9 @@
 <?php
+/** @var \MageSuite\ContentConstructorFrontend\ViewModel\VideoTeaser $viewModel */
+$viewModel = $block->getViewModel();
 $imageTeaserData = $block->getImageTeaserData();
 $slide = $block->getSlide();
-$videoTeaserData = $block->getVideoTeaserData();
+$videoTeaserData = $viewModel->prepareVideoUrl($block->getVideoTeaserData());
 $aspectRatio = $block->getAspectRatio();
 ?>
 <div data-video-teaser="<?= $block->escapeHtml(json_encode($videoTeaserData)); ?>" <?php if($aspectRatio): ?>style="aspect-ratio: <?= $aspectRatio ?>"<?php endif ?>></div>

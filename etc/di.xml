@@ -162,6 +162,13 @@
         </arguments>
     </type>
 
+    <type name="MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser\VideoTeaser">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="view_model" xsi:type="object">MageSuite\ContentConstructorFrontend\ViewModel\VideoTeaser</item>
+            </argument>
+        </arguments>
+    </type>
 
     <type name="MageSuite\ContentConstructorFrontend\Service\ComponentPool">
         <arguments>

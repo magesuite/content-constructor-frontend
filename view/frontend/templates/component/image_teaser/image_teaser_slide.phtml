@@ -72,8 +72,7 @@ $slideClasses .= ' '.$slide->getCcCssClasses();
     <figure class="cs-image-teaser__figure">
         <?php if($hasVideoTeaser): ?>
             <?= $this->getLayout()
-                ->createBlock(\Magento\Framework\View\Element\Template::class)
-                ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/video.phtml')
+                ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser\VideoTeaser::class)
                 ->setImageTeaserData($imageTeaserData)
                 ->setSlide($slide)
                 ->setVideoTeaserData($videoTeaserData)
