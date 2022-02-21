@@ -4,7 +4,5 @@ $viewModel = $block->getViewModel();
 $imageTeaserData = $block->getImageTeaserData();
 $slide = $block->getSlide();
 $videoTeaserData = $viewModel->prepareVideoUrl($block->getVideoTeaserData());
-$aspectRatio = $block->getAspectRatio();
-$paddingTop = $aspectRatio ? implode('/', array_reverse(explode('/', $aspectRatio))) : '9/16';
 ?>
-<div data-video-teaser="<?= $block->escapeHtml(json_encode($videoTeaserData)); ?>" <?php if($aspectRatio): ?>style="aspect-ratio: <?= $aspectRatio; ?>; padding-top: calc(<?= $paddingTop; ?> * 100%);"<?php endif ?>></div>
+<div data-video-teaser="<?= $block->escapeHtml(json_encode($videoTeaserData)); ?>"></div>
