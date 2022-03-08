@@ -42,9 +42,26 @@ $imageMimeType = $imageTypeHelper->getMimeType($origImageSrc);
 if ($isWebpSupported) {
     $imageWebpSrcSet = $slide->getWebpSrcSet();
 }
+
+/**
+ * Video Teaser
+ */
+$videoTeaserData = $slide->getVideo();
+$hasVideoTeaser = !empty($videoTeaserData['url']) && !empty($videoTeaserData['type']);
+
 ?>
 <?php if ($hasImage): ?>
     <picture class="cs-image-teaser__picture"<?php if($aspectRatio): ?> style="aspect-ratio: <?= $aspectRatio ?>"<?php endif ?>>
+        <?php if($hasVideoTeaser): ?>
+            <?= $this->getLayout()
+                ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser\VideoTeaser::class)
+                ->setImageTeaserData($imageTeaserData)
+                ->setSlide($slide)
+                ->setVideoTeaserData($videoTeaserData)
+                ->toHtml();
+            ?>
+        <?php endif; ?>
+
         <?php if ($isWebpSupported): ?>
             <source
                 type="image/webp"
