@@ -29,11 +29,17 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
      */
     protected $customerSession;
 
+    /**
+     * @var \MageSuite\ContentConstructorFrontend\Service\EntityIdentitiesResolver
+     */
+    protected $entityIdentitiesResolver;
+
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         \MageSuite\ContentConstructorFrontend\Service\ComponentPool $componentPool,
         \Magento\Store\Model\StoreManagerInterface $storeManager,
         \Magento\Customer\Model\Session $customerSession,
+        \MageSuite\ContentConstructorFrontend\Service\EntityIdentitiesResolver $entityIdentitiesResolver,
         array $data = []
     )
     {
@@ -42,6 +48,7 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
         $this->storeManager = $storeManager;
         $this->customerSession = $customerSession;
         $this->componentPool = $componentPool;
+        $this->entityIdentitiesResolver = $entityIdentitiesResolver;
 
         $componentHash = substr(md5(serialize($this->getData())), 0, 8);
         $store = $this->storeManager->getStore();
@@ -96,6 +103,9 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
         if (is_string($identities)) {
             $identities = [$identities];
         }
+
+        $actionName = $this->getRequest()->getFullActionName();
+        $identities = array_merge($identities, $this->entityIdentitiesResolver->getIdentities($actionName));
 
         $identitiesString = implode(',', $identities);
         $this->_cache->save($identitiesString, $identitiesIdentifier, $identities);

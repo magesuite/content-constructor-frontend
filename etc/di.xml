@@ -210,4 +210,16 @@
         <plugin name="cms_block_render_content_constructor_components" type="MageSuite\ContentConstructorFrontend\Plugin\Cms\Model\Block\RenderContentConstructorComponents" />
     </type>
 
+    <type name="MageSuite\ContentConstructorFrontend\Service\EntityIdentitiesResolver">
+        <arguments>
+            <argument name="resolvers" xsi:type="array">
+                <item name="cms_index_index" xsi:type="object">MageSuite\ContentConstructorFrontend\Service\EntityIdentityResolvers\CmsPage</item>
+                <item name="cms_page_view" xsi:type="object">MageSuite\ContentConstructorFrontend\Service\EntityIdentityResolvers\CmsPage</item>
+                <item name="catalog_category_view" xsi:type="object">MageSuite\ContentConstructorFrontend\Service\EntityIdentityResolvers\Category</item>
+                <item name="catalog_product_view" xsi:type="object">MageSuite\ContentConstructorFrontend\Service\EntityIdentityResolvers\Product</item>
+                <item name="brands_index_index" xsi:type="object">MageSuite\ContentConstructorFrontend\Service\EntityIdentityResolvers\Brand</item>
+            </argument>
+        </arguments>
+    </type>
+
 </config>
