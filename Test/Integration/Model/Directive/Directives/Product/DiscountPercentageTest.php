@@ -22,7 +22,7 @@ class DiscountPercentageTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @magentoDbIsolation enabled
+     * @magentoAppIsolation enabled
      * @magentoDataFixture Magento/Catalog/_files/product_special_price.php
      */
     public function testItReturnsProductDiscountPercentage()
@@ -35,7 +35,7 @@ class DiscountPercentageTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @magentoDbIsolation enabled
+     * @magentoAppIsolation enabled
      * @magentoDataFixture Magento/Catalog/_files/product_special_price.php
      */
     public function testItReturnsProductIdentities()
