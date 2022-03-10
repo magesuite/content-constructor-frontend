@@ -70,16 +70,6 @@ $slideClasses .= ' '.$slide->getCcCssClasses();
         <a href="<?= $block->escapeHtml($ctaHref) ?>" <?= $openLinkInNewTab ? 'target="_blank" rel="noopener noreferrer"' : ''?> class="cs-image-teaser__link">
     <?php endif; ?>
     <figure class="cs-image-teaser__figure">
-        <?php if($hasVideoTeaser): ?>
-            <?= $this->getLayout()
-                ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser\VideoTeaser::class)
-                ->setImageTeaserData($imageTeaserData)
-                ->setSlide($slide)
-                ->setVideoTeaserData($videoTeaserData)
-                ->toHtml();
-            ?>
-        <?php endif; ?>
-
         <?= $this->getLayout()
             ->createBlock(\Magento\Framework\View\Element\Template::class)
             ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/image.phtml')
