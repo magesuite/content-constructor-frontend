@@ -4,7 +4,7 @@ namespace MageSuite\ContentConstructorFrontend\Model\Component;
 
 class StaticBlock extends \Magento\Framework\DataObject
 {
-    private $identities = [];
+    protected $identities = [];
 
     /**
      * @var \Magento\Framework\View\Element\BlockFactory
@@ -30,7 +30,7 @@ class StaticBlock extends \Magento\Framework\DataObject
         $id = isset($configuration['blockId']) ? $configuration['blockId'] : $configuration['identifier'];
 
         $block = $this->blockFactory->createBlock(
-            \Magento\Cms\Block\Block::class,
+            \MageSuite\ContentConstructorFrontend\Block\StaticBlock::class,
             [
                 'data' => [
                     'block_id' => $id
@@ -38,7 +38,11 @@ class StaticBlock extends \Magento\Framework\DataObject
             ]
         );
 
-        return $block->toHtml();
+        $content = $block->toHtml();
+
+        $this->setIdentities($block->getIdentities());
+
+        return $content;
     }
 
     public function setIdentities($identities)
