@@ -17,4 +17,8 @@
             </argument>
         </arguments>
     </type>
+
+    <type name="Magento\Cms\Model\Block">
+        <plugin name="cms_block_render_content_constructor_components" type="MageSuite\ContentConstructorFrontend\Plugin\Cms\Model\Block\RenderContentConstructorComponents" />
+    </type>
 </config>
