@@ -46,11 +46,38 @@ class RenderContentConstructorComponents
                 ]);
 
                 $html .= $componentBlock->toHtml();
+
+                $this->addIdentitiesToSubjectModel($subject, $componentBlock->getIdentities());
             } catch (\Exception $exception) {
                 $this->logger->warning($exception->getMessage());
             }
         }
 
         return $html;
+    }
+
+    protected function addIdentitiesToSubjectModel($subject, $identities = []) {
+        if(is_string($identities) && !empty($identities)) {
+            $identities = [$identities];
+        }
+
+        $existingIdentities = $subject->getData('content_constructor_components_identities') ?? [];
+
+        $newIdentities = array_merge($existingIdentities, $identities);
+
+        $subject->setData('content_constructor_components_identities', $newIdentities);
+    }
+
+    public function aroundGetIdentities(\Magento\Cms\Model\Block $subject, callable $proceed)
+    {
+        $originalIdentities = $proceed();
+
+        $contentConstructorComponentsIdentities = $subject->getData('content_constructor_components_identities');
+
+        if(empty($contentConstructorComponentsIdentities) || !is_array($contentConstructorComponentsIdentities)) {
+            return $originalIdentities;
+        }
+
+        return array_merge($originalIdentities, $contentConstructorComponentsIdentities);
     }
 }
