@@ -5,8 +5,8 @@
  * @var $block \MageSuite\ContentConstructorFrontend\Block\TeaserCss
  */
 ?>
-<?php if ($pgId = $block->getPgId()):?>
 <?php $projectBreakpoints = $block->getBreakpoints(); ?>
+<?php if ($pgId = $block->getPgId()):?>
 <style type="text/css">
     <?php $pgRowsConfig = $block->getRowsConfig(); ?>
     #<?= $pgId ?> {
