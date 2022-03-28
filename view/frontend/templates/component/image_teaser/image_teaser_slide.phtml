@@ -37,6 +37,13 @@ $container = $contrastOptimizersScenarios['container'] ?? null;
 $openLinkInNewTab = $block->getOpenLinkInNewTab();
 
 /**
+ * Teaser content
+ */
+
+$slogan = $slide->getSlogan();
+$description = $slide->getDescription();
+
+/**
  * Video Teaser
  */
 $videoTeaserData = $slide->getVideo();
@@ -82,7 +89,7 @@ $slideClasses .= ' '.$slide->getCcCssClasses();
             ->toHtml();
         ?>
 
-        <?php if($slide->getSlogan() || $slide->getDescription() || $ctaHref): ?>
+        <?php if($slogan || $description || $ctaHref): ?>
             <figcaption class="cs-image-teaser__content-wrapper <?= isset($contentAlign['x']) ? 'cs-image-teaser__content-wrapper--content-align-x-' . $contentAlign['x'] : '';?> <?= isset($contentAlign['y']) ? ' cs-image-teaser__content-wrapper--content-align-y-' . $contentAlign['y'] : '';?> cs-image-teaser__content-wrapper--<?= $contentPlacement ?>">
                 <?= $this->getLayout()
                     ->createBlock(\Magento\Framework\View\Element\Template::class)
@@ -128,22 +135,28 @@ $slideClasses .= ' '.$slide->getCcCssClasses();
                         ->setContentPlacement($contentPlacement)
                         ->toHtml();
                     ?>
-                    <div class="cs-image-teaser__text-content<?= isset($textShadow['enabled']) && $textShadow['enabled'] ? ' cs-image-teaser__text-content--text-shadow cs-image-teaser__text-content--text-shadow-' . $textShadow['intensity'] : '' ?>">
-                        <?= $this->getLayout()
-                            ->createBlock(\Magento\Framework\View\Element\Template::class)
-                            ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/slogan.phtml')
-                            ->setImageTeaserData($imageTeaserData)
-                            ->setSlide($slide)
-                            ->toHtml();
-                        ?>
-                        <?= $this->getLayout()
-                            ->createBlock(\Magento\Framework\View\Element\Template::class)
-                            ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/description.phtml')
-                            ->setImageTeaserData($imageTeaserData)
-                            ->setSlide($slide)
-                            ->toHtml();
-                        ?>
-                    </div>
+                    <?php if($slogan || $description): ?>
+                        <div class="cs-image-teaser__text-content<?= isset($textShadow['enabled']) && $textShadow['enabled'] ? ' cs-image-teaser__text-content--text-shadow cs-image-teaser__text-content--text-shadow-' . $textShadow['intensity'] : '' ?>">
+                        <?php if($slogan): ?>
+                            <?= $this->getLayout()
+                                ->createBlock(\Magento\Framework\View\Element\Template::class)
+                                ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/slogan.phtml')
+                                ->setImageTeaserData($imageTeaserData)
+                                ->setSlide($slide)
+                                ->toHtml();
+                            ?>
+                        <?php endif; ?>
+                        <?php if($description): ?>
+                            <?= $this->getLayout()
+                                ->createBlock(\Magento\Framework\View\Element\Template::class)
+                                ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/description.phtml')
+                                ->setImageTeaserData($imageTeaserData)
+                                ->setSlide($slide)
+                                ->toHtml();
+                            ?>
+                        <?php endif; ?>
+                        </div>
+                    <?php endif; ?>
                     <?= $this->getLayout()
                         ->createBlock(\Magento\Framework\View\Element\Template::class)
                         ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/hotspots/after_text-content.phtml')
