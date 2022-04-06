@@ -34,4 +34,21 @@ class ProductCarousel extends AbstractComponent
 
         return array_unique($identities);
     }
+
+    protected function _toHtml()
+    {
+        $viewModel = $this->getViewModel();
+
+        if (!$viewModel) {
+            return parent::_toHtml();
+        }
+
+        $products = $viewModel->getProducts();
+
+        if (empty($products)) {
+            return '';
+        }
+
+        return parent::_toHtml();
+    }
 }
