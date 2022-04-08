@@ -91,7 +91,6 @@ class TeaserCss extends \Magento\Framework\View\Element\Template
     {
         $pageLayout = $this->pageLayoutHelper->getPageLayout();
         $columnsCfgPath = $pageLayout === '1column' ? 'columns/one-column' : 'columns/multiple-columns';
-
         return $this->getVar($columnsCfgPath, 'MageSuite_ContentConstructor');
     }
 
