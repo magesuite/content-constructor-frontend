@@ -11,7 +11,7 @@ $contentAlign = $slide->getContentAlign();
 /**
  * Call to action properties.
  */
-$cta = $slide->getCta();
+$ctaLabel = $cta['label'] ?? '';
 $ctaHref = $cta['href'] ?? '';
 
 /**
@@ -89,8 +89,8 @@ $slideClasses .= ' '.$slide->getCcCssClasses();
             ->toHtml();
         ?>
 
-        <?php if($slogan || $description || $ctaHref): ?>
-            <figcaption class="cs-image-teaser__content-wrapper <?= isset($contentAlign['x']) ? 'cs-image-teaser__content-wrapper--content-align-x-' . $contentAlign['x'] : '';?> <?= isset($contentAlign['y']) ? ' cs-image-teaser__content-wrapper--content-align-y-' . $contentAlign['y'] : '';?> cs-image-teaser__content-wrapper--<?= $contentPlacement ?>">
+        <?php if($slogan || $description || (!empty($ctaHref) && !empty($ctaLabel))): ?>
+            <figcaption class="cs-image-teaser__content-wrapper <?= isset($contentAlign['x']) ? 'cs-image-teaser__content-wrapper--content-align-x-' . $contentAlign['x'] : '';?> <?= isset($contentAlign['y']) ? ' cs-image-teaser__content-wrapper--content-align-y-' . $contentAlign['y'] : '';?> cs-image-teaser__content-wrapper--<?= $contentPlacement ?> <?= (!empty($ctaHref) && !empty($ctaLabel) && empty($slogan) && empty($description)) ? 'cs-image-teaser__content-wrapper--cta-only' : '';?>">
                 <?= $this->getLayout()
                     ->createBlock(\Magento\Framework\View\Element\Template::class)
                     ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/contrast_overlay.phtml')
@@ -167,13 +167,15 @@ $slideClasses .= ' '.$slide->getCcCssClasses();
                         ->setContentPlacement($contentPlacement)
                         ->toHtml();
                     ?>
-                    <?= $this->getLayout()
-                        ->createBlock(\Magento\Framework\View\Element\Template::class)
-                        ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/cta.phtml')
-                        ->setImageTeaserData($imageTeaserData)
-                        ->setSlide($slide)
-                        ->toHtml();
-                    ?>
+                    <?php if(!empty($ctaHref) && !empty($ctaLabel)): ?>
+                        <?= $this->getLayout()
+                            ->createBlock(\Magento\Framework\View\Element\Template::class)
+                            ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/cta.phtml')
+                            ->setImageTeaserData($imageTeaserData)
+                            ->setSlide($slide)
+                            ->toHtml();
+                        ?>
+                    <?php endif; ?>
                 </div>
                 <?= $this->getLayout()
                     ->createBlock(\Magento\Framework\View\Element\Template::class)
