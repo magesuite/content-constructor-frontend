@@ -9,9 +9,6 @@ $visibility = $block->getVisibilityClass();
 $brands = $viewModel->getBrands();
 $isLazyLoaded = $block->getVar('brand_carousel/lazyload_brand_images');
 
-$navIconPrevPath = $block->getVar('brand_carousel/navigation/arrows/prev/path');
-$navIconNextPath = $block->getVar('brand_carousel/navigation/arrows/next/path');
-
 $componentClasses = $block->getSkipSpacing() ? ' cs-brand-carousel--skip-spacing' : '';
 $componentClasses .= ' ' . $block->getVar('brand_carousel/additional_css_classes');
 
@@ -71,7 +68,8 @@ $jsSettings = json_encode($block->getVar('brand_carousel/js') ?: '{}');
                         <?= $this->getLayout()
                             ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
                             ->setIconUrl($block->getVar('brand_carousel/navigation/arrows/prev/path'))
-                            ->setCssClass("cs-brand-carousel__nav-icon")
+                            ->setCssClass('cs-brand-carousel__nav-icon')
+                            ->setAltText(__('Previous'))
                             ->setInlined(true)
                             ->toHtml();
                         ?>
@@ -80,7 +78,8 @@ $jsSettings = json_encode($block->getVar('brand_carousel/js') ?: '{}');
                         <?= $this->getLayout()
                             ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
                             ->setIconUrl($block->getVar('brand_carousel/navigation/arrows/next/path'))
-                            ->setCssClass("cs-brand-carousel__nav-icon")
+                            ->setCssClass('cs-brand-carousel__nav-icon')
+                            ->setAltText(__('Next'))
                             ->setInlined(true)
                             ->toHtml();
                         ?>
