@@ -177,11 +177,12 @@ $jsConfig = isset($imageTeaser['jsConfig']) ? json_encode($imageTeaser['jsConfig
                     <button class="cs-image-teaser-legacy__nav cs-image-teaser-legacy__nav--prev"
                             type="button">
                         <?= $this->getLayout()
-                                ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
-                                ->setIconUrl($block->getVar('image_teaser/navigation/arrows/prev/path'))
-                                ->setCssClass('cs-image-teaser-legacy__nav-icon')
-                                ->setInlined(true)
-                                ->toHtml();
+                            ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+                            ->setIconUrl($block->getVar('image_teaser/navigation/arrows/prev/path'))
+                            ->setCssClass('cs-image-teaser-legacy__nav-icon')
+                            ->setAltText(__('Previous'))
+                            ->setInlined(true)
+                            ->toHtml();
                         ?>
                     </button>
                     <button class="cs-image-teaser-legacy__nav cs-image-teaser-legacy__nav--next"
@@ -190,6 +191,7 @@ $jsConfig = isset($imageTeaser['jsConfig']) ? json_encode($imageTeaser['jsConfig
                             ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
                             ->setIconUrl($block->getVar('image_teaser/navigation/arrows/next/path'))
                             ->setCssClass('cs-image-teaser-legacy__nav-icon')
+                            ->setAltText(__('Next'))
                             ->setInlined(true)
                             ->toHtml();
                         ?>

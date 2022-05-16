@@ -6,8 +6,6 @@ $componentConfiguration = $block->getData();
 $viewModel = $block->getViewModel();
 $visibility = $block->getVisibilityClass();
 
-$navIconNextPath = $block->getVar('product_carousel/navigation/arrows/next/path');
-
 $componentClasses = $block->getSkipSpacing() ? ' cs-products-carousel--skip-spacing' : '';
 $componentClasses .= ' ' . $block->getVar('product_carousel/additional_css_classes');
 
@@ -45,7 +43,8 @@ $jsSettings = json_encode($block->getVar('product_carousel/js') ?: '{}');
                         <?= $this->getLayout()
                             ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
                             ->setIconUrl($block->getVar('product_carousel/navigation/arrows/prev/path'))
-                            ->setCssClass("cs-products-carousel__nav-icon")
+                            ->setCssClass('cs-products-carousel__nav-icon')
+                            ->setAltText(__('Previous'))
                             ->setInlined(true)
                             ->toHtml();
                         ?>
@@ -54,7 +53,8 @@ $jsSettings = json_encode($block->getVar('product_carousel/js') ?: '{}');
                         <?= $this->getLayout()
                             ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
                             ->setIconUrl($block->getVar('product_carousel/navigation/arrows/next/path'))
-                            ->setCssClass("cs-products-carousel__nav-icon")
+                            ->setCssClass('cs-products-carousel__nav-icon')
+                            ->setAltText(__('Next'))
                             ->setInlined(true)
                             ->toHtml();
                         ?>
