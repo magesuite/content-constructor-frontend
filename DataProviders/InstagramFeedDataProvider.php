@@ -109,6 +109,6 @@ class InstagramFeedDataProvider
 
         $result = json_decode($response->getBody()->getContents(), true);
 
-        return isset($result["id"]) ? $result["id"] : "";
+        return $result['id'] ?? '';
     }
 }
