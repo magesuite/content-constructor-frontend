@@ -7,9 +7,12 @@ $viewModel = $block->getViewModel();
 $visibility = $block->getVisibilityClass();
 
 $useWholeScreen = $block->getVar('product_carousel/use_whole_screen') == 'true';
+$viewMode = $block->getData('view_mode') ?? 'grid';
+$isList = $viewMode == 'list' ? true : false;
 
 $componentClasses = $block->getSkipSpacing() ? ' cs-products-carousel--skip-spacing' : '';
 $componentClasses .= ' ' . $block->getVar('product_carousel/additional_css_classes');
+$componentClasses .= ' ' . 'cs-products-carousel--' . $viewMode;
 
 $containerClasses = $block->getContainerMix();
 if (isset($componentConfiguration['cc_css_classes'])):
@@ -18,7 +21,6 @@ endif;
 
 $viewMode = $block->getData('view_mode') ?? 'grid';
 $products = $viewModel->getProducts();
-$isList = $viewMode == 'list' ? true : false;
 $isSliderMobile = $block->getData('carousel_on_mobile');
 
 // Build JS config
@@ -63,7 +65,7 @@ if ($useWholeScreen) {
                     <?php foreach ($products as $product): ?>
                         <li class="<?php if ($isList): ?>cs-products-list__item <?php endif; ?>cs-products-carousel__slide">
                             <div class="cs-products-carousel__product-tile">
-                                <?= $viewModel->renderProductTile($product, null) ?>
+                                <?= $viewModel->renderProductTile($product, null, $viewMode) ?>
                             </div>
                         </li>
                     <?php endforeach; ?>
