@@ -12,6 +12,7 @@ $componentClasses .= ' ' . $block->getVar('product_grid/additional_css_classes')
 $productsGridJsSettings = json_encode($block->getVar('grid_layout/product_grid/js') ?: '{}');
 $products = $viewModel->getProducts();
 $teasersSetRandId = $teaserCss->getUniqueComponentId();
+$viewMode = $block->getData('view_mode') ?? 'grid';
 ?>
 <?= $block->getCssOnce('css/products-grid.css'); ?>
 <?= $block->getCssOnce('css/grid-layout.css'); ?>
@@ -55,7 +56,7 @@ $teasersSetRandId = $teaserCss->getUniqueComponentId();
                     <?php endif; ?>
                     <?php foreach ($products as $product): ?>
                         <li class="cs-grid-layout__brick cs-products-grid__item">
-                            <?= $viewModel->renderProductTile($product, null) ?>
+                            <?= $viewModel->renderProductTile($product, null, $viewMode) ?>
                         </li>
                     <?php endforeach ?>
                 </ul>

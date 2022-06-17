@@ -69,9 +69,9 @@ class ProductGrid extends \Magento\Framework\DataObject implements ViewModel
         return $this->products;
     }
 
-    public function renderProductTile($product, $iterator)
+    public function renderProductTile($product, $iterator, $viewMode = 'grid')
     {
-        return $this->productTileRenderer->render($product, $iterator);
+        return $this->productTileRenderer->render($product, $iterator, $viewMode);
     }
 
     public function useTeaser()
