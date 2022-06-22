@@ -174,7 +174,10 @@ $openLinkInNewTab = $block->getOpenLinkInNewTab() ? true : false;
                     <?php endif; ?>
 
                     <ul class="cs-image-teaser__slides cs-image-teaser__slides<?= $mosaicProportions != '' ? ' cs-image-teaser__slides--mosaic-scenario-' . $mosaicProportions : '' ?> <?= $componentType == 'teaser_and_text' ? 'cs-image-teaser__slides--mobile_' . $mobileLayout : '' ?>">
-                        <?php $slideIndex = 0; ?>
+                        <?php 
+                            $slideIndex = 0; 
+                            $isHeroFirstImage = $componentType == 'hero_carousel' && $slideIndex == 0 ? true : false;
+                        ?>
                         <?php foreach ($slides as $slide): ?>
                             <?= $this->getLayout()
                                 ->createBlock(\Magento\Framework\View\Element\Template::class)
@@ -186,6 +189,7 @@ $openLinkInNewTab = $block->getOpenLinkInNewTab() ? true : false;
                                 ->setContentPlacement($contentPlacement)
                                 ->setOpenLinkInNewTab($openLinkInNewTab)
                                 ->setSlideIndex($slideIndex)
+                                ->setIsHeroFirstImage($isHeroFirstImage)
                                 ->toHtml();
                             ?>
                             <?php $slideIndex++; ?>

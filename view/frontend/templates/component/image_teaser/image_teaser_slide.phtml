@@ -63,6 +63,11 @@ if ($hasVideoTeaser) {
     $slideClasses .= ' cs-image-teaser__slide--has-video-teaser';
 }
 $slideClasses .= ' '.$slide->getCcCssClasses();
+
+/**
+ * Hero first image / LCP detection
+ */
+$isHeroFirstImage = $block->getIsHeroFirstImage();
 ?>
 <li class="<?= $slideClasses ?>">
     <?= $this->getLayout()
@@ -89,6 +94,7 @@ $slideClasses .= ' '.$slide->getCcCssClasses();
             ->setIsSliderMobile($isSliderMobile)
             ->setSlideIndex($slideIndex)
             ->setAspectRatio($aspectRatio)
+            ->setIsHeroFirstImage($isHeroFirstImage)
             ->toHtml();
         ?>
 

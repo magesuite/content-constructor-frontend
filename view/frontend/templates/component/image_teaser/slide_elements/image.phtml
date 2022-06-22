@@ -49,6 +49,10 @@ if ($isWebpSupported) {
 $videoTeaserData = $slide->getVideo();
 $hasVideoTeaser = !empty($videoTeaserData['url']) && !empty($videoTeaserData['type']);
 
+/**
+ * Hero first image / LCP detection
+ */
+$isHeroFirstImage = $block->getIsHeroFirstImage();
 ?>
 <?php if ($hasImage): ?>
     <picture class="cs-image-teaser__picture"<?php if($aspectRatio): ?> style="aspect-ratio: <?= $aspectRatio ?>"<?php endif ?>>
@@ -94,7 +98,7 @@ $hasVideoTeaser = !empty($videoTeaserData['url']) && !empty($videoTeaserData['ty
             class="cs-image-teaser__image<?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
             alt="<?= $imageAlt ?>"
             src="<?= $origImageSrc ?>"
-            loading="lazy"
+            loading="<?= $isHeroFirstImage ? 'eager' : 'lazy' ?>"
             <?php if ($imageSizes): ?>
                 sizes="<?= $imageSizes ?>"
             <?php endif; ?>
