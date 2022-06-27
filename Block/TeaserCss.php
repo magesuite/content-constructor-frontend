@@ -3,6 +3,14 @@ namespace MageSuite\ContentConstructorFrontend\Block;
 
 class TeaserCss extends \Magento\Framework\View\Element\Template
 {
+    protected const DEFAULT_DEVICE_TYPE = 'desktop';
+
+    protected array $deviceTypeToBreakpointNamesMapping = [
+        'mobile' => ['phone', 'phoneLg'],
+        'tablet' => ['tablet'],
+        'desktop' => ['laptop', 'laptopLg', 'desktop', 'tv']
+    ];
+
     /**
      * @var \MageSuite\ContentConstructorFrontend\Helper\TeaserCss
      */
@@ -94,6 +102,32 @@ class TeaserCss extends \Magento\Framework\View\Element\Template
         return $this->getVar($columnsCfgPath, 'MageSuite_ContentConstructor');
     }
 
+    public function getTeaserAspectRatios($teaser)
+    {
+        $columnsConfig = $this->getColumnsConfig();
+        $projectBreakpoints = $this->getBreakpoints();
+
+        $aspectRatios = [];
+        $i = 0;
+        $previousBreakpoint = 0;
+
+        foreach ($projectBreakpoints as $breakpointName => $breakpoint) {
+            if ($teaser['size']['x'] >= $columnsConfig[$breakpointName]) {
+                $maxWidth = $projectBreakpoints->hasNext() ? $projectBreakpoints->getInnerIterator()->current() - 1 : null;
+
+                $aspectRatios[$i] = [
+                    'minWidth' => $breakpoint,
+                    'maxWidth' => $maxWidth,
+                    'aspect-ratio' => false
+                ];
+                $previousBreakpoint = $i;
+            }
+
+            $i++;
+        }
+        return $aspectRatios;
+    }
+
     /**
      * Hide teaser if its $row value is:
      * - bigger than current rows available for given breakpoint;
@@ -112,9 +146,9 @@ class TeaserCss extends \Magento\Framework\View\Element\Template
 
         foreach ($projectBreakpoints as $breakpointName => $breakpoint) {
             if ($this->getIsProductsGrid()) {
-                if (isset($productsGridRowsConfig[$breakpointName])) {
-                    $currentRows = $productsGridRowsConfig[$breakpointName];
-                }
+                $deviceType = $this->getDeviceTypeByBreakpointName($breakpointName);
+
+                $currentRows = $productsGridRowsConfig[$deviceType];
             } else {
                 $currentRows = ceil($this->getProductsCount() / $columnsCfg[$breakpointName]);
             }
@@ -176,5 +210,17 @@ class TeaserCss extends \Magento\Framework\View\Element\Template
             $prevColumn = $column;
         }
         return $columns;
+    }
+
+    protected function getDeviceTypeByBreakpointName($breakpointName) {
+        foreach($this->deviceTypeToBreakpointNamesMapping as $deviceType => $breakpointNames) {
+            if(!in_array($breakpointName, $breakpointNames)) {
+                continue;
+            }
+
+            return $deviceType;
+        }
+
+        return self::DEFAULT_DEVICE_TYPE;
     }
 }

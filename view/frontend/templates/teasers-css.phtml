@@ -67,6 +67,19 @@ if ($block->canRenderTeaser()) {
                     $overflow['overflows'] ? 'none' : 'block'
                 );
             }
+            // Remove aspect ratio for teasers that are as wide as columnc count (or wider)
+            foreach ($block->getTeaserAspectRatios($teaser) as $aspectRatio) {
+                printf('
+                    @media (min-width: %spx) %s {
+                        %s {
+                            aspect-ratio: unset;
+                        }
+                    }',
+                    $aspectRatio['minWidth'],
+                    $aspectRatio['maxWidth'] ? 'and (max-width: ' . $aspectRatio['maxWidth'] . 'px)' : '',
+                    $teaserSelector
+                );
+            }
             // hide for mobiles if checked an option in CC
             if (!$teaser['mobile']) {
                 printf('
