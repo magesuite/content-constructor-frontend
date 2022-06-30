@@ -50,9 +50,10 @@ $videoTeaserData = $slide->getVideo();
 $hasVideoTeaser = !empty($videoTeaserData['url']) && !empty($videoTeaserData['type']);
 
 /**
- * Hero first image / LCP detection
+ * First image / LCP detection
  */
-$isHeroFirstImage = $block->getIsHeroFirstImage();
+$isFirstImage = $block->getIsFirstImage();
+$eagerLoadFirstImage = $block->getEagerLoadFirstImage();
 ?>
 <?php if ($hasImage): ?>
     <picture class="cs-image-teaser__picture"<?php if($aspectRatio): ?> style="aspect-ratio: <?= $aspectRatio ?>"<?php endif ?>>
@@ -98,7 +99,7 @@ $isHeroFirstImage = $block->getIsHeroFirstImage();
             class="cs-image-teaser__image<?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
             alt="<?= $imageAlt ?>"
             src="<?= $origImageSrc ?>"
-            loading="<?= $isHeroFirstImage ? 'eager' : 'lazy' ?>"
+            loading="<?= $isFirstImage && $eagerLoadFirstImage ? 'eager' : 'lazy' ?>"
             <?php if ($imageSizes): ?>
                 sizes="<?= $imageSizes ?>"
             <?php endif; ?>

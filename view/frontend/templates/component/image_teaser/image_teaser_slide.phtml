@@ -67,7 +67,8 @@ $slideClasses .= ' '.$slide->getCcCssClasses();
 /**
  * Hero first image / LCP detection
  */
-$isHeroFirstImage = $block->getIsHeroFirstImage();
+$isFirstImage = $block->getIsFirstImage();
+$eagerLoadFirstImage = $block->getEagerLoadFirstImage();
 ?>
 <li class="<?= $slideClasses ?>">
     <?= $this->getLayout()
@@ -94,7 +95,8 @@ $isHeroFirstImage = $block->getIsHeroFirstImage();
             ->setIsSliderMobile($isSliderMobile)
             ->setSlideIndex($slideIndex)
             ->setAspectRatio($aspectRatio)
-            ->setIsHeroFirstImage($isHeroFirstImage)
+            ->setIsFirstImage($isFirstImage)
+            ->setEagerLoadFirstImage($eagerLoadFirstImage)
             ->toHtml();
         ?>
 
