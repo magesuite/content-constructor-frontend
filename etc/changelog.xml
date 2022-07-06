@@ -1,0 +1,18 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:MageSuite_Changelog:etc/changelog.xsd">
+    <module id="MageSuite_ContentConstructorFrontend" name="MageSuite_ContentConstructorFrontend">
+        <changelog>
+            <tag version="5.0.0" date="2022-01-28">
+                <entry>
+                    <type>INIT</type>
+                    <overview>Initial release of version v5.0.0 with new teasers and sliders.</overview>
+                </entry>
+            </tag>
+            <tag version="5.4.0" date="2022-06-30">
+                <entry>
+                    <type>PERFORMANCE</type>
+                    <overview>Added width and height generation for teaser images will result in higher standard HTML.</overview>
+                </entry>
+            </tag>
+        </changelog>
+    </module>
+</config>

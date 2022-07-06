@@ -79,6 +79,18 @@ class MediaResolverTest extends \PHPUnit\Framework\TestCase
         );
     }
 
+    public function testItCorrectlyResolvesOriginalImageSize()
+    {
+        $wysiwygUploadDirectoryPath = realpath(__DIR__ . '/../assets');
+
+        $this->directoryListStub->method('getPath')->willReturn($wysiwygUploadDirectoryPath);
+
+        $imageSize = $this->mediaResolver->resolveOriginalImageSize('{{media url="wysiwyg/test.jpg"}}');
+
+        $this->assertEquals(1920, $imageSize['width']);
+        $this->assertEquals(1080, $imageSize['height']);
+    }
+
     public function testItReturnsUrlDirectlyInSrcSetWhenItsPassed()
     {
         $this->assertEquals(
