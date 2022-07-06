@@ -4,6 +4,7 @@ namespace MageSuite\ContentConstructorFrontend\Model\Component;
 
 class GenericSlide extends \Magento\Framework\DataObject
 {
+    const ASPECT_RATIO_REGEX = '/[0-9]+:[0-9]+/';
     /**
      * @var \MageSuite\ContentConstructorFrontend\Service\UrlResolver
      */
@@ -26,7 +27,8 @@ class GenericSlide extends \Magento\Framework\DataObject
         $this->mediaResolver = $mediaResolver;
     }
 
-    public function getCta() {
+    public function getCta()
+    {
         $data = $this->getData();
 
         if (!isset($data['cta'])) {
@@ -39,6 +41,44 @@ class GenericSlide extends \Magento\Framework\DataObject
         }
 
         return $cta;
+    }
+
+    public function getWidth()
+    {
+        if (!$this->getData('width')) {
+            $data = $this->getData();
+
+            if (empty($data['image']['decoded'])) {
+                return null;
+            }
+
+            $srcSetArray = $this->mediaResolver->resolveSrcSetArray($data['image']['decoded']);
+
+            $this->setData('width', max(array_keys($srcSetArray)));
+        }
+
+        return $this->getData('width');
+    }
+
+    public function getHeight()
+    {
+        $width = $this->getWidth();
+        $data = $this->getData();
+
+        if ($this->aspectRatioIsDefined($data)) {
+            $originalImageSize = $this->mediaResolver->resolveOriginalImageSize($data['image']['decoded']);
+
+            if ($originalImageSize == null || !is_array($originalImageSize)) {
+                return null;
+            }
+
+            $widthRatio = (int)$originalImageSize['width'];
+            $heightRatio = (int)$originalImageSize['height'];
+        } else {
+            list($widthRatio, $heightRatio) = explode(':', $data['image']['aspect_ratio']);
+        }
+
+        return (int)ceil(($width / $widthRatio) * $heightRatio);
     }
 
     public function getSrc()
@@ -66,7 +106,8 @@ class GenericSlide extends \Magento\Framework\DataObject
         return $this->mediaResolver->resolveWebpSrcSet($srcSet);
     }
 
-    public function isSvg() {
+    public function isSvg()
+    {
         $src = $this->getSrc();
 
         if (empty($src)) {
@@ -90,6 +131,17 @@ class GenericSlide extends \Magento\Framework\DataObject
             return $hero['subheadline'];
         }
 
-        return  __('Teaser image');
+        return __('Teaser image');
+    }
+
+    /**
+     * @param $data
+     * @return bool
+     */
+    protected function aspectRatioIsDefined($data): bool
+    {
+        return !isset($data['image']['aspect_ratio']) ||
+            empty($data['image']['aspect_ratio']) ||
+            !preg_match(self::ASPECT_RATIO_REGEX, $data['image']['aspect_ratio']);
     }
 }

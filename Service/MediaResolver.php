@@ -197,6 +197,26 @@ class MediaResolver
         return $srcSet;
     }
 
+    public function resolveOriginalImageSize($mediaPath) {
+        if ($this->isDirectUrl($mediaPath)) {
+            return null;
+        }
+
+        $originalImageUrl = $this->parseMediaUrl($mediaPath);
+        $originalImagePath = $this->getMediaDirectoryPath() . $originalImageUrl;
+
+        if (!$this->imageFileExist($originalImagePath) || $this->isGif($originalImagePath)) {
+            return null;
+        }
+
+        $imageSize = getimagesize($originalImagePath);
+
+        return [
+            'width' => $imageSize[0],
+            'height' => $imageSize[1]
+        ];
+    }
+
     /**
      * @param $originalImageUrl
      * @return string
