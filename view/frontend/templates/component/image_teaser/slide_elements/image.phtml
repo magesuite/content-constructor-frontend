@@ -49,6 +49,11 @@ if ($isWebpSupported) {
 $videoTeaserData = $slide->getVideo();
 $hasVideoTeaser = !empty($videoTeaserData['url']) && !empty($videoTeaserData['type']);
 
+/**
+ * First image / LCP detection
+ */
+$isFirstImage = $block->getIsFirstImage();
+$eagerLoadFirstImage = $block->getEagerLoadFirstImage();
 ?>
 <?php if ($hasImage): ?>
     <picture class="cs-image-teaser__picture"<?php if($aspectRatio): ?> style="aspect-ratio: <?= $aspectRatio ?>"<?php endif ?>>
@@ -94,7 +99,7 @@ $hasVideoTeaser = !empty($videoTeaserData['url']) && !empty($videoTeaserData['ty
             class="cs-image-teaser__image<?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
             alt="<?= $imageAlt ?>"
             src="<?= $origImageSrc ?>"
-            loading="lazy"
+            loading="<?= $isFirstImage && $eagerLoadFirstImage ? 'eager' : 'lazy' ?>"
             <?php if ($imageSizes): ?>
                 sizes="<?= $imageSizes ?>"
             <?php endif; ?>
