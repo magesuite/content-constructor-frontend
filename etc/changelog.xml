@@ -13,6 +13,12 @@
                     <overview>Added width and height generation for teaser images will result in higher standard HTML.</overview>
                 </entry>
             </tag>
+            <tag version="5.4.1" date="2022-07-06">
+                <entry>
+                    <type>PERFORMANCE</type>
+                    <overview>Eager load first hero image.</overview>
+                </entry>
+            </tag>
         </changelog>
     </module>
 </config>
