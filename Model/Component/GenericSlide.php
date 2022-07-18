@@ -54,9 +54,9 @@ class GenericSlide extends \Magento\Framework\DataObject
 
             $srcSetArray = $this->mediaResolver->resolveSrcSetArray($data['image']['decoded']);
 
-            if (empty($srcSetArray)) {
-		        return null;
-	        }
+            if (empty($srcSetArray) || !is_array($srcSetArray)) {
+                return null;
+            }
 
             $this->setData('width', max(array_keys($srcSetArray)));
         }
@@ -70,8 +70,8 @@ class GenericSlide extends \Magento\Framework\DataObject
         $data = $this->getData();
 
         if (!$width) {
-	        return null;
-	    }
+            return null;
+        }
 
         if ($this->aspectRatioIsDefined($data)) {
             $originalImageSize = $this->mediaResolver->resolveOriginalImageSize($data['image']['decoded']);
