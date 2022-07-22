@@ -10,47 +10,24 @@ class BrandDataProvider
     protected $brandCollection;
 
     /**
-     * @var \MageSuite\BrandManagement\Model\BrandsRepository
-     */
-    protected $brandsRepository;
-
-    /**
      * @var \Magento\Store\Model\StoreManagerInterface
      */
     protected $storeManager;
 
     public function __construct(
         \MageSuite\BrandManagement\Model\ResourceModel\Brands\CollectionFactory $brandCollection,
-        \MageSuite\BrandManagement\Model\BrandsRepository $brandsRepository,
         \Magento\Store\Model\StoreManagerInterface $storeManager
     ) {
         $this->brandCollection = $brandCollection;
-        $this->brandsRepository = $brandsRepository;
         $this->storeManager = $storeManager;
     }
 
     public function getBrands()
     {
-        $brands = $this->brandCollection->create();
-
+        $brands = $this->getCollection();
         $data = [];
 
-        if (empty($brands)) {
-            return $data;
-        }
-
         foreach ($brands as $brand) {
-            $storeId = $this->storeManager->getStore()->getId();
-            $brand = $this->brandsRepository->getById($brand->getEntityId(), $storeId);
-
-            if (!$brand->getEnabled()) {
-                continue;
-            }
-
-            if (!$brand->getShowInBrandCarousel() || empty($brand->getBrandIconUrl()) || empty($brand->getBrandUrl())) {
-                continue;
-            }
-
             $data[] = [
                 'href' => $brand->getBrandUrl(),
                 'image' => [
@@ -61,5 +38,19 @@ class BrandDataProvider
         }
 
         return $data;
+    }
+
+    public function getCollection()
+    {
+        $storeId = $this->storeManager->getStore()->getId();
+        $collection = $this->brandCollection->create();
+        $collection->setStoreId($storeId)
+            ->addAttributeToSelect('brand_name')
+            ->addAttributeToFilter('enabled', 1)
+            ->addAttributeToFilter('show_in_brand_carousel', 1)
+            ->addAttributeToFilter('brand_url_key', ['notnull' => true])
+            ->addAttributeToFilter('brand_icon', ['notnull' => true]);
+
+        return $collection;
     }
 }
