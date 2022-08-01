@@ -4,6 +4,7 @@
  * @var $teaserCss \MageSuite\ContentConstructorFrontend\Helper\TeaserCss
  */
 $viewModel = $block->getViewModel();
+$componentConfiguration = $block->getData();
 $teaserCss = $this->helper(\MageSuite\ContentConstructorFrontend\Helper\TeaserCss::class);
 $visibility = $block->getVisibilityClass();
 $items = $viewModel->getItems();
@@ -13,10 +14,16 @@ $productsGridJsSettings = json_encode($block->getVar('grid_layout/product_grid/j
 $products = $viewModel->getProducts();
 $teasersSetRandId = $teaserCss->getUniqueComponentId();
 $viewMode = $block->getData('view_mode') ?? 'grid';
+
+$containerClasses = $block->getContainerMix();
+if (isset($componentConfiguration['cc_css_classes'])):
+    $containerClasses .= ' ' . $componentConfiguration['cc_css_classes'];
+endif;
+
 ?>
 <?= $block->getCssOnce('css/products-grid.css'); ?>
 <?= $block->getCssOnce('css/grid-layout.css'); ?>
-<div class="cs-container cs-container--products-grid<?= $visibility ? ' ' .$visibility : ''; ?>">
+<div class="cs-container cs-container--products-grid<?= $containerClasses ?><?= $visibility ? ' ' .$visibility : ''; ?>">
     <div class="cs-container__inner">
         <div class="cs-products-grid<?= $componentClasses ?>">
             <div class="cs-grid-layout cs-products-grid__grid-layout">
