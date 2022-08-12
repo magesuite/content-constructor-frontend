@@ -22,7 +22,7 @@ class RefreshInstagramAccessTokenTest extends \PHPUnit\Framework\TestCase
 
         $response = $this->mockApiResponse();
 
-        $client = $this->getMockBuilder(\GuzzleHttp\Client::class)->getMock();
+        $client = $this->getMockBuilder(\GuzzleHttp\Client::class)->addMethods(['get'])->getMock();
         $client->expects($this->once())->method('get')->willReturn($response);
 
         $this->service = $objectManager->create(
