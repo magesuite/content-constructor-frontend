@@ -169,7 +169,7 @@ class MediaResolverTest extends \PHPUnit\Framework\TestCase
                 'subkey' => '{{media url="wysiwyg/test.png}}'
             ],
             'other_key' => 'some_string',
-            2 => 2
+            2 => '2'
         ];
 
         $expectedOutput = [
@@ -177,7 +177,7 @@ class MediaResolverTest extends \PHPUnit\Framework\TestCase
                 'subkey' => 'http://localhost/media/wysiwyg/test.png'
             ],
             'other_key' => 'some_string',
-            2 => 2
+            2 => '2'
         ];
 
         $result = $this->mediaResolver->resolveInArray($input);
