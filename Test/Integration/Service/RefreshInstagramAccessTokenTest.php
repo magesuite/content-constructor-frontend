@@ -22,8 +22,14 @@ class RefreshInstagramAccessTokenTest extends \PHPUnit\Framework\TestCase
 
         $response = $this->mockApiResponse();
 
-        $client = $this->getMockBuilder(\GuzzleHttp\Client::class)->addMethods(['get'])->getMock();
-        $client->expects($this->once())->method('get')->willReturn($response);
+        $mockBuilder = $this->getMockBuilder(\GuzzleHttp\Client::class);
+
+        if (!method_exists(\GuzzleHttp\Client::class, 'get')) {
+            $mockBuilder->addMethods(['get']);
+        }
+
+        $client = $mockBuilder->getMock();
+        $client->method('get')->willReturn($response);
 
         $this->service = $objectManager->create(
             \MageSuite\ContentConstructorFrontend\Service\RefreshInstagramAccessToken::class,
