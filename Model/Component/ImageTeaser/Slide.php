@@ -36,8 +36,8 @@ class Slide extends \MageSuite\ContentConstructorFrontend\Model\Component\Generi
     {
         $teaser = $this->getData();
 
-        if (isset($teaser['image']['alt']) and !empty($teaser['image']['alt'])) {
-            return $teaser['image']['alt'];
+        if (isset($teaser['image_alt']) and !empty($teaser['image_alt'])) {
+            return $teaser['image_alt'];
         } else if (isset($teaser['slogan']) and !empty($teaser['slogan'])) {
             return $teaser['slogan'];
         } else if (isset($teaser['description']) and !empty($teaser['description'])) {
