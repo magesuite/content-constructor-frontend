@@ -33,6 +33,7 @@ class BrandCarousel extends \Magento\Framework\DataObject implements ViewModel
         foreach ($brands as $brand) {
             $data[] = [
                 'href' => $brand->getBrandUrl(),
+                'meta_title' => $brand->getMetaTitle(),
                 'image' => [
                     'src' => $brand->getBrandIconUrl(),
                     'alt' => $brand->getBrandName()
@@ -49,6 +50,7 @@ class BrandCarousel extends \Magento\Framework\DataObject implements ViewModel
         $collection = $this->brandCollection->create();
         $collection->setStoreId($storeId)
             ->addAttributeToSelect('brand_name')
+            ->addAttributeToSelect('meta_title')
             ->addAttributeToFilter('enabled', 1)
             ->addAttributeToFilter('show_in_brand_carousel', 1)
             ->addAttributeToFilter('brand_url_key', ['notnull' => true])

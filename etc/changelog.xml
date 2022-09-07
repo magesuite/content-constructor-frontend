@@ -25,6 +25,12 @@
                     <overview>Improve way how brands are loaded for Brand Carousel.</overview>
                 </entry>
             </tag>
+            <tag version="5.5.3" date="2022-09-05">
+                <entry>
+                    <type>FIX</type>
+                    <overview>Fix displaying image alt attribute for image teasers and add meta_title to data available in Brand Carousel</overview>
+                </entry>
+            </tag>
         </changelog>
     </module>
 </config>
