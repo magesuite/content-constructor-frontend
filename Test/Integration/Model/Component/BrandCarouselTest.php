@@ -36,6 +36,7 @@ class BrandCarouselTest extends \PHPUnit\Framework\TestCase
         $expected = [
             [
                 'href' => 'http://localhost/index.php/brands/brand-defaultstore',
+                'meta_title' => null,
                 'image' => [
                     'src' => 'http://localhost/media/brands/brand-icon.png',
                     'alt' => 'brand-defaultstore'
@@ -57,6 +58,7 @@ class BrandCarouselTest extends \PHPUnit\Framework\TestCase
         $expected = [
             [
                 'href' => 'http://localhost/index.php/brands/brand-fixturestore',
+                'meta_title' => null,
                 'image' => [
                     'src' => 'http://localhost/media/brands/brand-icon.png',
                     'alt' => 'brand-fixturestore'
@@ -79,6 +81,7 @@ class BrandCarouselTest extends \PHPUnit\Framework\TestCase
         $expected = [
             [
                 'href' => 'http://localhost/index.php/brands/brand-admin',
+                'meta_title' => null,
                 'image' => [
                     'src' => 'http://localhost/media/brands/brand-icon.png',
                     'alt' => 'brand-admin'
