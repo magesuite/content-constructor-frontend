@@ -205,6 +205,7 @@
                 <item name="price" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Directive\Directives\Product\Price</item>
                 <item name="discountPercentage" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Directive\Directives\Product\DiscountPercentage</item>
                 <item name="store" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Directive\Directives\Store</item>
+                <item name="block" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Directive\Directives\CmsBlock</item>
             </argument>
         </arguments>
     </type>
