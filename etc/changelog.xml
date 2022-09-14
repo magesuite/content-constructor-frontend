@@ -25,7 +25,13 @@
                     <overview>Improve way how brands are loaded for Brand Carousel.</overview>
                 </entry>
             </tag>
-            <tag version="5.4.5" date="2022-09-14">
+            <tag version="5.5.3" date="2022-09-05">
+                <entry>
+                    <type>FIX</type>
+                    <overview>Fix displaying image alt attribute for image teasers and add meta_title to data available in Brand Carousel</overview>
+                </entry>
+            </tag>
+            <tag version="5.4.4" date="2022-09-14">
                 <entry>
                     <type>FIX</type>
                     <overview>Fix h6 headline tag on components list</overview>
