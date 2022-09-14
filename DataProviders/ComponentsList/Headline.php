@@ -85,7 +85,7 @@ class Headline extends DataProviderComponents
                 'data' => [
                     'title' => 'Headline H6',
                     'subtitle' => 'Subheadline',
-                    'headingTag' => 'h2',
+                    'headingTag' => 'h6',
                     'componentVisibility' => [
                         'mobile' => '1',
                         'desktop' => '1',
