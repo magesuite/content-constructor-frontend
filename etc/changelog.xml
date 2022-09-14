@@ -31,7 +31,7 @@
                     <overview>Fix displaying image alt attribute for image teasers and add meta_title to data available in Brand Carousel</overview>
                 </entry>
             </tag>
-            <tag version="5.4.4" date="2022-09-14">
+            <tag version="5.4.6" date="2022-09-14">
                 <entry>
                     <type>FIX</type>
                     <overview>Fix h6 headline tag on components list</overview>
