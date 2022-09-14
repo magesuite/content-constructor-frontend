@@ -25,6 +25,12 @@
                     <overview>Improve way how brands are loaded for Brand Carousel.</overview>
                 </entry>
             </tag>
+            <tag version="5.4.5" date="2022-09-14">
+                <entry>
+                    <type>FIX</type>
+                    <overview>Fix h6 headline tag on components list</overview>
+                </entry>
+            </tag>
         </changelog>
     </module>
 </config>
