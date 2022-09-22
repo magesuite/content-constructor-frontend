@@ -980,7 +980,7 @@ class ITLegacyContainerWidthSlider extends DataProviderComponents
                 'items' => [
                     0 => [
                         'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvMS5wbmcifX0',
-                        'decodedImage' => '{{media url="creative_components/1.png"}}',
+                        'decodedImage' => $this->getDecodedImage('1.png'),
                         'displayVariant' => '1',
                         'colorScheme' => 'dark',
                         'headline' => 'Headline',
@@ -993,7 +993,7 @@ class ITLegacyContainerWidthSlider extends DataProviderComponents
                     ],
                     1 => [
                         'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvMi5wbmcifX0',
-                        'decodedImage' => '{{media url="creative_components/2.png"}}',
+                        'decodedImage' => $this->getDecodedImage('2.png'),
                         'displayVariant' => '1',
                         'colorScheme' => 'dark',
                         'headline' => 'Headline',
@@ -1006,7 +1006,7 @@ class ITLegacyContainerWidthSlider extends DataProviderComponents
                     ],
                     2 => [
                         'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvNi5wbmcifX0',
-                        'decodedImage' => '{{media url="creative_components/6.png"}}',
+                        'decodedImage' => $this->getDecodedImage('6.png'),
                         'displayVariant' => '1',
                         'colorScheme' => 'dark',
                         'headline' => 'Headline',
@@ -1019,7 +1019,7 @@ class ITLegacyContainerWidthSlider extends DataProviderComponents
                     ],
                     3 => [
                         'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvNS5wbmcifX0',
-                        'decodedImage' => '{{media url="creative_components/5.png"}}',
+                        'decodedImage' => $this->getDecodedImage('5.png'),
                         'displayVariant' => '1',
                         'colorScheme' => 'dark',
                         'headline' => 'Headline',
@@ -1032,7 +1032,7 @@ class ITLegacyContainerWidthSlider extends DataProviderComponents
                     ],
                     4 => [
                         'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvNC5wbmcifX0',
-                        'decodedImage' => '{{media url="creative_components/4.png"}}',
+                        'decodedImage' => $this->getDecodedImage('4.png'),
                         'displayVariant' => '1',
                         'colorScheme' => 'dark',
                         'headline' => 'Headline',
@@ -1045,7 +1045,7 @@ class ITLegacyContainerWidthSlider extends DataProviderComponents
                     ],
                     5 => [
                         'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvMy5wbmcifX0',
-                        'decodedImage' => '{{media url="creative_components/3.png"}}',
+                        'decodedImage' => $this->getDecodedImage('3.png'),
                         'displayVariant' => '1',
                         'colorScheme' => 'dark',
                         'headline' => 'Headline',
@@ -1058,7 +1058,7 @@ class ITLegacyContainerWidthSlider extends DataProviderComponents
                     ],
                     6 => [
                         'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvMS5wbmcifX0',
-                        'decodedImage' => '{{media url="creative_components/1.png"}}',
+                        'decodedImage' => $this->getDecodedImage('1.png'),
                         'displayVariant' => '1',
                         'colorScheme' => 'light',
                         'headline' => 'Headline',
@@ -1071,7 +1071,7 @@ class ITLegacyContainerWidthSlider extends DataProviderComponents
                     ],
                     7 => [
                         'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvMi5wbmcifX0',
-                        'decodedImage' => '{{media url="creative_components/2.png"}}',
+                        'decodedImage' => $this->getDecodedImage('2.png'),
                         'displayVariant' => '1',
                         'colorScheme' => 'light',
                         'headline' => 'Headline',
@@ -1084,7 +1084,7 @@ class ITLegacyContainerWidthSlider extends DataProviderComponents
                     ],
                     8 => [
                         'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvNi5wbmcifX0',
-                        'decodedImage' => '{{media url="creative_components/6.png"}}',
+                        'decodedImage' => $this->getDecodedImage('6.png'),
                         'displayVariant' => '1',
                         'colorScheme' => 'light',
                         'headline' => 'Headline',
@@ -1097,7 +1097,7 @@ class ITLegacyContainerWidthSlider extends DataProviderComponents
                     ],
                     9 => [
                         'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvNS5wbmcifX0',
-                        'decodedImage' => '{{media url="creative_components/5.png"}}',
+                        'decodedImage' => $this->getDecodedImage('5.png'),
                         'displayVariant' => '1',
                         'colorScheme' => 'light',
                         'headline' => 'Headline',
@@ -1110,7 +1110,7 @@ class ITLegacyContainerWidthSlider extends DataProviderComponents
                     ],
                     10 => [
                         'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvNC5wbmcifX0',
-                        'decodedImage' => '{{media url="creative_components/4.png"}}',
+                        'decodedImage' => $this->getDecodedImage('4.png'),
                         'displayVariant' => '1',
                         'colorScheme' => 'light',
                         'headline' => 'Headline',
@@ -1123,7 +1123,7 @@ class ITLegacyContainerWidthSlider extends DataProviderComponents
                     ],
                     11 => [
                         'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvMy5wbmcifX0',
-                        'decodedImage' => '{{media url="creative_components/3.png"}}',
+                        'decodedImage' => $this->getDecodedImage('3.png'),
                         'displayVariant' => '1',
                         'colorScheme' => 'light',
                         'headline' => 'Headline',
@@ -1181,7 +1181,7 @@ class ITLegacyContainerWidthSlider extends DataProviderComponents
                 'items' => [
                     0 => [
                         'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvMS5wbmcifX0',
-                        'decodedImage' => '{{media url="creative_components/1.png"}}',
+                        'decodedImage' => $this->getDecodedImage('1.png'),
                         'displayVariant' => '1',
                         'colorScheme' => 'dark',
                         'headline' => 'Headline',
@@ -1194,7 +1194,7 @@ class ITLegacyContainerWidthSlider extends DataProviderComponents
                     ],
                     1 => [
                         'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvMi5wbmcifX0',
-                        'decodedImage' => '{{media url="creative_components/2.png"}}',
+                        'decodedImage' => $this->getDecodedImage('2.png'),
                         'displayVariant' => '1',
                         'colorScheme' => 'dark',
                         'headline' => 'Headline',
@@ -1207,7 +1207,7 @@ class ITLegacyContainerWidthSlider extends DataProviderComponents
                     ],
                     2 => [
                         'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvNS5wbmcifX0',
-                        'decodedImage' => '{{media url="creative_components/5.png"}}',
+                        'decodedImage' => $this->getDecodedImage('5.png'),
                         'displayVariant' => '1',
                         'colorScheme' => 'dark',
                         'headline' => 'Headline',
@@ -1220,7 +1220,7 @@ class ITLegacyContainerWidthSlider extends DataProviderComponents
                     ],
                     3 => [
                         'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvNi5wbmcifX0',
-                        'decodedImage' => '{{media url="creative_components/6.png"}}',
+                        'decodedImage' => $this->getDecodedImage('6.png'),
                         'displayVariant' => '1',
                         'colorScheme' => 'dark',
                         'headline' => 'Headline',
@@ -1233,7 +1233,7 @@ class ITLegacyContainerWidthSlider extends DataProviderComponents
                     ],
                     4 => [
                         'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvNC5wbmcifX0',
-                        'decodedImage' => '{{media url="creative_components/4.png"}}',
+                        'decodedImage' => $this->getDecodedImage('4.png'),
                         'displayVariant' => '1',
                         'colorScheme' => 'dark',
                         'headline' => 'Headline',
@@ -1246,7 +1246,7 @@ class ITLegacyContainerWidthSlider extends DataProviderComponents
                     ],
                     5 => [
                         'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvMy5wbmcifX0',
-                        'decodedImage' => '{{media url="creative_components/3.png"}}',
+                        'decodedImage' => $this->getDecodedImage('3.png'),
                         'displayVariant' => '1',
                         'colorScheme' => 'dark',
                         'headline' => 'Headline',
@@ -1259,7 +1259,7 @@ class ITLegacyContainerWidthSlider extends DataProviderComponents
                     ],
                     6 => [
                         'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvMS5wbmcifX0',
-                        'decodedImage' => '{{media url="creative_components/1.png"}}',
+                        'decodedImage' => $this->getDecodedImage('1.png'),
                         'displayVariant' => '1',
                         'colorScheme' => 'dark',
                         'headline' => 'Headline',
@@ -1272,7 +1272,7 @@ class ITLegacyContainerWidthSlider extends DataProviderComponents
                     ],
                     7 => [
                         'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvMi5wbmcifX0',
-                        'decodedImage' => '{{media url="creative_components/2.png"}}',
+                        'decodedImage' => $this->getDecodedImage('2.png'),
                         'displayVariant' => '1',
                         'colorScheme' => 'light',
                         'headline' => 'Headline',
@@ -1285,7 +1285,7 @@ class ITLegacyContainerWidthSlider extends DataProviderComponents
                     ],
                     8 => [
                         'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvNi5wbmcifX0',
-                        'decodedImage' => '{{media url="creative_components/6.png"}}',
+                        'decodedImage' => $this->getDecodedImage('6.png'),
                         'displayVariant' => '1',
                         'colorScheme' => 'light',
                         'headline' => 'Headline',
@@ -1298,7 +1298,7 @@ class ITLegacyContainerWidthSlider extends DataProviderComponents
                     ],
                     9 => [
                         'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvNS5wbmcifX0',
-                        'decodedImage' => '{{media url="creative_components/5.png"}}',
+                        'decodedImage' => $this->getDecodedImage('5.png'),
                         'displayVariant' => '1',
                         'colorScheme' => 'light',
                         'headline' => 'Headline',
@@ -1311,7 +1311,7 @@ class ITLegacyContainerWidthSlider extends DataProviderComponents
                     ],
                     10 => [
                         'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvNC5wbmcifX0',
-                        'decodedImage' => '{{media url="creative_components/4.png"}}',
+                        'decodedImage' => $this->getDecodedImage('4.png'),
                         'displayVariant' => '1',
                         'colorScheme' => 'light',
                         'headline' => 'Headline',
@@ -1324,7 +1324,7 @@ class ITLegacyContainerWidthSlider extends DataProviderComponents
                     ],
                     11 => [
                         'image' => '/admin/content-constructor/image/show/image/e3ttZWRpYSB1cmw9Ind5c2l3eWcvMy5wbmcifX0',
-                        'decodedImage' => '{{media url="creative_components/3.png"}}',
+                        'decodedImage' => $this->getDecodedImage('3.png'),
                         'displayVariant' => '1',
                         'colorScheme' => 'light',
                         'headline' => 'Headline',
@@ -1372,7 +1372,7 @@ class ITLegacyContainerWidthSlider extends DataProviderComponents
                 ],
             ],
         ];
-        
+
         return $blocks;
     }
 }
