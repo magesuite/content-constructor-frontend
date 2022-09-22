@@ -899,7 +899,7 @@ class ProductGridITLeft extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://test.magesuite.io/csadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImltYWdlX3RlYXNlci8zNDU2NzhhLnBuZyJ9fQ,,/key/5d4ff01228e2518050a565b91cad9eee5fa39df9ecada33b3416a137740f55de/',
-                                'decoded' => '{{media url="image_teaser/345678a.png"}}',
+                                'decoded' => $this->getDecodedImage('teaser_grid_2x1.jpg'),
                                 'aspect_ratio' => '369:953',
                                 'image' => 'http://creativeshop.me/media/image_teaser/345678a.png',
                             ],
