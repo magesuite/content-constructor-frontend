@@ -5461,6 +5461,495 @@ class TTContentWidth extends DataProviderComponents
                     ],
                 ],
             ],
+            27 => [
+                    'type' => 'headline',
+                    'name' => 'Headline',
+                    'id' => 'component9d9a',
+                    'section' => 'content',
+                    'data' =>
+                        [
+                            'customCssClass' => '',
+                            'title' => 'Display Mode',
+                            'subtitle' => '',
+                            'headingTag' => 'h2',
+                            'cc_css_classes' => '',
+                            'componentVisibility' =>
+                                [
+                                    'mobile' => true,
+                                    'desktop' => true,
+                                ],
+                        ],
+                ],
+            28 => [
+                'type' => 'paragraph',
+                'name' => 'Paragraph',
+                'id' => 'component21nj3deiuhc',
+                'section' => 'content',
+                'data' =>
+                    [
+                        'customCssClass' => '',
+                        'title' => '',
+                        'columns' => 'none',
+                        'content' => '<p>Desktop/tablet: ON<br>Mobile: OFF</p>',
+                        'scenarios' =>
+                            [
+                                'reading' =>
+                                    [
+                                        'name' => 'Container width',
+                                        'iconId' => 'tw_content-width-text',
+                                        'id' => 'full',
+                                    ],
+                            ],
+                        'migrated' => true,
+                        'cc_css_classes' => '',
+                        'componentVisibility' =>
+                            [
+                                'mobile' => true,
+                                'desktop' => true,
+                            ],
+                    ],
+            ],
+            29 => [
+                'type' => 'teaser-and-text',
+                'id' => 'componentcuihaf3',
+                'section' => 'content',
+                'data' => [
+                    'customCssClass' => '',
+                    'items' => [
+                        0 => [
+                            'image' => [
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
+                                'mobile' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                                'tablet' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                            ],
+                            'slogan' => 'Right-center',
+                            'description' => 'Dark',
+                            'cta' => [
+                                'label' => 'More',
+                                'href' => '/',
+                            ],
+                            'content_align' => [
+                                'x' => 3,
+                                'y' => 2,
+                            ],
+                            'sizeSelect' => '2x1',
+                            'size' => [
+                                'x' => 2,
+                                'y' => 1,
+                            ],
+                            'row' => 1,
+                            'position' => 'left',
+                            'isAvailableForMobile' => 1,
+                            'optimizers' => [
+                                'color_scheme' => 'dark',
+                                'mirror_image' => false,
+                                'scenarios' => [
+                                    'none' => [
+                                        'enabled' => true,
+                                        'intensity' => 'disabled',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_none',
+                                            'label' => 'None',
+                                        ],
+                                    ],
+                                    'overlay' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                    ],
+                                    'gradient' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => [
+                                            'x' => 1,
+                                            'y' => 1,
+                                        ],
+                                        'configurator' => [
+                                            'icon' => '#contrast_gradient',
+                                            'label' => 'Gradient shadow',
+                                        ],
+                                    ],
+                                    'container' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                    ],
+                                    'text_shadow' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_text-shadow',
+                                            'label' => 'Text shadow',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'teaserType' => 'text-only',
+                            'cc_css_classes' => '',
+                        ],
+                        1 => [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                                'aspect_ratio' => '960:511',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                            ],
+                            'slogan' => 'Right-top',
+                            'description' => 'gradient shadow light<br>70% right center direction',
+                            'cta' => [
+                                'label' => 'More',
+                                'href' => '/',
+                            ],
+                            'content_align' => [
+                                'x' => 3,
+                                'y' => 1,
+                            ],
+                            'sizeSelect' => '2x1',
+                            'size' => [
+                                'x' => 2,
+                                'y' => 1,
+                            ],
+                            'row' => 1,
+                            'position' => 'left',
+                            'isAvailableForMobile' => 1,
+                            'optimizers' => [
+                                'color_scheme' => 'light',
+                                'mirror_image' => false,
+                                'scenarios' => [
+                                    'none' => [
+                                        'enabled' => false,
+                                        'intensity' => 'disabled',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_none',
+                                            'label' => 'None',
+                                        ],
+                                    ],
+                                    'overlay' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                    ],
+                                    'gradient' => [
+                                        'enabled' => true,
+                                        'intensity' => 70,
+                                        'direction' => [
+                                            'x' => 3,
+                                            'y' => 2,
+                                        ],
+                                        'configurator' => [
+                                            'icon' => '#contrast_gradient',
+                                            'label' => 'Gradient shadow',
+                                        ],
+                                    ],
+                                    'container' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                    ],
+                                    'text_shadow' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_text-shadow',
+                                            'label' => 'Text shadow',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'teaserType' => 'full',
+                            'cc_css_classes' => '',
+                        ],
+                    ],
+                    'ignoredItems' => [
+                    ],
+                    'scenario' => [
+                        'teaserWidth' => [
+                            'name' => 'Content width',
+                            'iconId' => 'tw_content-width',
+                            'disabled' => false,
+                            'id' => 'container',
+                        ],
+                        'desktopLayout' => [
+                        ],
+                        'contentPlacement' => [
+                        ],
+                        'mobileLayout' => [
+                            'name' => 'Text (top) - image (bottom)',
+                            'iconId' => 'mb_2',
+                            'disabled' => false,
+                            'id' => 'text-image',
+                        ],
+                    ],
+                    'componentVisibility' => [
+                        'mobile' => false,
+                        'desktop' => true,
+                    ],
+                ],
+            ],
+            30 => [
+                'type' => 'paragraph',
+                'name' => 'Paragraph',
+                'id' => 'component21nj5195',
+                'section' => 'content',
+                'data' =>
+                    [
+                        'customCssClass' => '',
+                        'title' => '',
+                        'columns' => 'none',
+                        'content' => '<p>Desktop/tablet: OFF<br>Mobile: ON</p>',
+                        'scenarios' =>
+                            [
+                                'reading' =>
+                                    [
+                                        'name' => 'Container width',
+                                        'iconId' => 'tw_content-width-text',
+                                        'id' => 'full',
+                                    ],
+                            ],
+                        'migrated' => true,
+                        'cc_css_classes' => '',
+                        'componentVisibility' =>
+                            [
+                                'mobile' => true,
+                                'desktop' => true,
+                            ],
+                    ],
+            ],
+            31 => [
+                'type' => 'teaser-and-text',
+                'id' => 'componentcmnbaf3',
+                'section' => 'content',
+                'data' => [
+                    'customCssClass' => '',
+                    'items' => [
+                        0 => [
+                            'image' => [
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
+                                'mobile' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                                'tablet' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                            ],
+                            'slogan' => 'Right-center',
+                            'description' => 'Dark',
+                            'cta' => [
+                                'label' => 'More',
+                                'href' => '/',
+                            ],
+                            'content_align' => [
+                                'x' => 3,
+                                'y' => 2,
+                            ],
+                            'sizeSelect' => '2x1',
+                            'size' => [
+                                'x' => 2,
+                                'y' => 1,
+                            ],
+                            'row' => 1,
+                            'position' => 'left',
+                            'isAvailableForMobile' => 1,
+                            'optimizers' => [
+                                'color_scheme' => 'dark',
+                                'mirror_image' => false,
+                                'scenarios' => [
+                                    'none' => [
+                                        'enabled' => true,
+                                        'intensity' => 'disabled',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_none',
+                                            'label' => 'None',
+                                        ],
+                                    ],
+                                    'overlay' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                    ],
+                                    'gradient' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => [
+                                            'x' => 1,
+                                            'y' => 1,
+                                        ],
+                                        'configurator' => [
+                                            'icon' => '#contrast_gradient',
+                                            'label' => 'Gradient shadow',
+                                        ],
+                                    ],
+                                    'container' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                    ],
+                                    'text_shadow' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_text-shadow',
+                                            'label' => 'Text shadow',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'teaserType' => 'text-only',
+                            'cc_css_classes' => '',
+                        ],
+                        1 => [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                                'aspect_ratio' => '960:511',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                            ],
+                            'slogan' => 'Right-top',
+                            'description' => 'gradient shadow light<br>70% right center direction',
+                            'cta' => [
+                                'label' => 'More',
+                                'href' => '/',
+                            ],
+                            'content_align' => [
+                                'x' => 3,
+                                'y' => 1,
+                            ],
+                            'sizeSelect' => '2x1',
+                            'size' => [
+                                'x' => 2,
+                                'y' => 1,
+                            ],
+                            'row' => 1,
+                            'position' => 'left',
+                            'isAvailableForMobile' => 1,
+                            'optimizers' => [
+                                'color_scheme' => 'light',
+                                'mirror_image' => false,
+                                'scenarios' => [
+                                    'none' => [
+                                        'enabled' => false,
+                                        'intensity' => 'disabled',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_none',
+                                            'label' => 'None',
+                                        ],
+                                    ],
+                                    'overlay' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                    ],
+                                    'gradient' => [
+                                        'enabled' => true,
+                                        'intensity' => 70,
+                                        'direction' => [
+                                            'x' => 3,
+                                            'y' => 2,
+                                        ],
+                                        'configurator' => [
+                                            'icon' => '#contrast_gradient',
+                                            'label' => 'Gradient shadow',
+                                        ],
+                                    ],
+                                    'container' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                    ],
+                                    'text_shadow' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_text-shadow',
+                                            'label' => 'Text shadow',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'teaserType' => 'full',
+                            'cc_css_classes' => '',
+                        ],
+                    ],
+                    'ignoredItems' => [
+                    ],
+                    'scenario' => [
+                        'teaserWidth' => [
+                            'name' => 'Content width',
+                            'iconId' => 'tw_content-width',
+                            'disabled' => false,
+                            'id' => 'container',
+                        ],
+                        'desktopLayout' => [
+                        ],
+                        'contentPlacement' => [
+                        ],
+                        'mobileLayout' => [
+                            'name' => 'Text (top) - image (bottom)',
+                            'iconId' => 'mb_2',
+                            'disabled' => false,
+                            'id' => 'text-image',
+                        ],
+                    ],
+                    'componentVisibility' => [
+                        'mobile' => true,
+                        'desktop' => false,
+                    ],
+                ],
+            ],
         ];
 
         return $blocks;
