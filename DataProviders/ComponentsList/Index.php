@@ -353,6 +353,46 @@ class Index extends DataProviderComponents
 
         $blocks[] = self::getSeparatorBlock();
 
+        # ===== VIDEO ===== #
+        $blocks[] = [
+            '_type' => '\Magento\Cms\Block\Widget\Page\Link',
+            '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
+            '_data' => [
+                'section' => 'content',
+                'anchor_text' => 'Video YT',
+                '_path' => 'contentconstructor/components/index/page/video-yt'
+            ],
+        ];
+        $blocks[] = [
+            '_type' => '\Magento\Cms\Block\Widget\Page\Link',
+            '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
+            '_data' => [
+                'section' => 'content',
+                'anchor_text' => 'Video Vimeo',
+                '_path' => 'contentconstructor/components/index/page/video-vimeo'
+            ],
+        ];
+        $blocks[] = [
+            '_type' => '\Magento\Cms\Block\Widget\Page\Link',
+            '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
+            '_data' => [
+                'section' => 'content',
+                'anchor_text' => 'Video FB',
+                '_path' => 'contentconstructor/components/index/page/video-fb'
+            ],
+        ];
+        $blocks[] = [
+            '_type' => '\Magento\Cms\Block\Widget\Page\Link',
+            '_template' => 'MageSuite_ContentConstructorFrontend::widget/link/link_block.phtml',
+            '_data' => [
+                'section' => 'content',
+                'anchor_text' => 'Video MP4',
+                '_path' => 'contentconstructor/components/index/page/video-mp4'
+            ],
+        ];
+
+        $blocks[] = self::getSeparatorBlock();
+
         return $blocks;
     }
 

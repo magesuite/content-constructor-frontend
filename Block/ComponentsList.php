@@ -45,6 +45,13 @@ class ComponentsList extends \Magento\Framework\View\Element\Template
      */
     protected $categoryHelper;
 
+    /**
+     * @var \Magento\Framework\UrlInterface
+     */
+    protected $url;
+    protected \Magento\Framework\ObjectManagerInterface $objectManager;
+
+
     private $providers = [
         'brand-carousel' => 'BrandCarousel',
         'button' => 'Button',
@@ -75,7 +82,11 @@ class ComponentsList extends \Magento\Framework\View\Element\Template
         'headline' => 'Headline',
         'paragraph' => 'Paragraph',
         'productfinder' => 'ProductFinder',
-        'instagram' => 'Instagram'
+        'instagram' => 'Instagram',
+        'video-yt' => 'VideoYT',
+        'video-vimeo' => 'VideoVimeo',
+        'video-fb' => 'VideoFB',
+        'video-mp4' => 'VideoMP4',
     ];
 
     public function __construct(
@@ -88,6 +99,8 @@ class ComponentsList extends \Magento\Framework\View\Element\Template
         \Magento\Cms\Api\PageRepositoryInterface $pageRepository,
         \Magento\Cms\Model\GetPageByIdentifier $getPageByIdentifier,
         \Magento\Catalog\Helper\Category $categoryHelper,
+        \Magento\Framework\UrlInterface $url,
+        \Magento\Framework\ObjectManagerInterface $objectManager,
         array $data = []
     )
     {
@@ -101,6 +114,9 @@ class ComponentsList extends \Magento\Framework\View\Element\Template
         $this->pageRepository = $pageRepository;
         $this->getPageByIdentifier = $getPageByIdentifier;
         $this->categoryHelper = $categoryHelper;
+        $this->url = $url;
+        $this->objectManager = $objectManager;
+
     }
 
 
@@ -115,10 +131,10 @@ class ComponentsList extends \Magento\Framework\View\Element\Template
         $page = $this->request->get('page');
 
         if (!isset($this->providers[$page])) {
-            $provider = new \MageSuite\ContentConstructorFrontend\DataProviders\ComponentsList\Index($this->categoryHelper);
+            $provider = new \MageSuite\ContentConstructorFrontend\DataProviders\ComponentsList\Index($this->categoryHelper, $this->url);
         } else {
             $providerClass = '\MageSuite\ContentConstructorFrontend\DataProviders\ComponentsList\\' . $this->providers[$page];
-            $provider = new $providerClass($this->categoryHelper);
+            $provider = $this->objectManager->create($providerClass);
         }
 
         return $provider->getBlocks();

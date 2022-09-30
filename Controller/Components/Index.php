@@ -2,10 +2,8 @@
 
 namespace MageSuite\ContentConstructorFrontend\Controller\Components;
 
-use Magento\Framework\App\Action\Action;
-use Magento\Framework\App\ResponseInterface;
+class Index extends  \Magento\Framework\App\Action\Action
 
-class Index extends Action
 {
     const ENABLE_COMPONENT_LIST_PAGE_CONFIG_PATH = 'cc_frontend_extension/configuration/enable_component_list_page';
 
@@ -38,7 +36,7 @@ class Index extends Action
     /**
      * Dispatch request
      *
-     * @return \Magento\Framework\Controller\ResultInterface|ResponseInterface
+     * @return \Magento\Framework\Controller\ResultInterface|\Magento\Framework\App\ResponseInterface
      */
     public function execute()
     {
