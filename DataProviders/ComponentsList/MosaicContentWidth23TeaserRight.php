@@ -58,8 +58,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -71,7 +71,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Top-left',
                             'description' => 'Top-left',
@@ -150,8 +150,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -163,7 +163,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Top-left',
                             'description' => 'Top-left',
@@ -278,8 +278,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -291,7 +291,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Top-center',
                             'description' => 'Top-center',
@@ -370,8 +370,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -383,7 +383,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Top-center',
                             'description' => 'Top-center',
@@ -498,8 +498,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -511,7 +511,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Top-right',
                             'description' => 'Top-right',
@@ -590,8 +590,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -603,7 +603,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Top-right',
                             'description' => 'Top-right',
@@ -718,8 +718,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -731,7 +731,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Middle-left',
                             'description' => 'Middle-left',
@@ -810,8 +810,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -823,7 +823,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Middle-left',
                             'description' => 'Middle-left',
@@ -938,8 +938,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -951,7 +951,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Middle-center',
                             'description' => 'Middle-center',
@@ -1030,8 +1030,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -1043,7 +1043,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Middle-center',
                             'description' => 'Middle-center',
@@ -1158,8 +1158,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -1171,7 +1171,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Middle-right',
                             'description' => 'Middle-right',
@@ -1250,8 +1250,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -1263,7 +1263,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Middle-right',
                             'description' => 'Middle-right',
@@ -1378,8 +1378,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -1391,7 +1391,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Bottom-left',
                             'description' => 'Bottom-left',
@@ -1470,8 +1470,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -1483,7 +1483,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Bottom-left',
                             'description' => 'Bottom-left',
@@ -1598,8 +1598,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -1611,7 +1611,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Bottom-center',
                             'description' => 'Bottom-center',
@@ -1690,8 +1690,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -1703,7 +1703,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Bottom-center',
                             'description' => 'Bottom-center',
@@ -1818,8 +1818,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -1831,7 +1831,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Bottom-right',
                             'description' => 'Bottom-right',
@@ -1910,8 +1910,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -1923,7 +1923,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Bottom-right',
                             'description' => 'Bottom-right',
@@ -2052,8 +2052,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -2065,7 +2065,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Dark',
                             'description' => 'Dark',
@@ -2144,8 +2144,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -2157,7 +2157,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Dark',
                             'description' => 'Dark',
@@ -2272,8 +2272,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -2285,7 +2285,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Light',
                             'description' => 'Light',
@@ -2364,8 +2364,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -2377,7 +2377,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Light',
                             'description' => 'Light',
@@ -2506,8 +2506,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -2519,7 +2519,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'None',
                             'description' => 'None',
@@ -2598,8 +2598,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -2611,7 +2611,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'None',
                             'description' => 'None',
@@ -2726,8 +2726,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -2739,7 +2739,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Overlay 0%',
                             'description' => 'Overlay 0%',
@@ -2818,8 +2818,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -2831,7 +2831,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Overlay 0%',
                             'description' => 'Overlay 0%',
@@ -2946,8 +2946,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -2959,7 +2959,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Overlay 10%',
                             'description' => 'Overlay 10%',
@@ -3038,8 +3038,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -3051,7 +3051,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Overlay 10%',
                             'description' => 'Overlay 10%',
@@ -3166,8 +3166,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -3179,7 +3179,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Overlay 20%',
                             'description' => 'Overlay 20%',
@@ -3258,8 +3258,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -3271,7 +3271,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Overlay 20%',
                             'description' => 'Overlay 20%',
@@ -3386,8 +3386,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -3399,7 +3399,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Overlay 30%',
                             'description' => 'Overlay 30%',
@@ -3478,8 +3478,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -3491,7 +3491,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Overlay 30%',
                             'description' => 'Overlay 30%',
@@ -3606,8 +3606,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -3619,7 +3619,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Overlay 40%',
                             'description' => 'Overlay 40%',
@@ -3698,8 +3698,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -3711,7 +3711,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Overlay 40%',
                             'description' => 'Overlay 40%',
@@ -3826,8 +3826,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -3839,7 +3839,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Overlay 50%',
                             'description' => 'Overlay 50%',
@@ -3918,8 +3918,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -3931,7 +3931,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Overlay 50%',
                             'description' => 'Overlay 50%',
@@ -4046,8 +4046,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -4059,7 +4059,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Overlay 60%',
                             'description' => 'Overlay 60%',
@@ -4138,8 +4138,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -4151,7 +4151,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Overlay 60%',
                             'description' => 'Overlay 60%',
@@ -4266,8 +4266,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -4279,7 +4279,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Overlay 70%',
                             'description' => 'Overlay 70%',
@@ -4358,8 +4358,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -4371,7 +4371,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Overlay 70%',
                             'description' => 'Overlay 70%',
@@ -4486,8 +4486,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -4499,7 +4499,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Overlay 80%',
                             'description' => 'Overlay 80%',
@@ -4578,8 +4578,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -4591,7 +4591,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Overlay 80%',
                             'description' => 'Overlay 80%',
@@ -4706,8 +4706,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -4719,7 +4719,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Overlay 90%',
                             'description' => 'Overlay 90%',
@@ -4798,8 +4798,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -4811,7 +4811,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Overlay 90%',
                             'description' => 'Overlay 90%',
@@ -4926,8 +4926,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -4939,7 +4939,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Overlay 100%',
                             'description' => 'Overlay 100%',
@@ -5018,8 +5018,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -5031,7 +5031,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Overlay 100%',
                             'description' => 'Overlay 100%',
@@ -5146,8 +5146,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -5159,7 +5159,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Gradient 0%',
                             'description' => 'Gradient 0%',
@@ -5238,8 +5238,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -5251,7 +5251,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Gradient 0%',
                             'description' => 'Gradient 0%',
@@ -5366,8 +5366,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -5379,7 +5379,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Gradient 10%',
                             'description' => 'Gradient 10%',
@@ -5458,8 +5458,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -5471,7 +5471,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Gradient 10%',
                             'description' => 'Gradient 10%',
@@ -5586,8 +5586,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -5599,7 +5599,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Gradient 20%',
                             'description' => 'Gradient 20%',
@@ -5678,8 +5678,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -5691,7 +5691,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Gradient 20%',
                             'description' => 'Gradient 20%',
@@ -5806,8 +5806,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -5819,7 +5819,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Gradient 30%',
                             'description' => 'Gradient 30%',
@@ -5898,8 +5898,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -5911,7 +5911,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Gradient 30%',
                             'description' => 'Gradient 30%',
@@ -6026,8 +6026,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -6039,7 +6039,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Gradient 40%',
                             'description' => 'Gradient 40%',
@@ -6118,8 +6118,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -6131,7 +6131,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Gradient 40%',
                             'description' => 'Gradient 40%',
@@ -6246,8 +6246,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -6259,7 +6259,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Gradient 50%',
                             'description' => 'Gradient 50%',
@@ -6338,8 +6338,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -6351,7 +6351,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Gradient 50%',
                             'description' => 'Gradient 50%',
@@ -6466,8 +6466,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -6479,7 +6479,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Gradient 60%',
                             'description' => 'Gradient 60%',
@@ -6558,8 +6558,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -6571,7 +6571,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Gradient 60%',
                             'description' => 'Gradient 60%',
@@ -6686,8 +6686,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -6699,7 +6699,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Gradient 70%',
                             'description' => 'Gradient 70%',
@@ -6778,8 +6778,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -6791,7 +6791,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Gradient 70%',
                             'description' => 'Gradient 70%',
@@ -6906,8 +6906,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -6919,7 +6919,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Gradient 80%',
                             'description' => 'Gradient 80%',
@@ -6998,8 +6998,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -7011,7 +7011,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Gradient 80%',
                             'description' => 'Gradient 80%',
@@ -7126,8 +7126,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -7139,7 +7139,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Gradient 90%',
                             'description' => 'Gradient 90%',
@@ -7218,8 +7218,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -7231,7 +7231,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Gradient 90%',
                             'description' => 'Gradient 90%',
@@ -7346,8 +7346,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -7359,7 +7359,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Gradient 100%',
                             'description' => 'Gradient 100%',
@@ -7438,8 +7438,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -7451,7 +7451,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Gradient 100%',
                             'description' => 'Gradient 100%',
@@ -7566,8 +7566,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -7579,7 +7579,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Top-left direction',
                             'description' => 'Gradient 100%',
@@ -7658,8 +7658,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -7671,7 +7671,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Top-left direction',
                             'description' => 'Gradient 100%',
@@ -7786,8 +7786,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -7799,7 +7799,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Top direction',
                             'description' => 'Gradient 100%',
@@ -7878,8 +7878,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -7891,7 +7891,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Top direction',
                             'description' => 'Gradient 100%',
@@ -8006,8 +8006,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -8019,7 +8019,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Top-right direction',
                             'description' => 'Gradient 100%',
@@ -8098,8 +8098,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -8111,7 +8111,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Top-right direction',
                             'description' => 'Gradient 100%',
@@ -8226,8 +8226,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -8239,7 +8239,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Left direction',
                             'description' => 'Gradient 100%',
@@ -8318,8 +8318,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -8331,7 +8331,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Left direction',
                             'description' => 'Gradient 100%',
@@ -8446,8 +8446,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('kyle-frederick-1180064-unsplash.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'mobile' => [
                                     'raw' => '',
@@ -8459,7 +8459,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => $this->getImage('kyle-frederick-1180064-unsplash.jpg'),
                             ],
                             'slogan' => 'Right direction',
                             'description' => 'Gradient 100%',
@@ -8538,8 +8538,8 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/3a905390bb99b4b1ea3ebb6327125609b5ad13a072399f6ec9ff09be4c9d374a/',
-                                'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'mobile' => [
                                     'raw' => '',
@@ -8551,7 +8551,7 @@ class MosaicContentWidth23TeaserRight extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                             ],
                             'slogan' => 'Right direction',
                             'description' => 'Gradient 100%',

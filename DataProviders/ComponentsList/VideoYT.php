@@ -775,7 +775,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="creative_components/plush-design-studio-553319-unsplash.jpg"}}',
+                                                    'decoded' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
                                                     'aspect_ratio' => '1163:780',
                                                     'mobile' =>
                                                         [
@@ -789,7 +789,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/plush-design-studio-553319-unsplash.jpg',
+                                                    'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
                                                 ],
                                             'video' =>
                                                 [
@@ -891,7 +891,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="creative_components/plush-design-studio-553319-unsplash.jpg"}}',
+                                                    'decoded' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
                                                     'aspect_ratio' => '1163:780',
                                                     'mobile' =>
                                                         [
@@ -905,7 +905,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/plush-design-studio-553319-unsplash.jpg',
+                                                    'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
                                                 ],
                                             'video' =>
                                                 [
@@ -1007,7 +1007,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="creative_components/plush-design-studio-553319-unsplash.jpg"}}',
+                                                    'decoded' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
                                                     'aspect_ratio' => '1163:780',
                                                     'mobile' =>
                                                         [
@@ -1021,7 +1021,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/plush-design-studio-553319-unsplash.jpg',
+                                                    'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
                                                 ],
                                             'video' =>
                                                 [
@@ -1179,7 +1179,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="creative_components/plush-design-studio-553319-unsplash.jpg"}}',
+                                                    'decoded' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
                                                     'aspect_ratio' => '1163:780',
                                                     'mobile' =>
                                                         [
@@ -1193,7 +1193,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/plush-design-studio-553319-unsplash.jpg',
+                                                    'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
                                                 ],
                                             'video' =>
                                                 [
@@ -1295,7 +1295,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="creative_components/plush-design-studio-553319-unsplash.jpg"}}',
+                                                    'decoded' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
                                                     'aspect_ratio' => '1163:780',
                                                     'mobile' =>
                                                         [
@@ -1309,7 +1309,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/plush-design-studio-553319-unsplash.jpg',
+                                                    'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
                                                 ],
                                             'video' =>
                                                 [
@@ -1411,7 +1411,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="creative_components/plush-design-studio-553319-unsplash.jpg"}}',
+                                                    'decoded' => $this->getDecodedImage('plush-design-studio-553319-unsplash.jpg'),
                                                     'aspect_ratio' => '1163:780',
                                                     'mobile' =>
                                                         [
@@ -1425,7 +1425,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/plush-design-studio-553319-unsplash.jpg',
+                                                    'image' => $this->getImage('plush-design-studio-553319-unsplash.jpg'),
                                                 ],
                                             'video' =>
                                                 [
@@ -2903,7 +2903,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="creative_components/alexandru-acea-1160461-unsplash.jpg"}}',
+                                                    'decoded' => $this->getDecodedImage('alexandru-acea-1160461-unsplash.jpg'),
                                                     'aspect_ratio' => '574:571',
                                                     'mobile' =>
                                                         [
@@ -2917,7 +2917,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/alexandru-acea-1160461-unsplash.jpg',
+                                                    'image' => $this->getImage('alexandru-acea-1160461-unsplash.jpg'),
                                                 ],
                                             'video' =>
                                                 [

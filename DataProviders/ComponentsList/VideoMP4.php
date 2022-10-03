@@ -47,8 +47,8 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/ba1ba48139772cd572e5201cb3ac11d6cf07ec4a669d0aace52aba3b2db4c9f4/',
-                                                    'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                                    'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                                     'aspect_ratio' => '960:511',
                                                     'mobile' =>
                                                         [
@@ -62,11 +62,11 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                                    'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => '{{media url="creative_components/cat2.mp4"}}',
+                                                    'url' => $this->getDecodedImage('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => 'Video',
@@ -163,8 +163,8 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/ba1ba48139772cd572e5201cb3ac11d6cf07ec4a669d0aace52aba3b2db4c9f4/',
-                                                    'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                                    'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                                     'aspect_ratio' => '960:511',
                                                     'mobile' =>
                                                         [
@@ -178,11 +178,11 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                                    'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => '{{media url="creative_components/cat2.mp4"}}',
+                                                    'url' => $this->getDecodedImage('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => 'Video',
@@ -279,8 +279,8 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/ba1ba48139772cd572e5201cb3ac11d6cf07ec4a669d0aace52aba3b2db4c9f4/',
-                                                    'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                                    'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                                     'aspect_ratio' => '960:511',
                                                     'mobile' =>
                                                         [
@@ -294,11 +294,11 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                                    'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => '{{media url="creative_components/cat2.mp4"}}',
+                                                    'url' => $this->getDecodedImage('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => 'Video',
@@ -395,8 +395,8 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0,/key/ba1ba48139772cd572e5201cb3ac11d6cf07ec4a669d0aace52aba3b2db4c9f4/',
-                                                    'decoded' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+
+                                                    'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
                                                     'aspect_ratio' => '960:511',
                                                     'mobile' =>
                                                         [
@@ -410,11 +410,11 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/annie-spratt-294450-unsplash.jpg',
+                                                    'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => '{{media url="creative_components/cat2.mp4"}}',
+                                                    'url' => $this->getDecodedImage('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => 'Video',
@@ -511,8 +511,8 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0,/key/ba1ba48139772cd572e5201cb3ac11d6cf07ec4a669d0aace52aba3b2db4c9f4/',
-                                                    'decoded' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+
+                                                    'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
                                                     'aspect_ratio' => '960:511',
                                                     'mobile' =>
                                                         [
@@ -526,11 +526,11 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/annie-spratt-294450-unsplash.jpg',
+                                                    'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => '{{media url="creative_components/cat2.mp4"}}',
+                                                    'url' => $this->getDecodedImage('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => 'Video',
@@ -701,8 +701,8 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/b436baeac0d0f6bd2eed0063d3596394ceeb0d0b016ef096b0c19c3c2fbaee85/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvamFuLWxvc2VydC02MzM5NjAtdW5zcGxhc2guanBnIn19',
-                                                    'decoded' => '{{media url="creative_components/jan-losert-633960-unsplash.jpg"}}',
+
+                                                    'decoded' => $this->getDecodedImage('jan-losert-633960-unsplash.jpg'),
                                                     'aspect_ratio' => '960:511',
                                                     'mobile' =>
                                                         [
@@ -716,11 +716,11 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/jan-losert-633960-unsplash.jpg',
+                                                    'image' => $this->getImage('jan-losert-633960-unsplash.jpg'),
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => '{{media url="creative_components/cat2.mp4"}}',
+                                                    'url' => $this->getDecodedImage('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => '',
@@ -817,8 +817,8 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/b436baeac0d0f6bd2eed0063d3596394ceeb0d0b016ef096b0c19c3c2fbaee85/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvamFuLWxvc2VydC02MzM5NjAtdW5zcGxhc2guanBnIn19',
-                                                    'decoded' => '{{media url="creative_components/jan-losert-633960-unsplash.jpg"}}',
+
+                                                    'decoded' => $this->getDecodedImage('jan-losert-633960-unsplash.jpg'),
                                                     'aspect_ratio' => '960:511',
                                                     'mobile' =>
                                                         [
@@ -832,11 +832,11 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/jan-losert-633960-unsplash.jpg',
+                                                    'image' => $this->getImage('jan-losert-633960-unsplash.jpg'),
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => '{{media url="creative_components/cat2.mp4"}}',
+                                                    'url' => $this->getDecodedImage('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => '',
@@ -1007,8 +1007,8 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/ba1ba48139772cd572e5201cb3ac11d6cf07ec4a669d0aace52aba3b2db4c9f4/',
-                                                    'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                                    'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                                     'aspect_ratio' => '960:511',
                                                     'mobile' =>
                                                         [
@@ -1022,11 +1022,11 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                                    'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => '{{media url="creative_components/cat2.mp4"}}',
+                                                    'url' => $this->getDecodedImage('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => 'Video',
@@ -1176,8 +1176,8 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/ba1ba48139772cd572e5201cb3ac11d6cf07ec4a669d0aace52aba3b2db4c9f4/',
-                                                    'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                                    'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                                     'aspect_ratio' => '960:511',
                                                     'mobile' =>
                                                         [
@@ -1191,11 +1191,11 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                                    'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => '{{media url="creative_components/cat2.mp4"}}',
+                                                    'url' => $this->getDecodedImage('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => '',
@@ -1360,8 +1360,8 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/ba1ba48139772cd572e5201cb3ac11d6cf07ec4a669d0aace52aba3b2db4c9f4/',
-                                                    'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                                    'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                                     'aspect_ratio' => '960:511',
                                                     'mobile' =>
                                                         [
@@ -1375,11 +1375,11 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                                    'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => '{{media url="creative_components/cat2.mp4"}}',
+                                                    'url' => $this->getDecodedImage('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => '',
@@ -1516,8 +1516,8 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/ba1ba48139772cd572e5201cb3ac11d6cf07ec4a669d0aace52aba3b2db4c9f4/',
-                                                    'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                                    'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                                     'aspect_ratio' => '960:511',
                                                     'mobile' =>
                                                         [
@@ -1531,11 +1531,11 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                                    'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => '{{media url="creative_components/cat2.mp4"}}',
+                                                    'url' => $this->getDecodedImage('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => 'Video',
@@ -1941,8 +1941,8 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/ba1ba48139772cd572e5201cb3ac11d6cf07ec4a669d0aace52aba3b2db4c9f4/',
-                                                    'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                                    'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                                     'aspect_ratio' => '960:511',
                                                     'mobile' =>
                                                         [
@@ -1956,11 +1956,11 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                                    'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => '{{media url="creative_components/cat2.mp4"}}',
+                                                    'url' => $this->getDecodedImage('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => '',
@@ -2168,8 +2168,8 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/ba1ba48139772cd572e5201cb3ac11d6cf07ec4a669d0aace52aba3b2db4c9f4/',
-                                                    'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                                    'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                                     'aspect_ratio' => '960:511',
                                                     'mobile' =>
                                                         [
@@ -2183,11 +2183,11 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                                    'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => '{{media url="creative_components/cat2.mp4"}}',
+                                                    'url' => $this->getDecodedImage('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => 'Video',
@@ -2285,8 +2285,8 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYWxleGFuZHJ1LWFjZWEtMTE2MDQ2MS11bnNwbGFzaC5qcGcifX0,/key/ba1ba48139772cd572e5201cb3ac11d6cf07ec4a669d0aace52aba3b2db4c9f4/',
-                                                    'decoded' => '{{media url="creative_components/alexandru-acea-1160461-unsplash.jpg"}}',
+
+                                                    'decoded' => $this->getDecodedImage('alexandru-acea-1160461-unsplash.jpg'),
                                                     'aspect_ratio' => '574:571',
                                                     'mobile' =>
                                                         [
@@ -2300,7 +2300,7 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/alexandru-acea-1160461-unsplash.jpg',
+                                                    'image' => $this->getImage('alexandru-acea-1160461-unsplash.jpg'),
                                                 ],
                                             'video' =>
                                                 [
@@ -2478,7 +2478,7 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/49b3b59ac5121903d278e678c677385d4e531d58782db66cffddf5b1ac5b0dea/image/e3ttZWRpYSB1cmw9ImNvbnRlbnRfY29uc3RydWN0b3IvbWFuX3RlYXNlci5wbmcifX0',
+
                                                     'decoded' => '{{media url="content_constructor/man_teaser.png"}}',
                                                     'aspect_ratio' => '19:16',
                                                     'mobile' =>
@@ -2595,7 +2595,7 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/49b3b59ac5121903d278e678c677385d4e531d58782db66cffddf5b1ac5b0dea/image/e3ttZWRpYSB1cmw9ImNvbnRlbnRfY29uc3RydWN0b3IvdGVhc2VyNS5qcGVnIn19',
+
                                                     'decoded' => '{{media url="content_constructor/teaser5.jpeg"}}',
                                                     'aspect_ratio' => '400:151',
                                                     'mobile' =>
@@ -2614,7 +2614,7 @@ class VideoMP4 extends DataProviderComponents
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => '{{media url="creative_components/cat2.mp4"}}',
+                                                    'url' => $this->getDecodedImage('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => 'Video',
@@ -2798,7 +2798,7 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/49b3b59ac5121903d278e678c677385d4e531d58782db66cffddf5b1ac5b0dea/image/e3ttZWRpYSB1cmw9ImNvbnRlbnRfY29uc3RydWN0b3IvbWFuX3RlYXNlci5wbmcifX0',
+
                                                     'decoded' => '{{media url="content_constructor/man_teaser.png"}}',
                                                     'aspect_ratio' => '19:16',
                                                     'mobile' =>
@@ -2915,7 +2915,7 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/49b3b59ac5121903d278e678c677385d4e531d58782db66cffddf5b1ac5b0dea/image/e3ttZWRpYSB1cmw9ImNvbnRlbnRfY29uc3RydWN0b3IvdGVhc2VyNi5qcGVnIn19',
+
                                                     'decoded' => '{{media url="content_constructor/teaser6.jpeg"}}',
                                                     'aspect_ratio' => '400:151',
                                                     'mobile' =>
@@ -2934,7 +2934,7 @@ class VideoMP4 extends DataProviderComponents
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => '{{media url="creative_components/cat2.mp4"}}',
+                                                    'url' => $this->getDecodedImage('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => '',
@@ -3133,8 +3133,8 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0,/key/ba1ba48139772cd572e5201cb3ac11d6cf07ec4a669d0aace52aba3b2db4c9f4/',
-                                                    'decoded' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+
+                                                    'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
                                                     'aspect_ratio' => '960:511',
                                                     'mobile' =>
                                                         [
@@ -3148,11 +3148,11 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/annie-spratt-294450-unsplash.jpg',
+                                                    'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => '{{media url="creative_components/cat2.mp4"}}',
+                                                    'url' => $this->getDecodedImage('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => 'Video',
@@ -3250,8 +3250,8 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0,/key/ba1ba48139772cd572e5201cb3ac11d6cf07ec4a669d0aace52aba3b2db4c9f4/',
-                                                    'decoded' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+
+                                                    'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
                                                     'aspect_ratio' => '960:511',
                                                     'mobile' =>
                                                         [
@@ -3265,7 +3265,7 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/annie-spratt-294450-unsplash.jpg',
+                                                    'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
                                                 ],
                                             'video' =>
                                                 [
@@ -3367,8 +3367,8 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0,/key/ba1ba48139772cd572e5201cb3ac11d6cf07ec4a669d0aace52aba3b2db4c9f4/',
-                                                    'decoded' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+
+                                                    'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
                                                     'aspect_ratio' => '960:511',
                                                     'mobile' =>
                                                         [
@@ -3382,11 +3382,11 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/annie-spratt-294450-unsplash.jpg',
+                                                    'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => '{{media url="creative_components/cat2.mp4"}}',
+                                                    'url' => $this->getDecodedImage('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => 'Video',
@@ -3484,8 +3484,8 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0,/key/ba1ba48139772cd572e5201cb3ac11d6cf07ec4a669d0aace52aba3b2db4c9f4/',
-                                                    'decoded' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+
+                                                    'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
                                                     'aspect_ratio' => '960:511',
                                                     'mobile' =>
                                                         [
@@ -3499,7 +3499,7 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/annie-spratt-294450-unsplash.jpg',
+                                                    'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
                                                 ],
                                             'video' =>
                                                 [
@@ -3687,7 +3687,7 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNvbnRlbnRfY29uc3RydWN0b3IvdGVhc2VyNi5qcGVnIn19/key/ba1ba48139772cd572e5201cb3ac11d6cf07ec4a669d0aace52aba3b2db4c9f4/',
+
                                                     'decoded' => '{{media url="content_constructor/teaser6.jpeg"}}',
                                                     'aspect_ratio' => '400:151',
                                                     'mobile' =>
@@ -3804,7 +3804,7 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNvbnRlbnRfY29uc3RydWN0b3IvdGVhc2VyNS5qcGVnIn19/key/ba1ba48139772cd572e5201cb3ac11d6cf07ec4a669d0aace52aba3b2db4c9f4/',
+
                                                     'decoded' => '{{media url="content_constructor/teaser5.jpeg"}}',
                                                     'aspect_ratio' => '400:151',
                                                     'mobile' =>
@@ -3921,7 +3921,7 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNvbnRlbnRfY29uc3RydWN0b3IvdGVhc2VyNS5qcGVnIn19/key/ba1ba48139772cd572e5201cb3ac11d6cf07ec4a669d0aace52aba3b2db4c9f4/',
+
                                                     'decoded' => '{{media url="content_constructor/teaser5.jpeg"}}',
                                                     'aspect_ratio' => '400:151',
                                                     'mobile' =>
@@ -3940,7 +3940,7 @@ class VideoMP4 extends DataProviderComponents
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => '{{media url="creative_components/cat2.mp4"}}',
+                                                    'url' => $this->getDecodedImage('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => 'Video',
@@ -4038,7 +4038,7 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNvbnRlbnRfY29uc3RydWN0b3IvdGVhc2VyNi5qcGVnIn19/key/ba1ba48139772cd572e5201cb3ac11d6cf07ec4a669d0aace52aba3b2db4c9f4/',
+
                                                     'decoded' => '{{media url="content_constructor/teaser6.jpeg"}}',
                                                     'aspect_ratio' => '400:151',
                                                     'mobile' =>
@@ -4155,7 +4155,7 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNvbnRlbnRfY29uc3RydWN0b3IvdGVhc2VyNi5qcGVnIn19/key/ba1ba48139772cd572e5201cb3ac11d6cf07ec4a669d0aace52aba3b2db4c9f4/',
+
                                                     'decoded' => '{{media url="content_constructor/teaser6.jpeg"}}',
                                                     'aspect_ratio' => '400:151',
                                                     'mobile' =>
@@ -4174,7 +4174,7 @@ class VideoMP4 extends DataProviderComponents
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => '{{media url="creative_components/cat2.mp4"}}',
+                                                    'url' => $this->getDecodedImage('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => 'Video',
@@ -4272,7 +4272,7 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNvbnRlbnRfY29uc3RydWN0b3IvdGVhc2VyNi5qcGVnIn19/key/ba1ba48139772cd572e5201cb3ac11d6cf07ec4a669d0aace52aba3b2db4c9f4/',
+
                                                     'decoded' => '{{media url="content_constructor/teaser6.jpeg"}}',
                                                     'aspect_ratio' => '400:151',
                                                     'mobile' =>
@@ -4475,8 +4475,8 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/ba1ba48139772cd572e5201cb3ac11d6cf07ec4a669d0aace52aba3b2db4c9f4/',
-                                                    'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                                    'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                                     'aspect_ratio' => '960:511',
                                                     'mobile' =>
                                                         [
@@ -4490,11 +4490,11 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                                    'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => '{{media url="creative_components/cat2.mp4"}}',
+                                                    'url' => $this->getDecodedImage('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => 'Video',
@@ -4678,8 +4678,8 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/ba1ba48139772cd572e5201cb3ac11d6cf07ec4a669d0aace52aba3b2db4c9f4/',
-                                                    'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                                    'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                                     'aspect_ratio' => '960:511',
                                                     'mobile' =>
                                                         [
@@ -4693,7 +4693,7 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                                    'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                                                 ],
                                             'video' =>
                                                 [
@@ -4795,8 +4795,8 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/ba1ba48139772cd572e5201cb3ac11d6cf07ec4a669d0aace52aba3b2db4c9f4/',
-                                                    'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                                    'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                                     'aspect_ratio' => '960:511',
                                                     'mobile' =>
                                                         [
@@ -4810,11 +4810,11 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                                    'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => '{{media url="creative_components/cat2.mp4"}}',
+                                                    'url' => $this->getDecodedImage('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => 'Video',
@@ -4912,8 +4912,8 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/ba1ba48139772cd572e5201cb3ac11d6cf07ec4a669d0aace52aba3b2db4c9f4/',
-                                                    'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                                    'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                                     'aspect_ratio' => '960:511',
                                                     'mobile' =>
                                                         [
@@ -4927,7 +4927,7 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                                    'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                                                 ],
                                             'video' =>
                                                 [
@@ -5029,8 +5029,8 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/ba1ba48139772cd572e5201cb3ac11d6cf07ec4a669d0aace52aba3b2db4c9f4/',
-                                                    'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                                    'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                                     'aspect_ratio' => '960:511',
                                                     'mobile' =>
                                                         [
@@ -5044,7 +5044,7 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                                    'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                                                 ],
                                             'video' =>
                                                 [
@@ -5146,8 +5146,8 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/ba1ba48139772cd572e5201cb3ac11d6cf07ec4a669d0aace52aba3b2db4c9f4/',
-                                                    'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                                    'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                                     'aspect_ratio' => '960:511',
                                                     'mobile' =>
                                                         [
@@ -5161,7 +5161,7 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                                    'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                                                 ],
                                             'video' =>
                                                 [
@@ -5263,8 +5263,8 @@ class VideoMP4 extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ,,/key/ba1ba48139772cd572e5201cb3ac11d6cf07ec4a669d0aace52aba3b2db4c9f4/',
-                                                    'decoded' => '{{media url="creative_components/federica-galli-703572-unsplash.jpg"}}',
+
+                                                    'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
                                                     'aspect_ratio' => '960:511',
                                                     'mobile' =>
                                                         [
@@ -5278,11 +5278,11 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/federica-galli-703572-unsplash.jpg',
+                                                    'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => '{{media url="creative_components/cat2.mp4"}}',
+                                                    'url' => $this->getDecodedImage('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => 'Video',
