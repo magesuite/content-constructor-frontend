@@ -47,4 +47,24 @@ abstract class DataProviderComponents implements DataProviderComponentsInterface
 
         return $data;
     }
+
+    protected function getMainCategoryId()
+    {
+        /** @var $mainCategory \Magento\Catalog\Model\Category */
+        $mainCategory = null;
+
+        foreach($this->categoryHelper->getStoreCategories(false, true) as $category) {
+            /** @var $category \Magento\Catalog\Model\Category */
+            if($category->hasChildren()) {
+                $mainCategory = $category;
+                break;
+            }
+        }
+
+        if(!$mainCategory) {
+            return \Magento\Catalog\Model\Category::ROOT_CATEGORY_ID;
+        }
+
+        return $mainCategory->getId();
+    }
 }

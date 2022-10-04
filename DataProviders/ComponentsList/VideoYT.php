@@ -1626,7 +1626,7 @@ class VideoYT extends DataProviderComponents
                     'data' =>
                         [
                             'customCssClass' => '',
-                            'category_id' => '20',
+                            'category_id' => $this->getMainCategoryId(),
                             'filter' => '',
                             'order_by' => 'created_at',
                             'order_type' => 'ASC',
@@ -1793,7 +1793,7 @@ class VideoYT extends DataProviderComponents
                     'data' =>
                         [
                             'customCssClass' => '',
-                            'category_id' => '11',
+                            'category_id' => $this->getMainCategoryId(),
                             'filter' => '',
                             'order_by' => 'created_at',
                             'order_type' => 'ASC',
@@ -1975,7 +1975,7 @@ class VideoYT extends DataProviderComponents
                     'data' =>
                         [
                             'customCssClass' => '',
-                            'category_id' => '11',
+                            'category_id' => $this->getMainCategoryId(),
                             'filter' => '',
                             'order_by' => 'created_at',
                             'order_type' => 'ASC',

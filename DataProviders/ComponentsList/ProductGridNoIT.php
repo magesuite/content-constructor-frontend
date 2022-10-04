@@ -1170,7 +1170,7 @@ class ProductGridNoIT extends DataProviderComponents
                     'data' =>
                         [
                             'customCssClass' => '',
-                            'category_id' => '2',
+                            'category_id' => $this->getMainCategoryId(),
                             'filter' => 'new_products',
                             'order_by' => 'creation_date',
                             'order_type' => 'ASC',
@@ -1344,7 +1344,7 @@ class ProductGridNoIT extends DataProviderComponents
                     'data' =>
                         [
                             'customCssClass' => '',
-                            'category_id' => '2',
+                            'category_id' => $this->getMainCategoryId(),
                             'filter' => 'daily_deal',
                             'order_by' => 'daily_deal_to',
                             'order_type' => 'ASC',
