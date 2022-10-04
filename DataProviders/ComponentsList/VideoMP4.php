@@ -2479,7 +2479,7 @@ class VideoMP4 extends DataProviderComponents
                                             'image' =>
                                                 [
 
-                                                    'decoded' => '{{media url="content_constructor/man_teaser.png"}}',
+                                                    'decoded' => $this->getDecodedImage('man_teaser.png'),
                                                     'aspect_ratio' => '19:16',
                                                     'mobile' =>
                                                         [
@@ -2493,7 +2493,7 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/man_teaser.png',
+                                                    'image' => $this->getImage('man_teaser.png'),
                                                 ],
                                             'video' =>
                                                 [
@@ -2596,7 +2596,7 @@ class VideoMP4 extends DataProviderComponents
                                             'image' =>
                                                 [
 
-                                                    'decoded' => '{{media url="content_constructor/teaser5.jpeg"}}',
+                                                    'decoded' => $this->getDecodedImage('teaser5.jpeg'),
                                                     'aspect_ratio' => '400:151',
                                                     'mobile' =>
                                                         [
@@ -2610,7 +2610,7 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/teaser5.jpeg',
+                                                    'image' => $this->getImage('teaser5.jpeg'),
                                                 ],
                                             'video' =>
                                                 [
@@ -2799,7 +2799,7 @@ class VideoMP4 extends DataProviderComponents
                                             'image' =>
                                                 [
 
-                                                    'decoded' => '{{media url="content_constructor/man_teaser.png"}}',
+                                                    'decoded' => $this->getDecodedImage('man_teaser.png'),
                                                     'aspect_ratio' => '19:16',
                                                     'mobile' =>
                                                         [
@@ -2813,7 +2813,7 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/man_teaser.png',
+                                                    'image' => $this->getImage('man_teaser.png'),
                                                 ],
                                             'video' =>
                                                 [
@@ -2916,7 +2916,7 @@ class VideoMP4 extends DataProviderComponents
                                             'image' =>
                                                 [
 
-                                                    'decoded' => '{{media url="content_constructor/teaser6.jpeg"}}',
+                                                    'decoded' => $this->getDecodedImage('teaser6.jpeg'),
                                                     'aspect_ratio' => '400:151',
                                                     'mobile' =>
                                                         [
@@ -2930,7 +2930,7 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/teaser6.jpeg',
+                                                    'image' => $this->getImage('teaser6.jpeg'),
                                                 ],
                                             'video' =>
                                                 [
@@ -3688,7 +3688,7 @@ class VideoMP4 extends DataProviderComponents
                                             'image' =>
                                                 [
 
-                                                    'decoded' => '{{media url="content_constructor/teaser6.jpeg"}}',
+                                                    'decoded' => $this->getDecodedImage('teaser6.jpeg'),
                                                     'aspect_ratio' => '400:151',
                                                     'mobile' =>
                                                         [
@@ -3702,7 +3702,7 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/teaser6.jpeg',
+                                                    'image' => $this->getImage('teaser6.jpeg'),
                                                 ],
                                             'video' =>
                                                 [
@@ -3805,7 +3805,7 @@ class VideoMP4 extends DataProviderComponents
                                             'image' =>
                                                 [
 
-                                                    'decoded' => '{{media url="content_constructor/teaser5.jpeg"}}',
+                                                    'decoded' => $this->getDecodedImage('teaser5.jpeg'),
                                                     'aspect_ratio' => '400:151',
                                                     'mobile' =>
                                                         [
@@ -3819,7 +3819,7 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/teaser5.jpeg',
+                                                    'image' => $this->getImage('teaser5.jpeg'),
                                                 ],
                                             'video' =>
                                                 [
@@ -3922,7 +3922,7 @@ class VideoMP4 extends DataProviderComponents
                                             'image' =>
                                                 [
 
-                                                    'decoded' => '{{media url="content_constructor/teaser5.jpeg"}}',
+                                                    'decoded' => $this->getDecodedImage('teaser5.jpeg'),
                                                     'aspect_ratio' => '400:151',
                                                     'mobile' =>
                                                         [
@@ -3936,7 +3936,7 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/teaser5.jpeg',
+                                                    'image' => $this->getImage('teaser5.jpeg'),
                                                 ],
                                             'video' =>
                                                 [
@@ -4039,7 +4039,7 @@ class VideoMP4 extends DataProviderComponents
                                             'image' =>
                                                 [
 
-                                                    'decoded' => '{{media url="content_constructor/teaser6.jpeg"}}',
+                                                    'decoded' => $this->getDecodedImage('teaser6.jpeg'),
                                                     'aspect_ratio' => '400:151',
                                                     'mobile' =>
                                                         [
@@ -4053,7 +4053,7 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/teaser6.jpeg',
+                                                    'image' => $this->getImage('teaser6.jpeg'),
                                                 ],
                                             'video' =>
                                                 [
@@ -4156,7 +4156,7 @@ class VideoMP4 extends DataProviderComponents
                                             'image' =>
                                                 [
 
-                                                    'decoded' => '{{media url="content_constructor/teaser6.jpeg"}}',
+                                                    'decoded' => $this->getDecodedImage('teaser6.jpeg'),
                                                     'aspect_ratio' => '400:151',
                                                     'mobile' =>
                                                         [
@@ -4170,7 +4170,7 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/teaser6.jpeg',
+                                                    'image' => $this->getImage('teaser6.jpeg'),
                                                 ],
                                             'video' =>
                                                 [
@@ -4273,7 +4273,7 @@ class VideoMP4 extends DataProviderComponents
                                             'image' =>
                                                 [
 
-                                                    'decoded' => '{{media url="content_constructor/teaser6.jpeg"}}',
+                                                    'decoded' => $this->getDecodedImage('teaser6.jpeg'),
                                                     'aspect_ratio' => '400:151',
                                                     'mobile' =>
                                                         [
@@ -4287,7 +4287,7 @@ class VideoMP4 extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/teaser6.jpeg',
+                                                    'image' => $this->getImage('teaser6.jpeg'),
                                                 ],
                                             'video' =>
                                                 [

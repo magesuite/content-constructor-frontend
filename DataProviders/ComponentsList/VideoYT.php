@@ -47,7 +47,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="content_constructor/tees_hero.png"}}',
+                                                    'decoded' => $this->getDecodedImage('tees_hero.png'),
                                                     'aspect_ratio' => '7:4',
                                                     'mobile' =>
                                                         [
@@ -61,7 +61,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/tees_hero.png',
+                                                    'image' => $this->getImage('tees_hero.png'),
                                                 ],
                                             'video' =>
                                                 [
@@ -162,7 +162,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="content_constructor/tees_hero.png"}}',
+                                                    'decoded' => $this->getDecodedImage('tees_hero.png'),
                                                     'aspect_ratio' => '7:4',
                                                     'mobile' =>
                                                         [
@@ -176,7 +176,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/tees_hero.png',
+                                                    'image' => $this->getImage('tees_hero.png'),
                                                 ],
                                             'video' =>
                                                 [
@@ -277,7 +277,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="content_constructor/new_luma.png"}}',
+                                                    'decoded' => $this->getDecodedImage('new_luma.png'),
                                                     'aspect_ratio' => '7:4',
                                                     'mobile' =>
                                                         [
@@ -291,7 +291,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/new_luma.png',
+                                                    'image' => $this->getImage('new_luma.png'),
                                                 ],
                                             'video' =>
                                                 [
@@ -392,7 +392,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="content_constructor/new_luma.png"}}',
+                                                    'decoded' => $this->getDecodedImage('new_luma.png'),
                                                     'aspect_ratio' => '7:4',
                                                     'mobile' =>
                                                         [
@@ -406,7 +406,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/new_luma.png',
+                                                    'image' => $this->getImage('new_luma.png'),
                                                 ],
                                             'video' =>
                                                 [
@@ -507,7 +507,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="content_constructor/pants_hero.png"}}',
+                                                    'decoded' => $this->getDecodedImage('pants_hero.png'),
                                                     'aspect_ratio' => '7:4',
                                                     'mobile' =>
                                                         [
@@ -521,7 +521,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/pants_hero.png',
+                                                    'image' => $this->getImage('pants_hero.png'),
                                                 ],
                                             'video' =>
                                                 [
@@ -622,7 +622,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="content_constructor/pants_hero.png"}}',
+                                                    'decoded' => $this->getDecodedImage('pants_hero.png'),
                                                     'aspect_ratio' => '7:4',
                                                     'mobile' =>
                                                         [
@@ -636,7 +636,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/pants_hero.png',
+                                                    'image' => $this->getImage('pants_hero.png'),
                                                 ],
                                             'video' =>
                                                 [
@@ -1649,7 +1649,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="content_constructor/eco_teaser.png"}}',
+                                                    'decoded' => $this->getDecodedImage('eco_teaser.png'),
                                                     'aspect_ratio' => '577:385',
                                                     'mobile' =>
                                                         [
@@ -1663,7 +1663,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/eco_teaser.png',
+                                                    'image' => $this->getImage('eco_teaser.png'),
                                                 ],
                                             'video' =>
                                                 [
@@ -1816,7 +1816,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="content_constructor/eco_teaser.png"}}',
+                                                    'decoded' => $this->getDecodedImage('eco_teaser.png'),
                                                     'aspect_ratio' => '577:385',
                                                     'mobile' =>
                                                         [
@@ -1830,7 +1830,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/eco_teaser.png',
+                                                    'image' => $this->getImage('eco_teaser.png'),
                                                 ],
                                             'video' =>
                                                 [
@@ -1998,7 +1998,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="content_constructor/eco_teaser.png"}}',
+                                                    'decoded' => $this->getDecodedImage('eco_teaser.png'),
                                                     'aspect_ratio' => '577:385',
                                                     'mobile' =>
                                                         [
@@ -2012,7 +2012,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/eco_teaser.png',
+                                                    'image' => $this->getImage('eco_teaser.png'),
                                                 ],
                                             'video' =>
                                                 [
@@ -2152,7 +2152,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="content_constructor/eco_teaser.png"}}',
+                                                    'decoded' => $this->getDecodedImage('eco_teaser.png'),
                                                     'aspect_ratio' => '577:385',
                                                     'mobile' =>
                                                         [
@@ -2166,7 +2166,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/eco_teaser.png',
+                                                    'image' => $this->getImage('eco_teaser.png'),
                                                 ],
                                             'video' =>
                                                 [
@@ -2576,7 +2576,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="content_constructor/performance_teaser.png"}}',
+                                                    'decoded' => $this->getDecodedImage('performance_teaser.png'),
                                                     'aspect_ratio' => '577:385',
                                                     'mobile' =>
                                                         [
@@ -2590,7 +2590,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/performance_teaser.png',
+                                                    'image' => $this->getImage('performance_teaser.png'),
                                                 ],
                                             'video' =>
                                                 [
@@ -2787,7 +2787,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="content_constructor/tees_hero.png"}}',
+                                                    'decoded' => $this->getDecodedImage('tees_hero.png'),
                                                     'aspect_ratio' => '7:4',
                                                     'mobile' =>
                                                         [
@@ -2801,7 +2801,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/tees_hero.png',
+                                                    'image' => $this->getImage('tees_hero.png'),
                                                 ],
                                             'video' =>
                                                 [
@@ -3095,7 +3095,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="content_constructor/man_teaser.png"}}',
+                                                    'decoded' => $this->getDecodedImage('man_teaser.png'),
                                                     'aspect_ratio' => '19:16',
                                                     'mobile' =>
                                                         [
@@ -3109,7 +3109,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/man_teaser.png',
+                                                    'image' => $this->getImage('man_teaser.png'),
                                                 ],
                                             'video' =>
                                                 [
@@ -3211,7 +3211,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="content_constructor/teaser5.jpeg"}}',
+                                                    'decoded' => $this->getDecodedImage('teaser5.jpeg'),
                                                     'aspect_ratio' => '400:151',
                                                     'mobile' =>
                                                         [
@@ -3225,7 +3225,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/teaser5.jpeg',
+                                                    'image' => $this->getImage('teaser5.jpeg'),
                                                 ],
                                             'video' =>
                                                 [
@@ -3413,7 +3413,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="content_constructor/man_teaser.png"}}',
+                                                    'decoded' => $this->getDecodedImage('man_teaser.png'),
                                                     'aspect_ratio' => '19:16',
                                                     'mobile' =>
                                                         [
@@ -3427,7 +3427,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/man_teaser.png',
+                                                    'image' => $this->getImage('man_teaser.png'),
                                                 ],
                                             'video' =>
                                                 [
@@ -3529,7 +3529,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="content_constructor/teaser6.jpeg"}}',
+                                                    'decoded' => $this->getDecodedImage('teaser6.jpeg'),
                                                     'aspect_ratio' => '400:151',
                                                     'mobile' =>
                                                         [
@@ -3543,7 +3543,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/teaser6.jpeg',
+                                                    'image' => $this->getImage('teaser6.jpeg'),
                                                 ],
                                             'video' =>
                                                 [
@@ -3746,7 +3746,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="content_constructor/performance_teaser.png"}}',
+                                                    'decoded' => $this->getDecodedImage('performance_teaser.png'),
                                                     'aspect_ratio' => '577:385',
                                                     'mobile' =>
                                                         [
@@ -3760,7 +3760,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/performance_teaser.png',
+                                                    'image' => $this->getImage('performance_teaser.png'),
                                                 ],
                                             'video' =>
                                                 [
@@ -3862,7 +3862,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="content_constructor/performance_teaser.png"}}',
+                                                    'decoded' => $this->getDecodedImage('performance_teaser.png'),
                                                     'aspect_ratio' => '577:385',
                                                     'mobile' =>
                                                         [
@@ -3876,7 +3876,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/performance_teaser.png',
+                                                    'image' => $this->getImage('performance_teaser.png'),
                                                 ],
                                             'video' =>
                                                 [
@@ -3978,7 +3978,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="content_constructor/eco_teaser.png"}}',
+                                                    'decoded' => $this->getDecodedImage('eco_teaser.png'),
                                                     'aspect_ratio' => '577:385',
                                                     'mobile' =>
                                                         [
@@ -3992,7 +3992,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/eco_teaser.png',
+                                                    'image' => $this->getImage('eco_teaser.png'),
                                                 ],
                                             'video' =>
                                                 [
@@ -4094,7 +4094,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="content_constructor/eco_teaser.png"}}',
+                                                    'decoded' => $this->getDecodedImage('eco_teaser.png'),
                                                     'aspect_ratio' => '577:385',
                                                     'mobile' =>
                                                         [
@@ -4108,7 +4108,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/eco_teaser.png',
+                                                    'image' => $this->getImage('eco_teaser.png'),
                                                 ],
                                             'video' =>
                                                 [
@@ -4296,7 +4296,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="content_constructor/performance_teaser.png"}}',
+                                                    'decoded' => $this->getDecodedImage('performance_teaser.png'),
                                                     'aspect_ratio' => '577:385',
                                                     'mobile' =>
                                                         [
@@ -4310,7 +4310,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/performance_teaser.png',
+                                                    'image' => $this->getImage('performance_teaser.png'),
                                                 ],
                                             'video' =>
                                                 [
@@ -4412,7 +4412,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="content_constructor/performance_teaser.png"}}',
+                                                    'decoded' => $this->getDecodedImage('performance_teaser.png'),
                                                     'aspect_ratio' => '577:385',
                                                     'mobile' =>
                                                         [
@@ -4426,7 +4426,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/performance_teaser.png',
+                                                    'image' => $this->getImage('performance_teaser.png'),
                                                 ],
                                             'video' =>
                                                 [
@@ -4528,7 +4528,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="content_constructor/performance_teaser.png"}}',
+                                                    'decoded' => $this->getDecodedImage('performance_teaser.png'),
                                                     'aspect_ratio' => '577:385',
                                                     'mobile' =>
                                                         [
@@ -4542,7 +4542,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/performance_teaser.png',
+                                                    'image' => $this->getImage('performance_teaser.png'),
                                                 ],
                                             'video' =>
                                                 [
@@ -4644,7 +4644,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="content_constructor/eco_teaser.png"}}',
+                                                    'decoded' => $this->getDecodedImage('eco_teaser.png'),
                                                     'aspect_ratio' => '577:385',
                                                     'mobile' =>
                                                         [
@@ -4658,7 +4658,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/eco_teaser.png',
+                                                    'image' => $this->getImage('eco_teaser.png'),
                                                 ],
                                             'video' =>
                                                 [
@@ -4760,7 +4760,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="content_constructor/eco_teaser.png"}}',
+                                                    'decoded' => $this->getDecodedImage('eco_teaser.png'),
                                                     'aspect_ratio' => '577:385',
                                                     'mobile' =>
                                                         [
@@ -4774,7 +4774,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/eco_teaser.png',
+                                                    'image' => $this->getImage('eco_teaser.png'),
                                                 ],
                                             'video' =>
                                                 [
@@ -4876,7 +4876,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="content_constructor/eco_teaser.png"}}',
+                                                    'decoded' => $this->getDecodedImage('eco_teaser.png'),
                                                     'aspect_ratio' => '577:385',
                                                     'mobile' =>
                                                         [
@@ -4890,7 +4890,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/eco_teaser.png',
+                                                    'image' => $this->getImage('eco_teaser.png'),
                                                 ],
                                             'video' =>
                                                 [
@@ -5078,7 +5078,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="content_constructor/teaser5.jpeg"}}',
+                                                    'decoded' => $this->getDecodedImage('teaser5.jpeg'),
                                                     'aspect_ratio' => '400:151',
                                                     'mobile' =>
                                                         [
@@ -5092,7 +5092,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/teaser5.jpeg',
+                                                    'image' => $this->getImage('teaser5.jpeg'),
                                                 ],
                                             'video' =>
                                                 [
@@ -5280,7 +5280,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="content_constructor/man_teaser.png"}}',
+                                                    'decoded' => $this->getDecodedImage('man_teaser.png'),
                                                     'aspect_ratio' => '19:16',
                                                     'mobile' =>
                                                         [
@@ -5294,7 +5294,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/man_teaser.png',
+                                                    'image' => $this->getImage('man_teaser.png'),
                                                 ],
                                             'video' =>
                                                 [
@@ -5396,7 +5396,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="content_constructor/man_teaser.png"}}',
+                                                    'decoded' => $this->getDecodedImage('man_teaser.png'),
                                                     'aspect_ratio' => '19:16',
                                                     'mobile' =>
                                                         [
@@ -5410,7 +5410,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/man_teaser.png',
+                                                    'image' => $this->getImage('man_teaser.png'),
                                                 ],
                                             'video' =>
                                                 [
@@ -5512,7 +5512,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="content_constructor/man_teaser.png"}}',
+                                                    'decoded' => $this->getDecodedImage('man_teaser.png'),
                                                     'aspect_ratio' => '19:16',
                                                     'mobile' =>
                                                         [
@@ -5526,7 +5526,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/man_teaser.png',
+                                                    'image' => $this->getImage('man_teaser.png'),
                                                 ],
                                             'video' =>
                                                 [
@@ -5628,7 +5628,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="content_constructor/man_teaser.png"}}',
+                                                    'decoded' => $this->getDecodedImage('man_teaser.png'),
                                                     'aspect_ratio' => '19:16',
                                                     'mobile' =>
                                                         [
@@ -5642,7 +5642,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/man_teaser.png',
+                                                    'image' => $this->getImage('man_teaser.png'),
                                                 ],
                                             'video' =>
                                                 [
@@ -5744,7 +5744,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="content_constructor/woman_teaser.png"}}',
+                                                    'decoded' => $this->getDecodedImage('woman_teaser.png'),
                                                     'aspect_ratio' => '19:16',
                                                     'mobile' =>
                                                         [
@@ -5758,7 +5758,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/woman_teaser.png',
+                                                    'image' => $this->getImage('woman_teaser.png'),
                                                 ],
                                             'video' =>
                                                 [
@@ -5860,7 +5860,7 @@ class VideoYT extends DataProviderComponents
                                         [
                                             'image' =>
                                                 [
-                                                    'decoded' => '{{media url="content_constructor/woman_teaser.png"}}',
+                                                    'decoded' => $this->getDecodedImage('woman_teaser.png'),
                                                     'aspect_ratio' => '19:16',
                                                     'mobile' =>
                                                         [
@@ -5874,7 +5874,7 @@ class VideoYT extends DataProviderComponents
                                                             'decoded' => '',
                                                             'aspect_ratio' => '',
                                                         ],
-                                                    'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/woman_teaser.png',
+                                                    'image' => $this->getImage('woman_teaser.png'),
                                                 ],
                                             'video' =>
                                                 [
