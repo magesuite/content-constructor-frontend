@@ -10,8 +10,8 @@ abstract class DataProviderComponents implements DataProviderComponentsInterface
     protected \Magento\Framework\UrlInterface $url;
 
     public function __construct(
-            \Magento\Catalog\Helper\Category $categoryHelper,
-            \Magento\Framework\UrlInterface $url
+        \Magento\Catalog\Helper\Category $categoryHelper,
+        \Magento\Framework\UrlInterface $url
     ) {
         $this->categoryHelper = $categoryHelper;
         $this->url = $url;
@@ -20,6 +20,11 @@ abstract class DataProviderComponents implements DataProviderComponentsInterface
     protected function getDecodedImage($name)
     {
         return $this->url->getUrl('contentconstructor/components/image', ['image_path' => base64_encode($name)]);
+    }
+
+    protected function getVideoUrl($name)
+    {
+        return $this->url->getUrl('contentconstructor/components/video', ['video_path' => base64_encode($name)]);
     }
 
     protected function getImage($name)

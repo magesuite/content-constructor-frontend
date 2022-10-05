@@ -66,7 +66,7 @@ class VideoMP4 extends DataProviderComponents
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => $this->getDecodedImage('cat2.mp4'),
+                                                    'url' =>  $this->getVideoUrl('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => 'Video',
@@ -182,7 +182,7 @@ class VideoMP4 extends DataProviderComponents
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => $this->getDecodedImage('cat2.mp4'),
+                                                    'url' =>  $this->getVideoUrl('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => 'Video',
@@ -298,7 +298,7 @@ class VideoMP4 extends DataProviderComponents
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => $this->getDecodedImage('cat2.mp4'),
+                                                    'url' =>  $this->getVideoUrl('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => 'Video',
@@ -414,7 +414,7 @@ class VideoMP4 extends DataProviderComponents
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => $this->getDecodedImage('cat2.mp4'),
+                                                    'url' =>  $this->getVideoUrl('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => 'Video',
@@ -530,7 +530,7 @@ class VideoMP4 extends DataProviderComponents
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => $this->getDecodedImage('cat2.mp4'),
+                                                    'url' =>  $this->getVideoUrl('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => 'Video',
@@ -720,7 +720,7 @@ class VideoMP4 extends DataProviderComponents
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => $this->getDecodedImage('cat2.mp4'),
+                                                    'url' =>  $this->getVideoUrl('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => '',
@@ -836,7 +836,7 @@ class VideoMP4 extends DataProviderComponents
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => $this->getDecodedImage('cat2.mp4'),
+                                                    'url' =>  $this->getVideoUrl('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => '',
@@ -1026,7 +1026,7 @@ class VideoMP4 extends DataProviderComponents
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => $this->getDecodedImage('cat2.mp4'),
+                                                    'url' =>  $this->getVideoUrl('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => 'Video',
@@ -1195,7 +1195,7 @@ class VideoMP4 extends DataProviderComponents
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => $this->getDecodedImage('cat2.mp4'),
+                                                    'url' =>  $this->getVideoUrl('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => '',
@@ -1379,7 +1379,7 @@ class VideoMP4 extends DataProviderComponents
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => $this->getDecodedImage('cat2.mp4'),
+                                                    'url' =>  $this->getVideoUrl('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => '',
@@ -1535,7 +1535,7 @@ class VideoMP4 extends DataProviderComponents
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => $this->getDecodedImage('cat2.mp4'),
+                                                    'url' =>  $this->getVideoUrl('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => 'Video',
@@ -1960,7 +1960,7 @@ class VideoMP4 extends DataProviderComponents
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => $this->getDecodedImage('cat2.mp4'),
+                                                    'url' =>  $this->getVideoUrl('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => '',
@@ -2187,7 +2187,7 @@ class VideoMP4 extends DataProviderComponents
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => $this->getDecodedImage('cat2.mp4'),
+                                                    'url' =>  $this->getVideoUrl('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => 'Video',
@@ -2614,7 +2614,7 @@ class VideoMP4 extends DataProviderComponents
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => $this->getDecodedImage('cat2.mp4'),
+                                                    'url' =>  $this->getVideoUrl('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => 'Video',
@@ -2934,7 +2934,7 @@ class VideoMP4 extends DataProviderComponents
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => $this->getDecodedImage('cat2.mp4'),
+                                                    'url' =>  $this->getVideoUrl('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => '',
@@ -3152,7 +3152,7 @@ class VideoMP4 extends DataProviderComponents
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => $this->getDecodedImage('cat2.mp4'),
+                                                    'url' =>  $this->getVideoUrl('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => 'Video',
@@ -3386,7 +3386,7 @@ class VideoMP4 extends DataProviderComponents
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => $this->getDecodedImage('cat2.mp4'),
+                                                    'url' =>  $this->getVideoUrl('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => 'Video',
@@ -3940,7 +3940,7 @@ class VideoMP4 extends DataProviderComponents
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => $this->getDecodedImage('cat2.mp4'),
+                                                    'url' =>  $this->getVideoUrl('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => 'Video',
@@ -4174,7 +4174,7 @@ class VideoMP4 extends DataProviderComponents
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => $this->getDecodedImage('cat2.mp4'),
+                                                    'url' =>  $this->getVideoUrl('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => 'Video',
@@ -4494,7 +4494,7 @@ class VideoMP4 extends DataProviderComponents
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => $this->getDecodedImage('cat2.mp4'),
+                                                    'url' =>  $this->getVideoUrl('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => 'Video',
@@ -4814,7 +4814,7 @@ class VideoMP4 extends DataProviderComponents
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => $this->getDecodedImage('cat2.mp4'),
+                                                    'url' =>  $this->getVideoUrl('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => 'Video',
@@ -5282,7 +5282,7 @@ class VideoMP4 extends DataProviderComponents
                                                 ],
                                             'video' =>
                                                 [
-                                                    'url' => $this->getDecodedImage('cat2.mp4'),
+                                                    'url' =>  $this->getVideoUrl('cat2.mp4'),
                                                     'type' => 'file',
                                                 ],
                                             'slogan' => 'Video',
