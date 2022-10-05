@@ -2,19 +2,34 @@
 
 namespace MageSuite\ContentConstructorFrontend\DataProviders\ComponentsList;
 
-
 abstract class DataProviderComponents implements DataProviderComponentsInterface
 {
+    protected $categoryId = null;
+    protected $cmsPageId = null;
+    protected $productSku = null;
+
     protected \Magento\Catalog\Helper\Category $categoryHelper;
 
     protected \Magento\Framework\UrlInterface $url;
 
+    protected \Magento\Cms\Model\ResourceModel\Page\CollectionFactory $cmsPageCollectionFactory;
+
+    protected \Magento\Store\Model\StoreManagerInterface $storeManager;
+
+    protected \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $productCollectionFactory;
+
     public function __construct(
         \Magento\Catalog\Helper\Category $categoryHelper,
-        \Magento\Framework\UrlInterface $url
+        \Magento\Framework\UrlInterface $url,
+        \Magento\Cms\Model\ResourceModel\Page\CollectionFactory $cmsPageCollectionFactory,
+        \Magento\Store\Model\StoreManagerInterface $storeManager,
+        \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $productCollectionFactory
     ) {
         $this->categoryHelper = $categoryHelper;
         $this->url = $url;
+        $this->cmsPageCollectionFactory = $cmsPageCollectionFactory;
+        $this->storeManager = $storeManager;
+        $this->productCollectionFactory = $productCollectionFactory;
     }
 
     protected function getDecodedImage($name)
@@ -55,21 +70,59 @@ abstract class DataProviderComponents implements DataProviderComponentsInterface
 
     protected function getMainCategoryId()
     {
-        /** @var $mainCategory \Magento\Catalog\Model\Category */
-        $mainCategory = null;
+        if (empty($this->categoryId)) {
+            /** @var $mainCategory \Magento\Catalog\Model\Category */
+            $mainCategory = null;
 
-        foreach($this->categoryHelper->getStoreCategories(false, true) as $category) {
-            /** @var $category \Magento\Catalog\Model\Category */
-            if($category->hasChildren()) {
-                $mainCategory = $category;
-                break;
+            foreach ($this->categoryHelper->getStoreCategories(false, true) as $category) {
+                /** @var $category \Magento\Catalog\Model\Category */
+                if ($category->hasChildren()) {
+                    $mainCategory = $category;
+                    break;
+                }
             }
+
+            if (!$mainCategory) {
+                $this->categoryId = \Magento\Catalog\Model\Category::ROOT_CATEGORY_ID;
+            }
+
+            $this->categoryId = $mainCategory->getId();
         }
 
-        if(!$mainCategory) {
-            return \Magento\Catalog\Model\Category::ROOT_CATEGORY_ID;
+        return $this->categoryId;
+    }
+
+    protected function getCmsPageId()
+    {
+        if (empty($this->cmsPageId)) {
+            $currentStoreId = $this->storeManager->getStore()->getId();
+            $pagesCollection = $this->cmsPageCollectionFactory->create();
+
+            $pagesCollection->addStoreFilter($currentStoreId);
+            $pagesCollection->addFieldToFilter('is_active', 1);
+            $pagesCollection->setPageSize(1);
+
+            $this->cmsPageId = $pagesCollection->getFirstItem()->getPageId();
         }
 
-        return $mainCategory->getId();
+        return $this->cmsPageId;
+    }
+
+    protected function getProductSku()
+    {
+        if (empty($this->productSku)) {
+            $productCollection = $this->productCollectionFactory->create();
+            $productCollection
+                ->setStore($this->storeManager->getStore())
+                ->addStoreFilter()
+                ->setPageSize(1)
+                ->setFlag('has_stock_status_filter', true)
+                ->addAttributeToFilter('status', ['eq' => \Magento\Catalog\Model\Product\Attribute\Source\Status::STATUS_ENABLED])
+                ->addAttributeToFilter('visibility', ['eq' => \Magento\Catalog\Model\Product\Visibility::VISIBILITY_BOTH]);
+
+            $this->productSku = $productCollection->getFirstItem()->getSku();
+        }
+
+        return $this->productSku;
     }
 }

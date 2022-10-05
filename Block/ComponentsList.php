@@ -4,53 +4,31 @@ namespace MageSuite\ContentConstructorFrontend\Block;
 
 class ComponentsList extends \Magento\Framework\View\Element\Template
 {
+    protected \Magento\Framework\App\Request\Http $request;
 
-    /**
-     * @var \Magento\Framework\App\Request\Http
-     */
-    protected $request;
+    protected \Magento\Cms\Model\BlockFactory $blockFactory;
 
-    /**
-     * @var \Magento\Cms\Model\BlockFactory
-     */
-    protected $blockFactory;
+    protected \Magento\Cms\Api\BlockRepositoryInterface $blockRepository;
 
-    /**
-     * @var \Magento\Cms\Api\BlockRepositoryInterface
-     */
-    protected $blockRepository;
+    protected \Magento\Cms\Model\GetBlockByIdentifier $getBlockByIdentifier;
 
-    /**
-     * @var \Magento\Cms\Model\GetBlockByIdentifier
-     */
-    protected $getBlockByIdentifier;
+    protected \Magento\Cms\Model\PageFactory $pageFactory;
 
-    /**
-     * @var \Magento\Cms\Model\PageFactory
-     */
-    protected $pageFactory;
+    protected \Magento\Cms\Api\PageRepositoryInterface $pageRepository;
 
-    /**
-     * @var \Magento\Cms\Api\PageRepositoryInterface
-     */
-    protected $pageRepository;
+    protected \Magento\Cms\Model\GetPageByIdentifier $getPageByIdentifier;
 
-    /**
-     * @var \Magento\Cms\Model\GetPageByIdentifier
-     */
-    protected $getPageByIdentifier;
+    protected \Magento\Catalog\Helper\Category $categoryHelper;
 
-    /**
-     * @var \Magento\Catalog\Helper\Category
-     */
-    protected $categoryHelper;
+    protected \Magento\Framework\UrlInterface $url;
 
-    /**
-     * @var \Magento\Framework\UrlInterface
-     */
-    protected $url;
     protected \Magento\Framework\ObjectManagerInterface $objectManager;
 
+    protected \Magento\Cms\Model\ResourceModel\Page\CollectionFactory $cmsPageCollectionFactory;
+
+    protected \Magento\Store\Model\StoreManagerInterface $storeManager;
+
+    protected \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $productCollectionFactory;
 
     private $providers = [
         'brand-carousel' => 'BrandCarousel',
@@ -101,11 +79,12 @@ class ComponentsList extends \Magento\Framework\View\Element\Template
         \Magento\Catalog\Helper\Category $categoryHelper,
         \Magento\Framework\UrlInterface $url,
         \Magento\Framework\ObjectManagerInterface $objectManager,
+        \Magento\Cms\Model\ResourceModel\Page\CollectionFactory $cmsPageCollectionFactory,
+        \Magento\Store\Model\StoreManagerInterface $storeManager,
+        \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $productCollectionFactory,
         array $data = []
-    )
-    {
+    ) {
         parent::__construct($context, $data);
-
         $this->request = $request;
         $this->blockFactory = $blockFactory;
         $this->blockRepository = $blockRepository;
@@ -116,9 +95,10 @@ class ComponentsList extends \Magento\Framework\View\Element\Template
         $this->categoryHelper = $categoryHelper;
         $this->url = $url;
         $this->objectManager = $objectManager;
-
+        $this->cmsPageCollectionFactory = $cmsPageCollectionFactory;
+        $this->storeManager = $storeManager;
+        $this->productCollectionFactory = $productCollectionFactory;
     }
-
 
     /**
      * @return mixed
@@ -131,7 +111,13 @@ class ComponentsList extends \Magento\Framework\View\Element\Template
         $page = $this->request->get('page');
 
         if (!isset($this->providers[$page])) {
-            $provider = new \MageSuite\ContentConstructorFrontend\DataProviders\ComponentsList\Index($this->categoryHelper, $this->url);
+            $provider = new \MageSuite\ContentConstructorFrontend\DataProviders\ComponentsList\Index(
+                $this->categoryHelper,
+                $this->url,
+                $this->cmsPageCollectionFactory,
+                $this->storeManager,
+                $this->productCollectionFactory
+            );
         } else {
             $providerClass = '\MageSuite\ContentConstructorFrontend\DataProviders\ComponentsList\\' . $this->providers[$page];
             $provider = $this->objectManager->create($providerClass);

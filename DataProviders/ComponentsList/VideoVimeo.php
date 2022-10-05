@@ -654,7 +654,7 @@ class VideoVimeo extends DataProviderComponents
                                             'cta' =>
                                                 [
                                                     'label' => 'Button',
-                                                    'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="12"}}',
+                                                    'href' => sprintf('{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="%s"}}', $this->getCmsPageId()),
                                                 ],
                                             'content_align' =>
                                                 [
@@ -1688,7 +1688,7 @@ class VideoVimeo extends DataProviderComponents
                                             'cta' =>
                                                 [
                                                     'label' => 'Button',
-                                                    'href' => '{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="7"}}',
+                                                    'href' => sprintf('{{widget type="Magento\\Cms\\Block\\Widget\\Page\\Link" template="widget/link/link_block.phtml" page_id="%s"}}', $this->getCmsPageId()),
                                                 ],
                                             'content_align' =>
                                                 [

@@ -19,7 +19,7 @@ class Button extends DataProviderComponents
                     [
                         'customCssClass' => '',
                         'label' => 'test button desktop',
-                        'target' => '{{widget type="Magento\\Catalog\\Block\\Category\\Widget\\Link" template="category/widget/link/link_block.phtml" id_path="category/9"}}',
+                        'target' => sprintf('{{widget type="Magento\\Catalog\\Block\\Category\\Widget\\Link" template="category/widget/link/link_block.phtml" id_path="category/%s"}}', $this->getMainCategoryId()),
                         'cc_css_classes' => '',
                         'componentVisibility' =>
                             [
@@ -42,7 +42,7 @@ class Button extends DataProviderComponents
                     [
                         'customCssClass' => '',
                         'label' => 'test button mobile',
-                        'target' => '{{widget type="Magento\\Catalog\\Block\\Category\\Widget\\Link" template="category/widget/link/link_block.phtml" id_path="category/11"}}',
+                        'target' => sprintf('{{widget type="Magento\\Catalog\\Block\\Category\\Widget\\Link" template="category/widget/link/link_block.phtml" id_path="category/%s"}}', $this->getMainCategoryId()),
                         'cc_css_classes' => '',
                         'componentVisibility' =>
                             [

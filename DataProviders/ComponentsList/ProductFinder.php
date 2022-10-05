@@ -322,7 +322,7 @@ class ProductFinder extends DataProviderComponents
                                     'image' => $this->getDecodedImage('product_finder/top.png'),
                                     'attributes' => [
                                     ],
-                                    'category_id' => '21',
+                                    'category_id' => $this->getMainCategoryId(),
                                     'next_step' => 'material',
                                 ],
                                 1 => [
@@ -330,7 +330,7 @@ class ProductFinder extends DataProviderComponents
                                     'image' => $this->getDecodedImage('product_finder/bottom.png'),
                                     'attributes' => [
                                     ],
-                                    'category_id' => '22',
+                                    'category_id' => $this->getMainCategoryId(),
                                     'next_step' => 'material',
                                 ],
                                 2 => [
@@ -338,7 +338,7 @@ class ProductFinder extends DataProviderComponents
                                     'image' => $this->getDecodedImage('product_finder/set.png'),
                                     'attributes' => [
                                     ],
-                                    'category_id' => '20',
+                                    'category_id' => $this->getMainCategoryId(),
                                     'next_step' => 'material',
                                 ],
                             ],
@@ -708,7 +708,7 @@ class ProductFinder extends DataProviderComponents
                                     'image' => $this->getDecodedImage('product_finder/top.png'),
                                     'attributes' => [
                                     ],
-                                    'category_id' => '21',
+                                    'category_id' => $this->getMainCategoryId(),
                                     'next_step' => 'material',
                                 ],
                                 1 => [
@@ -716,7 +716,7 @@ class ProductFinder extends DataProviderComponents
                                     'image' => $this->getDecodedImage('product_finder/bottom.png'),
                                     'attributes' => [
                                     ],
-                                    'category_id' => '22',
+                                    'category_id' => $this->getMainCategoryId(),
                                     'next_step' => 'material',
                                 ],
                                 2 => [
@@ -724,7 +724,7 @@ class ProductFinder extends DataProviderComponents
                                     'image' => $this->getDecodedImage('product_finder/set.png'),
                                     'attributes' => [
                                     ],
-                                    'category_id' => '20',
+                                    'category_id' => $this->getMainCategoryId(),
                                     'next_step' => 'material',
                                 ],
                             ],

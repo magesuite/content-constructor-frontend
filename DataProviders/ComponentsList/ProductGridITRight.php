@@ -196,15 +196,15 @@ class ProductGridITRight extends DataProviderComponents
                                                         [
                                                             0 =>
                                                                 [
-                                                                    'text' => '<small>Only</small><br> {{price sku="some_sku"}}',
+                                                                    'text' => sprintf('<small>Only</small><br> {{price sku="%s"}}', $this->getProductSku()),
                                                                 ],
                                                             1 =>
                                                                 [
-                                                                    'text' => '{{sku sku="some_sku"}}',
+                                                                    'text' => sprintf('{{sku sku="%s"}}', $this->getProductSku()),
                                                                 ],
                                                             2 =>
                                                                 [
-                                                                    'text' => '<big>Only</big> {{qty sku="some_sku"}} left',
+                                                                    'text' => sprintf('<big>Only</big> {{qty sku="%s"}} left', $this->getProductSku()),
                                                                 ],
                                                         ],
                                                 ],
@@ -567,15 +567,15 @@ class ProductGridITRight extends DataProviderComponents
                                                         [
                                                             0 =>
                                                                 [
-                                                                    'text' => '<small>Only</small><br> {{price sku="some_sku"}}',
+                                                                    'text' => sprintf('<small>Only</small><br> {{price sku="%s"}}', $this->getProductSku()),
                                                                 ],
                                                             1 =>
                                                                 [
-                                                                    'text' => '{{sku sku="some_sku"}}',
+                                                                    'text' => sprintf('{{sku sku="%s"}}', $this->getProductSku()),
                                                                 ],
                                                             2 =>
                                                                 [
-                                                                    'text' => '<big>Only</big> {{qty sku="some_sku"}} left',
+                                                                    'text' => sprintf('<big>Only</big> {{qty sku="%s"}} left', $this->getProductSku()),
                                                                 ],
                                                         ],
                                                 ],
@@ -1111,15 +1111,15 @@ class ProductGridITRight extends DataProviderComponents
                                                         [
                                                             0 =>
                                                                 [
-                                                                    'text' => '<small>Only</small><br> {{price sku="some_sku"}}',
+                                                                    'text' => sprintf('<small>Only</small><br> {{price sku="%s"}}', $this->getProductSku()),
                                                                 ],
                                                             1 =>
                                                                 [
-                                                                    'text' => '{{sku sku="some_sku"}}',
+                                                                    'text' => sprintf('{{sku sku="%s"}}', $this->getProductSku()),
                                                                 ],
                                                             2 =>
                                                                 [
-                                                                    'text' => '<big>Only</big> {{qty sku="some_sku"}} left',
+                                                                    'text' => sprintf('<big>Only</big> {{qty sku="%s"}} left', $this->getProductSku()),
                                                                 ],
                                                         ],
                                                 ],
@@ -1656,15 +1656,15 @@ class ProductGridITRight extends DataProviderComponents
                                                         [
                                                             0 =>
                                                                 [
-                                                                    'text' => '<small>Only</small><br> {{price sku="some_sku"}}',
+                                                                    'text' => sprintf('<small>Only</small><br> {{price sku="%s"}}', $this->getProductSku()),
                                                                 ],
                                                             1 =>
                                                                 [
-                                                                    'text' => '{{sku sku="some_sku"}}',
+                                                                    'text' => sprintf('{{sku sku="%s"}}', $this->getProductSku()),
                                                                 ],
                                                             2 =>
                                                                 [
-                                                                    'text' => '<big>Only</big> {{qty sku="some_sku"}} left',
+                                                                    'text' => sprintf('<big>Only</big> {{qty sku="%s"}} left', $this->getProductSku()),
                                                                 ],
                                                         ],
                                                 ],
@@ -2006,15 +2006,15 @@ class ProductGridITRight extends DataProviderComponents
                                                         [
                                                             0 =>
                                                                 [
-                                                                    'text' => '<small>Only</small><br> {{price sku="some_sku"}}',
+                                                                    'text' => sprintf('<small>Only</small><br> {{price sku="%s"}}', $this->getProductSku()),
                                                                 ],
                                                             1 =>
                                                                 [
-                                                                    'text' => '{{sku sku="some_sku"}}',
+                                                                    'text' => sprintf('{{sku sku="%s"}}', $this->getProductSku()),
                                                                 ],
                                                             2 =>
                                                                 [
-                                                                    'text' => '<big>Only</big> {{qty sku="some_sku"}} left',
+                                                                    'text' => sprintf('<big>Only</big> {{qty sku="%s"}} left', $this->getProductSku()),
                                                                 ],
                                                         ],
                                                 ],
@@ -2179,15 +2179,15 @@ class ProductGridITRight extends DataProviderComponents
                                                         [
                                                             0 =>
                                                                 [
-                                                                    'text' => '<small>Only</small><br> {{price sku="some_sku"}}',
+                                                                    'text' => sprintf('<small>Only</small><br> {{price sku="%s"}}', $this->getProductSku()),
                                                                 ],
                                                             1 =>
                                                                 [
-                                                                    'text' => '{{sku sku="some_sku"}}',
+                                                                    'text' => sprintf('{{sku sku="%s"}}', $this->getProductSku()),
                                                                 ],
                                                             2 =>
                                                                 [
-                                                                    'text' => '<big>Only</big> {{qty sku="some_sku"}} left',
+                                                                    'text' => sprintf('<big>Only</big> {{qty sku="%s"}} left', $this->getProductSku()),
                                                                 ],
                                                         ],
                                                 ],
@@ -2352,15 +2352,15 @@ class ProductGridITRight extends DataProviderComponents
                                                         [
                                                             0 =>
                                                                 [
-                                                                    'text' => '<small>Only</small><br> {{price sku="some_sku"}}',
+                                                                    'text' => sprintf('<small>Only</small><br> {{price sku="%s"}}', $this->getProductSku()),
                                                                 ],
                                                             1 =>
                                                                 [
-                                                                    'text' => '{{sku sku="some_sku"}}',
+                                                                    'text' => sprintf('{{sku sku="%s"}}', $this->getProductSku()),
                                                                 ],
                                                             2 =>
                                                                 [
-                                                                    'text' => '<big>Only</big> {{qty sku="some_sku"}} left',
+                                                                    'text' => sprintf('<big>Only</big> {{qty sku="%s"}} left', $this->getProductSku()),
                                                                 ],
                                                         ],
                                                 ],
@@ -2525,15 +2525,15 @@ class ProductGridITRight extends DataProviderComponents
                                                         [
                                                             0 =>
                                                                 [
-                                                                    'text' => '<small>Only</small><br> {{price sku="some_sku"}}',
+                                                                    'text' => sprintf('<small>Only</small><br> {{price sku="%s"}}', $this->getProductSku()),
                                                                 ],
                                                             1 =>
                                                                 [
-                                                                    'text' => '{{sku sku="some_sku"}}',
+                                                                    'text' => sprintf('{{sku sku="%s"}}', $this->getProductSku()),
                                                                 ],
                                                             2 =>
                                                                 [
-                                                                    'text' => '<big>Only</big> {{qty sku="some_sku"}} left',
+                                                                    'text' => sprintf('<big>Only</big> {{qty sku="%s"}} left', $this->getProductSku()),
                                                                 ],
                                                         ],
                                                 ],
@@ -2698,15 +2698,15 @@ class ProductGridITRight extends DataProviderComponents
                                                         [
                                                             0 =>
                                                                 [
-                                                                    'text' => '<small>Only</small><br> {{price sku="some_sku"}}',
+                                                                    'text' => sprintf('<small>Only</small><br> {{price sku="%s"}}', $this->getProductSku()),
                                                                 ],
                                                             1 =>
                                                                 [
-                                                                    'text' => '{{sku sku="some_sku"}}',
+                                                                    'text' => sprintf('{{sku sku="%s"}}', $this->getProductSku()),
                                                                 ],
                                                             2 =>
                                                                 [
-                                                                    'text' => '<big>Only</big> {{qty sku="some_sku"}} left',
+                                                                    'text' => sprintf('<big>Only</big> {{qty sku="%s"}} left', $this->getProductSku()),
                                                                 ],
                                                         ],
                                                 ],
