@@ -2,7 +2,7 @@
 
 namespace MageSuite\ContentConstructorFrontend\Controller\Components;
 
-class Index extends  \Magento\Framework\App\Action\Action
+class Index extends \Magento\Framework\App\Action\Action
 {
     const ENABLE_COMPONENT_LIST_PAGE_CONFIG_PATH = 'cc_frontend_extension/configuration/enable_component_list_page';
 

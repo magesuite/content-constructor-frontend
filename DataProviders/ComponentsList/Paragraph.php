@@ -183,6 +183,125 @@ class Paragraph extends DataProviderComponents
                     ],
                 ],
             ],
+            10 => [
+                'type' => 'headline',
+                'name' => 'Headline',
+                'id' => 'component21nj492d',
+                'section' => 'content',
+                'data' =>
+                    [
+                        'customCssClass' => '',
+                        'title' => 'Display Mode',
+                        'subtitle' => '',
+                        'headingTag' => 'h2',
+                        'cc_css_classes' => '',
+                        'componentVisibility' =>
+                            [
+                                'mobile' => true,
+                                'desktop' => true,
+                            ],
+                    ],
+            ],
+            11 => [
+                'type' => 'paragraph',
+                'name' => 'Paragraph',
+                'id' => 'component21nj3dec',
+                'section' => 'content',
+                'data' =>
+                    [
+                        'customCssClass' => '',
+                        'title' => '',
+                        'columns' => 'none',
+                        'content' => '<p>Desktop/tablet: ON<br>Mobile: OFF</p>',
+                        'scenarios' =>
+                            [
+                                'reading' =>
+                                    [
+                                        'name' => 'Container width',
+                                        'iconId' => 'tw_content-width-text',
+                                        'id' => 'full',
+                                    ],
+                            ],
+                        'migrated' => true,
+                        'cc_css_classes' => '',
+                        'componentVisibility' =>
+                            [
+                                'mobile' => true,
+                                'desktop' => true,
+                            ],
+                    ],
+            ],
+            12 => [
+                'id' => 'component8b4fgiuy',
+                'section' => 'content',
+                'type' => 'paragraph',
+                'data' => [
+                    'identifier' => 'test-block-identifier',
+                    'title' => 'optimal reading',
+                    'columns' => 'none',
+                    'scenarios' => [
+                        'reading' => [
+                            'name' => 'Optimal reading width',
+                            'iconId' => 'tw_optimal-reading',
+                            'id' => 'optimal',
+                        ],
+                    ],
+                    'componentVisibility' => [
+                        'mobile' => '0',
+                        'desktop' => '1',
+                    ],
+                ],
+            ],
+            13 => [
+                'type' => 'paragraph',
+                'name' => 'Paragraph',
+                'id' => 'component21nj5195',
+                'section' => 'content',
+                'data' =>
+                    [
+                        'customCssClass' => '',
+                        'title' => '',
+                        'columns' => 'none',
+                        'content' => '<p>Desktop/tablet: OFF<br>Mobile: ON</p>',
+                        'scenarios' =>
+                            [
+                                'reading' =>
+                                    [
+                                        'name' => 'Container width',
+                                        'iconId' => 'tw_content-width-text',
+                                        'id' => 'full',
+                                    ],
+                            ],
+                        'migrated' => true,
+                        'cc_css_classes' => '',
+                        'componentVisibility' =>
+                            [
+                                'mobile' => true,
+                                'desktop' => true,
+                            ],
+                    ],
+            ],
+            14 => [
+                'id' => 'component8b4f',
+                'section' => 'content',
+                'type' => 'paragraph',
+                'data' => [
+                    'identifier' => 'test-block-identifier',
+                    'title' => 'optimal reading',
+                    'columns' => 'none',
+                    'scenarios' => [
+                        'reading' => [
+                            'name' => 'Optimal reading width',
+                            'iconId' => 'tw_optimal-reading',
+                            'id' => 'optimal',
+                        ],
+                    ],
+                    'componentVisibility' => [
+                        'mobile' => '1',
+                        'desktop' => '0',
+                    ],
+                ],
+            ],
         ];
 
         return $blocks;

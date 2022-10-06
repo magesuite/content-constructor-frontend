@@ -8,115 +8,88 @@ class Headline extends DataProviderComponents
     {
         $blocks = [
             0 => [
-                'id' => 'component27c1',
+                'type' => 'paragraph',
+                'name' => 'Paragraph',
+                'id' => 'component9821nj3dec',
+                'section' => 'content',
+                'data' =>
+                    [
+                        'customCssClass' => '',
+                        'title' => '',
+                        'columns' => 'none',
+                        'content' => '<p>Desktop/tablet: ON<br>Mobile: OFF</p>',
+                        'scenarios' =>
+                            [
+                                'reading' =>
+                                    [
+                                        'name' => 'Container width',
+                                        'iconId' => 'tw_content-width-text',
+                                        'id' => 'full',
+                                    ],
+                            ],
+                        'migrated' => true,
+                        'cc_css_classes' => '',
+                        'componentVisibility' =>
+                            [
+                                'mobile' => true,
+                                'desktop' => true,
+                            ],
+                    ],
+            ],
+            1 => [
+                'id' => 'component9827c1',
                 'section' => 'content',
                 'type' => 'headline',
                 'data' => [
-                    'title' => 'Headline H1',
+                    'title' => 'Headline Only Desktop/Tablet',
                     'subtitle' => 'Subheadline',
                     'headingTag' => 'h1',
                     'componentVisibility' => [
-                        'mobile' => '1',
-                        'desktop' => '1',
-                    ],
-                ],
-            ],
-            1 => [
-                'id' => 'component24ab',
-                'section' => 'content',
-                'type' => 'headline',
-                'data' => [
-                    'title' => 'Headline H2',
-                    'subtitle' => 'Subheadline',
-                    'headingTag' => 'h2',
-                    'componentVisibility' => [
-                        'mobile' => '1',
+                        'mobile' => '0',
                         'desktop' => '1',
                     ],
                 ],
             ],
             2 => [
-                'id' => 'component6260',
+                'type' => 'paragraph',
+                'name' => 'Paragraph',
+                'id' => 'component9821nj3dec',
                 'section' => 'content',
-
-                'type' => 'headline',
-                'data' => [
-                    'title' => 'Headline H3',
-                    'subtitle' => 'Subheadline',
-                    'headingTag' => 'h3',
-                    'componentVisibility' => [
-                        'mobile' => '1',
-                        'desktop' => '1',
+                'data' =>
+                    [
+                        'customCssClass' => '',
+                        'title' => '',
+                        'columns' => 'none',
+                        'content' => '<p>Desktop/tablet: OFF<br>Mobile: ON</p>',
+                        'scenarios' =>
+                            [
+                                'reading' =>
+                                    [
+                                        'name' => 'Container width',
+                                        'iconId' => 'tw_content-width-text',
+                                        'id' => 'full',
+                                    ],
+                            ],
+                        'migrated' => true,
+                        'cc_css_classes' => '',
+                        'componentVisibility' =>
+                            [
+                                'mobile' => true,
+                                'desktop' => true,
+                            ],
                     ],
-                ],
             ],
             3 => [
-                'id' => 'component64e7',
+                'id' => 'component9824ab',
                 'section' => 'content',
                 'type' => 'headline',
                 'data' => [
-                    'title' => 'Headline H4',
+                    'title' => 'Headline Only Mobile',
                     'subtitle' => 'Subheadline',
-                    'headingTag' => 'h4',
+                    'headingTag' => 'h1',
                     'componentVisibility' => [
                         'mobile' => '1',
-                        'desktop' => '1',
-                    ],
-                ],
-            ],
-            4 => [
-                'id' => 'componentd909',
-                'section' => 'content',
-                'type' => 'headline',
-                'data' => [
-                    'title' => 'Headline H5',
-                    'subtitle' => 'Subheadline',
-                    'headingTag' => 'h5',
-                    'componentVisibility' => [
-                        'mobile' => '1',
-                        'desktop' => '1',
-                    ],
-                ],
-            ],
-            5 => [
-                'id' => 'componenta96a',
-                'section' => 'content',
-                'type' => 'headline',
-                'data' => [
-                    'title' => 'Headline H6',
-                    'subtitle' => 'Subheadline',
-                    'headingTag' => 'h6',
-                    'componentVisibility' => [
-                        'mobile' => '1',
-                        'desktop' => '1',
-                    ],
-                ],
-            ],
-            6 => [
-                'id' => 'componentcfc0',
-                'section' => 'content',
-                'type' => 'headline',
-                'data' => [
-                    'title' => 'Only headline',
-                    'subtitle' => '',
-                    'headingTag' => 'h2',
-                    'componentVisibility' => [
-                        'mobile' => '1',
-                        'desktop' => '1',
-                    ],
-                ],
-            ],
-            7 => [
-                'id' => 'component6ec0',
-                'section' => 'content',
-                'type' => 'headline',
-                'data' => [
-                    'title' => '',
-                    'subtitle' => 'Only subheadline',
-                    'headingTag' => 'h2',
-                    'componentVisibility' => [
-                        'mobile' => '1',
-                        'desktop' => '1',
+                        'desktop' => '0',
                     ],
                 ],
             ],
