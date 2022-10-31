@@ -25,16 +25,29 @@
                     <overview>Improve way how brands are loaded for Brand Carousel.</overview>
                 </entry>
             </tag>
+            <tag version="5.4.6" date="2022-09-14">
+                <entry>
+                    <type>FIX</type>
+                    <overview>Fix h6 headline tag on components list</overview>
+                </entry>
+            </tag>
             <tag version="5.5.3" date="2022-09-05">
                 <entry>
                     <type>FIX</type>
                     <overview>Fix displaying image alt attribute for image teasers and add meta_title to data available in Brand Carousel</overview>
                 </entry>
             </tag>
-            <tag version="5.4.6" date="2022-09-14">
+            <tag version="5.7.0" date="2022-10-11">
                 <entry>
-                    <type>FIX</type>
-                    <overview>Fix h6 headline tag on components list</overview>
+                    <type>FEATURE</type>
+                    <overview>Add additional options for teaser based CC components via advanced tab</overview>
+                    <description>
+                        Additional options that can be set via advanced tab:
+                        - fetchpriority attribute can be set for image,
+                        - cta target can now be set as _blank (link will be opened in new tab),
+                        - promotion tracking (id)
+                    </description>
+                    <ticket_id>KRG-2273</ticket_id>
                 </entry>
             </tag>
         </changelog>

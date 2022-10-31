@@ -12,18 +12,21 @@ $contentAlign = $slide->getContentAlign();
  * Call to action properties.
  */
 $cta = $slide->getCta();
-$ctaLabel = $cta['label'] ?? NULL;
-$ctaHref = $cta['href'] ?? NULL;
+$ctaLabel = $cta['label'] ?? null;
+$ctaHref = $cta['href'] ?? null;
+$ctaTarget = $cta['target'] ?? null;
 
 /**
  * Image properties with support for conditional lazy loading.
  */
 $hasImage = !empty($slide->getSrc());
+
 /**
  * Aspect ratio calculations preventing content jumping before images load.
  */
 $slideImage = $slide->getImage();
 $aspectRatio = isset($slideImage['aspect_ratio']) ? str_replace(':', '/', $slideImage['aspect_ratio']) : '';
+
 /**
  * Contrast optimizers
  */
@@ -35,16 +38,22 @@ $mirrorImage = $contrastOptimizers['mirror_image'] ?? null;
 $contrastOptimizersScenarios = $contrastOptimizers['scenarios'] ?? null;
 $textShadow = $contrastOptimizersScenarios['text_shadow'] ?? null;
 $container = $contrastOptimizersScenarios['container'] ?? null;
-$openLinkInNewTab = $block->getOpenLinkInNewTab();
 
 /**
  * Teaser content
  */
-
 $slogan = $slide->getSlogan();
 $description = $slide->getDescription();
 $hasCta = (!!$ctaHref && !!$ctaLabel);
 $ctaOnly = (!!$ctaHref && !!$ctaLabel && !$slogan && !$description);
+
+/**
+ * Advanced
+ */
+$fetchPriority = $slideImage['fetch_priority'] ?? null;
+$openLinkInNewTab = ($block->getOpenLinkInNewTab() || $ctaTarget) ? true : false;
+$trackingId = $slide->getTrackingId();
+$trackingData = "data-tracking-id='{$trackingId}'";
 
 /**
  * Video Teaser
@@ -70,7 +79,12 @@ $slideClasses .= ' '.$slide->getCcCssClasses();
 $isFirstImage = $block->getIsFirstImage();
 $eagerLoadFirstImage = $block->getEagerLoadFirstImage();
 ?>
-<li class="<?= $slideClasses ?>">
+<li class="<?= $slideClasses ?>"
+    <?php if (!$ctaHref && !empty($trackingId)): ?>
+        <?= $trackingData; ?>
+    <?php endif; ?>
+>
+
     <?= $this->getLayout()
         ->createBlock(\Magento\Framework\View\Element\Template::class)
         ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/hotspots/before_slide-wrapper.phtml')
@@ -83,7 +97,13 @@ $eagerLoadFirstImage = $block->getEagerLoadFirstImage();
     ?>
 
     <?php if ($ctaHref): ?>
-        <a href="<?= $block->escapeHtml($ctaHref) ?>" <?= $openLinkInNewTab ? 'target="_blank" rel="noopener noreferrer"' : ''?> class="cs-image-teaser__link">
+        <a href="<?= $block->escapeHtml($ctaHref) ?>"
+           class="cs-image-teaser__link"
+           <?= $openLinkInNewTab ? 'target="_blank" rel="noopener noreferrer"' : ''?>
+           <?php if (!empty($trackingId)): ?>
+                <?= $trackingData; ?>
+            <?php endif; ?>
+        >
     <?php endif; ?>
     <figure class="cs-image-teaser__figure">
         <?= $this->getLayout()
@@ -97,6 +117,7 @@ $eagerLoadFirstImage = $block->getEagerLoadFirstImage();
             ->setAspectRatio($aspectRatio)
             ->setIsFirstImage($isFirstImage)
             ->setEagerLoadFirstImage($eagerLoadFirstImage)
+            ->setFetchPriority($fetchPriority)
             ->toHtml();
         ?>
 
