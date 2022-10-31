@@ -20,6 +20,7 @@ $imageAlt = $block->escapeHtmlAttr($slide->getAlt());
 $imageSizes = $isSvg ? '' : $slide->getSizes();
 $isSlider = $block->getIsSlider();
 $isSliderMobile = $block->getIsSliderMobile();
+$fetchPriority = $block->getFetchPriority();
 
 /**
  * Aspect ratio and sizing
@@ -108,6 +109,9 @@ $eagerLoadFirstImage = $block->getEagerLoadFirstImage();
             <?php endif; ?>
             <?php if ($imageHeight): ?>
                 height="<?= $imageHeight ?>"
+            <?php endif; ?>
+            <?php if ($fetchPriority): ?>
+                fetchpriority="high"
             <?php endif; ?>
         >
     </picture>
