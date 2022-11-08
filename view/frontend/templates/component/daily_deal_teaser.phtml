@@ -20,7 +20,7 @@ if (isset($componentConfiguration['cc_css_classes'])):
 endif;
 ?>
 
-<?php if (!empty($product) && $product['productObject']->getIsSalable()): ?>
+<?php if (!empty($product) && $product['productObject']->getIsSalable() && $product['dailyDealOffer']['deal']): ?>
     <?= $block->getCssOnce('css/daily-deal-teaser.css'); ?>
 
     <div class="cs-container cs-container--daily-deal-teaser<?= $containerClasses ?><?= $visibility ? ' ' .$visibility : ''; ?>">
