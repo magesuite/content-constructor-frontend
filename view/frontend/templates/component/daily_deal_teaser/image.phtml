@@ -4,55 +4,63 @@
 $viewModel = $block->getViewModel();
 
 $product = $viewModel->getProduct();
+$productObj = $product['productObject'];
+
+$productName = $productObj->getName();
+$productUrl = $productObj->getProductUrl();
+
+$imageHelper = $this->helper(\Magento\Catalog\Helper\Image::class);
+$productImage = $imageHelper->init($productObj, 'category_page_grid');
+$productImageUrl = $productImage->getUrl();
+$productImageWidth = $productImage->getWidth();
+$productImageHeight = $productImage->getHeight();
+$productImage2x = $imageHelper->init($productObj, 'category_page_grid_x2');
+$productImage2xUrl = $productImage2x->getUrl();
 
 $isLazyLoaded = $block->getVar('daily_deal_teaser/lazyload_image');
+$loaderImage = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
 ?>
-
-<a href="<?= $product['url'] ?>" class="cs-daily-deal-teaser__image-wrapper">
+<a href="<?= $productUrl; ?>" class="cs-daily-deal-teaser__image-wrapper">
     <?php if ($block->getVar('daily_deal_teaser/discount_badge/show') && $product['dailyDealOffer']['discountPercentage']): ?>
-            <div class="cs-daily-deal-teaser__discount">
-                <span class="cs-daily-deal-teaser__badge-wrapper cs-dailydeal__badge cs-dailydeal__badge--dd-discount">
-                    <span class="cs-daily-deal-teaser__badge cs-daily-deal-teaser__badge--discount">
-                        <span class="cs-daily-deal-teaser__badge-text">
+        <div class="cs-daily-deal-teaser__discount">
+            <span class="cs-daily-deal-teaser__badge-wrapper cs-dailydeal__badge cs-dailydeal__badge--dd-discount">
+                <span class="cs-daily-deal-teaser__badge cs-daily-deal-teaser__badge--discount">
+                    <span class="cs-daily-deal-teaser__badge-text">
+                    <?php if ($block->getVar('daily_deal_teaser/discount_badge/show_sale_label')): ?>
+                        <?= __('Sale')?>
+                    <?php endif; ?>
 
-                        <?php if ($block->getVar('daily_deal_teaser/discount_badge/show_sale_label')): ?>
-                            <?=__('Sale')?>
-                        <?php endif; ?>
-
-                        <?php if ($block->getVar('daily_deal_teaser/discount_badge/show_percentage')): ?>
-                            <?= $block->getVar('daily_deal_teaser/discount_badge/prefix'); ?><?=$product['dailyDealOffer']['discountPercentage']?><?= $block->getVar('daily_deal_teaser/discount_badge/suffix'); ?>
-                        <?php endif; ?>
-
-                        </span>
+                    <?php if ($block->getVar('daily_deal_teaser/discount_badge/show_percentage')): ?>
+                        <?= $block->getVar('daily_deal_teaser/discount_badge/prefix'); ?><?= $product['dailyDealOffer']['discountPercentage']?><?= $block->getVar('daily_deal_teaser/discount_badge/suffix'); ?>
+                    <?php endif; ?>
                     </span>
                 </span>
-            </div>
-        <?php endif; ?>
-        <figure class="cs-daily-deal-teaser__figure" role="group">
+            </span>
+        </div>
+    <?php endif; ?>
+    <figure class="cs-daily-deal-teaser__figure" role="group">
+        <img
+            class="cs-daily-deal-teaser__image<?php if ($isLazyLoaded): ?> | lazyload<?php endif; ?>"
+            <?php if ($isLazyLoaded): ?>
+                src="<?= $loaderImage; ?>"
+                data-src="<?= $productImageUrl; ?>"
+            <?php else: ?>
+                src="<?= $productImageUrl; ?>"
+            <?php endif; ?>
+            data-srcset="<?= $productImageUrl . ' 1x, ' . $productImage2xUrl . ' 2x' ?>"
+            width="<?= $productImageWidth; ?>"
+            height="<?= $productImageHeight; ?>"
+            alt="<?= $productName; ?>"
+        >
+        <noscript>
             <img
-                class="cs-daily-deal-teaser__image | <?php if ($isLazyLoaded){ echo 'lazyload';} ?>"
-                <?php if ($isLazyLoaded): ?>
-                src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-                data-src="<?=$product['image']['src'] ?>"
-                <?php else: ?>
-                src="<?=$product['image']['src'] ?>"
-                <?php endif; ?>
-                alt="<?= $product['name'] ?>"
-                <?php if (isset($product['image']['srcset'])): ?>data-srcset="<?=$product['image']['srcset']?>"<?php endif; ?>
-                <?php if (isset($product['image']['sizes'])): ?>sizes="<?=$product['image']['sizes']?>"<?php endif; ?>
-                <?php if (isset($product['image']['width'])): ?>width="<?=$product['image']['width']?>"<?php endif; ?>
-                <?php if (isset($product['image']['height'])): ?>height="<?=$product['image']['height']?>"<?php endif; ?>
+                class="cs-daily-deal-teaser__image"
+                src="<?= $product['image']['src'] ?>"
+                data-srcset="<?= $productImageUrl . ' 1x, ' . $productImage2xUrl . ' 2x' ?>"
+                width="<?= $productImageWidth; ?>"
+                height="<?= $productImageHeight; ?>"
+                alt="<?= $productName; ?>"
             >
-            <noscript>
-                <img
-                    class="cs-daily-deal-teaser__image"
-                    src="<?= $product['image']['src'] ?>"
-                    alt="<?= $product['name'] ?>"
-                    <?php if (isset($product['image']['srcset'])): ?>data-srcset="<?=$product['image']['srcset']?>"<?php endif; ?>
-                    <?php if (isset($product['image']['sizes'])): ?>sizes="<?=$product['image']['sizes']?>"<?php endif; ?>
-                    <?php if (isset($product['image']['width'])): ?>width="<?=$product['image']['width']?>"<?php endif; ?>
-                    <?php if (isset($product['image']['height'])): ?>height="<?=$product['image']['height']?>"<?php endif; ?>
-                >
-            </noscript>
-        </figure>
+        </noscript>
+    </figure>
 </a>
