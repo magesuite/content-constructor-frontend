@@ -61,6 +61,16 @@
                     <ticket_id>HAKA-1745</ticket_id>
                 </entry>
             </tag>
+            <tag version="5.7.2" date="2022-11-10">
+                <entry>
+                    <type>FIX</type>
+                    <overview>Adjust DailyDeal Teaser image template</overview>
+                    <description>
+                        DailyDeal Teaser image template has been adjusted in order to fetch essential image data from product object instead of product array.
+                    </description>
+                    <ticket_id>HAKA-1736</ticket_id>
+                </entry>
+            </tag>
         </changelog>
     </module>
 </config>
