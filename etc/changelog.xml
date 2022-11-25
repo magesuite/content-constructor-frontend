@@ -71,6 +71,14 @@
                     <ticket_id>HAKA-1736</ticket_id>
                 </entry>
             </tag>
+            <tag version="5.7.3" date="2022-11-25">
+                <entry>
+                    <type>FIX</type>
+                    <overview>Division by zero in daily_deal_stock_status.phtml.</overview>
+                    <description>Addressed an corner case with division by zero in template.</description>
+                    <ticket_id>TOYS-436</ticket_id>
+                </entry>
+            </tag>
         </changelog>
     </module>
 </config>
