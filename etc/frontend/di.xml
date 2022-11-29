@@ -21,4 +21,8 @@
     <type name="Magento\Cms\Model\Block">
         <plugin name="cms_block_render_content_constructor_components" type="MageSuite\ContentConstructorFrontend\Plugin\Cms\Model\Block\RenderContentConstructorComponents" />
     </type>
+
+    <type name="Magento\Cms\Model\Page">
+        <plugin name="change_content_return_type" type="MageSuite\ContentConstructorFrontend\Plugin\Cms\Model\Page\ChangeContentReturnType" />
+    </type>
 </config>
