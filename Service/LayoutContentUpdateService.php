@@ -17,6 +17,11 @@ class LayoutContentUpdateService
     public function addContentConstructorToUpdateLayout(\Magento\Framework\View\Result\Page &$resultPage, $subject)
     {
         $updateContentJson = $subject->getContentConstructorContent();
+
+        if($updateContentJson === null) {
+            return;
+        }
+
         $updateContentXml = $this->configurationToXmlMapper->map(json_decode($updateContentJson, true), $subject->getLayoutUpdateXml());
 
         $resultPage->getLayout()->getUpdate()->addUpdate($updateContentXml);

@@ -35,7 +35,7 @@ class AddConstructorContentToCategoryLayout implements \Magento\Framework\Event\
         $action = $event->getData("full_action_name");
         $category = $this->registry->registry("current_category");
 
-        if ($action == 'catalog_category_view' && $category) {
+        if ($action === 'catalog_category_view' && $category && $category->getContentConstructorContent() !== null) {
             $components = json_decode($category->getContentConstructorContent(), true);
             $layoutUpdateXml = $this->configurationToXmlMapper->map($components);
 

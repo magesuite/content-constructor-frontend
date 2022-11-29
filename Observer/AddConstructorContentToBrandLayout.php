@@ -30,6 +30,11 @@ class AddConstructorContentToBrandLayout implements \Magento\Framework\Event\Obs
 
         if ($action == 'brands_index_index' && $brand) {
             $components = $brand->getLayoutUpdateXml();
+
+            if($components === null) {
+                return;
+            }
+            
             $this->layoutCacheKey->addCacheKeys(md5($components));
         }
     }
