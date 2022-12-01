@@ -25,58 +25,23 @@
                     <overview>Improve way how brands are loaded for Brand Carousel. </overview>
                 </entry>
             </tag>
-            <tag version="5.4.6" date="2022-09-14">
-                <entry>
-                    <type>FIX</type>
-                    <overview>Fix h6 headline tag on components list</overview>
-                </entry>
-            </tag>
             <tag version="5.5.3" date="2022-09-05">
                 <entry>
                     <type>FIX</type>
                     <overview>Fix displaying image alt attribute for image teasers and add meta_title to data available in Brand Carousel</overview>
                 </entry>
             </tag>
-            <tag version="5.7.0" date="2022-10-11">
-                <entry>
-                    <type>FEATURE</type>
-                    <overview>Add additional options for teaser based CC components via advanced tab</overview>
-                    <description>
-                        Additional options that can be set via advanced tab:
-                        - fetchpriority attribute can be set for image,
-                        - cta target can now be set as _blank (link will be opened in new tab),
-                        - promotion tracking (id)
-                    </description>
-                    <ticket_id>KRG-2273</ticket_id>
-                </entry>
-            </tag>
-            <tag version="5.7.1" date="2022-11-08">
+            <tag version="5.4.6" date="2022-09-14">
                 <entry>
                     <type>FIX</type>
-                    <overview>Extend condition for toggling visibility of DailyDeal Teaser</overview>
-                    <description>
-                        When DailyDeal Teaser is configured with product SKU, teaser is visible even when deal ends.
-                        This fix adds additional check if deal is over and if so then it do not display teaser anymore.
-                    </description>
-                    <ticket_id>HAKA-1745</ticket_id>
+                    <overview>Fix h6 headline tag on components list</overview>
                 </entry>
             </tag>
-            <tag version="5.7.2" date="2022-11-10">
+            <tag version="5.4.7" date="2022-12-02">
                 <entry>
-                    <type>FIX</type>
-                    <overview>Adjust DailyDeal Teaser image template</overview>
-                    <description>
-                        DailyDeal Teaser image template has been adjusted in order to fetch essential image data from product object instead of product array.
-                    </description>
-                    <ticket_id>HAKA-1736</ticket_id>
-                </entry>
-            </tag>
-            <tag version="5.7.3" date="2022-11-25">
-                <entry>
-                    <type>FIX</type>
-                    <overview>Division by zero in daily_deal_stock_status.phtml.</overview>
-                    <description>Addressed an corner case with division by zero in template.</description>
-                    <ticket_id>TOYS-436</ticket_id>
+                    <type>FEAT</type>
+                    <overview>Add possibility to define accordion headline tag</overview>
+                    <ticket_id>RK-485</ticket_id>
                 </entry>
             </tag>
         </changelog>
