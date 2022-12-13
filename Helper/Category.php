@@ -16,6 +16,9 @@ class Category
      * @var \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory
      */
     protected $productCollectionFactory;
+
+    protected \Smile\ElasticsuiteVirtualCategory\Model\Category\Attribute\VirtualRule\ReadHandler $readHandler;
+
     /**
      * @var \Magento\Framework\App\CacheInterface
      */
@@ -36,6 +39,7 @@ class Category
     public function __construct(
         \Magento\Catalog\Model\ResourceModel\Category\CollectionFactory $categoryCollectionFactory,
         \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $productCollectionFactory,
+        \Smile\ElasticsuiteVirtualCategory\Model\Category\Attribute\VirtualRule\ReadHandler $readHandler,
         \Magento\Framework\App\CacheInterface $cache,
         \Magento\Framework\App\ResourceConnection $resourceConnection,
         \Magento\Store\Model\StoreManagerInterface $storeManager
@@ -43,6 +47,7 @@ class Category
     {
         $this->categoryCollectionFactory = $categoryCollectionFactory;
         $this->productCollectionFactory = $productCollectionFactory;
+        $this->readHandler = $readHandler;
         $this->cache = $cache;
         $this->connection = $resourceConnection->getConnection();
         $this->storeManager = $storeManager;
@@ -50,17 +55,21 @@ class Category
 
     /**
      * @param $category \Magento\Catalog\Model\Category
-     * @return mixed
+     * @return int
      */
-    public function getNumberOfProducts(\Magento\Catalog\Model\Category $category)
+    public function getNumberOfProducts(\Magento\Catalog\Model\Category $category): int
     {
-        $result = $this->getProductsCount();
+        if ($category->getIsVirtualCategory() && $category->getVirtualRule()) {
+            return $this->getProductsCountForVirtualCategory($category);
+        }
+
+        $result = $this->getProductsCountFromIndex();
 
         return isset($result[$category->getId()]) ? $result[$category->getId()] : 0;
     }
 
-    protected function getProductsCount() {
-        if(!is_array($this->productsCount)) {
+    protected function getProductsCountFromIndex() {
+        if (!is_array($this->productsCount)) {
             $result = unserialize($this->cache->load(self::CACHE_TAG));
 
             if(!$result) {
@@ -76,6 +85,16 @@ class Category
         }
 
         return $this->productsCount;
+    }
+
+    protected function getProductsCountForVirtualCategory(\Magento\Catalog\Model\Category $category): int
+    {
+        $collection = $this->productCollectionFactory->create();
+        $this->readHandler->execute($category);
+        $queryFilter = $category->getVirtualRule()->getCategorySearchQuery($category);
+        $collection->addQueryFilter($queryFilter);
+
+        return $collection->getSize();
     }
 
     /**

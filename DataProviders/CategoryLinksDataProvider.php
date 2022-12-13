@@ -92,6 +92,8 @@ class CategoryLinksDataProvider
         $categoryCollection->addAttributeToSelect('name');
         $categoryCollection->addAttributeToSelect('is_active');
         $categoryCollection->addAttributeToSelect('url_key');
+        $categoryCollection->addAttributeToSelect('is_virtual_category');
+        $categoryCollection->addAttributeToSelect('virtual_rule');
 
         return $categoryCollection->getItems();
     }
