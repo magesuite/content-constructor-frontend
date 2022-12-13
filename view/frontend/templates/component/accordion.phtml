@@ -23,6 +23,8 @@ $containerClasses = $block->getContainerMix();
 if (isset($componentConfiguration['cc_css_classes'])):
     $containerClasses .= ' ' . $componentConfiguration['cc_css_classes'];
 endif;
+
+$headlineTag = $block->getVar('accordion/headline_tag') ?: 'div';
 ?>
 
 <?= $block->getCssOnce('css/accordion.css'); ?>
@@ -48,7 +50,7 @@ endif;
                                 <?php $i = 0; ?>
                                 <?php foreach ($group['items'] as $item): ?>
                                     <li class="cs-accordion__item<?php if($expandFirst && $i == 0): ?> cs-accordion__item--active<?php endif; ?>" data-role="collapsible">
-                                        <div class="cs-accordion__item-headline<?= !$accordionItemIcon ? ' cs-accordion__item-headline--icon' : '' ?>" data-role="title">
+                                        <<?= $headlineTag ?> class="cs-accordion__item-headline<?= !$accordionItemIcon ? ' cs-accordion__item-headline--icon' : '' ?>" data-role="title">
                                             <span class="cs-accordion__item-headline-span">
                                                 <?= $block->escapeHtml($item['headline']) ?>
                                                 <?php if ($accordionItemIcon): ?>
@@ -61,7 +63,7 @@ endif;
                                                 ?>
                                                 <?php endif; ?>
                                             <span>
-                                        </div>
+                                        </<?= $headlineTag ?>>
                                         <div class="cs-accordion__item-content" data-role="content">
                                             <?= $viewModel->renderWysiwygContent($item['content']); ?>
                                         </div>
