@@ -79,11 +79,18 @@
                     <ticket_id>TOYS-436</ticket_id>
                 </entry>
             </tag>
-            <tag version="5.8.3" date="2022-12-02">
+            <tag version="5.8.2" date="2022-12-02">
                 <entry>
                     <type>FEAT</type>
                     <overview>Add possibility to define accordion headline tag</overview>
                     <ticket_id>RK-485</ticket_id>
+                </entry>
+            </tag>
+            <tag version="5.8.3" date="2022-12-13">
+                <entry>
+                    <type>FEATURE</type>
+                    <overview>Show proper value `products count` for virtual category</overview>
+                    <ticket_id>RK-496</ticket_id>
                 </entry>
             </tag>
         </changelog>
