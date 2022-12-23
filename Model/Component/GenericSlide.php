@@ -36,11 +36,28 @@ class GenericSlide extends \Magento\Framework\DataObject
         }
 
         $cta = $data['cta'];
+
         if (isset($cta['href']) && !empty($cta['href'])) {
-            $cta['href'] = $this->urlResolver->resolve($cta['href']);
+            $cta['href'] = $this->getUrl($cta['href']);
         }
 
         return $cta;
+    }
+
+    public function getHref()
+    {
+        $href = $this->_getData('href');
+
+        if (!$href) {
+            return $href;
+        }
+
+        return $this->getUrl($href);
+    }
+
+    public function getUrl($url)
+    {
+        return $this->urlResolver->resolve($url);
     }
 
     public function getWidth()
