@@ -79,6 +79,13 @@ class UrlResolverTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('http://google.com', $url);
     }
 
+    public function testItProperlyResolvesRelativeUrl()
+    {
+        $url = $this->urlResolver->resolve('dummy-link');
+
+        $this->assertEquals('http://localhost/index.php/dummy-link/', $url);
+    }
+
     public function testItProperlyResolvesProductUrl()
     {
         $product = $this->getProductFixture()->setUrlKey('product.phtml');

@@ -65,17 +65,21 @@ class UrlResolver
      */
     public function resolve(string $resourceIdentifier)
     {
+        if (empty($resourceIdentifier)) {
+            return $resourceIdentifier;
+        }
+
         if ($this->isMediaUrl($resourceIdentifier)) {
             return $this->getMediaUrl($resourceIdentifier);
         }
 
         if ($this->isDirectUrl($resourceIdentifier)) {
-            return $resourceIdentifier;
+            return $this->getUrl($resourceIdentifier);
         }
 
         $type = $this->getEntityType($resourceIdentifier);
 
-        if ($type == null or empty($type)) {
+        if ($type === null || empty($type)) {
             return '';
         }
 
@@ -106,6 +110,15 @@ class UrlResolver
         $product = $this->productRepository->getById($id);
 
         return $product->getUrlModel()->getUrl($product);
+    }
+
+    protected function getUrl(string $url): string
+    {
+        if (filter_var($url, FILTER_VALIDATE_URL)) {
+            return $url;
+        }
+
+        return $this->urlBuilder->getUrl($url);
     }
 
     protected function getCategoryUrl($id)
