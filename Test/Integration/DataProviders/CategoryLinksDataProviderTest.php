@@ -2,11 +2,15 @@
 
 namespace MageSuite\ContentConstructorFrontend\Test\Integration\DataProviders;
 
+/**
+ * @magentoAppIsolation enabled
+ * @magentoDbIsolation enabled
+ */
 class CategoryLinksDataProviderTest extends \PHPUnit\Framework\TestCase
 {
     const MAIN_CATEGORY_ID = 333;
-    const SUBCATEGORIES_IDS = [334,335,336,338];
-    const ORDERED_SUBCATEGORIES_IDS = [335,334,336];
+    const SUBCATEGORIES_IDS = [334, 335, 336, 338];
+    const ORDERED_SUBCATEGORIES_IDS = [335, 334, 336];
 
     protected $expectedCategoriesStructure = [
         'main_category' => [
@@ -37,54 +41,48 @@ class CategoryLinksDataProviderTest extends \PHPUnit\Framework\TestCase
         ]
     ];
 
-    /**
-     * @var \Magento\TestFramework\ObjectManager
-     */
-    private $objectManager;
+    protected ?\Magento\TestFramework\ObjectManager $objectManager;
 
-    /**
-     * @var \MageSuite\ContentConstructorFrontend\DataProviders\CategoryLinksDataProvider
-     */
-    private $dataProvider;
+    protected ?\Magento\Framework\App\CacheInterface $cache;
 
-    public function setUp(): void {
+    protected ?\MageSuite\ContentConstructorFrontend\Helper\Category $categoryHelper;
+
+    protected ?\MageSuite\ContentConstructorFrontend\DataProviders\CategoryLinksDataProvider $dataProvider;
+
+    public function setUp(): void
+    {
         $this->objectManager = \Magento\TestFramework\ObjectManager::getInstance();
 
-        $this->dataProvider = $this->objectManager
-            ->get(\MageSuite\ContentConstructorFrontend\DataProviders\CategoryLinksDataProvider::class);
+        $this->cache = $this->objectManager->get(\Magento\Framework\App\CacheInterface::class);
+        $this->categoryHelper = $this->objectManager->get(\MageSuite\ContentConstructorFrontend\Helper\Category::class);
+
+        $this->dataProvider = $this->objectManager->get(\MageSuite\ContentConstructorFrontend\DataProviders\CategoryLinksDataProvider::class);
     }
 
     /**
-     * @magentoAppIsolation enabled
      * @magentoCache all disabled
-     * @magentoDbIsolation enabled
-     * @magentoDataFixture loadCategories
+     * @magentoDataFixture MageSuite_ContentConstructorFrontend::Test/Integration/DataProviders/_files/categories_with_products.php
      */
-    public function testItReturnsCorrectCategoriesStructure() {
+    public function testItReturnsCorrectCategoriesStructure()
+    {
+        $this->cache->remove($this->categoryHelper->getCacheKey());
+
         $result = $this->dataProvider->getCategories(self::MAIN_CATEGORY_ID, self::SUBCATEGORIES_IDS);
         $this->assertEquals($this->expectedCategoriesStructure, $result);
     }
 
     /**
      * @magentoCache all disabled
-     * @magentoDbIsolation enabled
-     * @magentoDataFixture loadCategories
+     * @magentoDataFixture MageSuite_ContentConstructorFrontend::Test/Integration/DataProviders/_files/categories_with_products.php
      */
-    public function testItReturnsCorrectOrderOfSubCategories() {
+    public function testItReturnsCorrectOrderOfSubCategories()
+    {
+        $this->cache->remove($this->categoryHelper->getCacheKey());
+
         $result = $this->dataProvider->getCategories(self::MAIN_CATEGORY_ID, self::ORDERED_SUBCATEGORIES_IDS);
 
         $this->assertEquals('Second subcategory', $result['sub_categories'][0]['name']);
         $this->assertEquals('First subcategory', $result['sub_categories'][1]['name']);
         $this->assertEquals('Third subcategory', $result['sub_categories'][2]['name']);
-    }
-
-    public static function loadCategories() {
-        include __DIR__.'/_files/categories_with_products.php';
-
-        /** @var \Magento\Framework\App\CacheInterface $cache */
-        $cache = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()
-            ->create(\Magento\Framework\App\CacheInterface::class);
-
-        $cache->remove(\MageSuite\ContentConstructorFrontend\Helper\Category::CACHE_TAG);
     }
 }
