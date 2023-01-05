@@ -5,84 +5,86 @@ namespace MageSuite\ContentConstructorFrontend\Helper;
 class Category
 {
     const CACHE_LIFETIME = 86400;
-    const CACHE_TAG = 'products_in_category_count';
 
-    /**
-     * @var \Magento\Catalog\Model\ResourceModel\Category\CollectionFactory
-     */
-    protected $categoryCollectionFactory;
+    protected const CACHE_KEY = 'products_in_category_count_store_%s';
 
-    /**
-     * @var \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory
-     */
-    protected $productCollectionFactory;
+    protected \Magento\Catalog\Model\ResourceModel\Category\CollectionFactory $categoryCollectionFactory;
+
+    protected \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $productCollectionFactory;
+
+    protected \Magento\Catalog\Model\Indexer\Category\Product\TableMaintainer $tableMaintainer;
 
     protected \Smile\ElasticsuiteVirtualCategory\Model\Category\Attribute\VirtualRule\ReadHandler $readHandler;
 
-    /**
-     * @var \Magento\Framework\App\CacheInterface
-     */
-    protected $cache;
+    protected \Magento\Framework\App\CacheInterface $cache;
 
-    /**
-     * @var \Magento\Framework\DB\Adapter\AdapterInterface
-     */
-    protected $connection;
+    protected \Magento\Framework\DB\Adapter\AdapterInterface $connection;
 
-    /**
-     * @var \Magento\Store\Model\StoreManagerInterface
-     */
-    protected $storeManager;
+    protected \Magento\Store\Model\StoreManagerInterface $storeManager;
 
-    protected $productsCount = null;
+    protected \Magento\Framework\Serialize\Serializer\Serialize $serializer;
+
+    protected array $productsCount = [];
 
     public function __construct(
         \Magento\Catalog\Model\ResourceModel\Category\CollectionFactory $categoryCollectionFactory,
         \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $productCollectionFactory,
+        \Magento\Catalog\Model\Indexer\Category\Product\TableMaintainer $tableMaintainer,
         \Smile\ElasticsuiteVirtualCategory\Model\Category\Attribute\VirtualRule\ReadHandler $readHandler,
         \Magento\Framework\App\CacheInterface $cache,
         \Magento\Framework\App\ResourceConnection $resourceConnection,
+        \Magento\Framework\Serialize\Serializer\Serialize $serializer,
         \Magento\Store\Model\StoreManagerInterface $storeManager
-    )
-    {
+    ) {
         $this->categoryCollectionFactory = $categoryCollectionFactory;
         $this->productCollectionFactory = $productCollectionFactory;
+        $this->tableMaintainer = $tableMaintainer;
         $this->readHandler = $readHandler;
         $this->cache = $cache;
         $this->connection = $resourceConnection->getConnection();
+        $this->serializer = $serializer;
         $this->storeManager = $storeManager;
     }
 
-    /**
-     * @param $category \Magento\Catalog\Model\Category
-     * @return int
-     */
-    public function getNumberOfProducts(\Magento\Catalog\Model\Category $category): int
+    public function getNumberOfProducts(\Magento\Catalog\Model\Category $category, bool $includeNumberOfProductForVirtualCategory = true): int
     {
-        if ($category->getIsVirtualCategory() && $category->getVirtualRule()) {
+        if ($includeNumberOfProductForVirtualCategory && $category->getIsVirtualCategory() && $category->getVirtualRule()) {
             return $this->getProductsCountForVirtualCategory($category);
         }
 
         $result = $this->getProductsCountFromIndex();
 
-        return isset($result[$category->getId()]) ? $result[$category->getId()] : 0;
+        return $result[$category->getId()] ?? 0;
     }
 
-    protected function getProductsCountFromIndex() {
-        if (!is_array($this->productsCount)) {
-            $result = unserialize($this->cache->load(self::CACHE_TAG));
-
-            if(!$result) {
-                $categoryIndexTable = $this->getCategoryIndexTable();
-
-                $result = $this->connection
-                    ->fetchPairs('SELECT category_id, COUNT(distinct product_id) AS products_count FROM ' . $categoryIndexTable . ' GROUP BY category_id');
-
-                $this->cache->save(serialize($result), self::CACHE_TAG, ['products_in_categories_count'], self::CACHE_LIFETIME);
-            }
-
-            $this->productsCount = $result;
+    protected function getProductsCountFromIndex()
+    {
+        if (!empty($this->productsCount)) {
+            return $this->productsCount;
         }
+
+        $cacheKey = $this->getCacheKey();
+
+        try {
+            $result = $this->serializer->unserialize($this->cache->load($cacheKey));
+        } catch (\InvalidArgumentException $exception) {
+            $result = null;
+        }
+
+        if (!$result) {
+            $categoryIndexTable = $this->tableMaintainer->getMainTable($this->storeManager->getStore()->getId());
+
+            $result = $this->connection->fetchPairs('SELECT category_id, COUNT(distinct product_id) AS products_count FROM ' . $categoryIndexTable . ' GROUP BY category_id');
+
+            $this->cache->save(
+                $this->serializer->serialize($result),
+                $cacheKey,
+                ['products_in_categories_count'],
+                self::CACHE_LIFETIME
+            );
+        }
+
+        $this->productsCount = $result;
 
         return $this->productsCount;
     }
@@ -93,26 +95,13 @@ class Category
         $this->readHandler->execute($category);
         $queryFilter = $category->getVirtualRule()->getCategorySearchQuery($category);
         $collection->addQueryFilter($queryFilter);
+        $category->unsetData(\Smile\ElasticsuiteVirtualCategory\Model\Category\Attribute\VirtualRule\ReadHandler::ATTRIBUTE_CODE);
 
         return $collection->getSize();
     }
 
-    /**
-     * This is done for compatibility with Magento >= 2.2.5
-     * For Magento >= 2.2.5 category product index table must be retrieved from TableMaintainer object
-     */
-    protected function getCategoryIndexTable() {
-        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-
-        $indexTableName = 'catalog_category_product_index';
-
-        try {
-            if ($tableMaintainer = $objectManager->get('Magento\Catalog\Model\Indexer\Category\Product\TableMaintainer')) {
-                $indexTableName = $tableMaintainer->getMainTable($this->storeManager->getStore()->getId());
-            }
-        }
-        catch(\Exception $e) {}
-
-        return $indexTableName;
+    public function getCacheKey(): string
+    {
+        return sprintf(self::CACHE_KEY, $this->storeManager->getStore()->getId());
     }
 }
