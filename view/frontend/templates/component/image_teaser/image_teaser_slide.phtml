@@ -2,7 +2,7 @@
 $slide = $block->getSlide();
 $slideIndex = $block->getSlideIndex();
 $imageTeaserData = $block->getImageTeaser();
-
+$viewModel = $block->getViewModel();
 $isSlider = $block->getIsSlider();
 $isSliderMobile = $block->getIsSliderMobile();
 $contentPlacement = $block->getContentPlacement();
@@ -110,6 +110,7 @@ $eagerLoadFirstImage = $block->getEagerLoadFirstImage();
         <?= $this->getLayout()
             ->createBlock(\Magento\Framework\View\Element\Template::class)
             ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/image.phtml')
+            ->setViewModel($viewModel)
             ->setImageTeaserData($imageTeaserData)
             ->setSlide($slide)
             ->setIsSlider($isSlider)

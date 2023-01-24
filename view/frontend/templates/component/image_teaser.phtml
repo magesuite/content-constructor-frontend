@@ -1,5 +1,6 @@
 <?php
 /** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser */
+/** @var \MageSuite\ContentConstructorFrontend\Model\Component\ImageTeaser $viewModel */
 $viewModel = $block->getViewModel();
 $visibility = $block->getVisibilityClass();
 $maxContentWidth = $block->getVar('max_content_width');
@@ -182,6 +183,7 @@ $openLinkInNewTab = $block->getOpenLinkInNewTab() ? true : false;
                             <?= $this->getLayout()
                                 ->createBlock(\Magento\Framework\View\Element\Template::class)
                                 ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/image_teaser_slide.phtml')
+                                ->setViewModel($viewModel)
                                 ->setSlide($slide)
                                 ->setImageTeaser($imageTeaser)
                                 ->setIsSlider($isSlider)

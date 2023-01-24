@@ -34,4 +34,12 @@ class ImageTeaser extends \Magento\Framework\DataObject implements ViewModel
 
         return $this->slides;
     }
+
+    public function replaceHtmlTagsWithWhiteSpaces(string $string): string
+    {
+        $string = preg_replace('#<[^>]+>#', ' ', $string);
+        $string = preg_replace('/\s+/', ' ', $string);
+
+        return trim($string);
+    }
 }
