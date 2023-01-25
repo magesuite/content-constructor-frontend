@@ -30,7 +30,7 @@ class ComponentsListShortUrlRouter implements \Magento\Framework\App\RouterInter
     ): ?\Magento\Framework\App\ActionInterface {
         $identifier = trim($request->getPathInfo(), '/');
 
-        if ($identifier !== $this->frontName) {
+        if ($identifier !== $this->customUrl) {
             return null;
         }
 
