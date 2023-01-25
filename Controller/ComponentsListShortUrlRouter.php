@@ -13,7 +13,7 @@ class ComponentsListShortUrlRouter implements \Magento\Framework\App\RouterInter
     public function __construct(
         \Magento\Framework\App\ActionFactory $actionFactory,
         \MageSuite\ContentConstructorFrontend\Helper\Configuration $configuration,
-        string $frontName,
+        string $customUrl,
         \Magento\Framework\App\Response\RedirectInterface $redirect,
         \Magento\Framework\App\ResponseInterface $response,
         \Magento\Framework\UrlInterface $url,
