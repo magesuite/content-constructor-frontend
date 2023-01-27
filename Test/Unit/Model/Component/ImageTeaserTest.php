@@ -30,7 +30,13 @@ class ImageTeaserTest extends \PHPUnit\Framework\TestCase
             ['Test<br>this is <b><span>a description</span></b>', 'Test this is a description'],
             ['Remove  double <br> whitespaces', 'Remove double whitespaces'],
             ['this is<h1>a</h1>test', 'this is a test'],
-            ['test<p>test</p>', 'test test']
+            ['test<p>test</p>', 'test test'],
+            ['This&nbsp;is&nbsp;      a  sample <p>text</p>', 'This is a sample text'],
+            ['This&#x3C;test&#x3E;is a test', 'This is a test'],
+            ['"Magento is great" they said', '\"Magento is great\" they said'],
+            ["'That is right' I replied", "\'That is right\' I replied"],
+            ['Oh look, <a href="#">we have a link</a>', 'Oh look, we have a link'],
+            ["Oh look, <a href='#'>we have a link</a>", 'Oh look, we have a link']
         ];
     }
 }
