@@ -2,28 +2,18 @@
 
 namespace MageSuite\ContentConstructorFrontend\Helper;
 
-
 class CategoryGridTeasers extends \Magento\Framework\App\Helper\AbstractHelper
 {
     const GRID_COMPONENT_TYPE = 'magento-product-grid-teasers';
     const GRID_COMPONENT_SECTION = 'grid';
 
-    /**
-     * @var \Magento\Framework\Registry
-     */
-    private $registry;
-    /**
-     * @var \MageSuite\ContentConstructorAdmin\Repository\Xml\XmlToComponentConfigurationMapper
-     */
-    private $xmlToComponentConfigurationMapper;
-    /**
-     * @var \MageSuite\ContentConstructorFrontend\Service\MediaResolver
-     */
-    private $mediaResolver;
-    /**
-     * @var \MageSuite\ContentConstructorFrontend\Service\UrlResolver
-     */
-    private $urlResolver;
+    protected \Magento\Framework\Registry $registry;
+
+    protected \MageSuite\ContentConstructorAdmin\Repository\Xml\XmlToComponentConfigurationMapper $xmlToComponentConfigurationMapper;
+
+    protected \MageSuite\ContentConstructorFrontend\Service\MediaResolver $mediaResolver;
+
+    protected \MageSuite\ContentConstructorFrontend\Service\UrlResolver $urlResolver;
 
     public function __construct(
         \Magento\Framework\App\Helper\Context $context,
@@ -31,8 +21,7 @@ class CategoryGridTeasers extends \Magento\Framework\App\Helper\AbstractHelper
         \MageSuite\ContentConstructorAdmin\Repository\Xml\XmlToComponentConfigurationMapper $xmlToComponentConfigurationMapper,
         \MageSuite\ContentConstructorFrontend\Service\MediaResolver $mediaResolver,
         \MageSuite\ContentConstructorFrontend\Service\UrlResolver $urlResolver
-    )
-    {
+    ) {
         parent::__construct($context);
 
         $this->registry = $registry;
@@ -41,32 +30,32 @@ class CategoryGridTeasers extends \Magento\Framework\App\Helper\AbstractHelper
         $this->urlResolver = $urlResolver;
     }
 
-    public function getConfig() {
-        $contentConstructorContent = $this->getContentConstructorContent();
-
-        if(empty($contentConstructorContent)) {
-            return null;
-        }
-
-        $components = json_decode($contentConstructorContent, true);
+    public function getConfig()
+    {
+        $components = $this->getContentConstructorComponents();
         $gridComponent = $this->getGridComponent($components);
 
-        if($gridComponent == null) {
+        if ($gridComponent == null) {
             return null;
         }
 
-        $data = isset($gridComponent['data']) ? $gridComponent['data'] : null;
+        $data = $gridComponent['data'] ?? null;
 
-        if($data == null) {
+        if ($data == null) {
             return null;
         }
 
         return $this->resolveExternalResources($data);
     }
 
-    protected function getGridComponent($components) {
-        foreach($components as $component) {
-            if($component['section'] == self::GRID_COMPONENT_SECTION and $component['type'] == self::GRID_COMPONENT_TYPE) {
+    protected function getGridComponent($components)
+    {
+        if (empty($components)) {
+            return null;
+        }
+
+        foreach ($components as $component) {
+            if ($component['section'] == self::GRID_COMPONENT_SECTION && $component['type'] == self::GRID_COMPONENT_TYPE) {
                 return $component;
             }
         }
@@ -76,19 +65,19 @@ class CategoryGridTeasers extends \Magento\Framework\App\Helper\AbstractHelper
 
     protected function resolveExternalResources($configuration)
     {
-        if(!isset($configuration['teasers'])) {
+        if (!isset($configuration['teasers'])) {
             return $configuration;
         }
 
-        foreach($configuration['teasers'] as &$teaser) {
-            if(!empty($teaser['decodedImage'])) {
+        foreach ($configuration['teasers'] as &$teaser) {
+            if (!empty($teaser['decodedImage'])) {
                 $teaser['image'] = [
                     'src' => $this->mediaResolver->resolve($teaser['decodedImage']),
                     'srcSet' => $this->mediaResolver->resolveSrcSet($teaser['decodedImage'])
                 ];
             }
 
-            if(!empty($teaser['href'])) {
+            if (!empty($teaser['href'])) {
                 $teaser['href'] = $this->urlResolver->resolve($teaser['href']);
             }
         }
@@ -96,19 +85,22 @@ class CategoryGridTeasers extends \Magento\Framework\App\Helper\AbstractHelper
         return $configuration;
     }
 
-    protected function getContentConstructorContent() {
+    protected function getContentConstructorComponents()
+    {
         /** @var \Magento\Catalog\Model\Category $currentCategory */
         $currentCategory = $this->registry->registry('current_category');
 
-        if($currentCategory != null) {
-            return $currentCategory->getContentConstructorContent();
+        if ($currentCategory != null) {
+            $contentConstructorContent = $currentCategory->getContentConstructorContent();
+            return $contentConstructorContent ? json_decode($contentConstructorContent, true) : null;
         }
 
         /** @var \MageSuite\BrandManagement\Model\Brands $currentBrand */
         $currentBrand = $this->registry->registry('current_brand');
 
-        if($currentBrand != null) {
-            return $currentBrand->getLayoutUpdateXml();
+        if ($currentBrand != null) {
+            $layoutUpdateXml = $currentBrand->getLayoutUpdateXml();
+            return $layoutUpdateXml ? $this->xmlToComponentConfigurationMapper->map($layoutUpdateXml) : null;
         }
 
         return null;
