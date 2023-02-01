@@ -65,6 +65,12 @@ class ComponentsList extends \Magento\Framework\View\Element\Template
         'video-vimeo' => 'VideoVimeo',
         'video-fb' => 'VideoFB',
         'video-mp4' => 'VideoMP4',
+        'hero-carousel-with-advanced-options' => 'HeroCarouselWithAdvancedOptions',
+        'icon-with-advanced-options' => 'IconWithAdvancedOptions',
+        'image-teaser-with-advanced-options' => 'ImageTeaserWithAdvancedOptions',
+        'mosaic-with-advanced-options' => 'MosaicWithAdvancedOptions',
+        'product-grid-with-advanced-options' => 'ProductGridWithAdvancedOptions',
+        'teaser-and-text-with-advanced-options' => 'TeaserAndTextWithAdvancedOptions',
     ];
 
     public function __construct(
