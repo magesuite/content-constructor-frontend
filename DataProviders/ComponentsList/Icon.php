@@ -7,13 +7,13 @@ class Icon extends DataProviderComponents
     public function getBlocks()
     {
         $blocks = [
-            0 => [
+            [
                 'id' => 'componentcf3f',
                 'section' => 'content',
                 'type' => 'headline',
                 'data' => [
                     'title' => 'Icon component - Content width / slider / text below image',
-                    'subtitle' => 'Content width / slider / text below image',
+                    'subtitle' => '',
                     'headingTag' => 'h2',
                     'componentVisibility' => [
                         'mobile' => '1',
@@ -21,7 +21,7 @@ class Icon extends DataProviderComponents
                     ],
                 ],
             ],
-            1 => [
+            [
                 'id' => 'componentc164',
                 'section' => 'content',
                 'type' => 'headline',
@@ -35,14 +35,14 @@ class Icon extends DataProviderComponents
                     ],
                 ],
             ],
-            2 => [
+            [
                 'id' => 'component5869',
                 'section' => 'content',
                 'type' => 'icon',
                 'data' => [
                     'customCssClass' => '',
                     'items' => [
-                        0 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('3.png'),
                                 'aspect_ratio' => '13:6',
@@ -114,7 +114,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        1 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('4.png'),
                                 'aspect_ratio' => '13:6',
@@ -186,7 +186,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        2 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('5.png'),
                                 'aspect_ratio' => '13:6',
@@ -258,7 +258,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        3 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('6.png'),
                                 'aspect_ratio' => '13:6',
@@ -330,7 +330,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        4 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('2.png'),
                                 'aspect_ratio' => '13:6',
@@ -438,7 +438,7 @@ class Icon extends DataProviderComponents
                     ],
                 ],
             ],
-            3 => [
+            [
                 'id' => 'component8371',
                 'section' => 'content',
                 'type' => 'headline',
@@ -452,14 +452,14 @@ class Icon extends DataProviderComponents
                     ],
                 ],
             ],
-            4 => [
+            [
                 'id' => 'componentff91',
                 'section' => 'content',
                 'type' => 'icon',
                 'data' => [
                     'customCssClass' => '',
                     'items' => [
-                        0 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('3.png'),
                                 'aspect_ratio' => '13:6',
@@ -531,7 +531,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        1 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('4.png'),
                                 'aspect_ratio' => '13:6',
@@ -603,14 +603,14 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        2 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('5.png'),
                                 'aspect_ratio' => '13:6',
                                 'image' => $this->getImage('5.png'),
                             ],
                             'slogan' => '',
-                            'description' => '',
+                            'description' => 'Description',
                             'cta' => [
                                 'label' => 'Dark',
                                 'href' => '#',
@@ -675,7 +675,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        3 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('6.png'),
                                 'aspect_ratio' => '13:6',
@@ -747,7 +747,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        4 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('2.png'),
                                 'aspect_ratio' => '13:6',
@@ -819,7 +819,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        5 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('1.png'),
                                 'aspect_ratio' => '13:6',
@@ -927,7 +927,7 @@ class Icon extends DataProviderComponents
                     ],
                 ],
             ],
-            5 => [
+            [
                 'id' => 'component8342',
                 'section' => 'content',
                 'type' => 'headline',
@@ -941,14 +941,14 @@ class Icon extends DataProviderComponents
                     ],
                 ],
             ],
-            6 => [
+            [
                 'id' => 'componentf761',
                 'section' => 'content',
                 'type' => 'icon',
                 'data' => [
                     'customCssClass' => '',
                     'items' => [
-                        0 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('3.png'),
                                 'aspect_ratio' => '13:6',
@@ -1020,7 +1020,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        1 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('4.png'),
                                 'aspect_ratio' => '13:6',
@@ -1092,7 +1092,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        2 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('6.png'),
                                 'aspect_ratio' => '13:6',
@@ -1164,7 +1164,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        3 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('2.png'),
                                 'aspect_ratio' => '13:6',
@@ -1236,7 +1236,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        4 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('1.png'),
                                 'aspect_ratio' => '13:6',
@@ -1308,7 +1308,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        5 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('3.png'),
                                 'aspect_ratio' => '13:6',
@@ -1380,7 +1380,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        6 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('4.png'),
                                 'aspect_ratio' => '13:6',
@@ -1488,7 +1488,7 @@ class Icon extends DataProviderComponents
                     ],
                 ],
             ],
-            7 => [
+            [
                 'id' => 'componentaf5d',
                 'section' => 'content',
                 'type' => 'headline',
@@ -1502,14 +1502,14 @@ class Icon extends DataProviderComponents
                     ],
                 ],
             ],
-            8 => [
+            [
                 'id' => 'componentb20a',
                 'section' => 'content',
                 'type' => 'icon',
                 'data' => [
                     'customCssClass' => '',
                     'items' => [
-                        0 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('3.png'),
                                 'aspect_ratio' => '13:6',
@@ -1581,7 +1581,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        1 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('4.png'),
                                 'aspect_ratio' => '13:6',
@@ -1653,7 +1653,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        2 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('5.png'),
                                 'aspect_ratio' => '13:6',
@@ -1725,7 +1725,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        3 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('6.png'),
                                 'aspect_ratio' => '13:6',
@@ -1797,7 +1797,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        4 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('2.png'),
                                 'aspect_ratio' => '13:6',
@@ -1869,7 +1869,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        5 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('1.png'),
                                 'aspect_ratio' => '13:6',
@@ -1941,7 +1941,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        6 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('3.png'),
                                 'aspect_ratio' => '13:6',
@@ -2013,7 +2013,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        7 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('5.png'),
                                 'aspect_ratio' => '13:6',
@@ -2121,7 +2121,7 @@ class Icon extends DataProviderComponents
                     ],
                 ],
             ],
-            9 => [
+            [
                 'id' => 'componentcf3f',
                 'section' => 'content',
                 'type' => 'headline',
@@ -2135,12 +2135,12 @@ class Icon extends DataProviderComponents
                     ],
                 ],
             ],
-            10 => [
+            [
                 'id' => 'componentc16lkm4',
                 'section' => 'content',
                 'type' => 'headline',
                 'data' => [
-                    'title' => '5 images + 5 in row + text style: light',
+                    'title' => '5 images + 5 in row +  text style: dark',
                     'subtitle' => '',
                     'headingTag' => 'h3',
                     'componentVisibility' => [
@@ -2149,14 +2149,14 @@ class Icon extends DataProviderComponents
                     ],
                 ],
             ],
-            11 => [
+            [
                 'id' => 'component58kjn69',
                 'section' => 'content',
                 'type' => 'icon',
                 'data' => [
                     'customCssClass' => '',
                     'items' => [
-                        0 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('3.png'),
                                 'aspect_ratio' => '13:6',
@@ -2228,7 +2228,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        1 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('4.png'),
                                 'aspect_ratio' => '13:6',
@@ -2300,7 +2300,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        2 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('5.png'),
                                 'aspect_ratio' => '13:6',
@@ -2372,7 +2372,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        3 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('6.png'),
                                 'aspect_ratio' => '13:6',
@@ -2444,7 +2444,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        4 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('2.png'),
                                 'aspect_ratio' => '13:6',
@@ -2552,12 +2552,12 @@ class Icon extends DataProviderComponents
                     ],
                 ],
             ],
-            12 => [
+            [
                 'id' => 'componentc1mnb64',
                 'section' => 'content',
                 'type' => 'headline',
                 'data' => [
-                    'title' => '10 images + 5 in row + text style: dark',
+                    'title' => '10 images + 5 in row + text style: light',
                     'subtitle' => '',
                     'headingTag' => 'h3',
                     'componentVisibility' => [
@@ -2566,14 +2566,14 @@ class Icon extends DataProviderComponents
                     ],
                 ],
             ],
-            13 => [
+            [
                 'id' => 'component5ij869',
                 'section' => 'content',
                 'type' => 'icon',
                 'data' => [
                     'customCssClass' => '',
                     'items' => [
-                        0 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('3.png'),
                                 'aspect_ratio' => '13:6',
@@ -2645,7 +2645,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        1 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('4.png'),
                                 'aspect_ratio' => '13:6',
@@ -2717,7 +2717,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        2 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('5.png'),
                                 'aspect_ratio' => '13:6',
@@ -2789,7 +2789,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        3 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('6.png'),
                                 'aspect_ratio' => '13:6',
@@ -2861,7 +2861,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        4 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('2.png'),
                                 'aspect_ratio' => '13:6',
@@ -2933,7 +2933,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        5 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('3.png'),
                                 'aspect_ratio' => '13:6',
@@ -3005,7 +3005,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        6 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('4.png'),
                                 'aspect_ratio' => '13:6',
@@ -3077,7 +3077,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        7 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('5.png'),
                                 'aspect_ratio' => '13:6',
@@ -3149,7 +3149,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        8 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('6.png'),
                                 'aspect_ratio' => '13:6',
@@ -3221,7 +3221,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        9 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('2.png'),
                                 'aspect_ratio' => '13:6',
@@ -3329,7 +3329,7 @@ class Icon extends DataProviderComponents
                     ],
                 ],
             ],
-            14 => [
+            [
                 'id' => 'component8kjn371',
                 'section' => 'content',
                 'type' => 'headline',
@@ -3343,14 +3343,14 @@ class Icon extends DataProviderComponents
                     ],
                 ],
             ],
-            15 => [
+            [
                 'id' => 'componentfkjnf91',
                 'section' => 'content',
                 'type' => 'icon',
                 'data' => [
                     'customCssClass' => '',
                     'items' => [
-                        0 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('3.png'),
                                 'aspect_ratio' => '13:6',
@@ -3367,7 +3367,7 @@ class Icon extends DataProviderComponents
                                 'y' => '1',
                             ],
                             'optimizers' => [
-                                'color_scheme' => 'dark',
+                                'color_scheme' => 'light',
                                 'mirror_image' => '',
                                 'scenarios' => [
                                     'none' => [
@@ -3422,7 +3422,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        1 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('4.png'),
                                 'aspect_ratio' => '13:6',
@@ -3439,7 +3439,7 @@ class Icon extends DataProviderComponents
                                 'y' => '1',
                             ],
                             'optimizers' => [
-                                'color_scheme' => 'dark',
+                                'color_scheme' => 'light',
                                 'mirror_image' => '',
                                 'scenarios' => [
                                     'none' => [
@@ -3494,7 +3494,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        2 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('5.png'),
                                 'aspect_ratio' => '13:6',
@@ -3511,79 +3511,7 @@ class Icon extends DataProviderComponents
                                 'y' => '1',
                             ],
                             'optimizers' => [
-                                'color_scheme' => 'dark',
-                                'mirror_image' => '',
-                                'scenarios' => [
-                                    'none' => [
-                                        'enabled' => '1',
-                                        'intensity' => 'disabled',
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_none',
-                                            'label' => 'None',
-                                        ],
-                                    ],
-                                    'overlay' => [
-                                        'enabled' => '',
-                                        'intensity' => '50',
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_overlay',
-                                            'label' => 'Overlay',
-                                        ],
-                                    ],
-                                    'gradient' => [
-                                        'enabled' => '',
-                                        'intensity' => '50',
-                                        'direction' => [
-                                            'x' => '1',
-                                            'y' => '1',
-                                        ],
-                                        'configurator' => [
-                                            'icon' => '#contrast_gradient',
-                                            'label' => 'Gradient shadow',
-                                        ],
-                                    ],
-                                    'container' => [
-                                        'enabled' => '',
-                                        'intensity' => '50',
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_container',
-                                            'label' => 'Container',
-                                        ],
-                                    ],
-                                    'text_shadow' => [
-                                        'enabled' => '',
-                                        'intensity' => '50',
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_text-shadow',
-                                            'label' => 'Text shadow',
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'cc_css_classes' => '',
-                        ],
-                        3 => [
-                            'image' => [
-                                'decoded' => $this->getDecodedImage('6.png'),
-                                'aspect_ratio' => '13:6',
-                                'image' => $this->getImage('6.png'),
-                            ],
-                            'slogan' => 'Slogan',
-                            'description' => 'Description',
-                            'cta' => [
-                                'label' => 'Light',
-                                'href' => '#',
-                            ],
-                            'content_align' => [
-                                'x' => '1',
-                                'y' => '1',
-                            ],
-                            'optimizers' => [
-                                'color_scheme' => 'dark',
+                                'color_scheme' => 'light',
                                 'mirror_image' => true,
                                 'scenarios' => [
                                     'none' => [
@@ -3638,13 +3566,13 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        4 => [
+                        [
                             'image' => [
-                                'decoded' => $this->getDecodedImage('2.png'),
+                                'decoded' => $this->getDecodedImage('6.png'),
                                 'aspect_ratio' => '13:6',
-                                'image' => $this->getImage('2.png'),
+                                'image' => $this->getImage('6.png'),
                             ],
-                            'slogan' => '',
+                            'slogan' => 'Slogan',
                             'description' => 'Description',
                             'cta' => [
                                 'label' => 'Light',
@@ -3655,7 +3583,7 @@ class Icon extends DataProviderComponents
                                 'y' => '1',
                             ],
                             'optimizers' => [
-                                'color_scheme' => 'dark',
+                                'color_scheme' => 'light',
                                 'mirror_image' => '',
                                 'scenarios' => [
                                     'none' => [
@@ -3710,7 +3638,79 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        5 => [
+                        [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('2.png'),
+                                'aspect_ratio' => '13:6',
+                                'image' => $this->getImage('2.png'),
+                            ],
+                            'slogan' => '',
+                            'description' => 'Description',
+                            'cta' => [
+                                'label' => 'Light',
+                                'href' => '#',
+                            ],
+                            'content_align' => [
+                                'x' => '1',
+                                'y' => '1',
+                            ],
+                            'optimizers' => [
+                                'color_scheme' => 'light',
+                                'mirror_image' => '',
+                                'scenarios' => [
+                                    'none' => [
+                                        'enabled' => '1',
+                                        'intensity' => 'disabled',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_none',
+                                            'label' => 'None',
+                                        ],
+                                    ],
+                                    'overlay' => [
+                                        'enabled' => '',
+                                        'intensity' => '50',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                    ],
+                                    'gradient' => [
+                                        'enabled' => '',
+                                        'intensity' => '50',
+                                        'direction' => [
+                                            'x' => '1',
+                                            'y' => '1',
+                                        ],
+                                        'configurator' => [
+                                            'icon' => '#contrast_gradient',
+                                            'label' => 'Gradient shadow',
+                                        ],
+                                    ],
+                                    'container' => [
+                                        'enabled' => '',
+                                        'intensity' => '50',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                    ],
+                                    'text_shadow' => [
+                                        'enabled' => '',
+                                        'intensity' => '50',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_text-shadow',
+                                            'label' => 'Text shadow',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'cc_css_classes' => '',
+                        ],
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('1.png'),
                                 'aspect_ratio' => '13:6',
@@ -3727,7 +3727,439 @@ class Icon extends DataProviderComponents
                                 'y' => '1',
                             ],
                             'optimizers' => [
-                                'color_scheme' => 'dark',
+                                'color_scheme' => 'light',
+                                'mirror_image' => '',
+                                'scenarios' => [
+                                    'none' => [
+                                        'enabled' => '1',
+                                        'intensity' => 'disabled',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_none',
+                                            'label' => 'None',
+                                        ],
+                                    ],
+                                    'overlay' => [
+                                        'enabled' => '',
+                                        'intensity' => '50',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                    ],
+                                    'gradient' => [
+                                        'enabled' => '',
+                                        'intensity' => '50',
+                                        'direction' => [
+                                            'x' => '1',
+                                            'y' => '1',
+                                        ],
+                                        'configurator' => [
+                                            'icon' => '#contrast_gradient',
+                                            'label' => 'Gradient shadow',
+                                        ],
+                                    ],
+                                    'container' => [
+                                        'enabled' => '',
+                                        'intensity' => '50',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                    ],
+                                    'text_shadow' => [
+                                        'enabled' => '',
+                                        'intensity' => '50',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_text-shadow',
+                                            'label' => 'Text shadow',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'cc_css_classes' => '',
+                        ],
+                        [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('3.png'),
+                                'aspect_ratio' => '13:6',
+                                'image' => $this->getImage('3.png'),
+                            ],
+                            'slogan' => 'Slogan',
+                            'description' => 'Description',
+                            'cta' => [
+                                'label' => 'Dark',
+                                'href' => '#',
+                            ],
+                            'content_align' => [
+                                'x' => '1',
+                                'y' => '1',
+                            ],
+                            'optimizers' => [
+                                'color_scheme' => 'light',
+                                'mirror_image' => '',
+                                'scenarios' => [
+                                    'none' => [
+                                        'enabled' => '1',
+                                        'intensity' => 'disabled',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_none',
+                                            'label' => 'None',
+                                        ],
+                                    ],
+                                    'overlay' => [
+                                        'enabled' => '',
+                                        'intensity' => '50',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                    ],
+                                    'gradient' => [
+                                        'enabled' => '',
+                                        'intensity' => '50',
+                                        'direction' => [
+                                            'x' => '1',
+                                            'y' => '1',
+                                        ],
+                                        'configurator' => [
+                                            'icon' => '#contrast_gradient',
+                                            'label' => 'Gradient shadow',
+                                        ],
+                                    ],
+                                    'container' => [
+                                        'enabled' => '',
+                                        'intensity' => '50',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                    ],
+                                    'text_shadow' => [
+                                        'enabled' => '',
+                                        'intensity' => '50',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_text-shadow',
+                                            'label' => 'Text shadow',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'cc_css_classes' => '',
+                        ],
+                        [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('4.png'),
+                                'aspect_ratio' => '13:6',
+                                'image' => $this->getImage('4.png'),
+                            ],
+                            'slogan' => 'Slogan',
+                            'description' => '',
+                            'cta' => [
+                                'label' => 'Dark',
+                                'href' => '#',
+                            ],
+                            'content_align' => [
+                                'x' => '1',
+                                'y' => '1',
+                            ],
+                            'optimizers' => [
+                                'color_scheme' => 'light',
+                                'mirror_image' => true,
+                                'scenarios' => [
+                                    'none' => [
+                                        'enabled' => '1',
+                                        'intensity' => 'disabled',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_none',
+                                            'label' => 'None',
+                                        ],
+                                    ],
+                                    'overlay' => [
+                                        'enabled' => '',
+                                        'intensity' => '50',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                    ],
+                                    'gradient' => [
+                                        'enabled' => '',
+                                        'intensity' => '50',
+                                        'direction' => [
+                                            'x' => '1',
+                                            'y' => '1',
+                                        ],
+                                        'configurator' => [
+                                            'icon' => '#contrast_gradient',
+                                            'label' => 'Gradient shadow',
+                                        ],
+                                    ],
+                                    'container' => [
+                                        'enabled' => '',
+                                        'intensity' => '50',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                    ],
+                                    'text_shadow' => [
+                                        'enabled' => '',
+                                        'intensity' => '50',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_text-shadow',
+                                            'label' => 'Text shadow',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'cc_css_classes' => '',
+                        ],
+                        [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('5.png'),
+                                'aspect_ratio' => '13:6',
+                                'image' => $this->getImage('5.png'),
+                            ],
+                            'slogan' => '',
+                            'description' => '',
+                            'cta' => [
+                                'label' => 'Dark',
+                                'href' => '#',
+                            ],
+                            'content_align' => [
+                                'x' => '1',
+                                'y' => '1',
+                            ],
+                            'optimizers' => [
+                                'color_scheme' => 'light',
+                                'mirror_image' => '',
+                                'scenarios' => [
+                                    'none' => [
+                                        'enabled' => '1',
+                                        'intensity' => 'disabled',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_none',
+                                            'label' => 'None',
+                                        ],
+                                    ],
+                                    'overlay' => [
+                                        'enabled' => '',
+                                        'intensity' => '50',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                    ],
+                                    'gradient' => [
+                                        'enabled' => '',
+                                        'intensity' => '50',
+                                        'direction' => [
+                                            'x' => '1',
+                                            'y' => '1',
+                                        ],
+                                        'configurator' => [
+                                            'icon' => '#contrast_gradient',
+                                            'label' => 'Gradient shadow',
+                                        ],
+                                    ],
+                                    'container' => [
+                                        'enabled' => '',
+                                        'intensity' => '50',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                    ],
+                                    'text_shadow' => [
+                                        'enabled' => '',
+                                        'intensity' => '50',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_text-shadow',
+                                            'label' => 'Text shadow',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'cc_css_classes' => '',
+                        ],
+                        [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('6.png'),
+                                'aspect_ratio' => '13:6',
+                                'image' => $this->getImage('6.png'),
+                            ],
+                            'slogan' => 'Slogan',
+                            'description' => 'Description',
+                            'cta' => [
+                                'label' => 'Light',
+                                'href' => '#',
+                            ],
+                            'content_align' => [
+                                'x' => '1',
+                                'y' => '1',
+                            ],
+                            'optimizers' => [
+                                'color_scheme' => 'light',
+                                'mirror_image' => '',
+                                'scenarios' => [
+                                    'none' => [
+                                        'enabled' => '1',
+                                        'intensity' => 'disabled',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_none',
+                                            'label' => 'None',
+                                        ],
+                                    ],
+                                    'overlay' => [
+                                        'enabled' => '',
+                                        'intensity' => '50',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                    ],
+                                    'gradient' => [
+                                        'enabled' => '',
+                                        'intensity' => '50',
+                                        'direction' => [
+                                            'x' => '1',
+                                            'y' => '1',
+                                        ],
+                                        'configurator' => [
+                                            'icon' => '#contrast_gradient',
+                                            'label' => 'Gradient shadow',
+                                        ],
+                                    ],
+                                    'container' => [
+                                        'enabled' => '',
+                                        'intensity' => '50',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                    ],
+                                    'text_shadow' => [
+                                        'enabled' => '',
+                                        'intensity' => '50',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_text-shadow',
+                                            'label' => 'Text shadow',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'cc_css_classes' => '',
+                        ],
+                        [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('2.png'),
+                                'aspect_ratio' => '13:6',
+                                'image' => $this->getImage('2.png'),
+                            ],
+                            'slogan' => '',
+                            'description' => 'Description',
+                            'cta' => [
+                                'label' => 'Light',
+                                'href' => '#',
+                            ],
+                            'content_align' => [
+                                'x' => '1',
+                                'y' => '1',
+                            ],
+                            'optimizers' => [
+                                'color_scheme' => 'light',
+                                'mirror_image' => '',
+                                'scenarios' => [
+                                    'none' => [
+                                        'enabled' => '1',
+                                        'intensity' => 'disabled',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_none',
+                                            'label' => 'None',
+                                        ],
+                                    ],
+                                    'overlay' => [
+                                        'enabled' => '',
+                                        'intensity' => '50',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                    ],
+                                    'gradient' => [
+                                        'enabled' => '',
+                                        'intensity' => '50',
+                                        'direction' => [
+                                            'x' => '1',
+                                            'y' => '1',
+                                        ],
+                                        'configurator' => [
+                                            'icon' => '#contrast_gradient',
+                                            'label' => 'Gradient shadow',
+                                        ],
+                                    ],
+                                    'container' => [
+                                        'enabled' => '',
+                                        'intensity' => '50',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                    ],
+                                    'text_shadow' => [
+                                        'enabled' => '',
+                                        'intensity' => '50',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_text-shadow',
+                                            'label' => 'Text shadow',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'cc_css_classes' => '',
+                        ],
+                        [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('1.png'),
+                                'aspect_ratio' => '13:6',
+                                'image' => $this->getImage('1.png'),
+                            ],
+                            'slogan' => '',
+                            'description' => '',
+                            'cta' => [
+                                'label' => 'Light',
+                                'href' => '#',
+                            ],
+                            'content_align' => [
+                                'x' => '1',
+                                'y' => '1',
+                            ],
+                            'optimizers' => [
+                                'color_scheme' => 'light',
                                 'mirror_image' => '',
                                 'scenarios' => [
                                     'none' => [
@@ -3818,7 +4250,7 @@ class Icon extends DataProviderComponents
                     ],
                 ],
             ],
-            16 => [
+            [
                 'id' => 'component8371',
                 'section' => 'content',
                 'type' => 'headline',
@@ -3832,14 +4264,14 @@ class Icon extends DataProviderComponents
                     ],
                 ],
             ],
-            17 => [
+            [
                 'id' => 'componentff91',
                 'section' => 'content',
                 'type' => 'icon',
                 'data' => [
                     'customCssClass' => '',
                     'items' => [
-                        0 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('3.png'),
                                 'aspect_ratio' => '13:6',
@@ -3856,7 +4288,7 @@ class Icon extends DataProviderComponents
                                 'y' => '1',
                             ],
                             'optimizers' => [
-                                'color_scheme' => 'light',
+                                'color_scheme' => 'dark',
                                 'mirror_image' => '',
                                 'scenarios' => [
                                     'none' => [
@@ -3911,7 +4343,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        1 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('4.png'),
                                 'aspect_ratio' => '13:6',
@@ -3928,7 +4360,7 @@ class Icon extends DataProviderComponents
                                 'y' => '1',
                             ],
                             'optimizers' => [
-                                'color_scheme' => 'light',
+                                'color_scheme' => 'dark',
                                 'mirror_image' => '',
                                 'scenarios' => [
                                     'none' => [
@@ -3983,7 +4415,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        2 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('5.png'),
                                 'aspect_ratio' => '13:6',
@@ -4000,7 +4432,79 @@ class Icon extends DataProviderComponents
                                 'y' => '1',
                             ],
                             'optimizers' => [
-                                'color_scheme' => 'light',
+                                'color_scheme' => 'dark',
+                                'mirror_image' => '',
+                                'scenarios' => [
+                                    'none' => [
+                                        'enabled' => '1',
+                                        'intensity' => 'disabled',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_none',
+                                            'label' => 'None',
+                                        ],
+                                    ],
+                                    'overlay' => [
+                                        'enabled' => '',
+                                        'intensity' => '50',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                    ],
+                                    'gradient' => [
+                                        'enabled' => '',
+                                        'intensity' => '50',
+                                        'direction' => [
+                                            'x' => '1',
+                                            'y' => '1',
+                                        ],
+                                        'configurator' => [
+                                            'icon' => '#contrast_gradient',
+                                            'label' => 'Gradient shadow',
+                                        ],
+                                    ],
+                                    'container' => [
+                                        'enabled' => '',
+                                        'intensity' => '50',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                    ],
+                                    'text_shadow' => [
+                                        'enabled' => '',
+                                        'intensity' => '50',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_text-shadow',
+                                            'label' => 'Text shadow',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'cc_css_classes' => '',
+                        ],
+                        [
+                            'image' => [
+                                'decoded' => $this->getDecodedImage('6.png'),
+                                'aspect_ratio' => '13:6',
+                                'image' => $this->getImage('6.png'),
+                            ],
+                            'slogan' => 'Slogan',
+                            'description' => 'Description',
+                            'cta' => [
+                                'label' => 'Light',
+                                'href' => '#',
+                            ],
+                            'content_align' => [
+                                'x' => '1',
+                                'y' => '1',
+                            ],
+                            'optimizers' => [
+                                'color_scheme' => 'dark',
                                 'mirror_image' => true,
                                 'scenarios' => [
                                     'none' => [
@@ -4055,79 +4559,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        3 => [
-                            'image' => [
-                                'decoded' => $this->getDecodedImage('6.png'),
-                                'aspect_ratio' => '13:6',
-                                'image' => $this->getImage('6.png'),
-                            ],
-                            'slogan' => 'Slogan',
-                            'description' => 'Description',
-                            'cta' => [
-                                'label' => 'Light',
-                                'href' => '#',
-                            ],
-                            'content_align' => [
-                                'x' => '1',
-                                'y' => '1',
-                            ],
-                            'optimizers' => [
-                                'color_scheme' => 'light',
-                                'mirror_image' => '',
-                                'scenarios' => [
-                                    'none' => [
-                                        'enabled' => '1',
-                                        'intensity' => 'disabled',
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_none',
-                                            'label' => 'None',
-                                        ],
-                                    ],
-                                    'overlay' => [
-                                        'enabled' => '',
-                                        'intensity' => '50',
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_overlay',
-                                            'label' => 'Overlay',
-                                        ],
-                                    ],
-                                    'gradient' => [
-                                        'enabled' => '',
-                                        'intensity' => '50',
-                                        'direction' => [
-                                            'x' => '1',
-                                            'y' => '1',
-                                        ],
-                                        'configurator' => [
-                                            'icon' => '#contrast_gradient',
-                                            'label' => 'Gradient shadow',
-                                        ],
-                                    ],
-                                    'container' => [
-                                        'enabled' => '',
-                                        'intensity' => '50',
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_container',
-                                            'label' => 'Container',
-                                        ],
-                                    ],
-                                    'text_shadow' => [
-                                        'enabled' => '',
-                                        'intensity' => '50',
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_text-shadow',
-                                            'label' => 'Text shadow',
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'cc_css_classes' => '',
-                        ],
-                        4 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('2.png'),
                                 'aspect_ratio' => '13:6',
@@ -4144,7 +4576,7 @@ class Icon extends DataProviderComponents
                                 'y' => '1',
                             ],
                             'optimizers' => [
-                                'color_scheme' => 'light',
+                                'color_scheme' => 'dark',
                                 'mirror_image' => '',
                                 'scenarios' => [
                                     'none' => [
@@ -4199,7 +4631,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        5 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('1.png'),
                                 'aspect_ratio' => '13:6',
@@ -4216,439 +4648,7 @@ class Icon extends DataProviderComponents
                                 'y' => '1',
                             ],
                             'optimizers' => [
-                                'color_scheme' => 'light',
-                                'mirror_image' => '',
-                                'scenarios' => [
-                                    'none' => [
-                                        'enabled' => '1',
-                                        'intensity' => 'disabled',
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_none',
-                                            'label' => 'None',
-                                        ],
-                                    ],
-                                    'overlay' => [
-                                        'enabled' => '',
-                                        'intensity' => '50',
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_overlay',
-                                            'label' => 'Overlay',
-                                        ],
-                                    ],
-                                    'gradient' => [
-                                        'enabled' => '',
-                                        'intensity' => '50',
-                                        'direction' => [
-                                            'x' => '1',
-                                            'y' => '1',
-                                        ],
-                                        'configurator' => [
-                                            'icon' => '#contrast_gradient',
-                                            'label' => 'Gradient shadow',
-                                        ],
-                                    ],
-                                    'container' => [
-                                        'enabled' => '',
-                                        'intensity' => '50',
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_container',
-                                            'label' => 'Container',
-                                        ],
-                                    ],
-                                    'text_shadow' => [
-                                        'enabled' => '',
-                                        'intensity' => '50',
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_text-shadow',
-                                            'label' => 'Text shadow',
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'cc_css_classes' => '',
-                        ],
-                        6 => [
-                            'image' => [
-                                'decoded' => $this->getDecodedImage('3.png'),
-                                'aspect_ratio' => '13:6',
-                                'image' => $this->getImage('3.png'),
-                            ],
-                            'slogan' => 'Slogan',
-                            'description' => 'Description',
-                            'cta' => [
-                                'label' => 'Dark',
-                                'href' => '#',
-                            ],
-                            'content_align' => [
-                                'x' => '1',
-                                'y' => '1',
-                            ],
-                            'optimizers' => [
-                                'color_scheme' => 'light',
-                                'mirror_image' => '',
-                                'scenarios' => [
-                                    'none' => [
-                                        'enabled' => '1',
-                                        'intensity' => 'disabled',
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_none',
-                                            'label' => 'None',
-                                        ],
-                                    ],
-                                    'overlay' => [
-                                        'enabled' => '',
-                                        'intensity' => '50',
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_overlay',
-                                            'label' => 'Overlay',
-                                        ],
-                                    ],
-                                    'gradient' => [
-                                        'enabled' => '',
-                                        'intensity' => '50',
-                                        'direction' => [
-                                            'x' => '1',
-                                            'y' => '1',
-                                        ],
-                                        'configurator' => [
-                                            'icon' => '#contrast_gradient',
-                                            'label' => 'Gradient shadow',
-                                        ],
-                                    ],
-                                    'container' => [
-                                        'enabled' => '',
-                                        'intensity' => '50',
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_container',
-                                            'label' => 'Container',
-                                        ],
-                                    ],
-                                    'text_shadow' => [
-                                        'enabled' => '',
-                                        'intensity' => '50',
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_text-shadow',
-                                            'label' => 'Text shadow',
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'cc_css_classes' => '',
-                        ],
-                        7 => [
-                            'image' => [
-                                'decoded' => $this->getDecodedImage('4.png'),
-                                'aspect_ratio' => '13:6',
-                                'image' => $this->getImage('4.png'),
-                            ],
-                            'slogan' => 'Slogan',
-                            'description' => '',
-                            'cta' => [
-                                'label' => 'Dark',
-                                'href' => '#',
-                            ],
-                            'content_align' => [
-                                'x' => '1',
-                                'y' => '1',
-                            ],
-                            'optimizers' => [
-                                'color_scheme' => 'light',
-                                'mirror_image' => true,
-                                'scenarios' => [
-                                    'none' => [
-                                        'enabled' => '1',
-                                        'intensity' => 'disabled',
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_none',
-                                            'label' => 'None',
-                                        ],
-                                    ],
-                                    'overlay' => [
-                                        'enabled' => '',
-                                        'intensity' => '50',
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_overlay',
-                                            'label' => 'Overlay',
-                                        ],
-                                    ],
-                                    'gradient' => [
-                                        'enabled' => '',
-                                        'intensity' => '50',
-                                        'direction' => [
-                                            'x' => '1',
-                                            'y' => '1',
-                                        ],
-                                        'configurator' => [
-                                            'icon' => '#contrast_gradient',
-                                            'label' => 'Gradient shadow',
-                                        ],
-                                    ],
-                                    'container' => [
-                                        'enabled' => '',
-                                        'intensity' => '50',
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_container',
-                                            'label' => 'Container',
-                                        ],
-                                    ],
-                                    'text_shadow' => [
-                                        'enabled' => '',
-                                        'intensity' => '50',
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_text-shadow',
-                                            'label' => 'Text shadow',
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'cc_css_classes' => '',
-                        ],
-                        8 => [
-                            'image' => [
-                                'decoded' => $this->getDecodedImage('5.png'),
-                                'aspect_ratio' => '13:6',
-                                'image' => $this->getImage('5.png'),
-                            ],
-                            'slogan' => '',
-                            'description' => '',
-                            'cta' => [
-                                'label' => 'Dark',
-                                'href' => '#',
-                            ],
-                            'content_align' => [
-                                'x' => '1',
-                                'y' => '1',
-                            ],
-                            'optimizers' => [
-                                'color_scheme' => 'light',
-                                'mirror_image' => '',
-                                'scenarios' => [
-                                    'none' => [
-                                        'enabled' => '1',
-                                        'intensity' => 'disabled',
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_none',
-                                            'label' => 'None',
-                                        ],
-                                    ],
-                                    'overlay' => [
-                                        'enabled' => '',
-                                        'intensity' => '50',
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_overlay',
-                                            'label' => 'Overlay',
-                                        ],
-                                    ],
-                                    'gradient' => [
-                                        'enabled' => '',
-                                        'intensity' => '50',
-                                        'direction' => [
-                                            'x' => '1',
-                                            'y' => '1',
-                                        ],
-                                        'configurator' => [
-                                            'icon' => '#contrast_gradient',
-                                            'label' => 'Gradient shadow',
-                                        ],
-                                    ],
-                                    'container' => [
-                                        'enabled' => '',
-                                        'intensity' => '50',
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_container',
-                                            'label' => 'Container',
-                                        ],
-                                    ],
-                                    'text_shadow' => [
-                                        'enabled' => '',
-                                        'intensity' => '50',
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_text-shadow',
-                                            'label' => 'Text shadow',
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'cc_css_classes' => '',
-                        ],
-                        9 => [
-                            'image' => [
-                                'decoded' => $this->getDecodedImage('6.png'),
-                                'aspect_ratio' => '13:6',
-                                'image' => $this->getImage('6.png'),
-                            ],
-                            'slogan' => 'Slogan',
-                            'description' => 'Description',
-                            'cta' => [
-                                'label' => 'Light',
-                                'href' => '#',
-                            ],
-                            'content_align' => [
-                                'x' => '1',
-                                'y' => '1',
-                            ],
-                            'optimizers' => [
-                                'color_scheme' => 'light',
-                                'mirror_image' => '',
-                                'scenarios' => [
-                                    'none' => [
-                                        'enabled' => '1',
-                                        'intensity' => 'disabled',
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_none',
-                                            'label' => 'None',
-                                        ],
-                                    ],
-                                    'overlay' => [
-                                        'enabled' => '',
-                                        'intensity' => '50',
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_overlay',
-                                            'label' => 'Overlay',
-                                        ],
-                                    ],
-                                    'gradient' => [
-                                        'enabled' => '',
-                                        'intensity' => '50',
-                                        'direction' => [
-                                            'x' => '1',
-                                            'y' => '1',
-                                        ],
-                                        'configurator' => [
-                                            'icon' => '#contrast_gradient',
-                                            'label' => 'Gradient shadow',
-                                        ],
-                                    ],
-                                    'container' => [
-                                        'enabled' => '',
-                                        'intensity' => '50',
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_container',
-                                            'label' => 'Container',
-                                        ],
-                                    ],
-                                    'text_shadow' => [
-                                        'enabled' => '',
-                                        'intensity' => '50',
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_text-shadow',
-                                            'label' => 'Text shadow',
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'cc_css_classes' => '',
-                        ],
-                        10 => [
-                            'image' => [
-                                'decoded' => $this->getDecodedImage('2.png'),
-                                'aspect_ratio' => '13:6',
-                                'image' => $this->getImage('2.png'),
-                            ],
-                            'slogan' => '',
-                            'description' => 'Description',
-                            'cta' => [
-                                'label' => 'Light',
-                                'href' => '#',
-                            ],
-                            'content_align' => [
-                                'x' => '1',
-                                'y' => '1',
-                            ],
-                            'optimizers' => [
-                                'color_scheme' => 'light',
-                                'mirror_image' => '',
-                                'scenarios' => [
-                                    'none' => [
-                                        'enabled' => '1',
-                                        'intensity' => 'disabled',
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_none',
-                                            'label' => 'None',
-                                        ],
-                                    ],
-                                    'overlay' => [
-                                        'enabled' => '',
-                                        'intensity' => '50',
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_overlay',
-                                            'label' => 'Overlay',
-                                        ],
-                                    ],
-                                    'gradient' => [
-                                        'enabled' => '',
-                                        'intensity' => '50',
-                                        'direction' => [
-                                            'x' => '1',
-                                            'y' => '1',
-                                        ],
-                                        'configurator' => [
-                                            'icon' => '#contrast_gradient',
-                                            'label' => 'Gradient shadow',
-                                        ],
-                                    ],
-                                    'container' => [
-                                        'enabled' => '',
-                                        'intensity' => '50',
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_container',
-                                            'label' => 'Container',
-                                        ],
-                                    ],
-                                    'text_shadow' => [
-                                        'enabled' => '',
-                                        'intensity' => '50',
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_text-shadow',
-                                            'label' => 'Text shadow',
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'cc_css_classes' => '',
-                        ],
-                        11 => [
-                            'image' => [
-                                'decoded' => $this->getDecodedImage('1.png'),
-                                'aspect_ratio' => '13:6',
-                                'image' => $this->getImage('1.png'),
-                            ],
-                            'slogan' => '',
-                            'description' => '',
-                            'cta' => [
-                                'label' => 'Light',
-                                'href' => '#',
-                            ],
-                            'content_align' => [
-                                'x' => '1',
-                                'y' => '1',
-                            ],
-                            'optimizers' => [
-                                'color_scheme' => 'light',
+                                'color_scheme' => 'dark',
                                 'mirror_image' => '',
                                 'scenarios' => [
                                     'none' => [
@@ -4739,12 +4739,12 @@ class Icon extends DataProviderComponents
                     ],
                 ],
             ],
-            18 => [
+            [
                 'id' => 'component8342',
                 'section' => 'content',
                 'type' => 'headline',
                 'data' => [
-                    'title' => ' 7 images + 7 in row + text style: light',
+                    'title' => ' 7 images + 7 in row +  text style: dark',
                     'subtitle' => '',
                     'headingTag' => 'h3',
                     'componentVisibility' => [
@@ -4753,14 +4753,14 @@ class Icon extends DataProviderComponents
                     ],
                 ],
             ],
-            19 => [
+            [
                 'id' => 'componentf761',
                 'section' => 'content',
                 'type' => 'icon',
                 'data' => [
                     'customCssClass' => '',
                     'items' => [
-                        0 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('3.png'),
                                 'aspect_ratio' => '13:6',
@@ -4832,7 +4832,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        1 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('4.png'),
                                 'aspect_ratio' => '13:6',
@@ -4904,7 +4904,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        2 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('6.png'),
                                 'aspect_ratio' => '13:6',
@@ -4976,7 +4976,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        3 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('2.png'),
                                 'aspect_ratio' => '13:6',
@@ -5048,7 +5048,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        4 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('1.png'),
                                 'aspect_ratio' => '13:6',
@@ -5120,7 +5120,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        5 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('3.png'),
                                 'aspect_ratio' => '13:6',
@@ -5192,7 +5192,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        6 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('4.png'),
                                 'aspect_ratio' => '13:6',
@@ -5300,12 +5300,12 @@ class Icon extends DataProviderComponents
                     ],
                 ],
             ],
-            20 => [
+            [
                 'id' => 'component8kjn342',
                 'section' => 'content',
                 'type' => 'headline',
                 'data' => [
-                    'title' => '14 images + 7 in row + text style: dark',
+                    'title' => '14 images + 7 in row + text style: light',
                     'subtitle' => '',
                     'headingTag' => 'h3',
                     'componentVisibility' => [
@@ -5314,14 +5314,14 @@ class Icon extends DataProviderComponents
                     ],
                 ],
             ],
-            21 => [
+            [
                 'id' => 'componentf7oij61',
                 'section' => 'content',
                 'type' => 'icon',
                 'data' => [
                     'customCssClass' => '',
                     'items' => [
-                        0 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('3.png'),
                                 'aspect_ratio' => '13:6',
@@ -5393,7 +5393,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        1 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('4.png'),
                                 'aspect_ratio' => '13:6',
@@ -5465,7 +5465,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        2 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('6.png'),
                                 'aspect_ratio' => '13:6',
@@ -5537,7 +5537,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        3 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('2.png'),
                                 'aspect_ratio' => '13:6',
@@ -5609,7 +5609,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        4 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('1.png'),
                                 'aspect_ratio' => '13:6',
@@ -5681,7 +5681,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        5 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('3.png'),
                                 'aspect_ratio' => '13:6',
@@ -5753,7 +5753,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        6 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('4.png'),
                                 'aspect_ratio' => '13:6',
@@ -5825,7 +5825,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        7 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('3.png'),
                                 'aspect_ratio' => '13:6',
@@ -5897,7 +5897,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        8 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('4.png'),
                                 'aspect_ratio' => '13:6',
@@ -5969,7 +5969,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        9 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('6.png'),
                                 'aspect_ratio' => '13:6',
@@ -6041,7 +6041,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        10 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('2.png'),
                                 'aspect_ratio' => '13:6',
@@ -6113,7 +6113,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        11 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('1.png'),
                                 'aspect_ratio' => '13:6',
@@ -6185,7 +6185,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        12 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('3.png'),
                                 'aspect_ratio' => '13:6',
@@ -6257,7 +6257,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        13 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('4.png'),
                                 'aspect_ratio' => '13:6',
@@ -6365,12 +6365,12 @@ class Icon extends DataProviderComponents
                     ],
                 ],
             ],
-            22 => [
+            [
                 'id' => 'componentafkjn5d',
                 'section' => 'content',
                 'type' => 'headline',
                 'data' => [
-                    'title' => '8 images + 8 in row + text style: light',
+                    'title' => '8 images + 8 in row + text style: dark',
                     'subtitle' => '',
                     'headingTag' => 'h3',
                     'componentVisibility' => [
@@ -6379,14 +6379,14 @@ class Icon extends DataProviderComponents
                     ],
                 ],
             ],
-            23 => [
+            [
                 'id' => 'componentbyug20a',
                 'section' => 'content',
                 'type' => 'icon',
                 'data' => [
                     'customCssClass' => '',
                     'items' => [
-                        0 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('3.png'),
                                 'aspect_ratio' => '13:6',
@@ -6458,7 +6458,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        1 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('4.png'),
                                 'aspect_ratio' => '13:6',
@@ -6530,7 +6530,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        2 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('5.png'),
                                 'aspect_ratio' => '13:6',
@@ -6602,7 +6602,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        3 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('6.png'),
                                 'aspect_ratio' => '13:6',
@@ -6674,7 +6674,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        4 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('2.png'),
                                 'aspect_ratio' => '13:6',
@@ -6746,7 +6746,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        5 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('1.png'),
                                 'aspect_ratio' => '13:6',
@@ -6818,7 +6818,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        6 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('3.png'),
                                 'aspect_ratio' => '13:6',
@@ -6890,7 +6890,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        7 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('5.png'),
                                 'aspect_ratio' => '13:6',
@@ -6998,12 +6998,12 @@ class Icon extends DataProviderComponents
                     ],
                 ],
             ],
-            24 => [
+            [
                 'id' => 'componentaf5d',
                 'section' => 'content',
                 'type' => 'headline',
                 'data' => [
-                    'title' => '16 images + 8 in row + text style: dark',
+                    'title' => '16 images + 8 in row + text style: light',
                     'subtitle' => '',
                     'headingTag' => 'h3',
                     'componentVisibility' => [
@@ -7012,14 +7012,14 @@ class Icon extends DataProviderComponents
                     ],
                 ],
             ],
-            25 => [
+            [
                 'id' => 'componentbkjn20a',
                 'section' => 'content',
                 'type' => 'icon',
                 'data' => [
                     'customCssClass' => '',
                     'items' => [
-                        0 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('3.png'),
                                 'aspect_ratio' => '13:6',
@@ -7091,7 +7091,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        1 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('4.png'),
                                 'aspect_ratio' => '13:6',
@@ -7163,7 +7163,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        2 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('5.png'),
                                 'aspect_ratio' => '13:6',
@@ -7235,7 +7235,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        3 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('6.png'),
                                 'aspect_ratio' => '13:6',
@@ -7307,7 +7307,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        4 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('2.png'),
                                 'aspect_ratio' => '13:6',
@@ -7379,7 +7379,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        5 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('1.png'),
                                 'aspect_ratio' => '13:6',
@@ -7451,7 +7451,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        6 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('3.png'),
                                 'aspect_ratio' => '13:6',
@@ -7523,7 +7523,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        7 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('5.png'),
                                 'aspect_ratio' => '13:6',
@@ -7595,7 +7595,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        8 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('3.png'),
                                 'aspect_ratio' => '13:6',
@@ -7667,7 +7667,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        9 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('4.png'),
                                 'aspect_ratio' => '13:6',
@@ -7739,7 +7739,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        10 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('5.png'),
                                 'aspect_ratio' => '13:6',
@@ -7811,7 +7811,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        11 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('6.png'),
                                 'aspect_ratio' => '13:6',
@@ -7883,7 +7883,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        12 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('2.png'),
                                 'aspect_ratio' => '13:6',
@@ -7955,7 +7955,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        13 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('1.png'),
                                 'aspect_ratio' => '13:6',
@@ -8027,7 +8027,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        14 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('3.png'),
                                 'aspect_ratio' => '13:6',
@@ -8099,7 +8099,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        15 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('5.png'),
                                 'aspect_ratio' => '13:6',
@@ -8207,12 +8207,12 @@ class Icon extends DataProviderComponents
                     ],
                 ],
             ],
-            26 => [
+            [
                 'id' => 'componentakjnf5d',
                 'section' => 'content',
                 'type' => 'headline',
                 'data' => [
-                    'title' => '17 images + 8 in row + text style: dark',
+                    'title' => '17 images + 8 in row + text style: light',
                     'subtitle' => '',
                     'headingTag' => 'h3',
                     'componentVisibility' => [
@@ -8221,14 +8221,14 @@ class Icon extends DataProviderComponents
                     ],
                 ],
             ],
-            27 => [
+            [
                 'id' => 'componentbkjn2uyg0a',
                 'section' => 'content',
                 'type' => 'icon',
                 'data' => [
                     'customCssClass' => '',
                     'items' => [
-                        0 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('3.png'),
                                 'aspect_ratio' => '13:6',
@@ -8300,7 +8300,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        1 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('4.png'),
                                 'aspect_ratio' => '13:6',
@@ -8372,7 +8372,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        2 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('5.png'),
                                 'aspect_ratio' => '13:6',
@@ -8444,7 +8444,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        3 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('6.png'),
                                 'aspect_ratio' => '13:6',
@@ -8516,7 +8516,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        4 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('2.png'),
                                 'aspect_ratio' => '13:6',
@@ -8588,7 +8588,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        5 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('1.png'),
                                 'aspect_ratio' => '13:6',
@@ -8660,7 +8660,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        6 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('3.png'),
                                 'aspect_ratio' => '13:6',
@@ -8732,7 +8732,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        7 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('5.png'),
                                 'aspect_ratio' => '13:6',
@@ -8804,7 +8804,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        8 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('3.png'),
                                 'aspect_ratio' => '13:6',
@@ -8876,7 +8876,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        9 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('4.png'),
                                 'aspect_ratio' => '13:6',
@@ -8948,7 +8948,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        10 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('5.png'),
                                 'aspect_ratio' => '13:6',
@@ -9020,7 +9020,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        11 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('6.png'),
                                 'aspect_ratio' => '13:6',
@@ -9092,7 +9092,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        12 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('2.png'),
                                 'aspect_ratio' => '13:6',
@@ -9164,7 +9164,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        13 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('1.png'),
                                 'aspect_ratio' => '13:6',
@@ -9236,7 +9236,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        14 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('3.png'),
                                 'aspect_ratio' => '13:6',
@@ -9308,7 +9308,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        15 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('5.png'),
                                 'aspect_ratio' => '13:6',
@@ -9380,7 +9380,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        16 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('5.png'),
                                 'aspect_ratio' => '13:6',
@@ -9488,7 +9488,7 @@ class Icon extends DataProviderComponents
                     ],
                 ],
             ],
-            28 => [
+            [
                 'type' => 'headline',
                 'name' => 'Headline',
                 'id' => 'component216745nj492d',
@@ -9507,7 +9507,7 @@ class Icon extends DataProviderComponents
                             ],
                     ],
             ],
-            29 => [
+            [
                 'type' => 'paragraph',
                 'name' => 'Paragraph',
                 'id' => 'component219876nj3dec',
@@ -9536,14 +9536,14 @@ class Icon extends DataProviderComponents
                             ],
                     ],
             ],
-            30 => [
+            [
                 'id' => 'component5864e69',
                 'section' => 'content',
                 'type' => 'icon',
                 'data' => [
                     'customCssClass' => '',
                     'items' => [
-                        0 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('3.png'),
                                 'aspect_ratio' => '13:6',
@@ -9615,7 +9615,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        1 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('4.png'),
                                 'aspect_ratio' => '13:6',
@@ -9687,7 +9687,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        2 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('5.png'),
                                 'aspect_ratio' => '13:6',
@@ -9759,7 +9759,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        3 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('6.png'),
                                 'aspect_ratio' => '13:6',
@@ -9831,7 +9831,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        4 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('2.png'),
                                 'aspect_ratio' => '13:6',
@@ -9939,7 +9939,7 @@ class Icon extends DataProviderComponents
                     ],
                 ],
             ],
-            31 => [
+            [
                 'type' => 'paragraph',
                 'name' => 'Paragraph',
                 'id' => 'component21nj5hdfg195',
@@ -9968,14 +9968,14 @@ class Icon extends DataProviderComponents
                             ],
                     ],
             ],
-            32 => [
+            [
                 'id' => 'component58oij69',
                 'section' => 'content',
                 'type' => 'icon',
                 'data' => [
                     'customCssClass' => '',
                     'items' => [
-                        0 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('3.png'),
                                 'aspect_ratio' => '13:6',
@@ -10047,7 +10047,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        1 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('4.png'),
                                 'aspect_ratio' => '13:6',
@@ -10119,7 +10119,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        2 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('5.png'),
                                 'aspect_ratio' => '13:6',
@@ -10191,7 +10191,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        3 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('6.png'),
                                 'aspect_ratio' => '13:6',
@@ -10263,7 +10263,7 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                        4 => [
+                        [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('2.png'),
                                 'aspect_ratio' => '13:6',
