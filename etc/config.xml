@@ -2,6 +2,9 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
         <cc_frontend_extension>
+            <configuration>
+                <custom_url>ccci</custom_url>
+            </configuration>
             <instagram_component>
                 <access_token_refresh_threshold>3</access_token_refresh_threshold>
                 <access_token_enable_auto_refresh>0</access_token_enable_auto_refresh>

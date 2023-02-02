@@ -31,4 +31,22 @@
     <type name="Magento\Cms\Model\Page">
         <plugin name="change_content_return_type" type="MageSuite\ContentConstructorFrontend\Plugin\Cms\Model\Page\ChangeContentReturnType" />
     </type>
+
+    <type name="Magento\Framework\App\RouterList">
+        <arguments>
+            <argument name="routerList" xsi:type="array">
+                <item name="customRoute" xsi:type="array">
+                    <item name="class" xsi:type="string">MageSuite\ContentConstructorFrontend\Controller\ComponentsListShortUrlRouter</item>
+                    <item name="disable" xsi:type="boolean">false</item>
+                    <item name="sortOrder" xsi:type="string">40</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="MageSuite\ContentConstructorFrontend\Controller\ComponentsListShortUrlRouter">
+        <arguments>
+            <argument name="customUrl" xsi:type="string">ccci</argument>
+        </arguments>
+    </type>
 </config>

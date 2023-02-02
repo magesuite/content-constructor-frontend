@@ -2,7 +2,7 @@
 $slide = $block->getSlide();
 $slideIndex = $block->getSlideIndex();
 $imageTeaserData = $block->getImageTeaser();
-
+$viewModel = $block->getViewModel();
 $isSlider = $block->getIsSlider();
 $isSliderMobile = $block->getIsSliderMobile();
 $contentPlacement = $block->getContentPlacement();
@@ -15,6 +15,7 @@ $cta = $slide->getCta();
 $ctaLabel = $cta['label'] ?? null;
 $ctaHref = $cta['href'] ?? null;
 $ctaTarget = $cta['target'] ?? null;
+$ctaLinkedOnly = $cta['link'] ?? null;
 
 /**
  * Image properties with support for conditional lazy loading.
@@ -96,7 +97,7 @@ $eagerLoadFirstImage = $block->getEagerLoadFirstImage();
         ->toHtml();
     ?>
 
-    <?php if ($ctaHref): ?>
+    <?php if ($ctaHref && !$ctaLinkedOnly): ?>
         <a href="<?= $block->escapeHtml($ctaHref) ?>"
            class="cs-image-teaser__link"
            <?= $openLinkInNewTab ? 'target="_blank" rel="noopener noreferrer"' : ''?>
@@ -109,6 +110,7 @@ $eagerLoadFirstImage = $block->getEagerLoadFirstImage();
         <?= $this->getLayout()
             ->createBlock(\Magento\Framework\View\Element\Template::class)
             ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/image.phtml')
+            ->setViewModel($viewModel)
             ->setImageTeaserData($imageTeaserData)
             ->setSlide($slide)
             ->setIsSlider($isSlider)
@@ -199,10 +201,20 @@ $eagerLoadFirstImage = $block->getEagerLoadFirstImage();
                         ->setContentPlacement($contentPlacement)
                         ->toHtml();
                     ?>
-                    <?php if($hasCta): ?>
+                    <?php if($hasCta && !$ctaLinkedOnly): ?>
                         <?= $this->getLayout()
                             ->createBlock(\Magento\Framework\View\Element\Template::class)
                             ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/cta.phtml')
+                            ->setImageTeaserData($imageTeaserData)
+                            ->setSlide($slide)
+                            ->toHtml();
+                        ?>
+                    <?php endif; ?>
+
+                    <?php if($hasCta && $ctaLinkedOnly): ?>
+                        <?= $this->getLayout()
+                            ->createBlock(\Magento\Framework\View\Element\Template::class)
+                            ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/slide_elements/cta-linked.phtml')
                             ->setImageTeaserData($imageTeaserData)
                             ->setSlide($slide)
                             ->toHtml();
@@ -222,7 +234,7 @@ $eagerLoadFirstImage = $block->getEagerLoadFirstImage();
             </figcaption>
         <?php endif; ?>
     </figure>
-    <?php if ($ctaHref): ?>
+    <?php if ($ctaHref && !$ctaLinkedOnly): ?>
         </a>
     <?php endif; ?>
 

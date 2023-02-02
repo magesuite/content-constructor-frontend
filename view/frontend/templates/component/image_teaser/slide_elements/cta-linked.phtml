@@ -1,16 +1,28 @@
 <?php
 /**
- * Call to action properties. This button is used when the whole slide is linked.
+ * Call to action properties. This button is used when only CTA button is linked, not the whole slide.
  */
 $imageTeaserData = $block->getImageTeaserData();
 $slide = $block->getSlide();
 $cta = $slide->getCta();
 $ctaHref = $cta['href'] ?? '';
 $ctaLabel = $cta['label'] ?? '';
+$ctaTarget = $cta['target'] ?? null;
 $iconPath = $block->getVar('image_teaser/cta_button_icon_path', 'MageSuite_ContentConstructorFrontend');
+
+$openLinkInNewTab = ($block->getOpenLinkInNewTab() || $ctaTarget) ? true : false;
+$trackingId = $slide->getTrackingId();
+$trackingData = "data-tracking-id='{$trackingId}'";
 ?>
 <?php if ($ctaHref and $ctaLabel): ?>
-    <div class="cs-image-teaser__cta">
+    <a 
+        href="<?= $block->escapeHtml($ctaHref) ?>"
+        class="cs-image-teaser__cta cs-image-teaser__cta--linked"
+        <?= $openLinkInNewTab ? 'target="_blank" rel="noopener noreferrer"' : ''?>
+        <?php if (!empty($trackingId)): ?>
+            <?= $trackingData; ?>
+        <?php endif; ?>
+    >
         <span class="cs-image-teaser__cta-span"><?= $ctaLabel ?></span>
         <?php if(!empty($iconPath)): ?>
             <?= $this->getLayout()
@@ -21,5 +33,5 @@ $iconPath = $block->getVar('image_teaser/cta_button_icon_path', 'MageSuite_Conte
                 ->toHtml();
             ?>
         <?php endif ?>
-    </div>
+    </a>
 <?php endif; ?>

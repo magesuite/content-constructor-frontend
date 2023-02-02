@@ -93,6 +93,20 @@
                     <ticket_id>RK-496</ticket_id>
                 </entry>
             </tag>
+            <tag version="5.8.4" date="2023-01-12">
+                <entry>
+                    <type>FIX</type>
+                    <overview>Remove html tags from teaser image alt</overview>
+                    <ticket_id>RK-587</ticket_id>
+                </entry>
+            </tag>
+            <tag version="5.8.11" date="2023-01-12">
+                <entry>
+                    <type>FEAT</type>
+                    <overview>Make components lists url shorter</overview>
+                    <ticket_id>MGS-4734</ticket_id>
+                </entry>
+            </tag>
         </changelog>
     </module>
 </config>

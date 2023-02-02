@@ -4,6 +4,7 @@ namespace MageSuite\ContentConstructorFrontend\Helper;
 
 class Configuration
 {
+    public const CUSTOM_URL = 'cc_frontend_extension/configuration/custom_url';
     public const INSTAGRAM_ACCESS_TOKEN = 'cc_frontend_extension/instagram_component/access_token';
     public const INSTAGRAM_ACCESS_TOKEN_AUTO_REFRESH = 'cc_frontend_extension/instagram_component/access_token_enable_auto_refresh';
     public const INSTAGRAM_ACCESS_TOKEN_EXPIRATION_DATE = 'cc_frontend_extension/instagram_component/access_token_expiration_date';
@@ -87,5 +88,10 @@ class Configuration
     public function isPreloadImageEnabled(): bool
     {
         return $this->scopeInterface->isSetFlag(self::PRELOAD_IMAGE_ENABLED_PATH, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+    }
+
+    public function getCustomUrl(): string
+    {
+        return (string) $this->scopeInterface->getValue(self::CUSTOM_URL);
     }
 }

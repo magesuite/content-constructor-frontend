@@ -1,4 +1,6 @@
 <?php
+/** @var \MageSuite\ContentConstructorFrontend\Model\Component\ImageTeaser $viewModel */
+$viewModel = $block->getViewModel();
 $imageTeaserData = $block->getImageTeaserData();
 $imageTypeHelper = $this->helper(\MageSuite\ThemeHelpers\Helper\ImageType::class);
 $slide = $block->getSlide();
@@ -16,7 +18,7 @@ if (empty($imageSrcset) || $isSvg) {
     $imageSrcset = $origImageSrc;
 }
 
-$imageAlt = $block->escapeHtmlAttr($slide->getAlt());
+$imageAlt = $viewModel->replaceHtmlTagsWithWhiteSpaces((string)$slide->getAlt());
 $imageSizes = $isSvg ? '' : $slide->getSizes();
 $isSlider = $block->getIsSlider();
 $isSliderMobile = $block->getIsSliderMobile();

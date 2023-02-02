@@ -84,7 +84,7 @@ class TeaserCss extends \Magento\Framework\View\Element\Template
     public function getBreakpoints()
     {
         if ($this->breakpoints === null) {
-            $breakpoints = $this->getVar('breakpoints', 'Magento_Theme');
+            $breakpoints = $this->getVar('breakpoints', 'Magento_Theme') ?: [];
             $this->breakpoints = new \CachingIterator(new \ArrayIterator($breakpoints), \CachingIterator::CALL_TOSTRING | \CachingIterator::FULL_CACHE);
         }
         return $this->breakpoints;
