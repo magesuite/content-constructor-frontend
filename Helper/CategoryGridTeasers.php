@@ -99,8 +99,8 @@ class CategoryGridTeasers extends \Magento\Framework\App\Helper\AbstractHelper
         $currentBrand = $this->registry->registry('current_brand');
 
         if ($currentBrand != null) {
-            $layoutUpdateXml = $currentBrand->getLayoutUpdateXml();
-            return $layoutUpdateXml ? $this->xmlToComponentConfigurationMapper->map($layoutUpdateXml) : null;
+            $contentConstructorContent = $currentBrand->getContentConstructorContent();
+            return $contentConstructorContent ? json_decode($contentConstructorContent, true) : null;
         }
 
         return null;
