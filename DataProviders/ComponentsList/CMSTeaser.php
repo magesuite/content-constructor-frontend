@@ -8,6 +8,76 @@ class CMSTeaser extends DataProviderComponents
     {
         return [
             [
+                'name' => 'Image Teaser',
+                'type' => 'image-teaser-2',
+                'id' => 'component81b3_duplicate77234',
+                'section' => 'content',
+                'data' => [
+                    'items' => [
+                        [
+                            'image' => [
+                                'decoded' => '{{media url="creative_components/erin_teaser.png"}}',
+                                'aspect_ratio' => '960:511',
+                                'fetch_priority' => false,
+                                'image' => '/creative_components/erin_teaser.png',
+                            ],
+                            'slogan' => 'Notice',
+                            'description' => 'If a page doesn\'t have any teaser image selected, its teaser image will be replaced with the sample image above',
+                            'content_align' => [
+                                'x' => 2,
+                                'y' => 2,
+                            ],
+                            'sizeSelect' => '2x1',
+                            'size' => [
+                                'x' => 2,
+                                'y' => 1,
+                            ],
+                            'row' => 1,
+                            'position' => 'center',
+                            'optimizers' => [
+                                'color_scheme' => 'light',
+                                'mirror_image' => false,
+                            ],
+                            'isAvailableForMobile' => 1,
+                            'teaserType' => 'full',
+                        ],
+                    ],
+                    'scenario' => [
+                        'teaserWidth' => [
+                            'name' => 'Content width Slider',
+                            'iconId' => 'tw_content-slider',
+                            'disabled' => false,
+                            'id' => 'container-slider',
+                        ],
+                        'desktopLayout' => [
+                            'name' => '3 in row',
+                            'iconId' => 'dl_3',
+                            'disabled' => false,
+                            'teasersNum' => 3,
+                            'id' => '3',
+                        ],
+                        'contentPlacement' => [
+                            'name' => 'Text below image',
+                            'iconId' => 'tl_under',
+                            'disabled' => false,
+                            'contentPlacement' => false,
+                            'id' => 'under',
+                        ],
+                        'mobileLayout' => [
+                            'name' => 'Slider',
+                            'iconId' => 'ml_slider',
+                            'disabled' => false,
+                            'id' => 'mobile-slider',
+                        ],
+                    ],
+                    'isError' => false,
+                    'componentVisibility' => [
+                        'mobile' => true,
+                        'desktop' => true,
+                    ],
+                ],
+            ],
+            [
                 "type" => "headline",
                 "name" => "Headline",
                 "id" => "component9f02",
