@@ -4,7 +4,7 @@ namespace MageSuite\ContentConstructorFrontend\Model\Component;
 
 class CmsTeaser extends \Magento\Framework\DataObject implements ViewModel
 {
-    protected const DUMMY_TEASER_IMAGE_URL = '/creative_components/erin_teaser.png';
+    protected const DUMMY_TEASER_IMAGE_URL = '/catalog/category/erin_teaser.png';
 
     /**
      * @var \MageSuite\ContentConstructorFrontend\DataProviders\CmsTeaserDataProvider

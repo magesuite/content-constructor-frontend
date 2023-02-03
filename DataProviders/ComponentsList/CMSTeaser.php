@@ -16,10 +16,10 @@ class CMSTeaser extends DataProviderComponents
                     'items' => [
                         [
                             'image' => [
-                                'decoded' => '{{media url="creative_components/erin_teaser.png"}}',
+                                'decoded' => '{{media url="catalog/category/erin_teaser.png"}}',
                                 'aspect_ratio' => '960:511',
                                 'fetch_priority' => false,
-                                'image' => '/creative_components/erin_teaser.png',
+                                'image' => '/catalog/category/erin_teaser.png',
                             ],
                             'slogan' => 'Notice',
                             'description' => 'If a page doesn\'t have any teaser image selected, its teaser image will be replaced with the sample image above',
