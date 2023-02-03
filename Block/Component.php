@@ -103,7 +103,7 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
         return $identities;
     }
 
-    public function _toHtml()
+    protected function _prepareLayout()
     {
         if (!$this->hasData('type')) {
             throw new \InvalidArgumentException("Block must receive it's type in configuration");
@@ -111,7 +111,6 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
 
         $type = $this->getData('type');
         $componentData = $this->getData('data');
-
         $componentClassName = $this->componentPool->getClassName($type);
 
         if ($componentClassName == null) {
@@ -122,19 +121,30 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
             $this->component = $this
                 ->getLayout()
                 ->createBlock($componentClassName, '', ['data' => $componentData]);
+        } catch(\Exception | \Error $e) {
+            $this->_logger->critical(sprintf(
+                'Error during Content Constructor component creating: %s',
+                $e->getMessage()
+            ));
 
-            $html = $this->component->toHtml();
+            return '';
         }
-        catch(\Exception | \Error $e) {
+
+        return parent::_prepareLayout();
+    }
+
+    public function _toHtml()
+    {
+        try {
+            return $this->component->toHtml();
+        } catch(\Exception | \Error $e) {
             $this->_logger->critical(sprintf(
                 'Error during Content Constructor component rendering: %s',
                 $e->getMessage()
             ));
 
-            $html = '';
+            return '';
         }
-
-        return $html;
     }
 
     public function getComponent()
