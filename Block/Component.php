@@ -136,4 +136,9 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
 
         return $html;
     }
+
+    public function getComponent()
+    {
+        return $this->component;
+    }
 }
