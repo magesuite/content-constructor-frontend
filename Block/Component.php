@@ -103,42 +103,41 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
         return $identities;
     }
 
-    public function _toHtml()
+    protected function _toHtml()
     {
+        $component = $this->getComponent();
+
+        try {
+            return $component->toHtml();
+        } catch(\Exception | \Error $e) {
+            $this->_logger->critical(sprintf(
+                'Error during Content Constructor component rendering: %s',
+                $e->getMessage()
+            ));
+        }
+
+        return '';
+    }
+
+    public function getComponent()
+    {
+        if ($this->component !== null) {
+            return $this->component;
+        }
+
         if (!$this->hasData('type')) {
             throw new \InvalidArgumentException("Block must receive it's type in configuration");
         }
 
         $type = $this->getData('type');
         $componentData = $this->getData('data');
-
         $componentClassName = $this->componentPool->getClassName($type);
 
         if ($componentClassName == null) {
-            return '';
+            return null;
         }
 
-        try {
-            $this->component = $this
-                ->getLayout()
-                ->createBlock($componentClassName, '', ['data' => $componentData]);
-
-            $html = $this->component->toHtml();
-        }
-        catch(\Exception | \Error $e) {
-            $this->_logger->critical(sprintf(
-                'Error during Content Constructor component rendering: %s',
-                $e->getMessage()
-            ));
-
-            $html = '';
-        }
-
-        return $html;
-    }
-
-    public function getComponent()
-    {
-        return $this->component;
+        return $this->component = $this->getLayout()
+            ->createBlock($componentClassName, '', ['data' => $componentData]);
     }
 }
