@@ -8,21 +8,42 @@ class CMSTeaser extends DataProviderComponents
     {
         return [
             [
-                'name' => 'Image Teaser',
-                'type' => 'image-teaser-2',
-                'id' => 'component81b3_duplicate77234',
+                'name' => 'Teaser and text',
+                'type' => 'teaser-and-text',
+                'id' => 'componenta35b',
                 'section' => 'content',
                 'data' => [
+                    'customCssClass' => '',
                     'items' => [
                         [
                             'image' => [
-                                'decoded' => '{{media url="catalog/category/erin_teaser.png"}}',
-                                'aspect_ratio' => '960:511',
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
                                 'fetch_priority' => false,
-                                'image' => '/catalog/category/erin_teaser.png',
+                                'mobile' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                                'tablet' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                            ],
+                            'video' => [
+                                'url' => '',
+                                'type' => '',
                             ],
                             'slogan' => 'Notice',
-                            'description' => 'If a page doesn\'t have any teaser image selected, its teaser image will be replaced with the sample image above',
+                            'description' => 'If a page doesn\'t have any teaser image selected, its teaser image will be replaced with the sample image.',
+                            'cta' => [
+                                'label' => 'More',
+                                'href' => '',
+                                'target' => false,
+                                'link' => false,
+                            ],
                             'content_align' => [
                                 'x' => 2,
                                 'y' => 2,
@@ -33,44 +54,191 @@ class CMSTeaser extends DataProviderComponents
                                 'y' => 1,
                             ],
                             'row' => 1,
-                            'position' => 'center',
-                            'optimizers' => [
-                                'color_scheme' => 'light',
-                                'mirror_image' => false,
-                            ],
+                            'position' => 'left',
                             'isAvailableForMobile' => 1,
-                            'teaserType' => 'full',
+                            'optimizers' => [
+                                'color_scheme' => 'dark',
+                                'mirror_image' => false,
+                                'scenarios' => [
+                                    'none' => [
+                                        'enabled' => true,
+                                        'intensity' => 'disabled',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_none',
+                                            'label' => 'None',
+                                        ],
+                                    ],
+                                    'overlay' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                    ],
+                                    'gradient' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => [
+                                            'x' => 1,
+                                            'y' => 1,
+                                        ],
+                                        'configurator' => [
+                                            'icon' => '#contrast_gradient',
+                                            'label' => 'Gradient shadow',
+                                        ],
+                                    ],
+                                    'container' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                    ],
+                                    'text_shadow' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_text-shadow',
+                                            'label' => 'Text shadow',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'tracking_id' => '',
+                            'teaserType' => 'text-only',
+                            'image_alt' => '',
+                            'cc_css_classes' => '',
                         ],
+                        [
+                            'image' => [
+                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/3c1dc658737d06202b399c5bec486ba3f155c3dacabfc082264194d63b8b8b6e/image/e3ttZWRpYSB1cmw9ImNvbnRlbnRfY29uc3RydWN0b3IvMngxX01HU18yLmpwZyJ9fQ',
+                                'decoded' => '{{media url="content_constructor/2x1_MGS_2.jpg"}}',
+                                'aspect_ratio' => '149:135',
+                                'fetch_priority' => false,
+                                'mobile' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                                'tablet' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/content_constructor/2x1_MGS_2.jpg',
+                            ],
+                            'video' => [
+                                'url' => '',
+                                'type' => '',
+                            ],
+                            'slogan' => 'This is the sample image',
+                            'description' => '',
+                            'cta' => [
+                                'label' => 'More',
+                                'href' => '',
+                                'target' => false,
+                                'link' => false,
+                            ],
+                            'content_align' => [
+                                'x' => 1,
+                                'y' => 1,
+                            ],
+                            'sizeSelect' => '2x1',
+                            'size' => [
+                                'x' => 2,
+                                'y' => 1,
+                            ],
+                            'row' => 1,
+                            'position' => 'left',
+                            'isAvailableForMobile' => 1,
+                            'optimizers' => [
+                                'color_scheme' => 'dark',
+                                'mirror_image' => false,
+                                'scenarios' => [
+                                    'none' => [
+                                        'enabled' => true,
+                                        'intensity' => 'disabled',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_none',
+                                            'label' => 'None',
+                                        ],
+                                    ],
+                                    'overlay' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                    ],
+                                    'gradient' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => [
+                                            'x' => 1,
+                                            'y' => 1,
+                                        ],
+                                        'configurator' => [
+                                            'icon' => '#contrast_gradient',
+                                            'label' => 'Gradient shadow',
+                                        ],
+                                    ],
+                                    'container' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                    ],
+                                    'text_shadow' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_text-shadow',
+                                            'label' => 'Text shadow',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'tracking_id' => '',
+                            'teaserType' => 'full',
+                            'image_alt' => '',
+                            'cc_css_classes' => '',
+                        ],
+                    ],
+                    'ignoredItems' => [
                     ],
                     'scenario' => [
                         'teaserWidth' => [
-                            'name' => 'Content width Slider',
-                            'iconId' => 'tw_content-slider',
+                            'name' => 'Content width',
+                            'iconId' => 'tw_content-width',
                             'disabled' => false,
-                            'id' => 'container-slider',
+                            'id' => 'container',
                         ],
                         'desktopLayout' => [
-                            'name' => '3 in row',
-                            'iconId' => 'dl_3',
-                            'disabled' => false,
-                            'teasersNum' => 3,
-                            'id' => '3',
                         ],
                         'contentPlacement' => [
-                            'name' => 'Text below image',
-                            'iconId' => 'tl_under',
-                            'disabled' => false,
-                            'contentPlacement' => false,
-                            'id' => 'under',
                         ],
                         'mobileLayout' => [
-                            'name' => 'Slider',
-                            'iconId' => 'ml_slider',
+                            'name' => 'Text (top) - image (bottom)',
+                            'iconId' => 'mb_2',
                             'disabled' => false,
-                            'id' => 'mobile-slider',
+                            'id' => 'text-image',
                         ],
                     ],
                     'isError' => false,
+                    'cc_css_classes' => '',
                     'componentVisibility' => [
                         'mobile' => true,
                         'desktop' => true,
@@ -154,10 +322,10 @@ class CMSTeaser extends DataProviderComponents
                     "customCssClass" => "",
                     "tags" => "",
                     "ids" => "",
-                    "limit" => "4",
+                    "limit" => "8",
                     "content_align" => [
                         "x" => 1,
-                        "y" => 1
+                        "y" => 2
                     ],
                     "currentScenario" => [
                         "desktopLayout" => [
@@ -513,8 +681,8 @@ class CMSTeaser extends DataProviderComponents
                     "ids" => "",
                     "limit" => "8",
                     "content_align" => [
-                        "x" => 2,
-                        "y" => 2
+                        "x" => 3,
+                        "y" => 3
                     ],
                     "currentScenario" => [
                         "desktopLayout" => [
