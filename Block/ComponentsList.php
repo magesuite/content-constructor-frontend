@@ -34,7 +34,7 @@ class ComponentsList extends \Magento\Framework\View\Element\Template
         'brand-carousel' => 'BrandCarousel',
         'button' => 'Button',
         'category-links' => 'CategoryLinks',
-        'cms-teaser' => 'CMSTeaser',
+        'cms-pages-teaser' => 'CMSTeaser',
         'daily-deal' => 'DailyDeal',
         'herocarousel-large' => 'HeroCarouselLarge',
         'herocarousel-slider' => 'HeroCarouselSlider',

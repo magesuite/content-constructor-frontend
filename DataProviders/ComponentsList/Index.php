@@ -17,7 +17,7 @@ class Index extends DataProviderComponents
             ['Brand Carousel', 'brand-carousel', true],
             ['Button', 'button', true],
             ['Category Links', 'category-links', true],
-            ['CMS Pages Teaser', 'cms-teaser', true],
+            ['CMS Pages Teaser', 'cms-pages-teaser', true],
             ['Daily Deal', 'daily-deal', true],
             ['Headline', 'headline', true],
             ['Hero Carousel Large teaser mobile scenario', 'herocarousel-large'],
