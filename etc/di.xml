@@ -186,7 +186,7 @@
                 <item name="separator" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\Separator</item>
                 <item name="product-grid" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\ProductGrid</item>
                 <item name="custom-html" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\CustomHtml</item>
-                <item name="cms-pages-teaser" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\CmsPagesTeaser</item>
+                <item name="cms-teaser" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\CmsTeaser</item>
                 <item name="product-finder" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\ProductFinder</item>
                 <item name="daily-deal-teaser" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser</item>
                 <item name="icon" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\Icon</item>
