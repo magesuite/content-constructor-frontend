@@ -3782,6 +3782,63 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
+                    ],
+                    'ignoredItems' => [],
+                    'scenario' => [
+                        'teaserWidth' => [
+                            'name' => 'Content width Slider',
+                            'iconId' => 'tw_content-slider',
+                            'disabled' => false,
+                            'id' => 'container-slider',
+                        ],
+                        'desktopLayout' => [
+                            'name' => '6 in row',
+                            'iconId' => 'dl_6',
+                            'disabled' => '',
+                            'teasersNum' => '6',
+                            'id' => '6',
+                        ],
+                        'contentPlacement' => [
+                            'name' => 'Text below image',
+                            'iconId' => 'tl_under',
+                            'disabled' => '',
+                            'contentPlacement' => '',
+                            'id' => 'under',
+                        ],
+                        'mobileLayout' => [
+                            'name' => 'Slider',
+                            'iconId' => 'ml_slider',
+                            'disabled' => '',
+                            'id' => 'mobile-slider',
+                        ],
+                    ],
+                    'componentVisibility' => [
+                        'mobile' => '1',
+                        'desktop' => '1',
+                    ],
+                ],
+            ],
+            [
+                'id' => 'component8371',
+                'section' => 'content',
+                'type' => 'headline',
+                'data' => [
+                    'title' => '12 images + 6 in row + text style: dark',
+                    'subtitle' => '',
+                    'headingTag' => 'h3',
+                    'componentVisibility' => [
+                        'mobile' => '1',
+                        'desktop' => '1',
+                    ],
+                ],
+            ],
+            [
+                'id' => 'componentff91',
+                'section' => 'content',
+                'type' => 'icon',
+                'data' => [
+                    'customCssClass' => '',
+                    'items' => [
                         [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('3.png'),
@@ -3799,7 +3856,7 @@ class Icon extends DataProviderComponents
                                 'y' => '1',
                             ],
                             'optimizers' => [
-                                'color_scheme' => 'light',
+                                'color_scheme' => 'dark',
                                 'mirror_image' => '',
                                 'scenarios' => [
                                     'none' => [
@@ -3871,8 +3928,8 @@ class Icon extends DataProviderComponents
                                 'y' => '1',
                             ],
                             'optimizers' => [
-                                'color_scheme' => 'light',
-                                'mirror_image' => true,
+                                'color_scheme' => 'dark',
+                                'mirror_image' => '',
                                 'scenarios' => [
                                     'none' => [
                                         'enabled' => '1',
@@ -3943,7 +4000,7 @@ class Icon extends DataProviderComponents
                                 'y' => '1',
                             ],
                             'optimizers' => [
-                                'color_scheme' => 'light',
+                                'color_scheme' => 'dark',
                                 'mirror_image' => '',
                                 'scenarios' => [
                                     'none' => [
@@ -4015,8 +4072,8 @@ class Icon extends DataProviderComponents
                                 'y' => '1',
                             ],
                             'optimizers' => [
-                                'color_scheme' => 'light',
-                                'mirror_image' => '',
+                                'color_scheme' => 'dark',
+                                'mirror_image' => true,
                                 'scenarios' => [
                                     'none' => [
                                         'enabled' => '1',
@@ -4087,7 +4144,7 @@ class Icon extends DataProviderComponents
                                 'y' => '1',
                             ],
                             'optimizers' => [
-                                'color_scheme' => 'light',
+                                'color_scheme' => 'dark',
                                 'mirror_image' => '',
                                 'scenarios' => [
                                     'none' => [
@@ -4159,7 +4216,7 @@ class Icon extends DataProviderComponents
                                 'y' => '1',
                             ],
                             'optimizers' => [
-                                'color_scheme' => 'light',
+                                'color_scheme' => 'dark',
                                 'mirror_image' => '',
                                 'scenarios' => [
                                     'none' => [
@@ -4214,63 +4271,6 @@ class Icon extends DataProviderComponents
                             ],
                             'cc_css_classes' => '',
                         ],
-                    ],
-                    'ignoredItems' => [],
-                    'scenario' => [
-                        'teaserWidth' => [
-                            'name' => 'Content width Slider',
-                            'iconId' => 'tw_content-slider',
-                            'disabled' => false,
-                            'id' => 'container-slider',
-                        ],
-                        'desktopLayout' => [
-                            'name' => '6 in row',
-                            'iconId' => 'dl_6',
-                            'disabled' => '',
-                            'teasersNum' => '6',
-                            'id' => '6',
-                        ],
-                        'contentPlacement' => [
-                            'name' => 'Text below image',
-                            'iconId' => 'tl_under',
-                            'disabled' => '',
-                            'contentPlacement' => '',
-                            'id' => 'under',
-                        ],
-                        'mobileLayout' => [
-                            'name' => 'Slider',
-                            'iconId' => 'ml_slider',
-                            'disabled' => '',
-                            'id' => 'mobile-slider',
-                        ],
-                    ],
-                    'componentVisibility' => [
-                        'mobile' => '1',
-                        'desktop' => '1',
-                    ],
-                ],
-            ],
-            [
-                'id' => 'component8371',
-                'section' => 'content',
-                'type' => 'headline',
-                'data' => [
-                    'title' => '12 images + 6 in row + text style: dark',
-                    'subtitle' => '',
-                    'headingTag' => 'h3',
-                    'componentVisibility' => [
-                        'mobile' => '1',
-                        'desktop' => '1',
-                    ],
-                ],
-            ],
-            [
-                'id' => 'componentff91',
-                'section' => 'content',
-                'type' => 'icon',
-                'data' => [
-                    'customCssClass' => '',
-                    'items' => [
                         [
                             'image' => [
                                 'decoded' => $this->getDecodedImage('3.png'),
