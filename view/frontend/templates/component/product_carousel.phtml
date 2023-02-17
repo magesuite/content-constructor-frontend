@@ -9,7 +9,10 @@ $visibility = $block->getVisibilityClass();
 $useWholeScreen = $block->getVar('product_carousel/use_whole_screen') == 'true';
 $viewMode = $block->getData('view_mode') ?? 'grid';
 
-$componentClasses = $block->getSkipSpacing() ? ' cs-products-carousel--skip-spacing' : '';
+$componentClasses = $block->getMix();
+if ($block->getSkipSpacing()) {
+    $componentClasses .= ' cs-products-carousel--skip-spacing';
+}
 $componentClasses .= ' ' . $block->getVar('product_carousel/additional_css_classes');
 
 $containerClasses = $block->getContainerMix();
