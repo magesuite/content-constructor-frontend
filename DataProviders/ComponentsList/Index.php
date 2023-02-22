@@ -41,7 +41,7 @@ class Index extends DataProviderComponents
             ['Product grid with image teaser on the left', 'productgriditleft'],
             ['Product grid with image teaser on the right', 'productgriditright'],
             ['Product grid with image teaser in the middle', 'productgriditcenter'],
-            ['Product grid with image Advanced Options', 'product-grid-with-advanced-options'],
+            ['Product grid with Advanced Options', 'product-grid-with-advanced-options'],
             ['Product grid desktop and mobile visibility', 'productgriddesktopandmobile', true],
             ['Paragraph', 'paragraph', true],
             ['Product Carousel', 'product-carousel', true],
