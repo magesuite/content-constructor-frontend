@@ -133,6 +133,410 @@ class IconWithAdvancedOptions extends DataProviderComponents
                             'image_alt' => '',
                             'cc_css_classes' => '',
                         ],
+                        1 => [
+                            'image' => [
+                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/7ecaecbf0e977a89ad69e2f2d65e0b16702eeb902b8b16432eb0a28b4158ee6f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0',
+                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+                                'aspect_ratio' => '1:1',
+                                'fetch_priority' => false,
+                                'mobile' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                                'tablet' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                            ],
+                            'video' => [
+                                'url' => '',
+                                'type' => '',
+                            ],
+                            'slogan' => 'High fetch priority: NO',
+                            'description' => '',
+                            'cta' => [
+                                'label' => '',
+                                'href' => '',
+                                'target' => false,
+                                'link' => false,
+                            ],
+                            'content_align' => [
+                                'x' => 2,
+                                'y' => 2,
+                            ],
+                            'sizeSelect' => '2x1',
+                            'size' => [
+                                'x' => 2,
+                                'y' => 1,
+                            ],
+                            'row' => 1,
+                            'position' => 'left',
+                            'isAvailableForMobile' => 1,
+                            'optimizers' => [
+                                'color_scheme' => 'light',
+                                'mirror_image' => false,
+                                'scenarios' => [
+                                    'none' => [
+                                        'enabled' => false,
+                                        'intensity' => 'disabled',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_none',
+                                            'label' => 'None',
+                                        ],
+                                    ],
+                                    'overlay' => [
+                                        'enabled' => true,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                    ],
+                                    'gradient' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => [
+                                            'x' => 1,
+                                            'y' => 1,
+                                        ],
+                                        'configurator' => [
+                                            'icon' => '#contrast_gradient',
+                                            'label' => 'Gradient shadow',
+                                        ],
+                                    ],
+                                    'container' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                    ],
+                                    'text_shadow' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_text-shadow',
+                                            'label' => 'Text shadow',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'tracking_id' => '',
+                            'teaserType' => 'full',
+                            'image_alt' => '',
+                            'cc_css_classes' => '',
+                        ],
+                        2 => [
+                            'image' => [
+                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/7ecaecbf0e977a89ad69e2f2d65e0b16702eeb902b8b16432eb0a28b4158ee6f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0',
+                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+                                'aspect_ratio' => '1:1',
+                                'fetch_priority' => false,
+                                'mobile' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                                'tablet' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                            ],
+                            'video' => [
+                                'url' => '',
+                                'type' => '',
+                            ],
+                            'slogan' => 'High fetch priority: NO',
+                            'description' => '',
+                            'cta' => [
+                                'label' => '',
+                                'href' => '',
+                                'target' => false,
+                                'link' => false,
+                            ],
+                            'content_align' => [
+                                'x' => 2,
+                                'y' => 2,
+                            ],
+                            'sizeSelect' => '2x1',
+                            'size' => [
+                                'x' => 2,
+                                'y' => 1,
+                            ],
+                            'row' => 1,
+                            'position' => 'left',
+                            'isAvailableForMobile' => 1,
+                            'optimizers' => [
+                                'color_scheme' => 'light',
+                                'mirror_image' => false,
+                                'scenarios' => [
+                                    'none' => [
+                                        'enabled' => false,
+                                        'intensity' => 'disabled',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_none',
+                                            'label' => 'None',
+                                        ],
+                                    ],
+                                    'overlay' => [
+                                        'enabled' => true,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                    ],
+                                    'gradient' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => [
+                                            'x' => 1,
+                                            'y' => 1,
+                                        ],
+                                        'configurator' => [
+                                            'icon' => '#contrast_gradient',
+                                            'label' => 'Gradient shadow',
+                                        ],
+                                    ],
+                                    'container' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                    ],
+                                    'text_shadow' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_text-shadow',
+                                            'label' => 'Text shadow',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'tracking_id' => '',
+                            'teaserType' => 'full',
+                            'image_alt' => '',
+                            'cc_css_classes' => '',
+                        ],
+                        3 => [
+                            'image' => [
+                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/7ecaecbf0e977a89ad69e2f2d65e0b16702eeb902b8b16432eb0a28b4158ee6f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0',
+                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+                                'aspect_ratio' => '1:1',
+                                'fetch_priority' => false,
+                                'mobile' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                                'tablet' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                            ],
+                            'video' => [
+                                'url' => '',
+                                'type' => '',
+                            ],
+                            'slogan' => 'High fetch priority: NO',
+                            'description' => '',
+                            'cta' => [
+                                'label' => '',
+                                'href' => '',
+                                'target' => false,
+                                'link' => false,
+                            ],
+                            'content_align' => [
+                                'x' => 2,
+                                'y' => 2,
+                            ],
+                            'sizeSelect' => '2x1',
+                            'size' => [
+                                'x' => 2,
+                                'y' => 1,
+                            ],
+                            'row' => 1,
+                            'position' => 'left',
+                            'isAvailableForMobile' => 1,
+                            'optimizers' => [
+                                'color_scheme' => 'light',
+                                'mirror_image' => false,
+                                'scenarios' => [
+                                    'none' => [
+                                        'enabled' => false,
+                                        'intensity' => 'disabled',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_none',
+                                            'label' => 'None',
+                                        ],
+                                    ],
+                                    'overlay' => [
+                                        'enabled' => true,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                    ],
+                                    'gradient' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => [
+                                            'x' => 1,
+                                            'y' => 1,
+                                        ],
+                                        'configurator' => [
+                                            'icon' => '#contrast_gradient',
+                                            'label' => 'Gradient shadow',
+                                        ],
+                                    ],
+                                    'container' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                    ],
+                                    'text_shadow' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_text-shadow',
+                                            'label' => 'Text shadow',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'tracking_id' => '',
+                            'teaserType' => 'full',
+                            'image_alt' => '',
+                            'cc_css_classes' => '',
+                        ],
+                        4 => [
+                            'image' => [
+                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/7ecaecbf0e977a89ad69e2f2d65e0b16702eeb902b8b16432eb0a28b4158ee6f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0',
+                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+                                'aspect_ratio' => '1:1',
+                                'fetch_priority' => false,
+                                'mobile' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                                'tablet' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                            ],
+                            'video' => [
+                                'url' => '',
+                                'type' => '',
+                            ],
+                            'slogan' => 'High fetch priority: NO',
+                            'description' => '',
+                            'cta' => [
+                                'label' => '',
+                                'href' => '',
+                                'target' => false,
+                                'link' => false,
+                            ],
+                            'content_align' => [
+                                'x' => 2,
+                                'y' => 2,
+                            ],
+                            'sizeSelect' => '2x1',
+                            'size' => [
+                                'x' => 2,
+                                'y' => 1,
+                            ],
+                            'row' => 1,
+                            'position' => 'left',
+                            'isAvailableForMobile' => 1,
+                            'optimizers' => [
+                                'color_scheme' => 'light',
+                                'mirror_image' => false,
+                                'scenarios' => [
+                                    'none' => [
+                                        'enabled' => false,
+                                        'intensity' => 'disabled',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_none',
+                                            'label' => 'None',
+                                        ],
+                                    ],
+                                    'overlay' => [
+                                        'enabled' => true,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                    ],
+                                    'gradient' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => [
+                                            'x' => 1,
+                                            'y' => 1,
+                                        ],
+                                        'configurator' => [
+                                            'icon' => '#contrast_gradient',
+                                            'label' => 'Gradient shadow',
+                                        ],
+                                    ],
+                                    'container' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                    ],
+                                    'text_shadow' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_text-shadow',
+                                            'label' => 'Text shadow',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'tracking_id' => '',
+                            'teaserType' => 'full',
+                            'image_alt' => '',
+                            'cc_css_classes' => '',
+                        ],
                     ],
                     'ignoredItems' => [
                     ],
@@ -182,10 +586,10 @@ class IconWithAdvancedOptions extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => '',
-                                'decoded' => '',
-                                'aspect_ratio' => '',
-                                'fetch_priority' => false,
+                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/7ecaecbf0e977a89ad69e2f2d65e0b16702eeb902b8b16432eb0a28b4158ee6f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0',
+                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+                                'aspect_ratio' => '1:1',
+                                'fetch_priority' => true,
                                 'mobile' => [
                                     'raw' => '',
                                     'decoded' => '',
@@ -196,22 +600,23 @@ class IconWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
                             ],
                             'video' => [
                                 'url' => '',
                                 'type' => '',
                             ],
-                            'slogan' => '',
+                            'slogan' => 'High fetch priority: YES',
                             'description' => '',
                             'cta' => [
-                                'label' => 'More',
+                                'label' => '',
                                 'href' => '',
                                 'target' => false,
                                 'link' => false,
                             ],
                             'content_align' => [
-                                'x' => 1,
-                                'y' => 1,
+                                'x' => 2,
+                                'y' => 2,
                             ],
                             'sizeSelect' => '2x1',
                             'size' => [
@@ -222,11 +627,11 @@ class IconWithAdvancedOptions extends DataProviderComponents
                             'position' => 'left',
                             'isAvailableForMobile' => 1,
                             'optimizers' => [
-                                'color_scheme' => 'dark',
+                                'color_scheme' => 'light',
                                 'mirror_image' => false,
                                 'scenarios' => [
                                     'none' => [
-                                        'enabled' => true,
+                                        'enabled' => false,
                                         'intensity' => 'disabled',
                                         'direction' => 'disabled',
                                         'configurator' => [
@@ -235,7 +640,7 @@ class IconWithAdvancedOptions extends DataProviderComponents
                                         ],
                                     ],
                                     'overlay' => [
-                                        'enabled' => false,
+                                        'enabled' => true,
                                         'intensity' => 50,
                                         'direction' => 'disabled',
                                         'configurator' => [
@@ -282,10 +687,10 @@ class IconWithAdvancedOptions extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => '',
-                                'decoded' => '',
-                                'aspect_ratio' => '',
-                                'fetch_priority' => false,
+                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/7ecaecbf0e977a89ad69e2f2d65e0b16702eeb902b8b16432eb0a28b4158ee6f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0',
+                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+                                'aspect_ratio' => '1:1',
+                                'fetch_priority' => true,
                                 'mobile' => [
                                     'raw' => '',
                                     'decoded' => '',
@@ -296,22 +701,23 @@ class IconWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
                             ],
                             'video' => [
                                 'url' => '',
                                 'type' => '',
                             ],
-                            'slogan' => '',
+                            'slogan' => 'High fetch priority: YES',
                             'description' => '',
                             'cta' => [
-                                'label' => 'More',
+                                'label' => '',
                                 'href' => '',
                                 'target' => false,
                                 'link' => false,
                             ],
                             'content_align' => [
-                                'x' => 1,
-                                'y' => 1,
+                                'x' => 2,
+                                'y' => 2,
                             ],
                             'sizeSelect' => '2x1',
                             'size' => [
@@ -322,11 +728,11 @@ class IconWithAdvancedOptions extends DataProviderComponents
                             'position' => 'left',
                             'isAvailableForMobile' => 1,
                             'optimizers' => [
-                                'color_scheme' => 'dark',
+                                'color_scheme' => 'light',
                                 'mirror_image' => false,
                                 'scenarios' => [
                                     'none' => [
-                                        'enabled' => true,
+                                        'enabled' => false,
                                         'intensity' => 'disabled',
                                         'direction' => 'disabled',
                                         'configurator' => [
@@ -335,7 +741,7 @@ class IconWithAdvancedOptions extends DataProviderComponents
                                         ],
                                     ],
                                     'overlay' => [
-                                        'enabled' => false,
+                                        'enabled' => true,
                                         'intensity' => 50,
                                         'direction' => 'disabled',
                                         'configurator' => [
@@ -382,10 +788,10 @@ class IconWithAdvancedOptions extends DataProviderComponents
                         ],
                         2 => [
                             'image' => [
-                                'raw' => '',
-                                'decoded' => '',
-                                'aspect_ratio' => '',
-                                'fetch_priority' => false,
+                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/7ecaecbf0e977a89ad69e2f2d65e0b16702eeb902b8b16432eb0a28b4158ee6f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0',
+                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+                                'aspect_ratio' => '1:1',
+                                'fetch_priority' => true,
                                 'mobile' => [
                                     'raw' => '',
                                     'decoded' => '',
@@ -396,22 +802,23 @@ class IconWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
                             ],
                             'video' => [
                                 'url' => '',
                                 'type' => '',
                             ],
-                            'slogan' => '',
+                            'slogan' => 'High fetch priority: YES',
                             'description' => '',
                             'cta' => [
-                                'label' => 'More',
+                                'label' => '',
                                 'href' => '',
                                 'target' => false,
                                 'link' => false,
                             ],
                             'content_align' => [
-                                'x' => 1,
-                                'y' => 1,
+                                'x' => 2,
+                                'y' => 2,
                             ],
                             'sizeSelect' => '2x1',
                             'size' => [
@@ -422,11 +829,11 @@ class IconWithAdvancedOptions extends DataProviderComponents
                             'position' => 'left',
                             'isAvailableForMobile' => 1,
                             'optimizers' => [
-                                'color_scheme' => 'dark',
+                                'color_scheme' => 'light',
                                 'mirror_image' => false,
                                 'scenarios' => [
                                     'none' => [
-                                        'enabled' => true,
+                                        'enabled' => false,
                                         'intensity' => 'disabled',
                                         'direction' => 'disabled',
                                         'configurator' => [
@@ -435,7 +842,7 @@ class IconWithAdvancedOptions extends DataProviderComponents
                                         ],
                                     ],
                                     'overlay' => [
-                                        'enabled' => false,
+                                        'enabled' => true,
                                         'intensity' => 50,
                                         'direction' => 'disabled',
                                         'configurator' => [
@@ -482,10 +889,10 @@ class IconWithAdvancedOptions extends DataProviderComponents
                         ],
                         3 => [
                             'image' => [
-                                'raw' => '',
-                                'decoded' => '',
-                                'aspect_ratio' => '',
-                                'fetch_priority' => false,
+                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/7ecaecbf0e977a89ad69e2f2d65e0b16702eeb902b8b16432eb0a28b4158ee6f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0',
+                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+                                'aspect_ratio' => '1:1',
+                                'fetch_priority' => true,
                                 'mobile' => [
                                     'raw' => '',
                                     'decoded' => '',
@@ -496,22 +903,23 @@ class IconWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
                             ],
                             'video' => [
                                 'url' => '',
                                 'type' => '',
                             ],
-                            'slogan' => '',
+                            'slogan' => 'High fetch priority: YES',
                             'description' => '',
                             'cta' => [
-                                'label' => 'More',
+                                'label' => '',
                                 'href' => '',
                                 'target' => false,
                                 'link' => false,
                             ],
                             'content_align' => [
-                                'x' => 1,
-                                'y' => 1,
+                                'x' => 2,
+                                'y' => 2,
                             ],
                             'sizeSelect' => '2x1',
                             'size' => [
@@ -522,11 +930,11 @@ class IconWithAdvancedOptions extends DataProviderComponents
                             'position' => 'left',
                             'isAvailableForMobile' => 1,
                             'optimizers' => [
-                                'color_scheme' => 'dark',
+                                'color_scheme' => 'light',
                                 'mirror_image' => false,
                                 'scenarios' => [
                                     'none' => [
-                                        'enabled' => true,
+                                        'enabled' => false,
                                         'intensity' => 'disabled',
                                         'direction' => 'disabled',
                                         'configurator' => [
@@ -535,7 +943,7 @@ class IconWithAdvancedOptions extends DataProviderComponents
                                         ],
                                     ],
                                     'overlay' => [
-                                        'enabled' => false,
+                                        'enabled' => true,
                                         'intensity' => 50,
                                         'direction' => 'disabled',
                                         'configurator' => [
@@ -2557,7 +2965,7 @@ class IconWithAdvancedOptions extends DataProviderComponents
                                 'url' => '',
                                 'type' => '',
                             ],
-                            'slogan' => '',
+                            'slogan' => 'n/a',
                             'description' => '',
                             'cta' => [
                                 'label' => '',
@@ -2566,8 +2974,8 @@ class IconWithAdvancedOptions extends DataProviderComponents
                                 'link' => false,
                             ],
                             'content_align' => [
-                                'x' => 1,
-                                'y' => 1,
+                                'x' => 2,
+                                'y' => 2,
                             ],
                             'sizeSelect' => '2x1',
                             'size' => [
@@ -2859,7 +3267,7 @@ class IconWithAdvancedOptions extends DataProviderComponents
                                 'url' => '',
                                 'type' => '',
                             ],
-                            'slogan' => '',
+                            'slogan' => 'n/a',
                             'description' => '',
                             'cta' => [
                                 'label' => '',
@@ -2868,8 +3276,8 @@ class IconWithAdvancedOptions extends DataProviderComponents
                                 'link' => false,
                             ],
                             'content_align' => [
-                                'x' => 1,
-                                'y' => 1,
+                                'x' => 2,
+                                'y' => 2,
                             ],
                             'sizeSelect' => '2x1',
                             'size' => [
@@ -3225,7 +3633,7 @@ class IconWithAdvancedOptions extends DataProviderComponents
                                 'url' => '',
                                 'type' => '',
                             ],
-                            'slogan' => '',
+                            'slogan' => 'n/a',
                             'description' => '',
                             'cta' => [
                                 'label' => '',
@@ -3234,8 +3642,8 @@ class IconWithAdvancedOptions extends DataProviderComponents
                                 'link' => false,
                             ],
                             'content_align' => [
-                                'x' => 1,
-                                'y' => 1,
+                                'x' => 2,
+                                'y' => 2,
                             ],
                             'sizeSelect' => '2x1',
                             'size' => [
@@ -3527,7 +3935,7 @@ class IconWithAdvancedOptions extends DataProviderComponents
                                 'url' => '',
                                 'type' => '',
                             ],
-                            'slogan' => '',
+                            'slogan' => 'n/a',
                             'description' => '',
                             'cta' => [
                                 'label' => '',
@@ -3536,8 +3944,8 @@ class IconWithAdvancedOptions extends DataProviderComponents
                                 'link' => false,
                             ],
                             'content_align' => [
-                                'x' => 1,
-                                'y' => 1,
+                                'x' => 2,
+                                'y' => 2,
                             ],
                             'sizeSelect' => '2x1',
                             'size' => [
@@ -3872,6 +4280,410 @@ class IconWithAdvancedOptions extends DataProviderComponents
                             'image_alt' => '',
                             'cc_css_classes' => '',
                         ],
+                        1 => [
+                            'image' => [
+                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/7ecaecbf0e977a89ad69e2f2d65e0b16702eeb902b8b16432eb0a28b4158ee6f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0',
+                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+                                'aspect_ratio' => '1:1',
+                                'fetch_priority' => false,
+                                'mobile' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                                'tablet' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                            ],
+                            'video' => [
+                                'url' => '',
+                                'type' => '',
+                            ],
+                            'slogan' => 'Tracking ID: - (nothing)',
+                            'description' => '',
+                            'cta' => [
+                                'label' => '',
+                                'href' => '',
+                                'target' => false,
+                                'link' => false,
+                            ],
+                            'content_align' => [
+                                'x' => 2,
+                                'y' => 2,
+                            ],
+                            'sizeSelect' => '2x1',
+                            'size' => [
+                                'x' => 2,
+                                'y' => 1,
+                            ],
+                            'row' => 1,
+                            'position' => 'left',
+                            'isAvailableForMobile' => 1,
+                            'optimizers' => [
+                                'color_scheme' => 'light',
+                                'mirror_image' => false,
+                                'scenarios' => [
+                                    'none' => [
+                                        'enabled' => false,
+                                        'intensity' => 'disabled',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_none',
+                                            'label' => 'None',
+                                        ],
+                                    ],
+                                    'overlay' => [
+                                        'enabled' => true,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                    ],
+                                    'gradient' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => [
+                                            'x' => 1,
+                                            'y' => 1,
+                                        ],
+                                        'configurator' => [
+                                            'icon' => '#contrast_gradient',
+                                            'label' => 'Gradient shadow',
+                                        ],
+                                    ],
+                                    'container' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                    ],
+                                    'text_shadow' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_text-shadow',
+                                            'label' => 'Text shadow',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'tracking_id' => '',
+                            'teaserType' => 'full',
+                            'image_alt' => '',
+                            'cc_css_classes' => '',
+                        ],
+                        2 => [
+                            'image' => [
+                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/7ecaecbf0e977a89ad69e2f2d65e0b16702eeb902b8b16432eb0a28b4158ee6f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0',
+                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+                                'aspect_ratio' => '1:1',
+                                'fetch_priority' => false,
+                                'mobile' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                                'tablet' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                            ],
+                            'video' => [
+                                'url' => '',
+                                'type' => '',
+                            ],
+                            'slogan' => 'Tracking ID: - (nothing)',
+                            'description' => '',
+                            'cta' => [
+                                'label' => '',
+                                'href' => '',
+                                'target' => false,
+                                'link' => false,
+                            ],
+                            'content_align' => [
+                                'x' => 2,
+                                'y' => 2,
+                            ],
+                            'sizeSelect' => '2x1',
+                            'size' => [
+                                'x' => 2,
+                                'y' => 1,
+                            ],
+                            'row' => 1,
+                            'position' => 'left',
+                            'isAvailableForMobile' => 1,
+                            'optimizers' => [
+                                'color_scheme' => 'light',
+                                'mirror_image' => false,
+                                'scenarios' => [
+                                    'none' => [
+                                        'enabled' => false,
+                                        'intensity' => 'disabled',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_none',
+                                            'label' => 'None',
+                                        ],
+                                    ],
+                                    'overlay' => [
+                                        'enabled' => true,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                    ],
+                                    'gradient' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => [
+                                            'x' => 1,
+                                            'y' => 1,
+                                        ],
+                                        'configurator' => [
+                                            'icon' => '#contrast_gradient',
+                                            'label' => 'Gradient shadow',
+                                        ],
+                                    ],
+                                    'container' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                    ],
+                                    'text_shadow' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_text-shadow',
+                                            'label' => 'Text shadow',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'tracking_id' => '',
+                            'teaserType' => 'full',
+                            'image_alt' => '',
+                            'cc_css_classes' => '',
+                        ],
+                        3 => [
+                            'image' => [
+                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/7ecaecbf0e977a89ad69e2f2d65e0b16702eeb902b8b16432eb0a28b4158ee6f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0',
+                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+                                'aspect_ratio' => '1:1',
+                                'fetch_priority' => false,
+                                'mobile' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                                'tablet' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                            ],
+                            'video' => [
+                                'url' => '',
+                                'type' => '',
+                            ],
+                            'slogan' => 'Tracking ID: - (nothing)',
+                            'description' => '',
+                            'cta' => [
+                                'label' => '',
+                                'href' => '',
+                                'target' => false,
+                                'link' => false,
+                            ],
+                            'content_align' => [
+                                'x' => 2,
+                                'y' => 2,
+                            ],
+                            'sizeSelect' => '2x1',
+                            'size' => [
+                                'x' => 2,
+                                'y' => 1,
+                            ],
+                            'row' => 1,
+                            'position' => 'left',
+                            'isAvailableForMobile' => 1,
+                            'optimizers' => [
+                                'color_scheme' => 'light',
+                                'mirror_image' => false,
+                                'scenarios' => [
+                                    'none' => [
+                                        'enabled' => false,
+                                        'intensity' => 'disabled',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_none',
+                                            'label' => 'None',
+                                        ],
+                                    ],
+                                    'overlay' => [
+                                        'enabled' => true,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                    ],
+                                    'gradient' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => [
+                                            'x' => 1,
+                                            'y' => 1,
+                                        ],
+                                        'configurator' => [
+                                            'icon' => '#contrast_gradient',
+                                            'label' => 'Gradient shadow',
+                                        ],
+                                    ],
+                                    'container' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                    ],
+                                    'text_shadow' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_text-shadow',
+                                            'label' => 'Text shadow',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'tracking_id' => '',
+                            'teaserType' => 'full',
+                            'image_alt' => '',
+                            'cc_css_classes' => '',
+                        ],
+                        4 => [
+                            'image' => [
+                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/7ecaecbf0e977a89ad69e2f2d65e0b16702eeb902b8b16432eb0a28b4158ee6f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0',
+                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+                                'aspect_ratio' => '1:1',
+                                'fetch_priority' => false,
+                                'mobile' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                                'tablet' => [
+                                    'raw' => '',
+                                    'decoded' => '',
+                                    'aspect_ratio' => '',
+                                ],
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                            ],
+                            'video' => [
+                                'url' => '',
+                                'type' => '',
+                            ],
+                            'slogan' => 'Tracking ID: - (nothing)',
+                            'description' => '',
+                            'cta' => [
+                                'label' => '',
+                                'href' => '',
+                                'target' => false,
+                                'link' => false,
+                            ],
+                            'content_align' => [
+                                'x' => 2,
+                                'y' => 2,
+                            ],
+                            'sizeSelect' => '2x1',
+                            'size' => [
+                                'x' => 2,
+                                'y' => 1,
+                            ],
+                            'row' => 1,
+                            'position' => 'left',
+                            'isAvailableForMobile' => 1,
+                            'optimizers' => [
+                                'color_scheme' => 'light',
+                                'mirror_image' => false,
+                                'scenarios' => [
+                                    'none' => [
+                                        'enabled' => false,
+                                        'intensity' => 'disabled',
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_none',
+                                            'label' => 'None',
+                                        ],
+                                    ],
+                                    'overlay' => [
+                                        'enabled' => true,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                    ],
+                                    'gradient' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => [
+                                            'x' => 1,
+                                            'y' => 1,
+                                        ],
+                                        'configurator' => [
+                                            'icon' => '#contrast_gradient',
+                                            'label' => 'Gradient shadow',
+                                        ],
+                                    ],
+                                    'container' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                    ],
+                                    'text_shadow' => [
+                                        'enabled' => false,
+                                        'intensity' => 50,
+                                        'direction' => 'disabled',
+                                        'configurator' => [
+                                            'icon' => '#contrast_text-shadow',
+                                            'label' => 'Text shadow',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                            'tracking_id' => '',
+                            'teaserType' => 'full',
+                            'image_alt' => '',
+                            'cc_css_classes' => '',
+                        ],
                     ],
                     'ignoredItems' => [
                     ],
@@ -3921,9 +4733,9 @@ class IconWithAdvancedOptions extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => '',
-                                'decoded' => '',
-                                'aspect_ratio' => '',
+                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/7ecaecbf0e977a89ad69e2f2d65e0b16702eeb902b8b16432eb0a28b4158ee6f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0',
+                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+                                'aspect_ratio' => '1:1',
                                 'fetch_priority' => false,
                                 'mobile' => [
                                     'raw' => '',
@@ -3935,22 +4747,23 @@ class IconWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
                             ],
                             'video' => [
                                 'url' => '',
                                 'type' => '',
                             ],
-                            'slogan' => '',
+                            'slogan' => 'Tracking ID: TEST',
                             'description' => '',
                             'cta' => [
-                                'label' => 'More',
+                                'label' => '',
                                 'href' => '',
                                 'target' => false,
                                 'link' => false,
                             ],
                             'content_align' => [
-                                'x' => 1,
-                                'y' => 1,
+                                'x' => 2,
+                                'y' => 2,
                             ],
                             'sizeSelect' => '2x1',
                             'size' => [
@@ -3961,11 +4774,11 @@ class IconWithAdvancedOptions extends DataProviderComponents
                             'position' => 'left',
                             'isAvailableForMobile' => 1,
                             'optimizers' => [
-                                'color_scheme' => 'dark',
+                                'color_scheme' => 'light',
                                 'mirror_image' => false,
                                 'scenarios' => [
                                     'none' => [
-                                        'enabled' => true,
+                                        'enabled' => false,
                                         'intensity' => 'disabled',
                                         'direction' => 'disabled',
                                         'configurator' => [
@@ -3974,7 +4787,7 @@ class IconWithAdvancedOptions extends DataProviderComponents
                                         ],
                                     ],
                                     'overlay' => [
-                                        'enabled' => false,
+                                        'enabled' => true,
                                         'intensity' => 50,
                                         'direction' => 'disabled',
                                         'configurator' => [
@@ -4014,16 +4827,16 @@ class IconWithAdvancedOptions extends DataProviderComponents
                                     ],
                                 ],
                             ],
-                            'tracking_id' => '',
+                            'tracking_id' => 'TEST',
                             'teaserType' => 'full',
                             'image_alt' => '',
                             'cc_css_classes' => '',
                         ],
                         1 => [
                             'image' => [
-                                'raw' => '',
-                                'decoded' => '',
-                                'aspect_ratio' => '',
+                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/7ecaecbf0e977a89ad69e2f2d65e0b16702eeb902b8b16432eb0a28b4158ee6f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0',
+                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+                                'aspect_ratio' => '1:1',
                                 'fetch_priority' => false,
                                 'mobile' => [
                                     'raw' => '',
@@ -4035,22 +4848,23 @@ class IconWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
                             ],
                             'video' => [
                                 'url' => '',
                                 'type' => '',
                             ],
-                            'slogan' => '',
+                            'slogan' => 'Tracking ID: TEST',
                             'description' => '',
                             'cta' => [
-                                'label' => 'More',
+                                'label' => '',
                                 'href' => '',
                                 'target' => false,
                                 'link' => false,
                             ],
                             'content_align' => [
-                                'x' => 1,
-                                'y' => 1,
+                                'x' => 2,
+                                'y' => 2,
                             ],
                             'sizeSelect' => '2x1',
                             'size' => [
@@ -4061,11 +4875,11 @@ class IconWithAdvancedOptions extends DataProviderComponents
                             'position' => 'left',
                             'isAvailableForMobile' => 1,
                             'optimizers' => [
-                                'color_scheme' => 'dark',
+                                'color_scheme' => 'light',
                                 'mirror_image' => false,
                                 'scenarios' => [
                                     'none' => [
-                                        'enabled' => true,
+                                        'enabled' => false,
                                         'intensity' => 'disabled',
                                         'direction' => 'disabled',
                                         'configurator' => [
@@ -4074,7 +4888,7 @@ class IconWithAdvancedOptions extends DataProviderComponents
                                         ],
                                     ],
                                     'overlay' => [
-                                        'enabled' => false,
+                                        'enabled' => true,
                                         'intensity' => 50,
                                         'direction' => 'disabled',
                                         'configurator' => [
@@ -4114,16 +4928,16 @@ class IconWithAdvancedOptions extends DataProviderComponents
                                     ],
                                 ],
                             ],
-                            'tracking_id' => '',
+                            'tracking_id' => 'TEST',
                             'teaserType' => 'full',
                             'image_alt' => '',
                             'cc_css_classes' => '',
                         ],
                         2 => [
                             'image' => [
-                                'raw' => '',
-                                'decoded' => '',
-                                'aspect_ratio' => '',
+                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/7ecaecbf0e977a89ad69e2f2d65e0b16702eeb902b8b16432eb0a28b4158ee6f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0',
+                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+                                'aspect_ratio' => '1:1',
                                 'fetch_priority' => false,
                                 'mobile' => [
                                     'raw' => '',
@@ -4135,22 +4949,23 @@ class IconWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
                             ],
                             'video' => [
                                 'url' => '',
                                 'type' => '',
                             ],
-                            'slogan' => '',
+                            'slogan' => 'Tracking ID: TEST',
                             'description' => '',
                             'cta' => [
-                                'label' => 'More',
+                                'label' => '',
                                 'href' => '',
                                 'target' => false,
                                 'link' => false,
                             ],
                             'content_align' => [
-                                'x' => 1,
-                                'y' => 1,
+                                'x' => 2,
+                                'y' => 2,
                             ],
                             'sizeSelect' => '2x1',
                             'size' => [
@@ -4161,11 +4976,11 @@ class IconWithAdvancedOptions extends DataProviderComponents
                             'position' => 'left',
                             'isAvailableForMobile' => 1,
                             'optimizers' => [
-                                'color_scheme' => 'dark',
+                                'color_scheme' => 'light',
                                 'mirror_image' => false,
                                 'scenarios' => [
                                     'none' => [
-                                        'enabled' => true,
+                                        'enabled' => false,
                                         'intensity' => 'disabled',
                                         'direction' => 'disabled',
                                         'configurator' => [
@@ -4174,7 +4989,7 @@ class IconWithAdvancedOptions extends DataProviderComponents
                                         ],
                                     ],
                                     'overlay' => [
-                                        'enabled' => false,
+                                        'enabled' => true,
                                         'intensity' => 50,
                                         'direction' => 'disabled',
                                         'configurator' => [
@@ -4214,16 +5029,16 @@ class IconWithAdvancedOptions extends DataProviderComponents
                                     ],
                                 ],
                             ],
-                            'tracking_id' => '',
+                            'tracking_id' => 'TEST',
                             'teaserType' => 'full',
                             'image_alt' => '',
                             'cc_css_classes' => '',
                         ],
                         3 => [
                             'image' => [
-                                'raw' => '',
-                                'decoded' => '',
-                                'aspect_ratio' => '',
+                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/7ecaecbf0e977a89ad69e2f2d65e0b16702eeb902b8b16432eb0a28b4158ee6f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0',
+                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+                                'aspect_ratio' => '1:1',
                                 'fetch_priority' => false,
                                 'mobile' => [
                                     'raw' => '',
@@ -4235,22 +5050,23 @@ class IconWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
                             ],
                             'video' => [
                                 'url' => '',
                                 'type' => '',
                             ],
-                            'slogan' => '',
+                            'slogan' => 'Tracking ID: TEST',
                             'description' => '',
                             'cta' => [
-                                'label' => 'More',
+                                'label' => '',
                                 'href' => '',
                                 'target' => false,
                                 'link' => false,
                             ],
                             'content_align' => [
-                                'x' => 1,
-                                'y' => 1,
+                                'x' => 2,
+                                'y' => 2,
                             ],
                             'sizeSelect' => '2x1',
                             'size' => [
@@ -4261,11 +5077,11 @@ class IconWithAdvancedOptions extends DataProviderComponents
                             'position' => 'left',
                             'isAvailableForMobile' => 1,
                             'optimizers' => [
-                                'color_scheme' => 'dark',
+                                'color_scheme' => 'light',
                                 'mirror_image' => false,
                                 'scenarios' => [
                                     'none' => [
-                                        'enabled' => true,
+                                        'enabled' => false,
                                         'intensity' => 'disabled',
                                         'direction' => 'disabled',
                                         'configurator' => [
@@ -4274,7 +5090,7 @@ class IconWithAdvancedOptions extends DataProviderComponents
                                         ],
                                     ],
                                     'overlay' => [
-                                        'enabled' => false,
+                                        'enabled' => true,
                                         'intensity' => 50,
                                         'direction' => 'disabled',
                                         'configurator' => [
@@ -4314,7 +5130,7 @@ class IconWithAdvancedOptions extends DataProviderComponents
                                     ],
                                 ],
                             ],
-                            'tracking_id' => '',
+                            'tracking_id' => 'TEST',
                             'teaserType' => 'full',
                             'image_alt' => '',
                             'cc_css_classes' => '',

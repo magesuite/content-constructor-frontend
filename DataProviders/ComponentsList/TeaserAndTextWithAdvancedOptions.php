@@ -647,7 +647,7 @@ class TeaserAndTextWithAdvancedOptions extends DataProviderComponents
                                 'url' => '',
                                 'type' => '',
                             ],
-                            'slogan' => '',
+                            'slogan' => 'Alt: - (nothing)',
                             'description' => '',
                             'cta' => [
                                 'label' => '',
@@ -885,7 +885,7 @@ class TeaserAndTextWithAdvancedOptions extends DataProviderComponents
                                 'url' => '',
                                 'type' => '',
                             ],
-                            'slogan' => '',
+                            'slogan' => 'Alt: - (nothing)',
                             'description' => '',
                             'cta' => [
                                 'label' => '',
@@ -1123,7 +1123,7 @@ class TeaserAndTextWithAdvancedOptions extends DataProviderComponents
                                 'url' => '',
                                 'type' => '',
                             ],
-                            'slogan' => '',
+                            'slogan' => 'Alt: - (nothing)',
                             'description' => '',
                             'cta' => [
                                 'label' => '',
@@ -1361,7 +1361,7 @@ class TeaserAndTextWithAdvancedOptions extends DataProviderComponents
                                 'url' => '',
                                 'type' => '',
                             ],
-                            'slogan' => '',
+                            'slogan' => 'Alt: - (nothing)',
                             'description' => '',
                             'cta' => [
                                 'label' => '',
@@ -1599,7 +1599,7 @@ class TeaserAndTextWithAdvancedOptions extends DataProviderComponents
                                 'url' => '',
                                 'type' => '',
                             ],
-                            'slogan' => '',
+                            'slogan' => 'Alt: - (nothing)',
                             'description' => '',
                             'cta' => [
                                 'label' => '',
@@ -1753,7 +1753,7 @@ class TeaserAndTextWithAdvancedOptions extends DataProviderComponents
                                 'url' => '',
                                 'type' => '',
                             ],
-                            'slogan' => '',
+                            'slogan' => 'Alt: TEST',
                             'description' => '',
                             'cta' => [
                                 'label' => '',
@@ -1991,7 +1991,7 @@ class TeaserAndTextWithAdvancedOptions extends DataProviderComponents
                                 'url' => '',
                                 'type' => '',
                             ],
-                            'slogan' => '',
+                            'slogan' => 'Alt: TEST',
                             'description' => '',
                             'cta' => [
                                 'label' => '',
@@ -2229,7 +2229,7 @@ class TeaserAndTextWithAdvancedOptions extends DataProviderComponents
                                 'url' => '',
                                 'type' => '',
                             ],
-                            'slogan' => '',
+                            'slogan' => 'Alt: TEST',
                             'description' => '',
                             'cta' => [
                                 'label' => '',
@@ -2467,7 +2467,7 @@ class TeaserAndTextWithAdvancedOptions extends DataProviderComponents
                                 'url' => '',
                                 'type' => '',
                             ],
-                            'slogan' => '',
+                            'slogan' => 'Alt: TEST',
                             'description' => '',
                             'cta' => [
                                 'label' => '',
@@ -2705,7 +2705,7 @@ class TeaserAndTextWithAdvancedOptions extends DataProviderComponents
                                 'url' => '',
                                 'type' => '',
                             ],
-                            'slogan' => '',
+                            'slogan' => 'Alt: TEST',
                             'description' => '',
                             'cta' => [
                                 'label' => '',
