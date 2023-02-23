@@ -114,9 +114,15 @@ class UrlResolver
 
     protected function getUrl(string $url): string
     {
+        if (strpos($url, '#') === 0) {
+            return $url;
+        }
+
         if (filter_var($url, FILTER_VALIDATE_URL)) {
             return $url;
         }
+
+        $url = ltrim($url, '/');
 
         return $this->urlBuilder->getUrl($url);
     }
