@@ -122,6 +122,8 @@ class UrlResolver
             return $url;
         }
 
+        $url = ltrim($url, '/');
+
         return $this->urlBuilder->getUrl($url);
     }
 

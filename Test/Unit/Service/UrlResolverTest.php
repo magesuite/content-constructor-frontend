@@ -88,9 +88,12 @@ class UrlResolverTest extends \PHPUnit\Framework\TestCase
 
     public function testItProperlyResolvesRelativeUrl()
     {
-        $url = $this->urlResolver->resolve('dummy-link');
+        $expectedUrl = 'http://localhost/index.php/dummy-link/';
 
-        $this->assertEquals('http://localhost/index.php/dummy-link/', $url);
+        foreach (['dummy-link', '/dummy-link'] as $url) {
+            $url = $this->urlResolver->resolve($url);
+            $this->assertEquals($expectedUrl, $url);
+        }
     }
 
     public function testItProperlyResolvesProductUrl()
