@@ -47,10 +47,10 @@ class ComponentsList extends \Magento\Framework\View\Element\Template
         'ttcontentwidth' => 'TTContentWidth',
         'icon' => 'Icon',
         'product-carousel' => 'ProductCarousel',
-        'productgridnoit' => 'ProductGridNoIT',
-        'productgriditleft' => 'ProductGridITLeft',
-        'productgriditright' => 'ProductGridITRight',
-        'productgriditcenter' => 'ProductGridITCenter',
+        'products-grid-no-it' => 'ProductGridNoIT',
+        'products-grid-it-left' => 'ProductGridITLeft',
+        'products-grid-it-right' => 'ProductGridITRight',
+        'products-grid-it-center' => 'ProductGridITCenter',
         'mosaiccontentwidth23teaserleft' => 'MosaicContentWidth23TeaserLeft',
         'mosaiccontentwidth23teaserright' => 'MosaicContentWidth23TeaserRight',
         'mosaicbrowserwidth23teaserleft' => 'MosaicBrowserWidth23TeaserLeft',
@@ -69,7 +69,7 @@ class ComponentsList extends \Magento\Framework\View\Element\Template
         'icon-with-advanced-options' => 'IconWithAdvancedOptions',
         'image-teaser-with-advanced-options' => 'ImageTeaserWithAdvancedOptions',
         'mosaic-with-advanced-options' => 'MosaicWithAdvancedOptions',
-        'product-grid-with-advanced-options' => 'ProductGridWithAdvancedOptions',
+        'products-grid-with-advanced-options' => 'ProductGridWithAdvancedOptions',
         'teaser-and-text-with-advanced-options' => 'TeaserAndTextWithAdvancedOptions',
     ];
 

@@ -12,7 +12,7 @@ class ProductGridNoIT extends DataProviderComponents
                 'section' => 'content',
                 'type' => 'headline',
                 'data' => [
-                    'title' => 'Product grid without image teaser',
+                    'title' => 'Products grid without image teaser',
                     'subtitle' => '',
                     'headingTag' => 'h2',
                     'componentVisibility' => [
@@ -1150,7 +1150,7 @@ class ProductGridNoIT extends DataProviderComponents
                     'data' =>
                         [
                             'customCssClass' => '',
-                            'title' => 'Product grid + Categories: Default category + filter ‘new products’',
+                            'title' => 'Products grid + Categories: Default category + filter ‘new products’',
                             'subtitle' => '',
                             'headingTag' => 'h2',
                             'cc_css_classes' => '',
@@ -1324,7 +1324,7 @@ class ProductGridNoIT extends DataProviderComponents
                     'data' =>
                         [
                             'customCssClass' => '',
-                            'title' => 'Product grid + Categories: Default category + filter ‘Daily Deal’ + order by Offer to / ascending',
+                            'title' => 'Products grid + Categories: Default category + filter ‘Daily Deal’ + order by Offer to / ascending',
                             'subtitle' => '',
                             'headingTag' => 'h2',
                             'cc_css_classes' => '',
@@ -1335,138 +1335,160 @@ class ProductGridNoIT extends DataProviderComponents
                                 ],
                         ],
                 ],
-            20 => [
-                'type' => 'product-grid',
-                'name' => 'Products grid',
-                'id' => 'component2f2c',
-                'section' => 'content',
-                'data' => [
-                    'customCssClass' => '',
-                    'category_id' => '2',
-                    'filter' => 'daily_deal',
-                    'order_by' => 'daily_deal_to',
-                    'order_type' => 'ASC',
-                    'rows_desktop' => 1,
-                    'rows_tablet' => 1,
-                    'rows_mobile' => 1,
-                    'skus' => '',
-                    'limit' => 4,
-                    'useTeaser' => '',
-                    'scenario' => [
-                        'contentPlacement' => [
-                            'id' => 'over',
-                        ],
-                    ],
-                    'items' => [
-                        0 => [
-                            'image' => [
-                                'raw' => '',
-                                'decoded' => '',
-                                'aspect_ratio' => '',
-                                'fetch_priority' => false,
-                                'mobile' => [
-                                    'raw' => '',
-                                    'decoded' => '',
-                                    'aspect_ratio' => '',
+            20 =>
+                [
+                    'type' => 'product-grid',
+                    'name' => 'Products grid',
+                    'id' => 'component2137c',
+                    'section' => 'content',
+                    'data' =>
+                        [
+                            'customCssClass' => '',
+                            'category_id' => $this->getMainCategoryId(),
+                            'filter' => 'daily_deal',
+                            'order_by' => 'creation_date',
+                            'order_type' => 'ASC',
+                            'rows_desktop' => 1,
+                            'rows_tablet' => 1,
+                            'rows_mobile' => 1,
+                            'skus' => '',
+                            'limit' => 4,
+                            'useTeaser' => '',
+                            'scenario' =>
+                                [
+                                    'contentPlacement' =>
+                                        [
+                                            'id' => 'over',
+                                        ],
                                 ],
-                                'tablet' => [
-                                    'raw' => '',
-                                    'decoded' => '',
-                                    'aspect_ratio' => '',
+                            'items' =>
+                                [
+                                    0 =>
+                                        [
+                                            'image' =>
+                                                [
+                                                    'raw' => '',
+                                                    'decoded' => '',
+                                                    'aspect_ratio' => '',
+                                                    'mobile' =>
+                                                        [
+                                                            'raw' => '',
+                                                            'decoded' => '',
+                                                            'aspect_ratio' => '',
+                                                        ],
+                                                    'tablet' =>
+                                                        [
+                                                            'raw' => '',
+                                                            'decoded' => '',
+                                                            'aspect_ratio' => '',
+                                                        ],
+                                                ],
+                                            'video' =>
+                                                [
+                                                    'url' => '',
+                                                    'type' => '',
+                                                ],
+                                            'slogan' => '',
+                                            'description' => '',
+                                            'cta' =>
+                                                [
+                                                    'label' => 'More',
+                                                    'href' => '',
+                                                ],
+                                            'content_align' =>
+                                                [
+                                                    'x' => 1,
+                                                    'y' => 1,
+                                                ],
+                                            'sizeSelect' => '2x1',
+                                            'size' =>
+                                                [
+                                                    'x' => 2,
+                                                    'y' => 1,
+                                                ],
+                                            'row' => 1,
+                                            'position' => 'left',
+                                            'isAvailableForMobile' => 1,
+                                            'optimizers' =>
+                                                [
+                                                    'color_scheme' => 'dark',
+                                                    'mirror_image' => false,
+                                                    'scenarios' =>
+                                                        [
+                                                            'none' =>
+                                                                [
+                                                                    'enabled' => true,
+                                                                    'intensity' => 'disabled',
+                                                                    'direction' => 'disabled',
+                                                                    'configurator' =>
+                                                                        [
+                                                                            'icon' => '#contrast_none',
+                                                                            'label' => 'None',
+                                                                        ],
+                                                                ],
+                                                            'overlay' =>
+                                                                [
+                                                                    'enabled' => false,
+                                                                    'intensity' => 50,
+                                                                    'direction' => 'disabled',
+                                                                    'configurator' =>
+                                                                        [
+                                                                            'icon' => '#contrast_overlay',
+                                                                            'label' => 'Overlay',
+                                                                        ],
+                                                                ],
+                                                            'gradient' =>
+                                                                [
+                                                                    'enabled' => false,
+                                                                    'intensity' => 50,
+                                                                    'direction' =>
+                                                                        [
+                                                                            'x' => 1,
+                                                                            'y' => 1,
+                                                                        ],
+                                                                    'configurator' =>
+                                                                        [
+                                                                            'icon' => '#contrast_gradient',
+                                                                            'label' => 'Gradient shadow',
+                                                                        ],
+                                                                ],
+                                                            'container' =>
+                                                                [
+                                                                    'enabled' => false,
+                                                                    'intensity' => 50,
+                                                                    'direction' => 'disabled',
+                                                                    'configurator' =>
+                                                                        [
+                                                                            'icon' => '#contrast_container',
+                                                                            'label' => 'Container',
+                                                                        ],
+                                                                ],
+                                                            'text_shadow' =>
+                                                                [
+                                                                    'enabled' => false,
+                                                                    'intensity' => 50,
+                                                                    'direction' => 'disabled',
+                                                                    'configurator' =>
+                                                                        [
+                                                                            'icon' => '#contrast_text-shadow',
+                                                                            'label' => 'Text shadow',
+                                                                        ],
+                                                                ],
+                                                        ],
+                                                ],
+                                            'teaserType' => 'full',
+                                            'cc_css_classes' => '',
+                                        ],
                                 ],
-                            ],
-                            'video' => [
-                                'url' => '',
-                                'type' => '',
-                            ],
-                            'slogan' => '',
-                            'description' => '',
-                            'cta' => [
-                                'label' => 'More',
-                                'href' => '',
-                                'target' => false,
-                                'link' => false,
-                            ],
-                            'content_align' => [
-                                'x' => 1,
-                                'y' => 1,
-                            ],
-                            'sizeSelect' => '2x1',
-                            'size' => [
-                                'x' => 2,
-                                'y' => 1,
-                            ],
-                            'row' => 1,
-                            'position' => 'left',
-                            'isAvailableForMobile' => 1,
-                            'optimizers' => [
-                                'color_scheme' => 'dark',
-                                'mirror_image' => false,
-                                'scenarios' => [
-                                    'none' => [
-                                        'enabled' => true,
-                                        'intensity' => 'disabled',
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_none',
-                                            'label' => 'None',
-                                        ],
-                                    ],
-                                    'overlay' => [
-                                        'enabled' => false,
-                                        'intensity' => 50,
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_overlay',
-                                            'label' => 'Overlay',
-                                        ],
-                                    ],
-                                    'gradient' => [
-                                        'enabled' => false,
-                                        'intensity' => 50,
-                                        'direction' => [
-                                            'x' => 1,
-                                            'y' => 1,
-                                        ],
-                                        'configurator' => [
-                                            'icon' => '#contrast_gradient',
-                                            'label' => 'Gradient shadow',
-                                        ],
-                                    ],
-                                    'container' => [
-                                        'enabled' => false,
-                                        'intensity' => 50,
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_container',
-                                            'label' => 'Container',
-                                        ],
-                                    ],
-                                    'text_shadow' => [
-                                        'enabled' => false,
-                                        'intensity' => 50,
-                                        'direction' => 'disabled',
-                                        'configurator' => [
-                                            'icon' => '#contrast_text-shadow',
-                                            'label' => 'Text shadow',
-                                        ],
-                                    ],
-                                ],
-                            ],
-                            'tracking_id' => '',
-                            'teaserType' => 'full',
-                            'image_alt' => '',
+                            'isError' => false,
                             'cc_css_classes' => '',
+                            'componentVisibility' =>
+                                [
+                                    'mobile' => true,
+                                    'desktop' => true,
+                                ],
                         ],
-                    ],
-                    'isError' => false,
-                    'cc_css_classes' => '',
-                    'componentVisibility' => [
-                        'mobile' => true,
-                        'desktop' => true,
-                    ],
                 ],
-            ],
             1 => [
                 'name' => 'Products grid',
                 'type' => 'product-grid',
@@ -1609,7 +1631,7 @@ class ProductGridNoIT extends DataProviderComponents
                     'data' =>
                         [
                             'customCssClass' => '',
-                            'title' => 'Product grid + order by Product name / ascending',
+                            'title' => 'Products grid + order by Product name / ascending',
                             'subtitle' => '',
                             'headingTag' => 'h2',
                             'cc_css_classes' => '',
@@ -1783,7 +1805,7 @@ class ProductGridNoIT extends DataProviderComponents
                     'data' =>
                         [
                             'customCssClass' => '',
-                            'title' => 'Product grid + order by Product name / descending',
+                            'title' => 'Products grid + order by Product name / descending',
                             'subtitle' => '',
                             'headingTag' => 'h2',
                             'cc_css_classes' => '',
@@ -1957,7 +1979,7 @@ class ProductGridNoIT extends DataProviderComponents
                     'data' =>
                         [
                             'customCssClass' => '',
-                            'title' => 'Product grid + order by Price / ascending',
+                            'title' => 'Products grid + order by Price / ascending',
                             'subtitle' => '',
                             'headingTag' => 'h2',
                             'cc_css_classes' => '',
@@ -2131,7 +2153,7 @@ class ProductGridNoIT extends DataProviderComponents
                     'data' =>
                         [
                             'customCssClass' => '',
-                            'title' => 'Product grid + order by Price / descending',
+                            'title' => 'Products grid + order by Price / descending',
                             'subtitle' => '',
                             'headingTag' => 'h2',
                             'cc_css_classes' => '',

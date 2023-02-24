@@ -8,13 +8,13 @@ class ProductGridITLeft extends DataProviderComponents
     {
         return [
             0 => [
-                'type' => 'headline',
                 'name' => 'Headline',
+                'type' => 'headline',
                 'id' => 'component6d98',
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'title' => 'Product grid with image teaser on the left',
+                    'title' => 'Products grid with image teaser on the left',
                     'subtitle' => '',
                     'headingTag' => 'h2',
                     'cc_css_classes' => '',
@@ -42,13 +42,13 @@ class ProductGridITLeft extends DataProviderComponents
                 ],
             ],
             2 => [
-                'type' => 'headline',
                 'name' => 'Headline',
+                'type' => 'headline',
                 'id' => 'component52be',
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'title' => 'Product grid + mobile: 1, tablet: 1, desktop: 1 + Teaser size: 1x1 + Row: 1 (first) + Show in mobiles: Yes',
+                    'title' => 'Products grid + mobile: 1, tablet: 1, desktop: 1 + Teaser size: 1x1 + Row: 1 (first) + Show in mobiles: Yes',
                     'subtitle' => '',
                     'headingTag' => 'h2',
                     'cc_css_classes' => '',
@@ -197,7 +197,7 @@ class ProductGridITLeft extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'title' => 'Product grid + mobile: 1, tablet: 1, desktop: 1 + Teaser size: 2x1 + Row: 1 + Show in mobiles: No',
+                    'title' => 'Products grid + mobile: 1, tablet: 1, desktop: 1 + Teaser size: 2x1 + Row: 1 + Show in mobiles: No',
                     'subtitle' => '',
                     'headingTag' => 'h2',
                     'cc_css_classes' => '',
@@ -363,7 +363,7 @@ class ProductGridITLeft extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'title' => 'Product grid + mobile: 2, tablet: 2, desktop: 2 + Teaser size: 1x2 + Row: 1 (first) + Show in mobiles: Yes',
+                    'title' => 'Products grid + mobile: 2, tablet: 2, desktop: 2 + Teaser size: 1x2 + Row: 1 (first) + Show in mobiles: Yes',
                     'subtitle' => '',
                     'headingTag' => 'h2',
                     'cc_css_classes' => '',
@@ -512,7 +512,7 @@ class ProductGridITLeft extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'title' => 'Product grid + mobile: 2, tablet: 2, desktop: 2 + Teaser size: 1x1 + Row: 2 (last) + Show in mobiles: Yes',
+                    'title' => 'Products grid + mobile: 2, tablet: 2, desktop: 2 + Teaser size: 1x1 + Row: 2 (last) + Show in mobiles: Yes',
                     'subtitle' => '',
                     'headingTag' => 'h2',
                     'cc_css_classes' => '',
@@ -661,7 +661,7 @@ class ProductGridITLeft extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'title' => 'Product grid + mobile: 2, tablet: 2, desktop: 2 + Teaser size: 2x1 + Row: 2 (last) + Show in mobiles: No',
+                    'title' => 'Products grid + mobile: 2, tablet: 2, desktop: 2 + Teaser size: 2x1 + Row: 2 (last) + Show in mobiles: No',
                     'subtitle' => '',
                     'headingTag' => 'h2',
                     'cc_css_classes' => '',
@@ -827,7 +827,7 @@ class ProductGridITLeft extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'title' => 'Product grid + mobile: 3, tablet: 3, desktop: 3 + Teaser size: 2x1 + Row: 1 + Show in mobiles: Yes',
+                    'title' => 'Products grid + mobile: 3, tablet: 3, desktop: 3 + Teaser size: 2x1 + Row: 1 + Show in mobiles: Yes',
                     'subtitle' => '',
                     'headingTag' => 'h2',
                     'cc_css_classes' => '',
@@ -976,7 +976,7 @@ class ProductGridITLeft extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'title' => 'Product grid + mobile: 3, tablet: 3, desktop: 3 + Teaser size: 1x1 + Row: 2 + Show in mobiles: Yes',
+                    'title' => 'Products grid + mobile: 3, tablet: 3, desktop: 3 + Teaser size: 1x1 + Row: 2 + Show in mobiles: Yes',
                     'subtitle' => '',
                     'headingTag' => 'h2',
                     'cc_css_classes' => '',
@@ -1125,7 +1125,7 @@ class ProductGridITLeft extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'title' => 'Product grid + mobile: 3, tablet: 3, desktop: 3 + Teaser size: 1x2 + Row: 3 (last) + Show in mobiles: Yes',
+                    'title' => 'Products grid + mobile: 3, tablet: 3, desktop: 3 + Teaser size: 1x2 + Row: 3 (last) + Show in mobiles: Yes',
                     'subtitle' => '',
                     'headingTag' => 'h2',
                     'cc_css_classes' => '',
@@ -1291,7 +1291,7 @@ class ProductGridITLeft extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'title' => 'Product grid + mobile: 4, tablet: 4, desktop: 4 + Teaser size: 2x2 + Row: 1 + Show in mobiles: Yes',
+                    'title' => 'Products grid + mobile: 4, tablet: 4, desktop: 4 + Teaser size: 2x2 + Row: 1 + Show in mobiles: Yes',
                     'subtitle' => '',
                     'headingTag' => 'h2',
                     'cc_css_classes' => '',
@@ -1440,7 +1440,7 @@ class ProductGridITLeft extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'title' => 'Product grid + mobile: 4, tablet: 4, desktop: 4 + Teaser size: 1x2 + Row: 2 + Show in mobiles: Yes',
+                    'title' => 'Products grid + mobile: 4, tablet: 4, desktop: 4 + Teaser size: 1x2 + Row: 2 + Show in mobiles: Yes',
                     'subtitle' => '',
                     'headingTag' => 'h2',
                     'cc_css_classes' => '',
@@ -1606,7 +1606,7 @@ class ProductGridITLeft extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'title' => 'Product grid + mobile: 5, tablet: 5, desktop: 5 + Teaser size: 2x2 + Row: 4 + Show in mobiles: Yes',
+                    'title' => 'Products grid + mobile: 5, tablet: 5, desktop: 5 + Teaser size: 2x2 + Row: 4 + Show in mobiles: Yes',
                     'subtitle' => '',
                     'headingTag' => 'h2',
                     'cc_css_classes' => '',
@@ -1755,7 +1755,7 @@ class ProductGridITLeft extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'title' => 'Product grid + mobile: 2, tablet: 3, desktop: 4 + Teaser size: 2x1 + Row: 4 (last) + Show in mobiles: No',
+                    'title' => 'Products grid + mobile: 2, tablet: 3, desktop: 4 + Teaser size: 2x1 + Row: 4 (last) + Show in mobiles: No',
                     'subtitle' => '',
                     'headingTag' => 'h2',
                     'cc_css_classes' => '',
@@ -1904,7 +1904,7 @@ class ProductGridITLeft extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'title' => 'Product grid + mobile: 4, tablet: 3, desktop: 2 + Teaser size: 1x2 + Row: 1 + Show in mobiles: Yes',
+                    'title' => 'Products grid + mobile: 4, tablet: 3, desktop: 2 + Teaser size: 1x2 + Row: 1 + Show in mobiles: Yes',
                     'subtitle' => '',
                     'headingTag' => 'h2',
                     'cc_css_classes' => '',
@@ -2053,7 +2053,7 @@ class ProductGridITLeft extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'title' => 'Product grid + mobile: 6, tablet: 8, desktop: 10 + Teaser size: 1x1 + Row: 5 + Show in mobiles: Yes',
+                    'title' => 'Products grid + mobile: 6, tablet: 8, desktop: 10 + Teaser size: 1x1 + Row: 5 + Show in mobiles: Yes',
                     'subtitle' => '',
                     'headingTag' => 'h2',
                     'cc_css_classes' => '',
@@ -2202,7 +2202,7 @@ class ProductGridITLeft extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'title' => 'Product grid + mobile: 9, tablet: 5, desktop: 3 + Teaser size: 2x1 + Row: 2 + Show in mobiles: Yes',
+                    'title' => 'Products grid + mobile: 9, tablet: 5, desktop: 3 + Teaser size: 2x1 + Row: 2 + Show in mobiles: Yes',
                     'subtitle' => '',
                     'headingTag' => 'h2',
                     'cc_css_classes' => '',
