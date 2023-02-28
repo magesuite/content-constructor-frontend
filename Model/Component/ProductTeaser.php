@@ -11,21 +11,14 @@ class ProductTeaser extends \Magento\Framework\DataObject implements ViewModel
      */
     protected $productDataProvider;
 
-    /**
-     * @var \Magento\Catalog\Block\Product\ListProduct
-     */
-    protected $listProductBlock;
-
     public function __construct(
         \MageSuite\ContentConstructorFrontend\DataProviders\ProductCarouselDataProvider $productDataProvider,
-        \Magento\Catalog\Block\Product\ListProduct $listProductBlock,
         array $data = []
     )
     {
         parent::__construct($data);
 
         $this->productDataProvider = $productDataProvider;
-        $this->listProductBlock = $listProductBlock;
     }
 
     /**
@@ -63,22 +56,5 @@ class ProductTeaser extends \Magento\Framework\DataObject implements ViewModel
         }
 
         throw new \Magento\Framework\Exception\NoSuchEntityException(__("Product with sku %1 does not exist", $this->getSku()));
-    }
-
-    /**
-     * @param $product
-     * @return array
-     */
-    public function getAddToCartParameters($product)
-    {
-        $postParams = $this->listProductBlock->getAddToCartPostParams($product);
-
-        return [
-            'action' => $postParams['action'],
-            'productId' => $postParams['data']['product'],
-            'uencKey' => \Magento\Framework\App\Action\Action::PARAM_NAME_URL_ENCODED,
-            'uencValue' => $postParams['data'][\Magento\Framework\App\Action\Action::PARAM_NAME_URL_ENCODED],
-            'formKey' => $this->listProductBlock->getBlockHtml('formkey'),
-        ];
     }
 }
