@@ -6,53 +6,88 @@ class Button extends DataProviderComponents
 {
     public function getBlocks()
     {
-
-        $blocks[] = self::getHeadlineBlock('Button Desktop/Tablet');
-        $blocks[] = [
-            '_type' => '\MageSuite\ContentConstructorFrontend\Block\Component',
-            '_data' => [
-                'type' => 'button',
-                'name' => 'Button',
-                'id' => 'componenta141',
+        return [
+            self::getHeadlineBlock('Display mode'),
+            [
+                'type' => 'paragraph',
+                'name' => 'Paragraph',
                 'section' => 'content',
-                'data' =>
-                    [
-                        'customCssClass' => '',
+                'data' => [
+                    'customCssClass' => '',
+                    'title' => '',
+                    'columns' => 'none',
+                    'content' => '<p>Desktop/tablet: ON<br>Mobile: OFF</p>',
+                    'scenarios' => [
+                        'reading' => [
+                            'name' => 'Container width',
+                            'iconId' => 'tw_content-width-text',
+                            'id' => 'full',
+                        ],
+                    ],
+                    'migrated' => true,
+                    'componentVisibility' => [
+                        'mobile' => true,
+                        'desktop' => true,
+                    ],
+                ],
+            ],
+            [
+                '_type' => '\MageSuite\ContentConstructorFrontend\Block\Component',
+                '_data' => [
+                    'type' => 'button',
+                    'name' => 'Button',
+                    'id' => 'componenta141',
+                    'section' => 'content',
+                    'data' => [
                         'label' => 'test button desktop',
-                        'target' => sprintf('{{widget type="Magento\\Catalog\\Block\\Category\\Widget\\Link" template="category/widget/link/link_block.phtml" id_path="category/%s"}}', $this->getMainCategoryId()),
-                        'cc_css_classes' => '',
-                        'componentVisibility' =>
-                            [
-                                'mobile' => false,
-                                'desktop' => true,
-                            ],
+                        'target' => "{{widget type=\"Magento\\Catalog\\Block\\Category\\Widget\\Link\" template=\"category/widget/link/link_block.phtml\" id_path=\"category/{$this->getMainCategoryId()}\"}}",
+                        'componentVisibility' => [
+                            'mobile' => false,
+                            'desktop' => true,
+                        ],
                     ],
-            ]
-        ];
-
-        $blocks[] = self::getHeadlineBlock('Button Mobile');
-        $blocks[] = [
-            '_type' => '\MageSuite\ContentConstructorFrontend\Block\Component',
-            '_data' => [
-                'name' => 'Button',
-                'type' => 'button',
-                'id' => 'componentf4c8',
+                ],
+            ],
+            [
+                'type' => 'paragraph',
+                'name' => 'Paragraph',
                 'section' => 'content',
-                'data' =>
-                    [
-                        'customCssClass' => '',
-                        'label' => 'test button mobile',
-                        'target' => sprintf('{{widget type="Magento\\Catalog\\Block\\Category\\Widget\\Link" template="category/widget/link/link_block.phtml" id_path="category/%s"}}', $this->getMainCategoryId()),
-                        'cc_css_classes' => '',
-                        'componentVisibility' =>
-                            [
-                                'mobile' => true,
-                                'desktop' => false,
-                            ],
+                'data' => [
+                    'customCssClass' => '',
+                    'title' => '',
+                    'columns' => 'none',
+                    'content' => '<p>Desktop/tablet: OFF<br>Mobile: ON</p>',
+                    'scenarios' => [
+                        'reading' => [
+                            'name' => 'Container width',
+                            'iconId' => 'tw_content-width-text',
+                            'id' => 'full',
+                        ],
                     ],
-            ]
+                    'migrated' => true,
+                    'componentVisibility' => [
+                        'mobile' => true,
+                        'desktop' => true,
+                    ],
+                ],
+            ],
+            [
+                '_type' => '\MageSuite\ContentConstructorFrontend\Block\Component',
+                '_data' => [
+                    'name' => 'Button',
+                    'type' => 'button',
+                    'id' => 'componentf4c8',
+                    'section' => 'content',
+                    'data' => [
+                        'label' => 'test button mobile',
+                        'target' => "{{widget type=\"Magento\\Catalog\\Block\\Category\\Widget\\Link\" template=\"category/widget/link/link_block.phtml\" id_path=\"category/{$this->getMainCategoryId()}\"}}",
+                        'componentVisibility' => [
+                            'mobile' => true,
+                            'desktop' => false,
+                        ],
+                    ],
+                ]
+            ],
         ];
-
-        return $blocks;
     }
 }
