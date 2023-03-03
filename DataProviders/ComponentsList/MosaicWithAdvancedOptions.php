@@ -34,8 +34,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/1805417d4cb5e0fa255b1c8237a02edf5904071cf1c62cb1607641c4b0af7e5f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0',
-                                'decoded' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-1.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -48,7 +47,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/annie-spratt-294450-unsplash.jpg',
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/mosaic-dark-1.jpg',
                             ],
                             'video' => [
                                 'url' => '',
@@ -271,8 +270,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/1805417d4cb5e0fa255b1c8237a02edf5904071cf1c62cb1607641c4b0af7e5f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0',
-                                'decoded' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-1.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -285,7 +283,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/annie-spratt-294450-unsplash.jpg',
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/mosaic-dark-1.jpg',
                             ],
                             'video' => [
                                 'url' => '',
@@ -372,8 +370,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/1805417d4cb5e0fa255b1c8237a02edf5904071cf1c62cb1607641c4b0af7e5f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-2.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -386,7 +383,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/mosaic-dark-2.jpg',
                             ],
                             'video' => [
                                 'url' => '',
@@ -515,8 +512,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/1805417d4cb5e0fa255b1c8237a02edf5904071cf1c62cb1607641c4b0af7e5f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0',
-                                'decoded' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-1.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -529,7 +525,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/annie-spratt-294450-unsplash.jpg',
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/mosaic-dark-1.jpg',
                             ],
                             'video' => [
                                 'url' => '',
@@ -616,8 +612,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/1805417d4cb5e0fa255b1c8237a02edf5904071cf1c62cb1607641c4b0af7e5f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-2.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'fetch_priority' => true,
                                 'mobile' => [
@@ -630,7 +625,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/mosaic-dark-2.jpg',
                             ],
                             'video' => [
                                 'url' => '',
@@ -859,8 +854,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/1805417d4cb5e0fa255b1c8237a02edf5904071cf1c62cb1607641c4b0af7e5f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0',
-                                'decoded' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-1.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'fetch_priority' => true,
                                 'mobile' => [
@@ -873,7 +867,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/annie-spratt-294450-unsplash.jpg',
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/mosaic-dark-1.jpg',
                             ],
                             'video' => [
                                 'url' => '',
@@ -1006,8 +1000,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/1805417d4cb5e0fa255b1c8237a02edf5904071cf1c62cb1607641c4b0af7e5f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-2.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'fetch_priority' => true,
                                 'mobile' => [
@@ -1020,7 +1013,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/mosaic-dark-2.jpg',
                             ],
                             'video' => [
                                 'url' => '',
@@ -1107,8 +1100,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/1805417d4cb5e0fa255b1c8237a02edf5904071cf1c62cb1607641c4b0af7e5f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0',
-                                'decoded' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-1.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'fetch_priority' => true,
                                 'mobile' => [
@@ -1121,7 +1113,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/annie-spratt-294450-unsplash.jpg',
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/mosaic-dark-1.jpg',
                             ],
                             'video' => [
                                 'url' => '',
@@ -1271,8 +1263,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/1805417d4cb5e0fa255b1c8237a02edf5904071cf1c62cb1607641c4b0af7e5f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0',
-                                'decoded' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-1.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -1285,7 +1276,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/annie-spratt-294450-unsplash.jpg',
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/mosaic-dark-1.jpg',
                             ],
                             'video' => [
                                 'url' => '',
@@ -1518,8 +1509,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/1805417d4cb5e0fa255b1c8237a02edf5904071cf1c62cb1607641c4b0af7e5f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0',
-                                'decoded' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-1.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -1532,7 +1522,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/annie-spratt-294450-unsplash.jpg',
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/mosaic-dark-1.jpg',
                             ],
                             'video' => [
                                 'url' => '',
@@ -1619,8 +1609,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/1805417d4cb5e0fa255b1c8237a02edf5904071cf1c62cb1607641c4b0af7e5f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-2.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -1633,7 +1622,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/mosaic-dark-2.jpg',
                             ],
                             'video' => [
                                 'url' => '',
@@ -1762,8 +1751,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/1805417d4cb5e0fa255b1c8237a02edf5904071cf1c62cb1607641c4b0af7e5f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0',
-                                'decoded' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-1.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -1776,7 +1764,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/annie-spratt-294450-unsplash.jpg',
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/mosaic-dark-1.jpg',
                             ],
                             'video' => [
                                 'url' => '',
@@ -1863,8 +1851,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/1805417d4cb5e0fa255b1c8237a02edf5904071cf1c62cb1607641c4b0af7e5f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-2.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -1877,7 +1864,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/mosaic-dark-2.jpg',
                             ],
                             'video' => [
                                 'url' => '',
@@ -2123,8 +2110,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/1805417d4cb5e0fa255b1c8237a02edf5904071cf1c62cb1607641c4b0af7e5f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0',
-                                'decoded' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-1.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -2137,7 +2123,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/annie-spratt-294450-unsplash.jpg',
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/mosaic-dark-1.jpg',
                             ],
                             'video' => [
                                 'url' => '',
@@ -2270,8 +2256,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/1805417d4cb5e0fa255b1c8237a02edf5904071cf1c62cb1607641c4b0af7e5f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0',
-                                'decoded' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-1.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -2284,7 +2269,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/annie-spratt-294450-unsplash.jpg',
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/mosaic-dark-1.jpg',
                             ],
                             'video' => [
                                 'url' => '',
@@ -2371,8 +2356,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/1805417d4cb5e0fa255b1c8237a02edf5904071cf1c62cb1607641c4b0af7e5f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-2.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -2385,7 +2369,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/mosaic-dark-2.jpg',
                             ],
                             'video' => [
                                 'url' => '',
@@ -2514,8 +2498,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/1805417d4cb5e0fa255b1c8237a02edf5904071cf1c62cb1607641c4b0af7e5f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-2.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -2528,7 +2511,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/mosaic-dark-2.jpg',
                             ],
                             'video' => [
                                 'url' => '',
@@ -2615,8 +2598,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/1805417d4cb5e0fa255b1c8237a02edf5904071cf1c62cb1607641c4b0af7e5f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0',
-                                'decoded' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-1.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -2629,7 +2611,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/annie-spratt-294450-unsplash.jpg',
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/mosaic-dark-1.jpg',
                             ],
                             'video' => [
                                 'url' => '',
@@ -2779,8 +2761,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/1805417d4cb5e0fa255b1c8237a02edf5904071cf1c62cb1607641c4b0af7e5f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0',
-                                'decoded' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-1.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -2793,7 +2774,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/annie-spratt-294450-unsplash.jpg',
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/mosaic-dark-1.jpg',
                             ],
                             'video' => [
                                 'url' => '',
@@ -2880,8 +2861,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/1805417d4cb5e0fa255b1c8237a02edf5904071cf1c62cb1607641c4b0af7e5f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-2.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -2894,7 +2874,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/mosaic-dark-2.jpg',
                             ],
                             'video' => [
                                 'url' => '',
@@ -3023,8 +3003,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/1805417d4cb5e0fa255b1c8237a02edf5904071cf1c62cb1607641c4b0af7e5f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-2.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -3037,7 +3016,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/mosaic-dark-2.jpg',
                             ],
                             'video' => [
                                 'url' => '',
@@ -3124,8 +3103,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/1805417d4cb5e0fa255b1c8237a02edf5904071cf1c62cb1607641c4b0af7e5f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0',
-                                'decoded' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-1.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -3138,7 +3116,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/annie-spratt-294450-unsplash.jpg',
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/mosaic-dark-1.jpg',
                             ],
                             'video' => [
                                 'url' => '',
@@ -3288,8 +3266,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/1805417d4cb5e0fa255b1c8237a02edf5904071cf1c62cb1607641c4b0af7e5f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0',
-                                'decoded' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-1.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -3302,7 +3279,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/annie-spratt-294450-unsplash.jpg',
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/mosaic-dark-1.jpg',
                             ],
                             'video' => [
                                 'url' => '',
@@ -3389,8 +3366,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/1805417d4cb5e0fa255b1c8237a02edf5904071cf1c62cb1607641c4b0af7e5f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-2.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -3403,7 +3379,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/mosaic-dark-2.jpg',
                             ],
                             'video' => [
                                 'url' => '',
@@ -3532,8 +3508,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/1805417d4cb5e0fa255b1c8237a02edf5904071cf1c62cb1607641c4b0af7e5f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-2.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -3546,7 +3521,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/mosaic-dark-2.jpg',
                             ],
                             'video' => [
                                 'url' => '',
@@ -3633,8 +3608,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/1805417d4cb5e0fa255b1c8237a02edf5904071cf1c62cb1607641c4b0af7e5f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0',
-                                'decoded' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-1.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -3647,7 +3621,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/annie-spratt-294450-unsplash.jpg',
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/mosaic-dark-1.jpg',
                             ],
                             'video' => [
                                 'url' => '',
@@ -3797,8 +3771,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/1805417d4cb5e0fa255b1c8237a02edf5904071cf1c62cb1607641c4b0af7e5f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0',
-                                'decoded' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-1.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -3811,7 +3784,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/annie-spratt-294450-unsplash.jpg',
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/mosaic-dark-1.jpg',
                             ],
                             'video' => [
                                 'url' => '',
@@ -3898,8 +3871,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/7ecaecbf0e977a89ad69e2f2d65e0b16702eeb902b8b16432eb0a28b4158ee6f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-2.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -4034,8 +4006,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/7ecaecbf0e977a89ad69e2f2d65e0b16702eeb902b8b16432eb0a28b4158ee6f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-2.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -4134,8 +4105,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/1805417d4cb5e0fa255b1c8237a02edf5904071cf1c62cb1607641c4b0af7e5f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0',
-                                'decoded' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-1.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -4148,7 +4118,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/annie-spratt-294450-unsplash.jpg',
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/mosaic-dark-1.jpg',
                             ],
                             'video' => [
                                 'url' => '',
@@ -4281,8 +4251,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                     'items' => [
                         0 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/1805417d4cb5e0fa255b1c8237a02edf5904071cf1c62cb1607641c4b0af7e5f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0',
-                                'decoded' => '{{media url="creative_components/annie-spratt-294450-unsplash.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-1.jpg'),
                                 'aspect_ratio' => '960:511',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -4295,7 +4264,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/annie-spratt-294450-unsplash.jpg',
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/mosaic-dark-1.jpg',
                             ],
                             'video' => [
                                 'url' => '',
@@ -4382,8 +4351,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                         ],
                         1 => [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/1805417d4cb5e0fa255b1c8237a02edf5904071cf1c62cb1607641c4b0af7e5f/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMva3lsZS1mcmVkZXJpY2stMTE4MDA2NC11bnNwbGFzaC5qcGcifX0',
-                                'decoded' => '{{media url="creative_components/kyle-frederick-1180064-unsplash.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-2.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -4396,7 +4364,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                                     'decoded' => '',
                                     'aspect_ratio' => '',
                                 ],
-                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/kyle-frederick-1180064-unsplash.jpg',
+                                'image' => 'https://d37asyxolk5ohw.cloudfront.net/creative_components/mosaic-dark-2.jpg',
                             ],
                             'video' => [
                                 'url' => '',
