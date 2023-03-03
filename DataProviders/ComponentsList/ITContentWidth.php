@@ -3139,6 +3139,501 @@ class ITContentWidth extends DataProviderComponents
             ],
         ];
 
+        $blocks[] = [
+            'name' => 'Image Teaser',
+            'type' => 'image-teaser-2',
+            'id' => 'component1160',
+            'section' => 'content',
+            'data' => [
+                'customCssClass' => '',
+                'items' => [
+                    0 => [
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'fetch_priority' => false,
+                            'mobile' => [
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
+                            ],
+                            'tablet' => [
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
+                            ],
+                            'image' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/24ae9b368caab2be9daa04898963a48c1b801fbd8691c49a85bc40031885280b/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ',
+                        ],
+                        'video' => [
+                            'url' => '',
+                            'type' => '',
+                        ],
+                        'slogan' => 'Slider',
+                        'description' => 'Text below image',
+                        'cta' => [
+                            'label' => 'Dark',
+                            'href' => 'https://magesuite-test.magesuite.net/',
+                            'target' => false,
+                            'link' => false,
+                        ],
+                        'content_align' => [
+                            'x' => 1,
+                            'y' => 1,
+                        ],
+                        'sizeSelect' => '2x1',
+                        'size' => [
+                            'x' => 2,
+                            'y' => 1,
+                        ],
+                        'row' => 1,
+                        'position' => 'left',
+                        'isAvailableForMobile' => 1,
+                        'optimizers' => [
+                            'color_scheme' => 'dark',
+                            'mirror_image' => false,
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => true,
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => [
+                                        'x' => 1,
+                                        'y' => 1,
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
+                        'tracking_id' => '',
+                        'teaserType' => 'full',
+                        'image_alt' => '',
+                        'cc_css_classes' => '',
+                    ],
+                    1 => [
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'fetch_priority' => false,
+                            'mobile' => [
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
+                            ],
+                            'tablet' => [
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
+                            ],
+                            'image' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/24ae9b368caab2be9daa04898963a48c1b801fbd8691c49a85bc40031885280b/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvZmVkZXJpY2EtZ2FsbGktNzAzNTcyLXVuc3BsYXNoLmpwZyJ9fQ',
+                        ],
+                        'video' => [
+                            'url' => '',
+                            'type' => '',
+                        ],
+                        'slogan' => 'Slider',
+                        'description' => 'Text below image',
+                        'cta' => [
+                            'label' => 'Light',
+                            'href' => 'https://magesuite-test.magesuite.net/',
+                            'target' => false,
+                            'link' => false,
+                        ],
+                        'content_align' => [
+                            'x' => 1,
+                            'y' => 1,
+                        ],
+                        'sizeSelect' => '2x1',
+                        'size' => [
+                            'x' => 2,
+                            'y' => 1,
+                        ],
+                        'row' => 1,
+                        'position' => 'left',
+                        'isAvailableForMobile' => 1,
+                        'optimizers' => [
+                            'color_scheme' => 'light',
+                            'mirror_image' => false,
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => true,
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => [
+                                        'x' => 1,
+                                        'y' => 1,
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
+                        'tracking_id' => '',
+                        'teaserType' => 'full',
+                        'image_alt' => '',
+                        'cc_css_classes' => '',
+                    ],
+                ],
+                'ignoredItems' => [
+                ],
+                'scenario' => [
+                    'teaserWidth' => [
+                        'name' => 'Content width',
+                        'iconId' => 'tw_content-width',
+                        'disabled' => false,
+                        'id' => 'container',
+                    ],
+                    'desktopLayout' => [
+                        'name' => '2 in row',
+                        'iconId' => 'dl_2',
+                        'disabled' => false,
+                        'teasersNum' => 2,
+                        'id' => '2',
+                    ],
+                    'contentPlacement' => [
+                        'name' => 'Text below image',
+                        'iconId' => 'tl_under',
+                        'disabled' => false,
+                        'contentPlacement' => false,
+                        'id' => 'under',
+                    ],
+                    'mobileLayout' => [
+                        'name' => 'Slider',
+                        'iconId' => 'ml_slider',
+                        'disabled' => false,
+                        'id' => 'mobile-slider',
+                    ],
+                ],
+                'isError' => false,
+                'cc_css_classes' => '',
+                'componentVisibility' => [
+                    'mobile' => true,
+                    'desktop' => true,
+                ],
+            ],
+        ];
+        $blocks[] = [
+            'name' => 'Image Teaser',
+            'type' => 'image-teaser-2',
+            'id' => 'component1160_duplicate53898',
+            'section' => 'content',
+            'data' => [
+                'customCssClass' => '',
+                'items' => [
+                    0 => [
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'fetch_priority' => false,
+                            'mobile' => [
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
+                            ],
+                            'tablet' => [
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
+                            ],
+                            'image' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/24ae9b368caab2be9daa04898963a48c1b801fbd8691c49a85bc40031885280b/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0',
+                        ],
+                        'video' => [
+                            'url' => '',
+                            'type' => '',
+                        ],
+                        'slogan' => 'Teasers in row',
+                        'description' => 'Text below image',
+                        'cta' => [
+                            'label' => 'Dark',
+                            'href' => 'https://magesuite-test.magesuite.net/',
+                            'target' => false,
+                            'link' => false,
+                        ],
+                        'content_align' => [
+                            'x' => 1,
+                            'y' => 1,
+                        ],
+                        'sizeSelect' => '2x1',
+                        'size' => [
+                            'x' => 2,
+                            'y' => 1,
+                        ],
+                        'row' => 1,
+                        'position' => 'left',
+                        'isAvailableForMobile' => 1,
+                        'optimizers' => [
+                            'color_scheme' => 'dark',
+                            'mirror_image' => false,
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => true,
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => [
+                                        'x' => 1,
+                                        'y' => 1,
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
+                        'tracking_id' => '',
+                        'teaserType' => 'full',
+                        'image_alt' => '',
+                        'cc_css_classes' => '',
+                    ],
+                    1 => [
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'fetch_priority' => false,
+                            'mobile' => [
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
+                            ],
+                            'tablet' => [
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
+                            ],
+                            'image' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/24ae9b368caab2be9daa04898963a48c1b801fbd8691c49a85bc40031885280b/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0',
+                        ],
+                        'video' => [
+                            'url' => '',
+                            'type' => '',
+                        ],
+                        'slogan' => 'Teasers in row',
+                        'description' => 'Text below image',
+                        'cta' => [
+                            'label' => 'Light',
+                            'href' => 'https://magesuite-test.magesuite.net/',
+                            'target' => false,
+                            'link' => false,
+                        ],
+                        'content_align' => [
+                            'x' => 1,
+                            'y' => 1,
+                        ],
+                        'sizeSelect' => '2x1',
+                        'size' => [
+                            'x' => 2,
+                            'y' => 1,
+                        ],
+                        'row' => 1,
+                        'position' => 'left',
+                        'isAvailableForMobile' => 1,
+                        'optimizers' => [
+                            'color_scheme' => 'light',
+                            'mirror_image' => false,
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => true,
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => [
+                                        'x' => 1,
+                                        'y' => 1,
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
+                        'tracking_id' => '',
+                        'teaserType' => 'full',
+                        'image_alt' => '',
+                        'cc_css_classes' => '',
+                    ],
+                ],
+                'ignoredItems' => [
+                ],
+                'scenario' => [
+                    'teaserWidth' => [
+                        'name' => 'Content width',
+                        'iconId' => 'tw_content-width',
+                        'disabled' => false,
+                        'id' => 'container',
+                    ],
+                    'desktopLayout' => [
+                        'name' => '2 in row',
+                        'iconId' => 'dl_2',
+                        'disabled' => false,
+                        'teasersNum' => 2,
+                        'id' => '2',
+                    ],
+                    'contentPlacement' => [
+                        'name' => 'Text below image',
+                        'iconId' => 'tl_under',
+                        'disabled' => false,
+                        'contentPlacement' => false,
+                        'id' => 'under',
+                    ],
+                    'mobileLayout' => [
+                        'name' => 'Teasers in row',
+                        'iconId' => 'ml_2-2',
+                        'disabled' => false,
+                        'id' => 'mobile-in-row',
+                    ],
+                ],
+                'isError' => false,
+                'cc_css_classes' => '',
+                'componentVisibility' => [
+                    'mobile' => true,
+                    'desktop' => true,
+                ],
+            ],
+        ];
+
         $blocks[] = Index::getHeadlineBlock('3 in row');
         $blocks[] = [
             'id' => 'component710e',
@@ -4760,6 +5255,352 @@ class ITContentWidth extends DataProviderComponents
                 ],
             ],
         ];
+        $blocks[] = [
+            'name' => 'Image Teaser',
+            'type' => 'image-teaser-2',
+            'id' => 'component1160_duplicate16641',
+            'section' => 'content',
+            'data' => [
+                'customCssClass' => '',
+                'items' => [
+                    0 => [
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'fetch_priority' => false,
+                            'mobile' => [
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
+                            ],
+                            'tablet' => [
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
+                            ],
+                            'image' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/24ae9b368caab2be9daa04898963a48c1b801fbd8691c49a85bc40031885280b/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0',
+                        ],
+                        'video' => [
+                            'url' => '',
+                            'type' => '',
+                        ],
+                        'slogan' => 'Slider',
+                        'description' => 'Text below image',
+                        'cta' => [
+                            'label' => 'Dark',
+                            'href' => 'https://magesuite-test.magesuite.net/',
+                            'target' => false,
+                            'link' => false,
+                        ],
+                        'content_align' => [
+                            'x' => 1,
+                            'y' => 1,
+                        ],
+                        'sizeSelect' => '2x1',
+                        'size' => [
+                            'x' => 2,
+                            'y' => 1,
+                        ],
+                        'row' => 1,
+                        'position' => 'left',
+                        'isAvailableForMobile' => 1,
+                        'optimizers' => [
+                            'color_scheme' => 'dark',
+                            'mirror_image' => false,
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => true,
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => [
+                                        'x' => 1,
+                                        'y' => 1,
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
+                        'tracking_id' => '',
+                        'teaserType' => 'full',
+                        'image_alt' => '',
+                        'cc_css_classes' => '',
+                    ],
+                    1 => [
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'fetch_priority' => false,
+                            'mobile' => [
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
+                            ],
+                            'tablet' => [
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
+                            ],
+                            'image' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/24ae9b368caab2be9daa04898963a48c1b801fbd8691c49a85bc40031885280b/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0',
+                        ],
+                        'video' => [
+                            'url' => '',
+                            'type' => '',
+                        ],
+                        'slogan' => 'Slider',
+                        'description' => 'Text below image',
+                        'cta' => [
+                            'label' => 'Light',
+                            'href' => 'https://magesuite-test.magesuite.net/',
+                            'target' => false,
+                            'link' => false,
+                        ],
+                        'content_align' => [
+                            'x' => 1,
+                            'y' => 1,
+                        ],
+                        'sizeSelect' => '2x1',
+                        'size' => [
+                            'x' => 2,
+                            'y' => 1,
+                        ],
+                        'row' => 1,
+                        'position' => 'left',
+                        'isAvailableForMobile' => 1,
+                        'optimizers' => [
+                            'color_scheme' => 'light',
+                            'mirror_image' => false,
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => true,
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => [
+                                        'x' => 1,
+                                        'y' => 1,
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
+                        'tracking_id' => '',
+                        'teaserType' => 'full',
+                        'image_alt' => '',
+                        'cc_css_classes' => '',
+                    ],
+                    2 => [
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'fetch_priority' => false,
+                            'mobile' => [
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
+                            ],
+                            'tablet' => [
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
+                            ],
+                        ],
+                        'video' => [
+                            'url' => '',
+                            'type' => '',
+                        ],
+                        'slogan' => 'Slider',
+                        'description' => 'Text below image',
+                        'cta' => [
+                            'label' => 'Dark',
+                            'href' => 'https://magesuite-test.magesuite.net/',
+                            'target' => false,
+                            'link' => false,
+                        ],
+                        'content_align' => [
+                            'x' => 1,
+                            'y' => 1,
+                        ],
+                        'sizeSelect' => '2x1',
+                        'size' => [
+                            'x' => 2,
+                            'y' => 1,
+                        ],
+                        'row' => 1,
+                        'position' => 'left',
+                        'isAvailableForMobile' => 1,
+                        'optimizers' => [
+                            'color_scheme' => 'dark',
+                            'mirror_image' => false,
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => true,
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => [
+                                        'x' => 1,
+                                        'y' => 1,
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
+                        'tracking_id' => '',
+                        'teaserType' => 'full',
+                        'image_alt' => '',
+                        'cc_css_classes' => '',
+                    ],
+                ],
+                'ignoredItems' => [
+                ],
+                'scenario' => [
+                    'teaserWidth' => [
+                        'name' => 'Content width',
+                        'iconId' => 'tw_content-width',
+                        'disabled' => false,
+                        'id' => 'container',
+                    ],
+                    'desktopLayout' => [
+                        'name' => '3 in row',
+                        'iconId' => 'dl_3',
+                        'disabled' => false,
+                        'teasersNum' => 3,
+                        'id' => '3',
+                    ],
+                    'contentPlacement' => [
+                        'name' => 'Text below image',
+                        'iconId' => 'tl_under',
+                        'disabled' => false,
+                        'contentPlacement' => false,
+                        'id' => 'under',
+                    ],
+                    'mobileLayout' => [
+                        'name' => 'Slider',
+                        'iconId' => 'ml_slider',
+                        'disabled' => false,
+                        'id' => 'mobile-slider',
+                    ],
+                ],
+                'isError' => false,
+                'cc_css_classes' => '',
+                'componentVisibility' => [
+                    'mobile' => true,
+                    'desktop' => true,
+                ],
+            ],
+        ];
 
         $blocks[] = Index::getHeadlineBlock('4 in row');
         $blocks[] = [
@@ -5985,6 +6826,749 @@ class ITContentWidth extends DataProviderComponents
             ],
         ];
 
+        $blocks[] = Index::getHeadlineBlock('Display Mode');
+        $blocks[] = [
+            'type' => 'paragraph',
+            'name' => 'Paragraph',
+            'id' => 'componentd087',
+            'section' => 'content',
+            'data' => [
+                'customCssClass' => '',
+                'title' => '',
+                'columns' => 'none',
+                'content' => '<p>Desktop/tablet: OFF <br>Mobile: ON</p>',
+                'scenarios' => [
+                    'reading' => [
+                        'name' => 'Container width',
+                        'iconId' => 'tw_content-width-text',
+                        'id' => 'full',
+                    ],
+                ],
+                'migrated' => true,
+                'cc_css_classes' => '',
+                'componentVisibility' => [
+                    'mobile' => true,
+                    'desktop' => true,
+                ],
+            ],
+        ];
+        $blocks[] = [
+            'name' => 'Image Teaser',
+            'type' => 'image-teaser-2',
+            'id' => 'component1160_duplicate35369',
+            'section' => 'content',
+            'data' => [
+                'customCssClass' => '',
+                'items' => [
+                    0 => [
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'fetch_priority' => false,
+                            'mobile' => [
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
+                            ],
+                            'tablet' => [
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
+                            ],
+                            'image' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/24ae9b368caab2be9daa04898963a48c1b801fbd8691c49a85bc40031885280b/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0',
+                        ],
+                        'video' => [
+                            'url' => '',
+                            'type' => '',
+                        ],
+                        'slogan' => 'Slider',
+                        'description' => 'Text below image',
+                        'cta' => [
+                            'label' => 'Dark',
+                            'href' => 'https://magesuite-test.magesuite.net/',
+                            'target' => false,
+                            'link' => false,
+                        ],
+                        'content_align' => [
+                            'x' => 1,
+                            'y' => 1,
+                        ],
+                        'sizeSelect' => '2x1',
+                        'size' => [
+                            'x' => 2,
+                            'y' => 1,
+                        ],
+                        'row' => 1,
+                        'position' => 'left',
+                        'isAvailableForMobile' => 1,
+                        'optimizers' => [
+                            'color_scheme' => 'dark',
+                            'mirror_image' => false,
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => true,
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => [
+                                        'x' => 1,
+                                        'y' => 1,
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
+                        'tracking_id' => '',
+                        'teaserType' => 'full',
+                        'image_alt' => '',
+                        'cc_css_classes' => '',
+                    ],
+                    1 => [
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'fetch_priority' => false,
+                            'mobile' => [
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
+                            ],
+                            'tablet' => [
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
+                            ],
+                            'image' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/24ae9b368caab2be9daa04898963a48c1b801fbd8691c49a85bc40031885280b/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0',
+                        ],
+                        'video' => [
+                            'url' => '',
+                            'type' => '',
+                        ],
+                        'slogan' => 'Slider',
+                        'description' => 'Text below image',
+                        'cta' => [
+                            'label' => 'Light',
+                            'href' => 'https://magesuite-test.magesuite.net/',
+                            'target' => false,
+                            'link' => false,
+                        ],
+                        'content_align' => [
+                            'x' => 1,
+                            'y' => 1,
+                        ],
+                        'sizeSelect' => '2x1',
+                        'size' => [
+                            'x' => 2,
+                            'y' => 1,
+                        ],
+                        'row' => 1,
+                        'position' => 'left',
+                        'isAvailableForMobile' => 1,
+                        'optimizers' => [
+                            'color_scheme' => 'light',
+                            'mirror_image' => false,
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => true,
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => [
+                                        'x' => 1,
+                                        'y' => 1,
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
+                        'tracking_id' => '',
+                        'teaserType' => 'full',
+                        'image_alt' => '',
+                        'cc_css_classes' => '',
+                    ],
+                    2 => [
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'fetch_priority' => false,
+                            'mobile' => [
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
+                            ],
+                            'tablet' => [
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
+                            ],
+                        ],
+                        'video' => [
+                            'url' => '',
+                            'type' => '',
+                        ],
+                        'slogan' => 'Slider',
+                        'description' => 'Text below image',
+                        'cta' => [
+                            'label' => 'Dark',
+                            'href' => 'https://magesuite-test.magesuite.net/',
+                            'target' => false,
+                            'link' => false,
+                        ],
+                        'content_align' => [
+                            'x' => 1,
+                            'y' => 1,
+                        ],
+                        'sizeSelect' => '2x1',
+                        'size' => [
+                            'x' => 2,
+                            'y' => 1,
+                        ],
+                        'row' => 1,
+                        'position' => 'left',
+                        'isAvailableForMobile' => 1,
+                        'optimizers' => [
+                            'color_scheme' => 'dark',
+                            'mirror_image' => false,
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => true,
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => [
+                                        'x' => 1,
+                                        'y' => 1,
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
+                        'tracking_id' => '',
+                        'teaserType' => 'full',
+                        'image_alt' => '',
+                        'cc_css_classes' => '',
+                    ],
+                ],
+                'ignoredItems' => [
+                ],
+                'scenario' => [
+                    'teaserWidth' => [
+                        'name' => 'Content width',
+                        'iconId' => 'tw_content-width',
+                        'disabled' => false,
+                        'id' => 'container',
+                    ],
+                    'desktopLayout' => [
+                        'name' => '3 in row',
+                        'iconId' => 'dl_3',
+                        'disabled' => false,
+                        'teasersNum' => 3,
+                        'id' => '3',
+                    ],
+                    'contentPlacement' => [
+                        'name' => 'Text below image',
+                        'iconId' => 'tl_under',
+                        'disabled' => false,
+                        'contentPlacement' => false,
+                        'id' => 'under',
+                    ],
+                    'mobileLayout' => [
+                        'name' => 'Slider',
+                        'iconId' => 'ml_slider',
+                        'disabled' => false,
+                        'id' => 'mobile-slider',
+                    ],
+                ],
+                'isError' => false,
+                'cc_css_classes' => '',
+                'componentVisibility' => [
+                    'mobile' => true,
+                    'desktop' => false,
+                ],
+            ],
+        ];
+        $blocks[] = [
+            'name' => 'Paragraph',
+            'type' => 'paragraph',
+            'id' => 'componentd087_duplicate16375',
+            'section' => 'content',
+            'data' => [
+                'customCssClass' => '',
+                'title' => '',
+                'columns' => 'none',
+                'content' => '<p>Desktop/tablet: ON<br>Mobile: OFF</p>',
+                'scenarios' => [
+                    'reading' => [
+                        'name' => 'Container width',
+                        'iconId' => 'tw_content-width-text',
+                        'id' => 'full',
+                    ],
+                ],
+                'migrated' => true,
+                'cc_css_classes' => '',
+                'componentVisibility' => [
+                    'mobile' => true,
+                    'desktop' => true,
+                ],
+            ],
+        ];
+        $blocks[] = [
+            'name' => 'Image Teaser',
+            'type' => 'image-teaser-2',
+            'id' => 'component1160_duplicate55110',
+            'section' => 'content',
+            'data' => [
+                'customCssClass' => '',
+                'items' => [
+                    0 => [
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'fetch_priority' => false,
+                            'mobile' => [
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
+                            ],
+                            'tablet' => [
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
+                            ],
+                            'image' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/24ae9b368caab2be9daa04898963a48c1b801fbd8691c49a85bc40031885280b/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0',
+                        ],
+                        'video' => [
+                            'url' => '',
+                            'type' => '',
+                        ],
+                        'slogan' => 'Slider',
+                        'description' => 'Text below image',
+                        'cta' => [
+                            'label' => 'Dark',
+                            'href' => 'https://magesuite-test.magesuite.net/',
+                            'target' => false,
+                            'link' => false,
+                        ],
+                        'content_align' => [
+                            'x' => 1,
+                            'y' => 1,
+                        ],
+                        'sizeSelect' => '2x1',
+                        'size' => [
+                            'x' => 2,
+                            'y' => 1,
+                        ],
+                        'row' => 1,
+                        'position' => 'left',
+                        'isAvailableForMobile' => 1,
+                        'optimizers' => [
+                            'color_scheme' => 'dark',
+                            'mirror_image' => false,
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => true,
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => [
+                                        'x' => 1,
+                                        'y' => 1,
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
+                        'tracking_id' => '',
+                        'teaserType' => 'full',
+                        'image_alt' => '',
+                        'cc_css_classes' => '',
+                    ],
+                    1 => [
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'fetch_priority' => false,
+                            'mobile' => [
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
+                            ],
+                            'tablet' => [
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
+                            ],
+                            'image' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/24ae9b368caab2be9daa04898963a48c1b801fbd8691c49a85bc40031885280b/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvYW5uaWUtc3ByYXR0LTI5NDQ1MC11bnNwbGFzaC5qcGcifX0',
+                        ],
+                        'video' => [
+                            'url' => '',
+                            'type' => '',
+                        ],
+                        'slogan' => 'Slider',
+                        'description' => 'Text below image',
+                        'cta' => [
+                            'label' => 'Light',
+                            'href' => 'https://magesuite-test.magesuite.net/',
+                            'target' => false,
+                            'link' => false,
+                        ],
+                        'content_align' => [
+                            'x' => 1,
+                            'y' => 1,
+                        ],
+                        'sizeSelect' => '2x1',
+                        'size' => [
+                            'x' => 2,
+                            'y' => 1,
+                        ],
+                        'row' => 1,
+                        'position' => 'left',
+                        'isAvailableForMobile' => 1,
+                        'optimizers' => [
+                            'color_scheme' => 'light',
+                            'mirror_image' => false,
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => true,
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => [
+                                        'x' => 1,
+                                        'y' => 1,
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
+                        'tracking_id' => '',
+                        'teaserType' => 'full',
+                        'image_alt' => '',
+                        'cc_css_classes' => '',
+                    ],
+                    2 => [
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'fetch_priority' => false,
+                            'mobile' => [
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
+                            ],
+                            'tablet' => [
+                                'raw' => '',
+                                'decoded' => '',
+                                'aspect_ratio' => '',
+                            ],
+                        ],
+                        'video' => [
+                            'url' => '',
+                            'type' => '',
+                        ],
+                        'slogan' => 'Slider',
+                        'description' => 'Text below image',
+                        'cta' => [
+                            'label' => 'Dark',
+                            'href' => 'https://magesuite-test.magesuite.net/',
+                            'target' => false,
+                            'link' => false,
+                        ],
+                        'content_align' => [
+                            'x' => 1,
+                            'y' => 1,
+                        ],
+                        'sizeSelect' => '2x1',
+                        'size' => [
+                            'x' => 2,
+                            'y' => 1,
+                        ],
+                        'row' => 1,
+                        'position' => 'left',
+                        'isAvailableForMobile' => 1,
+                        'optimizers' => [
+                            'color_scheme' => 'dark',
+                            'mirror_image' => false,
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => true,
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => [
+                                        'x' => 1,
+                                        'y' => 1,
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => false,
+                                    'intensity' => 50,
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
+                        'tracking_id' => '',
+                        'teaserType' => 'full',
+                        'image_alt' => '',
+                        'cc_css_classes' => '',
+                    ],
+                ],
+                'ignoredItems' => [
+                ],
+                'scenario' => [
+                    'teaserWidth' => [
+                        'name' => 'Content width',
+                        'iconId' => 'tw_content-width',
+                        'disabled' => false,
+                        'id' => 'container',
+                    ],
+                    'desktopLayout' => [
+                        'name' => '3 in row',
+                        'iconId' => 'dl_3',
+                        'disabled' => false,
+                        'teasersNum' => 3,
+                        'id' => '3',
+                    ],
+                    'contentPlacement' => [
+                        'name' => 'Text below image',
+                        'iconId' => 'tl_under',
+                        'disabled' => false,
+                        'contentPlacement' => false,
+                        'id' => 'under',
+                    ],
+                    'mobileLayout' => [
+                        'name' => 'Slider',
+                        'iconId' => 'ml_slider',
+                        'disabled' => false,
+                        'id' => 'mobile-slider',
+                    ],
+                ],
+                'isError' => false,
+                'cc_css_classes' => '',
+                'componentVisibility' => [
+                    'mobile' => false,
+                    'desktop' => true,
+                ],
+            ],
+        ];
 
         return $blocks;
     }
