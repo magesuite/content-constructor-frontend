@@ -121,6 +121,13 @@
                     <ticket_id>MGS-4670</ticket_id>
                 </entry>
             </tag>
+            <tag version="5.8.42" date="2023-03-03">
+                <entry>
+                    <type>FEAT</type>
+                    <overview>Update hero slider components</overview>
+                    <ticket_id>MGS-4674</ticket_id>
+                </entry>
+            </tag>
         </changelog>
     </module>
 </config>
