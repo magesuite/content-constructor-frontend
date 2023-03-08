@@ -1806,196 +1806,6 @@ class ContrastOptimizers extends DataProviderComponents
                 ],
             ],
         ];
-
-        $blocks[] = Index::getHeadlineBlock('Text shadow');
-        $blocks[] = [
-            'id' => 'componente424',
-            'section' => 'content',
-            'type' => 'image-teaser-2',
-            'data' => [
-                'customCssClass' => '',
-                'items' => [
-                    0 => [
-                        'image' => [
-                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
-                            'aspect_ratio' => '960:511',
-                            'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
-                        ],
-                        'slogan' => 'Text shadow 100',
-                        'description' => 'Center-right text',
-                        'cta' => [
-                            'label' => 'Dark',
-                            'href' => '#',
-                        ],
-                        'content_align' => [
-                            'x' => '3',
-                            'y' => '2',
-                        ],
-                        'optimizers' => [
-                            'color_scheme' => 'dark',
-                            'mirror_image' => '',
-                            'scenarios' => [
-                                'none' => [
-                                    'enabled' => '',
-                                    'intensity' => 'disabled',
-                                    'direction' => 'disabled',
-                                    'configurator' => [
-                                        'icon' => '#contrast_none',
-                                        'label' => 'None',
-                                    ],
-                                ],
-                                'overlay' => [
-                                    'enabled' => '',
-                                    'intensity' => '50',
-                                    'direction' => 'disabled',
-                                    'configurator' => [
-                                        'icon' => '#contrast_overlay',
-                                        'label' => 'Overlay',
-                                    ],
-                                ],
-                                'gradient' => [
-                                    'enabled' => '',
-                                    'intensity' => '50',
-                                    'direction' => [
-                                        'x' => '1',
-                                        'y' => '1',
-                                    ],
-                                    'configurator' => [
-                                        'icon' => '#contrast_gradient',
-                                        'label' => 'Gradient shadow',
-                                    ],
-                                ],
-                                'container' => [
-                                    'enabled' => '',
-                                    'intensity' => '50',
-                                    'direction' => 'disabled',
-                                    'configurator' =>
-                                        [
-                                            'icon' => '#contrast_container',
-                                            'label' => 'Container',
-                                        ],
-                                ],
-                                'text_shadow' => [
-                                    'enabled' => '1',
-                                    'intensity' => '100',
-                                    'direction' => 'disabled',
-                                    'configurator' => [
-                                        'icon' => '#contrast_text-shadow',
-                                        'label' => 'Text shadow',
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    1 => [
-                        'image' => [
-                            'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
-                            'aspect_ratio' => '960:511',
-                            'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
-                        ],
-                        'slogan' => 'Text shadow 100',
-                        'description' => 'Top-left text',
-                        'cta' => [
-                            'label' => 'Light',
-                            'href' => '#',
-                        ],
-                        'content_align' => [
-                            'x' => '1',
-                            'y' => '1',
-                        ],
-                        'optimizers' => [
-                            'color_scheme' => 'light',
-                            'mirror_image' => '',
-                            'scenarios' => [
-                                'none' => [
-                                    'enabled' => '',
-                                    'intensity' => 'disabled',
-                                    'direction' => 'disabled',
-                                    'configurator' => [
-                                        'icon' => '#contrast_none',
-                                        'label' => 'None',
-                                    ],
-                                ],
-                                'overlay' => [
-                                    'enabled' => '',
-                                    'intensity' => '50',
-                                    'direction' => 'disabled',
-                                    'configurator' =>
-                                        [
-                                            'icon' => '#contrast_overlay',
-                                            'label' => 'Overlay',
-                                        ],
-                                ],
-                                'gradient' => [
-                                    'enabled' => '',
-                                    'intensity' => '50',
-                                    'direction' => [
-                                        'x' => '1',
-                                        'y' => '1',
-                                    ],
-                                    'configurator' => [
-                                        'icon' => '#contrast_gradient',
-                                        'label' => 'Gradient shadow',
-                                    ],
-                                ],
-                                'container' => [
-                                    'enabled' => '',
-                                    'intensity' => '50',
-                                    'direction' => 'disabled',
-                                    'configurator' => [
-                                        'icon' => '#contrast_container',
-                                        'label' => 'Container',
-                                    ],
-                                ],
-                                'text_shadow' => [
-                                    'enabled' => '1',
-                                    'intensity' => '50',
-                                    'direction' => 'disabled',
-                                    'configurator' => [
-                                        'icon' => '#contrast_text-shadow',
-                                        'label' => 'Text shadow',
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                'ignoredItems' => [],
-                'scenario' => [
-                    'teaserWidth' => [
-                        'name' => 'Content width',
-                        'iconId' => 'tw_content-width',
-                        'disabled' => '',
-                        'id' => 'container',
-                    ],
-                    'desktopLayout' => [
-                        'name' => '2 in row',
-                        'iconId' => 'dl_2',
-                        'disabled' => '',
-                        'teasersNum' => '2',
-                        'id' => '2',
-                    ],
-                    'contentPlacement' => [
-                        'name' => 'Text over image',
-                        'iconId' => 'tl_over',
-                        'disabled' => '',
-                        'contentPlacement' => '1',
-                        'id' => 'over',
-                    ],
-                    'mobileLayout' => [
-                        'name' => 'Teasers in column',
-                        'iconId' => 'ml_col',
-                        'disabled' => '',
-                        'id' => 'mobile-in-columns',
-                    ],
-                ],
-                'componentVisibility' => [
-                    'mobile' => '1',
-                    'desktop' => '1',
-                ],
-            ],
-        ];
-
         $blocks[] = [
             'type' => 'image-teaser-2',
             'id' => 'componentda81',
@@ -2527,6 +2337,195 @@ class ContrastOptimizers extends DataProviderComponents
                         'iconId' => 'ml_slider',
                         'disabled' => false,
                         'id' => 'mobile-slider',
+                    ],
+                ],
+                'componentVisibility' => [
+                    'mobile' => '1',
+                    'desktop' => '1',
+                ],
+            ],
+        ];
+
+        $blocks[] = Index::getHeadlineBlock('Text shadow');
+        $blocks[] = [
+            'id' => 'componente424',
+            'section' => 'content',
+            'type' => 'image-teaser-2',
+            'data' => [
+                'customCssClass' => '',
+                'items' => [
+                    0 => [
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('annie-spratt-294450-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('annie-spratt-294450-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Text shadow 100',
+                        'description' => 'Center-right text',
+                        'cta' => [
+                            'label' => 'Dark',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '3',
+                            'y' => '2',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'dark',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_overlay',
+                                        'label' => 'Overlay',
+                                    ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' =>
+                                        [
+                                            'icon' => '#contrast_container',
+                                            'label' => 'Container',
+                                        ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '1',
+                                    'intensity' => '100',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    1 => [
+                        'image' => [
+                            'decoded' => $this->getDecodedImage('federica-galli-703572-unsplash.jpg'),
+                            'aspect_ratio' => '960:511',
+                            'image' => $this->getImage('federica-galli-703572-unsplash.jpg'),
+                        ],
+                        'slogan' => 'Text shadow 100',
+                        'description' => 'Top-left text',
+                        'cta' => [
+                            'label' => 'Light',
+                            'href' => '#',
+                        ],
+                        'content_align' => [
+                            'x' => '1',
+                            'y' => '1',
+                        ],
+                        'optimizers' => [
+                            'color_scheme' => 'light',
+                            'mirror_image' => '',
+                            'scenarios' => [
+                                'none' => [
+                                    'enabled' => '',
+                                    'intensity' => 'disabled',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_none',
+                                        'label' => 'None',
+                                    ],
+                                ],
+                                'overlay' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' =>
+                                        [
+                                            'icon' => '#contrast_overlay',
+                                            'label' => 'Overlay',
+                                        ],
+                                ],
+                                'gradient' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => [
+                                        'x' => '1',
+                                        'y' => '1',
+                                    ],
+                                    'configurator' => [
+                                        'icon' => '#contrast_gradient',
+                                        'label' => 'Gradient shadow',
+                                    ],
+                                ],
+                                'container' => [
+                                    'enabled' => '',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_container',
+                                        'label' => 'Container',
+                                    ],
+                                ],
+                                'text_shadow' => [
+                                    'enabled' => '1',
+                                    'intensity' => '50',
+                                    'direction' => 'disabled',
+                                    'configurator' => [
+                                        'icon' => '#contrast_text-shadow',
+                                        'label' => 'Text shadow',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                'ignoredItems' => [],
+                'scenario' => [
+                    'teaserWidth' => [
+                        'name' => 'Content width',
+                        'iconId' => 'tw_content-width',
+                        'disabled' => '',
+                        'id' => 'container',
+                    ],
+                    'desktopLayout' => [
+                        'name' => '2 in row',
+                        'iconId' => 'dl_2',
+                        'disabled' => '',
+                        'teasersNum' => '2',
+                        'id' => '2',
+                    ],
+                    'contentPlacement' => [
+                        'name' => 'Text over image',
+                        'iconId' => 'tl_over',
+                        'disabled' => '',
+                        'contentPlacement' => '1',
+                        'id' => 'over',
+                    ],
+                    'mobileLayout' => [
+                        'name' => 'Teasers in column',
+                        'iconId' => 'ml_col',
+                        'disabled' => '',
+                        'id' => 'mobile-in-columns',
                     ],
                 ],
                 'componentVisibility' => [
