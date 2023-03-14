@@ -26,7 +26,7 @@ foreach ([333, 334, 335] as $categoryId) {
     }
 }
 
-foreach ([333, 334, 335, 338, 9999] as $productId) {
+foreach ([333, 334, 335] as $productId) {
     /** @var $product \Magento\Catalog\Model\Product */
     $product = $objectManager->create('Magento\Catalog\Model\Product');
     $product->load($productId);
