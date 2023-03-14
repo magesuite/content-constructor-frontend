@@ -110,6 +110,8 @@ class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
         $this->itReturnsProductsBySkuDirectlyFromDatabase();
         $this->itReturnsProductsByIdsDirectlyFromDatabase();
         $this->itReturnsOnlySaleableProductsDirectlyFromDatabase();
+        $this->itFiltersProperly();
+        $this->itFiltersAndLimitsProperly();
     }
 
     private function itSortsProperlyByPrice()
@@ -206,6 +208,18 @@ class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
         $result = $this->dataProvider->getProducts(['category_id' => 333, 'limit' => 1]);
 
         $this->assertCount(1, $result, __FUNCTION__.': It should return only one product with limit 1');
+    }
+
+    protected function itFiltersProperly()
+    {
+        $result = $this->dataProvider->getProducts(['filter' => 'daily_deal']);
+        $this->assertCount(2, $result, __FUNCTION__ . ': It should return 2 products with daily deal');
+    }
+
+    protected function itFiltersAndLimitsProperly()
+    {
+        $result = $this->dataProvider->getProducts(['filter' => 'daily_deal', 'limit' => 1]);
+        $this->assertCount(1, $result, __FUNCTION__ . ': It should return only one product with daily deal');
     }
 
     private function itReturnsOnlyInStockProducts()
