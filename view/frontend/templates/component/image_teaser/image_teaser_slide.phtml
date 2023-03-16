@@ -51,9 +51,9 @@ $ctaOnly = (!!$ctaHref && !!$ctaLabel && !$slogan && !$description);
 /**
  * Advanced
  */
-$fetchPriority = $slideImage['fetch_priority'] ?? null;
-$lazyLoad = $slideImage['lazyload'] ?? null;
-$eagerLoad = $slideImage['eagerload'] ?? null;
+$fetchPriority = $slideImage['fetch_priority'] ?? false;
+$lazyLoad = $slideImage['lazyload'] ?? true;
+$eagerLoad = $slideImage['eagerload'] ?? false;
 $openLinkInNewTab = ($block->getOpenLinkInNewTab() || $ctaTarget) ? true : false;
 $trackingId = $slide->getTrackingId();
 $trackingData = "data-tracking-id='{$trackingId}'";

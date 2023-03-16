@@ -153,6 +153,13 @@
                     <ticket_id>MGS-5019</ticket_id>
                 </entry>
             </tag>
+            <tag version="5.9.4" date="2023-03-16">
+                    <entry>
+                        <type>FIX</type>
+                        <overview>Set default value of lazyload and eagerload for existing components</overview>
+                        <ticket_id>MGS-5019</ticket_id>
+                    </entry>
+                </tag>
         </changelog>
     </module>
 </config>
