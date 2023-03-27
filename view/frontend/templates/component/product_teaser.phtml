@@ -8,6 +8,18 @@ $product = $viewModel->getProductObject();
 $visibility = $block->getVisibilityClass();
 $containerClasses = $block->getContainerMix();
 
+$slogan = $viewModel->getSlogan();
+$subslogan = $viewModel->getSubSlogan();
+
+$hasBorder = $viewModel->getBorder();
+$hasShadow = $viewModel->getShadow();
+
+$background = $viewModel->getBackground();
+
+$componentClasses = $hasBorder ? ' cs-product-teaser--with-border' : '';
+$componentClasses .= $hasShadow ? ' cs-product-teaser--with-shadow' : '';
+$componentClasses .= $background ? ' cs-product-teaser--with-background' : '';
+
 if (isset($componentConfiguration['cc_css_classes'])) {
     $containerClasses .= ' ' . $componentConfiguration['cc_css_classes'];
 }
@@ -15,7 +27,23 @@ if (isset($componentConfiguration['cc_css_classes'])) {
 <?= $block->getCssOnce('css/product-teaser.css'); ?>
 <div class="cs-container cs-container--product-teaser<?=/* @noEscape */ $containerClasses ?><?=/* @noEscape */ $visibility ? ' ' .$visibility : ''; ?>">
     <div class="cs-container__inner">
-        <div class="cs-product-teaser">
+        <div 
+            class="cs-product-teaser<?=/* @noEscape */ $componentClasses ?>" 
+            <?php if($background): ?>style="background-color: <?=/* @noEscape */ $background ?>;"<?php endif; ?>
+        >
+            <div class="cs-product-teaser__slogan-wrapper">
+                <?php if($slogan): ?>
+                    <div class="cs-product-teaser__slogan">
+                        <?= $block->escapeHtml($viewModel->getSlogan()) ?>
+                    </div>
+                <?php endif; ?>
+                <?php if($subslogan): ?>
+                    <div class="cs-product-teaser__subslogan">
+                        <?= $block->escapeHtml($viewModel->getSubSlogan()) ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+            <div class="cs-product-teaser__product">
                 <?= $this->getLayout()
                     ->createBlock(\MageSuite\ProductTile\Block\Tile::class)
                     ->setAreas(['teaser'])
@@ -23,6 +51,7 @@ if (isset($componentConfiguration['cc_css_classes'])) {
                     ->setSection('teaser')
                     ->render($product);
                 ?>
+            </div>
         </div>
     </div>
 </div>

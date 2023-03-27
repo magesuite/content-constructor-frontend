@@ -30,6 +30,46 @@ class ProductTeaser extends \Magento\Framework\DataObject implements ViewModel
     }
 
     /**
+     * @return string
+     */
+    public function getSlogan()
+    {
+        return $this->getData('slogan');
+    }
+
+    /**
+     * @return string
+     */
+    public function getSubslogan()
+    {
+        return $this->getData('subslogan');
+    }
+
+    /**
+     * @return string
+     */
+    public function getBackground()
+    {
+        return $this->getData('background');
+    }
+
+    /**
+     * @return string
+     */
+    public function hasBorder()
+    {
+        return $this->getData('border');
+    }
+
+    /**
+     * @return string
+     */
+    public function hasShadow()
+    {
+        return $this->getData('shadow');
+    }
+
+    /**
      * @return array|null
      * @throws \Magento\Framework\Exception\NoSuchEntityException
      */
