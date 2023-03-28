@@ -114,6 +114,13 @@
                     <ticket_id>NKD-3428</ticket_id>
                 </entry>
             </tag>
+            <tag version="5.8.33" date="2023-03-30">
+                <entry>
+                    <type>REFACTOR</type>
+                    <overview>Refactor product teaser component basing on product tile</overview>
+                    <ticket_id>TOYS-664, RK-47</ticket_id>
+                </entry>
+            </tag>
         </changelog>
     </module>
 </config>
