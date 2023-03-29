@@ -160,6 +160,13 @@
                         <ticket_id>MGS-5019</ticket_id>
                     </entry>
                 </tag>
+            <tag version="5.9.5" date="2023-03-29">
+                <entry>
+                    <type>FEATURE</type>
+                    <overview>Set component type to Instagram component</overview>
+                    <ticket_id>KD-3643</ticket_id>
+                </entry>
+            </tag>
         </changelog>
     </module>
 </config>

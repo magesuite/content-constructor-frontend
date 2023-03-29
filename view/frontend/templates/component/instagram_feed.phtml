@@ -12,6 +12,7 @@ if(!empty($data['items'])) {
    echo $this->getLayout()
        ->createBlock('MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser')
        ->setData($data)
+       ->setComponentType('instagram')
        ->setMix('cs-image-teaser--instagram-feed ' . $block->getMix())
        ->setContainerMix('cs-container--instagram-feed ' . $block->getContainerMix())
        ->setOpenLinkInNewTab(true)
