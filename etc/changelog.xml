@@ -154,17 +154,24 @@
                 </entry>
             </tag>
             <tag version="5.9.4" date="2023-03-16">
-                    <entry>
-                        <type>FIX</type>
-                        <overview>Set default value of lazyload and eagerload for existing components</overview>
-                        <ticket_id>MGS-5019</ticket_id>
-                    </entry>
-                </tag>
+                <entry>
+                    <type>FIX</type>
+                    <overview>Set default value of lazyload and eagerload for existing components</overview>
+                    <ticket_id>MGS-5019</ticket_id>
+                </entry>
+            </tag>
             <tag version="5.9.5" date="2023-03-29">
                 <entry>
                     <type>FEATURE</type>
                     <overview>Set component type to Instagram component</overview>
                     <ticket_id>KD-3643</ticket_id>
+                </entry>
+            </tag>
+            <tag version="5.10.0" date="2023-04-06">
+                <entry>
+                    <type>REFACTOR</type>
+                    <overview>Refactor product teaser component basing on product tile</overview>
+                    <ticket_id>TOYS-664, RK-47</ticket_id>
                 </entry>
             </tag>
         </changelog>

@@ -4,139 +4,54 @@ $componentConfiguration = $block->getData();
 
 /** @var $viewModel \MageSuite\ContentConstructorFrontend\Model\Component\ProductTeaser */
 $viewModel = $block->getViewModel();
-
-$productData = $viewModel->getProductData();
 $product = $viewModel->getProductObject();
-?>
+$visibility = $block->getVisibilityClass();
+$containerClasses = $block->getContainerMix();
 
-<?php if($productData && $product): ?>
-<?php
-    $imageHelper = $this->helper(\Magento\Catalog\Helper\Image::class);
-    $productImageUrl = $imageHelper->init($product, 'product_teaser')->getUrl();
-    $productImage2xUrl = $imageHelper->init($product, 'product_teaser_2x')->getUrl();
+$slogan = $viewModel->getSlogan();
+$subslogan = $viewModel->getSubSlogan();
 
-    $componentClasses = $block->getSkipSpacing() ? ' cs-product-teaser--skip-spacing' : '';
-    $componentClasses .= ' ' . $block->getVar('product_teaser/additional_css_classes');
-    $visibility = $block->getVisibilityClass();
+$hasBorder = $viewModel->getBorder();
+$hasShadow = $viewModel->getShadow();
 
-    $containerClasses = $block->getContainerMix();
-    if (isset($componentConfiguration['cc_css_classes'])):
-        $containerClasses .= ' ' . $componentConfiguration['cc_css_classes'];
-    endif;
+$background = $viewModel->getBackground();
 
-    $showSwatches = $block->getVar('product_teaser/show_swatches');
-    $showSKU = $block->getVar('product_teaser/show_sku');
-    $showRatings = $block->getVar('product_teaser/show_rating');
-    $showPrice = $block->getVar('product_teaser/show_price');
-    $showAddToCart = $block->getVar('product_teaser/show_addtocart');
+$componentClasses = $hasBorder ? ' cs-product-teaser--with-border' : '';
+$componentClasses .= $hasShadow ? ' cs-product-teaser--with-shadow' : '';
+$componentClasses .= $background ? ' cs-product-teaser--with-background' : '';
 
-    $showDescription = $block->getVar('product_teaser/description/show');
-    $descriptionAttribute = $block->getVar('product_teaser/description/attribute_code');
-    $description = $descriptionAttribute ? $product->getData($descriptionAttribute) : '';
-
-    $loaderImage = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
-
-    $imageTypeHelper = $this->helper(\MageSuite\ThemeHelpers\Helper\ImageType::class);
-    $isWebpSupported = $imageTypeHelper->supportsWebp($productImageUrl);
+if (isset($componentConfiguration['cc_css_classes'])) {
+    $containerClasses .= ' ' . $componentConfiguration['cc_css_classes'];
+}
 ?>
 <?= $block->getCssOnce('css/product-teaser.css'); ?>
-<div class="cs-container cs-container--product-teaser<?= $containerClasses ?><?= $visibility ? ' ' .$visibility : ''; ?>">
+<div class="cs-container cs-container--product-teaser<?=/* @noEscape */ $containerClasses ?><?=/* @noEscape */ $visibility ? ' ' .$visibility : ''; ?>">
     <div class="cs-container__inner">
-        <div class="cs-product-teaser<?= $componentClasses; ?>">
-            <a href="<?= $productData['url']; ?>" class="cs-product-teaser__link">
-                <figure class="cs-product-teaser__thumbnail">
-                    <picture class="cs-product-teaser__image">
-                        <?php if ($isWebpSupported): ?>
-                            <source type="image/webp"
-                                srcset="<?= $loaderImage ?>"
-                                data-srcset="<?= $productImageUrl . '.webp 1x, ' . $productImage2xUrl . '.webp 2x' ?>"
-                            >
-                        <?php endif; ?>
-                        <source srcset="<?= $loaderImage ?>"
-                            data-srcset="<?= $productImageUrl . ' 1x, ' . $productImage2xUrl . ' 2x' ?>"
-                        >
-                        <img src="<?= $loaderImage ?>"
-                            class="lazyload"
-                            data-src="<?= $productImageUrl ?>"
-                            data-srcset="<?= $productImageUrl . ' 1x, ' . $productImage2xUrl . ' 2x' ?>"
-                            alt="<?= $product->getName(); ?>"
-                        >
-                    </picture>
-                    <noscript>
-                        <img class="cs-product-teaser__image"
-                            src="<?= $productImageUrl ?>"
-                            srcset="<?= $productImageUrl . ' 1x, ' . $productImage2xUrl . ' 2x' ?>"
-                            alt="<?= $product->getName(); ?>"
-                        >
-                    </noscript>
-                </figure>
-            </a>
-            <div class="cs-product-teaser__details">
-                <a href="<?= $productData['url']; ?>" class="cs-product-teaser__name">
-                    <?= $product->getName(); ?>
-                </a>
-
-                <?php if ($showDescription && $description): ?>
-                    <div class="cs-product-teaser__description">
-                        <?= $description; ?>
+        <div 
+            class="cs-product-teaser<?=/* @noEscape */ $componentClasses ?>" 
+            <?php if($background): ?>style="background-color: <?=/* @noEscape */ $background ?>;"<?php endif; ?>
+        >
+            <div class="cs-product-teaser__slogan-wrapper">
+                <?php if($slogan): ?>
+                    <div class="cs-product-teaser__slogan">
+                        <?= $block->escapeHtml($viewModel->getSlogan()) ?>
                     </div>
                 <?php endif; ?>
-
-                <?php if ($showSwatches && $productData['swatches']): ?>
-                    <div class="cs-product-teaser__swatches">
-                        <?= $productData['swatches']; ?>
+                <?php if($subslogan): ?>
+                    <div class="cs-product-teaser__subslogan">
+                        <?= $block->escapeHtml($viewModel->getSubSlogan()) ?>
                     </div>
                 <?php endif; ?>
-
-                <div class="cs-product-teaser__info">
-                    <?php if ($showRatings && $productData['rating']['data']['maxStars']): ?>
-                        <div class="cs-product-teaser__ratings">
-                            <?= $this->getLayout()
-                                ->createBlock(\Magento\Framework\View\Element\Template::class)
-                                ->setMaxStars($productData['rating']['data']['maxStars'])
-                                ->setActiveStars($productData['rating']['data']['activeStars'])
-                                ->setReviewsCount(str_replace(array( '(', ')' ), '', $productData['rating']['data']['text']))
-                                ->setHideReviewsCount(false)
-                                ->setReviewsLink(true)
-                                ->setReviewsUrl($productData['url'])
-                                ->setTemplate('Magento_Review::rating-stars.phtml')
-                                ->toHtml();
-                            ?>
-                        </div>
-                    <?php endif; ?>
-
-                    <?php if ($showSKU && $product->getSku()): ?>
-                        <div class="cs-product-teaser__sku">
-                            <span class="cs-product-teaser__sku-label"><?= __('SKU:'); ?></span>
-                            <span class="cs-product-teaser__sku-data"><?= $product->getSku() ?></span>
-                        </div>
-                    <?php endif; ?>
-                </div>
-
-                <div class="cs-product-teaser__action">
-                    <?php if ($showPrice && $productData['price']): ?>
-                        <div class="cs-product-teaser__price"><?= $productData['price']; ?></div>
-                    <?php endif; ?>
-                    <?php if ($showAddToCart): ?>
-                        <div class="cs-product-teaser__addtocart cs-addtocart">
-                            <?php
-                            $addToCartParameters = $viewModel->getAddToCartParameters($product);
-                            ?>
-                            <form data-role="tocart-form" action="<?= $addToCartParameters['action'] ?>" method="post">
-                                <input type="hidden" name="product" value="<?= $addToCartParameters['productId'] ?>">
-                                <input type="hidden" name="<?= $addToCartParameters['uencKey'] ?>" value="<?= $addToCartParameters['uencValue'] ?>">
-                                <?= $addToCartParameters['formKey'] ?>
-                                <?= $this->getLayout()
-                                    ->createBlock("Magento\Framework\View\Element\Template")
-                                    ->setTemplate("Magento_Catalog::addtocart/button.phtml")
-                                    ->toHtml();
-                                ?>
-                            </form>
-                        </div>
-                    <?php endif; ?>
-                </div>
+            </div>
+            <div class="cs-product-teaser__product">
+                <?= $this->getLayout()
+                    ->createBlock(\MageSuite\ProductTile\Block\Tile::class)
+                    ->setAreas(['teaser'])
+                    ->setViewMode('teaser')
+                    ->setSection('teaser')
+                    ->render($product);
+                ?>
             </div>
         </div>
     </div>
 </div>
-<?php endif; ?>
