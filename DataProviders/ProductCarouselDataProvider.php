@@ -190,8 +190,11 @@ class ProductCarouselDataProvider
     {
         $collection = $this->buildCollectionSearchCriteria($criteria);
         $collection->addMediaGalleryData();
-
         $products = $collection->getItems();
+
+        if (!empty($criteria['filter']) && isset($criteria['limit']) && $criteria['limit'] >= 0) {
+            $products = array_slice($products, 0, $criteria['limit']);
+        }
 
         if($collection instanceof \Smile\ElasticsuiteCatalog\Model\ResourceModel\Product\Fulltext\Collection) {
             $productIdentitiesFromElasticSearch = $this->getProductIdentitiesFromElasticSearch($collection);
@@ -314,10 +317,9 @@ class ProductCarouselDataProvider
             $collection = $this->applySorting($collection, $criteria['order_by'], $criteria['order_type']);
         }
 
-        if (isset($criteria['limit'])) {
+        if (isset($criteria['limit']) && $criteria['limit'] >= 0 && empty($criteria['filter'])) {
             $collection->setPageSize($criteria['limit']);
         }
-
 
         return $collection;
     }
