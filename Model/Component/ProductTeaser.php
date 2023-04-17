@@ -48,6 +48,14 @@ class ProductTeaser extends \Magento\Framework\DataObject implements ViewModel
     /**
      * @return string
      */
+    public function getSpecialDescription()
+    {
+        return $this->getData('specialdescription');
+    }
+
+    /**
+     * @return string
+     */
     public function getBackground()
     {
         return $this->getData('background');

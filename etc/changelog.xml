@@ -121,6 +121,13 @@
                     <ticket_id>TOYS-664, RK-47</ticket_id>
                 </entry>
             </tag>
+            <tag version="5.8.34" date="2023-04-17">
+                <entry>
+                    <type>FEAT</type>
+                    <overview>Add special description data to product teaser</overview>
+                    <ticket_id>RK-47</ticket_id>
+                </entry>
+            </tag>
         </changelog>
     </module>
 </config>
