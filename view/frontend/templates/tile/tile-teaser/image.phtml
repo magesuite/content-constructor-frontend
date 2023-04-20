@@ -1,15 +1,16 @@
 <?php
     $product = $block->getProduct();
     $imageHelper = $this->helper('Magento\Catalog\Helper\Image');
-    $productImage = $block->getImage($product, 'category_page_grid');
+    $productImage = $block->getImage($product, 'product_teaser');
     $productImageUrl = $block->escapeUrl($productImage->getImageUrl());
-    $productImage2x = $block->getImage($product, $block->getImage2xId() ?? 'category_page_grid_x2');
+    $productImage2x = $block->getImage($product, 'product_teaser_2x');
     $productImage2xUrl = $block->escapeUrl($productImage2x->getImageUrl());
     $productImageWidth = $productImage->getWidth();
     $productImageHeight = $productImage->getHeight();
     $productImageLabel = $productImage->getLabel();
 
     $productImageAlt = $productImageLabel ? $block->escapeHtmlAttr($productImageLabel) : $block->escapeHtmlAttr($product->getName());
+    $imageTypeHelper = $this->helper(\MageSuite\ThemeHelpers\Helper\ImageType::class);
 
     $loaderImage = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
 

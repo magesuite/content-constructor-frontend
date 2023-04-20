@@ -1,6 +1,5 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="">
     <body>
-
         <!-- Fragment removed from product tile of teaser type -->
         <referenceBlock name="product.tile.stock">
             <arguments>
