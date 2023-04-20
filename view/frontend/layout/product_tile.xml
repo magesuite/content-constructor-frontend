@@ -1,0 +1,86 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="">
+    <body>
+
+        <!-- Fragment removed from product tile of teaser type -->
+        <referenceBlock name="product.tile.stock">
+            <arguments>
+                <argument name="unsupported_areas" xsi:type="array">
+                    <item name="0" xsi:type="string">teaser</item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+
+        <referenceBlock name="product.tile.addtolinks">
+            <arguments>
+                <argument name="unsupported_areas" xsi:type="array">
+                    <item name="0" xsi:type="string">teaser</item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+
+        <!-- Fragment with own templates in product tile of teaser type -->
+        <referenceBlock name="product.tile.description">
+            <arguments>
+                <argument name="unsupported_areas" xsi:type="array">
+                    <item name="0" xsi:type="string">teaser</item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+
+        <referenceBlock class="MageSuite\ProductTile\Block\Tile\Container" name="product.tile.container.main.details">
+            <block class="MageSuite\ProductTile\Block\Tile\Fragment" name="product.tile.teaser.description" template="MageSuite_ContentConstructorFrontend::tile/tile-teaser/description.phtml">
+                <arguments>
+                    <argument name="supported_areas" xsi:type="array">
+                        <item name="0" xsi:type="string">teaser</item>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+
+        <referenceBlock name="product.tile.figure.image">
+            <arguments>
+                <argument name="unsupported_areas" xsi:type="array">
+                    <item name="0" xsi:type="string">teaser</item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+
+        <referenceBlock name="product.tile.container.figure">
+            <block class="MageSuite\ProductTile\Block\Tile\Fragment" name="product.tile.teaser.figure.image" template="MageSuite_ContentConstructorFrontend::tile/tile-teaser/image.phtml">
+                <arguments>
+                    <argument xsi:type="object" name="cache_key_model">MageSuite\ProductTile\Cache\Image</argument>
+                    <argument xsi:type="string" name="css_class">cs-product-tile__image</argument>
+                    <argument xsi:type="string" name="img_class">cs-product-tile__img</argument>
+                    <argument xsi:type="boolean" name="apply_width_height_attr">true</argument>
+                    <argument name="supported_areas" xsi:type="array">
+                        <item name="0" xsi:type="string">teaser</item>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+
+        <!-- Fragment with standard templates, but moved to the other containers -->
+        <referenceBlock name="product.tile.dailydeal.counter">
+            <arguments>
+                <argument name="unsupported_areas" xsi:type="array">
+                    <item name="0" xsi:type="string">teaser</item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+
+        <referenceBlock class="MageSuite\ProductTile\Block\Tile\Container" name="product.tile.container.main.details">
+            <block class="MageSuite\ProductTile\Block\Tile\Fragment" name="product.tile.teaser.dailydeal.counter" template="MageSuite_DailyDeal::counter.phtml" after="product.tile.container.badges">
+                <arguments>
+                    <argument xsi:type="string" name="counter_place">tile</argument>
+                    <argument xsi:type="string" name="additional_css_classes">cs-product-tile__dailydeal cs-dailydeal--tile-teaser</argument>
+                    <argument xsi:type="string" name="modifier_for_qty_limitation">cs-dailydeal--has-qty-limit</argument>
+                    <argument xsi:type="boolean" name="show_header">true</argument>
+                    <argument xsi:type="string" translate="true" name="availability_text_after">items left</argument>
+                    <argument name="supported_areas" xsi:type="array">
+                        <item name="0" xsi:type="string">teaser</item>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

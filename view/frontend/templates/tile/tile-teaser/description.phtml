@@ -1,0 +1,8 @@
+<?php
+    $specialDescription = $block->getTile()->getSpecialDescription();
+?>
+<?php if ($specialDescription): ?>
+    <?= $specialDescription ?>
+<?php else: ?>
+    <?= $block->getProduct()->getShortDescription() ?>
+<?php endif; ?>

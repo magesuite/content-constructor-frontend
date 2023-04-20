@@ -1,0 +1,36 @@
+<?php
+    $product = $block->getProduct();
+    $imageHelper = $this->helper('Magento\Catalog\Helper\Image');
+    $productImage = $block->getImage($product, 'category_page_grid');
+    $productImageUrl = $block->escapeUrl($productImage->getImageUrl());
+    $productImage2x = $block->getImage($product, $block->getImage2xId() ?? 'category_page_grid_x2');
+    $productImage2xUrl = $block->escapeUrl($productImage2x->getImageUrl());
+    $productImageWidth = $productImage->getWidth();
+    $productImageHeight = $productImage->getHeight();
+    $productImageLabel = $productImage->getLabel();
+
+    $productImageAlt = $productImageLabel ? $block->escapeHtmlAttr($productImageLabel) : $block->escapeHtmlAttr($product->getName());
+
+    $loaderImage = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
+
+    /* XML config */
+    $cssClass = $block->getCssClass();
+    $imgClass = $block->getImgClass();
+    $applyWidthHeightAttr = $block->getApplyWidthHeightAttr();
+?>
+<picture class="<?= $cssClass ?>">
+    <source
+        srcset="<?= $productImageUrl . ' 1x, ' . $productImage2xUrl . ' 2x' ?>"
+    >
+    <img
+        src="<?= $productImageUrl ?>"
+        class="<?= $imgClass ?>"
+        srcset="<?= $productImageUrl . ' 1x, ' . $productImage2xUrl . ' 2x' ?>"
+        <?php if ($applyWidthHeightAttr): ?>
+            width="<?= $productImageWidth ?>"
+            height="<?= $productImageHeight ?>"
+        <?php endif; ?>
+        alt="<?= $productImageAlt ?>"
+        loading="lazy"
+    >
+</picture>
