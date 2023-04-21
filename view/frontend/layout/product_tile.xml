@@ -1,22 +1,5 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="">
     <body>
-        <!-- Fragment removed from product tile of teaser type -->
-        <referenceBlock name="product.tile.stock">
-            <arguments>
-                <argument name="unsupported_areas" xsi:type="array">
-                    <item name="0" xsi:type="string">teaser</item>
-                </argument>
-            </arguments>
-        </referenceBlock>
-
-        <referenceBlock name="product.tile.addtolinks">
-            <arguments>
-                <argument name="unsupported_areas" xsi:type="array">
-                    <item name="0" xsi:type="string">teaser</item>
-                </argument>
-            </arguments>
-        </referenceBlock>
-
         <!-- Fragment with own templates in product tile of teaser type -->
         <referenceBlock name="product.tile.description">
             <arguments>
