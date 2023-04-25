@@ -59,9 +59,14 @@ class AbstractComponent extends \Magento\Framework\View\Element\Template
         return $this->componentVisibilityHelper->getVisibilityClass($this->getData());
     }
 
-    public function getCssOnce($cssPath) {
-        return '<link rel="stylesheet" href="' . $this->getViewFileUrl($cssPath) . '"/>'
-            . '<script>/* defer-ignore */</script>';
+    public function getCssOnce($cssPath, $cssDefer = false) {
+        $cssLink = '<link rel="stylesheet" href="' . $this->getViewFileUrl($cssPath) . '"/>';
+
+        if (!$cssDefer) {
+            $cssLink .= '<script>/* defer-ignore */</script>';
+        }
+
+        return $cssLink;
     }
 
     public function addIdentities($identities)
