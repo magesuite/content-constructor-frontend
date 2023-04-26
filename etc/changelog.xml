@@ -114,14 +114,85 @@
                     <ticket_id>NKD-3428</ticket_id>
                 </entry>
             </tag>
-            <tag version="5.8.33" date="2023-03-30">
+            <tag version="5.8.41" date="2023-03-03">
+                <entry>
+                    <type>FEAT</type>
+                    <overview>Update image teaser and contrast optimizer components</overview>
+                    <ticket_id>MGS-4670</ticket_id>
+                </entry>
+            </tag>
+            <tag version="5.8.42" date="2023-03-03">
+                <entry>
+                    <type>FEAT</type>
+                    <overview>Update hero slider components</overview>
+                    <ticket_id>MGS-4674</ticket_id>
+                </entry>
+            </tag>
+            <tag version="5.8.43" date="2023-03-03">
+                <entry>
+                    <type>FIX</type>
+                    <overview>Fix of minor display products grid issues</overview>
+                    <ticket_id>MGS-4673</ticket_id>
+                </entry>
+            </tag>
+            <tag version="5.8.44" date="2023-03-03">
+                <entry>
+                    <type>FEAT</type>
+                    <overview>Update of mosaic components</overview>
+                    <ticket_id>MGS-4676</ticket_id>
+                </entry>
+            </tag>
+            <tag version="5.9.0" date="2023-03-07">
+                <entry>
+                    <type>FEATURE</type>
+                    <overview>Add loading options for slide images in teaser based CC components</overview>
+                    <description>
+                        Script based lazyload via vanilla-lazyload has been restored with proper data attributes.
+                        Lazy or eager type of loading is now available as configurable option that can be set via admin.
+                    </description>
+                    <ticket_id>MGS-5019</ticket_id>
+                </entry>
+            </tag>
+            <tag version="5.9.4" date="2023-03-16">
+                <entry>
+                    <type>FIX</type>
+                    <overview>Set default value of lazyload and eagerload for existing components</overview>
+                    <ticket_id>MGS-5019</ticket_id>
+                </entry>
+            </tag>
+            <tag version="5.9.5" date="2023-03-29">
+                <entry>
+                    <type>FEATURE</type>
+                    <overview>Set component type to Instagram component</overview>
+                    <ticket_id>KD-3643</ticket_id>
+                </entry>
+            </tag>
+            <tag version="5.10.0" date="2023-04-06">
                 <entry>
                     <type>REFACTOR</type>
                     <overview>Refactor product teaser component basing on product tile</overview>
                     <ticket_id>TOYS-664, RK-47</ticket_id>
                 </entry>
             </tag>
-            <tag version="5.8.34" date="2023-04-20">
+            <tag version="5.10.1" date="2023-04-21">
+                <entry>
+                    <type>FIX</type>
+                    <overview>Update deprecated importance attribute in image preload template</overview>
+                    <description>
+                        Importance attribute has been deprecated in favor of using fetchpriority.
+                        Ref. https://web.dev/fetch-priority/#history
+                    </description>
+                    <ticket_id>KRG-2498</ticket_id>
+                </entry>
+            </tag>
+            <tag version="5.11.0" date="2023-04-25">
+                <entry>
+                    <type>FIX</type>
+                    <overview>First category with Image Teaser in categories nav is blocking loading the rest of categories</overview>
+                    <ticket_id>NKD-3657</ticket_id>
+                </entry>
+            </tag>
+            <tag version="5.11.1" date="2023-04-26">
                 <entry>
                     <type>FEAT</type>
                     <overview>Move changes related to product teaser tile type from magesuite-product-tile repository</overview>

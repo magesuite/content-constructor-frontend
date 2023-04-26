@@ -117,8 +117,7 @@ class CMSTeaser extends DataProviderComponents
                         ],
                         [
                             'image' => [
-                                'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/3c1dc658737d06202b399c5bec486ba3f155c3dacabfc082264194d63b8b8b6e/image/e3ttZWRpYSB1cmw9ImNvbnRlbnRfY29uc3RydWN0b3IvMngxX01HU18yLmpwZyJ9fQ',
-                                'decoded' => '{{media url="content_constructor/2x1_MGS_2.jpg"}}',
+                                'decoded' => $this->getDecodedImage('erin_teaser.png'),
                                 'aspect_ratio' => '149:135',
                                 'fetch_priority' => false,
                                 'mobile' => [

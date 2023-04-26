@@ -12,6 +12,7 @@ $isSvg = $slide->isSvg();
 
 $origImageSrc = $block->escapeUrl($slide->getSrc());
 $hasImage = !empty($origImageSrc);
+$placeholderImageSrc = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
 $imageSrcset = $slide->getSrcSet();
 
 if (empty($imageSrcset) || $isSvg) {
@@ -23,6 +24,8 @@ $imageSizes = $isSvg ? '' : $slide->getSizes();
 $isSlider = $block->getIsSlider();
 $isSliderMobile = $block->getIsSliderMobile();
 $fetchPriority = $block->getFetchPriority();
+$lazyLoad = $block->getLazyLoad();
+$eagerLoad = $block->getEagerLoad();
 
 /**
  * Aspect ratio and sizing
@@ -53,11 +56,11 @@ $videoTeaserData = $slide->getVideo();
 $hasVideoTeaser = !empty($videoTeaserData['url']) && !empty($videoTeaserData['type']);
 
 /**
- * First image / LCP detection
+ * Conditional lazy loading
  */
-$isFirstImage = $block->getIsFirstImage();
-$eagerLoadFirstImage = $block->getEagerLoadFirstImage();
+$isLazyLoaded = $eagerLoad ? false : $lazyLoad;
 ?>
+
 <?php if ($hasImage): ?>
     <picture class="cs-image-teaser__picture"<?php if($aspectRatio): ?> style="aspect-ratio: <?= $aspectRatio ?>"<?php endif ?>>
         <?php if($hasVideoTeaser): ?>
@@ -86,8 +89,14 @@ $eagerLoadFirstImage = $block->getEagerLoadFirstImage();
             >
         <?php endif; ?>
         <source
+             <?php if ($isLazyLoaded): ?>
+                srcset="<?= $placeholderImageSrc ?>"
+                data-srcset="<?= $imageSrcset ?>"
+            <?php else: ?>
+                srcset="<?= $imageSrcset ?>"
+            <?php endif; ?>
+
             type="<?= $imageMimeType ?>"
-            srcset="<?= $imageSrcset ?>"
             <?php if ($imageSizes): ?>
                 sizes="<?= $imageSizes ?>"
             <?php endif; ?>
@@ -99,10 +108,17 @@ $eagerLoadFirstImage = $block->getEagerLoadFirstImage();
             <?php endif; ?>
         >
         <img
-            class="cs-image-teaser__image<?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?>"
+            class="cs-image-teaser__image<?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?><?= $isLazyLoaded ? ' lazyload' : '' ?>"
             alt="<?= $imageAlt ?>"
-            src="<?= $origImageSrc ?>"
-            loading="<?= $isFirstImage && $eagerLoadFirstImage ? 'eager' : 'lazy' ?>"
+            
+            <?php if ($isLazyLoaded): ?>
+                src="<?= $placeholderImageSrc ?>"
+                data-src="<?= $origImageSrc ?>"
+                data-srcset="<?= $imageSrcset ?>"
+            <?php else: ?>
+                src="<?= $origImageSrc ?>"
+                srcset="<?= $imageSrcset ?>"
+            <?php endif; ?>
             <?php if ($imageSizes): ?>
                 sizes="<?= $imageSizes ?>"
             <?php endif; ?>
@@ -114,6 +130,9 @@ $eagerLoadFirstImage = $block->getEagerLoadFirstImage();
             <?php endif; ?>
             <?php if ($fetchPriority): ?>
                 fetchpriority="high"
+            <?php endif; ?>
+            <?php if ($eagerLoad): ?>
+                loading="eager"
             <?php endif; ?>
         >
     </picture>

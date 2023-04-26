@@ -9,6 +9,7 @@ $imageTeaser = $block->getData();
 $slides = $viewModel->getSlides();
 
 $componentType = $block->getComponentType() ?? 'image_teaser';
+$deferCSS = $block->getDeferCSS() ?? false;
 
 $desktopLayout = $imageTeaser['scenario']['desktopLayout']['id'];
 $mobileLayout = $imageTeaser['scenario']['mobileLayout']['id'];
@@ -66,8 +67,6 @@ if (isset($imageTeaser['cc_css_classes'])):
     $containerClasses .= ' ' . $imageTeaser['cc_css_classes'];
 endif;
 
-$eagerLoadFirstImage = $componentType == 'hero_carousel' ? $block->getVar('hero_carousel/eager_load_first_image') : false;
-
 // Init JS config
 $jsSettings = $block->getVar('image_teaser/js');
 if (empty($jsSettings)) {
@@ -116,7 +115,7 @@ if ($gridTeaser) {
 $openLinkInNewTab = $block->getOpenLinkInNewTab() ? true : false;
 ?>
 
-<?= $block->getCssOnce('css/image-teaser.css'); ?>
+<?= $block->getCssOnce('css/image-teaser.css', $deferCSS); ?>
 
 <?php if ($gridTeaser): ?>
 <li class="<?= $teaserBrickClass ?>" id="<?= $teaserId ?>">
@@ -179,7 +178,6 @@ $openLinkInNewTab = $block->getOpenLinkInNewTab() ? true : false;
                     <ul class="cs-image-teaser__slides cs-image-teaser__slides<?= $mosaicProportions != '' ? ' cs-image-teaser__slides--mosaic-scenario-' . $mosaicProportions : '' ?> <?= $componentType == 'teaser_and_text' ? 'cs-image-teaser__slides--mobile_' . $mobileLayout : '' ?>">
                         <?php $slideIndex = 0; ?>
                         <?php foreach ($slides as $slide): ?>
-                            <?php $isFirstImage = $slideIndex == 0 ? true : false; ?>
                             <?= $this->getLayout()
                                 ->createBlock(\Magento\Framework\View\Element\Template::class)
                                 ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/image_teaser_slide.phtml')
@@ -191,8 +189,6 @@ $openLinkInNewTab = $block->getOpenLinkInNewTab() ? true : false;
                                 ->setContentPlacement($contentPlacement)
                                 ->setOpenLinkInNewTab($openLinkInNewTab)
                                 ->setSlideIndex($slideIndex)
-                                ->setIsFirstImage($isFirstImage)
-                                ->setEagerLoadFirstImage($eagerLoadFirstImage)
                                 ->toHtml();
                             ?>
                             <?php $slideIndex++; ?>

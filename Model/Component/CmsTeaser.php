@@ -4,7 +4,7 @@ namespace MageSuite\ContentConstructorFrontend\Model\Component;
 
 class CmsTeaser extends \Magento\Framework\DataObject implements ViewModel
 {
-    protected const DUMMY_TEASER_IMAGE_URL = '/catalog/category/erin_teaser.png';
+    protected const DUMMY_TEASER_IMAGE = 'erin_teaser.png';
 
     /**
      * @var \MageSuite\ContentConstructorFrontend\DataProviders\CmsTeaserDataProvider
@@ -22,17 +22,20 @@ class CmsTeaser extends \Magento\Framework\DataObject implements ViewModel
     protected $slideFactory;
 
     protected \Magento\Framework\App\Request\Http $request;
+    protected \Magento\Framework\UrlInterface $url;
 
     public function __construct(
         \MageSuite\ContentConstructorFrontend\DataProviders\CmsTeaserDataProvider $dataProvider,
         \MageSuite\ContentConstructorFrontend\Model\Component\CmsTeaser\SlideFactory $slideFactory,
         \Magento\Framework\App\Request\Http $request,
+        \Magento\Framework\UrlInterface $url,
         array $data = []
     ) {
         parent::__construct($data);
         $this->request = $request;
         $this->dataProvider = $dataProvider;
         $this->slideFactory = $slideFactory;
+        $this->url = $url;
     }
 
     public function getSlides()
@@ -47,7 +50,10 @@ class CmsTeaser extends \Magento\Framework\DataObject implements ViewModel
                 $imageUrl = $page['image']['src'];
 
                 if ($loadSampleImagesIfNotProvided && empty($page['image']['src'])) {
-                    $imageUrl = self::DUMMY_TEASER_IMAGE_URL;
+                    $imageUrl = $this->url->getUrl(
+                        'contentconstructor/components/image',
+                        ['image_path' => base64_encode(self::DUMMY_TEASER_IMAGE)]
+                    );
                 }
 
                 $slide = [

@@ -51,7 +51,9 @@ $ctaOnly = (!!$ctaHref && !!$ctaLabel && !$slogan && !$description);
 /**
  * Advanced
  */
-$fetchPriority = $slideImage['fetch_priority'] ?? null;
+$fetchPriority = $slideImage['fetch_priority'] ?? false;
+$lazyLoad = $slideImage['lazyload'] ?? true;
+$eagerLoad = $slideImage['eagerload'] ?? false;
 $openLinkInNewTab = ($block->getOpenLinkInNewTab() || $ctaTarget) ? true : false;
 $trackingId = $slide->getTrackingId();
 $trackingData = "data-tracking-id='{$trackingId}'";
@@ -73,12 +75,6 @@ if ($hasVideoTeaser) {
     $slideClasses .= ' cs-image-teaser__slide--has-video-teaser';
 }
 $slideClasses .= ' '.$slide->getCcCssClasses();
-
-/**
- * Hero first image / LCP detection
- */
-$isFirstImage = $block->getIsFirstImage();
-$eagerLoadFirstImage = $block->getEagerLoadFirstImage();
 ?>
 <li class="<?= $slideClasses ?>"
     <?php if (!$ctaHref && !empty($trackingId)): ?>
@@ -117,9 +113,9 @@ $eagerLoadFirstImage = $block->getEagerLoadFirstImage();
             ->setIsSliderMobile($isSliderMobile)
             ->setSlideIndex($slideIndex)
             ->setAspectRatio($aspectRatio)
-            ->setIsFirstImage($isFirstImage)
-            ->setEagerLoadFirstImage($eagerLoadFirstImage)
             ->setFetchPriority($fetchPriority)
+            ->setLazyLoad($lazyLoad)
+            ->setEagerLoad($eagerLoad)
             ->toHtml();
         ?>
 

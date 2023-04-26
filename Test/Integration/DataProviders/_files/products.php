@@ -129,6 +129,57 @@ $product->priceReindexCallback();
 
 $product = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()->create('Magento\Catalog\Model\Product');
 
+$diffFromDate = date('Y-m-d h:m:s', strtotime('-10 days'));
+$diffToDate = date('Y-m-d h:m:s', strtotime('-8 days'));
+
+$product->setTypeId(\Magento\Catalog\Model\Product\Type::TYPE_SIMPLE)
+    ->setId(338)
+    ->setAttributeSetId(4)
+    ->setName('A product with daily deal')
+    ->setSku('some_daily_deal_product')
+    ->setPrice(70)
+    ->setVisibility(\Magento\Catalog\Model\Product\Visibility::VISIBILITY_BOTH)
+    ->setStatus(\Magento\Catalog\Model\Product\Attribute\Source\Status::STATUS_ENABLED)
+    ->setWebsiteIds([1])
+    ->setStockData(['use_config_manage_stock' => 1, 'qty' => 80, 'is_qty_decimal' => 0, 'is_in_stock' => 1])
+    ->setNewsFromDate($diffFromDate)
+    ->setNewsToDate($diffToDate)
+    ->setBestsellerScoreByAmount(800)
+    ->setPopularIcon(1)
+    ->setDailyDealEnabled(1)
+    ->setDailyDealLimit(50)
+    ->setDailyDealInitialAmount(60)
+    ->setDailyDealFrom('2018-03-19 00:00:00')
+    ->setDailyDealTo('2031-03-22 08:00:00')
+    ->setDailyDealPrice(5)
+    ->save();
+
+$product->reindex();
+$product->priceReindexCallback();
+
+$product = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()->create('Magento\Catalog\Model\Product');
+
+$product->setTypeId(\Magento\Catalog\Model\Product\Type::TYPE_SIMPLE)
+    ->setId(9999)
+    ->setAttributeSetId(4)
+    ->setName('A product with really high id')
+    ->setSku('high_id_product')
+    ->setPrice(70)
+    ->setVisibility(\Magento\Catalog\Model\Product\Visibility::VISIBILITY_BOTH)
+    ->setStatus(\Magento\Catalog\Model\Product\Attribute\Source\Status::STATUS_ENABLED)
+    ->setWebsiteIds([1])
+    ->setStockData(['use_config_manage_stock' => 1, 'qty' => 32, 'is_qty_decimal' => 0, 'is_in_stock' => 1])
+    ->setNewsFromDate($diffFromDate)
+    ->setNewsToDate($diffToDate)
+    ->setBestsellerScoreByAmount(800)
+    ->setPopularIcon(1)
+    ->save();
+
+$product->reindex();
+$product->priceReindexCallback();
+
+$product = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()->create('Magento\Catalog\Model\Product');
+
 $product->setTypeId(\Magento\Catalog\Model\Product\Type::TYPE_SIMPLE)
     ->setId(336)
     ->setAttributeSetId(4)
