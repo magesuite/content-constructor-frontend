@@ -131,6 +131,8 @@ class ProductCarouselDataProvider
      */
     protected $stockInterface;
 
+    protected bool $skipCollectionFilters = false;
+
     public function __construct(
         \Smile\ElasticsuiteCatalog\Model\ResourceModel\Product\Fulltext\CollectionFactory $productCollectionFactory,
         \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $databaseProductCollectionFactory,
@@ -191,6 +193,21 @@ class ProductCarouselDataProvider
         $collection = $this->buildCollectionSearchCriteria($criteria);
         $collection->addMediaGalleryData();
         $products = $collection->getItems();
+
+        if ($this->skipCollectionFilters) {
+            $result = [];
+
+            foreach ($products as $product) {
+                $productData = $this->mapProductToArray($product);
+
+                if ($collection->hasFlag('virtual_category_applied')) {
+                    $productData['identities'] = array_merge($productData['identities'], ['virtual_category']);
+                }
+
+                $result[] = $productData;
+            }
+            return $result;
+        }
 
         if (!empty($criteria['filter']) && isset($criteria['limit']) && $criteria['limit'] >= 0) {
             $products = array_slice($products, 0, $criteria['limit']);
@@ -335,14 +352,18 @@ class ProductCarouselDataProvider
             $collection = $this->databaseProductCollectionFactory->create();
         }
 
-        $collection->addAttributeToSelect($this->catalogConfig->getProductAttributes())
-            ->setStore($this->storeManager->getStore())
+        $collection->addAttributeToSelect($this->catalogConfig->getProductAttributes());
+
+        if ($this->skipCollectionFilters) {
+            return $collection;
+        }
+
+        $collection->setStore($this->storeManager->getStore())
             ->addFinalPrice()
             ->addTaxPercents()
+            ->addUrlRewrite()
             ->addStoreFilter()
-            ->addUrlRewrite();
-
-        $collection->setVisibility(\Magento\Catalog\Model\Product\Visibility::VISIBILITY_BOTH);
+            ->setVisibility(\Magento\Catalog\Model\Product\Visibility::VISIBILITY_BOTH);
 
         return $collection;
     }
@@ -636,5 +657,10 @@ class ProductCarouselDataProvider
         }
 
         return '';
+    }
+
+    public function setSkipCollectionFilters(bool $value): void
+    {
+        $this->skipCollectionFilters = $value;
     }
 }
