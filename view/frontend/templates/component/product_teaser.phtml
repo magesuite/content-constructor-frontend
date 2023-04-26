@@ -11,6 +11,8 @@ $containerClasses = $block->getContainerMix();
 $slogan = $viewModel->getSlogan();
 $subslogan = $viewModel->getSubSlogan();
 
+$specialDescription = $viewModel->getSpecialDescription();
+
 $hasBorder = $viewModel->getBorder();
 $hasShadow = $viewModel->getShadow();
 
@@ -49,6 +51,7 @@ if (isset($componentConfiguration['cc_css_classes'])) {
                     ->setAreas(['teaser'])
                     ->setViewMode('teaser')
                     ->setSection('teaser')
+                    ->setSpecialDescription($specialDescription)
                     ->render($product);
                 ?>
             </div>
