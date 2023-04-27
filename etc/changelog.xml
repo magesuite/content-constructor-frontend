@@ -199,7 +199,7 @@
                     <ticket_id>RK-47</ticket_id>
                 </entry>
             </tag>
-            <tag version="5.8.35" date="2023-04-27">
+            <tag version="5.11.3" date="2023-04-27">
                 <entry>
                     <type>FIX</type>
                     <overview>Add proper parent container name for product teaser description</overview>
