@@ -9,7 +9,7 @@
             </arguments>
         </referenceBlock>
 
-        <referenceBlock class="MageSuite\ProductTile\Block\Tile\Container" name="product.tile.container.main.details">
+        <referenceBlock class="MageSuite\ProductTile\Block\Tile\Container" name="product.tile.description.wrapper">
             <block class="MageSuite\ProductTile\Block\Tile\Fragment" name="product.tile.teaser.description" template="MageSuite_ContentConstructorFrontend::tile/tile-teaser/description.phtml">
                 <arguments>
                     <argument name="supported_areas" xsi:type="array">
