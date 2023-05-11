@@ -64,5 +64,14 @@
                 </arguments>
             </block>
         </referenceBlock>
+
+        <!-- Fragment removed for product teaser -->
+        <referenceBlock name="product.tile.gallery">
+            <arguments>
+                <argument name="unsupported_areas" xsi:type="array">
+                    <item name="0" xsi:type="string">teaser</item>
+                </argument>
+            </arguments>
+        </referenceBlock>
     </body>
 </page>
