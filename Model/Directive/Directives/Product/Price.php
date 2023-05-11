@@ -38,7 +38,7 @@ class Price extends AbstractProductDirective
         $arguments = $this->getArguments();
 
         if (isset($arguments['withCurrency']) and !filter_var($arguments['withCurrency'], FILTER_VALIDATE_BOOLEAN)) {
-            $formattedPrice = $this->currency->format($price, ['display' => \Magento\Framework\Currency::NO_SYMBOL], false);
+            $formattedPrice = $this->currency->format($price, ['display' => \Zend_Currency::NO_SYMBOL], false);
         } else {
             $formattedPrice = $this->pricingHelper->currency($price, true, false);
         }
