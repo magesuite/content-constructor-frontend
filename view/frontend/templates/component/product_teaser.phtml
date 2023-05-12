@@ -25,8 +25,14 @@ $componentClasses .= $background ? ' cs-product-teaser--with-background' : '';
 if (isset($componentConfiguration['cc_css_classes'])) {
     $containerClasses .= ' ' . $componentConfiguration['cc_css_classes'];
 }
+
+$includeStylesInComponent = $block->getVar('product_teaser/include_styles_in_component');
 ?>
-<?= $block->getCssOnce('css/product-teaser.css'); ?>
+
+<?php if ($includeStylesInComponent): ?>
+    <?= $block->getCssOnce('css/product-teaser.css'); ?>
+<?php endif; ?>
+
 <div class="cs-container cs-container--product-teaser<?=/* @noEscape */ $containerClasses ?><?=/* @noEscape */ $visibility ? ' ' .$visibility : ''; ?>">
     <div class="cs-container__inner">
         <div 

@@ -20,9 +20,14 @@ if (isset($componentConfiguration['cc_css_classes'])):
     $containerClasses .= ' ' . $componentConfiguration['cc_css_classes'];
 endif;
 
+$includeStylesInComponent = $block->getVar('product_grid/include_styles_in_component');
 ?>
-<?= $block->getCssOnce('css/products-grid.css'); ?>
-<?= $block->getCssOnce('css/grid-layout.css'); ?>
+
+<?php if ($includeStylesInComponent): ?>
+    <?= $block->getCssOnce('css/products-grid.css'); ?>
+    <?= $block->getCssOnce('css/grid-layout.css'); ?>
+<?php endif; ?>
+
 <div class="cs-container cs-container--products-grid<?= $containerClasses ?><?= $visibility ? ' ' .$visibility : ''; ?>">
     <div class="cs-container__inner">
         <div class="cs-products-grid<?= $componentClasses ?>">

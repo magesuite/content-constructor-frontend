@@ -18,10 +18,14 @@ $containerClasses = $block->getContainerMix();
 if (isset($componentConfiguration['cc_css_classes'])):
     $containerClasses .= ' ' . $componentConfiguration['cc_css_classes'];
 endif;
+
+$includeStylesInComponent = $block->getVar('daily_deal_teaser/include_styles_in_component');
 ?>
 
 <?php if (!empty($product) && $product['productObject']->getIsSalable() && $product['dailyDealOffer']['deal']): ?>
-    <?= $block->getCssOnce('css/daily-deal-teaser.css'); ?>
+    <?php if ($includeStylesInComponent): ?>
+        <?= $block->getCssOnce('css/daily-deal-teaser.css'); ?>
+    <?php endif; ?>
 
     <div class="cs-container cs-container--daily-deal-teaser<?= $containerClasses ?><?= $visibility ? ' ' .$visibility : ''; ?>">
         <div class="cs-container__inner">

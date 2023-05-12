@@ -38,9 +38,13 @@ if ($useWholeScreen) {
     $componentClasses .= ' cs-products-carousel--use-whole-screen';
     $jsSettings['useWholeScreen'] = true;
 }
+
+$includeStylesInComponent = $block->getVar('product_carousel/include_styles_in_component');
 ?>
 
-<?= $block->getCssOnce('css/products-carousel.css'); ?>
+<?php if ($includeStylesInComponent): ?>
+    <?= $block->getCssOnce('css/products-carousel.css'); ?>
+<?php endif; ?>
 
 <div class="cs-container cs-container--products-carousel<?= $containerClasses ?><?= $visibility ? ' ' .$visibility : ''; ?>">
     <?php if(!$useWholeScreen): ?>

@@ -1,5 +1,40 @@
 <?xml version="1.0"?>
 <view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/view.xsd">
+    <vars module="MageSuite_ContentConstructorFrontend">
+        <var name="accordion">
+            <var name="include_styles_in_component">true</var>
+        </var>
+        <var name="brand_carousel">
+            <var name="include_styles_in_component">true</var>
+        </var>
+        <var name="category_links">
+            <var name="include_styles_in_component">true</var>
+        </var>
+        <var name="daily_deal_teaser">
+            <var name="include_styles_in_component">true</var>
+        </var>
+        <var name="image_teaser">
+            <var name="include_styles_in_component">true</var>
+        </var>
+        <var name="paragraph">
+            <var name="include_styles_in_component">true</var>
+        </var>
+        <var name="product_carousel">
+            <var name="include_styles_in_component">true</var>
+        </var>
+        <var name="product_teaser">
+            <var name="include_styles_in_component">true</var>
+        </var>
+        <var name="product_finder">
+            <var name="include_styles_in_component">true</var>
+        </var>
+        <var name="product_grid">
+            <var name="include_styles_in_component">true</var>
+        </var>
+        <var name="separator">
+            <var name="include_styles_in_component">true</var>
+        </var>
+    </vars>
     <media>
         <images module="Magento_Catalog">
             <image id="product_teaser" type="image">
