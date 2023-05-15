@@ -19,4 +19,3 @@ $category
     ->setAvailableSortBy(['position'])
     ->setCustomAttribute('custom_layout_update', $xml)
     ->save();
-

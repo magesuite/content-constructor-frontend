@@ -110,7 +110,7 @@ $isLazyLoaded = $eagerLoad ? false : $lazyLoad;
         <img
             class="cs-image-teaser__image<?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?><?= $isLazyLoaded ? ' lazyload' : '' ?>"
             alt="<?= $imageAlt ?>"
-            
+
             <?php if ($isLazyLoaded): ?>
                 src="<?= $placeholderImageSrc ?>"
                 data-src="<?= $origImageSrc ?>"
