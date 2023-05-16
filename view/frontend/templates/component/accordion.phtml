@@ -25,9 +25,12 @@ if (isset($componentConfiguration['cc_css_classes'])):
 endif;
 
 $headlineTag = $block->getVar('accordion/headline_tag') ?: 'div';
-?>
 
-<?= $block->getCssOnce('css/accordion.css'); ?>
+$includeStylesInComponent = $block->getVar('accordion/include_styles_in_component');
+?>
+<?php if ($includeStylesInComponent): ?>
+    <?= $block->getCssOnce('css/accordion.css'); ?>
+<?php endif; ?>
 
 <div class="cs-container cs-container--accordion<?= $containerClasses ?><?= $visibility ? ' ' .$visibility : ''; ?>">
     <div class="cs-container__inner">

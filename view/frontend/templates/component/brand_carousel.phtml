@@ -29,10 +29,13 @@ if ($useWholeScreen) {
     $componentClasses .= ' cs-brand-carousel--use-whole-screen';
     $jsSettings['useWholeScreen'] = true;
 }
+$includeStylesInComponent = $block->getVar('brand_carousel/include_styles_in_component');
 ?>
 
 <?php if($brands && count($brands) > 0): ?>
-    <?= $block->getCssOnce('css/brand-carousel.css'); ?>
+    <?php if ($includeStylesInComponent): ?>
+        <?= $block->getCssOnce('css/brand-carousel.css'); ?>
+    <?php endif; ?>
 
     <div class="cs-container cs-container--brand-carousel <?= $containerClasses ?><?= $visibility ? ' ' .$visibility : ''; ?>">
         <?php if(!$useWholeScreen): ?>

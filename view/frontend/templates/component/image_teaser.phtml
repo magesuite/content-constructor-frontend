@@ -113,9 +113,13 @@ if ($gridTeaser) {
 }
 
 $openLinkInNewTab = $block->getOpenLinkInNewTab() ? true : false;
+
+$includeStylesInComponent = $block->getVar('image_teaser/include_styles_in_component');
 ?>
 
-<?= $block->getCssOnce('css/image-teaser.css', $deferCSS); ?>
+<?php if ($includeStylesInComponent): ?>
+    <?= $block->getCssOnce('css/image-teaser.css', $deferCSS); ?>
+<?php endif; ?>
 
 <?php if ($gridTeaser): ?>
 <li class="<?= $teaserBrickClass ?>" id="<?= $teaserId ?>">

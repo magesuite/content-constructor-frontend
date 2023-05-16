@@ -212,6 +212,13 @@
                     <overview>Remove tile gallery from product teaser tile</overview>
                 </entry>
             </tag>
+            <tag version="5.12.0" date="2023-05-15">
+                <entry>
+                    <type>FEAT</type>
+                    <overview>Include common or smallest Content Constructor components in entries instead of inline loading.</overview>
+                    <ticket_id>MGS-5153</ticket_id>
+                </entry>
+            </tag>
         </changelog>
     </module>
 </config>

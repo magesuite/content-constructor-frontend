@@ -4,9 +4,13 @@ $visibility = $block->getVisibilityClass();
 
 $componentClasses = $block->getSkipSpacing() ? ' cs-separator--skip-spacing' : '';
 $componentClasses .= ' ' . $block->getVar('separator/additional_css_classes');
+
+$includeStylesInComponent = $block->getVar('separator/include_styles_in_component');
 ?>
 
-<?= $block->getCssOnce('css/separator.css'); ?>
+<?php if ($includeStylesInComponent): ?>
+    <?= $block->getCssOnce('css/separator.css'); ?>
+<?php endif; ?>
 
 <div class="cs-container cs-container--separator<?= $visibility ? ' ' .$visibility : ''; ?>">
     <div class="cs-container__inner">
