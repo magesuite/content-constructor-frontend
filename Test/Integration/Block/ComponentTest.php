@@ -95,7 +95,6 @@ class ComponentTest extends \PHPUnit\Framework\TestCase
     </div>
 </div>
 
-
 HTML;
 
         return [
