@@ -3,12 +3,12 @@
     <media>
         <images module="Magento_Catalog">
             <image id="product_teaser" type="image">
-                <width>400</width>
-                <height>400</height>
+                <width>500</width>
+                <height>629</height>
             </image>
             <image id="product_teaser_2x" type="image">
-                <width>800</width>
-                <height>800</height>
+                <width>1000</width>
+                <height>1257</height>
             </image>
         </images>
     </media>
