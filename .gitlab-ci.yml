@@ -1,1 +1,2 @@
+include:
 - local: .gitlab/csbot.gitlabci.yml
