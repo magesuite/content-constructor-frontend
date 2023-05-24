@@ -69,12 +69,15 @@ class MediaResolverTest extends \PHPUnit\Framework\TestCase
     {
         $wysiwygUploadDirectoryPath = realpath(__DIR__ . '/../assets');
 
+        $this->deleteDirectory($wysiwygUploadDirectoryPath . 'wysiwyg/.thumbs/1024');
+        $this->deleteDirectory($wysiwygUploadDirectoryPath . 'wysiwyg/.thumbs/1440');
+
         $this->directoryListStub->method('getPath')->willReturn($wysiwygUploadDirectoryPath);
 
         $srcSet = $this->mediaResolver->resolveSrcSet('{{media url="wysiwyg/test.jpg"}}');
         $srcSet = str_replace('pub/', '', $srcSet);
         $this->assertEquals(
-            'http://localhost/media/wysiwyg/test.jpg 1920w, http://localhost/media/wysiwyg/.thumbs/480/test.jpg 480w, http://localhost/media/wysiwyg/.thumbs/768/test.jpg 768w',
+            'http://localhost/media/wysiwyg/test.jpg 1920w, http://localhost/media/wysiwyg/.thumbs/480/test.jpg 480w, http://localhost/media/wysiwyg/.thumbs/768/test.jpg 768w, http://localhost/media/wysiwyg/.thumbs/1024/test.jpg 1024w, http://localhost/media/wysiwyg/.thumbs/1440/test.jpg 1440w',
             $srcSet
         );
     }
@@ -184,5 +187,15 @@ class MediaResolverTest extends \PHPUnit\Framework\TestCase
         $result['key']['subkey'] = str_replace('pub/', '', $result['key']['subkey']);
 
         $this->assertEquals($expectedOutput, $result);
+    }
+
+    protected function deleteDirectory(string $directoryPath): void
+    {
+        if (!is_dir($directoryPath)) {
+            return;
+        }
+
+        array_map('unlink', glob("$directoryPath/*.*"));
+        rmdir($directoryPath);
     }
 }
