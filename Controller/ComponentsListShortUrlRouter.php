@@ -7,8 +7,11 @@ namespace MageSuite\ContentConstructorFrontend\Controller;
 class ComponentsListShortUrlRouter implements \Magento\Framework\App\RouterInterface
 {
     protected \Magento\Framework\App\ActionFactory $actionFactory;
+    protected \MageSuite\ContentConstructorFrontend\Helper\Configuration $configuration;
     protected string $customUrl;
+    protected \Magento\Framework\App\Response\RedirectInterface $redirect;
     protected \Magento\Framework\App\ResponseInterface $response;
+    protected \Magento\Framework\UrlInterface $url;
 
     public function __construct(
         \Magento\Framework\App\ActionFactory $actionFactory,
