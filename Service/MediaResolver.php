@@ -116,7 +116,7 @@ class MediaResolver
     protected function getCacheIdentifier($prefix, $originalImageUrl): string
     {
         $storeId = $this->storeManager->getStore()->getId();
-        return $storeId . '_' . $prefix . '_' . md5($originalImageUrl);
+        return sprintf("%s_%s_%s", $storeId, $prefix, md5($originalImageUrl));
     }
 
     /**
