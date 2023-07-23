@@ -62,7 +62,7 @@ class MediaResolver
         }
 
         $originalImageUrl = $this->parseMediaUrl($mediaPath);
-        $cacheIdentifier = 'src_set_' . md5($originalImageUrl);
+        $cacheIdentifier = $this->getCacheIdentifier('src_set', $originalImageUrl);
 
         $srcSet = $this->cache->load($cacheIdentifier);
 
@@ -81,7 +81,7 @@ class MediaResolver
         }
 
         $originalImageUrl = $this->parseMediaUrl($mediaPath);
-        $cacheIdentifier = 'src_set_array' . md5($originalImageUrl);
+        $cacheIdentifier = $this->getCacheIdentifier('src_set_array', $originalImageUrl);
 
         $srcSet = $this->cache->load($cacheIdentifier);
 
@@ -101,7 +101,7 @@ class MediaResolver
         }
 
         $originalImageUrl = $this->parseMediaUrl($mediaPath);
-        $cacheIdentifier = 'src_set_density_' . md5($originalImageUrl);
+        $cacheIdentifier = $this->getCacheIdentifier('src_set_density', $originalImageUrl);
 
         $srcSet = $this->cache->load($cacheIdentifier);
 
@@ -111,6 +111,12 @@ class MediaResolver
         }
 
         return $srcSet;
+    }
+
+    protected function getCacheIdentifier($prefix, $originalImageUrl): string
+    {
+        $storeId = $this->storeManager->getStore()->getId();
+        return sprintf("%s_%s_%s", $storeId, $prefix, md5($originalImageUrl));
     }
 
     /**
