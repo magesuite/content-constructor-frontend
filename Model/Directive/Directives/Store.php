@@ -21,8 +21,13 @@ class Store extends \MageSuite\DynamicDirectives\Model\Directive
     public function getValue()
     {
         $arguments = $this->getArguments();
-        $urlArgument = isset($arguments['url']) ? $arguments['url'] : '';
 
-        return $this->urlInterface->getUrl($urlArgument);
+        if (isset($arguments['direct_url'])) {
+            return $this->urlInterface->getDirectUrl($arguments['direct_url']);
+        } else if ( isset($arguments['url'])) {
+            return $this->urlInterface->getUrl($urlArgument);
+        } else {
+            return '';
+        }
     }
 }
