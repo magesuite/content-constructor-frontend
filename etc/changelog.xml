@@ -219,6 +219,13 @@
                     <ticket_id>MGS-5153</ticket_id>
                 </entry>
             </tag>
+            <tag version="5.12.4" date="2023-05-15">
+                <entry>
+                    <type>FEAT</type>
+                    <overview>Allow to use direct_url argument in store directive</overview>
+                    <ticket_id>IPET-2084</ticket_id>
+                </entry>
+            </tag>
         </changelog>
     </module>
 </config>
