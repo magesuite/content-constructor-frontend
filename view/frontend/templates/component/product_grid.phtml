@@ -28,6 +28,22 @@ $includeStylesInComponent = $block->getVar('product_grid/include_styles_in_compo
     <?= $block->getCssOnce('css/grid-layout.css'); ?>
 <?php endif; ?>
 
+<?= $this->getLayout()
+    ->createBlock(\MageSuite\ContentConstructorFrontend\Block\TeaserCss::class)
+    ->setTemplate('MageSuite_ContentConstructorFrontend::teasers-css.phtml')
+    ->setUseTeasers($viewModel->useTeaser())
+    ->setTeasersConfig([$viewModel->getTeasersConfiguration()])
+    ->setTeasersSetId($teasersSetRandId)
+    ->setProductsCount(count($products))
+    ->setIsProductsGrid(true)
+    ->setPgId('pg-' . $teasersSetRandId)
+    ->setRowsConfig([
+        'mobile' => $viewModel->getRowsMobile(),
+        'tablet' => $viewModel->getRowsTablet(),
+        'desktop' => $viewModel->getRowsDesktop()
+    ])
+->toHtml(); ?>
+
 <div class="cs-container cs-container--products-grid<?= $containerClasses ?><?= $visibility ? ' ' .$visibility : ''; ?>">
     <div class="cs-container__inner">
         <div class="cs-products-grid<?= $componentClasses ?>">
@@ -72,21 +88,6 @@ $includeStylesInComponent = $block->getVar('product_grid/include_styles_in_compo
                         </li>
                     <?php endforeach ?>
                 </ul>
-                <?= $this->getLayout()
-                    ->createBlock(\MageSuite\ContentConstructorFrontend\Block\TeaserCss::class)
-                    ->setTemplate('MageSuite_ContentConstructorFrontend::teasers-css.phtml')
-                    ->setUseTeasers($viewModel->useTeaser())
-                    ->setTeasersConfig([$viewModel->getTeasersConfiguration()])
-                    ->setTeasersSetId($teasersSetRandId)
-                    ->setProductsCount(count($products))
-                    ->setIsProductsGrid(true)
-                    ->setPgId('pg-' . $teasersSetRandId)
-                    ->setRowsConfig([
-                        'mobile' => $viewModel->getRowsMobile(),
-                        'tablet' => $viewModel->getRowsTablet(),
-                        'desktop' => $viewModel->getRowsDesktop()
-                    ])
-                    ->toHtml(); ?>
             </div>
         </div>
     </div>
