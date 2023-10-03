@@ -239,6 +239,13 @@
                     <ticket_id>NKD-3856</ticket_id>
                 </entry>
             </tag>
+            <tag version="5.12.10" date="2023-10-03">
+                <entry>
+                    <type>FIX</type>
+                    <overview>Fixed displaying review count in daily deal teaser</overview>
+                    <ticket_id>HAKA-2026</ticket_id>
+                </entry>
+            </tag>
         </changelog>
     </module>
 </config>
