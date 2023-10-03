@@ -417,8 +417,8 @@ class ProductCarouselDataProvider
             'data' => [
                 'maxStars' => 5,
                 'activeStars' => $activeStars,
-                'text' => '(' . $reviewsCount . ')'
-
+                'text' => '(' . $reviewsCount . ')',
+                'count' => $reviewsCount
             ]
         ];
 
