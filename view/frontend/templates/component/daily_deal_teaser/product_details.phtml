@@ -21,7 +21,7 @@ $product = $viewModel->getProduct();
                     ->createBlock(\Magento\Framework\View\Element\Template::class)
                     ->setMaxStars(5)
                     ->setActiveStars($product['rating']['data']['activeStars'])
-                    ->setReviewsCount($product['rating']['data']['text'])
+                    ->setReviewsCount($product['rating']['data']['count'])
                     ->setTemplate('Magento_Review::rating-stars.phtml')
                     ->toHtml();
             ?>
