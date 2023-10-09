@@ -5,6 +5,11 @@
 
     <preference for="MageSuite\ContentConstructorFrontend\DataProviders\AdditionalProductDataProvider" type="MageSuite\ContentConstructorFrontend\DataProviders\EmptyAdditionalProductDataProvider" />
 
+    <type name="MageSuite\ContentConstructorFrontend\Helper\Category">
+        <arguments>
+            <argument name="productCollectionFactory" xsi:type="object">Magento\CatalogSearch\Model\ResourceModel\Fulltext\CollectionFactory</argument>
+        </arguments>
+    </type>
 
     <type name="Magento\Framework\Console\CommandList">
         <arguments>

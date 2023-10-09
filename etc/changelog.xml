@@ -246,6 +246,13 @@
                     <ticket_id>HAKA-2026</ticket_id>
                 </entry>
             </tag>
+            <tag version="5.12.11" date="2023-09-26">
+                <entry>
+                    <type>FIX</type>
+                    <overview>Fix daily deal CC component on admin page</overview>
+                    <ticket_id>DOG-1728</ticket_id>
+                </entry>
+            </tag>
         </changelog>
     </module>
 </config>
