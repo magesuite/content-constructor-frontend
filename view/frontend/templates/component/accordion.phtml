@@ -30,7 +30,7 @@ endif;
 <div class="cs-container cs-container--accordion<?= $containerClasses ?><?= $visibility ? ' ' .$visibility : ''; ?>">
     <div class="cs-container__inner">
         <?php if (count($groups)): ?>
-            <div class="cs-accordion cs-accordion--mode-<?=$componentConfiguration['scenarios']['reading']['id'] ?? ''?><?= $componentClasses ?>" 
+            <div class="cs-accordion cs-accordion--mode-<?=$componentConfiguration['scenarios']['reading']['id'] ?? ''?><?= $componentClasses ?>"
                  data-mage-init='{ "ccAccordion": <?= $jsSettings ?> }'
             >
                 <ul class="cs-accordion__groups">

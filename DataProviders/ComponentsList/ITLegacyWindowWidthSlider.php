@@ -673,7 +673,7 @@ class ITLegacyWindowWidthSlider extends DataProviderComponents
                 ],
             ],
         ];
-        
+
         $blocks[] = [
             'id' => 'component29af',
             'section' => 'content',

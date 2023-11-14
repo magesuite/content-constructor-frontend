@@ -46,4 +46,3 @@ $category
 $xmlMapper = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()->create(\MageSuite\ContentConstructorAdmin\Repository\Xml\XmlToComponentConfigurationMapper::class);
 $category->setContentConstructorContent(json_encode($xmlMapper->map($xml)));
 $category->save();
-

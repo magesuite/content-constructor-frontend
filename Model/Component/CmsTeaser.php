@@ -31,7 +31,7 @@ class CmsTeaser extends \Magento\Framework\DataObject implements ViewModel
         $this->slideFactory = $slideFactory;
     }
 
-    public function getSlides() 
+    public function getSlides()
     {
         $pages = $this->dataProvider->getPages($this->getData());
 
