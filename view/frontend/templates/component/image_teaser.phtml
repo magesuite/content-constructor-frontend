@@ -36,7 +36,7 @@ if ($mobileLayout == 'mobile-slider' && count($slides) > 1) {
 }
 
 $componentClasses = $block->getMix();
-$componentClasses .= $block->getSkipSpacing() ? ' cs-image-teaser--skip-spacing' : ''; 
+$componentClasses .= $block->getSkipSpacing() ? ' cs-image-teaser--skip-spacing' : '';
 $componentClasses .= ' ' . $block->getVar('image_teaser/additional_css_classes');
 
 $contentPlacement = $imageTeaser['scenario']['contentPlacement']['id'];
@@ -93,7 +93,7 @@ if ($gridTeaser) {
         ->setIsSlider($isSlider)
         ->setIsSliderMobile($isSliderMobile)
         ->setContentPlacement($contentPlacement)
-        ->toHtml(); 
+        ->toHtml();
     ?>
 
     <div class="cs-container cs-container--image-teaser<?= $containerClasses ?>">
@@ -107,7 +107,7 @@ if ($gridTeaser) {
                 ->setIsSlider($isSlider)
                 ->setIsSliderMobile($isSliderMobile)
                 ->setContentPlacement($contentPlacement)
-                ->toHtml(); 
+                ->toHtml();
             ?>
 
             <div class="cs-image-teaser <?= $windowWidthClass ?>
@@ -131,7 +131,7 @@ if ($gridTeaser) {
                     ->setIsSlider($isSlider)
                     ->setIsSliderMobile($isSliderMobile)
                     ->setContentPlacement($contentPlacement)
-                    ->toHtml(); 
+                    ->toHtml();
                 ?>
 
                 <div class="cs-image-teaser__carousel">
@@ -142,7 +142,7 @@ if ($gridTeaser) {
                         ->setIsSlider($isSlider)
                         ->setIsSliderMobile($isSliderMobile)
                         ->setContentPlacement($contentPlacement)
-                        ->toHtml(); 
+                        ->toHtml();
                     ?>
 
                     <div class="cs-image-teaser__wrapper cs-image-teaser__wrapper--content-<?= $contentPlacement ?>">
@@ -153,7 +153,7 @@ if ($gridTeaser) {
                             ->setIsSlider($isSlider)
                             ->setIsSliderMobile($isSliderMobile)
                             ->setContentPlacement($contentPlacement)
-                            ->toHtml(); 
+                            ->toHtml();
                         ?>
 
                         <ul class="cs-image-teaser__slides <?= $mosaicProportions != '' ? ' cs-image-teaser__slides--mosaic-scenario-' . $mosaicProportions : '' ?>">
@@ -166,7 +166,7 @@ if ($gridTeaser) {
                                     ->setIsSlider($isSlider)
                                     ->setIsSliderMobile($isSliderMobile)
                                     ->setContentPlacement($contentPlacement)
-                                    ->toHtml(); 
+                                    ->toHtml();
                                 ?>
                             <?php endforeach; ?>
                         </ul>
@@ -178,7 +178,7 @@ if ($gridTeaser) {
                             ->setIsSlider($isSlider)
                             ->setIsSliderMobile($isSliderMobile)
                             ->setContentPlacement($contentPlacement)
-                            ->toHtml(); 
+                            ->toHtml();
                         ?>
                     </div>
 
@@ -189,7 +189,7 @@ if ($gridTeaser) {
                         ->setIsSlider($isSlider)
                         ->setIsSliderMobile($isSliderMobile)
                         ->setContentPlacement($contentPlacement)
-                        ->toHtml(); 
+                        ->toHtml();
                     ?>
 
                     <?php if (($isSlider or $isSliderMobile) && $block->getVar('image_teaser/navigation/show')): ?>
@@ -198,14 +198,14 @@ if ($gridTeaser) {
                             ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/elements/nav-prev.phtml')
                             ->setIcon($block->getVar('image_teaser/navigation/arrows/prev/path'))
                             ->setImageTeaserData($imageTeaser)
-                            ->toHtml(); 
+                            ->toHtml();
                         ?>
                         <?= $this->getLayout()
                             ->createBlock(\Magento\Framework\View\Element\Template::class)
                             ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/elements/nav-next.phtml')
                             ->setIcon($block->getVar('image_teaser/navigation/arrows/next/path'))
                             ->setImageTeaserData($imageTeaser)
-                            ->toHtml(); 
+                            ->toHtml();
                         ?>
                     <?php endif; ?>
 
@@ -216,7 +216,7 @@ if ($gridTeaser) {
                         ->setIsSlider($isSlider)
                         ->setIsSliderMobile($isSliderMobile)
                         ->setContentPlacement($contentPlacement)
-                        ->toHtml(); 
+                        ->toHtml();
                     ?>
 
                 </div>
@@ -228,7 +228,7 @@ if ($gridTeaser) {
                     ->setIsSlider($isSlider)
                     ->setIsSliderMobile($isSliderMobile)
                     ->setContentPlacement($contentPlacement)
-                    ->toHtml(); 
+                    ->toHtml();
                 ?>
 
                 <?= $this->getLayout()
@@ -238,7 +238,7 @@ if ($gridTeaser) {
                     ->setIsSlider($isSlider)
                     ->setIsSliderMobile($isSliderMobile)
                     ->setShowPagination($block->getVar('image_teaser/pagination/show'))
-                    ->toHtml(); 
+                    ->toHtml();
                 ?>
 
                 <?= $this->getLayout()
@@ -248,7 +248,7 @@ if ($gridTeaser) {
                     ->setIsSlider($isSlider)
                     ->setIsSliderMobile($isSliderMobile)
                     ->setContentPlacement($contentPlacement)
-                    ->toHtml(); 
+                    ->toHtml();
                 ?>
             </div>
 
@@ -259,7 +259,7 @@ if ($gridTeaser) {
                 ->setIsSlider($isSlider)
                 ->setIsSliderMobile($isSliderMobile)
                 ->setContentPlacement($contentPlacement)
-                ->toHtml(); 
+                ->toHtml();
             ?>
 
         <?php if ($teaserWidth == 'container' or $teaserWidth == 'container-slider'): ?>
@@ -274,7 +274,7 @@ if ($gridTeaser) {
         ->setIsSlider($isSlider)
         ->setIsSliderMobile($isSliderMobile)
         ->setContentPlacement($contentPlacement)
-        ->toHtml(); 
+        ->toHtml();
     ?>
 <?php if ($gridTeaser): ?>
 </li>

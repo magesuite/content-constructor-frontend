@@ -5,7 +5,7 @@ $visibility = $block->getVisibilityClass();
 
 $items = $viewModel->getItems();
 
-$componentClasses = $block->getSkipSpacing() ? ' cs-products-grid--skip-spacing' : ''; 
+$componentClasses = $block->getSkipSpacing() ? ' cs-products-grid--skip-spacing' : '';
 $componentClasses .= ' ' . $block->getVar('product_grid/additional_css_classes');
 ?>
 
@@ -23,7 +23,7 @@ $componentClasses .= ' ' . $block->getVar('product_grid/additional_css_classes')
                 <div class="cs-grid-layout cs-products-grid__grid-layout">
                     <ul class="cs-grid-layout__grid cs-products-grid__grid">
                         <?php if(!empty($items) && $viewModel->useTeaser()): ?>
-                            <?php 
+                            <?php
                                 $newTeaserConfig = [
                                     "scenario" => [
                                         'desktopLayout' => [

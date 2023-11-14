@@ -313,7 +313,7 @@ class Index extends DataProviderComponents
         if(($block = $this->getCategoryLinksBlock('component91a3', true))) {
             $blocks[] = $block;
         }
-        
+
         return $blocks;
     }
 

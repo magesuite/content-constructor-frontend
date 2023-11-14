@@ -60,7 +60,7 @@ abstract class HeroCarousel extends DataProviderComponents
             ]
         ]
     ];
-    
+
     public function getBlocks()
     {
         $blocks = [];

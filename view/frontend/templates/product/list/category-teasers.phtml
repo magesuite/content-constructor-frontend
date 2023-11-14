@@ -1,10 +1,10 @@
-<?php 
+<?php
     /**
      * Product grid teasers template (POP)
      *
-     * If a teaser is using old setup, render old teaser template 
-     * else render using new image-teaser component 
-     * (additional settings are set before passing it to image-teaser: 
+     * If a teaser is using old setup, render old teaser template
+     * else render using new image-teaser component
+     * (additional settings are set before passing it to image-teaser:
      * required for image-teaser component and responsible for positioning in grid)
      *
      * @var $block \Magento\Catalog\Block\Product\ListProduct
@@ -14,7 +14,7 @@
 $teasersConfig = $this->helper('MageSuite\ContentConstructorFrontend\Helper\CategoryGridTeasers')->getConfig();
 
 if ($teasersConfig): ?>
-    <?php $i = 1 ?> 
+    <?php $i = 1 ?>
 
     <?php foreach ($teasersConfig['teasers'] as $teaser): ?>
 
@@ -29,7 +29,7 @@ if ($teasersConfig): ?>
                 ->setTemplate('MageSuite_ContentConstructorFrontend::teaser.phtml')
                 ->toHtml(); ?>
         <?php else: ?>
-            <?php 
+            <?php
             $newTeaserConfig = array(
                 "scenario" => array(
                     'desktopLayout' => array(

@@ -6,7 +6,7 @@ $componentConfiguration = $block->getData();
 $viewModel = $block->getViewModel();
 $visibility = $block->getVisibilityClass();
 
-$componentClasses = $block->getSkipSpacing() ? ' cs-button--skip-spacing ' : ''; 
+$componentClasses = $block->getSkipSpacing() ? ' cs-button--skip-spacing ' : '';
 $componentClasses .= ' ' . $block->getVar('button/additional_css_classes');
 ?>
 
@@ -28,7 +28,7 @@ $componentClasses .= ' ' . $block->getVar('button/additional_css_classes');
                             ->setIconUrl($block->getVar('button/icon_path'))
                             ->setCssClass('cs-button-component__icon')
                             ->setInlined(true)
-                            ->toHtml(); 
+                            ->toHtml();
                     ?>
                 </svg>
             </a>

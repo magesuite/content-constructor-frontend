@@ -1236,7 +1236,7 @@ class ITLegacyWindowWidth extends DataProviderComponents
                 ],
             ]
         ];
-        
+
         return $blocks;
     }
 

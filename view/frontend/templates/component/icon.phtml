@@ -14,7 +14,7 @@ $iconConfiguration['jsConfig'] = array_merge(
                 'slidesPerGroup' => 3
             ]
         ]
-    ], 
+    ],
     $iconConfiguration['jsConfig'] ?? []
 );
 
@@ -23,5 +23,5 @@ echo $this->getLayout()
     ->setData($iconConfiguration)
     ->setMix('cs-image-teaser--icon ' . $block->getMix())
     ->setContainerMix('cs-container--icon ' . $block->getContainerMix())
-    ->toHtml(); 
+    ->toHtml();
 ?>

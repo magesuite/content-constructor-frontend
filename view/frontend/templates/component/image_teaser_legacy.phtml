@@ -47,7 +47,7 @@ if ($imageTeaser['currentScenario']['mobileLayout']['id'] == '1-2-1') {
     $componentClasses .= ' cs-image-teaser-legacy--mobile-cfg-big-small-small-big';
 }
 
-$componentClasses .= $block->getSkipSpacing() ? ' cs-image-teaser-legacy--skip-spacing' : ''; 
+$componentClasses .= $block->getSkipSpacing() ? ' cs-image-teaser-legacy--skip-spacing' : '';
 $componentClasses .= ' ' . $block->getVar('image_teaser/additional_css_classes');
 
 if (isset($imageTeaser['currentScenario']['textPositioning']['id']) && $imageTeaser['currentScenario']['textPositioning']['id'] == 'over') {
@@ -156,7 +156,7 @@ $jsConfig = isset($imageTeaser['jsConfig']) ? json_encode($imageTeaser['jsConfig
                                                             ->setIconUrl($block->getVar('image_teaser/cta_button_icon_path'))
                                                             ->setCssClass('cs-image-teaser-legacy__cta-button-icon')
                                                             ->setInlined(true)
-                                                            ->toHtml(); 
+                                                            ->toHtml();
                                                         ?>
                                                     </span>
                                                     </div>
@@ -179,7 +179,7 @@ $jsConfig = isset($imageTeaser['jsConfig']) ? json_encode($imageTeaser['jsConfig
                                     ->setIconUrl($block->getVar('image_teaser/navigation/arrows/prev/path'))
                                     ->setCssClass('cs-image-teaser-legacy__nav-icon')
                                     ->setInlined(true)
-                                    ->toHtml(); 
+                                    ->toHtml();
                             ?>
                         </button>
                         <button class="cs-image-teaser-legacy__nav cs-image-teaser-legacy__nav--next"
@@ -189,7 +189,7 @@ $jsConfig = isset($imageTeaser['jsConfig']) ? json_encode($imageTeaser['jsConfig
                                 ->setIconUrl($block->getVar('image_teaser/navigation/arrows/next/path'))
                                 ->setCssClass('cs-image-teaser-legacy__nav-icon')
                                 ->setInlined(true)
-                                ->toHtml(); 
+                                ->toHtml();
                             ?>
                         </button>
                     <?php endif; ?>

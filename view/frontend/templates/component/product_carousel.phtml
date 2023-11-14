@@ -8,7 +8,7 @@ $visibility = $block->getVisibilityClass();
 
 $navIconNextPath = $block->getVar('product_carousel/navigation/arrows/next/path');
 
-$componentClasses = $block->getSkipSpacing() ? ' cs-products-carousel--skip-spacing' : ''; 
+$componentClasses = $block->getSkipSpacing() ? ' cs-products-carousel--skip-spacing' : '';
 $componentClasses .= ' ' . $block->getVar('product_carousel/additional_css_classes');
 
 $viewMode = $block->getData('view_mode') ?? 'grid';
@@ -40,7 +40,7 @@ $isSliderMobile = $block->getData('carousel_on_mobile');
                                 ->setIconUrl($block->getVar('product_carousel/navigation/arrows/prev/path'))
                                 ->setCssClass("cs-products-carousel__nav-icon")
                                 ->setInlined(true)
-                                ->toHtml(); 
+                                ->toHtml();
                             ?>
                         </button>
                         <button class="cs-products-carousel__nav cs-products-carousel__nav--next <?= $block->getVar('product_carousel/navigation/arrows/next/additional_css_classes') ?>" type="button">
@@ -49,7 +49,7 @@ $isSliderMobile = $block->getData('carousel_on_mobile');
                                 ->setIconUrl($block->getVar('product_carousel/navigation/arrows/next/path'))
                                 ->setCssClass("cs-products-carousel__nav-icon")
                                 ->setInlined(true)
-                                ->toHtml(); 
+                                ->toHtml();
                             ?>
                         </button>
                     <?php endif; ?>
@@ -58,7 +58,7 @@ $isSliderMobile = $block->getData('carousel_on_mobile');
                         <ul class="cs-products-carousel__pagination <?= $block->getVar('product_carousel/pagination/additional_css_classes') ?>"></ul>
                     <?php endif; ?>
 
-                    <?php if (($viewMode == 'grid' or $isSliderMobile) && $block->getVar('product_carousel/scrollbar/show')): ?> 
+                    <?php if (($viewMode == 'grid' or $isSliderMobile) && $block->getVar('product_carousel/scrollbar/show')): ?>
                         <div class="cs-products-carousel__scrollbar">
                             <div class="cs-products-carousel__scrollbar--drag"></div>
                         </div>
