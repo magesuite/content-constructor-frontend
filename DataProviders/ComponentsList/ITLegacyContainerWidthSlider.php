@@ -1372,7 +1372,7 @@ class ITLegacyContainerWidthSlider extends DataProviderComponents
                 ],
             ],
         ];
-        
+
         return $blocks;
     }
 }

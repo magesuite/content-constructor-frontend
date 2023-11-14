@@ -10,7 +10,7 @@ $teaserWidth = $imageTeaser['scenario']['teaserWidth']['id'];
 $mobileLayout = $imageTeaser['scenario']['mobileLayout']['id'];
 
 $componentClasses = $block->getMix();
-$componentClasses .= $block->getSkipSpacing() ? ' cs-image-teaser--skip-spacing' : ''; 
+$componentClasses .= $block->getSkipSpacing() ? ' cs-image-teaser--skip-spacing' : '';
 $componentClasses .= ' ' . $block->getVar('teaser_and_text/additional_css_classes');
 
 $sizesMobile = '(max-width: 48em) 100vw';
@@ -41,7 +41,7 @@ $jsSettings = json_encode($block->getVar('teaser_and_text/js') ?: '{}');
     <?php if ($teaserWidth == 'container'): ?>
     <div class="cs-container__inner">
     <?php endif; ?>
-        <div class="cs-image-teaser cs-image-teaser--teaser-and-text <?= $windowWidthClass ?> 
+        <div class="cs-image-teaser cs-image-teaser--teaser-and-text <?= $windowWidthClass ?>
             cs-image-teaser--items-in-row-2
             cs-image-teaser--items-in-row-mobile-1
             <?= $componentClasses ?>"
@@ -57,7 +57,7 @@ $jsSettings = json_encode($block->getVar('teaser_and_text/js') ?: '{}');
             <div class="cs-image-teaser__carousel">
                 <div class="cs-image-teaser__wrapper cs-image-teaser__wrapper--content-over">
                     <ul class="cs-image-teaser__slides cs-image-teaser__slides--mobile-<?= $mobileLayout ?>">
-                    
+
                         <?php foreach ($viewModel->getSlides() as $slide): ?>
                             <?= $this->getLayout()
                                     ->createBlock(\Magento\Framework\View\Element\Template::class)
@@ -66,7 +66,7 @@ $jsSettings = json_encode($block->getVar('teaser_and_text/js') ?: '{}');
                                     ->setIsSlider(false)
                                     ->setIsSliderMobile(false)
                                     ->setContentPlacement('over')
-                                    ->toHtml(); 
+                                    ->toHtml();
                             ?>
                         <?php endforeach; ?>
                     </ul>
