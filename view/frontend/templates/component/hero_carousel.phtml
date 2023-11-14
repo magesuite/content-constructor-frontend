@@ -12,7 +12,7 @@ if ($componentConfiguration['mobileDisplayVariant']['id'] == 'list') {
 } else if ($componentConfiguration['mobileDisplayVariant']['id'] == 'hidden') {
     $componentClasses .= ' cs-hero--hidden-mobile';
 }
-$componentClasses .= $block->getSkipSpacing() ? ' cs-hero--skip-spacing' : ''; 
+$componentClasses .= $block->getSkipSpacing() ? ' cs-hero--skip-spacing' : '';
 $componentClasses .= ' ' . $block->getVar('hero_carousel/additional_css_classes');
 ?>
 
@@ -70,7 +70,7 @@ $componentClasses .= ' ' . $block->getVar('hero_carousel/additional_css_classes'
                                                             ->setCssClass('cs-hero__cta-button-icon')
                                                             ->setInlined(true)
                                                             ->setLazyLoaded(false)
-                                                            ->toHtml(); 
+                                                            ->toHtml();
                                                     ?>
                                                 </span>
                                                     </div>
@@ -93,7 +93,7 @@ $componentClasses .= ' ' . $block->getVar('hero_carousel/additional_css_classes'
                             ->setIconUrl($block->getVar('hero_carousel/navigation/arrows/prev/path'))
                             ->setCssClass("cs-hero__nav-icon")
                             ->setInlined(true)
-                            ->toHtml(); 
+                            ->toHtml();
                         ?>
                     </button>
                     <button class="cs-hero__nav cs-hero__nav--next <?= $block->getVar('hero_carousel/navigation/arrows/next/additional_css_classes') ?>" type="button">
@@ -102,7 +102,7 @@ $componentClasses .= ' ' . $block->getVar('hero_carousel/additional_css_classes'
                             ->setIconUrl($block->getVar('hero_carousel/navigation/arrows/next/path'))
                             ->setCssClass("cs-hero__nav-icon")
                             ->setInlined(true)
-                            ->toHtml(); 
+                            ->toHtml();
                         ?>
                     </button>
                 <?php endif; ?>

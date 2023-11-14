@@ -6,7 +6,7 @@ abstract class HeroCarousel extends DataProviderComponents
 {
     protected $mobileDisplayVariant = '';
     protected $subtitle = '';
-    
+
     public function getBlocks(){
         $blocks = [];
         $blocks[] = Index::getHeadlineBlock('Hero Carousel scenarios', $this->subtitle);

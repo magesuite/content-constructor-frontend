@@ -673,7 +673,7 @@ class ITWindowWidthSlider extends DataProviderComponents
                 ],
             ],
         ];
-        
+
         $blocks[] = [
             'id' => 'component29af',
             'section' => 'content',

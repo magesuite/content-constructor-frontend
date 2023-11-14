@@ -1372,7 +1372,7 @@ class ITContentWidthSlider extends DataProviderComponents
                 ],
             ],
         ];
-        
+
         return $blocks;
     }
 }

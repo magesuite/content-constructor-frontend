@@ -11,7 +11,7 @@ $isLazyLoaded = $block->getVar('product_grid/lazyload_heros_images');
 
 
 $componentClasses = $viewModel->hasHero() ? ' cs-products-grid--with-hero' : '';
-$componentClasses .= $block->getSkipSpacing() ? ' cs-products-grid--skip-spacing' : ''; 
+$componentClasses .= $block->getSkipSpacing() ? ' cs-products-grid--skip-spacing' : '';
 $componentClasses .= ' ' . $block->getVar('product_grid/additional_css_classes');
 ?>
 
@@ -84,7 +84,7 @@ $componentClasses .= ' ' . $block->getVar('product_grid/additional_css_classes')
                                                             ->setIconUrl($block->getVar('product_grid/cta_button_icon_path'))
                                                             ->setCssClass('cs-grid-layout__teaser-cta-button-icon cs-products-grid__hero-cta-button-icon')
                                                             ->setInlined(true)
-                                                            ->toHtml(); 
+                                                            ->toHtml();
                                                     ?>
                                                 </span>
                                             </div>
@@ -108,4 +108,3 @@ $componentClasses .= ' ' . $block->getVar('product_grid/additional_css_classes')
         </div>
     </div>
 </div>
-

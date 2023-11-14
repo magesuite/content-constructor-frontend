@@ -1236,7 +1236,7 @@ class ITWindowWidth extends DataProviderComponents
                 ],
             ]
         ];
-        
+
         return $blocks;
     }
 

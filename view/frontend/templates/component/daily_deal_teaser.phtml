@@ -19,7 +19,7 @@ $labels = [
 
 $isLazyLoaded = $block->getVar('daily_deal_teaser/lazyload_image');
 
-$componentClasses = $block->getSkipSpacing() ? ' cs-daily-deal-teaser--skip-spacing' : ''; 
+$componentClasses = $block->getSkipSpacing() ? ' cs-daily-deal-teaser--skip-spacing' : '';
 $componentClasses .= ' ' . $block->getVar('daily_deal_teaser/additional_css_classes');
 ?>
 
@@ -66,7 +66,7 @@ $componentClasses .= ' ' . $block->getVar('daily_deal_teaser/additional_css_clas
                                         ->setIconUrl($block->getVar('daily_deal_teaser/slogan/icon_path'))
                                         ->setCssClass("cs-daily-deal-teaser__slogan-icon")
                                         ->setInlined(true)
-                                        ->toHtml(); 
+                                        ->toHtml();
                                 ?>
                             </figure>
                             <?php endif; ?>

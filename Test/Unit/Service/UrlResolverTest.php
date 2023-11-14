@@ -61,7 +61,7 @@ class UrlResolverTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals('http://localhost/pub/media/wysiwyg/file.pdf', $url);
     }
-    
+
     public function testItReturnsEmptyStringWhenUnknownWidgetTypeIsPassed() {
         $url = $this->urlResolver->resolve('{{widget type="unknown-widget-type"}}');
 

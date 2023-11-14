@@ -7,7 +7,7 @@ $viewModel = $block->getViewModel();
 $visibility = $block->getVisibilityClass();
 $navIconNextPath = $block->getVar('product_carousel/navigation/arrows/next/path');
 
-$componentClasses = $block->getSkipSpacing() ? ' cs-products-carousel--skip-spacing' : ''; 
+$componentClasses = $block->getSkipSpacing() ? ' cs-products-carousel--skip-spacing' : '';
 $componentClasses .= ' ' . $block->getVar('product_carousel/additional_css_classes');
 ?>
 
@@ -37,7 +37,7 @@ $componentClasses .= ' ' . $block->getVar('product_carousel/additional_css_class
                                 ->setIconUrl($block->getVar('product_carousel/navigation/arrows/prev/path'))
                                 ->setCssClass("cs-products-carousel__nav-icon")
                                 ->setInlined(true)
-                                ->toHtml(); 
+                                ->toHtml();
                             ?>
                         </button>
                         <button class="cs-products-carousel__nav cs-products-carousel__nav--next <?= $block->getVar('product_carousel/navigation/arrows/next/additional_css_classes') ?>" type="button">
@@ -46,7 +46,7 @@ $componentClasses .= ' ' . $block->getVar('product_carousel/additional_css_class
                                 ->setIconUrl($block->getVar('product_carousel/navigation/arrows/next/path'))
                                 ->setCssClass("cs-products-carousel__nav-icon")
                                 ->setInlined(true)
-                                ->toHtml(); 
+                                ->toHtml();
                             ?>
                         </button>
                     <?php endif; ?>

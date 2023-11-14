@@ -44,4 +44,3 @@ $category
 
 $category->setCustomLayoutUpdate($xml);
 $category->save();
-

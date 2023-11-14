@@ -7,7 +7,7 @@ class Paragraph extends DataProviderComponents
     public function getBlocks()
     {
         $blocks = [];
-        
+
         $blocks[] = Index::getHeadlineBlock('Full width');
         $blocks[] = [
             'id' => 'component17ed',

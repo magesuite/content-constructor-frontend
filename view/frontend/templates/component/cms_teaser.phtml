@@ -34,7 +34,7 @@ foreach ($slides as $slide) {
 }
 
 $componentClasses = ' cs-image-teaser--cms-pages';
-$componentClasses .= $block->getSkipSpacing() ? ' cs-image-teaser--skip-spacing' : ''; 
+$componentClasses .= $block->getSkipSpacing() ? ' cs-image-teaser--skip-spacing' : '';
 $componentClasses .= ' ' . $block->getVar('cms_teaser/additional_css_classes');
 ?>
 
@@ -121,7 +121,7 @@ $componentClasses .= ' ' . $block->getVar('cms_teaser/additional_css_classes');
                                                                 ->setIconUrl($block->getVar('cms_teaser/cta_button_icon_path'))
                                                                 ->setCssClass('cs-image-teaser__cta-button-icon')
                                                                 ->setInlined(true)
-                                                                ->toHtml(); 
+                                                                ->toHtml();
                                                         ?>
                                                         </span>
                                                     </div>
@@ -144,7 +144,7 @@ $componentClasses .= ' ' . $block->getVar('cms_teaser/additional_css_classes');
                                 ->setIconUrl($block->getVar('cms_teaser/navigation/arrows/prev/path'))
                                 ->setCssClass('cs-image-teaser__nav-icon')
                                 ->setInlined(true)
-                                ->toHtml(); 
+                                ->toHtml();
                             ?>
                         </button>
                         <button class="cs-image-teaser__nav cs-image-teaser__nav--next <?= $block->getVar('cms_teaser/navigation/arrows/next/additional_css_classes') ?>"
@@ -154,7 +154,7 @@ $componentClasses .= ' ' . $block->getVar('cms_teaser/additional_css_classes');
                                 ->setIconUrl($block->getVar('cms_teaser/navigation/arrows/next/path'))
                                 ->setCssClass('cs-image-teaser__nav-icon')
                                 ->setInlined(true)
-                                ->toHtml(); 
+                                ->toHtml();
                             ?>
                         </button>
                     <?php endif; ?>
