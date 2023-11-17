@@ -68,7 +68,7 @@ if (isset($imageTeaser['cc_css_classes'])):
 endif;
 
 // Init JS config
-$jsSettings = $block->getVar('image_teaser/js');
+$jsSettings = $block->getVar($componentType . '/js') ?: $block->getVar('image_teaser/js');
 if (empty($jsSettings)) {
     $jsSettings = [];
 }
