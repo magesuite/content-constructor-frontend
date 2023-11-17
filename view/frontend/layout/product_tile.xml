@@ -4,7 +4,7 @@
         <referenceBlock name="product.tile.description">
             <arguments>
                 <argument name="unsupported_areas" xsi:type="array">
-                    <item name="0" xsi:type="string">teaser</item>
+                    <item name="teaser" xsi:type="string">teaser</item>
                 </argument>
             </arguments>
         </referenceBlock>
@@ -13,7 +13,7 @@
             <block class="MageSuite\ProductTile\Block\Tile\Fragment" name="product.tile.teaser.description" template="MageSuite_ContentConstructorFrontend::tile/tile-teaser/description.phtml">
                 <arguments>
                     <argument name="supported_areas" xsi:type="array">
-                        <item name="0" xsi:type="string">teaser</item>
+                        <item name="teaser" xsi:type="string">teaser</item>
                     </argument>
                 </arguments>
             </block>
@@ -22,7 +22,7 @@
         <referenceBlock name="product.tile.figure.image">
             <arguments>
                 <argument name="unsupported_areas" xsi:type="array">
-                    <item name="0" xsi:type="string">teaser</item>
+                    <item name="teaser" xsi:type="string">teaser</item>
                 </argument>
             </arguments>
         </referenceBlock>
@@ -30,12 +30,11 @@
         <referenceBlock name="product.tile.container.figure">
             <block class="MageSuite\ProductTile\Block\Tile\Fragment" name="product.tile.teaser.figure.image" template="MageSuite_ContentConstructorFrontend::tile/tile-teaser/image.phtml">
                 <arguments>
-                    <argument xsi:type="object" name="cache_key_model">MageSuite\ProductTile\Cache\Image</argument>
                     <argument xsi:type="string" name="css_class">cs-product-tile__image</argument>
                     <argument xsi:type="string" name="img_class">cs-product-tile__img</argument>
                     <argument xsi:type="boolean" name="apply_width_height_attr">true</argument>
                     <argument name="supported_areas" xsi:type="array">
-                        <item name="0" xsi:type="string">teaser</item>
+                        <item name="teaser" xsi:type="string">teaser</item>
                     </argument>
                 </arguments>
             </block>
@@ -45,7 +44,7 @@
         <referenceBlock name="product.tile.dailydeal.counter">
             <arguments>
                 <argument name="unsupported_areas" xsi:type="array">
-                    <item name="0" xsi:type="string">teaser</item>
+                    <item name="teaser" xsi:type="string">teaser</item>
                 </argument>
             </arguments>
         </referenceBlock>
@@ -59,7 +58,7 @@
                     <argument xsi:type="boolean" name="show_header">true</argument>
                     <argument xsi:type="string" translate="true" name="availability_text_after">items left</argument>
                     <argument name="supported_areas" xsi:type="array">
-                        <item name="0" xsi:type="string">teaser</item>
+                        <item name="teaser" xsi:type="string">teaser</item>
                     </argument>
                 </arguments>
             </block>
@@ -69,7 +68,7 @@
         <referenceBlock name="product.tile.gallery">
             <arguments>
                 <argument name="unsupported_areas" xsi:type="array">
-                    <item name="0" xsi:type="string">teaser</item>
+                    <item name="teaser" xsi:type="string">teaser</item>
                 </argument>
             </arguments>
         </referenceBlock>
