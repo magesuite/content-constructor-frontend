@@ -253,6 +253,13 @@
                     <ticket_id>DOG-1728</ticket_id>
                 </entry>
             </tag>
+            <tag version="5.12.12" date="2023-11-17">
+                <entry>
+                    <type>FIX</type>
+                    <overview>Image teaser - take jsconfig by component name</overview>
+                    <ticket_id>FR-66</ticket_id>
+                </entry>
+            </tag>
         </changelog>
     </module>
 </config>
