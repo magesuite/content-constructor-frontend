@@ -18,6 +18,7 @@ $product = $viewModel->getProduct();
                 <?= $this->getLayout()
                     ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser::class)
                     ->setTemplate('MageSuite_ContentConstructorFrontend::component/daily_deal_teaser/button.phtml')
+                    ->setData($block->getData())
                     ->toHtml();
                 ?>
         </form>

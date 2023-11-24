@@ -260,6 +260,13 @@
                     <ticket_id>FR-66</ticket_id>
                 </entry>
             </tag>
+            <tag version="5.12.14" date="2023-11-24">
+                <entry>
+                    <type>FIX</type>
+                    <overview>Add daily deal data progataion to the CTA button to avoid memory exceeding caused by loading the whole catalog</overview>
+                    <ticket_id>HAAR-3779</ticket_id>
+                </entry>
+            </tag>
         </changelog>
     </module>
 </config>
