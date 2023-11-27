@@ -39,18 +39,19 @@ $includeStylesInComponent = $block->getVar('product_teaser/include_styles_in_com
             class="cs-product-teaser<?=/* @noEscape */ $componentClasses ?>"
             <?php if($background): ?>style="background-color: <?=/* @noEscape */ $background ?>;"<?php endif; ?>
         >
+            <?php if($slogan): ?>
             <div class="cs-product-teaser__slogan-wrapper">
-                <?php if($slogan): ?>
-                    <div class="cs-product-teaser__slogan">
-                        <?= $block->escapeHtml($viewModel->getSlogan()) ?>
-                    </div>
-                <?php endif; ?>
+                <div class="cs-product-teaser__slogan">
+                    <?= $block->escapeHtml($viewModel->getSlogan()) ?>
+                </div>
+
                 <?php if($subslogan): ?>
                     <div class="cs-product-teaser__subslogan">
                         <?= $block->escapeHtml($viewModel->getSubSlogan()) ?>
                     </div>
                 <?php endif; ?>
             </div>
+            <?php endif; ?>
             <div class="cs-product-teaser__product">
                 <?= $this->getLayout()
                     ->createBlock(\MageSuite\ProductTile\Block\Tile::class)

@@ -267,6 +267,12 @@
                     <ticket_id>HAAR-3779</ticket_id>
                 </entry>
             </tag>
+            <tag version="5.12.15" date="2023-11-27">
+                <entry>
+                    <type>FIX</type>
+                    <overview>Product Teaser: Do not include slogan wrapper if no slogan</overview>
+                </entry>
+            </tag>
         </changelog>
     </module>
 </config>
