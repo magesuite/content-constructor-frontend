@@ -273,6 +273,12 @@
                     <overview>Product Teaser: Do not include slogan wrapper if no slogan</overview>
                 </entry>
             </tag>
+            <tag version="5.12.16" date="2023-11-27">
+                <entry>
+                    <type>FIX</type>
+                    <overview>Product Teaser: Add wrapper for description content, do not render empty description content</overview>
+                </entry>
+            </tag>
         </changelog>
     </module>
 </config>

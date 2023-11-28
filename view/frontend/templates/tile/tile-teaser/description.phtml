@@ -1,8 +1,13 @@
 <?php
     $specialDescription = $block->getTile()->getSpecialDescription();
+    $shortDescription = $block->getProduct()->getShortDescription();
 ?>
-<?php if ($specialDescription): ?>
-    <?= $specialDescription ?>
-<?php else: ?>
-    <?= $block->getProduct()->getShortDescription() ?>
+<?php if ($specialDescription || $shortDescription): ?>
+<div class="cs-product-tile__description-content">
+    <?php if ($specialDescription): ?>
+        <?= /* @noEscape */ $specialDescription; ?>
+    <?php else: ?>
+        <?= /* @noEscape */ $shortDescription; ?>
+    <?php endif; ?>
+</div>
 <?php endif; ?>
