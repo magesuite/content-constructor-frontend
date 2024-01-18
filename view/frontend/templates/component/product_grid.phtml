@@ -73,6 +73,7 @@ $includeStylesInComponent = $block->getVar('product_grid/include_styles_in_compo
                         <?= $this->getLayout()
                             ->createBlock('MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser')
                             ->setData($newTeaserConfig)
+                            ->setComponentType('product_grid')
                             ->setGridTeaser(true)
                             ->setTeaserId($teasersSetRandId . '-0')
                             ->setTeaserData($items[0])

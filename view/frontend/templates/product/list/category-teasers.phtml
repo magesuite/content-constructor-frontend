@@ -59,6 +59,7 @@ if (!$showOnlyOnFirstPage || ($showOnlyOnFirstPage && $paginationViewModel->isFi
                 <?= $this->getLayout()
                     ->createBlock('MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser')
                     ->setData($newTeaserConfig)
+                    ->setComponentType('product_grid')
                     ->setGridTeaser(true)
                     ->setTeaserId($teasersSetId . '-' . $i)
                     ->setTeaserData($teaser)
