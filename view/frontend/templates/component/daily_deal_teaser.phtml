@@ -29,7 +29,7 @@ $includeStylesInComponent = $block->getVar('daily_deal_teaser/include_styles_in_
 
     <div class="cs-container cs-container--daily-deal-teaser<?= $containerClasses ?><?= $visibility ? ' ' .$visibility : ''; ?>">
         <div class="cs-container__inner">
-            <div class="cs-daily-deal-teaser<?= $componentClasses ?>">
+            <div class="cs-daily-deal-teaser cs-daily-deal-teaser--active<?= $componentClasses ?>">
                 <aside class="cs-daily-deal-teaser__aside-image">
                         <?= $layout
                             ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser::class)
@@ -48,6 +48,7 @@ $includeStylesInComponent = $block->getVar('daily_deal_teaser/include_styles_in_
                         ?>
                     </div>
 
+                    <?php if ($block->getVar('daily_deal_teaser/description/show')): ?>
                     <div class="cs-daily-deal-teaser__description">
                         <?= $layout
                             ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser::class)
@@ -56,6 +57,8 @@ $includeStylesInComponent = $block->getVar('daily_deal_teaser/include_styles_in_
                             ->toHtml();
                         ?>
                     </div>
+                    <?php endif; ?>
+
                     <div class="cs-daily-deal-teaser__actions">
                         <?= $layout
                                 ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser::class)
