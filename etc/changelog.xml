@@ -285,6 +285,13 @@
                     <overview>Add component type to Products Grid CC component</overview>
                 </entry>
             </tag>
+            <tag version="5.13.0" date="2024-02-20">
+                <entry>
+                    <type>FEAT</type>
+                    <overview>Add adjustments for Daily Deal on config. products</overview>
+                    <ticket_id>KRG-2705</ticket_id>
+                </entry>
+            </tag>
         </changelog>
     </module>
 </config>

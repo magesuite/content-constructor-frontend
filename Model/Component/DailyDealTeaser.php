@@ -4,32 +4,24 @@ namespace MageSuite\ContentConstructorFrontend\Model\Component;
 
 class DailyDealTeaser extends \Magento\Framework\DataObject implements ViewModel
 {
+    protected \MageSuite\ContentConstructorFrontend\DataProviders\DailyDealTeaserDataProvider $dailyDealTeaserDataProvider;
 
-    /**
-     * @var \MageSuite\ContentConstructorFrontend\DataProviders\DailyDealTeaserDataProvider
-     */
-    protected $dailyDealTeaserDataProvider;
+    protected \Magento\Catalog\Block\Product\ListProduct $listProductBlock;
 
-    /**
-     * @var \Magento\Catalog\Block\Product\ListProduct
-     */
-    protected $listProductBlock;
-
-    protected $product = null;
+    protected ?array $product = null;
 
     public function __construct(
         \MageSuite\ContentConstructorFrontend\DataProviders\DailyDealTeaserDataProvider $dailyDealTeaserDataProvider,
         \Magento\Catalog\Block\Product\ListProduct $listProductBlock,
         array $data = []
-    )
-    {
+    ) {
         parent::__construct($data);
 
         $this->dailyDealTeaserDataProvider = $dailyDealTeaserDataProvider;
         $this->listProductBlock = $listProductBlock;
     }
 
-    public function getProduct()
+    public function getProduct(): array
     {
         if($this->product == null) {
             $configuration = $this->getData();
@@ -41,7 +33,17 @@ class DailyDealTeaser extends \Magento\Framework\DataObject implements ViewModel
         return $this->product;
     }
 
-    public function getAddToCartParameters($product)
+    public function isConfigurableProduct(): bool
+    {
+        $product = $this->getProduct()['productObject'];
+        if ($product->getTypeId() && $product->getTypeId() == \Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function getAddToCartParameters($product): array
     {
         $postParams = $this->listProductBlock->getAddToCartPostParams($product);
 

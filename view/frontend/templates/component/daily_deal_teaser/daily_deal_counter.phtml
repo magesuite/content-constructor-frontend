@@ -8,7 +8,9 @@ $jsSettings = json_encode($block->getVar('daily_deal_teaser/js') ?: '{}');
 ?>
 
 <div class="cs-daily-deal-teaser__dd-detail cs-daily-deal-teaser__dd-detail--countdown">
+    <?php if ($block->getVar('daily_deal_teaser/counter/show_headline')): ?>
     <p class="cs-daily-deal-teaser__dd-headline cs-daily-deal-teaser__dd-headline--countdown"><?=__('Time left')?></p>
+    <?php endif; ?>
     <!-- Data atrribute added until update to at least M2.3.4-p2 to fix translations-->
     <div class="cs-dailydeal cs-dailydeal--teaser"
         data-phrase-day="<?= __('Day') ?>"

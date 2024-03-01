@@ -22,114 +22,50 @@ class ProductCarouselDataProvider
 
     protected $stockData = [];
 
-    /**
-     * @var \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory
-     */
-    protected $productCollectionFactory;
+    protected \Smile\ElasticsuiteCatalog\Model\ResourceModel\Product\Fulltext\CollectionFactory $productCollectionFactory;
 
-    /**
-     * @var \Magento\Catalog\Helper\Image
-     */
-    protected $imageHelper;
+    protected \Magento\Catalog\Helper\Image $imageHelper;
 
-    /**
-     * @var \Magento\Review\Model\Review
-     */
-    protected $review;
+    protected \Magento\Review\Model\Review $review;
 
-    /**
-     * @var \Magento\Wishlist\Helper\Data
-     */
-    protected $wishlistHelper;
+    protected \Magento\Wishlist\Helper\Data $wishlistHelper;
 
-    /**
-     * @var \Magento\Swatches\Block\Product\Renderer\Listing\Configurable
-     */
-    protected $swatchesProduct;
+    protected \Magento\Catalog\Block\Product\View $productView;
 
-    /**
-     * @var \Magento\Catalog\Block\Product\View
-     */
-    protected $productView;
+    protected AdditionalProductDataProvider $additionalProductDataProvider;
 
-    /**
-     * @var AdditionalProductDataProvider
-     */
-    protected $additionalProductDataProvider;
+    protected \Magento\Framework\App\Config\ScopeConfigInterface $scopeInterface;
 
-    /**
-     * @var \Magento\Framework\App\Config\ScopeConfigInterface
-     */
-    protected $scopeInterface;
+    protected \MageSuite\Frontend\Helper\Product\StockData $stockDataHelper;
 
-    /**
-     * @var \MageSuite\Frontend\Helper\Product\StockData
-     */
-    protected $stockDataHelper;
+    protected \Magento\Catalog\Model\Config $catalogConfig;
 
-    /**
-     * @var \Magento\Catalog\Model\Config
-     */
-    protected $catalogConfig;
+    protected \Magento\Store\Model\StoreManagerInterface $storeManager;
 
-    /**
-     * @var \Magento\Store\Model\StoreManagerInterface
-     */
-    protected $storeManager;
+    protected \Magento\Framework\App\State $state;
 
-    /**
-     * @var \Magento\Framework\App\State
-     */
-    protected $state;
+    protected \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $databaseProductCollectionFactory;
+    protected \Magento\Framework\View\Layout $layout;
 
-    /**
-     * @var \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory
-     */
-    protected $databaseProductCollectionFactory;
+    private \Magento\Catalog\Block\Product\ListProduct $listProductBlock;
 
-    /**
-     * @var \Magento\Catalog\Block\Product\ListProduct
-     */
-    private $listProductBlock;
+    private \MageSuite\Frontend\Helper\Product $productHelper;
 
-    /**
-     * @var \MageSuite\Frontend\Helper\Product
-     */
-    private $productHelper;
+    protected \MageSuite\Discount\Helper\Discount $discountHelper;
 
-    /**
-     * @var \MageSuite\Discount\Helper\Discount
-     */
-    protected $discountHelper;
+    private \MageSuite\ProductPositiveIndicators\Helper\Product $productIndicatorHelper;
 
-    /**
-     * @var \MageSuite\ProductPositiveIndicators\Helper\Product
-     */
-    private $productIndicatorHelper;
-    /**
-     * @var \MageSuite\ContentConstructorFrontend\Model\Sort\Pool
-     */
-    private $sortersPool;
-    /**
-     * @var \MageSuite\ContentConstructorFrontend\Model\Filter\Pool
-     */
-    private $filtersPool;
+    private \MageSuite\ContentConstructorFrontend\Model\Sort\Pool $sortersPool;
 
-    /**
-     * @var \MageSuite\DailyDeal\Helper\OfferData
-     */
+    private \MageSuite\ContentConstructorFrontend\Model\Filter\Pool $filtersPool;
 
-    protected $dailyDealHelper;
+    protected \MageSuite\DailyDeal\Helper\OfferData $dailyDealHelper;
 
-    /**
-     * @var \Magento\Catalog\Api\CategoryRepositoryInterface
-     */
-    private $categoryRepository;
+    private \Magento\Catalog\Api\CategoryRepositoryInterface $categoryRepository;
 
-    /**
-     * @var \Magento\CatalogInventory\Api\StockStateInterface
-     */
-    protected $stockInterface;
+    protected \Magento\CatalogInventory\Api\StockStateInterface $stockInterface;
+
+    protected array $productData = [];
 
     protected bool $skipCollectionFilters = false;
 
@@ -139,7 +75,6 @@ class ProductCarouselDataProvider
         \Magento\Catalog\Helper\Image $imageHelper,
         \Magento\Review\Model\Review $review,
         \Magento\Wishlist\Helper\Data $wishlistHelper,
-        \Magento\Swatches\Block\Product\Renderer\Listing\Configurable $swatchesProduct,
         \Magento\Catalog\Block\Product\View $productView,
         AdditionalProductDataProvider $additionalProductDataProvider,
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeInterface,
@@ -155,14 +90,14 @@ class ProductCarouselDataProvider
         \Magento\Catalog\Api\CategoryRepositoryInterface $categoryRepository,
         \Magento\CatalogInventory\Api\StockStateInterface $stockInterface,
         \Magento\Framework\App\State $state,
-        \MageSuite\Discount\Helper\Discount $discountHelper
-    )
-    {
+        \MageSuite\Discount\Helper\Discount $discountHelper,
+        \Magento\Framework\View\Layout $layout
+    ) {
         $this->productCollectionFactory = $productCollectionFactory;
+        $this->databaseProductCollectionFactory = $databaseProductCollectionFactory;
         $this->imageHelper = $imageHelper;
         $this->review = $review;
         $this->wishlistHelper = $wishlistHelper;
-        $this->swatchesProduct = $swatchesProduct;
         $this->productView = $productView;
         $this->additionalProductDataProvider = $additionalProductDataProvider;
         $this->scopeInterface = $scopeInterface;
@@ -179,7 +114,7 @@ class ProductCarouselDataProvider
         $this->stockInterface = $stockInterface;
         $this->state = $state;
         $this->discountHelper = $discountHelper;
-        $this->databaseProductCollectionFactory = $databaseProductCollectionFactory;
+        $this->layout = $layout;
     }
 
     /**
@@ -250,6 +185,10 @@ class ProductCarouselDataProvider
 
     protected function mapProductToArray(\Magento\Catalog\Api\Data\ProductInterface $product)
     {
+        if (isset($this->productData[$product->getId()])) {
+            return $this->productData[$product->getId()];
+        }
+
         $productData = [
             'id' => $product->getId(),
             'entity_id' => $product->getId(),
@@ -274,7 +213,8 @@ class ProductCarouselDataProvider
             'dailyDealOffer' => $this->dailyDealHelper->prepareOfferData($product)
         ];
 
-        return array_merge($productData, $this->additionalProductDataProvider->getData($product));
+        $this->productData[$product->getId()] = array_merge($productData, $this->additionalProductDataProvider->getData($product));
+        return $this->productData[$product->getId()];
     }
 
     protected function buildCollectionSearchCriteria($criteria)
@@ -443,10 +383,7 @@ class ProductCarouselDataProvider
     protected function getSwatchesHtml($product)
     {
         if ($product->getTypeId() == \Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE) {
-
-            $this->swatchesProduct->setProduct($product);
-            $this->swatchesProduct->setTemplate('Magento_Swatches::product/listing/renderer.phtml');
-            return $this->swatchesProduct->toHtml();
+            return $this->layout->getBlock('product.tile.details.renderers.configurable')->setProduct($product)->toHtml();
         }
 
         return false;

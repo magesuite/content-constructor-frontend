@@ -3,24 +3,42 @@
 /** @var $viewModel \MageSuite\ContentConstructorFrontend\Model\Component\DailyDealTeaser */
 $viewModel = $block->getViewModel();
 $product = $viewModel->getProduct();
+$iconPath = $block->getVar('daily_deal_teaser/addtocart_button/icon_path');
 ?>
-
 
 <?php if ($block->getVar('daily_deal_teaser/addtocart_button/show')): ?>
     <div class="cs-daily-deal-teaser__addtocart cs-addtocart">
-        <?php
-        $addToCartParameters = $viewModel->getAddToCartParameters($product['productObject']);
-        ?>
-        <form data-role="tocart-form" action="<?= $addToCartParameters['action'] ?>" method="post">
-            <input type="hidden" name="product" value="<?= $addToCartParameters['productId'] ?>">
-            <input type="hidden" name="<?= $addToCartParameters['uencKey'] ?>" value="<?= $addToCartParameters['uencValue'] ?>">
-            <?= $addToCartParameters['formKey'] ?>
-                <?= $this->getLayout()
-                    ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser::class)
-                    ->setTemplate('MageSuite_ContentConstructorFrontend::component/daily_deal_teaser/button.phtml')
-                    ->setData($block->getData())
-                    ->toHtml();
-                ?>
-        </form>
+        <?php if (!$viewModel->isConfigurableProduct()): ?>
+            <?php
+            $addToCartParameters = $viewModel->getAddToCartParameters($product['productObject']);
+            ?>
+            <form data-role="tocart-form" action="<?= $addToCartParameters['action'] ?>" method="post">
+                <input type="hidden" name="product" value="<?= $addToCartParameters['productId'] ?>">
+                <input type="hidden" name="<?= $addToCartParameters['uencKey'] ?>" value="<?= $addToCartParameters['uencValue'] ?>">
+                <?= $addToCartParameters['formKey'] ?>
+                    <?= $this->getLayout()
+                        ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser::class)
+                        ->setTemplate('MageSuite_ContentConstructorFrontend::component/daily_deal_teaser/button.phtml')
+                        ->setData($block->getData())
+                        ->toHtml();
+                    ?>
+            </form>
+        <?php else: ?>
+            <a href="<?=$product['url']?>"
+               class="cs-daily-deal-teaser__product-link-button"
+            >
+                <span class="cs-daily-deal-teaser__product-link-button-span"><?= __('To product') ?></span>
+                <?php if(!empty($iconPath)): ?>
+                    <?= $this->getLayout()
+                        ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+                        ->setIconUrl($iconPath)
+                        ->setCssClass('cs-daily-deal-teaser__product-link-button-icon')
+                        ->setInlined(true)
+                        ->setLazyLoaded(false)
+                        ->toHtml();
+                    ?>
+                <?php endif ?>
+            </a>
+        <?php endif; ?>
     </div>
 <?php endif; ?>
