@@ -59,6 +59,7 @@ $includeStylesInComponent = $block->getVar('product_carousel/include_styles_in_c
                             ->setIconUrl($block->getVar('product_carousel/navigation/arrows/prev/path'))
                             ->setCssClass('cs-slider-navigation__icon')
                             ->setAltText(__('Previous slide(s)'))
+                            ->setLazyLoaded(false)
                             ->setInlined(true)
                             ->toHtml();
                         ?>
@@ -80,6 +81,7 @@ $includeStylesInComponent = $block->getVar('product_carousel/include_styles_in_c
                             ->setIconUrl($block->getVar('product_carousel/navigation/arrows/next/path'))
                             ->setCssClass('cs-slider-navigation__icon')
                             ->setAltText(__('Next slide(s)'))
+                            ->setLazyLoaded(false)
                             ->setInlined(true)
                             ->toHtml();
                         ?>

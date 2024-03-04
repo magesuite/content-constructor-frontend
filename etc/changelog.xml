@@ -292,6 +292,13 @@
                     <ticket_id>KRG-2705</ticket_id>
                 </entry>
             </tag>
+            <tag version="5.13.1" date="2024-03-01">
+                <entry>
+                    <type>FIX</type>
+                    <overview>Product carousel: prevent navigation arrow lazy load due to missing width and height attributes</overview>
+                    <ticket_id>EMT-52</ticket_id>
+                </entry>
+            </tag>
         </changelog>
     </module>
 </config>
