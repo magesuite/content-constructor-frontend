@@ -21,7 +21,7 @@ class DailyDealTeaser extends \Magento\Framework\DataObject implements ViewModel
         $this->listProductBlock = $listProductBlock;
     }
 
-    public function getProduct(): array
+    public function getProduct(): ?array
     {
         if($this->product == null) {
             $configuration = $this->getData();
