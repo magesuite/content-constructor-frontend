@@ -383,7 +383,12 @@ class ProductCarouselDataProvider
     protected function getSwatchesHtml($product)
     {
         if ($product->getTypeId() == \Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE) {
-            return $this->layout->getBlock('product.tile.details.renderers.configurable')->setProduct($product)->toHtml();
+            $swatchesBlock = $this->layout->getBlock('product.tile.details.renderers.configurable');
+            if (!$swatchesBlock) {
+                return false;
+            }
+
+            return $swatchesBlock->setProduct($product)->toHtml();
         }
 
         return false;
