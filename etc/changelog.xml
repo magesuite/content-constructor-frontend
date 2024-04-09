@@ -299,6 +299,16 @@
                     <ticket_id>EMT-52</ticket_id>
                 </entry>
             </tag>
+            <tag version="5.13.3" date="2024-04-10">
+                <entry>
+                    <type>PERFORMANCE</type>
+                    <overview>
+                        Add possibility to add loading attribute for product finder image. 
+                        Add loading lazy attribute to all images above first step
+                    </overview>
+                    <ticket_id>KRA-1141</ticket_id>
+                </entry>
+            </tag>
         </changelog>
     </module>
 </config>

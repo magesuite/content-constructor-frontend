@@ -71,7 +71,16 @@ $includeStylesInComponent = $block->getVar('product_finder/include_styles_in_com
                         <div class="cs-product-finder__option-sizer"></div>
                         <div class="cs-product-finder__option-content">
                             <?php if($option['image']): ?>
-                            <img class="cs-product-finder__option-image" src="<?=$option['image']?>" alt="<?= $option['label'] ?: __('Option') ?>">
+                            <img 
+                                class="cs-product-finder__option-image" 
+                                src="<?=$option['image']?>" 
+                                alt="<?= $option['label'] ?: __('Option') ?>"
+                                <?php if ($i > 0 && !isset($option['imageLoading'])): ?>
+                                    loading="lazy"
+                                <?php else : ?>
+                                    <?php if (isset($option['imageLoading'])): ?>loading="<?= $option['imageLoading'] ?>"<?php endif; ?>
+                                <?php endif; ?>
+                            >
                             <?php endif; ?>
                             <?php if($option['label']): ?>
                             <p class="cs-product-finder__option-label"><?=$option['label']?></p>
