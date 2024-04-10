@@ -303,7 +303,7 @@
                 <entry>
                     <type>PERFORMANCE</type>
                     <overview>
-                        Add possibility to add loading attribute for product finder image. 
+                        Add possibility to add loading attribute for product finder image.
                         Add loading lazy attribute to all images above first step
                     </overview>
                     <ticket_id>KRA-1141</ticket_id>
