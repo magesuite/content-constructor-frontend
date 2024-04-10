@@ -302,6 +302,14 @@
             <tag version="5.13.2" date="2024-04-10">
                 <entry>
                     <type>PERFORMANCE</type>
+                    <overview>
+                        Add possibility to add loading attribute for product finder image. 
+                        Add loading lazy attribute to all images above first step
+                    </overview>
+                    <ticket_id>KRA-1141</ticket_id>
+                </entry>
+                <entry>
+                    <type>PERFORMANCE</type>
                     <overview>Add possibility to add image width and height for product finder image</overview>
                     <ticket_id>KRA-1136</ticket_id>
                 </entry>
