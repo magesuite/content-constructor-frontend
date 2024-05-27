@@ -47,31 +47,34 @@ class CmsTeaser extends \Magento\Framework\DataObject implements ViewModel
             $this->slides = [];
 
             foreach ($pages as $page) {
-                $imageUrl = $page['image']['src'];
-
-                if ($loadSampleImagesIfNotProvided && empty($page['image']['src'])) {
-                    $imageUrl = $this->url->getUrl(
-                        'contentconstructor/components/image',
-                        ['image_path' => base64_encode(self::DUMMY_TEASER_IMAGE)]
-                    );
-                }
-
-                $slide = [
-                    'image' => [
-                        'decoded' => $imageUrl
-                    ],
-                    'cta' => [
-                        'href' => $page['href'],
-                        'label' => ''
-                    ],
-                    'slogan' => $page['headline'],
-                    'description' => ''
-                ];
-
-                $this->slides[] = $slide;
+                $this->slides[] = $this->buildSlide($loadSampleImagesIfNotProvided, $page);
             }
         }
 
         return $this->slides;
+    }
+
+    public function buildSlide(bool $loadSampleImagesIfNotProvided, array $pageData): array
+    {
+        $imageUrl = $pageData['image']['src'];
+
+        if ($loadSampleImagesIfNotProvided && empty($page['image']['src'])) {
+            $imageUrl = $this->url->getUrl(
+                'contentconstructor/components/image',
+                ['image_path' => base64_encode(self::DUMMY_TEASER_IMAGE)]
+            );
+        }
+
+        return [
+            'image' => [
+                'decoded' => $imageUrl
+            ],
+            'cta' => [
+                'href' => $pageData['href'],
+                'label' => ''
+            ],
+            'slogan' => $pageData['headline'],
+            'description' => ''
+        ];
     }
 }
