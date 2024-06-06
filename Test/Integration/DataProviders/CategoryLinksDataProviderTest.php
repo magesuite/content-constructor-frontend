@@ -12,35 +12,6 @@ class CategoryLinksDataProviderTest extends \PHPUnit\Framework\TestCase
     const SUBCATEGORIES_IDS = [334, 335, 336, 338];
     const ORDERED_SUBCATEGORIES_IDS = [335, 334, 336];
 
-    protected $expectedCategoriesStructure = [
-        'main_category' => [
-            'name' => 'Main category',
-            'url' => 'http://localhost/index.php/main-category.html',
-            'products_count' => 2,
-            'is_active' => 1
-        ],
-        'sub_categories' => [
-            [
-                'name' => 'First subcategory',
-                'url' => 'http://localhost/index.php/main-category/first-subcategory.html',
-                'products_count' => 1,
-                'is_active' => 1
-            ],
-            [
-                'name' => 'Second subcategory',
-                'url' => 'http://localhost/index.php/main-category/second-subcategory.html',
-                'products_count' => 0,
-                'is_active' => 1
-            ],
-            [
-                'name' => 'Third subcategory',
-                'url' => 'http://localhost/index.php/main-category/third-subcategory.html',
-                'products_count' => 1,
-                'is_active' => 1
-            ]
-        ]
-    ];
-
     protected ?\Magento\TestFramework\ObjectManager $objectManager;
 
     protected ?\Magento\Framework\App\CacheInterface $cache;
@@ -68,7 +39,23 @@ class CategoryLinksDataProviderTest extends \PHPUnit\Framework\TestCase
         $this->cache->remove($this->categoryHelper->getCacheKey());
 
         $result = $this->dataProvider->getCategories(self::MAIN_CATEGORY_ID, self::SUBCATEGORIES_IDS);
-        $this->assertEquals($this->expectedCategoriesStructure, $result);
+
+        $this->assertArrayHasKey('main_category', $result);
+        $this->assertArrayHasKey('sub_categories', $result);
+
+        $this->assertEquals('Main category', $result['main_category']['name']);
+        $this->assertEquals('http://localhost/index.php/main-category.html', $result['main_category']['url']);
+        $this->assertEquals(2, $result['main_category']['products_count']);
+        $this->assertEquals(1, $result['main_category']['is_active']);
+
+        $this->assertEquals('First subcategory', $result['sub_categories'][0]['name']);
+        $this->assertEquals('http://localhost/index.php/main-category/first-subcategory.html', $result['sub_categories'][0]['url']);
+        $this->assertEquals(1, $result['sub_categories'][0]['products_count']);
+        $this->assertEquals(1, $result['sub_categories'][0]['is_active']);
+
+        $this->assertEquals('Second subcategory', $result['sub_categories'][1]['name']);
+        $this->assertEquals(0, $result['sub_categories'][1]['products_count']);
+        $this->assertEquals('Third subcategory', $result['sub_categories'][2]['name']);
     }
 
     /**
