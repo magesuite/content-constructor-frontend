@@ -19,14 +19,18 @@ class CategoryLinksDataProvider
      */
     protected $categoryCollectionFactory;
 
+    protected array $categoryAttributesToSelect = [];
+
     public function __construct(
         \Magento\Catalog\Api\CategoryRepositoryInterface $categoryRepository,
         \Magento\Catalog\Model\ResourceModel\Category\CollectionFactory $categoryCollectionFactory,
-        \MageSuite\ContentConstructorFrontend\Helper\Category $categoryHelper
+        \MageSuite\ContentConstructorFrontend\Helper\Category $categoryHelper,
+        array $categoryAttributesToSelect = []
     ) {
         $this->categoryRepository = $categoryRepository;
         $this->categoryHelper = $categoryHelper;
         $this->categoryCollectionFactory = $categoryCollectionFactory;
+        $this->categoryAttributesToSelect = $categoryAttributesToSelect;
     }
 
     public function getCategories($mainCategoryId, $subCategoriesIds) {
@@ -55,7 +59,7 @@ class CategoryLinksDataProvider
         ];
     }
 
-    protected function getCategoryData($category)
+    public function getCategoryData($category)
     {
         return [
             'name' => $category->getName(),
@@ -89,11 +93,7 @@ class CategoryLinksDataProvider
     {
         $categoryCollection = $this->categoryCollectionFactory->create();
         $categoryCollection->addIdFilter($categoriesIds);
-        $categoryCollection->addAttributeToSelect('name');
-        $categoryCollection->addAttributeToSelect('is_active');
-        $categoryCollection->addAttributeToSelect('url_key');
-        $categoryCollection->addAttributeToSelect('is_virtual_category');
-        $categoryCollection->addAttributeToSelect('virtual_rule');
+        $categoryCollection->addAttributeToSelect($this->categoryAttributesToSelect);
 
         return $categoryCollection->getItems();
     }

@@ -219,5 +219,15 @@
         <plugin name="resolve_directives" type="MageSuite\ContentConstructorFrontend\Plugin\Block\Component\AbstractComponent\ResolveDirectives" />
     </type>
 
-
+    <type name="MageSuite\ContentConstructorFrontend\DataProviders\CategoryLinksDataProvider">
+        <arguments>
+            <argument name="categoryAttributesToSelect" xsi:type="array">
+                <item name="name" xsi:type="string">name</item>
+                <item name="is_active" xsi:type="string">is_active</item>
+                <item name="url_key" xsi:type="string">url_key</item>
+                <item name="is_virtual_category" xsi:type="string">is_virtual_category</item>
+                <item name="virtual_rule" xsi:type="string">virtual_rule</item>
+            </argument>
+        </arguments>
+    </type>
 </config>
