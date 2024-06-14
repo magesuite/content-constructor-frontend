@@ -321,6 +321,13 @@
                     <ticket_id>KRG-2739</ticket_id>
                 </entry>
             </tag>
+            <tag version="5.13.8" date="2024-06-24">
+                <entry>
+                    <type>FIX</type>
+                    <overview>Image teaser: render html only if slides exists</overview>
+                    <ticket_id>RK-1170</ticket_id>
+                </entry>
+            </tag>
         </changelog>
     </module>
 </config>

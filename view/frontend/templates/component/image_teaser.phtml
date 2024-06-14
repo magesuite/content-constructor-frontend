@@ -121,9 +121,10 @@ $includeStylesInComponent = $block->getVar('image_teaser/include_styles_in_compo
     <?= $block->getCssOnce('css/image-teaser.css', $deferCSS); ?>
 <?php endif; ?>
 
-<?php if ($gridTeaser): ?>
-<li class="<?= $teaserBrickClass ?>" id="<?= $teaserId ?>">
-<?php endif; ?>
+<?php if (!empty($slides)): ?>
+    <?php if ($gridTeaser): ?>
+        <li class="<?= $teaserBrickClass ?>" id="<?= $teaserId ?>">
+    <?php endif; ?>
     <?= $this->getLayout()
         ->createBlock(\Magento\Framework\View\Element\Template::class)
         ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/elements/hotspots/before_container.phtml')
@@ -252,6 +253,7 @@ $includeStylesInComponent = $block->getVar('image_teaser/include_styles_in_compo
             ->toHtml();
         ?>
     </div>
-<?php if ($gridTeaser): ?>
-</li>
+    <?php if ($gridTeaser): ?>
+        </li>
+    <?php endif; ?>
 <?php endif; ?>
