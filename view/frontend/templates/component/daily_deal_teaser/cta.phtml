@@ -1,43 +1,63 @@
 <?php
 /** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser */
 /** @var $viewModel \MageSuite\ContentConstructorFrontend\Model\Component\DailyDealTeaser */
+/** @var \Magento\Framework\Escaper $escaper */
 $viewModel = $block->getViewModel();
 $product = $viewModel->getProduct();
 $iconPath = $block->getVar('daily_deal_teaser/addtocart_button/icon_path');
+$areSwatchesClickable = $block->getVar('configurable_tile_swatches/enabled', 'Magento_Catalog');
+$showProductLinkAlways = $block->getVar('daily_deal_teaser/force_product_link_button', 'MageSuite_ContentConstructorFrontend');
 ?>
 
 <?php if ($block->getVar('daily_deal_teaser/addtocart_button/show')): ?>
     <div class="cs-daily-deal-teaser__addtocart cs-addtocart">
-        <?php if (!$viewModel->isConfigurableProduct()): ?>
+        <?php if (!$viewModel->isConfigurableProduct() || ($viewModel->isConfigurableProduct() && $areSwatchesClickable)): ?>
             <?php
             $addToCartParameters = $viewModel->getAddToCartParameters($product['productObject']);
             ?>
-            <form data-role="tocart-form" action="<?= $addToCartParameters['action'] ?>" method="post">
-                <input type="hidden" name="product" value="<?= $addToCartParameters['productId'] ?>">
-                <input type="hidden" name="<?= $addToCartParameters['uencKey'] ?>" value="<?= $addToCartParameters['uencValue'] ?>">
-                <?= $addToCartParameters['formKey'] ?>
-                    <?= $this->getLayout()
-                        ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser::class)
-                        ->setTemplate('MageSuite_ContentConstructorFrontend::component/daily_deal_teaser/button.phtml')
-                        ->setData($block->getData())
-                        ->toHtml();
-                    ?>
+            <form data-role="tocart-form" action="<?= $escaper->escapeUrl($addToCartParameters['action']) ?>" method="post">
+                <input type="hidden" name="product" value="<?= $escaper->escapeHtmlAttr($addToCartParameters['productId']) ?>">
+                <input type="hidden" name="<?= $escaper->escapeHtmlAttr($addToCartParameters['uencKey']) ?>" value="<?= $escaper->escapeHtmlAttr($addToCartParameters['uencValue']) ?>">
+                <?= /* @noEscape */ $addToCartParameters['formKey'] ?>
+                <?= /* @noEscape */ $block->getLayout()
+                    ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser::class)
+                    ->setTemplate('MageSuite_ContentConstructorFrontend::component/daily_deal_teaser/button.phtml')
+                    ->setData($block->getData())
+                    ->toHtml();
+                ?>
             </form>
+            <?php if ($showProductLinkAlways): ?>
+                <a href="<?= $escaper->escapeUrl($product['url']) ?>"
+                   class="cs-daily-deal-teaser__product-link-button"
+                >
+                    <span class="cs-daily-deal-teaser__product-link-button-span"><?= __('To product') ?></span>
+                    <?php if(!empty($iconPath)): ?>
+                        <?= /* @noEscape */ $block->getLayout()
+                            ->createBlock(\MageSuite\ThemeHelpers\Block\Icon::class)
+                            ->setIconUrl($iconPath)
+                            ->setCssClass('cs-daily-deal-teaser__product-link-button-icon')
+                            ->setInlined(true)
+                            ->setLazyLoaded(false)
+                            ->toHtml();
+                        ?>
+                    <?php endif; ?>
+                </a>
+            <?php endif; ?>
         <?php else: ?>
-            <a href="<?=$product['url']?>"
+            <a href="<?= $escaper->escapeUrl($product['url']) ?>"
                class="cs-daily-deal-teaser__product-link-button"
             >
                 <span class="cs-daily-deal-teaser__product-link-button-span"><?= __('To product') ?></span>
                 <?php if(!empty($iconPath)): ?>
-                    <?= $this->getLayout()
-                        ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+                    <?= /* @noEscape */ $block->getLayout()
+                        ->createBlock(\MageSuite\ThemeHelpers\Block\Icon::class)
                         ->setIconUrl($iconPath)
                         ->setCssClass('cs-daily-deal-teaser__product-link-button-icon')
                         ->setInlined(true)
                         ->setLazyLoaded(false)
                         ->toHtml();
                     ?>
-                <?php endif ?>
+                <?php endif; ?>
             </a>
         <?php endif; ?>
     </div>
