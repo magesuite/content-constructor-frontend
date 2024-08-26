@@ -9,19 +9,23 @@ class RefreshInstagramAccessToken
     public const PAYLOAD_KEY_ACCESS_TOKEN = 'access_token';
     public const PAYLOAD_KEY_EXPIRES_IN = 'expires_in';
     public const PAYLOAD_NESTING_DEPTH = 2;
+    public const FLAG_NAME = 'cc_instagram_access_token';
 
     protected \GuzzleHttp\Client $client;
     protected \MageSuite\ContentConstructorFrontend\Helper\Configuration $instagramConfiguration;
     protected \Magento\Framework\App\Config $config;
+    protected \Magento\Framework\FlagManager $flagManager;
 
     public function __construct(
         \GuzzleHttp\Client $client,
         \MageSuite\ContentConstructorFrontend\Helper\Configuration $instagramConfiguration,
-        \Magento\Framework\App\Config $config
+        \Magento\Framework\App\Config $config,
+        \Magento\Framework\FlagManager $flagManager
     ) {
         $this->client = $client;
         $this->instagramConfiguration = $instagramConfiguration;
         $this->config = $config;
+        $this->flagManager = $flagManager;
     }
 
     /**
@@ -29,6 +33,10 @@ class RefreshInstagramAccessToken
      */
     public function execute(): void
     {
+        if ($this->validateExistingToken()) {
+            return;
+        }
+
         $url = $this->buildUrl();
 
         $response = $this->client->get($url);
@@ -38,6 +46,20 @@ class RefreshInstagramAccessToken
         $this->validatePayload($payload);
 
         $this->updateAccessToken($payload);
+    }
+
+    public function validateExistingToken(): bool
+    {
+        $expiresAt = $this->flagManager->getFlagData(self::FLAG_NAME);
+
+        if (empty($expiresAt)) {
+            return false;
+        }
+
+        $threshold = $this->instagramConfiguration->getInstagramAccessTokenRefreshThreshold();
+        $thresholdDate = strtotime(sprintf('+%d days', $threshold));
+
+        return $thresholdDate < $expiresAt;
     }
 
     protected function buildUrl(): string
@@ -87,13 +109,9 @@ class RefreshInstagramAccessToken
     protected function updateAccessToken(array $payload): void
     {
         $newAccessToken = $payload[self::PAYLOAD_KEY_ACCESS_TOKEN];
-        $expiresAt = date(
-            \Magento\Framework\Stdlib\DateTime::DATETIME_PHP_FORMAT,
-            strtotime('now') + $payload[self::PAYLOAD_KEY_EXPIRES_IN]
-        );
-
+        $expiresAt = time() + $payload[self::PAYLOAD_KEY_EXPIRES_IN];
+        $this->flagManager->saveFlag(self::FLAG_NAME, $expiresAt);
         $this->instagramConfiguration->setInstagramAccessToken($newAccessToken);
-        $this->instagramConfiguration->setInstagramAccessTokenExpirationDate($expiresAt);
 
         $this->config->clean();
     }

@@ -28,23 +28,9 @@
                 <field id="access_token" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Access Token</label>
                 </field>
-                <field id="access_token_enable_auto_refresh" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
-                    <label>Enable Access Token Auto Refresh</label>
-                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                </field>
-                <field id="access_token_expiration_date" translate="label" type="text" sortOrder="22" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Access Token Expiration Date</label>
-                    <frontend_model>MageSuite\ContentConstructorFrontend\Block\System\Config\Form\Field\Disabled</frontend_model>
-                    <depends>
-                        <field id="access_token_enable_auto_refresh">1</field>
-                    </depends>
-                </field>
                 <field id="access_token_refresh_threshold" translate="label" type="text" sortOrder="24" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Access Token Refresh Threshold</label>
                     <comment>Refresh access token X day(s) before expiration</comment>
-                    <depends>
-                        <field id="access_token_enable_auto_refresh">1</field>
-                    </depends>
                 </field>
                 <field id="refresh_access_token_url" translate="label" type="text" sortOrder="28" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Refresh Access Token Url</label>
