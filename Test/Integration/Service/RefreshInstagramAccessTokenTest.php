@@ -4,24 +4,21 @@ declare(strict_types=1);
 
 namespace MageSuite\ContentConstructorFrontend\Test\Integration\Service;
 
-use Magento\TestFramework\ObjectManager;
-
 class RefreshInstagramAccessTokenTest extends \PHPUnit\Framework\TestCase
 {
-    private ?\MageSuite\ContentConstructorFrontend\Service\RefreshInstagramAccessToken $service;
-    private ?\MageSuite\ContentConstructorFrontend\Helper\Configuration $configuration;
-    private ?string $newAccessToken;
+    protected ?\MageSuite\ContentConstructorFrontend\Service\RefreshInstagramAccessToken $service;
+    protected ?\MageSuite\ContentConstructorFrontend\Helper\Configuration $configuration;
+    protected ?\Magento\Framework\FlagManager $flagManager;
+    protected ?string $newAccessToken;
 
     protected function setUp(): void
     {
         // Randomize access token for each test to verify if config cache is flushed properly after updating by service
         $this->newAccessToken = sprintf('access-token-%s', rand(0, 9999));
-
-        $objectManager = ObjectManager::getInstance();
+        $objectManager = \Magento\TestFramework\ObjectManager::getInstance();
         $this->configuration = $objectManager->get(\MageSuite\ContentConstructorFrontend\Helper\Configuration::class);
-
+        $this->flagManager = $objectManager->get(\Magento\Framework\FlagManager::class);
         $response = $this->mockApiResponse();
-
         $mockBuilder = $this->getMockBuilder(\GuzzleHttp\Client::class);
 
         if (!method_exists(\GuzzleHttp\Client::class, 'get')) {
@@ -56,11 +53,16 @@ class RefreshInstagramAccessTokenTest extends \PHPUnit\Framework\TestCase
     /**
      * @magentoConfigFixture default/cc_frontend_extension/instagram_component/access_token old-access-token
      */
-    public function testExecute(): void
+    public function testItRefreshInstagramToken(): void
     {
         $this->service->execute();
 
         $newToken = $this->configuration->getInstagramAccessToken();
         $this->assertEquals($this->newAccessToken, $newToken);
+    }
+
+    protected function tearDown(): void
+    {
+        $this->flagManager->deleteFlag(\MageSuite\ContentConstructorFrontend\Service\RefreshInstagramAccessToken::FLAG_NAME);
     }
 }

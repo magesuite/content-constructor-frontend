@@ -22,28 +22,18 @@ class RefreshInstagramAccessToken
 
     public function execute(): bool
     {
-        if (!$this->configuration->isInstagramAccessTokenAutoRefreshEnabled()) {
-            return true;
-        }
-
-        $expiresAt = $this->configuration->getInstagramAccessTokenExpirationDate() ?: 'now';
-        $threshold = $this->configuration->getInstagramAccessTokenRefreshThreshold();
-
-        $expiresAtDate = strtotime($expiresAt);
-        $thresholdDate = strtotime(sprintf('now + %s days', $threshold));
-
-        if ($thresholdDate < $expiresAtDate) {
-            return true;
+        if (empty($this->configuration->getInstagramAccessToken())) {
+            return false;
         }
 
         try {
             $this->refreshInstagramAccessToken->execute();
-
-            return true;
         } catch (\Exception $e) {
             $this->logger->error($e->getMessage(), $e->getTrace());
 
             return false;
         }
+
+        return true;
     }
 }

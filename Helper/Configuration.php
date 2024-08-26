@@ -6,8 +6,6 @@ class Configuration
 {
     public const CUSTOM_URL = 'cc_frontend_extension/configuration/custom_url';
     public const INSTAGRAM_ACCESS_TOKEN = 'cc_frontend_extension/instagram_component/access_token';
-    public const INSTAGRAM_ACCESS_TOKEN_AUTO_REFRESH = 'cc_frontend_extension/instagram_component/access_token_enable_auto_refresh';
-    public const INSTAGRAM_ACCESS_TOKEN_EXPIRATION_DATE = 'cc_frontend_extension/instagram_component/access_token_expiration_date';
     public const INSTAGRAM_ACCESS_TOKEN_REFRESH_THRESHOLD = 'cc_frontend_extension/instagram_component/access_token_refresh_threshold';
     public const INSTAGRAM_USER_ID = 'cc_frontend_extension/instagram_component/user_id';
     public const INSTAGRAM_MEDIA_API_URL = 'cc_frontend_extension/instagram_component/media_api_url';
@@ -36,24 +34,9 @@ class Configuration
         $this->configWriter->save(self::INSTAGRAM_ACCESS_TOKEN, $accessToken);
     }
 
-    public function isInstagramAccessTokenAutoRefreshEnabled(): bool
+    public function getInstagramAccessTokenRefreshThreshold(): int
     {
-        return $this->scopeInterface->isSetFlag(self::INSTAGRAM_ACCESS_TOKEN_AUTO_REFRESH, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
-    }
-
-    public function getInstagramAccessTokenExpirationDate(): ?string
-    {
-        return $this->scopeInterface->getValue(self::INSTAGRAM_ACCESS_TOKEN_EXPIRATION_DATE, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
-    }
-
-    public function setInstagramAccessTokenExpirationDate(string $expirationDate): void
-    {
-        $this->configWriter->save(self::INSTAGRAM_ACCESS_TOKEN_EXPIRATION_DATE, $expirationDate);
-    }
-
-    public function getInstagramAccessTokenRefreshThreshold(): ?int
-    {
-        return (int) $this->scopeInterface->getValue(self::INSTAGRAM_ACCESS_TOKEN_EXPIRATION_DATE, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+        return (int)$this->scopeInterface->getValue(self::INSTAGRAM_ACCESS_TOKEN_REFRESH_THRESHOLD, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
     }
 
     public function getInstagramUserId(): ?string
