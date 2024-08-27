@@ -6,16 +6,6 @@ class DailyDeal implements FilterInterface
 {
     const IDENTIFIER = 'daily_deal';
 
-    /**
-     * @var \Magento\CatalogInventory\Model\ResourceModel\Stock\Status
-     */
-    protected $status;
-
-    public function __construct(\Magento\CatalogInventory\Model\ResourceModel\Stock\Status $status)
-    {
-        $this->status = $status;
-    }
-
     public function getIdentifier()
     {
         return self::IDENTIFIER;
@@ -29,7 +19,7 @@ class DailyDeal implements FilterInterface
     public function filter($collection)
     {
         $collection->addIsInStockFilter()
-            ->addAttributeToFilter('daily_deal_enabled', ['eq' => 1]);
+            ->addFieldToFilter('daily_deal_enabled', true);
 
         return $collection;
     }
