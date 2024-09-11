@@ -26,7 +26,7 @@ class DailyDealTeaserDataProviderTest extends \PHPUnit\Framework\TestCase
      * @magentoAppArea frontend
      * @magentoDbIsolation enabled
      * @magentoAppIsolation enabled
-     * @magentoDataFixture loadProductsFixture
+     * @magentoDataFixture MageSuite_ContentConstructorFrontend::Test/Integration/DataProviders/_files/products.php
      * @magentoConfigFixture current_store daily_deal/general/active 1
      * @magentoConfigFixture current_store daily_deal/general/use_qty_limitation 1
      */
@@ -65,7 +65,7 @@ class DailyDealTeaserDataProviderTest extends \PHPUnit\Framework\TestCase
      * @magentoAppArea frontend
      * @magentoDbIsolation enabled
      * @magentoAppIsolation enabled
-     * @magentoDataFixture loadProductsFixture
+     * @magentoDataFixture MageSuite_ContentConstructorFrontend::Test/Integration/DataProviders/_files/products.php
      * @magentoConfigFixture current_store daily_deal/general/active 1
      * @magentoConfigFixture current_store daily_deal/general/use_qty_limitation 1
      */
@@ -84,17 +84,5 @@ class DailyDealTeaserDataProviderTest extends \PHPUnit\Framework\TestCase
             ]
         );
         $this->assertNull($result);
-    }
-
-    public static function loadProductsFixture() {
-        require __DIR__.'/_files/products.php';
-
-        $indexerRegistry = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()
-            ->create(\Magento\Framework\Indexer\IndexerRegistry::class);
-        $indexerRegistry->get(\Magento\CatalogSearch\Model\Indexer\Fulltext::INDEXER_ID)->reindexAll();
-    }
-
-    public static function loadProductsFixtureRollback() {
-        require __DIR__.'/_files/products_rollback.php';
     }
 }
