@@ -64,7 +64,7 @@ class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
      * @magentoAppArea frontend
      * @magentoDbIsolation enabled
      * @magentoAppIsolation enabled
-     * @magentoDataFixture loadProductsFixture
+     * @magentoDataFixture MageSuite_ContentConstructorFrontend::Test/Integration/DataProviders/_files/products.php
      * @magentoConfigFixture current_store cataloginventory/options/show_out_of_stock 1
      */
     public function testitGetsProductsFromSpecifiedCategoryIncludingOutOfStockProducts()
@@ -75,23 +75,11 @@ class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('Out of stock product', $result[0]['name'], __FUNCTION__.': Out of stock product should be returned');
     }
 
-    public static function loadProductsFixture() {
-        require __DIR__.'/_files/products.php';
-
-        $indexerRegistry = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()
-            ->create(\Magento\Framework\Indexer\IndexerRegistry::class);
-        $indexerRegistry->get(\Magento\CatalogSearch\Model\Indexer\Fulltext::INDEXER_ID)->reindexAll();
-    }
-
-    public static function loadProductsFixtureRollback() {
-        require __DIR__.'/_files/products_rollback.php';
-    }
-
     /**
      * @magentoAppArea frontend
      * @magentoDbIsolation enabled
      * @magentoAppIsolation enabled
-     * @magentoDataFixture loadProductsFixture
+     * @magentoDataFixture MageSuite_ContentConstructorFrontend::Test/Integration/DataProviders/_files/products.php
      * @magentoConfigFixture current_store positive_indicators/popular_icon/is_enabled 1
      */
     public function testItReturnsProducts() {
@@ -321,7 +309,7 @@ class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
      * @magentoAppArea frontend
      * @magentoDbIsolation enabled
      * @magentoAppIsolation enabled
-     * @magentoDataFixture loadProductsFixture
+     * @magentoDataFixture MageSuite_ContentConstructorFrontend::Test/Integration/DataProviders/_files/products.php
      * @magentoConfigFixture current_store daily_deal/general/active 1
      * @magentoConfigFixture current_store daily_deal/general/use_qty_limitation 1
      */
@@ -346,7 +334,7 @@ class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
      * @magentoAppArea frontend
      * @magentoDbIsolation enabled
      * @magentoAppIsolation enabled
-     * @magentoDataFixture loadProductsFixture
+     * @magentoDataFixture MageSuite_ContentConstructorFrontend::Test/Integration/DataProviders/_files/products.php
      * @magentoDataFixture Magento/ConfigurableProduct/_files/product_configurable.php
      */
     public function testItGetAddToCartButtonHtml()
@@ -380,7 +368,7 @@ class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
      * @magentoAppArea frontend
      * @magentoDbIsolation enabled
      * @magentoAppIsolation enabled
-     * @magentoDataFixture loadProductsFixture
+     * @magentoDataFixture MageSuite_ContentConstructorFrontend::Test/Integration/DataProviders/_files/products.php
      * @magentoDataFixture Magento/ConfigurableProduct/_files/product_configurable.php
      */
     public function testItReturnsIdentitiesBasedOnElasticSearchResponse() {
