@@ -43,6 +43,7 @@ class Index extends DataProviderComponents
             ['Paragraph', 'paragraph', true],
             ['Product Carousel', 'product-carousel', true],
             ['Product Finder', 'productfinder', true],
+            ['Product Teaser', 'product-teaser', true],
             ['Teaser & Text Browser width', 'ttbrowserwidth'],
             ['Teaser & Text Content width', 'ttcontentwidth'],
             ['Teaser & Text with Advanced Options', 'teaser-and-text-with-advanced-options', true],

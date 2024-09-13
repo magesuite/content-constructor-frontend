@@ -47,6 +47,7 @@ class ComponentsList extends \Magento\Framework\View\Element\Template
         'ttcontentwidth' => 'TTContentWidth',
         'icon' => 'Icon',
         'product-carousel' => 'ProductCarousel',
+        'product-teaser' => 'ProductTeaser',
         'products-grid-no-it' => 'ProductGridNoIT',
         'products-grid-it-left' => 'ProductGridITLeft',
         'products-grid-it-right' => 'ProductGridITRight',
