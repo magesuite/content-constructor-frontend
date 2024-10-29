@@ -65,7 +65,7 @@ class ProductGridITCenter extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '2',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -84,7 +84,7 @@ class ProductGridITCenter extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/986f5e077833bf46ae70ce0f22f88d635f0e0b0206045022abbc8b271b106398/image/e3ttZWRpYSB1cmw9ImNvbnRlbnRfY29uc3RydWN0b3IvMXgxX01HUy5qcGcifX0',
-                                'decoded' => '{{media url="content_constructor/1x1_MGS.jpg"}}',
+                                'decoded' => $this->getDecodedImage('1x1_MGS.jpg'),
                                 'aspect_ratio' => '149:270',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -214,7 +214,7 @@ class ProductGridITCenter extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '2',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -233,7 +233,7 @@ class ProductGridITCenter extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNvbnRlbnRfY29uc3RydWN0b3IvMngxX01HUy5qcGcifX0,/key/137be272218fbb2e20adc9cce5e03b927eeea319fbda685c15d90e4a635dbb7e/',
-                                'decoded' => '{{media url="content_constructor/2x1_MGS.jpg"}}',
+                                'decoded' => $this->getDecodedImage('2x1_MGS.jpg'),
                                 'aspect_ratio' => '149:135',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -380,7 +380,7 @@ class ProductGridITCenter extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '2',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -399,7 +399,7 @@ class ProductGridITCenter extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNvbnRlbnRfY29uc3RydWN0b3IvMXgyX01HUy5qcGcifX0,/key/137be272218fbb2e20adc9cce5e03b927eeea319fbda685c15d90e4a635dbb7e/',
-                                'decoded' => '{{media url="content_constructor/1x2_MGS.jpg"}}',
+                                'decoded' => $this->getDecodedImage('1x2_MGS.jpg'),
                                 'aspect_ratio' => '331:1200',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -529,7 +529,7 @@ class ProductGridITCenter extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '2',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -548,7 +548,7 @@ class ProductGridITCenter extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNvbnRlbnRfY29uc3RydWN0b3IvMXgxX01HUy5qcGcifX0,/key/137be272218fbb2e20adc9cce5e03b927eeea319fbda685c15d90e4a635dbb7e/',
-                                'decoded' => '{{media url="content_constructor/1x1_MGS.jpg"}}',
+                                'decoded' => $this->getDecodedImage('1x1_MGS.jpg'),
                                 'aspect_ratio' => '149:270',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -678,7 +678,7 @@ class ProductGridITCenter extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '2',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -697,7 +697,7 @@ class ProductGridITCenter extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNvbnRlbnRfY29uc3RydWN0b3IvMngxX01HUy5qcGcifX0,/key/137be272218fbb2e20adc9cce5e03b927eeea319fbda685c15d90e4a635dbb7e/',
-                                'decoded' => '{{media url="content_constructor/2x1_MGS.jpg"}}',
+                                'decoded' => $this->getDecodedImage('2x1_MGS.jpg'),
                                 'aspect_ratio' => '149:135',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -844,7 +844,7 @@ class ProductGridITCenter extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '2',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -863,7 +863,7 @@ class ProductGridITCenter extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNvbnRlbnRfY29uc3RydWN0b3IvMngxX01HU18yLmpwZyJ9fQ,,/key/137be272218fbb2e20adc9cce5e03b927eeea319fbda685c15d90e4a635dbb7e/',
-                                'decoded' => '{{media url="content_constructor/2x1_MGS_2.jpg"}}',
+                                'decoded' => $this->getDecodedImage('2x1_MGS_2.jpg'),
                                 'aspect_ratio' => '149:135',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -993,7 +993,7 @@ class ProductGridITCenter extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '2',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -1012,7 +1012,7 @@ class ProductGridITCenter extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNvbnRlbnRfY29uc3RydWN0b3IvMXgxX01HUy5qcGcifX0,/key/137be272218fbb2e20adc9cce5e03b927eeea319fbda685c15d90e4a635dbb7e/',
-                                'decoded' => '{{media url="content_constructor/1x1_MGS.jpg"}}',
+                                'decoded' => $this->getDecodedImage('1x1_MGS.jpg'),
                                 'aspect_ratio' => '149:270',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -1142,7 +1142,7 @@ class ProductGridITCenter extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '2',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -1161,7 +1161,7 @@ class ProductGridITCenter extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNvbnRlbnRfY29uc3RydWN0b3IvMXgyX01HUy5qcGcifX0,/key/137be272218fbb2e20adc9cce5e03b927eeea319fbda685c15d90e4a635dbb7e/',
-                                'decoded' => '{{media url="content_constructor/1x2_MGS.jpg"}}',
+                                'decoded' => $this->getDecodedImage('1x2_MGS.jpg'),
                                 'aspect_ratio' => '331:1200',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -1308,7 +1308,7 @@ class ProductGridITCenter extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '2',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -1327,7 +1327,7 @@ class ProductGridITCenter extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNvbnRlbnRfY29uc3RydWN0b3IvMngyX01HUy5qcGcifX0,/key/137be272218fbb2e20adc9cce5e03b927eeea319fbda685c15d90e4a635dbb7e/',
-                                'decoded' => '{{media url="content_constructor/2x2_MGS.jpg"}}',
+                                'decoded' => $this->getDecodedImage('2x2_MGS.jpg'),
                                 'aspect_ratio' => '331:600',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -1457,7 +1457,7 @@ class ProductGridITCenter extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '2',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -1476,7 +1476,7 @@ class ProductGridITCenter extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNvbnRlbnRfY29uc3RydWN0b3IvMXgyX01HUy5qcGcifX0,/key/137be272218fbb2e20adc9cce5e03b927eeea319fbda685c15d90e4a635dbb7e/',
-                                'decoded' => '{{media url="content_constructor/1x2_MGS.jpg"}}',
+                                'decoded' => $this->getDecodedImage('1x2_MGS.jpg'),
                                 'aspect_ratio' => '331:1200',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -1623,7 +1623,7 @@ class ProductGridITCenter extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '2',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -1642,7 +1642,7 @@ class ProductGridITCenter extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNvbnRlbnRfY29uc3RydWN0b3IvMngyX01HUy5qcGcifX0,/key/137be272218fbb2e20adc9cce5e03b927eeea319fbda685c15d90e4a635dbb7e/',
-                                'decoded' => '{{media url="content_constructor/2x2_MGS.jpg"}}',
+                                'decoded' => $this->getDecodedImage('2x2_MGS.jpg'),
                                 'aspect_ratio' => '331:600',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -1772,7 +1772,7 @@ class ProductGridITCenter extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '2',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -1791,7 +1791,7 @@ class ProductGridITCenter extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNvbnRlbnRfY29uc3RydWN0b3IvMngxX01HUy5qcGcifX0,/key/137be272218fbb2e20adc9cce5e03b927eeea319fbda685c15d90e4a635dbb7e/',
-                                'decoded' => '{{media url="content_constructor/2x1_MGS.jpg"}}',
+                                'decoded' => $this->getDecodedImage('2x1_MGS.jpg'),
                                 'aspect_ratio' => '149:135',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -1921,7 +1921,7 @@ class ProductGridITCenter extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '2',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -1940,7 +1940,7 @@ class ProductGridITCenter extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNvbnRlbnRfY29uc3RydWN0b3IvMXgyX01HUy5qcGcifX0,/key/137be272218fbb2e20adc9cce5e03b927eeea319fbda685c15d90e4a635dbb7e/',
-                                'decoded' => '{{media url="content_constructor/1x2_MGS.jpg"}}',
+                                'decoded' => $this->getDecodedImage('1x2_MGS.jpg'),
                                 'aspect_ratio' => '331:1200',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -2070,7 +2070,7 @@ class ProductGridITCenter extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '2',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -2089,7 +2089,7 @@ class ProductGridITCenter extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNvbnRlbnRfY29uc3RydWN0b3IvMXgxX01HUy5qcGcifX0,/key/137be272218fbb2e20adc9cce5e03b927eeea319fbda685c15d90e4a635dbb7e/',
-                                'decoded' => '{{media url="content_constructor/1x1_MGS.jpg"}}',
+                                'decoded' => $this->getDecodedImage('1x1_MGS.jpg'),
                                 'aspect_ratio' => '149:270',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -2219,7 +2219,7 @@ class ProductGridITCenter extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '2',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -2238,7 +2238,7 @@ class ProductGridITCenter extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNvbnRlbnRfY29uc3RydWN0b3IvMngxX01HUy5qcGcifX0,/key/137be272218fbb2e20adc9cce5e03b927eeea319fbda685c15d90e4a635dbb7e/',
-                                'decoded' => '{{media url="content_constructor/2x1_MGS.jpg"}}',
+                                'decoded' => $this->getDecodedImage('2x1_MGS.jpg'),
                                 'aspect_ratio' => '149:135',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -2393,7 +2393,7 @@ class ProductGridITCenter extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '2',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -2412,7 +2412,7 @@ class ProductGridITCenter extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNvbnRlbnRfY29uc3RydWN0b3IvMXgxX01HUy5qcGcifX0,/key/137be272218fbb2e20adc9cce5e03b927eeea319fbda685c15d90e4a635dbb7e/',
-                                'decoded' => '{{media url="content_constructor/1x1_MGS.jpg"}}',
+                                'decoded' => $this->getDecodedImage('1x1_MGS.jpg'),
                                 'aspect_ratio' => '149:270',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -2550,7 +2550,7 @@ class ProductGridITCenter extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '2',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -2569,7 +2569,7 @@ class ProductGridITCenter extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/cms/wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9ImNvbnRlbnRfY29uc3RydWN0b3IvMXgxX01HUy5qcGcifX0,/key/137be272218fbb2e20adc9cce5e03b927eeea319fbda685c15d90e4a635dbb7e/',
-                                'decoded' => '{{media url="content_constructor/1x1_MGS.jpg"}}',
+                                'decoded' => $this->getDecodedImage('1x1_MGS.jpg'),
                                 'aspect_ratio' => '149:270',
                                 'fetch_priority' => false,
                                 'mobile' => [

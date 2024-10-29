@@ -31,7 +31,7 @@ class ProductGridWithAdvancedOptions extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '20',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -164,7 +164,7 @@ class ProductGridWithAdvancedOptions extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '20',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -314,7 +314,7 @@ class ProductGridWithAdvancedOptions extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '20',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -447,7 +447,7 @@ class ProductGridWithAdvancedOptions extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '20',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -580,7 +580,7 @@ class ProductGridWithAdvancedOptions extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '20',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -713,7 +713,7 @@ class ProductGridWithAdvancedOptions extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '20',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -846,7 +846,7 @@ class ProductGridWithAdvancedOptions extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '20',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -996,7 +996,7 @@ class ProductGridWithAdvancedOptions extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '20',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -1129,7 +1129,7 @@ class ProductGridWithAdvancedOptions extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '20',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -1262,7 +1262,7 @@ class ProductGridWithAdvancedOptions extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '20',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -1395,7 +1395,7 @@ class ProductGridWithAdvancedOptions extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '20',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -1528,7 +1528,7 @@ class ProductGridWithAdvancedOptions extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '20',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -1678,7 +1678,7 @@ class ProductGridWithAdvancedOptions extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '20',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -1811,7 +1811,7 @@ class ProductGridWithAdvancedOptions extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '20',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -1944,7 +1944,7 @@ class ProductGridWithAdvancedOptions extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '20',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -2077,7 +2077,7 @@ class ProductGridWithAdvancedOptions extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '20',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -2227,7 +2227,7 @@ class ProductGridWithAdvancedOptions extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '20',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -2360,7 +2360,7 @@ class ProductGridWithAdvancedOptions extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '20',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -2493,7 +2493,7 @@ class ProductGridWithAdvancedOptions extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '20',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -2626,7 +2626,7 @@ class ProductGridWithAdvancedOptions extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '20',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -2776,7 +2776,7 @@ class ProductGridWithAdvancedOptions extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '20',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
@@ -2909,7 +2909,7 @@ class ProductGridWithAdvancedOptions extends DataProviderComponents
                 'section' => 'content',
                 'data' => [
                     'customCssClass' => '',
-                    'category_id' => '20',
+                    'category_id' => $this->getMainCategoryId(),
                     'filter' => '',
                     'order_by' => 'created_at',
                     'order_type' => 'ASC',
