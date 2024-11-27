@@ -52,7 +52,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTEuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-1.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-1.jpg'),
                                 'aspect_ratio' => '2:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -155,7 +155,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         1 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTIuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-2.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-2.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -556,7 +556,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTEuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-1.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-1.jpg'),
                                 'aspect_ratio' => '2:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -659,7 +659,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         1 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTIuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-2.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-2.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -1060,7 +1060,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTEuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-1.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-1.jpg'),
                                 'aspect_ratio' => '2:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -1163,7 +1163,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         1 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTIuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-2.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-2.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -1564,7 +1564,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTEuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-1.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-1.jpg'),
                                 'aspect_ratio' => '2:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -1667,7 +1667,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         1 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTIuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-2.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-2.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -2068,7 +2068,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTEuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-1.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-1.jpg'),
                                 'aspect_ratio' => '2:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -2171,7 +2171,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         1 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTIuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-2.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-2.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -2572,7 +2572,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTEuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-1.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-1.jpg'),
                                 'aspect_ratio' => '2:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -2675,7 +2675,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         1 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTIuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-2.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-2.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -3076,7 +3076,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTEuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-1.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-1.jpg'),
                                 'aspect_ratio' => '2:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -3179,7 +3179,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         1 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTIuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-2.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-2.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -3580,7 +3580,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTEuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-1.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-1.jpg'),
                                 'aspect_ratio' => '2:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -3683,7 +3683,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         1 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTIuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-2.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-2.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -4101,7 +4101,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTIuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-2.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-2.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -4204,7 +4204,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         1 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTEuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-1.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-1.jpg'),
                                 'aspect_ratio' => '2:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -4605,7 +4605,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTIuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-2.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-2.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -4708,7 +4708,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         1 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTEuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-1.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-1.jpg'),
                                 'aspect_ratio' => '2:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -5109,7 +5109,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTIuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-2.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-2.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -5212,7 +5212,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         1 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTEuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-1.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-1.jpg'),
                                 'aspect_ratio' => '2:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -5613,7 +5613,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTIuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-2.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-2.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -5716,7 +5716,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         1 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTEuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-1.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-1.jpg'),
                                 'aspect_ratio' => '2:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -6117,7 +6117,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTIuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-2.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-2.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -6220,7 +6220,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         1 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTEuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-1.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-1.jpg'),
                                 'aspect_ratio' => '2:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -6621,7 +6621,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTIuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-2.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-2.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -6724,7 +6724,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         1 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTEuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-1.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-1.jpg'),
                                 'aspect_ratio' => '2:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -7125,7 +7125,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTIuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-2.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-2.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -7228,7 +7228,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         1 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTEuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-1.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-1.jpg'),
                                 'aspect_ratio' => '2:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -7629,7 +7629,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTIuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-2.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-2.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -7732,7 +7732,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         1 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTEuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-1.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-1.jpg'),
                                 'aspect_ratio' => '2:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -8175,7 +8175,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTEuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-1.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-1.jpg'),
                                 'aspect_ratio' => '2:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -8278,7 +8278,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         1 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTIuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-2.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-2.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -8452,7 +8452,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTEuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-1.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-1.jpg'),
                                 'aspect_ratio' => '2:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,
@@ -8555,7 +8555,7 @@ class MosaicBrowserWidth extends DataProviderComponents
                         1 => [
                             'image' => [
                                 'raw' => 'https://magesuite-test.magesuite.net/mgsadmin/content-constructor/image/show/key/2a095df17197e22ce2dc702e501f3cf0aaee5e06f1172679b8bdc25d75bfe35c/image/e3ttZWRpYSB1cmw9ImNyZWF0aXZlX2NvbXBvbmVudHMvbW9zYWljLWxpZ2h0LTIuanBnIn19',
-                                'decoded' => '{{media url="creative_components/mosaic-light-2.jpg"}}',
+                                'decoded' => $this->getDecodedImage('mosaic-light-2.jpg'),
                                 'aspect_ratio' => '1:1',
                                 'fetch_priority' => false,
                                 'lazyload' => true,

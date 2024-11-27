@@ -135,7 +135,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                         1 => [
                             'image' => [
                                 'raw' => '',
-                                'decoded' => '',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-2.jpg'),
                                 'aspect_ratio' => '',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -755,7 +755,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => '',
-                                'decoded' => '',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-2.jpg'),
                                 'aspect_ratio' => '',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -1364,7 +1364,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                         1 => [
                             'image' => [
                                 'raw' => '',
-                                'decoded' => '',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-2.jpg'),
                                 'aspect_ratio' => '',
                                 'fetch_priority' => false,
                                 'mobile' => [
@@ -2011,7 +2011,7 @@ class MosaicWithAdvancedOptions extends DataProviderComponents
                         0 => [
                             'image' => [
                                 'raw' => '',
-                                'decoded' => '',
+                                'decoded' => $this->getDecodedImage('mosaic-dark-2.jpg'),
                                 'aspect_ratio' => '',
                                 'fetch_priority' => false,
                                 'mobile' => [
