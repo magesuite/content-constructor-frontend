@@ -5,6 +5,7 @@ $componentConfiguration = $block->getData();
 /** @var \MageSuite\ContentConstructorFrontend\Model\Component\ProductCarousel $viewModel */
 $viewModel = $block->getViewModel();
 $visibility = $block->getVisibilityClass();
+$maxContentWidth = $block->getVar('max_content_width');
 
 $useWholeScreen = $block->getVar('product_carousel/use_whole_screen') == 'true';
 $viewMode = $block->getData('view_mode') ?? 'grid';
@@ -31,6 +32,7 @@ $jsSettings['usePagination'] = filter_var($block->getVar('product_carousel/js/us
 $jsSettings['itemsCount'] = count($products);
 $jsSettings['columnsConfig'] = $block->getVar('columns/one-column', 'MageSuite_ContentConstructor');
 $jsSettings['componentType'] = 'products_carousel';
+$jsSettings['maxContentWidth'] = $maxContentWidth;
 
 // modify css classes
 if ($useWholeScreen) {
