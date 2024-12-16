@@ -5,6 +5,7 @@ $componentConfiguration = $block->getData();
 /** @var \MageSuite\ContentConstructorFrontend\Model\Component\BrandCarousel $viewModel */
 $viewModel = $block->getViewModel();
 $visibility = $block->getVisibilityClass();
+$maxContentWidth = $block->getVar('max_content_width');
 
 $brands = $viewModel->getBrands();
 
@@ -22,6 +23,7 @@ if (empty($jsSettings)) {
 $jsSettings['itemsCount'] = count($brands);
 $jsSettings['columnsConfig'] = $block->getVar('brand_carousel/js/columnsConfig', 'MageSuite_ContentConstructorFrontend');
 $jsSettings['componentType'] = 'brand_carousel';
+$jsSettings['maxContentWidth'] = $maxContentWidth;
 
 // modify css classes
 if ($useWholeScreen) {
