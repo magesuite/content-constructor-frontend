@@ -48,18 +48,6 @@ if ($teaserWidth == 'container' or $teaserWidth == 'container-slider') {
 
 $contentPlacement = $imageTeaser['scenario']['contentPlacement']['id'];
 
-$sizesMobile = '(max-width: 48em) 100vw';
-$sizesDesktop = sprintf('%svw', 100 / $itemsPerViewMobile);
-
-if ($teaserWidth == 'window-slider') {
-    $sizesMobile = '(max-width: 48em) 80vw';
-    $sizesDesktop = (80 / $itemsPerView) . 'vw';
-} else if ($teaserWidth == 'container') {
-    $sizesDesktop = '(min-width: ' . $maxContentWidth . 'px) ' . ($maxContentWidth / $itemsPerView) . 'px, ' . $sizesDesktop;
-}
-
-$sizes = $sizesMobile . ', ' . $sizesDesktop;
-
 $containerClasses = ($teaserWidth == 'window' || $teaserWidth == 'window-slider') ? ' cs-container--image-teaser-window-width' : '';
 
 $containerClasses .= ' ' . $block->getContainerMix();
@@ -86,6 +74,7 @@ if ($block->getVar($componentType.'/use_whole_screen') == 'true') {
 $jsSettings['itemsPerView'] = (int)$itemsPerRow;
 $jsSettings['itemsCount'] = count($slides);
 $jsSettings['componentType'] = $componentType;
+$jsSettings['maxContentWidth'] = $maxContentWidth;
 
 // Merge JS config from other components if provided
 $additionalJsSettings = $block->getAdditionalJsSettings();
