@@ -49,12 +49,12 @@ class BrandCarousel extends \Magento\Framework\DataObject implements ViewModel
         $storeId = $this->storeManager->getStore()->getId();
         $collection = $this->brandCollection->create();
         $collection->setStoreId($storeId)
-            ->addAttributeToSelect('brand_name')
-            ->addAttributeToSelect('meta_title')
+            ->addAttributeToSelect(['brand_name', 'meta_title', 'sort_order'])
             ->addAttributeToFilter('enabled', 1)
             ->addAttributeToFilter('show_in_brand_carousel', 1)
             ->addAttributeToFilter('brand_url_key', ['notnull' => true])
-            ->addAttributeToFilter('brand_icon', ['notnull' => true]);
+            ->addAttributeToFilter('brand_icon', ['notnull' => true])
+            ->setOrder('sort_order', $collection::SORT_ORDER_DESC);
 
         return $collection;
     }
