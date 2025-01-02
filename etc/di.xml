@@ -5,6 +5,8 @@
 
     <preference for="MageSuite\ContentConstructorFrontend\DataProviders\AdditionalProductDataProvider" type="MageSuite\ContentConstructorFrontend\DataProviders\EmptyAdditionalProductDataProvider" />
 
+    <preference for="MageSuite\ContentConstructorFrontend\Model\Component\ImageTeaser\Slide\CanBeDisplayedInterface" type="MageSuite\ContentConstructorFrontend\Model\Component\ImageTeaser\Slide\CanBeDisplayed" />
+
     <type name="MageSuite\ContentConstructorFrontend\Helper\Category">
         <arguments>
             <argument name="productCollectionFactory" xsi:type="object">Magento\CatalogSearch\Model\ResourceModel\Fulltext\CollectionFactory</argument>

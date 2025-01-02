@@ -5,13 +5,12 @@ namespace MageSuite\ContentConstructorFrontend\Model\Component\ImageTeaser;
 class Slide extends \MageSuite\ContentConstructorFrontend\Model\Component\GenericSlide
 {
     public function __construct(
-        \MageSuite\ContentConstructorFrontend\Service\UrlResolver $urlResolver,
-        \MageSuite\ContentConstructorFrontend\Service\MediaResolver $mediaResolver,
+        protected \MageSuite\ContentConstructorFrontend\Service\UrlResolver $urlResolver,
+        protected \MageSuite\ContentConstructorFrontend\Service\MediaResolver $mediaResolver,
+        protected \MageSuite\ContentConstructorFrontend\Model\Component\ImageTeaser\Slide\CanBeDisplayedInterface $canBeDisplayed,
         array $data = []
     ) {
         parent::__construct($urlResolver, $mediaResolver, $data);
-        $this->urlResolver = $urlResolver;
-        $this->mediaResolver = $mediaResolver;
     }
 
     public function getSrc()
@@ -45,5 +44,10 @@ class Slide extends \MageSuite\ContentConstructorFrontend\Model\Component\Generi
         }
 
         return  __('Teaser image');
+    }
+
+    public function canBeDisplayed(): bool
+    {
+        return $this->canBeDisplayed->execute($this);
     }
 }

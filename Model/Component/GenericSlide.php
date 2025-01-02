@@ -5,26 +5,13 @@ namespace MageSuite\ContentConstructorFrontend\Model\Component;
 class GenericSlide extends \Magento\Framework\DataObject
 {
     const ASPECT_RATIO_REGEX = '/[0-9]+:[0-9]+/';
-    /**
-     * @var \MageSuite\ContentConstructorFrontend\Service\UrlResolver
-     */
-    protected $urlResolver;
-
-    /**
-     * @var \MageSuite\ContentConstructorFrontend\Service\MediaResolver
-     */
-    protected $mediaResolver;
 
     public function __construct(
-        \MageSuite\ContentConstructorFrontend\Service\UrlResolver $urlResolver,
-        \MageSuite\ContentConstructorFrontend\Service\MediaResolver $mediaResolver,
+        protected \MageSuite\ContentConstructorFrontend\Service\UrlResolver $urlResolver,
+        protected \MageSuite\ContentConstructorFrontend\Service\MediaResolver $mediaResolver,
         array $data = []
-    )
-    {
+    ) {
         parent::__construct($data);
-
-        $this->urlResolver = $urlResolver;
-        $this->mediaResolver = $mediaResolver;
     }
 
     public function getCta()

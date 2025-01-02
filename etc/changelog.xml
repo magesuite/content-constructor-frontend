@@ -328,6 +328,13 @@
                     <ticket_id>RK-1170</ticket_id>
                 </entry>
             </tag>
+            <tag version="5.14.11" date="2024-11-19">
+                <entry>
+                    <type>FEATURE</type>
+                    <overview>Schedule image teaser display in teaser components</overview>
+                    <ticket_id>TOYS-682</ticket_id>
+                </entry>
+            </tag>
         </changelog>
     </module>
 </config>

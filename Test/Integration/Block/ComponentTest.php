@@ -56,7 +56,8 @@ class ComponentTest extends \PHPUnit\Framework\TestCase
 
         $this->state->emulateAreaCode(\Magento\Framework\App\Area::AREA_FRONTEND,function () use ($baseData, $expectedResult) {
             $this->block->setData($baseData);
-            $this->assertEquals($expectedResult, $this->block->toHtml());
+            $html = preg_replace('/<!-- last update: \d+ -->/', '', $this->block->toHtml());
+            $this->assertEquals($expectedResult, $html);
         });
     }
 
