@@ -108,7 +108,7 @@ class Component extends \Magento\Framework\View\Element\AbstractBlock implements
         $component = $this->getComponent();
 
         try {
-            return $component->toHtml();
+            return sprintf('<!-- last update: %s -->', time()) . $component->toHtml();
         } catch(\Exception | \Error $e) {
             $this->_logger->critical(sprintf(
                 'Error during Content Constructor component rendering: %s',

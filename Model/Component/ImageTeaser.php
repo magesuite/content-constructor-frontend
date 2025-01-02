@@ -9,18 +9,11 @@ class ImageTeaser extends \Magento\Framework\DataObject implements ViewModel, \M
      */
     protected $slides = null;
 
-    /**
-     * @var ImageTeaser\SlideFactory
-     */
-    protected $slideFactory;
-
     public function __construct(
-        \MageSuite\ContentConstructorFrontend\Model\Component\ImageTeaser\SlideFactory $slideFactory,
+        protected \MageSuite\ContentConstructorFrontend\Model\Component\ImageTeaser\SlideFactory $slideFactory,
         array $data = []
-    )
-    {
+    ) {
         parent::__construct($data);
-        $this->slideFactory = $slideFactory;
     }
 
     public function getSlides() {
@@ -28,7 +21,13 @@ class ImageTeaser extends \Magento\Framework\DataObject implements ViewModel, \M
             $this->slides = [];
 
             foreach($this->getData('items') as $slide) {
-                $this->slides[] = $this->slideFactory->create(['data' => $slide]);
+                $slide = $this->slideFactory->create(['data' => $slide]);
+
+                if (!$slide->canBeDisplayed()) {
+                    continue;
+                }
+
+                $this->slides[] = $slide;
             }
         }
 
