@@ -335,6 +335,13 @@
                     <ticket_id>TOYS-682</ticket_id>
                 </entry>
             </tag>
+            <tag version="5.14.12" date="2025-01-03">
+                <entry>
+                    <type>FIX</type>
+                    <overview>Fix use whole screen sliders</overview>
+                    <description></description>
+                </entry>
+            </tag>
         </changelog>
     </module>
 </config>
