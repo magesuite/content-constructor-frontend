@@ -342,6 +342,13 @@
                     <description></description>
                 </entry>
             </tag>
+            <tag version="5.14.13" date="2025-01-09">
+                <entry>
+                    <type>FEATURE</type>
+                    <overview>Image teasers: pagination visibility per component, navigation additional css classes support.</overview>
+                    <ticket_id>IPET-2920</ticket_id>
+                </entry>
+            </tag>
         </changelog>
     </module>
 </config>

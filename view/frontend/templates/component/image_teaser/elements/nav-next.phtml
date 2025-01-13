@@ -1,10 +1,11 @@
 <?php
+
 $imageTeaserData = $block->getImageTeaserData();
 ?>
 
-<button class="cs-image-teaser__nav cs-image-teaser__nav--next cs-slider-navigation cs-slider-navigation--next" type="button">
-    <?= $this->getLayout()
-            ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+<button class="cs-image-teaser__nav cs-image-teaser__nav--next cs-slider-navigation cs-slider-navigation--next <?= /* @noEscape */ $block->getVar($block->getComponentType() . '/navigation/arrows/next/additional_css_classes', 'MageSuite_ContentConstructorFrontend') ?>" type="button">
+    <?= $block->getLayout()
+            ->createBlock(MageSuite\ThemeHelpers\Block\Icon::class)
             ->setIconUrl($block->getIcon())
             ->setCssClass('cs-slider-navigation__icon')
             ->setAltText(__('Next slide(s)'))

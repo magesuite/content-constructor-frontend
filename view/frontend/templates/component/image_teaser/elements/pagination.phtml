@@ -1,1 +1,1 @@
-<div class="cs-slider-pagination cs-image-teaser__pagination <?= $block->getVar('image_teaser/pagination/additional_css_classes') ?>"></div>
+<div class="cs-slider-pagination cs-image-teaser__pagination <?= /* @noEscape */ $block->getVar($block->getComponentType() . '/pagination/additional_css_classes', 'MageSuite_ContentConstructorFrontend') ?>"></div>

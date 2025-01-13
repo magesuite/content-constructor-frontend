@@ -1,10 +1,11 @@
 <?php
+
 $imageTeaserData = $block->getImageTeaserData();
 ?>
 
-<button class="cs-image-teaser__nav cs-image-teaser__nav--prev cs-slider-navigation cs-slider-navigation--prev" disabled type="button">
-    <?= $this->getLayout()
-            ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+<button class="cs-image-teaser__nav cs-image-teaser__nav--prev cs-slider-navigation cs-slider-navigation--prev <?= /* @noEscape */ $block->getVar($block->getComponentType() . '/navigation/arrows/prev/additional_css_classes', 'MageSuite_ContentConstructorFrontend') ?>" disabled type="button">
+    <?= $block->getLayout()
+            ->createBlock(MageSuite\ThemeHelpers\Block\Icon::class)
             ->setIconUrl($block->getIcon())
             ->setCssClass('cs-slider-navigation__icon')
             ->setAltText(__('Previous slide(s)'))
