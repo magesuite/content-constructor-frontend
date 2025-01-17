@@ -159,7 +159,6 @@ class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
 
     public function itSortsProperlyByBestsellers()
     {
-        $this->markTestSkipped('Skipped to test dependency with other module');
         $result = $this->dataProvider->getProducts(['category_id' => 333, 'order_by' => 'bestsellers_amount', 'order_type' => 'DESC']);
 
         $this->assertEquals('The most expensive product', $result[0]['name']);
