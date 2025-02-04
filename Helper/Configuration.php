@@ -1,17 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MageSuite\ContentConstructorFrontend\Helper;
 
 class Configuration
 {
-    public const CUSTOM_URL = 'cc_frontend_extension/configuration/custom_url';
-    public const INSTAGRAM_ACCESS_TOKEN = 'cc_frontend_extension/instagram_component/access_token';
-    public const INSTAGRAM_ACCESS_TOKEN_REFRESH_THRESHOLD = 'cc_frontend_extension/instagram_component/access_token_refresh_threshold';
-    public const INSTAGRAM_USER_ID = 'cc_frontend_extension/instagram_component/user_id';
-    public const INSTAGRAM_MEDIA_API_URL = 'cc_frontend_extension/instagram_component/media_api_url';
-    public const INSTAGRAM_USER_ID_API_URL = 'cc_frontend_extension/instagram_component/user_id_api_url';
-    public const INSTAGRAM_REFRESH_ACCESS_TOKEN_URL = 'cc_frontend_extension/instagram_component/refresh_access_token_url';
-    public const PRELOAD_IMAGE_ENABLED_PATH = 'cc_frontend_extension/preload_image/enabled';
+    public const XML_PATH_CC_FRONTEND_CONFIGURATION_CUSTOM_URL = 'cc_frontend_extension/configuration/custom_url';
+    public const XML_PATH_CC_FRONTEND_CONFIGURATION_SORT_ALPHABETICALLY_CONFIG_PATH = 'cc_frontend_extension/configuration/sort_alphabetically';
+    public const XML_PATH_CC_FRONTEND_INSTAGRAM_ACCESS_TOKEN = 'cc_frontend_extension/instagram_component/access_token';
+    public const XML_PATH_CC_FRONTEND_INSTAGRAM_ACCESS_TOKEN_REFRESH_THRESHOLD = 'cc_frontend_extension/instagram_component/access_token_refresh_threshold';
+    public const XML_PATH_CC_FRONTEND_INSTAGRAM_USER_ID = 'cc_frontend_extension/instagram_component/user_id';
+    public const XML_PATH_CC_FRONTEND_INSTAGRAM_MEDIA_API_URL = 'cc_frontend_extension/instagram_component/media_api_url';
+    public const XML_PATH_CC_FRONTEND_INSTAGRAM_USER_ID_API_URL = 'cc_frontend_extension/instagram_component/user_id_api_url';
+    public const XML_PATH_CC_FRONTEND_INSTAGRAM_REFRESH_ACCESS_TOKEN_URL = 'cc_frontend_extension/instagram_component/refresh_access_token_url';
+    public const XML_PATH_CC_FRONTEND_PRELOAD_IMAGE_ENABLED = 'cc_frontend_extension/preload_image/enabled';
 
     protected \Magento\Framework\App\Config\ScopeConfigInterface $scopeInterface;
     protected \Magento\Framework\App\Config\Storage\WriterInterface $configWriter;
@@ -24,57 +27,62 @@ class Configuration
         $this->configWriter = $configWriter;
     }
 
+    public function getCustomUrl(): string
+    {
+        return (string)$this->scopeInterface->getValue(self::XML_PATH_CC_FRONTEND_CONFIGURATION_CUSTOM_URL);
+    }
+
+    public function isSortAlphabeticallyEnabled(): bool
+    {
+        return $this->scopeInterface->isSetFlag(self::XML_PATH_CC_FRONTEND_CONFIGURATION_SORT_ALPHABETICALLY_CONFIG_PATH);
+    }
+
     public function getInstagramAccessToken(): ?string
     {
-        return $this->scopeInterface->getValue(self::INSTAGRAM_ACCESS_TOKEN, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+        return $this->scopeInterface->getValue(self::XML_PATH_CC_FRONTEND_INSTAGRAM_ACCESS_TOKEN, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
     }
 
     public function setInstagramAccessToken(string $accessToken): void
     {
-        $this->configWriter->save(self::INSTAGRAM_ACCESS_TOKEN, $accessToken);
+        $this->configWriter->save(self::XML_PATH_CC_FRONTEND_INSTAGRAM_ACCESS_TOKEN, $accessToken);
     }
 
     public function getInstagramAccessTokenRefreshThreshold(): int
     {
-        return (int)$this->scopeInterface->getValue(self::INSTAGRAM_ACCESS_TOKEN_REFRESH_THRESHOLD, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+        return (int)$this->scopeInterface->getValue(self::XML_PATH_CC_FRONTEND_INSTAGRAM_ACCESS_TOKEN_REFRESH_THRESHOLD, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
     }
 
     public function getInstagramUserId(): ?string
     {
-        return $this->scopeInterface->getValue(self::INSTAGRAM_USER_ID, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+        return $this->scopeInterface->getValue(self::XML_PATH_CC_FRONTEND_INSTAGRAM_USER_ID, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
     }
 
     public function setInstagramUserId(string $userId): void
     {
-        $this->configWriter->save(self::INSTAGRAM_USER_ID, $userId);
+        $this->configWriter->save(self::XML_PATH_CC_FRONTEND_INSTAGRAM_USER_ID, $userId);
     }
 
     public function getInstagramMediaApiUrl(string $userId, string $token): string
     {
-        $config = $this->scopeInterface->getValue(self::INSTAGRAM_MEDIA_API_URL, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+        $config = $this->scopeInterface->getValue(self::XML_PATH_CC_FRONTEND_INSTAGRAM_USER_ID_API_URL, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
 
         return sprintf($config, $userId, $token);
     }
 
     public function getInstagramUserIdApiUrl(string $token): string
     {
-        $config = $this->scopeInterface->getValue(self::INSTAGRAM_USER_ID_API_URL, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+        $config = $this->scopeInterface->getValue(self::XML_PATH_CC_FRONTEND_INSTAGRAM_USER_ID_API_URL, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
 
         return sprintf($config, $token);
     }
 
     public function getInstagramRefreshAccessTokenUrl(): string
     {
-        return $this->scopeInterface->getValue(self::INSTAGRAM_REFRESH_ACCESS_TOKEN_URL, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+        return $this->scopeInterface->getValue(self::XML_PATH_CC_FRONTEND_INSTAGRAM_REFRESH_ACCESS_TOKEN_URL, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
     }
 
     public function isPreloadImageEnabled(): bool
     {
-        return $this->scopeInterface->isSetFlag(self::PRELOAD_IMAGE_ENABLED_PATH, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
-    }
-
-    public function getCustomUrl(): string
-    {
-        return (string) $this->scopeInterface->getValue(self::CUSTOM_URL);
+        return $this->scopeInterface->isSetFlag(self::XML_PATH_CC_FRONTEND_PRELOAD_IMAGE_ENABLED, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
     }
 }
