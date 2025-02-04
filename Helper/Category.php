@@ -4,27 +4,19 @@ namespace MageSuite\ContentConstructorFrontend\Helper;
 
 class Category
 {
-    const CACHE_LIFETIME = 86400;
-
-    protected const CACHE_KEY = 'products_in_category_count_store_%s';
-
-    protected \Magento\Catalog\Model\ResourceModel\Category\CollectionFactory $categoryCollectionFactory;
-
-    protected \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $productCollectionFactory;
-
-    protected \Magento\Catalog\Model\Indexer\Category\Product\TableMaintainer $tableMaintainer;
-
-    protected \Smile\ElasticsuiteVirtualCategory\Model\Category\Attribute\VirtualRule\ReadHandler $readHandler;
-
-    protected \Magento\Framework\App\CacheInterface $cache;
-
-    protected \Magento\Framework\DB\Adapter\AdapterInterface $connection;
-
-    protected \Magento\Store\Model\StoreManagerInterface $storeManager;
-
-    protected \Magento\Framework\Serialize\Serializer\Serialize $serializer;
+    public const CACHE_LIFETIME = 86400;
+    public const CACHE_KEY = 'products_in_category_count_store_%s';
 
     protected array $productsCount = [];
+
+    protected \Magento\Catalog\Model\ResourceModel\Category\CollectionFactory $categoryCollectionFactory;
+    protected \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $productCollectionFactory;
+    protected \Magento\Catalog\Model\Indexer\Category\Product\TableMaintainer $tableMaintainer;
+    protected \Smile\ElasticsuiteVirtualCategory\Model\Category\Attribute\VirtualRule\ReadHandler $readHandler;
+    protected \Magento\Framework\App\CacheInterface $cache;
+    protected \Magento\Framework\DB\Adapter\AdapterInterface $connection;
+    protected \Magento\Store\Model\StoreManagerInterface $storeManager;
+    protected \Magento\Framework\Serialize\Serializer\Serialize $serializer;
 
     public function __construct(
         \Magento\Catalog\Model\ResourceModel\Category\CollectionFactory $categoryCollectionFactory,
@@ -57,7 +49,7 @@ class Category
         return $result[$category->getId()] ?? 0;
     }
 
-    protected function getProductsCountFromIndex()
+    protected function getProductsCountFromIndex(): array
     {
         if (!empty($this->productsCount)) {
             return $this->productsCount;
@@ -67,14 +59,17 @@ class Category
 
         try {
             $result = $this->serializer->unserialize($this->cache->load($cacheKey));
-        } catch (\InvalidArgumentException $exception) {
+        } catch (\InvalidArgumentException) {
             $result = null;
         }
 
         if (!$result) {
             $categoryIndexTable = $this->tableMaintainer->getMainTable($this->storeManager->getStore()->getId());
 
-            $result = $this->connection->fetchPairs('SELECT category_id, COUNT(distinct product_id) AS products_count FROM ' . $categoryIndexTable . ' GROUP BY category_id');
+            $select = $this->connection->select()
+                ->from($categoryIndexTable, ['category_id', 'COUNT(distinct product_id) AS products_count'])
+                ->group('category_id');
+            $result = $this->connection->fetchPairs($select);
 
             $this->cache->save(
                 $this->serializer->serialize($result),

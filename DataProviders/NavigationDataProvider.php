@@ -1,70 +1,44 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MageSuite\ContentConstructorFrontend\DataProviders;
 
 class NavigationDataProvider
 {
+    public const MEDIA_CATEGORY_PATH = 'pub/media/catalog/category';
 
-    const MEDIA_CATEGORY_PATH = 'pub/media/catalog/category';
-
-    /**
-     * @var \Magento\Catalog\Api\CategoryRepositoryInterface
-     */
-    protected $categoryRepository;
-
-    /**
-     * @var \MageSuite\ContentConstructorFrontend\Helper\Category
-     */
-    protected $categoryHelper;
-
-    /**
-     * @var \MageSuite\Frontend\Helper\Category
-     */
-    protected $categoryFrontendHelper;
-
-    /**
-     * @var \Magento\Store\Model\StoreManagerInterface
-     */
-    protected $storeManager;
-    /**
-     * @var \Magento\Framework\App\Config\ScopeConfigInterface
-     */
-    private $scopeConfig;
-
-    /**
-     * @var \MageSuite\Frontend\Model\Category\Tree
-     */
-    protected $categoryTree;
-
-    /**
-     * @var \MageSuite\ContentConstructorFrontend\Service\MediaResolver
-     */
-    protected $mediaResolver;
+    protected \Magento\Catalog\Api\CategoryRepositoryInterface $categoryRepository;
+    protected \MageSuite\ContentConstructorFrontend\Helper\Category $categoryHelper;
+    protected \MageSuite\Frontend\Helper\Category $categoryFrontendHelper;
+    protected \Magento\Store\Model\StoreManagerInterface $storeManager;
+    protected \MageSuite\Frontend\Model\Category\Tree $categoryTree;
+    protected \MageSuite\ContentConstructorFrontend\Service\MediaResolver $mediaResolver;
+    protected \MageSuite\ContentConstructorFrontend\Helper\Configuration $configuration;
 
     public function __construct(
         \Magento\Catalog\Api\CategoryRepositoryInterface $categoryRepository,
         \MageSuite\ContentConstructorFrontend\Helper\Category $categoryHelper,
         \MageSuite\Frontend\Helper\Category $categoryFrontendHelper,
         \Magento\Store\Model\StoreManagerInterface $storeManager,
-        \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
         \MageSuite\Frontend\Model\Category\Tree $categoryTree,
-        \MageSuite\ContentConstructorFrontend\Service\MediaResolver $mediaResolver
-    )
-    {
+        \MageSuite\ContentConstructorFrontend\Service\MediaResolver $mediaResolver,
+        \MageSuite\ContentConstructorFrontend\Helper\Configuration $configuration
+    ) {
         $this->categoryRepository = $categoryRepository;
         $this->categoryHelper = $categoryHelper;
         $this->categoryFrontendHelper = $categoryFrontendHelper;
         $this->storeManager = $storeManager;
-        $this->scopeConfig = $scopeConfig;
         $this->categoryTree = $categoryTree;
         $this->mediaResolver = $mediaResolver;
+        $this->configuration = $configuration;
     }
 
-    public function getNavigationStructure($categoryId = null, $returnOnlyIncludedInMenu = true)
+    public function getNavigationStructure(?int $categoryId = null, bool $returnOnlyIncludedInMenu = true): array
     {
         $items = [];
 
-        if(!$categoryId){
+        if (!$categoryId) {
             $categoryId = $this->storeManager->getStore()->getRootCategoryId();
         }
 
@@ -73,10 +47,10 @@ class NavigationDataProvider
         $childCategories = $this->getChildrenCategories($rootCategory);
 
         /** @var \Magento\Catalog\Model\Category $category */
-        foreach($childCategories as $category) {
+        foreach ($childCategories as $category) {
             $tree = $this->buildCategoryTree($category, $returnOnlyIncludedInMenu);
 
-            if($tree == null) {
+            if ($tree == null) {
                 continue;
             }
 
@@ -86,12 +60,9 @@ class NavigationDataProvider
         return ['items' => $items];
     }
 
-    /**
-     * @param $category \Magento\Catalog\Model\Category
-     * @return array
-     */
-    protected function buildCategoryTree($category, $returnOnlyIncludedInMenu) {
-        if($returnOnlyIncludedInMenu and !$category->getIncludeInMenu()) {
+    protected function buildCategoryTree(\Magento\Catalog\Model\Category $category, bool $returnOnlyIncludedInMenu): ?array
+    {
+        if ($returnOnlyIncludedInMenu and !$category->getIncludeInMenu()) {
             return null;
         }
 
@@ -103,40 +74,38 @@ class NavigationDataProvider
             'hasChildren' => false,
             'url' => $category->getUrl(),
             'label' => $category->getName(),
-            'number_of_products' => $this->categoryHelper->getNumberOfProducts($category),
+            'number_of_products' => $this->categoryHelper->getNumberOfProducts($category, false),
             'do_not_expand_flyout' => $category->getDoNotExpandFlyout(),
             'category_custom_url' => $this->categoryFrontendHelper->prepareCategoryCustomUrl($category->getCategoryCustomUrl()),
             'featured_products_header' => $category->getFeaturedProductsHeader(),
             'featured_products' => $this->categoryFrontendHelper->getFeaturedProducts($category),
-            'image_teaser' => $this->getImageTeaser($category)
+            'image_teaser' => $this->getImageTeaser($category) ?? false
         ];
 
-        if($category->hasChildren()) {
-            $childrens =  $this->getChildrenCategories($category);
+        if ($category->hasChildren()) {
+            $children = $this->getChildrenCategories($category);
 
             $result['hasChildren'] = true;
 
             $subcategories = [];
 
-            foreach($childrens as $children) {
-                $tree = $this->buildCategoryTree($children, $returnOnlyIncludedInMenu);
+            foreach ($children as $child) {
+                $tree = $this->buildCategoryTree($child, $returnOnlyIncludedInMenu);
 
-                if($tree == null) {
+                if ($tree == null) {
                     continue;
                 }
 
                 $subcategories[] = $tree;
             }
 
-            if($this->scopeConfig->getValue('cc_frontend_extension/configuration/sort_alphabetically')) {
-                usort($subcategories, function ($a, $b)
-                {
-                    setlocale(LC_ALL, 'en_GB');
+            if ($this->configuration->isSortAlphabeticallyEnabled()) {
+                usort($subcategories, function ($a, $b) {
+                    setlocale(LC_ALL, 'en_GB'); //phpcs:ignore
                     $c = iconv('UTF-8', 'ASCII//TRANSLIT', $a['label']);
                     $d = iconv('UTF-8', 'ASCII//TRANSLIT', $b['label']);
                     return ($c <=> $d);
-                }
-                );
+                });
             }
 
             $result['subcategories'] = $subcategories;
@@ -145,12 +114,8 @@ class NavigationDataProvider
         return $result;
     }
 
-    /**
-     * Standard Category collection does not return include_in_menu attribute value. It must be added.
-     * @param \Magento\Catalog\Model\Category $category
-     * @return mixed
-     */
-    protected function getChildrenCategories($category) {
+    protected function getChildrenCategories(\Magento\Catalog\Model\Category $category): \Magento\Catalog\Model\ResourceModel\Category\Collection
+    {
         $categories = $category->getChildrenCategories();
 
         $categories->clear();
@@ -174,24 +139,23 @@ class NavigationDataProvider
         return $categories;
     }
 
-    protected function getImageTeaser($category)
+    protected function getImageTeaser(\Magento\Catalog\Model\Category $category): ?array
     {
-        if($category->getLevel() != 2){
-            return false;
+        if ($category->getLevel() != 2) {
+            return null;
         }
 
         $categoryData = $category->getData();
-        $imageTeaserUrl = (isset($categoryData['image_teaser']) AND $categoryData['image_teaser']) ? $this->categoryFrontendHelper->getImageTeaser($categoryData['image_teaser']) : '';
-        $imageTeaser = [
-            'image' => (isset($categoryData['image_teaser']) AND $categoryData['image_teaser']) ? $this->categoryFrontendHelper->getImageTeaser($categoryData['image_teaser']) : '',
+        $imageTeaserUrl = (isset($categoryData['image_teaser']) and $categoryData['image_teaser']) ? $this->categoryFrontendHelper->getImageTeaser($categoryData['image_teaser']) : '';
+
+        return [
+            'image' => (isset($categoryData['image_teaser']) and $categoryData['image_teaser']) ? $this->categoryFrontendHelper->getImageTeaser($categoryData['image_teaser']) : '',
             'headline' => $categoryData['image_teaser_headline'] ?? '',
             'subheadline' => $categoryData['image_teaser_subheadline'] ?? '',
             'paragraph' => $categoryData['image_teaser_paragraph'] ?? '',
             'button_label' => $categoryData['image_teaser_button_label'] ?? '',
-            'button_link' => (isset($categoryData['image_teaser_button_link']) AND $categoryData['image_teaser_button_link']) ? $this->categoryFrontendHelper->prepareCategoryCustomUrl($categoryData['image_teaser_button_link']) : '',
+            'button_link' => (isset($categoryData['image_teaser_button_link']) and $categoryData['image_teaser_button_link']) ? $this->categoryFrontendHelper->prepareCategoryCustomUrl($categoryData['image_teaser_button_link']) : '',
             'src_set' => $imageTeaserUrl ? $this->mediaResolver->resolveSrcSetByDensity($imageTeaserUrl) : ''
         ];
-
-        return $imageTeaser;
     }
 }
