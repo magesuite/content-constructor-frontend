@@ -44,7 +44,8 @@ class GenericSlide extends \Magento\Framework\DataObject
 
     public function getUrl($url)
     {
-        return $this->urlResolver->resolve($url);
+        $url = $this->urlResolver->resolve($url);
+        return rtrim($url, '/');
     }
 
     public function getWidth()
