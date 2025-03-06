@@ -37,24 +37,6 @@ class MediaResolver
         return $this->getUrl($url);
     }
 
-    public function resolveWebpSrcSet(string $originalSrcSet): string
-    {
-        $elements = explode(',', $originalSrcSet);
-
-        $withWebp = [];
-        foreach ($elements as $element) {
-            $element = trim($element);
-
-            $parts = explode(' ', $element);
-            $url = $parts[0];
-            $modifier = isset($parts[1]) ? ' '.$parts[1] : null;
-
-            $withWebp[] = sprintf('%s.webp%s', $url, $modifier);
-        }
-
-        return implode(', ', $withWebp);
-    }
-
     public function resolveSrcSet(string $mediaPath): string
     {
         if ($this->isDirectUrl($mediaPath)) {

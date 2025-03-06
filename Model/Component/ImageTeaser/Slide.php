@@ -31,21 +31,6 @@ class Slide extends \MageSuite\ContentConstructorFrontend\Model\Component\Generi
         }
     }
 
-    public function getAlt()
-    {
-        $teaser = $this->getData();
-
-        if (isset($teaser['image_alt']) and !empty($teaser['image_alt'])) {
-            return $teaser['image_alt'];
-        } else if (isset($teaser['slogan']) and !empty($teaser['slogan'])) {
-            return $teaser['slogan'];
-        } else if (isset($teaser['description']) and !empty($teaser['description'])) {
-            return $teaser['description'];
-        }
-
-        return  __('Teaser image');
-    }
-
     public function canBeDisplayed(): bool
     {
         return $this->canBeDisplayed->execute($this);

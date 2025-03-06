@@ -39,15 +39,7 @@ $imageHeight = $slide->getHeight();
  */
 $contrastOptimizers = $slide->getOptimizers();
 $mirrorImage = $contrastOptimizers['mirror_image'] ?? null;
-
-/**
- * WebP support
- */
-$isWebpSupported = $imageTypeHelper->supportsWebp($origImageSrc);
 $imageMimeType = $imageTypeHelper->getMimeType($origImageSrc);
-if ($isWebpSupported) {
-    $imageWebpSrcSet = $slide->getWebpSrcSet();
-}
 
 /**
  * Video Teaser
@@ -71,22 +63,6 @@ $isLazyLoaded = $eagerLoad ? false : $lazyLoad;
                 ->setVideoTeaserData($videoTeaserData)
                 ->toHtml();
             ?>
-        <?php endif; ?>
-
-        <?php if ($isWebpSupported): ?>
-            <source
-                type="image/webp"
-                srcset="<?= $imageWebpSrcSet ?>"
-                <?php if ($imageSizes): ?>
-                    sizes="<?= $imageSizes ?>"
-                <?php endif; ?>
-                <?php if ($imageWidth): ?>
-                    width="<?= $imageWidth ?>"
-                <?php endif; ?>
-                <?php if ($imageHeight): ?>
-                    height="<?= $imageHeight ?>"
-                <?php endif; ?>
-            >
         <?php endif; ?>
         <source
              <?php if ($isLazyLoaded): ?>
