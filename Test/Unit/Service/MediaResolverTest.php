@@ -116,23 +116,6 @@ class MediaResolverTest extends \PHPUnit\Framework\TestCase
         );
     }
 
-    public function testItCorrectlyResolvesSrcSetIncludingWebp()
-    {
-        $srcSet = $this->mediaResolver->resolveWebpSrcSet('http://localhost/pub/media/wysiwyg/test.jpg 1920w, http://localhost/pub/media/wysiwyg/.thumbs/480/test.jpg 480w, http://localhost/pub/media/wysiwyg/.thumbs/768/test.jpg 768w');
-        $srcSet = str_replace('pub/', '', $srcSet);
-        $this->assertEquals(
-            'http://localhost/media/wysiwyg/test.jpg.webp 1920w, http://localhost/media/wysiwyg/.thumbs/480/test.jpg.webp 480w, http://localhost/media/wysiwyg/.thumbs/768/test.jpg.webp 768w',
-            $srcSet
-        );
-
-        $srcSet = $this->mediaResolver->resolveWebpSrcSet('http://localhost/pub/media/wysiwyg/.thumbs/480/test.jpg, http://localhost/pub/media/wysiwyg/.thumbs/960/test.jpg 2x');
-        $srcSet = str_replace('pub/', '', $srcSet);
-        $this->assertEquals(
-            'http://localhost/media/wysiwyg/.thumbs/480/test.jpg.webp, http://localhost/media/wysiwyg/.thumbs/960/test.jpg.webp 2x',
-            $srcSet
-        );
-    }
-
     public function testItReturnsUrlDirectlyInDensityBasedSrcSetWhenItsPassed()
     {
         $this->assertEquals(

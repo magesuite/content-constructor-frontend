@@ -23,10 +23,10 @@ $trackingData = "data-tracking-id='{$trackingId}'";
             <?= $trackingData; ?>
         <?php endif; ?>
     >
-        <span class="cs-image-teaser__cta-span"><?= $ctaLabel ?></span>
+        <span class="cs-image-teaser__cta-span"><?= /* @noEscape */ $ctaLabel ?></span>
         <?php if(!empty($iconPath)): ?>
-            <?= $this->getLayout()
-                ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
+            <?= /* @noEscape */ $block->getLayout()
+                ->createBlock(\MageSuite\ThemeHelpers\Block\Icon::class)
                 ->setIconUrl($iconPath)
                 ->setCssClass('cs-image-teaser__cta-icon')
                 ->setInlined(true)

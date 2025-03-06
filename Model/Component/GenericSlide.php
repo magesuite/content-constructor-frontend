@@ -112,13 +112,6 @@ class GenericSlide extends \Magento\Framework\DataObject
         }
     }
 
-    public function getWebpSrcSet()
-    {
-        $srcSet = $this->getSrcSet();
-
-        return $this->mediaResolver->resolveWebpSrcSet($srcSet);
-    }
-
     public function isSvg()
     {
         $src = $this->getSrc();
@@ -134,17 +127,29 @@ class GenericSlide extends \Magento\Framework\DataObject
 
     public function getAlt()
     {
-        $hero = $this->getData();
+        $teaser = $this->getData();
 
-        if (isset($hero['image']['alt']) and !empty($hero['image']['alt'])) {
-            return $hero['image']['alt'];
-        } else if (isset($hero['headline']) and !empty($hero['headline'])) {
-            return $hero['headline'];
-        } else if (isset($hero['subheadline']) and !empty($hero['subheadline'])) {
-            return $hero['subheadline'];
+        if (!empty($teaser['image_alt'])) {
+            return $teaser['image_alt'];
         }
 
-        return __('Teaser image');
+        // If whole teaser is linked return empty alt to avoid duplicate content (link contains accessible text)
+        if (empty($teaser['cta']['link'])) {
+            return '';
+        }
+
+        // Generate alt text based on slogan and description
+        $generatedAltText = '';
+
+        if (!empty($teaser['slogan'])) {
+            $generatedAltText = $teaser['slogan'];
+        }
+
+        if (!empty($teaser['description'])) {
+            $generatedAltText = $generatedAltText . ' - ' . $teaser['description'];
+        }
+
+        return trim($generatedAltText);
     }
 
     /**

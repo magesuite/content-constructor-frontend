@@ -50,12 +50,6 @@
         </arguments>
     </type>
 
-    <type name="MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaserLegacy">
-        <arguments>
-            <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\ImageTeaserLegacy</argument>
-        </arguments>
-    </type>
-
     <type name="MageSuite\ContentConstructorFrontend\Block\Component\HeroCarousel">
         <arguments>
             <argument name="viewModel" xsi:type="string">MageSuite\ContentConstructorFrontend\Model\Component\HeroCarousel</argument>
@@ -186,7 +180,6 @@
                 <item name="product-carousel" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\ProductCarousel</item>
                 <item name="hero-carousel" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\HeroCarousel</item>
                 <item name="brand-carousel" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\BrandCarousel</item>
-                <item name="image-teaser" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaserLegacy</item>
                 <item name="image-teaser-2" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser</item>
                 <item name="button" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\Button</item>
                 <item name="category-links" xsi:type="string">MageSuite\ContentConstructorFrontend\Block\Component\CategoryLinks</item>
