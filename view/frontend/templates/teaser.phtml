@@ -37,14 +37,6 @@
                     <?php if ($teaser['image']['srcSet']): ?>data-srcset="<?= $teaser['image']['srcSet'] ?>"<?php endif; ?>
                     alt="<?= isset($teaser['image']['alt']) ? $teaser['image']['alt'] : '' ?>"
                 >
-                <noscript>
-                    <img
-                        class="<?php /* @escapeNotVerified */ echo $gridClass; ?>__teaser-image"
-                        src="<?= $teaser['image']['src'] ?>"
-                        <?php if ($teaser['image']['srcSet']): ?> srcset="<?= $teaser['image']['srcSet'] ?>"<?php endif; ?>
-                        alt="<?= isset($teaser['image']['alt']) ? $teaser['image']['alt'] : '' ?>"
-                    >
-                </noscript>
             </figure>
             <div class="<?php /* @escapeNotVerified */ echo $gridClass; ?>__teaser-content <?php /* @escapeNotVerified */ echo $gridClass; ?>__teaser-content--<?php echo $teaser['displayVariant'] ?>">
                 <?php if($teaser['headline'] != '') {
