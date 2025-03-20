@@ -19,7 +19,7 @@ class ProductTeaser extends DataProviderComponents
                 'data' =>
                     [
                         'customCssClass' => '',
-                        'title' => 'Product teaser',
+                        'title' => 'Product Teaser with Simple Product',
                         'subtitle' => '',
                         'headingTag' => 'h2',
                         'cc_css_classes' => '',
