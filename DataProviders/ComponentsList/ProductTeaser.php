@@ -19,7 +19,7 @@ class ProductTeaser extends DataProviderComponents
                 'data' =>
                     [
                         'customCssClass' => '',
-                        'title' => 'Product Teaser with Simple Product',
+                        'title' => 'Product Teaser with Simple Product Custom Description',
                         'subtitle' => '',
                         'headingTag' => 'h2',
                         'cc_css_classes' => '',
@@ -59,12 +59,56 @@ class ProductTeaser extends DataProviderComponents
             [
                 'type' => 'headline',
                 'name' => 'Headline',
+                'id' => 'componentbc211114',
+                'section' => 'content',
+                'data' =>
+                    [
+                        'customCssClass' => '',
+                        'title' => 'Product Teaser with Simple Product',
+                        'subtitle' => '',
+                        'headingTag' => 'h2',
+                        'cc_css_classes' => '',
+                        'componentVisibility' =>
+                            [
+                                'mobile' => true,
+                                'desktop' => true,
+                            ],
+                    ],
+            ],
+            [
+                'type' => 'product-teaser',
+                'name' => 'Product Teaser',
+                'id' => 'component55e23ee3',
+                'section' => 'content',
+                'data' =>
+                    [
+                        'customCssClass' => 'test',
+                        'sku' => $this->getProductSku(),
+                        'slogan' => 'Slogan',
+                        'subslogan' => 'Subslogan',
+                        'border' => false,
+                        'shadow' => false,
+                        'isError' => false,
+                        'showErrorAlert' => false,
+                        'product' => [
+                            'name' => 'Product name simple'
+                        ],
+                        'componentVisibility' =>
+                            [
+                                'mobile' => true,
+                                'desktop' => true,
+                            ],
+                    ],
+            ],
+            [
+                'type' => 'headline',
+                'name' => 'Headline',
                 'id' => 'component124',
                 'section' => 'content',
                 'data' =>
                     [
                         'customCssClass' => '',
-                        'title' => 'Product teaser With Configurable Product',
+                        'title' => 'Product teaser With Configurable Product Custom Description',
                         'subtitle' => '',
                         'headingTag' => 'h2',
                         'cc_css_classes' => '',
@@ -109,7 +153,7 @@ class ProductTeaser extends DataProviderComponents
                 'data' =>
                     [
                         'customCssClass' => '',
-                        'title' => 'Product Teaser With Border Slogan',
+                        'title' => 'Product Teaser With Border Slogan Custom Description',
                         'subtitle' => '',
                         'headingTag' => 'h2',
                         'cc_css_classes' => '',
@@ -154,7 +198,7 @@ class ProductTeaser extends DataProviderComponents
                 'data' =>
                     [
                         'customCssClass' => '',
-                        'title' => 'Product Teaser With Shadow No Slogan',
+                        'title' => 'Product Teaser With Shadow No Slogan Custom Description',
                         'subtitle' => '',
                         'headingTag' => 'h2',
                         'cc_css_classes' => '',
@@ -199,7 +243,7 @@ class ProductTeaser extends DataProviderComponents
                 'data' =>
                     [
                         'customCssClass' => '',
-                        'title' => 'Product Teaser With Border Shadow Slogan Subslogan',
+                        'title' => 'Product Teaser With Border Shadow Slogan Subslogan Custom Description',
                         'subtitle' => '',
                         'headingTag' => 'h2',
                         'cc_css_classes' => '',
@@ -244,7 +288,7 @@ class ProductTeaser extends DataProviderComponents
                 'data' =>
                     [
                         'customCssClass' => '',
-                        'title' => 'Product Teaser With Colour Background',
+                        'title' => 'Product Teaser With Colour Background Custom Description',
                         'subtitle' => '',
                         'headingTag' => 'h2',
                         'cc_css_classes' => '',
@@ -290,7 +334,7 @@ class ProductTeaser extends DataProviderComponents
                 'data' =>
                     [
                         'customCssClass' => '',
-                        'title' => 'Visibility: desktop tablet on, mobile off',
+                        'title' => 'Visibility: desktop tablet on, mobile off, custom description',
                         'subtitle' => '',
                         'headingTag' => 'h2',
                         'cc_css_classes' => '',
@@ -335,7 +379,7 @@ class ProductTeaser extends DataProviderComponents
                 'data' =>
                     [
                         'customCssClass' => '',
-                        'title' => 'Visibility: desktop tablet off, mobile on',
+                        'title' => 'Visibility: desktop tablet off, mobile on, custom description',
                         'subtitle' => '',
                         'headingTag' => 'h2',
                         'cc_css_classes' => '',
@@ -387,7 +431,6 @@ class ProductTeaser extends DataProviderComponents
                 ->setFlag('has_stock_status_filter', true)
                 ->addAttributeToFilter('status', ['eq' => \Magento\Catalog\Model\Product\Attribute\Source\Status::STATUS_ENABLED])
                 ->addAttributeToFilter('visibility', ['eq' => \Magento\Catalog\Model\Product\Visibility::VISIBILITY_BOTH]);
-
             $this->configurableSku = $productCollection->getFirstItem()->getSku();
         }
 
