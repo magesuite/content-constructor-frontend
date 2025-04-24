@@ -1,29 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MageSuite\ContentConstructorFrontend\Model\Component;
 
 class DailyDealTeaser extends \Magento\Framework\DataObject implements ViewModel
 {
-    protected \MageSuite\ContentConstructorFrontend\DataProviders\DailyDealTeaserDataProvider $dailyDealTeaserDataProvider;
-
-    protected \Magento\Catalog\Block\Product\ListProduct $listProductBlock;
-
     protected ?array $product = null;
 
     public function __construct(
-        \MageSuite\ContentConstructorFrontend\DataProviders\DailyDealTeaserDataProvider $dailyDealTeaserDataProvider,
-        \Magento\Catalog\Block\Product\ListProduct $listProductBlock,
+        protected \MageSuite\ContentConstructorFrontend\DataProviders\DailyDealTeaserDataProvider $dailyDealTeaserDataProvider,
+        protected \Magento\Catalog\Block\Product\ListProduct $listProductBlock,
         array $data = []
     ) {
         parent::__construct($data);
-
-        $this->dailyDealTeaserDataProvider = $dailyDealTeaserDataProvider;
-        $this->listProductBlock = $listProductBlock;
     }
 
     public function getProduct(): ?array
     {
-        if($this->product == null) {
+        if ($this->product == null) {
             $configuration = $this->getData();
             $configuration['filter'] = \MageSuite\ContentConstructorFrontend\Model\Filter\DailyDeal::IDENTIFIER;
 
@@ -50,8 +45,8 @@ class DailyDealTeaser extends \Magento\Framework\DataObject implements ViewModel
         return [
             'action' => $postParams['action'],
             'productId' => $postParams['data']['product'],
-            'uencKey' => \Magento\Framework\App\Action\Action::PARAM_NAME_URL_ENCODED,
-            'uencValue' => $postParams['data'][\Magento\Framework\App\Action\Action::PARAM_NAME_URL_ENCODED],
+            'uencKey' => \Magento\Framework\App\ActionInterface::PARAM_NAME_URL_ENCODED,
+            'uencValue' => $postParams['data'][\Magento\Framework\App\ActionInterface::PARAM_NAME_URL_ENCODED],
             'formKey' => $this->listProductBlock->getBlockHtml('formkey'),
         ];
     }
