@@ -1,53 +1,23 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MageSuite\ContentConstructorFrontend\DataProviders;
 
 class DailyDealTeaserDataProvider
 {
-    /**
-     * @var \Magento\Catalog\Api\ProductRepositoryInterface
-     */
-    protected $productRepository;
-
-    /**
-     * @var \MageSuite\ContentConstructorFrontend\DataProviders\ProductCarouselDataProvider
-     */
-    protected $dataProvider;
-
-    /**
-     * @var \MageSuite\BrandManagement\Api\BrandsRepositoryInterface
-     */
-    protected $brandsRepository;
-
-    /**
-     * @var \MageSuite\ContentConstructorFrontend\Service\MediaResolver
-     */
-    protected $mediaResolver;
-
-    /**
-     * @var \MageSuite\Discount\Helper\Discount
-     */
-    protected $discountHelper;
-
     public function __construct(
-        \Magento\Catalog\Api\ProductRepositoryInterface $productRepository,
-        \MageSuite\ContentConstructorFrontend\DataProviders\ProductCarouselDataProvider $dataProvider,
-        \MageSuite\BrandManagement\Api\BrandsRepositoryInterface $brandsRepository,
-        \MageSuite\ContentConstructorFrontend\Service\MediaResolver $mediaResolver,
-        \MageSuite\Discount\Helper\Discount $discountHelper
-    ) {
-        $this->productRepository = $productRepository;
-        $this->dataProvider = $dataProvider;
-        $this->brandsRepository = $brandsRepository;
-        $this->mediaResolver = $mediaResolver;
-        $this->discountHelper = $discountHelper;
-    }
+        protected \Magento\Catalog\Api\ProductRepositoryInterface $productRepository,
+        protected \MageSuite\ContentConstructorFrontend\DataProviders\ProductCarouselDataProvider $dataProvider,
+        protected \MageSuite\BrandManagement\Api\BrandsRepositoryInterface $brandsRepository,
+        protected \MageSuite\ContentConstructorFrontend\Service\MediaResolver $mediaResolver,
+        protected \MageSuite\Discount\Helper\Discount $discountHelper,
+    ) {}
 
-    public function getProduct($configuration)
+    public function getProduct(array $configuration): ?array
     {
-        $products = $this->dataProvider->getProducts($configuration);
-
-        $product = array_shift($products);
+        $products = $this->getValidProducts($configuration);
+        $product = current($products);
 
         if (!$product) {
             return null;
@@ -65,17 +35,26 @@ class DailyDealTeaserDataProvider
 
         $product['image'] = [
             'src' => $this->mediaResolver->resolve($product['image']),
-            'srcSet' => $this->mediaResolver->resolveSrcSet($product['image'])
+            'srcSet' => $this->mediaResolver->resolveSrcSet($product['image']),
         ];
 
-        if (isset($product['dailyDealOffer']['price']) && $product['dailyDealOffer']['price']) {
-            $product['dailyDealOffer']['discountPercentage'] = $this->discountHelper->getSalePercentage($productObject, $product['dailyDealOffer']['price']);
+        if (!empty($product['dailyDealOffer']['price']) && empty($product['dailyDealOffer']['dailyDiscount'])) {
+            $product['dailyDealOffer']['discountPercentage'] = $this->discountHelper->getSalePercentage($productObject, (float)$product['dailyDealOffer']['price']);
         }
 
-        if (isset($product['dailyDealOffer']['dailyDiscount']) && $product['dailyDealOffer']['dailyDiscount']) {
+        if (!empty($product['dailyDealOffer']['dailyDiscount'])) {
             $product['dailyDealOffer']['discountPercentage'] = $product['dailyDealOffer']['dailyDiscount'];
         }
 
         return $product;
+    }
+
+    protected function getValidProducts(array $configuration): array
+    {
+        $products = $this->dataProvider->getProducts($configuration);
+
+        return array_filter($products, function ($product) {
+            return $product['dailyDealOffer']['deal'] ?? false;
+        });
     }
 }
