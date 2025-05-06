@@ -102,7 +102,7 @@ $includeStylesInComponent = $block->getVar('brand_carousel/include_styles_in_com
                 </div>
 
                 <?php if ($block->getVar('brand_carousel/js/usePagination')): ?>
-                    <div class="cs-slider-pagination cs-brand-carousel__pagination <?= $block->getVar('brand_carousel/pagination/additional_css_classes') ?>"></div>
+                    <div aria-hidden="true" class="cs-slider-pagination cs-brand-carousel__pagination <?= $block->getVar('brand_carousel/pagination/additional_css_classes') ?>"></div>
                 <?php endif; ?>
             </div>
         <?php if(!$useWholeScreen): ?>
