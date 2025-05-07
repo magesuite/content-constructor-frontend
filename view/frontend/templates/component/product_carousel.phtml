@@ -94,7 +94,7 @@ $includeStylesInComponent = $block->getVar('product_carousel/include_styles_in_c
             </div>
 
             <?php if ($block->getVar('product_carousel/js/usePagination')): ?>
-                <div class="cs-slider-pagination cs-products-carousel__pagination <?= $block->getVar('product_carousel/pagination/additional_css_classes') ?>"></div>
+                <div aria-hidden="true" class="cs-slider-pagination cs-products-carousel__pagination <?= $block->getVar('product_carousel/pagination/additional_css_classes') ?>"></div>
             <?php endif; ?>
         </div>
     <?php if(!$useWholeScreen): ?>
