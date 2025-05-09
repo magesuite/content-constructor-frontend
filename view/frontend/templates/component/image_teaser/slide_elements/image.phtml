@@ -86,6 +86,9 @@ $isLazyLoaded = $eagerLoad ? false : $lazyLoad;
         <img
             class="cs-image-teaser__image<?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?><?= $isLazyLoaded ? ' lazyload' : '' ?>"
             alt="<?= $imageAlt ?>"
+            <?php if (!$imageAlt) : ?>
+                aria-hidden="true"
+            <?php endif ?>
 
             <?php if ($isLazyLoaded): ?>
                 src="<?= $placeholderImageSrc ?>"
