@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace MageSuite\ContentConstructorFrontend\Test\Integration\Service;
+namespace MageSuite\ContentConstructorFrontend\Test\Integration\Service\Instagram;
 
-class RefreshInstagramAccessTokenTest extends \PHPUnit\Framework\TestCase
+class RefreshAccessTokenTest extends \PHPUnit\Framework\TestCase
 {
-    protected ?\MageSuite\ContentConstructorFrontend\Service\RefreshInstagramAccessToken $service;
-    protected ?\MageSuite\ContentConstructorFrontend\Helper\Configuration $configuration;
+    protected ?\MageSuite\ContentConstructorFrontend\Service\Instagram\RefreshAccessToken $service;
+    protected ?\MageSuite\ContentConstructorFrontend\Helper\Configuration\Instagram $configuration;
     protected ?\Magento\Framework\FlagManager $flagManager;
     protected ?string $newAccessToken;
 
@@ -16,7 +16,7 @@ class RefreshInstagramAccessTokenTest extends \PHPUnit\Framework\TestCase
         // Randomize access token for each test to verify if config cache is flushed properly after updating by service
         $this->newAccessToken = sprintf('access-token-%s', rand(0, 9999));
         $objectManager = \Magento\TestFramework\ObjectManager::getInstance();
-        $this->configuration = $objectManager->get(\MageSuite\ContentConstructorFrontend\Helper\Configuration::class);
+        $this->configuration = $objectManager->get(\MageSuite\ContentConstructorFrontend\Helper\Configuration\Instagram::class);
         $this->flagManager = $objectManager->get(\Magento\Framework\FlagManager::class);
         $response = $this->mockApiResponse();
         $mockBuilder = $this->getMockBuilder(\GuzzleHttp\Client::class);
@@ -29,7 +29,7 @@ class RefreshInstagramAccessTokenTest extends \PHPUnit\Framework\TestCase
         $client->method('get')->willReturn($response);
 
         $this->service = $objectManager->create(
-            \MageSuite\ContentConstructorFrontend\Service\RefreshInstagramAccessToken::class,
+            \MageSuite\ContentConstructorFrontend\Service\Instagram\RefreshAccessToken::class,
             [
                 'client' => $client,
             ]
@@ -57,12 +57,12 @@ class RefreshInstagramAccessTokenTest extends \PHPUnit\Framework\TestCase
     {
         $this->service->execute();
 
-        $newToken = $this->configuration->getInstagramAccessToken();
+        $newToken = $this->configuration->getAccessToken();
         $this->assertEquals($this->newAccessToken, $newToken);
     }
 
     protected function tearDown(): void
     {
-        $this->flagManager->deleteFlag(\MageSuite\ContentConstructorFrontend\Service\RefreshInstagramAccessToken::FLAG_NAME);
+        $this->flagManager->deleteFlag(\MageSuite\ContentConstructorFrontend\Service\Instagram\RefreshAccessToken::FLAG_NAME);
     }
 }

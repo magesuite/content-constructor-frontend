@@ -17,6 +17,7 @@
         <arguments>
             <argument name="commands" xsi:type="array">
                 <item name="non_migrated_image_teaser_finder" xsi:type="object">MageSuite\ContentConstructorFrontend\Console\Command\ImageTeaserNotMigrationCommand</item>
+                <item name="refresh_instagram_token" xsi:type="object">MageSuite\ContentConstructorFrontend\Console\Command\RefreshInstagramToken</item>
             </argument>
         </arguments>
     </type>

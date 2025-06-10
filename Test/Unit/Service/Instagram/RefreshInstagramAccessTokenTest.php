@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MageSuite\ContentConstructorFrontend\Test\Unit\Service;
+namespace MageSuite\ContentConstructorFrontend\Test\Unit\Service\Instagram;
 
 class RefreshInstagramAccessTokenTest extends \PHPUnit\Framework\TestCase
 {
@@ -23,7 +23,7 @@ class RefreshInstagramAccessTokenTest extends \PHPUnit\Framework\TestCase
             ->method('getFlagData')
             ->willReturn($expirationDate);
         $refreshInstagramAccessToken = $this->objectManager->create(
-            \MageSuite\ContentConstructorFrontend\Service\RefreshInstagramAccessToken::class,
+            \MageSuite\ContentConstructorFrontend\Service\Instagram\RefreshAccessToken::class,
             [
                 'flagManager' => $this->flagManagerMock
             ]
@@ -33,13 +33,13 @@ class RefreshInstagramAccessTokenTest extends \PHPUnit\Framework\TestCase
 
     public function testExecuteWillSkipUpdate()
     {
-        $expirationDate = strtotime('+5 days');
+        $expirationDate = strtotime('+6 days');
         $this->flagManagerMock
             ->expects($this->once())
             ->method('getFlagData')
             ->willReturn($expirationDate);
         $refreshInstagramAccessToken = $this->objectManager->create(
-            \MageSuite\ContentConstructorFrontend\Service\RefreshInstagramAccessToken::class,
+            \MageSuite\ContentConstructorFrontend\Service\Instagram\RefreshAccessToken::class,
             [
                 'flagManager' => $this->flagManagerMock
             ]
