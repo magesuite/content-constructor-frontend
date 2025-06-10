@@ -2,34 +2,26 @@
 
 declare(strict_types=1);
 
-namespace MageSuite\ContentConstructorFrontend\Service;
+namespace MageSuite\ContentConstructorFrontend\Service\Instagram;
 
-class RefreshInstagramAccessToken
+class RefreshAccessToken
 {
+    public const REFRESH_ACCESS_TOKEN_ENDPOINT = 'https://graph.instagram.com/refresh_access_token';
+    public const INSTAGRAM_REFRESH_TOKEN_THRESHOLD = 5;
     public const PAYLOAD_KEY_ACCESS_TOKEN = 'access_token';
     public const PAYLOAD_KEY_EXPIRES_IN = 'expires_in';
-    public const PAYLOAD_NESTING_DEPTH = 2;
     public const FLAG_NAME = 'cc_instagram_access_token';
 
-    protected \GuzzleHttp\Client $client;
-    protected \MageSuite\ContentConstructorFrontend\Helper\Configuration $instagramConfiguration;
-    protected \Magento\Framework\App\Config $config;
-    protected \Magento\Framework\FlagManager $flagManager;
-
     public function __construct(
-        \GuzzleHttp\Client $client,
-        \MageSuite\ContentConstructorFrontend\Helper\Configuration $instagramConfiguration,
-        \Magento\Framework\App\Config $config,
-        \Magento\Framework\FlagManager $flagManager
-    ) {
-        $this->client = $client;
-        $this->instagramConfiguration = $instagramConfiguration;
-        $this->config = $config;
-        $this->flagManager = $flagManager;
-    }
+        protected \GuzzleHttp\Client $client,
+        protected \MageSuite\ContentConstructorFrontend\Helper\Configuration\Instagram $instagramConfiguration,
+        protected \Magento\Framework\App\Config $config,
+        protected \Magento\Framework\FlagManager $flagManager
+    ) {}
 
     /**
      * @throws \Exception
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function execute(): void
     {
@@ -56,18 +48,21 @@ class RefreshInstagramAccessToken
             return false;
         }
 
-        $threshold = $this->instagramConfiguration->getInstagramAccessTokenRefreshThreshold();
-        $thresholdDate = strtotime(sprintf('+%d days', $threshold));
+        $thresholdDate = strtotime(sprintf('+%d days', self::INSTAGRAM_REFRESH_TOKEN_THRESHOLD));
 
         return $thresholdDate < $expiresAt;
     }
 
     protected function buildUrl(): string
     {
-        $currentAccessToken = $this->instagramConfiguration->getInstagramAccessToken();
-        $refreshUrl = $this->instagramConfiguration->getInstagramRefreshAccessTokenUrl();
+        $currentAccessToken = $this->instagramConfiguration->getAccessToken();
 
-        return sprintf($refreshUrl, $currentAccessToken);
+        $params = [
+            'grant_type' => 'ig_refresh_token',
+            'access_token' => $currentAccessToken,
+        ];
+
+        return self::REFRESH_ACCESS_TOKEN_ENDPOINT . '?' . http_build_query($params);
     }
 
     /**
@@ -86,14 +81,11 @@ class RefreshInstagramAccessToken
         }
     }
 
-    /**
-     * @throws \JsonException
-     */
     protected function getPayload(\Psr\Http\Message\ResponseInterface $response): array
     {
         $payload = $response->getBody()->getContents();
 
-        return json_decode($payload, true, self::PAYLOAD_NESTING_DEPTH, JSON_THROW_ON_ERROR);
+        return json_decode($payload, true);
     }
 
     /**
@@ -111,7 +103,7 @@ class RefreshInstagramAccessToken
         $newAccessToken = $payload[self::PAYLOAD_KEY_ACCESS_TOKEN];
         $expiresAt = time() + $payload[self::PAYLOAD_KEY_EXPIRES_IN];
         $this->flagManager->saveFlag(self::FLAG_NAME, $expiresAt);
-        $this->instagramConfiguration->setInstagramAccessToken($newAccessToken);
+        $this->instagramConfiguration->setAccessToken($newAccessToken);
 
         $this->config->clean();
     }

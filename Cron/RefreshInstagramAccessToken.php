@@ -6,23 +6,15 @@ namespace MageSuite\ContentConstructorFrontend\Cron;
 
 class RefreshInstagramAccessToken
 {
-    protected \MageSuite\ContentConstructorFrontend\Helper\Configuration $configuration;
-    protected \MageSuite\ContentConstructorFrontend\Service\RefreshInstagramAccessToken $refreshInstagramAccessToken;
-    protected \Psr\Log\LoggerInterface $logger;
-
     public function __construct(
-        \MageSuite\ContentConstructorFrontend\Helper\Configuration $configuration,
-        \MageSuite\ContentConstructorFrontend\Service\RefreshInstagramAccessToken $refreshInstagramAccessToken,
-        \Psr\Log\LoggerInterface $logger
-    ) {
-        $this->configuration = $configuration;
-        $this->refreshInstagramAccessToken = $refreshInstagramAccessToken;
-        $this->logger = $logger;
-    }
+        protected \MageSuite\ContentConstructorFrontend\Helper\Configuration\Instagram $instagramConfiguration,
+        protected \MageSuite\ContentConstructorFrontend\Service\Instagram\RefreshAccessToken $refreshInstagramAccessToken,
+        protected \Psr\Log\LoggerInterface $logger
+    ) {}
 
     public function execute(): bool
     {
-        if (empty($this->configuration->getInstagramAccessToken())) {
+        if (empty($this->instagramConfiguration->getAccessToken())) {
             return false;
         }
 

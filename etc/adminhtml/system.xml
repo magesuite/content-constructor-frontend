@@ -25,27 +25,25 @@
             </group>
             <group id="instagram_component" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Instagram Data Feed Component Configuration</label>
-                <field id="access_token" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Access Token</label>
+                <field id="client_id" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>App ID</label>
                 </field>
-                <field id="access_token_refresh_threshold" translate="label" type="text" sortOrder="24" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
-                    <label>Access Token Refresh Threshold</label>
-                    <comment>Refresh access token X day(s) before expiration</comment>
+                <field id="client_secret" translate="label" type="obscure" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>App Secret</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
                 </field>
-                <field id="refresh_access_token_url" translate="label" type="text" sortOrder="28" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
-                    <label>Refresh Access Token Url</label>
-                    <depends>
-                        <field id="access_token_enable_auto_refresh">1</field>
-                    </depends>
+                <field id="authorize" translate="label" type="button" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Authorize Instagram</label>
+                    <frontend_model>MageSuite\ContentConstructorFrontend\Block\System\Config\Form\Field\AuthorizeInstagramButton</frontend_model>
                 </field>
-                <field id="user_id" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="user_id" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>User ID</label>
+                    <frontend_model>MageSuite\ContentConstructorFrontend\Block\System\Config\Form\Field\Disabled</frontend_model>
                 </field>
-                <field id="media_api_url" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
-                    <label>Media Api Url</label>
-                </field>
-                <field id="user_id_api_url" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
-                    <label>User ID Api Url</label>
+                <field id="access_token" translate="label" type="obscure" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Access Token</label>
+                    <frontend_model>MageSuite\ContentConstructorFrontend\Block\System\Config\Form\Field\Disabled</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
                 </field>
             </group>
             <group id="preload_image" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
