@@ -46,7 +46,7 @@ $includeStylesInComponent = $block->getVar('product_grid/include_styles_in_compo
 
 <div class="cs-container cs-container--products-grid<?= $containerClasses ?><?= $visibility ? ' ' .$visibility : ''; ?>">
     <div class="cs-container__inner">
-        <div class="cs-products-grid<?= $componentClasses ?>">
+        <div class="cs-products-grid<?= $componentClasses ?>" data-mage-init='{"ccProductsGrid": {}}'>
             <div class="cs-grid-layout cs-products-grid__grid-layout">
                 <ul class="cs-grid-layout__grid cs-products-grid__grid" id="pg-<?= $teasersSetRandId ?>">
                     <?php if(!empty($items) && $viewModel->useTeaser()): ?>
