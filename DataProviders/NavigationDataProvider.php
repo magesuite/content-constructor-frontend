@@ -132,6 +132,7 @@ class NavigationDataProvider
             'image_teaser_paragraph',
             'image_teaser_button_label',
             'image_teaser_button_link',
+            'image_teaser_alt',
             'image_teaser'
         ]);
         $categories->load();
@@ -155,6 +156,7 @@ class NavigationDataProvider
             'paragraph' => $categoryData['image_teaser_paragraph'] ?? '',
             'button_label' => $categoryData['image_teaser_button_label'] ?? '',
             'button_link' => (isset($categoryData['image_teaser_button_link']) and $categoryData['image_teaser_button_link']) ? $this->categoryFrontendHelper->prepareCategoryCustomUrl($categoryData['image_teaser_button_link']) : '',
+            'image_alt' => $categoryData['image_teaser_alt'] ?? '',
             'src_set' => $imageTeaserUrl ? $this->mediaResolver->resolveSrcSetByDensity($imageTeaserUrl) : ''
         ];
     }
