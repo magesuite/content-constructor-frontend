@@ -1,11 +1,12 @@
-"Page not found.","Page introuvable."
+"Access Token","Authentification d’accès"
+"Button icon","Icône de bouton"
+"Clicking one of the options will take you to the results page.","Un clic sur l'une des options vous amènera à la page de résultats."
 Configure,Configurer
 Day,Jour
-Hour,Heure
-Sale,Vente
-"Access Token","Authentification d’accès"
-"User ID","ID Utilisateur"
 "Go to previous step","Aller à l'étape précédente"
-"Button icon","Icône de bouton"
+Hour,Heure
 "Next slide(s)","Diapositive(s) suivante(s)"
+"Page not found.","Page introuvable."
 "Previous slide(s)","Diapositive(s) précédente(s)"
+Sale,Vente
+"User ID","ID Utilisateur"

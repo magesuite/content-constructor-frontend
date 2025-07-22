@@ -6,6 +6,7 @@ $viewModel = $block->getViewModel();
 
 $visibility = $block->getVisibilityClass();
 $steps = $viewModel->getSteps();
+$totalSteps = count($steps);
 $i = 0;
 
 $componentClasses = $block->getSkipSpacing() ? ' cs-product-finder--skip-spacing' : '';
@@ -38,6 +39,7 @@ $includeStylesInComponent = $block->getVar('product_finder/include_styles_in_com
                 $stepClasses[] = "cs-product-finder__step--options-tablet_".$stepOptionsPerRow['tablet'];
                 $stepClasses[] = " cs-product-finder__step--options-desktop_".$stepOptionsPerRow['desktop'];
                 $stepClasses[] = $step['additional_css_class'];
+                $isLastStep = ($i === $totalSteps - 1);
 
                 if($i == 0) {
                     $stepClasses[] = 'cs-product-finder__step--current';
@@ -67,6 +69,11 @@ $includeStylesInComponent = $block->getVar('product_finder/include_styles_in_com
                         data-attributes='<?=json_encode($option['attributes'])?>'
                         data-category-id='<?=isset($option['category_id']) ? $option['category_id'] : '' ?>'
                         data-category-only='<?=isset($option['category_only']) ? $option['category_only'] : '' ?>'
+                        <?php if ($i == 0): ?>
+                            tabindex="0"
+                        <?php else : ?>
+                            tabindex="-1"
+                        <?php endif; ?>
                     >
                         <div class="cs-product-finder__option-sizer"></div>
                         <div class="cs-product-finder__option-content">
@@ -74,7 +81,7 @@ $includeStylesInComponent = $block->getVar('product_finder/include_styles_in_com
                             <img
                                 class="cs-product-finder__option-image"
                                 src="<?=$option['image']?>"
-                                alt="<?= $option['label'] ?: __('Option') ?>"
+                                <?= isset($option['label']) ? 'role="presentation"' : 'alt="' . $escaper->escapeHtmlAttr(__('Option')) . '"' ?>
                                 <?php if ($i > 0 && !isset($option['imageLoading'])): ?>
                                     loading="lazy"
                                 <?php else : ?>
@@ -91,7 +98,12 @@ $includeStylesInComponent = $block->getVar('product_finder/include_styles_in_com
                     </div>
                     <?php endforeach; ?>
                 </div>
-                <button class="cs-product-finder__back-button">
+                <?php if ($isLastStep): ?>
+                    <div class="cs-product-finder__reload-info">
+                    <?= $escaper->escapeHtml(__('Clicking one of the options will take you to the results page.')) ?>
+                    </div>
+                <?php endif; ?>
+                <button class="cs-product-finder__back-button" tabindex="-1">
                     <span class="cs-product-finder__back-button-span"><?=__("Go to previous step")?></span>
                     <?= $this->getLayout()
                             ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
@@ -104,7 +116,7 @@ $includeStylesInComponent = $block->getVar('product_finder/include_styles_in_com
             </article>
             <?php $i++; ?>
             <?php endforeach; ?>
-            <button class="cs-product-finder__back-button">
+            <button class="cs-product-finder__back-button" tabindex="-1">
                 <span class="cs-product-finder__back-button-span"><?=__("Go to previous step")?></span>
                 <?= $this->getLayout()
                         ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
