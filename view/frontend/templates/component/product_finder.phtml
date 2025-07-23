@@ -69,6 +69,7 @@ $includeStylesInComponent = $block->getVar('product_finder/include_styles_in_com
                         data-attributes='<?=json_encode($option['attributes'])?>'
                         data-category-id='<?=isset($option['category_id']) ? $option['category_id'] : '' ?>'
                         data-category-only='<?=isset($option['category_only']) ? $option['category_only'] : '' ?>'
+                        role="button"
                         <?php if ($i == 0): ?>
                             tabindex="0"
                         <?php else : ?>
