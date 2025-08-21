@@ -9,11 +9,11 @@ $includeStylesInComponent = $block->getVar('separator/include_styles_in_componen
 ?>
 
 <?php if ($includeStylesInComponent): ?>
-    <?= $block->getCssOnce('css/separator.css'); ?>
+    <?= /** @noEscape */ $block->getCssOnce('css/separator.css'); ?>
 <?php endif; ?>
 
-<div class="cs-container cs-container--separator<?= $visibility ? ' ' .$visibility : ''; ?>">
+<div class="cs-container cs-container--separator<?= /** @noEscape */ $visibility ? ' ' .$visibility : ''; ?>">
     <div class="cs-container__inner">
-        <hr class="cs-separator<?= $componentClasses ?>" data-mage-init='{ "ccSeparator": {} }'>
+        <hr class="cs-separator<?= /** @noEscape */ $componentClasses ?>" data-mage-init='{ "ccSeparator": {} }' aria-hidden="true" />
     </div>
 </div>
