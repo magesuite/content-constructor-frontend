@@ -3,8 +3,9 @@
     <module name="MageSuite_ContentConstructorFrontend" setup_version="1.0.4">
         <sequence>
             <module name="Magento_Cms"/>
-            <module name="MageSuite_Frontend" />
             <module name="Magento_Swatches"/>
+            <module name="MageSuite_DailyDeal"/>
+            <module name="MageSuite_Frontend" />
             <module name="Smile_ElasticsuiteSwatches"/>
         </sequence>
     </module>
