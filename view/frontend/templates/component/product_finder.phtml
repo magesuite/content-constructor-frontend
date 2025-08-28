@@ -79,6 +79,7 @@ $includeStylesInComponent = $block->getVar('product_finder/include_styles_in_com
                             tabindex="0"
                         <?php else : ?>
                             tabindex="-1"
+                            aria-hidden="true"
                         <?php endif; ?>
                     >
                         <div class="cs-product-finder__option-sizer"></div>
@@ -104,7 +105,7 @@ $includeStylesInComponent = $block->getVar('product_finder/include_styles_in_com
                     </div>
                     <?php endforeach; ?>
                 </div>
-                <button class="cs-product-finder__back-button" tabindex="-1">
+                <button class="cs-product-finder__back-button" tabindex="-1" aria-hidden="true">
                     <span class="cs-product-finder__back-button-span"><?=__("Go to previous step")?></span>
                     <?= $this->getLayout()
                             ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
@@ -117,7 +118,7 @@ $includeStylesInComponent = $block->getVar('product_finder/include_styles_in_com
             </article>
             <?php $i++; ?>
             <?php endforeach; ?>
-            <button class="cs-product-finder__back-button" tabindex="-1">
+            <button class="cs-product-finder__back-button" tabindex="-1" aria-hidden="true">
                 <span class="cs-product-finder__back-button-span"><?=__("Go to previous step")?></span>
                 <?= $this->getLayout()
                         ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
