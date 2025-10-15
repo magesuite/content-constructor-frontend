@@ -15,7 +15,7 @@ class Authorize implements \Magento\Framework\App\Action\HttpGetActionInterface
 
     public function execute(): \Magento\Framework\Controller\Result\Redirect
     {
-        $code = $this->request->getParam('code');
+        $code = (string)$this->request->getParam('code');
         $code = rtrim($code, '#_');
 
         if (empty($code)) {
