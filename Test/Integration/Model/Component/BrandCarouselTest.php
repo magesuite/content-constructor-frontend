@@ -12,7 +12,7 @@ class BrandCarouselTest extends \PHPUnit\Framework\TestCase
 {
     protected ?\MageSuite\ContentConstructorFrontend\Model\Component\BrandCarousel $brandCarousel = null;
     protected ?\Magento\Store\Model\StoreManagerInterface $storeManager = null;
-    protected string $brandSubfolder = '';
+    protected ?string $brandSubfolder = '';
 
     protected function setUp(): void
     {
