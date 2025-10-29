@@ -7,9 +7,15 @@ $slide = $block->getSlide();
 $isSvg = $slide->isSvg();
 
 /**
+ * If set to true, image will use data-consent-src and data-consent-srcset attributes
+ * instead of standard src and srcset attributes, so images will not be loaded by default.
+ * Loading such images needs to be handled by a custom script that relies on a consent management.
+ */
+$isConsentRequired = $block->getIsConsentRequired() ?? false;
+
+/**
  * Image properties with support for conditional lazy loading.
  */
-
 $origImageSrc = $block->escapeUrl($slide->getSrc());
 $hasImage = !empty($origImageSrc);
 $placeholderImageSrc = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
@@ -67,9 +73,17 @@ $isLazyLoaded = $eagerLoad ? false : $lazyLoad;
         <source
              <?php if ($isLazyLoaded): ?>
                 srcset="<?= $placeholderImageSrc ?>"
-                data-srcset="<?= $imageSrcset ?>"
+                <?php if ($isConsentRequired): ?>
+                    data-consent-srcset="<?= $imageSrcset ?>"
+                <?php else: ?>
+                    data-srcset="<?= $imageSrcset ?>"
+                <?php endif; ?>
             <?php else: ?>
-                srcset="<?= $imageSrcset ?>"
+                <?php if ($isConsentRequired): ?>
+                    data-consent-srcset="<?= $imageSrcset ?>"
+                <?php else: ?>
+                    srcset="<?= $imageSrcset ?>"
+                <?php endif; ?>
             <?php endif; ?>
 
             type="<?= $imageMimeType ?>"
@@ -90,13 +104,23 @@ $isLazyLoaded = $eagerLoad ? false : $lazyLoad;
                 aria-hidden="true"
             <?php endif ?>
 
+            src="<?= $placeholderImageSrc ?>"
             <?php if ($isLazyLoaded): ?>
-                src="<?= $placeholderImageSrc ?>"
-                data-src="<?= $origImageSrc ?>"
-                data-srcset="<?= $imageSrcset ?>"
+                <?php if ($isConsentRequired): ?>
+                    data-consent-src="<?= $origImageSrc ?>"
+                    data-consent-srcset="<?= $imageSrcset ?>"
+                <?php else: ?>
+                    data-src="<?= $origImageSrc ?>"
+                    data-srcset="<?= $imageSrcset ?>"
+                <?php endif; ?>
             <?php else: ?>
-                src="<?= $origImageSrc ?>"
-                srcset="<?= $imageSrcset ?>"
+                <?php if ($isConsentRequired): ?>
+                    data-consent-src="<?= $origImageSrc ?>"
+                    data-consent-srcset="<?= $imageSrcset ?>"
+                <?php else: ?>
+                    src="<?= $origImageSrc ?>"
+                    srcset="<?= $imageSrcset ?>"
+                <?php endif; ?>
             <?php endif; ?>
             <?php if ($imageSizes): ?>
                 sizes="<?= $imageSizes ?>"

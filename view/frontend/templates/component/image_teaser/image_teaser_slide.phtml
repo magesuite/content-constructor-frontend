@@ -11,6 +11,7 @@ $isSlider = $block->getIsSlider();
 $isSliderMobile = $block->getIsSliderMobile();
 $contentPlacement = $block->getContentPlacement();
 $contentAlign = $slide->getContentAlign();
+$isConsentRequired = $block->getIsConsentRequired() ?? false;
 
 /**
  * Call to action properties.
@@ -120,6 +121,7 @@ $slideClasses .= ' '.$slide->getCcCssClasses();
             ->setFetchPriority($fetchPriority)
             ->setLazyLoad($lazyLoad)
             ->setEagerLoad($eagerLoad)
+            ->setIsConsentRequired($isConsentRequired)
             ->toHtml();
         ?>
 

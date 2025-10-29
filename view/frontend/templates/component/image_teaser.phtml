@@ -10,6 +10,7 @@ $imageTeaser = $block->getData();
 $slides = $viewModel->getSlides();
 
 $componentType = $block->getComponentType() ?? 'image_teaser';
+$isConsentRequired = $block->getIsConsentRequired() ?? false;
 $deferCSS = $block->getDeferCSS() ?? false;
 
 $desktopLayout = $imageTeaser['scenario']['desktopLayout']['id'];
@@ -186,6 +187,7 @@ $includeStylesInComponent = $block->getVar('image_teaser/include_styles_in_compo
                                 ->setContentPlacement($contentPlacement)
                                 ->setOpenLinkInNewTab($openLinkInNewTab)
                                 ->setSlideIndex($slideIndex)
+                                ->setIsConsentRequired($isConsentRequired)
                                 ->toHtml();
                             ?>
                             <?php $slideIndex++; ?>
@@ -232,6 +234,7 @@ $includeStylesInComponent = $block->getVar('image_teaser/include_styles_in_compo
                         ->setIsSlider($isSlider)
                         ->setIsSliderMobile($isSliderMobile)
                         ->setContentPlacement($contentPlacement)
+                        ->setIsConsentRequired($isConsentRequired)
                         ->toHtml();
                     ?>
                 <?php endif; ?>

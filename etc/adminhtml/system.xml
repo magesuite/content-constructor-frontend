@@ -45,6 +45,11 @@
                     <frontend_model>MageSuite\ContentConstructorFrontend\Block\System\Config\Form\Field\Disabled</frontend_model>
                     <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
                 </field>
+                <field id="consent_required" translate="label" type="select" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>User Consent Required</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If enabled, user consent will be required to load Instagram component</comment>
+                </field>
             </group>
             <group id="preload_image" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>CMS Preload Image</label>
