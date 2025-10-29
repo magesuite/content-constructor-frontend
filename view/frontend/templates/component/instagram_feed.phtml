@@ -4,9 +4,9 @@ $data = $block->getData();
 /** @var \MageSuite\ContentConstructorFrontend\Model\Component\InstagramFeed $viewModel */
 $viewModel = $block->getViewModel();
 
-
 $numberOfSlides = $data['scenario']['numberOfSlides'];
 $data['items'] = $viewModel->getFeedData($numberOfSlides);
+$isConsentRequired = $viewModel->isInstagramConsentRequired() ?? false;
 
 if(!empty($data['items'])) {
    echo $this->getLayout()
@@ -16,6 +16,17 @@ if(!empty($data['items'])) {
        ->setMix('cs-image-teaser--instagram-feed ' . $block->getMix())
        ->setContainerMix('cs-container--instagram-feed ' . $block->getContainerMix())
        ->setOpenLinkInNewTab(true)
+       ->setIsConsentRequired($isConsentRequired)
        ->toHtml();
 }
 ?>
+
+<?php if ($isConsentRequired): ?>
+    <script type="text/x-magento-init">
+    {
+        ".cs-image-teaser--instagram-feed": {
+            "ccInstagram": {}
+        }
+    }
+    </script>
+<?php endif; ?>

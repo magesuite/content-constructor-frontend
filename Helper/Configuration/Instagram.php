@@ -10,6 +10,7 @@ class Instagram
     public const XML_PATH_CC_FRONTEND_INSTAGRAM_CLIENT_SECRET = 'cc_frontend_extension/instagram_component/client_secret';
     public const XML_PATH_CC_FRONTEND_INSTAGRAM_ACCESS_TOKEN = 'cc_frontend_extension/instagram_component/access_token';
     public const XML_PATH_CC_FRONTEND_INSTAGRAM_USER_ID = 'cc_frontend_extension/instagram_component/user_id';
+    public const XML_PATH_CC_FRONTEND_INSTAGRAM_CONSENT_REQUIRED = 'cc_frontend_extension/instagram_component/consent_required';
     public const AUTHORIZATION_ENDPOINT = 'contentconstructor/instagram/authorize';
 
     public function __construct(
@@ -83,5 +84,10 @@ class Instagram
         $url = rtrim($url, '/');
 
         return $url;
+    }
+
+    public function isInstagramConsentRequired(): bool
+    {
+        return $this->scopeInterface->isSetFlag(self::XML_PATH_CC_FRONTEND_INSTAGRAM_CONSENT_REQUIRED, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
     }
 }
