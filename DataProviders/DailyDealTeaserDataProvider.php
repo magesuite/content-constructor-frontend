@@ -28,7 +28,7 @@ class DailyDealTeaserDataProvider
         $product['productObject'] = $productObject;
 
         if ($brandId = $productObject->getBrand()) {
-            $brand = $this->brandsRepository->getById($brandId);
+            $brand = $this->brandsRepository->getById((int)$brandId);
 
             $product['brandName'] = $brand->getBrandName();
         }
