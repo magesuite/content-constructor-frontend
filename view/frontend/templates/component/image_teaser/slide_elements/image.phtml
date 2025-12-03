@@ -18,14 +18,14 @@ $isConsentRequired = $block->getIsConsentRequired() ?? false;
  */
 $origImageSrc = $block->escapeUrl($slide->getSrc());
 $hasImage = !empty($origImageSrc);
-$placeholderImageSrc = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs= 1w';
+$placeholderImageSrc = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
 $imageSrcset = $slide->getSrcSet();
 
 if (empty($imageSrcset) || $isSvg) {
     $imageSrcset = $origImageSrc;
 }
 
-$imageAlt = $block->escapeHtmlAttr($viewModel->replaceHtmlTagsWithWhiteSpaces((string)$slide->getAlt()));
+$imageAlt = $viewModel->replaceHtmlTagsWithWhiteSpaces((string)$slide->getAlt());
 $imageSizes = $isSvg ? '' : $slide->getSizes();
 $isSlider = $block->getIsSlider();
 $isSliderMobile = $block->getIsSliderMobile();
