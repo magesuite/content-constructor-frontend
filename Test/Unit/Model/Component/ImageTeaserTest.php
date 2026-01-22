@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace MageSuite\ContentConstructorFrontend\Test\Unit\Model\Component;
@@ -14,17 +15,14 @@ class ImageTeaserTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @dataProvider provider
+     * @dataProvider getTestData
      */
-    public function testItCorrectlyRemovesHtmlTags($string, $expected)
+    public function testItCorrectlyRemovesHtmlTags(string $string, string $expected): void
     {
         $this->assertEquals($expected, $this->imageTeaser->replaceHtmlTagsWithWhiteSpaces($string));
     }
 
-    /**
-     * @return array[]
-     */
-    public function provider(): array
+    public static function getTestData(): array
     {
         return [
             ['Test<br>this is <b><span>a description</span></b>', 'Test this is a description'],
