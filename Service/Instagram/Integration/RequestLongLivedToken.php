@@ -7,6 +7,7 @@ namespace MageSuite\ContentConstructorFrontend\Service\Instagram\Integration;
 class RequestLongLivedToken
 {
     public const ENDPOINT = 'https://graph.instagram.com/access_token';
+    public const CONNECTION_TIMEOUT = 60;
 
     public function __construct(
         protected \MageSuite\ContentConstructorFrontend\Service\Instagram\Integration\Data\LongLivedAuthorizationDataFactory $longLivedAuthorizationDataFactory,
@@ -28,7 +29,7 @@ class RequestLongLivedToken
 
         $query = self::ENDPOINT . '?' . http_build_query($params);
 
-        $response = $this->client->get($query);
+        $response = $this->client->get($query, ['timeout' => self::CONNECTION_TIMEOUT]);
 
         if ($response->getStatusCode() !== 200) {
             $message = sprintf("Instagram API returned status code: %s", $response->getStatusCode());

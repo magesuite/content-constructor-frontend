@@ -11,6 +11,7 @@ class RefreshAccessToken
     public const PAYLOAD_KEY_ACCESS_TOKEN = 'access_token';
     public const PAYLOAD_KEY_EXPIRES_IN = 'expires_in';
     public const FLAG_NAME = 'cc_instagram_access_token';
+    public const CONNECTION_TIMEOUT = 60;
 
     public function __construct(
         protected \GuzzleHttp\Client $client,
@@ -31,7 +32,7 @@ class RefreshAccessToken
 
         $url = $this->buildUrl();
 
-        $response = $this->client->get($url);
+        $response = $this->client->get($url, ['timeout' => self::CONNECTION_TIMEOUT]);
         $this->validateResponse($response);
 
         $payload = $this->getPayload($response);
