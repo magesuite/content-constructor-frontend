@@ -7,6 +7,7 @@ namespace MageSuite\ContentConstructorFrontend\Service\Instagram;
 class GetFeedData
 {
     public const ENDPOINT_PATTERN = 'https://graph.instagram.com/v23.0/%s/media';
+    public const CONNECTION_TIMEOUT = 60;
 
     public function __construct(
         protected \GuzzleHttp\Client $client,
@@ -32,7 +33,7 @@ class GetFeedData
         $url = $endpoint . '?' . http_build_query($params);
 
         try {
-            $response = $this->client->get($url);
+            $response = $this->client->get($url, ['timeout' => self::CONNECTION_TIMEOUT]);
 
             return json_decode($response->getBody()->getContents(), true);
         } catch (\Throwable) {
