@@ -1,18 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MageSuite\ContentConstructorFrontend\Test\Integration\DataProviders;
 
 class CmsTeaserDataProviderTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @var \Magento\TestFramework\ObjectManager
-     */
-    private $objectManager;
+    protected \Magento\Framework\App\ObjectManager $objectManager;
 
-    /**
-     * @var \MageSuite\ContentConstructorFrontend\DataProviders\CmsTeaserDataProvider
-     */
-    private $dataProvider;
+    protected \MageSuite\ContentConstructorFrontend\DataProviders\CmsTeaserDataProvider $dataProvider;
 
     public function setUp(): void {
         $this->objectManager = \Magento\TestFramework\ObjectManager::getInstance();
@@ -24,9 +20,9 @@ class CmsTeaserDataProviderTest extends \PHPUnit\Framework\TestCase
     /**
      * @magentoDbIsolation enabled
      * @magentoDataFixture Magento/Store/_files/core_fixturestore.php
-     * @magentoDataFixture loadPages
+     * @magentoDataFixture MageSuite_ContentConstructorFrontend::Test/Integration/DataProviders/_files/pages.php
      */
-    public function testItReturnsCmsPagesByTagsFromPagesAssignedToCurrentAndAllStoreViews() {
+    public function testItReturnsCmsPagesByTagsFromPagesAssignedToCurrentAndAllStoreViews(): void {
         $result = $this->dataProvider->getPages([
             'limit' => 8,
             'tags' => 'second,double tag']
@@ -46,9 +42,9 @@ class CmsTeaserDataProviderTest extends \PHPUnit\Framework\TestCase
     /**
      * @magentoDbIsolation enabled
      * @magentoDataFixture Magento/Store/_files/core_fixturestore.php
-     * @magentoDataFixture loadPages
+     * @magentoDataFixture MageSuite_ContentConstructorFrontend::Test/Integration/DataProviders/_files/pages.php
      */
-    public function testItReturnsCmsPagesByIdsInCorrectOrder() {
+    public function testItReturnsCmsPagesByIdsInCorrectOrder(): void {
         $ids = [$this->getCmsPageIdByIdentifier('page_test_tag222'), $this->getCmsPageIdByIdentifier('page_test_tag111')];
 
         $result = $this->dataProvider->getPages([
@@ -62,9 +58,6 @@ class CmsTeaserDataProviderTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('Cms Test Tag Page111', $result[1]['headline']);
     }
 
-    public static function loadPages() {
-        include __DIR__.'/_files/pages.php';
-    }
 
     protected function getCmsPageIdByIdentifier($identifier)
     {

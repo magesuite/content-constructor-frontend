@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MageSuite\ContentConstructorFrontend\Test\Integration\DataProviders;
 
 /**
@@ -8,16 +10,13 @@ namespace MageSuite\ContentConstructorFrontend\Test\Integration\DataProviders;
  */
 class CategoryLinksDataProviderTest extends \PHPUnit\Framework\TestCase
 {
-    const MAIN_CATEGORY_ID = 333;
-    const SUBCATEGORIES_IDS = [334, 335, 336, 338];
-    const ORDERED_SUBCATEGORIES_IDS = [335, 334, 336];
+    protected const MAIN_CATEGORY_ID = 333;
+    protected const SUBCATEGORIES_IDS = [334, 335, 336, 338];
+    protected const ORDERED_SUBCATEGORIES_IDS = [335, 334, 336];
 
-    protected ?\Magento\TestFramework\ObjectManager $objectManager;
-
+    protected ?\Magento\Framework\App\ObjectManager $objectManager;
     protected ?\Magento\Framework\App\CacheInterface $cache;
-
     protected ?\MageSuite\ContentConstructorFrontend\Helper\Category $categoryHelper;
-
     protected ?\MageSuite\ContentConstructorFrontend\DataProviders\CategoryLinksDataProvider $dataProvider;
 
     public function setUp(): void
@@ -34,7 +33,7 @@ class CategoryLinksDataProviderTest extends \PHPUnit\Framework\TestCase
      * @magentoCache all disabled
      * @magentoDataFixture MageSuite_ContentConstructorFrontend::Test/Integration/DataProviders/_files/categories_with_products.php
      */
-    public function testItReturnsCorrectCategoriesStructure()
+    public function testItReturnsCorrectCategoriesStructure(): void
     {
         $this->cache->remove($this->categoryHelper->getCacheKey());
 
@@ -62,7 +61,7 @@ class CategoryLinksDataProviderTest extends \PHPUnit\Framework\TestCase
      * @magentoCache all disabled
      * @magentoDataFixture MageSuite_ContentConstructorFrontend::Test/Integration/DataProviders/_files/categories_with_products.php
      */
-    public function testItReturnsCorrectOrderOfSubCategories()
+    public function testItReturnsCorrectOrderOfSubCategories(): void
     {
         $this->cache->remove($this->categoryHelper->getCacheKey());
 
