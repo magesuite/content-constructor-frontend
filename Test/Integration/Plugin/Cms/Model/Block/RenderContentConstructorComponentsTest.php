@@ -1,18 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MageSuite\ContentConstructorFrontend\Test\Integration\Plugin\Cms\Model\Block;
 
 class RenderContentConstructorComponentsTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @var \Magento\Framework\ObjectManagerInterface
-     */
-    protected $objectManager;
+    protected \Magento\Framework\ObjectManagerInterface $objectManager;
 
-    /**
-     * @var \Magento\Framework\View\Layout
-     */
-    protected $layout;
+    protected \Magento\Framework\View\Layout $layout;
 
     /**
      * @inheritdoc
@@ -27,10 +23,10 @@ class RenderContentConstructorComponentsTest extends \PHPUnit\Framework\TestCase
     /**
      * @magentoAppIsolation enabled
      * @magentoDbIsolation enabled
-     * @magentoDataFixture loadBlock
+     * @magentoDataFixture MageSuite_ContentConstructorFrontend::Test/Integration/_files/block.php
      * @magentoAppArea frontend
      */
-    public function testItRendersStaticBlockWithRenderedComponents()
+    public function testItRendersStaticBlockWithRenderedComponents(): void
     {
         /** @var \Magento\Cms\Block\Block $block */
         $block = $this->layout->createBlock(
@@ -42,10 +38,5 @@ class RenderContentConstructorComponentsTest extends \PHPUnit\Framework\TestCase
         $assertRegExp = method_exists($this, 'assertMatchesRegularExpression') ? 'assertMatchesRegularExpression' : 'assertRegExp';
 
         $this->$assertRegExp('/<h2.*?>Test<\/h2>/', $block->toHtml());
-    }
-
-    public static function loadBlock()
-    {
-        include __DIR__ . '/../../../../_files/block.php';
     }
 }

@@ -1,15 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MageSuite\ContentConstructorFrontend\Test\Integration\Service;
 
 class CmsPreloadImageResolverTest extends \Magento\TestFramework\TestCase\AbstractController
 {
-    /**
-     * @var \Magento\TestFramework\ObjectManager
-     */
-    protected $objectManager;
+    protected \Magento\Framework\App\ObjectManager $objectManager;
 
-    protected function setUp() : void
+    protected function setUp(): void
     {
         parent::setUp();
         $this->objectManager = \Magento\TestFramework\ObjectManager::getInstance();
@@ -19,11 +18,11 @@ class CmsPreloadImageResolverTest extends \Magento\TestFramework\TestCase\Abstra
      * @magentoAppIsolation enabled
      * @magentoDbIsolation enabled
      * @magentoConfigFixture current_store cc_frontend_extension/preload_image/enabled 1
-     * @magentoDataFixture copyImages
-     * @magentoDataFixture loadPage
+     * @magentoDataFixture MageSuite_ContentConstructorFrontend::Test/Integration/_files/component_image.php
+     * @magentoDataFixture MageSuite_ContentConstructorFrontend::Test/Integration/_files/page.php
      * @magentoAppArea frontend
      */
-    public function testItAddCorrectPreloadUrl()
+    public function testItAddCorrectPreloadUrl(): void
     {
         $this->dispatch('/page-test');
 
@@ -40,11 +39,11 @@ class CmsPreloadImageResolverTest extends \Magento\TestFramework\TestCase\Abstra
      * @magentoAppIsolation enabled
      * @magentoDbIsolation enabled
      * @magentoConfigFixture current_store cc_frontend_extension/preload_image/enabled 1
-     * @magentoDataFixture copyImages
-     * @magentoDataFixture loadPage
+     * @magentoDataFixture MageSuite_ContentConstructorFrontend::Test/Integration/_files/component_image.php
+     * @magentoDataFixture MageSuite_ContentConstructorFrontend::Test/Integration/_files/page.php
      * @magentoAppArea frontend
      */
-    public function testItSkipNotMatchingCCComponents()
+    public function testItSkipNotMatchingCCComponents(): void
     {
         $this->dispatch('/page-with-headline');
 
@@ -61,11 +60,11 @@ class CmsPreloadImageResolverTest extends \Magento\TestFramework\TestCase\Abstra
      * @magentoAppIsolation enabled
      * @magentoDbIsolation enabled
      * @magentoConfigFixture current_store cc_frontend_extension/preload_image/enabled 1
-     * @magentoDataFixture copyImages
-     * @magentoDataFixture loadPage
+     * @magentoDataFixture MageSuite_ContentConstructorFrontend::Test/Integration/_files/component_image.php
+     * @magentoDataFixture MageSuite_ContentConstructorFrontend::Test/Integration/_files/page.php
      * @magentoAppArea frontend
      */
-    public function testItCheckComponentVisibilityCorrectly()
+    public function testItCheckComponentVisibilityCorrectly(): void
     {
         $this->dispatch('/page-with-hidden-component');
 
@@ -76,15 +75,5 @@ class CmsPreloadImageResolverTest extends \Magento\TestFramework\TestCase\Abstra
 
         $this->assertTrue($hasPreloadLinkFirstPart);
         $this->assertTrue($hasPreloadLinkSecondPart);
-    }
-
-    public static function loadPage()
-    {
-        include __DIR__ . '/../_files/page.php';
-    }
-
-    public static function copyImages()
-    {
-        include __DIR__ . '/../_files/component_image.php';
     }
 }

@@ -1,18 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MageSuite\ContentConstructorFrontend\Test\Integration\Block;
 
 class ParagraphTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @var \Magento\TestFramework\ObjectManager
-     */
-    protected $objectManager;
-
-    /**
-     * @var \MageSuite\ContentConstructorFrontend\Block\Component\StaticBlock
-     */
-    protected $block;
+    protected \Magento\Framework\App\ObjectManager $objectManager;
+    protected ?\MageSuite\ContentConstructorFrontend\Block\Component\Paragraph $block;
 
     public function setUp(): void
     {
@@ -25,7 +20,7 @@ class ParagraphTest extends \PHPUnit\Framework\TestCase
      * @magentoAppIsolation enabled
      * @magentoAppArea frontend
      */
-    public function testItRendersBlockContents()
+    public function testItRendersBlockContents(): void
     {
         $this->block = $this->objectManager->create(\MageSuite\ContentConstructorFrontend\Block\Component\Paragraph::class,
             [

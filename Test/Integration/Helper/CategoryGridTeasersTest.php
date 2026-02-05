@@ -1,32 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MageSuite\ContentConstructorFrontend\Test\Integration\Helper;
 
 class CategoryGridTeasersTest extends \PHPUnit\Framework\TestCase
 {
-    const CATEGORY_ID = 333;
-    const CURRENT_CATEGORY_REGISTRY_KEY = 'current_category';
+    protected const CATEGORY_ID = 333;
+    protected const CURRENT_CATEGORY_REGISTRY_KEY = 'current_category';
 
-    /**
-     * @var \Magento\TestFramework\ObjectManager
-     */
-    protected $objectManager;
-
-    /**
-     * @var \MageSuite\ContentConstructorFrontend\Helper\CategoryGridTeasers
-     */
-    protected $helper;
-
-
-    /**
-     * @var \Magento\Framework\Registry
-     */
-    protected $registry;
-
-    /**
-     * @var \Magento\Catalog\Api\CategoryRepositoryInterface
-     */
-    protected $categoryRepository;
+    protected \Magento\Framework\App\ObjectManager $objectManager;
+    protected \MageSuite\ContentConstructorFrontend\Helper\CategoryGridTeasers $helper;
+    protected \Magento\Framework\Registry $registry;
+    protected \Magento\Catalog\Api\CategoryRepositoryInterface $categoryRepository;
 
     public function setUp(): void
     {
@@ -34,7 +20,6 @@ class CategoryGridTeasersTest extends \PHPUnit\Framework\TestCase
         $this->helper = $this->objectManager->get(\MageSuite\ContentConstructorFrontend\Helper\CategoryGridTeasers::class);
         $this->registry = $this->objectManager->get(\Magento\Framework\Registry::class);
         $this->categoryRepository = $this->objectManager->get(\Magento\Catalog\Api\CategoryRepositoryInterface::class);
-
     }
 
     public function tearDown(): void
@@ -44,9 +29,9 @@ class CategoryGridTeasersTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @magentoDbIsolation enabled
-     * @magentoDataFixture loadCategoryWithoutGrid
+     * @magentoDataFixture MageSuite_ContentConstructorFrontend::Test/Integration/Helper/_files/category_without_grid.php
      */
-    public function testItReturnsNullWhenWereNotInCategoryPage()
+    public function testItReturnsNullWhenWereNotInCategoryPage(): void
     {
         $this->registry->register(self::CURRENT_CATEGORY_REGISTRY_KEY, null);
 
@@ -55,9 +40,9 @@ class CategoryGridTeasersTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @magentoDbIsolation enabled
-     * @magentoDataFixture loadCategoryWithoutGrid
+     * @magentoDataFixture MageSuite_ContentConstructorFrontend::Test/Integration/Helper/_files/category_without_grid.php
      */
-    public function testItReturnsNullWhenThereIsNoGridConfiguration()
+    public function testItReturnsNullWhenThereIsNoGridConfiguration(): void
     {
         $this->registerExistingCurrentCategory();
         $this->assertNull($this->helper->getConfig());
@@ -65,29 +50,15 @@ class CategoryGridTeasersTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @magentoDbIsolation enabled
-     * @magentoDataFixture loadCategoryWithGrid
+     * @magentoDataFixture MageSuite_ContentConstructorFrontend::Test/Integration/Helper/_files/category_with_grid.php
      */
-    public function testItReturnsDataArrayWhenThereIsAGridConfiguration()
+    public function testItReturnsDataArrayWhenThereIsAGridConfiguration(): void
     {
         $this->registerExistingCurrentCategory();
         $this->assertEquals(['title' => 'Grid'], $this->helper->getConfig());
     }
 
-
-    public static function loadCategoryWithoutGrid()
-    {
-        include __DIR__ . '/_files/category_without_grid.php';
-    }
-
-    public static function loadCategoryWithGrid()
-    {
-        include __DIR__ . '/_files/category_with_grid.php';
-    }
-
-    /**
-     * @return \Magento\Catalog\Api\Data\CategoryInterface
-     */
-    protected function registerExistingCurrentCategory()
+    protected function registerExistingCurrentCategory(): void
     {
         $category = $this->categoryRepository->get(self::CATEGORY_ID);
         // category loaded only by repository does not load custom_layout_update attribute

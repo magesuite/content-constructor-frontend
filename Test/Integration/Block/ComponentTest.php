@@ -1,36 +1,30 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MageSuite\ContentConstructorFrontend\Test\Integration\Block;
 
 class ComponentTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @var \MageSuite\ContentConstructorFrontend\Block\Component
-     */
-    protected $block;
+    protected \MageSuite\ContentConstructorFrontend\Block\Component $block;
+    protected \Magento\Framework\App\State $state;
+    protected \Magento\Framework\App\ObjectManager $objectManager;
 
-    /**
-     * @var \Magento\Framework\App\State
-     */
-    protected $state;
-
-    /**
-     * @var \Magento\TestFramework\ObjectManager
-     */
-    protected $objectManager;
-
-    public function setUp(): void {
+    public function setUp(): void
+    {
         $this->objectManager = \Magento\TestFramework\ObjectManager::getInstance();
 
         $this->block = $this->objectManager->create(\MageSuite\ContentConstructorFrontend\Block\Component::class);
         $this->state = $this->objectManager->get(\Magento\Framework\App\State::class);
     }
 
-    public function testItImplementsBlockInterface() {
+    public function testItImplementsBlockInterface(): void
+    {
         $this->assertInstanceOf(\Magento\Framework\View\Element\BlockInterface::class, $this->block);
     }
 
-    public function testItThrowsExceptionWhenNoTypeIsPassed() {
+    public function testItThrowsExceptionWhenNoTypeIsPassed(): void
+    {
         $this->expectException(\InvalidArgumentException::class);
 
         $this->block->toHtml();
@@ -40,7 +34,7 @@ class ComponentTest extends \PHPUnit\Framework\TestCase
      * @dataProvider componentVisibilityDataProvider
      * @magentoCache all disabled
      */
-    public function testItReturnsCorrectValuesBasedOnVisibilitySettings($visibility, $expectedResult)
+    public function testItReturnsCorrectValuesBasedOnVisibilitySettings(array $visibility, string $expectedResult): void
     {
         $baseData = [
             'id' => 'component24ab',
@@ -65,7 +59,8 @@ class ComponentTest extends \PHPUnit\Framework\TestCase
      * @magentoAppIsolation enabled
      * @magentoAppArea frontend
      */
-    public function testItShowsHeadlineComponent() {
+    public function testItShowsHeadlineComponent(): void
+    {
         $this->block->setData([
             'type' => 'headline',
             'data' => [
@@ -83,7 +78,7 @@ class ComponentTest extends \PHPUnit\Framework\TestCase
         $this->$assertContains('>Sub<', $htmlOutput);
     }
 
-    public static function componentVisibilityDataProvider()
+    public static function componentVisibilityDataProvider(): array
     {
         $expectedHtml = <<<HTML
 
