@@ -1,34 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MageSuite\ContentConstructorFrontend\Test\Integration\DataProviders;
 
 class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
 {
     const MESSAGE_SORT_DATE_DESC = ': It does not sort properly by date descending';
     const MESSAGE_SORT_DATE_ASC = ': It does not sort properly by date ascending';
-
     const MESSAGE_SORT_PRICE_DESC = ': It does not sort properly by price descending';
     const MESSAGE_SORT_PRICE_ASC = ': It does not sort properly by price ascending';
-
     const MESSAGE_FILTER_NEWEST = ': It does not filter properly new products';
-
     const MESSAGE_CATEGORY = ': It does not fetch properly from category';
-    /**
-     * @var \Magento\TestFramework\ObjectManager
-     */
-    private $objectManager;
 
-    /**
-     * @var \MageSuite\ContentConstructorFrontend\DataProviders\ProductCarouselDataProvider
-     */
-    private $dataProvider;
+    protected ?\Magento\TestFramework\ObjectManager $objectManager;
+    protected ?\MageSuite\ContentConstructorFrontend\DataProviders\ProductCarouselDataProvider $dataProvider;
+    protected ?\Magento\Catalog\Api\ProductRepositoryInterface $productRepository;
 
-    /**
-     * @var \Magento\Catalog\Api\ProductRepositoryInterface
-     */
-    private $productRepository;
-
-    public function setUp(): void {
+    public function setUp(): void
+    {
         $this->objectManager = \Magento\TestFramework\ObjectManager::getInstance();
 
         $this->dataProvider = $this->objectManager

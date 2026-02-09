@@ -1,14 +1,12 @@
 <?php
+
 declare(strict_types=1);
 
 namespace MageSuite\ContentConstructorFrontend\Test\Integration\ViewModel;
 
 class VideoTeaserTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @var \MageSuite\ContentConstructorFrontend\ViewModel\VideoTeaser
-     */
-    protected $videoTeaser;
+    protected ?\MageSuite\ContentConstructorFrontend\ViewModel\VideoTeaser $videoTeaser;
 
     protected function setUp(): void
     {

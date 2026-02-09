@@ -1,23 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MageSuite\ContentConstructorFrontend\Test\Integration\Service\ProductFinder\Redirect;
 
 class UrlGeneratorTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @var \Magento\TestFramework\ObjectManager
-     */
-    protected $objectManager;
-
-    /**
-     * @var \MageSuite\ContentConstructorFrontend\Service\ProductFinder\Redirect\UrlGenerator
-     */
-    protected $urlGenerator;
+    protected ?\Magento\TestFramework\ObjectManager $objectManager;
+    protected ?\MageSuite\ContentConstructorFrontend\Service\ProductFinder\Redirect\UrlGenerator $urlGenerator;
 
     public function setUp(): void
     {
         $this->objectManager = \Magento\TestFramework\ObjectManager::getInstance();
-
         $this->urlGenerator = $this->objectManager
             ->create(\MageSuite\ContentConstructorFrontend\Service\ProductFinder\Redirect\UrlGenerator::class);
     }

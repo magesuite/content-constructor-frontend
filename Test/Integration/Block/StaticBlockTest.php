@@ -1,18 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MageSuite\ContentConstructorFrontend\Test\Integration\Block;
 
 class StaticBlockTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @var \Magento\TestFramework\ObjectManager
-     */
-    private $objectManager;
-
-    /**
-     * @var \MageSuite\ContentConstructorFrontend\Block\Component\StaticBlock
-     */
-    private $block;
+    protected ?\Magento\TestFramework\ObjectManager $objectManager;
+    protected ?\MageSuite\ContentConstructorFrontend\Block\Component\StaticBlock $block;
 
     public function setUp(): void
     {

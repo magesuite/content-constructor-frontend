@@ -6,7 +6,7 @@ namespace MageSuite\ContentConstructorFrontend\Test\Integration\Block;
 
 class ParagraphTest extends \PHPUnit\Framework\TestCase
 {
-    protected \Magento\Framework\App\ObjectManager $objectManager;
+    protected ?\Magento\Framework\App\ObjectManager $objectManager;
     protected ?\MageSuite\ContentConstructorFrontend\Block\Component\Paragraph $block;
 
     public function setUp(): void

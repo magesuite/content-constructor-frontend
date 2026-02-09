@@ -6,9 +6,9 @@ namespace MageSuite\ContentConstructorFrontend\Test\Integration\Plugin\Cms\Model
 
 class RenderContentConstructorComponentsTest extends \PHPUnit\Framework\TestCase
 {
-    protected \Magento\Framework\ObjectManagerInterface $objectManager;
+    protected ?\Magento\Framework\ObjectManagerInterface $objectManager;
 
-    protected \Magento\Framework\View\Layout $layout;
+    protected ?\Magento\Framework\View\Layout $layout;
 
     /**
      * @inheritdoc

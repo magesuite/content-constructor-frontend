@@ -1,19 +1,13 @@
 <?php
+
 declare(strict_types=1);
 
 namespace MageSuite\ContentConstructorFrontend\Test\Integration\Model\Directive\Directives;
 
 class CmsBlockTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @var \MageSuite\ContentConstructorFrontend\Model\Directive\Directives\CmsBlock
-     */
-    protected $directive;
-
-    /**
-     * @var \Magento\Cms\Api\GetBlockByIdentifierInterface
-     */
-    protected $getBlockByIdentifier;
+    protected ?\MageSuite\ContentConstructorFrontend\Model\Directive\Directives\CmsBlock $directive;
+    protected ?\Magento\Cms\Api\GetBlockByIdentifierInterface $getBlockByIdentifier;
 
     protected function setUp(): void
     {
