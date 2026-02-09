@@ -1,23 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MageSuite\ContentConstructorFrontend\Test\Integration\Model\Directive\Directives\Product;
 
 class StoreTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @var \Magento\TestFramework\ObjectManager
-     */
-    protected $objectManager;
-
-    /**
-     * @var \MageSuite\ContentConstructorFrontend\Model\Directive\Directives\Store
-     */
-    protected $directive;
+    protected ?\Magento\TestFramework\ObjectManager $objectManager;
+    protected ?\MageSuite\ContentConstructorFrontend\Model\Directive\Directives\Store $directive;
 
     public function setUp(): void
     {
         $this->objectManager = \Magento\TestFramework\ObjectManager::getInstance();
-
         $this->directive = $this->objectManager->create(\MageSuite\ContentConstructorFrontend\Model\Directive\Directives\Store::class);
     }
 

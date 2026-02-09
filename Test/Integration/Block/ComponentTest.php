@@ -6,9 +6,9 @@ namespace MageSuite\ContentConstructorFrontend\Test\Integration\Block;
 
 class ComponentTest extends \PHPUnit\Framework\TestCase
 {
-    protected \MageSuite\ContentConstructorFrontend\Block\Component $block;
-    protected \Magento\Framework\App\State $state;
-    protected \Magento\Framework\App\ObjectManager $objectManager;
+    protected ?\MageSuite\ContentConstructorFrontend\Block\Component $block;
+    protected ?\Magento\Framework\App\State $state;
+    protected ?\Magento\Framework\App\ObjectManager $objectManager;
 
     public function setUp(): void
     {

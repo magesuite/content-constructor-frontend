@@ -6,9 +6,9 @@ namespace MageSuite\ContentConstructorFrontend\Test\Integration\Model\Directive\
 
 class PriceTest extends \PHPUnit\Framework\TestCase
 {
-    protected \Magento\Framework\App\ObjectManager $objectManager;
-    protected \MageSuite\ContentConstructorFrontend\Model\Directive\Directives\Product\Price $priceDirective;
-    protected \Magento\Framework\Registry $registry;
+    protected ?\Magento\Framework\App\ObjectManager $objectManager;
+    protected ?\MageSuite\ContentConstructorFrontend\Model\Directive\Directives\Product\Price $priceDirective;
+    protected ?\Magento\Framework\Registry $registry;
 
     public function setUp(): void
     {

@@ -1,18 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MageSuite\ContentConstructorFrontend\Test\Integration\DataProviders;
 
 class DailyDealTeaserDataProviderTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @var \Magento\TestFramework\ObjectManager
-     */
-    private $objectManager;
-
-    /**
-     * @var \MageSuite\ContentConstructorFrontend\DataProviders\DailyDealTeaserDataProvider
-     */
-    private $dataProvider;
+    protected ?\Magento\TestFramework\ObjectManager $objectManager;
+    protected ?\MageSuite\ContentConstructorFrontend\DataProviders\DailyDealTeaserDataProvider $dataProvider;
 
     public function setUp(): void {
         $this->objectManager = \Magento\TestFramework\ObjectManager::getInstance();

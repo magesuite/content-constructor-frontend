@@ -6,7 +6,7 @@ namespace MageSuite\ContentConstructorFrontend\Test\Integration\Service;
 
 class CmsPreloadImageResolverTest extends \Magento\TestFramework\TestCase\AbstractController
 {
-    protected \Magento\Framework\App\ObjectManager $objectManager;
+    protected ?\Magento\Framework\App\ObjectManager $objectManager;
 
     protected function setUp(): void
     {

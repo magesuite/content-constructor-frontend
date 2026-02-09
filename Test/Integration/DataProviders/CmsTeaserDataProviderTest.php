@@ -6,13 +6,11 @@ namespace MageSuite\ContentConstructorFrontend\Test\Integration\DataProviders;
 
 class CmsTeaserDataProviderTest extends \PHPUnit\Framework\TestCase
 {
-    protected \Magento\Framework\App\ObjectManager $objectManager;
-
-    protected \MageSuite\ContentConstructorFrontend\DataProviders\CmsTeaserDataProvider $dataProvider;
+    protected ?\Magento\Framework\App\ObjectManager $objectManager;
+    protected ?\MageSuite\ContentConstructorFrontend\DataProviders\CmsTeaserDataProvider $dataProvider;
 
     public function setUp(): void {
         $this->objectManager = \Magento\TestFramework\ObjectManager::getInstance();
-
         $this->dataProvider = $this->objectManager
             ->get(\MageSuite\ContentConstructorFrontend\DataProviders\CmsTeaserDataProvider::class);
     }

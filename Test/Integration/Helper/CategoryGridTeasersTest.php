@@ -9,10 +9,10 @@ class CategoryGridTeasersTest extends \PHPUnit\Framework\TestCase
     protected const CATEGORY_ID = 333;
     protected const CURRENT_CATEGORY_REGISTRY_KEY = 'current_category';
 
-    protected \Magento\Framework\App\ObjectManager $objectManager;
-    protected \MageSuite\ContentConstructorFrontend\Helper\CategoryGridTeasers $helper;
-    protected \Magento\Framework\Registry $registry;
-    protected \Magento\Catalog\Api\CategoryRepositoryInterface $categoryRepository;
+    protected ?\Magento\Framework\App\ObjectManager $objectManager;
+    protected ?\MageSuite\ContentConstructorFrontend\Helper\CategoryGridTeasers $helper;
+    protected ?\Magento\Framework\Registry $registry;
+    protected ?\Magento\Catalog\Api\CategoryRepositoryInterface $categoryRepository;
 
     public function setUp(): void
     {
