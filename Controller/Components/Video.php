@@ -15,6 +15,10 @@ class Video extends \Magento\Framework\App\Action\Action
 
         $videoRealPath = realpath($videoDir . \DIRECTORY_SEPARATOR . $videoPath);
 
+        if (!$videoRealPath || strpos($videoRealPath, $videoDir) !== 0) {
+            throw new \Magento\Framework\Exception\NotFoundException(__('Page not found.'));
+        }
+
         $videoFile = @fopen($videoRealPath, 'rb');
         $size = filesize($videoRealPath);
         $startByte = 0;
