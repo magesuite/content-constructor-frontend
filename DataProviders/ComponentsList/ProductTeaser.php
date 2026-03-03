@@ -6,7 +6,7 @@ namespace MageSuite\ContentConstructorFrontend\DataProviders\ComponentsList;
 
 class ProductTeaser extends DataProviderComponents
 {
-    protected string $configurableSku = '';
+    protected string $configurableSku;
 
     public function getBlocks()
     {
@@ -421,7 +421,7 @@ class ProductTeaser extends DataProviderComponents
 
     protected function getConfigurableProductSku()
     {
-        if (empty($this->configurableSku)) {
+        if (!isset($this->configurableSku)) {
             $productCollection = $this->productCollectionFactory->create();
             $productCollection
                 ->setStore($this->storeManager->getStore())
@@ -431,7 +431,7 @@ class ProductTeaser extends DataProviderComponents
                 ->setFlag('has_stock_status_filter', true)
                 ->addAttributeToFilter('status', ['eq' => \Magento\Catalog\Model\Product\Attribute\Source\Status::STATUS_ENABLED])
                 ->addAttributeToFilter('visibility', ['eq' => \Magento\Catalog\Model\Product\Visibility::VISIBILITY_BOTH]);
-            $this->configurableSku = $productCollection->getFirstItem()->getSku();
+            $this->configurableSku = $productCollection->getFirstItem()->getSku() ?? '';
         }
 
         return $this->configurableSku;
