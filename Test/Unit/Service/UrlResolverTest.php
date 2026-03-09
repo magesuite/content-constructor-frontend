@@ -1,33 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MageSuite\ContentConstructorFrontend\Test\Unit\Service;
 
 class UrlResolverTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @var \MageSuite\ContentConstructorFrontend\Service\UrlResolver
-     */
-    protected $urlResolver;
-
-    /**
-     * @var \Magento\TestFramework\ObjectManager
-     */
-    protected $objectManager;
-
-    /**
-     * @var \Magento\Catalog\Api\ProductRepositoryInterface
-     */
-    protected $productRepositoryStub;
-
-    /**
-     * @var \Magento\Catalog\Api\CategoryRepositoryInterface
-     */
-    protected $categoryRepositoryStub;
-
-    /**
-     * @var \Magento\Cms\Api\PageRepositoryInterface
-     */
-    protected $pageRepositoryStub;
+    protected ?\Magento\TestFramework\ObjectManager $objectManager;
+    protected ?\Magento\Catalog\Api\ProductRepositoryInterface $productRepositoryStub;
+    protected ?\Magento\Catalog\Api\CategoryRepositoryInterface $categoryRepositoryStub;
+    protected ?\Magento\Cms\Api\PageRepositoryInterface $pageRepositoryStub;
+    protected ?\MageSuite\ContentConstructorFrontend\Service\UrlResolver $urlResolver;
 
     public function setUp(): void
     {
@@ -47,17 +30,17 @@ class UrlResolverTest extends \PHPUnit\Framework\TestCase
         );
     }
 
-    public function testItImplementsUrlResolverInterface()
+    public function testItImplementsUrlResolverInterface(): void
     {
         $this->assertInstanceOf(\MageSuite\ContentConstructorFrontend\Service\UrlResolver::class, $this->urlResolver);
     }
 
-    public function testItProperlyResolvesUrlType()
+    public function testItProperlyResolvesUrlType(): void
     {
         $this->assertEquals(\MageSuite\ContentConstructorFrontend\Service\UrlResolver::TYPE_DIRECT, $this->urlResolver->getEntityType('http://google.pl'));
     }
 
-    public function testItProperlyResolvesMediaUrl()
+    public function testItProperlyResolvesMediaUrl(): void
     {
         $url = $this->urlResolver->resolve('{{media url="wysiwyg/file.pdf"}}');
 
@@ -65,38 +48,42 @@ class UrlResolverTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('http://localhost/media/wysiwyg/file.pdf', $url);
     }
 
-    public function testItReturnsEmptyStringWhenUnknownWidgetTypeIsPassed()
+    public function testItReturnsEmptyStringWhenUnknownWidgetTypeIsPassed(): void
     {
         $url = $this->urlResolver->resolve('{{widget type="unknown-widget-type"}}');
 
         $this->assertEquals('', $url);
     }
 
-    public function testItProperlyResolvesDirectUrl()
+    public function testItProperlyResolvesDirectUrl(): void
     {
         $url = $this->urlResolver->resolve('http://google.com');
 
         $this->assertEquals('http://google.com', $url);
     }
 
-    public function testItProperlyResolvesLinkToSection()
+    public function testItProperlyResolvesLinkToSection(): void
     {
         $url = $this->urlResolver->resolve('#dummy-section');
 
         $this->assertEquals('#dummy-section', $url);
     }
 
-    public function testItProperlyResolvesRelativeUrl()
+    public function testItProperlyResolvesRelativeUrl(): void
     {
-        $expectedUrl = 'http://localhost/index.php/dummy-link/';
+        $urls = [
+            'dummy-link' => 'http://localhost/index.php/dummy-link/',
+            '/dummy-link' => 'http://localhost/index.php/dummy-link',
+            '/dummy-link/part_one/part_two/part_three' => 'http://localhost/index.php/dummy-link/part_one/part_two/part_three',
+        ];
 
-        foreach (['dummy-link', '/dummy-link'] as $url) {
+        foreach ($urls as $url => $expectedUrl) {
             $url = $this->urlResolver->resolve($url);
             $this->assertEquals($expectedUrl, $url);
         }
     }
 
-    public function testItProperlyResolvesProductUrl()
+    public function testItProperlyResolvesProductUrl(): void
     {
         $product = $this->getProductFixture()->setUrlKey('product.phtml');
 
@@ -107,7 +94,7 @@ class UrlResolverTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('http://localhost/index.php/catalog/product/view/s/product.phtml/', $url);
     }
 
-    public function testItProperlyResolvesCategoryUrl()
+    public function testItProperlyResolvesCategoryUrl(): void
     {
         $category = $this->getCategoryFixture()->setUrl('category.phtml');
 
@@ -118,7 +105,7 @@ class UrlResolverTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('category.phtml', $url);
     }
 
-    public function testItProperlyResolvesPageUrl()
+    public function testItProperlyResolvesPageUrl(): void
     {
         $page = $this->getPageFixture()->setIdentifier('page.phtml');
 
@@ -129,26 +116,17 @@ class UrlResolverTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('http://localhost/index.php/page.phtml', $url);
     }
 
-    /**
-     * @return \Magento\Catalog\Model\Product
-     */
-    private function getProductFixture()
+    private function getProductFixture(): \Magento\Catalog\Api\Data\ProductInterface
     {
         return $this->objectManager->create(\Magento\Catalog\Api\Data\ProductInterface::class);
     }
 
-    /**
-     * @return \Magento\Catalog\Model\Category
-     */
-    private function getCategoryFixture()
+    private function getCategoryFixture(): \Magento\Catalog\Api\Data\CategoryInterface
     {
         return $this->objectManager->create(\Magento\Catalog\Api\Data\CategoryInterface::class);
     }
 
-    /**
-     * @return \Magento\Cms\Model\Page
-     */
-    private function getPageFixture()
+    private function getPageFixture(): \Magento\Cms\Api\Data\PageInterface
     {
         return $this->objectManager->create(\Magento\Cms\Api\Data\PageInterface::class);
     }

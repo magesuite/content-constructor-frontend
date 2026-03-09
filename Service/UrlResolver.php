@@ -1,69 +1,51 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MageSuite\ContentConstructorFrontend\Service;
 
 class UrlResolver
 {
-    protected $classesToTypes = [
+    protected array $classesToTypes = [
         \Magento\Catalog\Block\Category\Widget\Link::class => self::TYPE_CATEGORY,
         \Magento\Catalog\Block\Product\Widget\Link::class => self::TYPE_PRODUCT,
         \Magento\Cms\Block\Widget\Page\Link::class => self::TYPE_PAGE
     ];
 
-    const TYPE_CATEGORY = 'category';
-    const TYPE_PRODUCT = 'product';
-    const TYPE_PAGE = 'page';
-    const TYPE_DIRECT = 'direct';
-    const TYPE_MEDIA = 'media';
+    public const TYPE_CATEGORY = 'category';
+    public const TYPE_PRODUCT = 'product';
+    public const TYPE_PAGE = 'page';
+    public const TYPE_DIRECT = 'direct';
+    public const TYPE_MEDIA = 'media';
 
-    /**
-     * @var \Magento\Catalog\Api\ProductRepositoryInterface
-     */
-    protected $productRepository;
+    public const WIDGET_REGEXP = '/{{widget .*?}}/si';
+    public const MEDIA_REGEXP = '/{{media .*?}}/si';
 
-    /**
-     * @var \Magento\Catalog\Api\CategoryRepositoryInterface
-     */
-    protected $categoryRepository;
-
-    /**
-     * @var \Magento\Framework\UrlInterface
-     */
-    protected $urlBuilder;
-
-    /**
-     * @var \Magento\Cms\Api\PageRepositoryInterface
-     */
-    protected $pageRepository;
-
-    /**
-     * @var MediaResolver
-     */
-    protected $mediaResolver;
-
-    const WIDGET_REGEXP = '/{{widget .*?}}/si';
-
-    const MEDIA_REGEXP = '/{{media .*?}}/si';
+    protected \Magento\Catalog\Api\ProductRepositoryInterface $productRepository;
+    protected \Magento\Catalog\Api\CategoryRepositoryInterface $categoryRepository;
+    protected \Magento\Framework\UrlInterface $urlBuilder;
+    protected \Magento\Cms\Api\PageRepositoryInterface $pageRepository;
+    protected \MageSuite\ContentConstructorFrontend\Service\MediaResolver $mediaResolver;
 
     public function __construct(
         \Magento\Catalog\Api\ProductRepositoryInterface $productRepository,
         \Magento\Catalog\Api\CategoryRepositoryInterface $categoryRepository,
         \Magento\Cms\Api\PageRepositoryInterface $pageRepository,
-        \MageSuite\ContentConstructorFrontend\Service\MediaResolver $mediaResolver,
-        \Magento\Framework\UrlInterface $urlBuilder
+        \Magento\Framework\UrlInterface $urlBuilder,
+        \MageSuite\ContentConstructorFrontend\Service\MediaResolver $mediaResolver
     ) {
         $this->productRepository = $productRepository;
         $this->categoryRepository = $categoryRepository;
-        $this->urlBuilder = $urlBuilder;
         $this->pageRepository = $pageRepository;
+        $this->urlBuilder = $urlBuilder;
         $this->mediaResolver = $mediaResolver;
     }
 
     /**
      * Returns URL for entities (product, category, cms page) using identifier
-     * @var $resourceIdentifier identifier, example: {{widget type="Magento\Catalog\Block\Product\Widget\Link" template="product/widget/link/link_block.phtml" id_path="product/106101"}}
+     * example: {{widget type="Magento\Catalog\Block\Product\Widget\Link" template="product/widget/link/link_block.phtml" id_path="product/106101"}}
      */
-    public function resolve(string $resourceIdentifier)
+    public function resolve(string $resourceIdentifier): string
     {
         if (empty($resourceIdentifier)) {
             return $resourceIdentifier;
@@ -79,33 +61,33 @@ class UrlResolver
 
         $type = $this->getEntityType($resourceIdentifier);
 
-        if ($type === null || empty($type)) {
+        if (empty($type)) {
             return '';
         }
 
         $id = $this->getEntityId($resourceIdentifier, $type);
 
-        $functionName = 'get'.ucfirst($type).'Url';
+        $functionName = sprintf('get%sUrl', ucfirst($type));
 
         return $this->$functionName($id);
     }
 
-    protected function isDirectUrl(string $resourceIdentifier)
+    protected function isDirectUrl(string $resourceIdentifier): bool
     {
-        return !preg_match(self::WIDGET_REGEXP, $resourceIdentifier);
+        return preg_match(self::WIDGET_REGEXP, $resourceIdentifier) !== 1;
     }
 
-    protected function isMediaUrl(string $resourceIdentifier)
+    protected function isMediaUrl(string $resourceIdentifier): bool
     {
-        return preg_match(self::MEDIA_REGEXP, $resourceIdentifier);
+        return preg_match(self::MEDIA_REGEXP, $resourceIdentifier) === 1;
     }
 
-    protected function getMediaUrl($resourceIdentifier)
+    protected function getMediaUrl(string $resourceIdentifier): string
     {
         return $this->mediaResolver->resolve($resourceIdentifier);
     }
 
-    protected function getProductUrl($id)
+    protected function getProductUrl(string $id): string
     {
         $product = $this->productRepository->getById($id);
 
@@ -114,7 +96,7 @@ class UrlResolver
 
     protected function getUrl(string $url): string
     {
-        if (strpos($url, '#') === 0) {
+        if (str_starts_with($url, '#')) {
             return $url;
         }
 
@@ -122,24 +104,28 @@ class UrlResolver
             return $url;
         }
 
+        if (str_starts_with($url, '/')) {
+            return $this->urlBuilder->getUrl('', ['_direct' => ltrim($url, '/')]);
+        }
+
         $url = ltrim($url, '/');
 
         return $this->urlBuilder->getUrl($url);
     }
 
-    protected function getCategoryUrl($id)
+    protected function getCategoryUrl(string $id): string
     {
         return $this->categoryRepository->get($id)->getUrl();
     }
 
-    protected function getPageUrl($id)
+    protected function getPageUrl(string $id): string
     {
         $page = $this->pageRepository->getById($id);
 
         return $this->urlBuilder->getUrl(null, ['_direct' => $page->getIdentifier()]);
     }
 
-    public function getEntityId($string, $type)
+    public function getEntityId(string $string, string $type): string
     {
         if ($type == self::TYPE_PAGE) {
             return $this->getPageId($string);
@@ -148,7 +134,7 @@ class UrlResolver
         return $this->getProductOrCategoryId($string, $type);
     }
 
-    public function getEntityType($string)
+    public function getEntityType(string $string): ?string
     {
         if ($this->isDirectUrl($string)) {
             return self::TYPE_DIRECT;
@@ -158,18 +144,20 @@ class UrlResolver
 
         $class = $results['class'][0];
 
-        return isset($this->classesToTypes[$class]) ? $this->classesToTypes[$class] : null;
+        return $this->classesToTypes[$class] ?? null;
     }
 
-    protected function getPageId($string)
+    protected function getPageId(string $string): string
     {
         preg_match_all('/page_id="(?<id>[0-9]+)"/', $string, $results, PREG_PATTERN_ORDER);
+
         return $results['id'][0];
     }
 
-    protected function getProductOrCategoryId($string, $type)
+    protected function getProductOrCategoryId(string $string, string $type): string
     {
         preg_match_all('/' . $type . '\/(?<id>[0-9]+)/si', $string, $results, PREG_PATTERN_ORDER);
+
         return $results['id'][0];
     }
 }
