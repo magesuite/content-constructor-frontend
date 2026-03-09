@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MageSuite\ContentConstructorFrontend\Model\Component;
 
 class GenericSlide extends \Magento\Framework\DataObject
@@ -14,7 +16,7 @@ class GenericSlide extends \Magento\Framework\DataObject
         parent::__construct($data);
     }
 
-    public function getCta()
+    public function getCta(): ?array
     {
         $data = $this->getData();
 
@@ -24,14 +26,14 @@ class GenericSlide extends \Magento\Framework\DataObject
 
         $cta = $data['cta'];
 
-        if (isset($cta['href']) && !empty($cta['href'])) {
+        if (!empty($cta['href'])) {
             $cta['href'] = $this->getUrl($cta['href']);
         }
 
         return $cta;
     }
 
-    public function getHref()
+    public function getHref(): ?string
     {
         $href = $this->_getData('href');
 
@@ -42,13 +44,14 @@ class GenericSlide extends \Magento\Framework\DataObject
         return $this->getUrl($href);
     }
 
-    public function getUrl($url)
+    public function getUrl(string $url): string
     {
         $url = $this->urlResolver->resolve($url);
+
         return rtrim($url, '/');
     }
 
-    public function getWidth()
+    public function getWidth(): ?int
     {
         if (!$this->getData('width')) {
             $data = $this->getData();
@@ -66,10 +69,10 @@ class GenericSlide extends \Magento\Framework\DataObject
             $this->setData('width', max(array_keys($srcSetArray)));
         }
 
-        return $this->getData('width');
+        return (int)$this->getData('width');
     }
 
-    public function getHeight()
+    public function getHeight(): ?int
     {
         $width = $this->getWidth();
         $data = $this->getData();
@@ -94,7 +97,7 @@ class GenericSlide extends \Magento\Framework\DataObject
         return (int)ceil(($width / $widthRatio) * $heightRatio);
     }
 
-    public function getSrc()
+    public function getSrc(): ?string
     {
         $data = $this->getData();
 
@@ -103,7 +106,7 @@ class GenericSlide extends \Magento\Framework\DataObject
         }
     }
 
-    public function getSrcSet()
+    public function getSrcSet(): ?string
     {
         $data = $this->getData();
 
@@ -112,7 +115,7 @@ class GenericSlide extends \Magento\Framework\DataObject
         }
     }
 
-    public function isSvg()
+    public function isSvg(): bool
     {
         $src = $this->getSrc();
 
@@ -120,12 +123,12 @@ class GenericSlide extends \Magento\Framework\DataObject
             return false;
         }
 
-        $extension = pathinfo($src, PATHINFO_EXTENSION);
+        $extension = pathinfo($src, PATHINFO_EXTENSION); //phpcs:ignore
 
         return strtolower($extension) == 'svg';
     }
 
-    public function getAlt()
+    public function getAlt(): string
     {
         $teaser = $this->getData();
 
@@ -152,11 +155,7 @@ class GenericSlide extends \Magento\Framework\DataObject
         return trim($generatedAltText);
     }
 
-    /**
-     * @param $data
-     * @return bool
-     */
-    protected function aspectRatioIsDefined($data): bool
+    protected function aspectRatioIsDefined(array $data): bool
     {
         return !isset($data['image']['aspect_ratio']) ||
             empty($data['image']['aspect_ratio']) ||

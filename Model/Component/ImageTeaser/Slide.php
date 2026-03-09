@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MageSuite\ContentConstructorFrontend\Model\Component\ImageTeaser;
 
 class Slide extends \MageSuite\ContentConstructorFrontend\Model\Component\GenericSlide
@@ -13,22 +15,26 @@ class Slide extends \MageSuite\ContentConstructorFrontend\Model\Component\Generi
         parent::__construct($urlResolver, $mediaResolver, $data);
     }
 
-    public function getSrc()
+    public function getSrc(): ?string
     {
         $data = $this->getData();
 
         if (!empty($data['image']['decoded'])) {
             return $this->mediaResolver->resolve($data['image']['decoded']);
         }
+
+        return null;
     }
 
-    public function getSrcSet()
+    public function getSrcSet(): ?string
     {
         $data = $this->getData();
 
         if (!empty($data['image']['decoded'])) {
             return $this->mediaResolver->resolveSrcSet($data['image']['decoded']);
         }
+
+        return null;
     }
 
     public function canBeDisplayed(): bool
