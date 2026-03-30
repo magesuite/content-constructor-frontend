@@ -23,7 +23,10 @@
     </type>
 
     <type name="Magento\Catalog\Block\Product\AbstractProduct">
-        <plugin name="creativestyle_add_product_object_to_image_data_array" type="MageSuite\ContentConstructorFrontend\Model\Plugin\ProductImage"/>
+        <plugin name="creativestyle_add_product_object_to_image_data_array"
+                type="MageSuite\ContentConstructorFrontend\Plugin\Catalog\Block\Product\AbstractProduct\ProductImage"
+                sortOrder="10"
+        />
     </type>
     <type name="Magento\Catalog\Block\Product\AbstractProduct">
         <plugin name="add_product_object_to_image_data_array" type="Smile\ElasticsuiteSwatches\Model\Plugin\ProductImage" disabled="true"/>
@@ -36,9 +39,13 @@
         <plugin name="redirect_if_one_result" type="MageSuite\ContentConstructorFrontend\Plugin\ProductFinder\RedirectWhenOnlyOneResultWasFound"/>
     </type>
 
-    <type name="MageSuite\ContentConstructorFrontend\Model\Plugin\ProductImage">
+    <type name="MageSuite\ContentConstructorFrontend\Service\ProductImage\LoadSimpleVariation">
         <arguments>
-            <argument name="swatchesHelperData" xsi:type="object">Smile\ElasticsuiteSwatches\Helper\Swatches</argument>
+            <argument name="swatchHelperData" xsi:type="object">Smile\ElasticsuiteSwatches\Helper\Swatches</argument>
+            <argument name="applicableLocations" xsi:type="array">
+                <item name="category_page_grid" xsi:type="string">category_page_grid</item>
+                <item name="category_page_list" xsi:type="string">category_page_list</item>
+            </argument>
         </arguments>
     </type>
 
@@ -212,7 +219,7 @@
     </type>
 
     <type name="MageSuite\ContentConstructorFrontend\Block\Component\AbstractComponent">
-        <plugin name="resolve_directives" type="MageSuite\ContentConstructorFrontend\Plugin\Block\Component\AbstractComponent\ResolveDirectives" />
+        <plugin name="resolve_directives" type="MageSuite\ContentConstructorFrontend\Plugin\Block\Component\AbstractComponent\ResolveDirectives" sortOrder="10" />
     </type>
 
     <type name="MageSuite\ContentConstructorFrontend\DataProviders\CategoryLinksDataProvider">
