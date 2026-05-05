@@ -7,10 +7,12 @@ namespace MageSuite\ContentConstructorFrontend\Service\ProductImage;
 class LoadSimpleVariation
 {
     protected array $cache = [];
+    protected ?array $attributes = null;
+    protected array $filterArrayCache = [];
 
     public function __construct(
         protected \Magento\Swatches\Helper\Data $swatchHelperData,
-        protected \Magento\Eav\Model\Config $eavConfig,
+        protected \Magento\Catalog\Model\ResourceModel\Product\Attribute\CollectionFactory $attributeCollectionFactory,
         protected \Magento\Framework\App\Request\Http $request,
         protected \Magento\Framework\Serialize\SerializerInterface $serializer,
         protected array $applicableLocations = []
@@ -25,20 +27,26 @@ class LoadSimpleVariation
             return $parentProduct;
         }
 
-        $filterArray = $this->getFilterArray($this->request->getParams());
+        $params = $this->request->getQuery()->toArray();
+
+        if (empty($params)) {
+            return $parentProduct;
+        }
+
+        $filterArray = $this->getFilterArray($params);
+
+        if (empty($filterArray)) {
+            return $parentProduct;
+        }
+
         $cacheKey = sprintf(
-            '%s-%s-%s',
+            '%s-%s',
             $parentProduct->getId(),
-            $location,
             hash('sha256', $this->serializer->serialize($filterArray))
         );
 
         if (isset($this->cache[$cacheKey])) {
             return $this->cache[$cacheKey];
-        }
-
-        if (empty($filterArray)) {
-            return $parentProduct;
         }
 
         return $this->cache[$cacheKey] = $this->loadSimpleVariation($parentProduct, $filterArray);
@@ -65,28 +73,30 @@ class LoadSimpleVariation
 
     protected function getFilterArray(array $request): array
     {
+        $requestHash = hash('sha256', $this->serializer->serialize($request));
+
+        if (isset($this->filterArrayCache[$requestHash])) {
+            return $this->filterArrayCache[$requestHash];
+        }
+
         $filterArray = [];
-        $attributeCodes = array_flip($this->eavConfig->getEntityAttributeCodes(\Magento\Catalog\Model\Product::ENTITY));
+        $attributes = $this->getAttributes();
 
         foreach ($request as $code => $value) {
-            if (!isset($attributeCodes[$code])) {
+            $attribute = $attributes[$code] ?? null;
+
+            if (!$attribute?->getId()) {
                 continue;
             }
 
-            $attribute = $this->eavConfig->getAttribute(\Magento\Catalog\Model\Product::ENTITY, $code);
-
-            if (!$attribute->getId() || !$this->canReplaceImageWithSwatch($attribute)) {
-                continue;
-            }
-
-            $filterArray[$code] = is_array($filterArray[$code] ?? null)
-                ? $filterArray[$code]
-                : [$value];
+            $filterArray[$code] = [$value];
 
             $filterArray[$code][] = $this->swatchHelperData->getOptionIds($attribute, $value);
         }
 
-        return $filterArray;
+        $this->filterArrayCache[$requestHash] = $filterArray;
+
+        return $this->filterArrayCache[$requestHash];
     }
 
     protected function loadSimpleVariation(
@@ -102,19 +112,24 @@ class LoadSimpleVariation
         return $childProduct ?: $parentProduct;
     }
 
-    protected function canReplaceImageWithSwatch(\Magento\Catalog\Model\ResourceModel\Eav\Attribute $attribute): bool
+    protected function getAttributes(): array
     {
-        if (!$this->swatchHelperData->isSwatchAttribute($attribute)) {
-            return false;
+        if ($this->attributes !== null) {
+            return $this->attributes;
         }
 
-        if (!$attribute->getUsedInProductListing()
-            || !$attribute->getIsFilterable()
-            || !$attribute->getData('update_product_preview_image')
-        ) {
-            return false;
+        $collection = $this->attributeCollectionFactory->create()
+            ->addFieldToFilter('is_filterable', 1);
+
+        $collection->getSelect()
+            ->where('JSON_EXTRACT(additional_data, \'$.update_product_preview_image\') = ?', '1');
+
+        $this->attributes = [];
+
+        foreach ($collection->getItems() as $item) {
+            $this->attributes[$item->getAttributeCode()] = $item;
         }
 
-        return true;
+        return $this->attributes;
     }
 }
