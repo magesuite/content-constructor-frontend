@@ -91,7 +91,12 @@ class LoadSimpleVariation
 
             $filterArray[$code] = [$value];
 
-            $filterArray[$code][] = $this->swatchHelperData->getOptionIds($attribute, $value);
+            $optionsIds = $this->swatchHelperData->getOptionIds($attribute, $value);
+
+            if ($optionsIds) {
+                $filterArray[$code][] = $optionsIds;
+            }
+
         }
 
         $this->filterArrayCache[$requestHash] = $filterArray;
