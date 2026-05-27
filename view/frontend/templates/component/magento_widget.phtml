@@ -1,0 +1,19 @@
+<?php
+/** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\MagentoWidget */
+/** @var \MageSuite\ContentConstructorFrontend\Model\Component\MagentoWidget $viewModel */
+$viewModel = $block->getViewModel();
+$visibility = $block->getVisibilityClass();
+?>
+<?php if ($viewModel->getData('wrapInContainer')): ?>
+<div class="cs-container cs-container--magento-widget<?= $visibility ? ' ' . $visibility : '' ?>">
+    <div class="cs-container__inner">
+        <?= $viewModel->getContent() ?>
+    </div>
+</div>
+<?php elseif ($visibility): ?>
+<div class="<?= $visibility ?>">
+    <?= $viewModel->getContent() ?>
+</div>
+<?php else: ?>
+    <?= $viewModel->getContent() ?>
+<?php endif; ?>
