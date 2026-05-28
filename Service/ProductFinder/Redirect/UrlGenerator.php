@@ -19,8 +19,6 @@ class UrlGenerator
      */
     protected $categoryRepository;
 
-    const ADMIN_STORE_ID = 0;
-
     public function __construct(
         \Magento\Eav\Model\Config $eavConfig,
         \Magento\Eav\Model\ResourceModel\Entity\Attribute\Option\CollectionFactory $optionsCollectionFactory,
@@ -32,7 +30,7 @@ class UrlGenerator
         $this->categoryRepository = $categoryRepository;
     }
 
-    public function generateUrl($categoryId, $attributesValues)
+    public function generateUrl(int $categoryId, array $attributesValues): ?string
     {
         try {
             $category = $this->categoryRepository->get($categoryId);
@@ -67,17 +65,19 @@ class UrlGenerator
 
     /**
      * Returns array with mapping of admin store attribute labels as keys and current store attribute labels as values
-     * @param $attribute
-     * @return array
      */
-    protected function getValuesMapping($attribute)
+    protected function getValuesMapping(\Magento\Eav\Model\Entity\Attribute $attribute): array
     {
+        if (!$attribute?->getId()) {
+            return [];
+        }
+
         $currentStoreOptions = $attribute->getSource()->getAllOptions();
 
         $adminOptionsCollection = $this->optionsCollectionFactory
             ->create()
             ->setAttributeFilter($attribute->getId())
-            ->setStoreFilter(self::ADMIN_STORE_ID, false)
+            ->setStoreFilter(\Magento\Store\Model\Store::DEFAULT_STORE_ID, false)
             ->load();
 
         $mapping = [];
