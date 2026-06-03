@@ -30,8 +30,10 @@ class ImageTeaserNotMigrationCommand extends \Symfony\Component\Console\Command\
         $this->setDescription('Find all cms pages, categories and products with old image teaser configuration.');
     }
 
-    protected function execute(\Symfony\Component\Console\Input\InputInterface $input, \Symfony\Component\Console\Output\OutputInterface $output)
-    {
+    protected function execute(
+        \Symfony\Component\Console\Input\InputInterface $input,
+        \Symfony\Component\Console\Output\OutputInterface $output
+    ): int {
         try {
             $this->state->getAreaCode();
         } catch (\Magento\Framework\Exception\LocalizedException $e) {
@@ -43,6 +45,6 @@ class ImageTeaserNotMigrationCommand extends \Symfony\Component\Console\Command\
 
         $output->writeln($result);
 
-        return true;
+        return \Magento\Framework\Console\Cli::RETURN_SUCCESS;
     }
 }

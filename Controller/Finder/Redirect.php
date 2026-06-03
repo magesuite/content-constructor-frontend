@@ -32,7 +32,7 @@ class Redirect extends \Magento\Framework\App\Action\Action
             return $this->_redirect($this->_redirect->getRefererUrl());
         }
 
-        $categoryId = $post['category_id'];
+        $categoryId = (int) $post['category_id'];
         $attributesValues = isset($post['attributes']) ? $post['attributes'] : [];
 
         $url = $this->urlGenerator->generateUrl($categoryId, $attributesValues);

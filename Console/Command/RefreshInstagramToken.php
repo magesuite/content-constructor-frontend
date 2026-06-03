@@ -25,8 +25,10 @@ class RefreshInstagramToken extends \Symfony\Component\Console\Command\Command
     /**
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    protected function execute(\Symfony\Component\Console\Input\InputInterface $input, \Symfony\Component\Console\Output\OutputInterface $output): int
-    {
+    protected function execute(
+        \Symfony\Component\Console\Input\InputInterface $input,
+        \Symfony\Component\Console\Output\OutputInterface $output
+    ): int {
         $this->refreshAccessToken->execute();
 
         return \Magento\Framework\Console\Cli::RETURN_SUCCESS;

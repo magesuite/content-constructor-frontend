@@ -114,7 +114,7 @@ class ComponentsList extends \Magento\Framework\View\Element\Template
     {
         $this->createCmsBlock();
         $this->createCmsPage();
-        $page = $this->request->get('page');
+        $page = (string) $this->request->get('page');
 
         if (!isset($this->providers[$page])) {
             $provider = new \MageSuite\ContentConstructorFrontend\DataProviders\ComponentsList\Index(
