@@ -6,12 +6,12 @@ namespace MageSuite\ContentConstructorFrontend\Test\Integration\DataProviders;
 
 class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
 {
-    const MESSAGE_SORT_DATE_DESC = ': It does not sort properly by date descending';
-    const MESSAGE_SORT_DATE_ASC = ': It does not sort properly by date ascending';
-    const MESSAGE_SORT_PRICE_DESC = ': It does not sort properly by price descending';
-    const MESSAGE_SORT_PRICE_ASC = ': It does not sort properly by price ascending';
-    const MESSAGE_FILTER_NEWEST = ': It does not filter properly new products';
-    const MESSAGE_CATEGORY = ': It does not fetch properly from category';
+    protected const MESSAGE_SORT_DATE_DESC = ': It does not sort properly by date descending';
+    protected const MESSAGE_SORT_DATE_ASC = ': It does not sort properly by date ascending';
+    protected const MESSAGE_SORT_PRICE_DESC = ': It does not sort properly by price descending';
+    protected const MESSAGE_SORT_PRICE_ASC = ': It does not sort properly by price ascending';
+    protected const MESSAGE_FILTER_NEWEST = ': It does not filter properly new products';
+    protected const MESSAGE_CATEGORY = ': It does not fetch properly from category';
 
     protected ?\Magento\TestFramework\ObjectManager $objectManager;
     protected ?\MageSuite\ContentConstructorFrontend\DataProviders\ProductCarouselDataProvider $dataProvider;
@@ -21,20 +21,12 @@ class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
     {
         $this->objectManager = \Magento\TestFramework\ObjectManager::getInstance();
 
-        $this->dataProvider = $this->objectManager
-            ->get(\MageSuite\ContentConstructorFrontend\DataProviders\ProductCarouselDataProvider::class);
-
-        $this->productRepository = $this->objectManager
-            ->get(\Magento\Catalog\Api\ProductRepositoryInterface::class);
-
-        $priceRender = $this->objectManager->get(
-            \Magento\Framework\View\LayoutInterface::class
-        )->getBlock('product.price.render.default');
+        $this->dataProvider = $this->objectManager->get(\MageSuite\ContentConstructorFrontend\DataProviders\ProductCarouselDataProvider::class);
+        $this->productRepository = $this->objectManager->get(\Magento\Catalog\Api\ProductRepositoryInterface::class);
+        $priceRender = $this->objectManager->get(\Magento\Framework\View\LayoutInterface::class)->getBlock('product.price.render.default');
 
         if (!$priceRender) {
-            $this->objectManager->get(
-                \Magento\Framework\View\LayoutInterface::class
-            )->createBlock(
+            $this->objectManager->get(\Magento\Framework\View\LayoutInterface::class)->createBlock(
                 \Magento\Framework\Pricing\Render::class,
                 'product.price.render.default',
                 [
@@ -46,7 +38,8 @@ class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
         }
     }
 
-    public function testItReturnsEmptyArrayWhenNoResultsAreFound() {
+    public function testItReturnsEmptyArrayWhenNoResultsAreFound(): void
+    {
         $this->assertEquals([], $this->dataProvider->getProducts(['category_id' => 444]));
     }
 
@@ -57,12 +50,12 @@ class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
      * @magentoDataFixture MageSuite_ContentConstructorFrontend::Test/Integration/DataProviders/_files/products.php
      * @magentoConfigFixture current_store cataloginventory/options/show_out_of_stock 1
      */
-    public function testitGetsProductsFromSpecifiedCategoryIncludingOutOfStockProducts()
+    public function testItGetsProductsFromSpecifiedCategoryIncludingOutOfStockProducts(): void
     {
         $result = $this->dataProvider->getProducts(['category_id' => 333]);
 
-        $this->assertCount(4, $result, __FUNCTION__.': All products should be returned');
-        $this->assertEquals('Out of stock product', $result[0]['name'], __FUNCTION__.': Out of stock product should be returned');
+        $this->assertCount(4, $result, __FUNCTION__ . ': All products should be returned');
+        $this->assertEquals('Out of stock product', $result[0]['name'], __FUNCTION__ . ': Out of stock product should be returned');
     }
 
     /**
@@ -72,14 +65,15 @@ class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
      * @magentoDataFixture MageSuite_ContentConstructorFrontend::Test/Integration/DataProviders/_files/products.php
      * @magentoConfigFixture current_store positive_indicators/popular_icon/is_enabled 1
      */
-    public function testItReturnsProducts() {
+    public function testItReturnsProducts(): void
+    {
         $this->itGetsProductsFromSpecifiedCategoryIncludingAllSubcategories();
         $this->itGetsProductsFromVirtualCategoryWithTheInName();
         $this->itSortsProperlyByPrice();
         $this->itReturnsOnlyInStockProducts();
         $this->itReturnsOnlyVisibleProducts();
         $this->itLimitsProperly();
-//        $this->itFiltersProperlyByNewestProduct();
+        //        $this->itFiltersProperlyByNewestProduct();
         $this->itReturnsCorrectFlagForPopularIcon();
         $this->itReturnsCorrectProductPrice();
         $this->itReturnsCorrectProductQty();
@@ -92,32 +86,76 @@ class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
         $this->itFiltersAndLimitsProperly();
     }
 
-    private function itSortsProperlyByPrice()
+    protected function itGetsProductsFromSpecifiedCategoryIncludingAllSubcategories(): void
+    {
+        $result = $this->dataProvider->getProducts(['category_id' => 333]);
+
+        $this->assertCount(3, $result, __FUNCTION__ . 'Specified category should only return 3 products');
+    }
+
+    protected function itGetsProductsFromVirtualCategoryWithTheInName(): void
+    {
+        $result = $this->dataProvider->getProducts(['category_id' => 335]);
+        $skus = array_column($result, 'sku');
+
+        $this->assertCount(2, $result, __FUNCTION__ . 'Specified category should only return 2 products');
+        $this->assertEquals(['the_middle_product', 'the_most_expensive'], $skus);
+    }
+
+    protected function itSortsProperlyByPrice(): void
     {
         $result = $this->dataProvider->getProducts(['category_id' => 333, 'order_by' => 'price', 'order_type' => 'desc']);
 
-        $this->assertEquals('The most expensive product', $result[0]['name'], __FUNCTION__.self::MESSAGE_SORT_PRICE_DESC);
-        $this->assertEquals('The middle product', $result[1]['name'], __FUNCTION__.self::MESSAGE_SORT_PRICE_DESC);
-        $this->assertEquals('Cheapest product', $result[2]['name'], __FUNCTION__.self::MESSAGE_SORT_PRICE_DESC);
+        $this->assertEquals('The most expensive product', $result[0]['name'], __FUNCTION__ . self::MESSAGE_SORT_PRICE_DESC);
+        $this->assertEquals('The middle product', $result[1]['name'], __FUNCTION__ . self::MESSAGE_SORT_PRICE_DESC);
+        $this->assertEquals('Cheapest product', $result[2]['name'], __FUNCTION__ . self::MESSAGE_SORT_PRICE_DESC);
 
         $result = $this->dataProvider->getProducts(['category_id' => 333, 'order_by' => 'price', 'order_type' => 'asc']);
 
-        $this->assertEquals('Cheapest product', $result[0]['name'], __FUNCTION__.self::MESSAGE_SORT_PRICE_ASC);
-        $this->assertEquals('The middle product', $result[1]['name'], __FUNCTION__.self::MESSAGE_SORT_PRICE_ASC);
-        $this->assertEquals('The most expensive product', $result[2]['name'], __FUNCTION__.self::MESSAGE_SORT_PRICE_ASC);
+        $this->assertEquals('Cheapest product', $result[0]['name'], __FUNCTION__ . self::MESSAGE_SORT_PRICE_ASC);
+        $this->assertEquals('The middle product', $result[1]['name'], __FUNCTION__ . self::MESSAGE_SORT_PRICE_ASC);
+        $this->assertEquals('The most expensive product', $result[2]['name'], __FUNCTION__ . self::MESSAGE_SORT_PRICE_ASC);
     }
 
-//    @todo: Test is commented out because of compatibility with Magento Commerce, logic needs to be reimplemented
-//    public function itFiltersProperlyByNewestProduct()
-//    {
-//        $result = $this->dataProvider->getProducts(['category_id' => 333, 'filter' => 'new_products']);
-//
-//        $skus = array_column($result, 'sku');
-//
-//        $this->assertEquals(['the_most_expensive', 'cheapest'], $skus, __FUNCTION__.self::MESSAGE_FILTER_NEWEST);
-//    }
+    protected function itReturnsOnlyInStockProducts(): void
+    {
+        $result = $this->dataProvider->getProducts(['category_id' => 333]);
+        $this->assertCount(3, $result, __FUNCTION__ . ': Only in stock products should be returned');
+    }
 
-    public function itReturnsCorrectProductPrice()
+    protected function itReturnsOnlyVisibleProducts(): void
+    {
+        $result = $this->dataProvider->getProducts(['category_id' => 333]);
+
+        $this->assertCount(3, $result, __FUNCTION__ . ' Only visible products should be returned');
+    }
+
+    protected function itLimitsProperly(): void
+    {
+        $result = $this->dataProvider->getProducts(['category_id' => 333, 'limit' => 1]);
+
+        $this->assertCount(1, $result, __FUNCTION__ . ': It should return only one product with limit 1');
+    }
+
+    //    @todo: Test is commented out because of compatibility with Magento Commerce, logic needs to be reimplemented
+    //    protected function itFiltersProperlyByNewestProduct()
+    //    {
+    //        $result = $this->dataProvider->getProducts(['category_id' => 333, 'filter' => 'new_products']);
+    //
+    //        $skus = array_column($result, 'sku');
+    //
+    //        $this->assertEquals(['the_most_expensive', 'cheapest'], $skus, __FUNCTION__.self::MESSAGE_FILTER_NEWEST);
+    //    }
+
+    protected function itReturnsCorrectFlagForPopularIcon(): void
+    {
+        $result = $this->dataProvider->getProducts(['category_id' => 333]);
+
+        $this->assertTrue($result[0]['popularIconFlag']);
+        $this->assertFalse($result[1]['popularIconFlag']);
+    }
+
+    protected function itReturnsCorrectProductPrice(): void
     {
         $result = $this->dataProvider->getProducts(['skus' => 'the_most_expensive']);
 
@@ -132,7 +170,7 @@ class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
         $this->$assertContains('<span class="price">$100.00</span>', $result[0]['price']);
     }
 
-    public function itReturnsCorrectProductQty()
+    protected function itReturnsCorrectProductQty(): void
     {
         $expected = [60, 80, 100];
 
@@ -147,117 +185,7 @@ class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
         );
     }
 
-    public function itSortsProperlyByBestsellers()
-    {
-        $result = $this->dataProvider->getProducts(['category_id' => 333, 'order_by' => 'bestsellers_amount', 'order_type' => 'DESC']);
-
-        $this->assertEquals('The most expensive product', $result[0]['name']);
-        $this->assertEquals('The middle product', $result[1]['name']);
-        $this->assertEquals('Cheapest product', $result[2]['name']);
-
-        $result = $this->dataProvider->getProducts(['category_id' => 333, 'order_by' => 'bestsellers_amount', 'order_type' => 'ASC']);
-
-        $this->assertEquals('Cheapest product', $result[0]['name']);
-        $this->assertEquals('The middle product', $result[1]['name']);
-        $this->assertEquals('The most expensive product', $result[2]['name']);
-    }
-
-
-
-    private function itGetsProductsFromSpecifiedCategoryIncludingAllSubcategories()
-    {
-        $result = $this->dataProvider->getProducts(['category_id' => 333]);
-
-        $this->assertCount(3, $result, __FUNCTION__.'Specified category should only return 3 products');
-    }
-
-    private function itGetsProductsFromVirtualCategoryWithTheInName()
-    {
-        $result = $this->dataProvider->getProducts(['category_id' => 335]);
-        $skus = array_column($result, 'sku');
-
-        $this->assertCount(2, $result, __FUNCTION__.'Specified category should only return 2 products');
-        $this->assertEquals(['the_middle_product', 'the_most_expensive'], $skus);
-    }
-
-    private function itLimitsProperly()
-    {
-        $result = $this->dataProvider->getProducts(['category_id' => 333, 'limit' => 1]);
-
-        $this->assertCount(1, $result, __FUNCTION__.': It should return only one product with limit 1');
-    }
-
-    protected function itFiltersProperly()
-    {
-        $result = $this->dataProvider->getProducts(['filter' => 'daily_deal']);
-        $this->assertCount(2, $result, __FUNCTION__ . ': It should return 2 products with daily deal');
-    }
-
-    protected function itFiltersAndLimitsProperly()
-    {
-        $result = $this->dataProvider->getProducts(['filter' => 'daily_deal', 'limit' => 1]);
-        $this->assertCount(1, $result, __FUNCTION__ . ': It should return only one product with daily deal');
-    }
-
-    private function itReturnsOnlyInStockProducts()
-    {
-        $result = $this->dataProvider->getProducts(['category_id' => 333]);
-        $this->assertCount(3, $result, __FUNCTION__.': Only in stock products should be returned');
-    }
-
-    private function itReturnsOnlyVisibleProducts()
-    {
-        $result = $this->dataProvider->getProducts(['category_id' => 333]);
-
-        $this->assertCount(3, $result, __FUNCTION__.' Only visible products should be returned');
-    }
-
-    protected function itReturnsProductsByIds()
-    {
-        $result = $this->dataProvider->getProducts(['product_ids' => [333, 334]]);
-
-        $this->assertCount(2, $result, __FUNCTION__ . ' Two ids were provided, so only two products should be returned');
-
-        $cheapest = array_shift($result);
-        $mostExpensive = array_shift($result);
-
-        $this->assertEquals('Cheapest product', $cheapest['name'], __FUNCTION__ . ' Products should be sorted by provided ids list');
-        $this->assertEquals('The most expensive product', $mostExpensive['name'], __FUNCTION__ . ' Products should be sorted by provided ids list');
-    }
-
-    protected function itReturnsProductsByIdsDirectlyFromDatabase()
-    {
-        $result = $this->dataProvider->getProducts([
-            'product_ids' => [333, 334],
-            'collection_type' => \MageSuite\ContentConstructorFrontend\DataProviders\ProductCarouselDataProvider::COLLECTION_TYPE_DATABASE
-        ]);
-
-        $this->assertCount(2, $result, __FUNCTION__ . ' Two ids were provided, so only two products should be returned');
-
-        $cheapest = array_shift($result);
-        $mostExpensive = array_shift($result);
-
-        $this->assertEquals('Cheapest product', $cheapest['name'], __FUNCTION__ . ' Products should be sorted by provided ids list');
-        $this->assertEquals('The most expensive product', $mostExpensive['name'], __FUNCTION__ . ' Products should be sorted by provided ids list');
-    }
-
-    protected function itReturnsOnlySaleableProductsDirectlyFromDatabase()
-    {
-        $result = $this->dataProvider->getProducts([
-            'product_ids' => [337, 333, 334],
-            'collection_type' => \MageSuite\ContentConstructorFrontend\DataProviders\ProductCarouselDataProvider::COLLECTION_TYPE_DATABASE
-        ]);
-
-        $this->assertCount(2, $result, __FUNCTION__ . ' Only products in stock should be provided');
-
-        $cheapest = array_shift($result);
-        $mostExpensive = array_shift($result);
-
-        $this->assertEquals('Cheapest product', $cheapest['name'], __FUNCTION__ . ' Products should be sorted by provided ids list');
-        $this->assertEquals('The most expensive product', $mostExpensive['name'], __FUNCTION__ . ' Products should be sorted by provided ids list');
-    }
-
-    protected function itReturnsProductsBySku()
+    protected function itReturnsProductsBySku(): void
     {
         $result = $this->dataProvider->getProducts(['skus' => 'cheapest, the_most_expensive']);
 
@@ -270,7 +198,20 @@ class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('The most expensive product', $mostExpensive['name'], __FUNCTION__ . ' Products should be sorted by provided sku list');
     }
 
-    protected function itReturnsProductsBySkuDirectlyFromDatabase()
+    protected function itReturnsProductsByIds(): void
+    {
+        $result = $this->dataProvider->getProducts(['product_ids' => [333, 334]]);
+
+        $this->assertCount(2, $result, __FUNCTION__ . ' Two ids were provided, so only two products should be returned');
+
+        $cheapest = array_shift($result);
+        $mostExpensive = array_shift($result);
+
+        $this->assertEquals('Cheapest product', $cheapest['name'], __FUNCTION__ . ' Products should be sorted by provided ids list');
+        $this->assertEquals('The most expensive product', $mostExpensive['name'], __FUNCTION__ . ' Products should be sorted by provided ids list');
+    }
+
+    protected function itReturnsProductsBySkuDirectlyFromDatabase(): void
     {
         $result = $this->dataProvider->getProducts([
             'skus' => 'cheapest, the_most_expensive',
@@ -286,12 +227,63 @@ class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('The most expensive product', $mostExpensive['name'], __FUNCTION__ . ' Products should be sorted by provided sku list');
     }
 
-    protected function itReturnsCorrectFlagForPopularIcon()
+    protected function itReturnsProductsByIdsDirectlyFromDatabase(): void
     {
-        $result = $this->dataProvider->getProducts(['category_id' => 333]);
+        $result = $this->dataProvider->getProducts([
+            'product_ids' => [333, 334],
+            'collection_type' => \MageSuite\ContentConstructorFrontend\DataProviders\ProductCarouselDataProvider::COLLECTION_TYPE_DATABASE
+        ]);
 
-        $this->assertTrue($result[0]['popularIconFlag']);
-        $this->assertFalse($result[1]['popularIconFlag']);
+        $this->assertCount(2, $result, __FUNCTION__ . ' Two ids were provided, so only two products should be returned');
+
+        $cheapest = array_shift($result);
+        $mostExpensive = array_shift($result);
+
+        $this->assertEquals('Cheapest product', $cheapest['name'], __FUNCTION__ . ' Products should be sorted by provided ids list');
+        $this->assertEquals('The most expensive product', $mostExpensive['name'], __FUNCTION__ . ' Products should be sorted by provided ids list');
+    }
+
+    protected function itReturnsOnlySaleableProductsDirectlyFromDatabase(): void
+    {
+        $result = $this->dataProvider->getProducts([
+            'product_ids' => [337, 333, 334],
+            'collection_type' => \MageSuite\ContentConstructorFrontend\DataProviders\ProductCarouselDataProvider::COLLECTION_TYPE_DATABASE
+        ]);
+
+        $this->assertCount(2, $result, __FUNCTION__ . ' Only products in stock should be provided');
+
+        $cheapest = array_shift($result);
+        $mostExpensive = array_shift($result);
+
+        $this->assertEquals('Cheapest product', $cheapest['name'], __FUNCTION__ . ' Products should be sorted by provided ids list');
+        $this->assertEquals('The most expensive product', $mostExpensive['name'], __FUNCTION__ . ' Products should be sorted by provided ids list');
+    }
+
+    protected function itFiltersProperly(): void
+    {
+        $result = $this->dataProvider->getProducts(['filter' => 'daily_deal']);
+        $this->assertCount(2, $result, __FUNCTION__ . ': It should return 2 products with daily deal');
+    }
+
+    protected function itFiltersAndLimitsProperly(): void
+    {
+        $result = $this->dataProvider->getProducts(['filter' => 'daily_deal', 'limit' => 1]);
+        $this->assertCount(1, $result, __FUNCTION__ . ': It should return only one product with daily deal');
+    }
+
+    protected function itSortsProperlyByBestsellers(): void
+    {
+        $result = $this->dataProvider->getProducts(['category_id' => 333, 'order_by' => 'bestsellers_amount', 'order_type' => 'DESC']);
+
+        $this->assertEquals('The most expensive product', $result[0]['name']);
+        $this->assertEquals('The middle product', $result[1]['name']);
+        $this->assertEquals('Cheapest product', $result[2]['name']);
+
+        $result = $this->dataProvider->getProducts(['category_id' => 333, 'order_by' => 'bestsellers_amount', 'order_type' => 'ASC']);
+
+        $this->assertEquals('Cheapest product', $result[0]['name']);
+        $this->assertEquals('The middle product', $result[1]['name']);
+        $this->assertEquals('The most expensive product', $result[2]['name']);
     }
 
     /**
@@ -302,7 +294,7 @@ class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
      * @magentoConfigFixture current_store daily_deal/general/active 1
      * @magentoConfigFixture current_store daily_deal/general/use_qty_limitation 1
      */
-    public function testItReturnsDailyDealOffer()
+    public function testItReturnsDailyDealOffer(): void
     {
         $result = $this->dataProvider->getProducts(['category_id' => 333]);
 
@@ -326,33 +318,28 @@ class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
      * @magentoDataFixture MageSuite_ContentConstructorFrontend::Test/Integration/DataProviders/_files/products.php
      * @magentoDataFixture Magento/ConfigurableProduct/_files/product_configurable.php
      */
-    public function testItGetAddToCartButtonHtml()
+    public function testItGetAddToCartButtonHtml(): void
     {
         $product = $this->productRepository->get('cheapest');
-
         $resultButton = $this->dataProvider->getAddToCartButtonHtml($product);
-
         $result = strpos($resultButton, 'Add to cart');
 
         $this->assertNotFalse($result);
 
         $product = $this->productRepository->get('configurable');
-
         $resultButton = $this->dataProvider->getAddToCartButtonHtml($product);
-
         $result = strpos($resultButton, 'Configure');
 
         $this->assertNotFalse($result);
 
         $product = $this->productRepository->get('out_of_stock_product');
-
         $resultButton = $this->dataProvider->getAddToCartButtonHtml($product);
 
         $this->assertEquals('', $resultButton);
     }
 
     /**
-     * Following scenario will break price index on purpose in order to check if all products entities
+     * The following scenario will break the price index on purpose to check if all product entities
      * are still returned correctly based on data returned from ElasticSearch
      * @magentoAppArea frontend
      * @magentoDbIsolation enabled
@@ -360,9 +347,9 @@ class ProductCarouselDataProviderTest extends \PHPUnit\Framework\TestCase
      * @magentoDataFixture MageSuite_ContentConstructorFrontend::Test/Integration/DataProviders/_files/products.php
      * @magentoDataFixture Magento/ConfigurableProduct/_files/product_configurable.php
      */
-    public function testItReturnsIdentitiesBasedOnElasticSearchResponse() {
-        $connection = $this->objectManager->get(\Magento\Framework\App\ResourceConnection::class)
-            ->getConnection();
+    public function testItReturnsIdentitiesBasedOnElasticSearchResponse(): void
+    {
+        $connection = $this->objectManager->get(\Magento\Framework\App\ResourceConnection::class)->getConnection();
 
         $priceIndexTable = $connection->getTableName('catalog_product_index_price');
         $connection->delete($priceIndexTable, ['entity_id = ?' => 333]);
