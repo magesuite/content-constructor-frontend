@@ -7,7 +7,8 @@
     "require": {
         "creativestyle/magesuite-dynamic-directives": "^1.0.0",
         "creativestyle/magesuite-discount": "^1.0.0",
-        "creativestyle/magesuite-content-constructor-admin": "^4.0.0"
+        "creativestyle/magesuite-content-constructor-admin": "^4.0.0",
+        "magento/framework": "103.0.9"
     },
     "autoload": {
         "files": [
