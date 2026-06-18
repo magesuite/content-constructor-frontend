@@ -12,7 +12,7 @@ $brands = $viewModel->getBrands();
 
 $containerClasses = $block->getContainerMix();
 
-$componentClasses = $block->getSkipSpacing() ? ' cs-brand-carousel--skip-spacing' : '';
+$componentClasses = $block->getSkipSpacing() ? ' cs-component-spacing--skip-spacing' : '';
 $componentClasses .= ' ' . $block->getVar('brand_carousel/additional_css_classes');
 
 $useWholeScreen = $block->getVar('brand_carousel/use_whole_screen') == 'true';
@@ -45,7 +45,7 @@ $includeStylesInComponent = $block->getVar('brand_carousel/include_styles_in_com
         <?php if(!$useWholeScreen): ?>
             <div class="cs-container__inner">
         <?php endif; ?>
-            <div class="cs-brand-carousel cs-brand-carousel--slider<?= $componentClasses ?>" data-mage-init='{ "ccBrandCarousel": <?= json_encode($jsSettings) ?> }'>
+            <div class="cs-brand-carousel cs-brand-carousel--slider cs-component-spacing<?= $componentClasses ?>" data-mage-init='{ "ccBrandCarousel": <?= json_encode($jsSettings) ?> }'>
                 <div class="cs-brand-carousel__slides-wrapper">
                     <?php if ($block->getVar('brand_carousel/navigation/show')): ?>
                         <button class="cs-brand-carousel__nav cs-brand-carousel__nav--prev cs-slider-navigation cs-slider-navigation--prev <?= $block->getVar('brand_carousel/navigation/arrows/prev/additional_css_classes') ?>" disabled type="button">

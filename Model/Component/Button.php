@@ -64,4 +64,14 @@ class Button extends \Magento\Framework\DataObject implements ViewModel
 
         return null;
     }
+
+    public function getButtonType()
+    {
+        return $this->_getData('buttonType') ?: 'primary';
+    }
+
+    public function getIconPosition()
+    {
+        return $this->_getData('iconPosition') ?: 'right';
+    }
 }

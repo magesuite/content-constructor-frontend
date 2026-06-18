@@ -6,8 +6,11 @@ $componentConfiguration = $block->getData();
 $viewModel = $block->getViewModel();
 $visibility = $block->getVisibilityClass();
 
-$componentClasses = $block->getSkipSpacing() ? ' cs-button--skip-spacing ' : '';
+$componentClasses = $block->getSkipSpacing() ? ' cs-component-spacing--skip-spacing ' : '';
 $componentClasses .= ' ' . $block->getVar('button/additional_css_classes');
+
+$buttonType = $viewModel->getButtonType();
+$iconPosition = $viewModel->getIconPosition();
 
 $containerClasses = $block->getContainerMix();
 if (isset($componentConfiguration['cc_css_classes'])):
@@ -17,8 +20,8 @@ endif;
 
 <div class="cs-container cs-container--button<?= $containerClasses ?><?= $visibility ? ' ' .$visibility : ''; ?>">
     <div class="cs-container__inner">
-        <a href="<?=$viewModel->getHref()?>" class="cs-button-component<?= $componentClasses ?>">
-            <span class="cs-button-component__span">
+        <a href="<?=$viewModel->getHref()?>" class="cs-button cs-button--<?= $escaper->escapeHtmlAttr($buttonType) ?> cs-button--icon-<?= $escaper->escapeHtmlAttr($iconPosition) ?> cs-button-component cs-component-spacing<?= $componentClasses ?>">
+            <span class="cs-button__span">
                 <?=$viewModel->getLabel()?>
                 <?php $numberOfProducts = $viewModel->getNumberOfProducts(); ?>
                 <?php if(is_numeric($numberOfProducts)): ?>
@@ -28,7 +31,7 @@ endif;
             <?= $this->getLayout()
                 ->createBlock('MageSuite\ThemeHelpers\Block\Icon')
                 ->setIconUrl($block->getVar('button/icon_path'))
-                ->setCssClass('cs-button-component__icon')
+                ->setCssClass('cs-button__icon')
                 ->setInlined(true)
                 ->toHtml();
             ?>

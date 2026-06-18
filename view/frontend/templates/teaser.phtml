@@ -3,6 +3,7 @@
      * Single teaser template
      *
      * @var $block \Magento\Framework\View\Element\Template
+     * @var \Magento\Framework\Escaper $escaper
      */
 ?>
 <?php
@@ -10,6 +11,7 @@
     $teaserId = $block->getTeaserId();
     $gridClass = $block->getGridClass();
     $brickClass = $block->getBrickClass();
+    $buttonModifierClass = $block->getVar('teaser/button_modifier_class', 'MageSuite_ContentConstructorFrontend');
 
     $teaserBrickClass = $brickClass . ' ' . $brickClass . '--teaser';
     if($teaser['size']['x'] == 2) {
@@ -49,7 +51,7 @@
                     echo '<p class="' . $gridClass . '__teaser-text">'.$teaser['paragraph'].'</p>';
                 }
                 if($teaser['ctaLabel'] != '' && $teaser['href'] != '') {
-                    echo '<span role="button" class="cs-button cs-button--type_long cs-button--look_default">
+                    echo '<span role="button" class="cs-button '.$escaper->escapeHtmlAttr($buttonModifierClass).'">
                         <span class="cs-button__span">'.$teaser['ctaLabel'].'</span>
                         <svg class="cs-button__icon"><use xlink:href="#arrow_next"></use></svg>
                     </span>';

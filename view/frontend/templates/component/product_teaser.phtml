@@ -36,7 +36,7 @@ $includeStylesInComponent = $block->getVar('product_teaser/include_styles_in_com
 <div class="cs-container cs-container--product-teaser<?=/* @noEscape */ $containerClasses ?><?=/* @noEscape */ $visibility ? ' ' .$visibility : ''; ?>">
     <div class="cs-container__inner">
         <div
-            class="cs-product-teaser<?=/* @noEscape */ $componentClasses ?>"
+            class="cs-product-teaser cs-component-spacing<?=/* @noEscape */ $componentClasses ?>"
             <?php if($background): ?>style="background-color: <?=/* @noEscape */ $background ?>;"<?php endif; ?>
         >
             <?php if($slogan): ?>
