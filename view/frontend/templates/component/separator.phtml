@@ -2,7 +2,7 @@
 /** @var $block \MageSuite\ContentConstructorFrontend\Block\Component\Separator */
 $visibility = $block->getVisibilityClass();
 
-$componentClasses = $block->getSkipSpacing() ? ' cs-separator--skip-spacing' : '';
+$componentClasses = $block->getSkipSpacing() ? ' cs-component-spacing--skip-spacing' : '';
 $componentClasses .= ' ' . $block->getVar('separator/additional_css_classes');
 
 $includeStylesInComponent = $block->getVar('separator/include_styles_in_component');
@@ -14,6 +14,6 @@ $includeStylesInComponent = $block->getVar('separator/include_styles_in_componen
 
 <div class="cs-container cs-container--separator<?= /** @noEscape */ $visibility ? ' ' .$visibility : ''; ?>">
     <div class="cs-container__inner">
-        <hr class="cs-separator<?= /** @noEscape */ $componentClasses ?>" data-mage-init='{ "ccSeparator": {} }' aria-hidden="true" />
+        <hr class="cs-separator cs-component-spacing<?= /** @noEscape */ $componentClasses ?>" data-mage-init='{ "ccSeparator": {} }' aria-hidden="true" />
     </div>
 </div>

@@ -6,7 +6,7 @@ $componentConfiguration = $block->getData();
 $viewModel = $block->getViewModel();
 
 $visibility = $block->getVisibilityClass();
-$componentClasses = $block->getSkipSpacing() ? ' cs-accordion--skip-spacing ' : '';
+$componentClasses = $block->getSkipSpacing() ? ' cs-component-spacing--skip-spacing ' : '';
 
 $areGroupsSupported = $block->getVar('accordion/support_groups', 'MageSuite_ContentConstructor');
 $groups = $viewModel->getGroups();
@@ -35,10 +35,10 @@ $includeStylesInComponent = $block->getVar('accordion/include_styles_in_componen
 <div class="cs-container cs-container--accordion<?= $containerClasses ?><?= $visibility ? ' ' .$visibility : ''; ?>">
     <div class="cs-container__inner">
         <?php if (count($groups)): ?>
-            <div class="cs-accordion cs-accordion--mode-<?=$componentConfiguration['scenarios']['reading']['id'] ?? ''?><?= $componentClasses ?>"
+            <div class="cs-accordion cs-accordion--mode-<?=$componentConfiguration['scenarios']['reading']['id'] ?? ''?> cs-component-spacing <?= $componentClasses ?>"
                  data-mage-init='{ "ccAccordion": <?= $jsSettings ?> }'
             >
-                <ul class="cs-accordion__groups">
+                <ul class="cs-accordion__groups cs-reset-list-style">
                     <?php foreach ($groups as $group):?>
                         <li class="cs-accordion__group" <?php echo ($areGroupsSupported  and !empty($group['headline'])) ? 'id="' . $viewModel->getGroupId($group['headline']) .'"': '' ;?>>
                             <?php if($areGroupsSupported && !empty($group['headline'])): ?>
@@ -47,7 +47,7 @@ $includeStylesInComponent = $block->getVar('accordion/include_styles_in_componen
                                 </div>
                             <?php endif; ?>
 
-                            <ul class="cs-accordion__items" data-mage-init='{
+                            <ul class="cs-accordion__items cs-reset-list-style" data-mage-init='{
                                 "accordion": <?= $accordionOptions ?>
                             }'>
                                 <?php $i = 0; ?>

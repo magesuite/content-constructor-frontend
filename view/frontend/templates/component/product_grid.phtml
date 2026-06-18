@@ -8,7 +8,7 @@ $componentConfiguration = $block->getData();
 $teaserCss = $this->helper(\MageSuite\ContentConstructorFrontend\Helper\TeaserCss::class);
 $visibility = $block->getVisibilityClass();
 $items = $viewModel->getItems();
-$componentClasses = $block->getSkipSpacing() ? ' cs-products-grid--skip-spacing' : '';
+$componentClasses = $block->getSkipSpacing() ? ' cs-component-spacing--skip-spacing' : '';
 $componentClasses .= ' ' . $block->getVar('product_grid/additional_css_classes');
 $productsGridJsSettings = json_encode($block->getVar('grid_layout/product_grid/js') ?: '{}');
 $products = $viewModel->getProducts();
@@ -46,7 +46,7 @@ $includeStylesInComponent = $block->getVar('product_grid/include_styles_in_compo
 
 <div class="cs-container cs-container--products-grid<?= $containerClasses ?><?= $visibility ? ' ' .$visibility : ''; ?>">
     <div class="cs-container__inner">
-        <div class="cs-products-grid<?= $componentClasses ?>" data-mage-init='{"ccProductsGrid": {}}'>
+        <div class="cs-products-grid cs-component-spacing<?= $componentClasses ?>" data-mage-init='{"ccProductsGrid": {}}'>
             <div class="cs-grid-layout cs-products-grid__grid-layout">
                 <ul class="cs-grid-layout__grid cs-products-grid__grid" id="pg-<?= $teasersSetRandId ?>">
                     <?php if(!empty($items) && $viewModel->useTeaser()): ?>

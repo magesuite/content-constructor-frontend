@@ -11,7 +11,7 @@ $product = $viewModel->getProduct();
 
 $layout = $this->getLayout();
 
-$componentClasses = $block->getSkipSpacing() ? ' cs-daily-deal-teaser--skip-spacing' : '';
+$componentClasses = $block->getSkipSpacing() ? ' cs-component-spacing--skip-spacing' : '';
 $componentClasses .= ' ' . $block->getVar('daily_deal_teaser/additional_css_classes');
 
 $containerClasses = $block->getContainerMix();
@@ -29,7 +29,7 @@ $includeStylesInComponent = $block->getVar('daily_deal_teaser/include_styles_in_
 
     <div class="cs-container cs-container--daily-deal-teaser<?= $containerClasses ?><?= $visibility ? ' ' .$visibility : ''; ?>">
         <div class="cs-container__inner">
-            <div class="cs-daily-deal-teaser cs-daily-deal-teaser--active<?= $componentClasses ?>">
+            <div class="cs-daily-deal-teaser cs-daily-deal-teaser--active cs-component-spacing<?= $componentClasses ?>">
                 <aside class="cs-daily-deal-teaser__aside-image">
                         <?= $layout
                             ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\DailyDealTeaser::class)

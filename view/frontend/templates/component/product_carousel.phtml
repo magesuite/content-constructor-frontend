@@ -13,7 +13,7 @@ $viewMode = $block->getData('view_mode') ?? 'grid';
 
 $componentClasses = $block->getMix();
 if ($block->getSkipSpacing()) {
-    $componentClasses .= ' cs-products-carousel--skip-spacing';
+    $componentClasses .= ' cs-component-spacing--skip-spacing';
 }
 $componentClasses .= ' ' . $block->getVar('product_carousel/additional_css_classes');
 
@@ -54,7 +54,7 @@ $includeStylesInComponent = $block->getVar('product_carousel/include_styles_in_c
     <?php if(!$useWholeScreen): ?>
         <div class="cs-container__inner">
     <?php endif; ?>
-        <div class="cs-products-carousel<?= $componentClasses ?>" data-mage-init='{ "ccProductsCarousel": <?= json_encode($jsSettings) ?> }'>
+        <div class="cs-products-carousel cs-component-spacing<?= $componentClasses ?>" data-mage-init='{ "ccProductsCarousel": <?= json_encode($jsSettings) ?> }'>
             <div class="cs-products-carousel__slides-wrapper">
                 <?php if ($block->getVar('product_carousel/navigation/show')): ?>
                     <button class="cs-products-carousel__nav cs-products-carousel__nav--prev cs-slider-navigation cs-slider-navigation--prev <?= $block->getVar('product_carousel/navigation/arrows/prev/additional_css_classes') ?>" disabled type="button">
