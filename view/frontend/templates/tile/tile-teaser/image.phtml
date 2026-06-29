@@ -10,7 +10,6 @@
     $productImageLabel = $productImage->getLabel();
 
     $productImageAlt = $productImageLabel ? $block->escapeHtmlAttr($productImageLabel) : $block->escapeHtmlAttr($product->getName());
-    $imageTypeHelper = $this->helper(\MageSuite\ThemeHelpers\Helper\ImageType::class);
 
     $loaderImage = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
 
