@@ -31,9 +31,9 @@ class ComponentTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @dataProvider componentVisibilityDataProvider
      * @magentoCache all disabled
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('componentVisibilityDataProvider')]
     public function testItReturnsCorrectValuesBasedOnVisibilitySettings(array $visibility, string $expectedResult): void
     {
         $baseData = [

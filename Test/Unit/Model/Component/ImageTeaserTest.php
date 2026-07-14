@@ -14,9 +14,7 @@ class ImageTeaserTest extends \PHPUnit\Framework\TestCase
         $this->imageTeaser = $objectManager->get(\MageSuite\ContentConstructorFrontend\Model\Component\ImageTeaser::class);
     }
 
-    /**
-     * @dataProvider getTestData
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('getTestData')]
     public function testItCorrectlyRemovesHtmlTags(string $string, string $expected): void
     {
         $this->assertEquals($expected, $this->imageTeaser->replaceHtmlTagsWithWhiteSpaces($string));

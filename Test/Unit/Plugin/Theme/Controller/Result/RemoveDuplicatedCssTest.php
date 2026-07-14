@@ -18,9 +18,7 @@ class RemoveDuplicatedCssTest extends \PHPUnit\Framework\TestCase
         $this->plugin = new \MageSuite\ContentConstructorFrontend\Plugin\Theme\Controller\Result\RemoveDuplicatedCss();
     }
 
-    /**
-     * @dataProvider getInputAndExpectedHtml
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('getInputAndExpectedHtml')]
     public function testItCorrectlyRemovesDuplicatedCSSIncludes(string $input, string $expectedOutput): void
     {
         $result = $this->plugin->execute($input);
