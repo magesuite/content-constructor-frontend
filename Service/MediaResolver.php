@@ -6,6 +6,8 @@ namespace MageSuite\ContentConstructorFrontend\Service;
 
 class MediaResolver
 {
+    public const CACHE_LIFETIME = 86400;
+
     protected \Magento\Cms\Model\Template\FilterProvider $filterProvider;
     protected \Magento\Store\Model\StoreManagerInterface $storeManager;
     protected \Magento\Framework\App\Filesystem\DirectoryList $directoryList;
@@ -50,7 +52,7 @@ class MediaResolver
 
         if (empty($srcSet)) {
             $srcSet = $this->buildSrcSet($originalImageUrl);
-            $this->cache->save($srcSet, $cacheIdentifier, ['src_sets']);
+            $this->cache->save($srcSet, $cacheIdentifier, ['src_sets'], self::CACHE_LIFETIME);
         }
 
         return $srcSet;
@@ -70,7 +72,7 @@ class MediaResolver
         if ($srcSet == null) {
             $srcSet = json_encode($this->buildSrcSetArray($originalImageUrl));
 
-            $this->cache->save($srcSet, $cacheIdentifier, ['src_sets']);
+            $this->cache->save($srcSet, $cacheIdentifier, ['src_sets'], self::CACHE_LIFETIME);
         }
 
         return json_decode($srcSet, true);
@@ -89,7 +91,7 @@ class MediaResolver
 
         if (empty($srcSet)) {
             $srcSet = $this->buildSrcSetByDensity($originalImageUrl);
-            $this->cache->save($srcSet, $cacheIdentifier, ['src_sets']);
+            $this->cache->save($srcSet, $cacheIdentifier, ['src_sets'], self::CACHE_LIFETIME);
         }
 
         return $srcSet;
