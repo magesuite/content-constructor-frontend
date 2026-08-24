@@ -240,4 +240,12 @@
             </argument>
         </arguments>
     </type>
+
+    <type name="Magento\Catalog\Model\Indexer\Category\Product\Action\Full">
+        <plugin name="clean_products_count_cache" type="MageSuite\ContentConstructorFrontend\Plugin\Magento\Catalog\Model\Indexer\Category\Product\Action\Full\CleanProductsCountCache" sortOrder="10" />
+    </type>
+
+    <type name="Magento\Catalog\Model\Indexer\Category\Product\Action\Rows">
+        <plugin name="clean_products_count_cache" type="MageSuite\ContentConstructorFrontend\Plugin\Magento\Catalog\Model\Indexer\Category\Product\Action\Rows\CleanProductsCountCache" sortOrder="10" />
+    </type>
 </config>
