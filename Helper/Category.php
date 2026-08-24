@@ -1,11 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MageSuite\ContentConstructorFrontend\Helper;
 
 class Category
 {
     public const CACHE_LIFETIME = 86400;
     public const CACHE_KEY = 'products_in_category_count_store_%s';
+    public const CACHE_TAG = 'products_in_categories_count';
 
     protected array $productsCount = [];
 
@@ -16,7 +19,7 @@ class Category
     protected \Magento\Framework\App\CacheInterface $cache;
     protected \Magento\Framework\DB\Adapter\AdapterInterface $connection;
     protected \Magento\Store\Model\StoreManagerInterface $storeManager;
-    protected \Magento\Framework\Serialize\Serializer\Serialize $serializer;
+    protected \Magento\Framework\Serialize\SerializerInterface $serializer;
 
     public function __construct(
         \Magento\Catalog\Model\ResourceModel\Category\CollectionFactory $categoryCollectionFactory,
@@ -25,7 +28,7 @@ class Category
         \Smile\ElasticsuiteVirtualCategory\Model\Category\Attribute\VirtualRule\ReadHandler $readHandler,
         \Magento\Framework\App\CacheInterface $cache,
         \Magento\Framework\App\ResourceConnection $resourceConnection,
-        \Magento\Framework\Serialize\Serializer\Serialize $serializer,
+        \Magento\Framework\Serialize\SerializerInterface $serializer,
         \Magento\Store\Model\StoreManagerInterface $storeManager
     ) {
         $this->categoryCollectionFactory = $categoryCollectionFactory;
@@ -46,7 +49,7 @@ class Category
 
         $result = $this->getProductsCountFromIndex();
 
-        return $result[$category->getId()] ?? 0;
+        return (int) ($result[$category->getId()] ?? 0);
     }
 
     protected function getProductsCountFromIndex(): array
@@ -64,7 +67,7 @@ class Category
         }
 
         if (!$result) {
-            $categoryIndexTable = $this->tableMaintainer->getMainTable($this->storeManager->getStore()->getId());
+            $categoryIndexTable = $this->tableMaintainer->getMainTable((int) $this->storeManager->getStore()->getId());
 
             $select = $this->connection->select()
                 ->from($categoryIndexTable, ['category_id', 'COUNT(distinct product_id) AS products_count'])
@@ -74,7 +77,7 @@ class Category
             $this->cache->save(
                 $this->serializer->serialize($result),
                 $cacheKey,
-                ['products_in_categories_count'],
+                [self::CACHE_TAG],
                 self::CACHE_LIFETIME
             );
         }
