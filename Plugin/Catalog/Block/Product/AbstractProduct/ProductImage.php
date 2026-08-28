@@ -20,7 +20,7 @@ class ProductImage
         $location,
         array $attributes = []
     ): array {
-        $product = $this->loadSimpleVariation->execute($product, $location);
+        $product = $this->loadSimpleVariation->execute($product);
 
         return [$product, $location, $attributes];
     }

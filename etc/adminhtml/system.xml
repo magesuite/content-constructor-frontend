@@ -61,6 +61,14 @@
                     </comment>
                 </field>
             </group>
+            <group id="swatch_preview_image" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Swatch Preview Image</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>When enabled, selecting a swatch option (e.g. color) on category and search result pages updates the product tile preview image to the selected variation.</comment>
+                </field>
+            </group>
         </section>
     </system>
 </config>

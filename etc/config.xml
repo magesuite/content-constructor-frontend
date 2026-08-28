@@ -15,6 +15,9 @@
             <preload_image>
                 <enabled>0</enabled>
             </preload_image>
+            <swatch_preview_image>
+                <enabled>1</enabled>
+            </swatch_preview_image>
         </cc_frontend_extension>
     </default>
 </config>
