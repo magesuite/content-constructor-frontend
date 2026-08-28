@@ -91,13 +91,16 @@ if ($block->getVar('hero_carousel/use_whole_screen') == 'true') {
 }
 
 if (isset($componentConfiguration)) {
-    echo $this->getLayout()
+    $imageTeaser = $block->getLayout()
         ->createBlock(MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser::class)
         ->setData($componentConfiguration)
         ->setComponentType('hero_carousel')
         ->setMix($componentClasses)
         ->setContainerMix($containerClasses)
-        ->setAdditionalJsSettings($jsSettings)
-        ->toHtml();
+        ->setAdditionalJsSettings($jsSettings);
+
+    echo $imageTeaser->toHtml();
+
+    $block->addIdentities($imageTeaser->getIdentities());
 }
 ?>

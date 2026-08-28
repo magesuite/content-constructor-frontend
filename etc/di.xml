@@ -13,6 +13,13 @@
         </arguments>
     </type>
 
+    <type name="MageSuite\ContentConstructorFrontend\Model\Component\ImageTeaser">
+        <arguments>
+            <argument name="pinProductProvider" xsi:type="object">MageSuite\ContentConstructorFrontend\Model\Component\ImageTeaser\PinProductProvider</argument>
+            <argument name="pinsBuilder" xsi:type="object">MageSuite\ContentConstructorFrontend\Model\Component\ImageTeaser\PinsBuilder</argument>
+        </arguments>
+    </type>
+
     <type name="Magento\Framework\Console\CommandList">
         <arguments>
             <argument name="commands" xsi:type="array">

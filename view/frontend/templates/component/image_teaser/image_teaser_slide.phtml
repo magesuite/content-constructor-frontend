@@ -235,6 +235,16 @@ $slideClasses .= ' '.$slide->getCcCssClasses();
                 ?>
             </figcaption>
         <?php endif; ?>
+
+        <?php if ($slide->hasPins()): ?>
+            <?= $block->getLayout()
+                ->createBlock(\Magento\Framework\View\Element\Template::class)
+                ->setTemplate('MageSuite_ContentConstructorFrontend::component/image_teaser/pins.phtml')
+                ->setViewModel($viewModel)
+                ->setSlide($slide)
+                ->toHtml();
+            ?>
+        <?php endif; ?>
     </figure>
     <?php if ($ctaHref && !$ctaLinkedOnly): ?>
         </a>
