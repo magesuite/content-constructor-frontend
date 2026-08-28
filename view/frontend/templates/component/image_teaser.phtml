@@ -113,6 +113,10 @@ $includeStylesInComponent = $block->getVar('image_teaser/include_styles_in_compo
     <?= /* @noEscape */ $block->getCssOnce('css/image-teaser.css', $deferCSS); ?>
 <?php endif; ?>
 
+<?php if ($viewModel->hasPins()): ?>
+    <?= /* @noEscape */ $block->getCssOnce('css/pins.css', $deferCSS); ?>
+<?php endif; ?>
+
 <?php if (!empty($slides)): ?>
     <?php if ($gridTeaser): ?>
         <li class="<?= /* @noEscape */ $teaserBrickClass ?>" id="<?= /* @noEscape */ $teaserId ?>">
