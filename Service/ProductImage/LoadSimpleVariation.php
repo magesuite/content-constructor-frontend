@@ -15,15 +15,14 @@ class LoadSimpleVariation
         protected \Magento\Catalog\Model\ResourceModel\Product\Attribute\CollectionFactory $attributeCollectionFactory,
         protected \Magento\Framework\App\Request\Http $request,
         protected \Magento\Framework\Serialize\SerializerInterface $serializer,
-        protected array $applicableLocations = []
+        protected \MageSuite\ContentConstructorFrontend\Helper\Configuration\ProductImage $configuration,
+        protected array $applicableActions = []
     ) {
     }
 
-    public function execute(
-        \Magento\Catalog\Model\Product $parentProduct,
-        ?string $location = null
-    ): \Magento\Catalog\Model\Product {
-        if (!$this->isApplicable($parentProduct, $location)) {
+    public function execute(\Magento\Catalog\Model\Product $parentProduct): \Magento\Catalog\Model\Product
+    {
+        if (!$this->isApplicable($parentProduct)) {
             return $parentProduct;
         }
 
@@ -52,23 +51,17 @@ class LoadSimpleVariation
         return $this->cache[$cacheKey] = $this->loadSimpleVariation($parentProduct, $filterArray);
     }
 
-    protected function isApplicable(\Magento\Catalog\Model\Product $product, ?string $location = null): bool
+    protected function isApplicable(\Magento\Catalog\Model\Product $product): bool
     {
+        if (!$this->configuration->isSwatchPreviewImageEnabled()) {
+            return false;
+        }
+
         if ($product->getTypeId() !== \Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE) {
             return false;
         }
 
-        if ($location === null) {
-            return true;
-        }
-
-        foreach ($this->applicableLocations as $applicableLocation) {
-            if (str_contains($location, $applicableLocation)) {
-                return true;
-            }
-        }
-
-        return false;
+        return in_array($this->request->getFullActionName(), $this->applicableActions, true);
     }
 
     protected function getFilterArray(array $request): array

@@ -49,9 +49,9 @@
     <type name="MageSuite\ContentConstructorFrontend\Service\ProductImage\LoadSimpleVariation">
         <arguments>
             <argument name="swatchHelperData" xsi:type="object">Smile\ElasticsuiteSwatches\Helper\Swatches</argument>
-            <argument name="applicableLocations" xsi:type="array">
-                <item name="category_page_grid" xsi:type="string">category_page_grid</item>
-                <item name="category_page_list" xsi:type="string">category_page_list</item>
+            <argument name="applicableActions" xsi:type="array">
+                <item name="catalog_category_view" xsi:type="string">catalog_category_view</item>
+                <item name="catalogsearch_result_index" xsi:type="string">catalogsearch_result_index</item>
             </argument>
         </arguments>
     </type>
