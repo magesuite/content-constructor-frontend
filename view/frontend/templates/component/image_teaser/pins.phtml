@@ -1,0 +1,77 @@
+<?php
+/** @var $block \Magento\Framework\View\Element\Template */
+/** @var \Magento\Framework\Escaper $escaper */
+/** @var \MageSuite\ContentConstructorFrontend\Model\Component\ImageTeaser $viewModel */
+$viewModel = $block->getViewModel();
+$pins = $viewModel->getSlidePins($block->getSlide());
+
+if (empty($pins)) {
+    return;
+}
+
+$iconAttributes = $viewModel->getPinIconAttributes();
+$markerHtml = empty($iconAttributes) ? '' : $block->getLayout()
+    ->createBlock(\MageSuite\ThemeHelpers\Block\Icon::class)
+    ->addData($iconAttributes)
+    ->toHtml();
+?>
+<div class="cs-pins" data-mage-init='{"ccPins": {}}'>
+    <?php foreach ($pins as $pin): ?>
+        <?php $card = $pin->getCard(); ?>
+        <span class="<?= $escaper->escapeHtml($pin->getCssClasses()) ?>"
+              style="<?= $escaper->escapeHtml($pin->getStyle()) ?>"
+              data-href="<?= $escaper->escapeUrl($pin->getHref()) ?>"
+              data-target="<?= $escaper->escapeHtmlAttr($pin->getTarget()) ?>"
+              <?php foreach ($pin->getCardAttributes() as $attribute => $value): ?>
+                  <?= $escaper->escapeHtmlAttr($attribute) ?>="<?= $escaper->escapeHtmlAttr($value) ?>"
+              <?php endforeach; ?>
+        >
+            <button type="button"
+                    class="cs-pins__trigger"
+                    <?php foreach ($pin->getTriggerAttributes() as $attribute => $value): ?>
+                        <?= $escaper->escapeHtmlAttr($attribute) ?>="<?= $escaper->escapeHtmlAttr($value) ?>"
+                    <?php endforeach; ?>
+                    aria-label="<?= $escaper->escapeHtmlAttr($pin->getAriaLabel()) ?>"
+            >
+                <span class="cs-pins__marker"><?= /* @noEscape */ $markerHtml ?></span>
+            </button>
+            <?php if ($card !== null): ?>
+                <span class="cs-pins__card"
+                      role="link"
+                      tabindex="0"
+                      aria-label="<?= $escaper->escapeHtmlAttr($card->getAriaLabel()) ?>"
+                >
+                    <?php if ($card->getSalePercentage() !== null): ?>
+                        <span class="cs-pins__card-badges">
+                            <span class="cs-pins__card-badge cs-pins__card-badge--sale">-<?= (int)$card->getSalePercentage() ?>%</span>
+                        </span>
+                    <?php endif; ?>
+                    <?php if ($card->getImageUrl() !== ''): ?>
+                        <span class="cs-pins__card-media">
+                            <img class="cs-pins__card-image"
+                                 data-src="<?= $escaper->escapeUrl($card->getImageUrl()) ?>"
+                                 alt="<?= $escaper->escapeHtmlAttr($card->getName()) ?>">
+                        </span>
+                    <?php endif; ?>
+                    <span class="cs-pins__card-body">
+                        <span class="cs-pins__card-name"><?= $escaper->escapeHtml($card->getName()) ?></span>
+                        <span class="<?= $escaper->escapeHtml($card->getPriceCssClasses()) ?>"><?= /* @noEscape */ $card->getPriceHtml() ?></span>
+                        <?php $rating = $card->getRating(); ?>
+                        <?php if ($rating !== null): ?>
+                            <span class="cs-pins__card-rating">
+                                <?= /* @noEscape */ $block->getLayout()
+                                    ->createBlock(\Magento\Framework\View\Element\Template::class)
+                                    ->setTemplate('Magento_Review::rating-stars.phtml')
+                                    ->setMaxStars($rating->getMaxStars())
+                                    ->setActiveStars($rating->getActiveStars())
+                                    ->setReviewsCount($rating->getReviewsCount())
+                                    ->setAdditionalClasses('cs-star-rating--product-tile')
+                                    ->toHtml(); ?>
+                            </span>
+                        <?php endif; ?>
+                    </span>
+                </span>
+            <?php endif; ?>
+        </span>
+    <?php endforeach; ?>
+</div>

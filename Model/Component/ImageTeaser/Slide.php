@@ -41,4 +41,9 @@ class Slide extends \MageSuite\ContentConstructorFrontend\Model\Component\Generi
     {
         return $this->canBeDisplayed->execute($this);
     }
+
+    public function hasPins(): bool
+    {
+        return !empty($this->_getData('pins')['items']);
+    }
 }
