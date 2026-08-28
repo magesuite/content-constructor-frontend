@@ -15,11 +15,15 @@ $componentConfiguration['scenario'] = array_merge_recursive(
 
 ?>
 
-<?= $this->getLayout()
-    ->createBlock('MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser')
+<?php
+$imageTeaser = $block->getLayout()
+    ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser::class)
     ->setData($componentConfiguration)
     ->setComponentType('teaser_and_text')
     ->setMix('cs-image-teaser--teaser-and-text ' . $block->getMix())
-    ->setContainerMix('cs-container--teaser-and-text ' . $block->getContainerMix())
-    ->toHtml();
+    ->setContainerMix('cs-container--teaser-and-text ' . $block->getContainerMix());
+
+echo $imageTeaser->toHtml();
+
+$block->addIdentities($imageTeaser->getIdentities());
 ?>
