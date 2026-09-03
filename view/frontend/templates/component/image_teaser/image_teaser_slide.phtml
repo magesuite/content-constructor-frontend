@@ -12,6 +12,7 @@ $isSliderMobile = $block->getIsSliderMobile();
 $contentPlacement = $block->getContentPlacement();
 $contentAlign = $slide->getContentAlign();
 $isConsentRequired = $block->getIsConsentRequired() ?? false;
+$visibilityMediaQuery = $block->getVisibilityMediaQuery();
 
 /**
  * Call to action properties.
@@ -122,6 +123,7 @@ $slideClasses .= ' '.$slide->getCcCssClasses();
             ->setLazyLoad($lazyLoad)
             ->setEagerLoad($eagerLoad)
             ->setIsConsentRequired($isConsentRequired)
+            ->setVisibilityMediaQuery($visibilityMediaQuery)
             ->toHtml();
         ?>
 

@@ -4,29 +4,14 @@ namespace MageSuite\ContentConstructorFrontend\Service;
 
 class CmsPreloadImageResolver
 {
-    const PRELOAD_IMAGE_PATH = 'data/items/0/image/decoded';
-
-    /**
-     * @var \MageSuite\ContentConstructorFrontend\Service\MediaResolver
-     */
-    protected $mediaResolver;
-    /**
-     * @var \Magento\Framework\Stdlib\ArrayManager
-     */
-    protected $arrayManager;
-    /**
-     * @var array
-     */
-    protected $allowedComponents;
+    public const PRELOAD_IMAGE_PATH = 'data/items/0/image/decoded';
 
     public function __construct(
-        \MageSuite\ContentConstructorFrontend\Service\MediaResolver $mediaResolver,
-        \Magento\Framework\Stdlib\ArrayManager $arrayManager,
-        $allowedComponents = []
+        protected \MageSuite\ContentConstructorFrontend\Service\MediaResolver $mediaResolver,
+        protected \Magento\Framework\Stdlib\ArrayManager $arrayManager,
+        protected \MageSuite\ContentConstructorFrontend\Helper\ComponentVisibility $componentVisibilityHelper,
+        protected array $allowedComponents = []
     ) {
-        $this->mediaResolver = $mediaResolver;
-        $this->arrayManager = $arrayManager;
-        $this->allowedComponents = $allowedComponents;
     }
 
     public function resolve($contentConstructorContent, $imageWidth)
@@ -34,11 +19,19 @@ class CmsPreloadImageResolver
         if (empty($contentConstructorContent)) {
             return null;
         }
-        [$previewImage, $srcSet] = $this->getPreloadImageData($contentConstructorContent, $imageWidth);
+
+        $preloadImageData = $this->getPreloadImageData($contentConstructorContent, $imageWidth);
+
+        if (!$preloadImageData) {
+            return null;
+        }
+
+        [$previewImage, $srcSet, $mediaQuery] = $preloadImageData;
 
         return [
             'preload_image' => $previewImage,
-            'src_set' => $srcSet
+            'src_set' => $srcSet,
+            'media' => $mediaQuery
         ];
     }
 
@@ -56,7 +49,11 @@ class CmsPreloadImageResolver
             return null;
         }
 
-        return [$this->resolvePreviewImage($image, $imageWidth), $this->resolveSrcSet($image)];
+        return [
+            $this->resolvePreviewImage($image, $imageWidth),
+            $this->resolveSrcSet($image),
+            $this->componentVisibilityHelper->getVisibilityMediaQuery($component['data'])
+        ];
     }
 
     public function resolvePreviewImage($image, $imageWidth)
@@ -86,7 +83,7 @@ class CmsPreloadImageResolver
 
         foreach ($components as $component) {
             if (in_array($component['type'], $this->allowedComponents)) {
-                if (!$component['data']['componentVisibility']['mobile']) {
+                if (!($component['data']['componentVisibility']['mobile'] ?? false)) {
                     continue;
                 }
 

@@ -4,7 +4,8 @@ $viewModel = $block->getViewModel();
 $imageWidth = $block->getImageWidth();
 $preloadImage = $viewModel->getPreloadImage($imageWidth);
 $preloadImageSrcSet = $viewModel->getPreloadImageSrcSet($imageWidth);
+$preloadImageMedia = $viewModel->getPreloadImageMedia($imageWidth);
 ?>
 <?php if ($preloadImage && $preloadImageSrcSet): ?>
-    <link rel="preload" href="<?= $preloadImage ;?>" imagesrcset="<?= $preloadImageSrcSet ;?>" as="image" fetchpriority="high">
+    <link rel="preload" href="<?= $preloadImage ;?>" imagesrcset="<?= $preloadImageSrcSet ;?>" as="image" fetchpriority="high"<?php if (!empty($preloadImageMedia)): ?> media="<?= $preloadImageMedia ;?>"<?php endif;?>>
 <?php endif;?>
