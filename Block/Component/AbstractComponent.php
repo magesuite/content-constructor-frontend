@@ -1,6 +1,5 @@
 <?php
 
-
 namespace MageSuite\ContentConstructorFrontend\Block\Component;
 
 class AbstractComponent extends \Magento\Framework\View\Element\Template
@@ -57,6 +56,11 @@ class AbstractComponent extends \Magento\Framework\View\Element\Template
     public function getVisibilityClass()
     {
         return $this->componentVisibilityHelper->getVisibilityClass($this->getData());
+    }
+
+    public function getVisibilityMediaQuery(): string
+    {
+        return $this->componentVisibilityHelper->getVisibilityMediaQuery($this->getData());
     }
 
     public function getCssOnce($cssPath, $cssDefer = false) {

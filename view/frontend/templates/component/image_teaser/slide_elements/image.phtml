@@ -13,6 +13,8 @@ $isSvg = $slide->isSvg();
  */
 $isConsentRequired = $block->getIsConsentRequired() ?? false;
 
+$visibilityMediaQuery = $block->getVisibilityMediaQuery();
+
 /**
  * Image properties with support for conditional lazy loading.
  */
@@ -71,7 +73,10 @@ $isLazyLoaded = $eagerLoad ? false : $lazyLoad;
             ?>
         <?php endif; ?>
         <source
-             <?php if ($isLazyLoaded): ?>
+            <?php if ($visibilityMediaQuery): ?>
+                media="<?= $visibilityMediaQuery ?>"
+            <?php endif; ?>
+            <?php if ($isLazyLoaded): ?>
                 srcset="<?= $placeholderImageSrc ?>"
                 <?php if ($isConsentRequired): ?>
                     data-consent-srcset="<?= $imageSrcset ?>"
@@ -86,7 +91,9 @@ $isLazyLoaded = $eagerLoad ? false : $lazyLoad;
                 <?php endif; ?>
             <?php endif; ?>
 
-            type="<?= $imageMimeType ?>"
+            <?php if ($imageMimeType): ?>
+                type="<?= $imageMimeType ?>"
+            <?php endif; ?>
             <?php if ($imageSizes): ?>
                 sizes="<?= $imageSizes ?>"
             <?php endif; ?>
@@ -109,7 +116,7 @@ $isLazyLoaded = $eagerLoad ? false : $lazyLoad;
                 <?php if ($isConsentRequired): ?>
                     data-consent-src="<?= $origImageSrc ?>"
                     data-consent-srcset="<?= $imageSrcset ?>"
-                <?php else: ?>
+                <?php elseif (!$visibilityMediaQuery): ?>
                     data-src="<?= $origImageSrc ?>"
                     data-srcset="<?= $imageSrcset ?>"
                 <?php endif; ?>
@@ -117,7 +124,7 @@ $isLazyLoaded = $eagerLoad ? false : $lazyLoad;
                 <?php if ($isConsentRequired): ?>
                     data-consent-src="<?= $origImageSrc ?>"
                     data-consent-srcset="<?= $imageSrcset ?>"
-                <?php else: ?>
+                <?php elseif (!$visibilityMediaQuery): ?>
                     src="<?= $origImageSrc ?>"
                     srcset="<?= $imageSrcset ?>"
                 <?php endif; ?>
