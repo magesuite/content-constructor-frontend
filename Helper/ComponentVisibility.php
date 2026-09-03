@@ -19,10 +19,11 @@ class ComponentVisibility extends \Magento\Framework\App\Helper\AbstractHelper
         $this->viewConfig = $viewConfig;
     }
 
-    public function getVisibilityClass($componentConfiguration) {
+    public function getVisibilityClass(array $componentConfiguration): string
+    {
         $viewConfig = $this->viewConfig->getViewConfig();
 
-        if(!isset($componentConfiguration['componentVisibility'])) {
+        if (!isset($componentConfiguration['componentVisibility'])) {
             return '';
         }
 
@@ -39,6 +40,35 @@ class ComponentVisibility extends \Magento\Framework\App\Helper\AbstractHelper
         }
 
         return implode(' ', $visibilityClasses);
+    }
+
+    public function getVisibilityMediaQuery(array $componentConfiguration): string
+    {
+        if (!isset($componentConfiguration['componentVisibility'])) {
+            return '';
+        }
+
+        $isVisibleOnMobile = (bool)($componentConfiguration['componentVisibility']['mobile'] ?? false);
+        $isVisibleOnDesktop = (bool)($componentConfiguration['componentVisibility']['desktop'] ?? false);
+
+        if ($isVisibleOnMobile === $isVisibleOnDesktop) {
+            return '';
+        }
+
+        $tabletBreakpoint = (int)$this->viewConfig->getViewConfig()
+            ->getVarValue('Magento_Theme', 'breakpoints/tablet');
+
+        if (!$tabletBreakpoint) {
+            return '';
+        }
+
+        $tabletBreakpointInEm = $tabletBreakpoint / 16;
+
+        if ($isVisibleOnDesktop) {
+            return sprintf('(min-width: %sem)', $tabletBreakpointInEm);
+        }
+
+        return sprintf('(max-width: %sem)', $tabletBreakpointInEm - 0.01);
     }
 
     public function isComponentVisibleAtAll($componentConfiguration)

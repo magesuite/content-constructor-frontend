@@ -5,6 +5,9 @@ namespace MageSuite\ContentConstructorFrontend\ViewModel;
 class CmsPreloadImage implements \Magento\Framework\View\Element\Block\ArgumentInterface
 {
     protected $preloadImageData = null;
+
+    protected bool $preloadImageDataResolved = false;
+
     /**
      * @var \Magento\Cms\Model\Page
      */
@@ -35,8 +38,9 @@ class CmsPreloadImage implements \Magento\Framework\View\Element\Block\ArgumentI
             return null;
         }
 
-        if (empty($this->preloadImageData)) {
+        if (!$this->preloadImageDataResolved) {
             $this->preloadImageData = $this->cmsPreloadImageResolver->resolve($this->cmsPage->getContentConstructorContent(), $imageWidth);
+            $this->preloadImageDataResolved = true;
         }
 
         return $this->preloadImageData;
@@ -62,5 +66,16 @@ class CmsPreloadImage implements \Magento\Framework\View\Element\Block\ArgumentI
         }
 
         return false;
+    }
+
+    public function getPreloadImageMedia(int $imageWidth): ?string
+    {
+        $preloadImageData = $this->getPreloadImageData($imageWidth);
+
+        if (!empty($preloadImageData['media'])) {
+            return $preloadImageData['media'];
+        }
+
+        return null;
     }
 }
