@@ -97,11 +97,15 @@ if ($gridTeaser) {
     $brickClass = $block->getBrickClass();
 
     $teaserBrickClass = $brickClass . ' ' . $brickClass . '--teaser';
-    if($teaser['size']['x'] == 2) {
-        $teaserBrickClass .= ' ' .$brickClass . '--x2';
+
+    $teaserWidthInColumns = (int)$teaser['size']['x'];
+    $teaserHeightInRows = (int)$teaser['size']['y'];
+
+    if ($teaserWidthInColumns > 1) {
+        $teaserBrickClass .= ' ' . $brickClass . '--x' . $teaserWidthInColumns;
     }
-    if($teaser['size']['y'] == 2) {
-        $teaserBrickClass .= ' ' . $brickClass . '--y2';
+    if ($teaserHeightInRows > 1) {
+        $teaserBrickClass .= ' ' . $brickClass . '--y' . $teaserHeightInRows;
     }
 }
 
