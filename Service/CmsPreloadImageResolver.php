@@ -5,6 +5,8 @@ namespace MageSuite\ContentConstructorFrontend\Service;
 class CmsPreloadImageResolver
 {
     public const PRELOAD_IMAGE_PATH = 'data/items/0/image/decoded';
+    public const BREAKPOINT_MOBILE = 'mobile';
+    public const BREAKPOINT_DESKTOP = 'desktop';
 
     public function __construct(
         protected \MageSuite\ContentConstructorFrontend\Service\MediaResolver $mediaResolver,
@@ -16,10 +18,6 @@ class CmsPreloadImageResolver
 
     public function resolve($contentConstructorContent, $imageWidth)
     {
-        if (empty($contentConstructorContent)) {
-            return null;
-        }
-
         $preloadImageData = $this->getPreloadImageData($contentConstructorContent, $imageWidth);
 
         if (!$preloadImageData) {
@@ -35,62 +33,240 @@ class CmsPreloadImageResolver
         ];
     }
 
-    public function getPreloadImageData($contentConstructorContent, $imageWidth)
+    public function resolveAll(?string $contentConstructorContent, int $imageWidth): array
     {
-        $component = $this->fetchMatchingComponent($contentConstructorContent);
+        if (empty($contentConstructorContent)) {
+            return [];
+        }
 
-        if (!$component) {
+        $resolvedByBreakpoint = $this->resolveForBreakpoints(
+            $this->decodeComponents($contentConstructorContent),
+            [self::BREAKPOINT_MOBILE, self::BREAKPOINT_DESKTOP],
+            $imageWidth
+        );
+
+        return $this->buildPreloadEntries($resolvedByBreakpoint);
+    }
+
+    public function getPreloadImageData(?string $contentConstructorContent, int $imageWidth): ?array
+    {
+        if (empty($contentConstructorContent)) {
             return null;
         }
 
-        $image = $this->fetchMatchingImage($component);
+        $resolvedByBreakpoint = $this->resolveForBreakpoints(
+            $this->decodeComponents($contentConstructorContent),
+            [self::BREAKPOINT_MOBILE],
+            $imageWidth
+        );
 
-        if (!$image) {
+        $resolved = $resolvedByBreakpoint[self::BREAKPOINT_MOBILE] ?? null;
+
+        if ($resolved === null) {
             return null;
         }
 
         return [
-            $this->resolvePreviewImage($image, $imageWidth),
-            $this->resolveSrcSet($image),
-            $this->componentVisibilityHelper->getVisibilityMediaQuery($component['data'])
+            $resolved['preload_image'],
+            $resolved['src_set'],
+            $this->componentVisibilityHelper->getVisibilityMediaQuery($resolved['component']['data'])
         ];
     }
 
-    public function resolvePreviewImage($image, $imageWidth)
+    protected function resolveForBreakpoints(array $components, array $breakpoints, int $imageWidth): array
     {
-        $srcSet = $this->mediaResolver->resolveSrcSetArray($image);
+        $resolvedByBreakpoint = [];
+        $resolvedImages = [];
 
-        if (!isset($srcSet[$imageWidth])) {
+        foreach ($components as $component) {
+            $pendingBreakpoints = array_diff($breakpoints, array_keys($resolvedByBreakpoint));
+
+            if (empty($pendingBreakpoints)) {
+                break;
+            }
+
+            if (!$this->isAllowedComponent($component)) {
+                continue;
+            }
+
+            $visibleBreakpoints = $this->filterVisibleBreakpoints($component, $pendingBreakpoints);
+
+            if (empty($visibleBreakpoints)) {
+                continue;
+            }
+
+            $image = $this->fetchComponentImagePath($component);
+
+            if ($image === null) {
+                continue;
+            }
+
+            if (!array_key_exists($image, $resolvedImages)) {
+                $resolvedImages[$image] = $this->resolveImage($image, $imageWidth);
+            }
+
+            if ($resolvedImages[$image] === null) {
+                continue;
+            }
+
+            $resolvedByBreakpoint += array_fill_keys($visibleBreakpoints, ['component' => $component] + $resolvedImages[$image]);
+        }
+
+        return $resolvedByBreakpoint;
+    }
+
+    protected function fetchComponentImagePath(array $component): ?string
+    {
+        $image = $this->fetchMatchingImage($component);
+
+        if (!is_string($image) || $image === '') {
             return null;
         }
 
-        return $srcSet[$imageWidth];
+        return $image;
     }
 
-    public function resolveSrcSet($image)
+    protected function filterVisibleBreakpoints(array $component, array $breakpoints): array
+    {
+        $componentConfiguration = $component['data'] ?? [];
+
+        return array_filter(
+            $breakpoints,
+            fn (string $breakpoint) => $this->componentVisibilityHelper->isVisibleOnBreakpoint($componentConfiguration, $breakpoint)
+        );
+    }
+
+    protected function resolveImage(string $image, int $imageWidth): ?array
+    {
+        $previewImage = $this->resolvePreviewImage($image, $imageWidth);
+
+        if (!$previewImage) {
+            return null;
+        }
+
+        return ['preload_image' => $previewImage, 'src_set' => $this->resolveSrcSet($image)];
+    }
+
+    protected function buildPreloadEntries(array $resolvedByBreakpoint): array
+    {
+        $mobile = $resolvedByBreakpoint[self::BREAKPOINT_MOBILE] ?? null;
+        $desktop = $resolvedByBreakpoint[self::BREAKPOINT_DESKTOP] ?? null;
+
+        if ($mobile && $desktop && $mobile['preload_image'] === $desktop['preload_image']) {
+            return [$this->buildPreloadEntry($mobile, '')];
+        }
+
+        $entries = [];
+
+        foreach ([self::BREAKPOINT_MOBILE, self::BREAKPOINT_DESKTOP] as $breakpoint) {
+            if (!isset($resolvedByBreakpoint[$breakpoint])) {
+                continue;
+            }
+
+            $entries[] = $this->buildPreloadEntry($resolvedByBreakpoint[$breakpoint], $this->resolveBreakpointMediaQuery($breakpoint));
+        }
+
+        return $entries;
+    }
+
+    protected function buildPreloadEntry(array $resolved, string $mediaQuery): array
+    {
+        return [
+            'preload_image' => $resolved['preload_image'],
+            'src_set' => $resolved['src_set'],
+            'media' => $mediaQuery
+        ];
+    }
+
+    protected function resolveBreakpointMediaQuery(string $breakpoint): string
+    {
+        return $this->componentVisibilityHelper->getVisibilityMediaQuery([
+            'componentVisibility' => [
+                self::BREAKPOINT_MOBILE => $breakpoint === self::BREAKPOINT_MOBILE,
+                self::BREAKPOINT_DESKTOP => $breakpoint === self::BREAKPOINT_DESKTOP
+            ]
+        ]);
+    }
+
+    protected function decodeComponents(?string $contentConstructorContent): array
+    {
+        $components = json_decode((string)$contentConstructorContent, true);
+
+        return is_array($components) ? $components : [];
+    }
+
+    protected function isAllowedComponent(array $component): bool
+    {
+        return in_array($component['type'] ?? '', $this->allowedComponents);
+    }
+
+    public function resolvePreviewImage(?string $image, int $imageWidth): ?string
+    {
+        if (!is_string($image) || $image === '') {
+            return null;
+        }
+
+        $srcSet = $this->mediaResolver->resolveSrcSetArray($image);
+
+        if (is_string($srcSet)) {
+            return $srcSet;
+        }
+
+        if (empty($srcSet)) {
+            return null;
+        }
+
+        if (isset($srcSet[$imageWidth])) {
+            return $srcSet[$imageWidth];
+        }
+
+        return $srcSet[$this->resolveClosestWidth(array_keys($srcSet), $imageWidth)];
+    }
+
+    protected function resolveClosestWidth(array $availableWidths, int $imageWidth): int
+    {
+        sort($availableWidths);
+
+        foreach ($availableWidths as $availableWidth) {
+            if ($availableWidth >= $imageWidth) {
+                return $availableWidth;
+            }
+        }
+
+        return end($availableWidths);
+    }
+
+    public function resolveSrcSet(string $image): string
     {
         return $this->mediaResolver->resolveSrcSet($image);
     }
 
-    public function fetchMatchingImage($component)
+    public function fetchMatchingImage(array $component): mixed
     {
         return $this->arrayManager->get(self::PRELOAD_IMAGE_PATH, $component);
     }
 
-    public function fetchMatchingComponent($contentConstructorContent)
+    public function fetchMatchingComponent(?string $contentConstructorContent): ?array
     {
-        $components = json_decode($contentConstructorContent, true);
+        return $this->fetchMatchingComponents($contentConstructorContent)[0] ?? null;
+    }
 
-        foreach ($components as $component) {
-            if (in_array($component['type'], $this->allowedComponents)) {
-                if (!($component['data']['componentVisibility']['mobile'] ?? false)) {
-                    continue;
-                }
+    public function fetchMatchingComponents(?string $contentConstructorContent): array
+    {
+        $matchingComponents = [];
 
-                return $component;
+        foreach ($this->decodeComponents($contentConstructorContent) as $component) {
+            if (!$this->isAllowedComponent($component)) {
+                continue;
             }
+
+            if (!$this->componentVisibilityHelper->isVisibleOnBreakpoint($component['data'] ?? [], self::BREAKPOINT_MOBILE)) {
+                continue;
+            }
+
+            $matchingComponents[] = $component;
         }
 
-        return null;
+        return $matchingComponents;
     }
 }

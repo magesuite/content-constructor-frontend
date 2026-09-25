@@ -1,11 +1,13 @@
 <?php
 /** @var $viewModel \MageSuite\ContentConstructorFrontend\ViewModel\CmsPreloadImage */
+/** @var \Magento\Framework\Escaper $escaper */
 $viewModel = $block->getViewModel();
 $imageWidth = $block->getImageWidth();
-$preloadImage = $viewModel->getPreloadImage($imageWidth);
-$preloadImageSrcSet = $viewModel->getPreloadImageSrcSet($imageWidth);
-$preloadImageMedia = $viewModel->getPreloadImageMedia($imageWidth);
+$preloadImages = $viewModel->getPreloadImages($imageWidth);
 ?>
-<?php if ($preloadImage && $preloadImageSrcSet): ?>
-    <link rel="preload" href="<?= $preloadImage ;?>" imagesrcset="<?= $preloadImageSrcSet ;?>" as="image" fetchpriority="high"<?php if (!empty($preloadImageMedia)): ?> media="<?= $preloadImageMedia ;?>"<?php endif;?>>
-<?php endif;?>
+<?php foreach ($preloadImages as $preloadImage): ?>
+    <?php if (empty($preloadImage['preload_image']) || empty($preloadImage['src_set'])): ?>
+        <?php continue; ?>
+    <?php endif; ?>
+    <link rel="preload" href="<?= $escaper->escapeUrl($preloadImage['preload_image']) ?>" imagesrcset="<?= $escaper->escapeHtml($preloadImage['src_set']) ?>" as="image" fetchpriority="high"<?php if (!empty($preloadImage['media'])): ?> media="<?= $escaper->escapeHtml($preloadImage['media']) ?>"<?php endif; ?>>
+<?php endforeach; ?>
