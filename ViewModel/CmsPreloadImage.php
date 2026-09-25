@@ -1,26 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MageSuite\ContentConstructorFrontend\ViewModel;
 
 class CmsPreloadImage implements \Magento\Framework\View\Element\Block\ArgumentInterface
 {
-    protected $preloadImageData = null;
+    protected ?array $preloadImageData = null;
 
     protected bool $preloadImageDataResolved = false;
 
-    /**
-     * @var \Magento\Cms\Model\Page
-     */
-    protected $cmsPage;
-    /**
-     * @var \MageSuite\ContentConstructorFrontend\Service\CmsPreloadImageResolver
-     */
-    protected $cmsPreloadImageResolver;
+    protected array $preloadImages = [];
 
-    /**
-     * @var \MageSuite\ContentConstructorFrontend\Helper\Configuration
-     */
-    protected $configuration;
+    protected bool $preloadImagesResolved = false;
+
+    protected \Magento\Cms\Model\Page $cmsPage;
+
+    protected \MageSuite\ContentConstructorFrontend\Service\CmsPreloadImageResolver $cmsPreloadImageResolver;
+
+    protected \MageSuite\ContentConstructorFrontend\Helper\Configuration $configuration;
 
     public function __construct(
         \Magento\Cms\Model\Page $cmsPage,
@@ -77,5 +75,19 @@ class CmsPreloadImage implements \Magento\Framework\View\Element\Block\ArgumentI
         }
 
         return null;
+    }
+
+    public function getPreloadImages(int $imageWidth): array
+    {
+        if (!$this->configuration->isPreloadImageEnabled()) {
+            return [];
+        }
+
+        if (!$this->preloadImagesResolved) {
+            $this->preloadImages = $this->cmsPreloadImageResolver->resolveAll($this->cmsPage->getContentConstructorContent(), $imageWidth);
+            $this->preloadImagesResolved = true;
+        }
+
+        return $this->preloadImages;
     }
 }

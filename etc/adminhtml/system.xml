@@ -57,7 +57,7 @@
                     <label>Enabled</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                     <comment>
-                        <![CDATA[When enabled, it preloads first image from Image Teaser, Hero or Mosaic component on CMS page - <a href="https://web.dev/optimize-lcp/#preload-important-resources" target="_blank" rel=”noopener”>Read more</a>]]>
+                        <![CDATA[When enabled, the first image of configured component on a CMS page is preloaded so that it starts downloading earlier and improves LCP. <a href="https://creativestyle.atlassian.net/wiki/spaces/MGSDEV/pages/4794482689/CMS+Preload+Image" target="_blank" rel="noopener">Documentation</a>]]>
                     </comment>
                 </field>
             </group>

@@ -71,7 +71,16 @@ class ComponentVisibility extends \Magento\Framework\App\Helper\AbstractHelper
         return sprintf('(max-width: %sem)', $tabletBreakpointInEm - 0.01);
     }
 
-    public function isComponentVisibleAtAll($componentConfiguration)
+    public function isVisibleOnBreakpoint(array $componentConfiguration, string $breakpoint): bool
+    {
+        if (!isset($componentConfiguration['componentVisibility'])) {
+            return true;
+        }
+
+        return (bool)($componentConfiguration['componentVisibility'][$breakpoint] ?? false);
+    }
+
+    public function isComponentVisibleAtAll(array $componentConfiguration): bool
     {
         if (!isset($componentConfiguration['componentVisibility'])) {
             return true;
