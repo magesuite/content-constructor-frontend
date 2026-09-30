@@ -1,8 +1,8 @@
 <?php
+/** @var \Magento\Framework\Escaper $escaper */
 /** @var \MageSuite\ContentConstructorFrontend\Model\Component\ImageTeaser $viewModel */
 $viewModel = $block->getViewModel();
 $imageTeaserData = $block->getImageTeaserData();
-$imageTypeHelper = $this->helper(\MageSuite\ThemeHelpers\Helper\ImageType::class);
 $slide = $block->getSlide();
 $isSvg = $slide->isSvg();
 
@@ -18,7 +18,7 @@ $visibilityMediaQuery = $block->getVisibilityMediaQuery();
 /**
  * Image properties with support for conditional lazy loading.
  */
-$origImageSrc = $block->escapeUrl($slide->getSrc());
+$origImageSrc = $escaper->escapeUrl((string) $slide->getSrc());
 $hasImage = !empty($origImageSrc);
 $placeholderImageSrc = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
 $imageSrcset = $slide->getSrcSet();
@@ -47,7 +47,7 @@ $imageHeight = $slide->getHeight();
  */
 $contrastOptimizers = $slide->getOptimizers();
 $mirrorImage = $contrastOptimizers['mirror_image'] ?? null;
-$imageMimeType = $imageTypeHelper->getMimeType($origImageSrc);
+$imageMimeType = $slide->getMimeType();
 
 /**
  * Video Teaser
@@ -59,12 +59,22 @@ $hasVideoTeaser = !empty($videoTeaserData['url']) && !empty($videoTeaserData['ty
  * Conditional lazy loading
  */
 $isLazyLoaded = $eagerLoad ? false : $lazyLoad;
+$imageClass = sprintf(
+    'cs-image-teaser__image%s%s',
+    $mirrorImage ? ' cs-image-teaser__image--mirror' : '',
+    $isLazyLoaded ? ' lazyload' : ''
+);
 ?>
 
 <?php if ($hasImage): ?>
-    <picture class="cs-image-teaser__picture"<?php if($aspectRatio): ?> style="aspect-ratio: <?= $aspectRatio ?>"<?php endif ?>>
-        <?php if($hasVideoTeaser): ?>
-            <?= $this->getLayout()
+    <picture
+        class="cs-image-teaser__picture"
+        <?php if ($aspectRatio): ?>
+            style="aspect-ratio: <?= $escaper->escapeHtmlAttr((string) $aspectRatio) ?>"
+        <?php endif ?>
+    >
+        <?php if ($hasVideoTeaser): ?>
+            <?= $block->getLayout()
                 ->createBlock(\MageSuite\ContentConstructorFrontend\Block\Component\ImageTeaser\VideoTeaser::class)
                 ->setImageTeaserData($imageTeaserData)
                 ->setSlide($slide)
@@ -74,69 +84,69 @@ $isLazyLoaded = $eagerLoad ? false : $lazyLoad;
         <?php endif; ?>
         <source
             <?php if ($visibilityMediaQuery): ?>
-                media="<?= $visibilityMediaQuery ?>"
+                media="<?= $escaper->escapeHtmlAttr((string) $visibilityMediaQuery) ?>"
             <?php endif; ?>
             <?php if ($isLazyLoaded): ?>
-                srcset="<?= $placeholderImageSrc ?>"
+                srcset="<?= $escaper->escapeHtmlAttr($placeholderImageSrc) ?>"
                 <?php if ($isConsentRequired): ?>
-                    data-consent-srcset="<?= $imageSrcset ?>"
+                    data-consent-srcset="<?= $escaper->escapeUrl((string) $imageSrcset) ?>"
                 <?php else: ?>
-                    data-srcset="<?= $imageSrcset ?>"
+                    data-srcset="<?= $escaper->escapeUrl((string) $imageSrcset) ?>"
                 <?php endif; ?>
             <?php else: ?>
                 <?php if ($isConsentRequired): ?>
-                    data-consent-srcset="<?= $imageSrcset ?>"
+                    data-consent-srcset="<?= $escaper->escapeUrl((string) $imageSrcset) ?>"
                 <?php else: ?>
-                    srcset="<?= $imageSrcset ?>"
+                    srcset="<?= $escaper->escapeUrl((string) $imageSrcset) ?>"
                 <?php endif; ?>
             <?php endif; ?>
 
             <?php if ($imageMimeType): ?>
-                type="<?= $imageMimeType ?>"
+                type="<?= $escaper->escapeHtmlAttr($imageMimeType) ?>"
             <?php endif; ?>
             <?php if ($imageSizes): ?>
-                sizes="<?= $imageSizes ?>"
+                sizes="<?= $escaper->escapeHtmlAttr((string) $imageSizes) ?>"
             <?php endif; ?>
             <?php if ($imageWidth): ?>
-                width="<?= $imageWidth ?>"
+                width="<?= $escaper->escapeHtmlAttr((string) $imageWidth) ?>"
             <?php endif; ?>
             <?php if ($imageHeight): ?>
-                height="<?= $imageHeight ?>"
+                height="<?= $escaper->escapeHtmlAttr((string) $imageHeight) ?>"
             <?php endif; ?>
         >
         <img
-            class="cs-image-teaser__image<?= $mirrorImage ? ' cs-image-teaser__image--mirror' : '' ?><?= $isLazyLoaded ? ' lazyload' : '' ?>"
-            alt="<?= $imageAlt ?>"
-            <?php if (!$imageAlt) : ?>
+            class="<?= $escaper->escapeHtmlAttr($imageClass) ?>"
+            alt="<?= $escaper->escapeHtmlAttr($imageAlt) ?>"
+            <?php if (!$imageAlt): ?>
                 aria-hidden="true"
             <?php endif ?>
 
-            src="<?= $placeholderImageSrc ?>"
+            src="<?= $escaper->escapeHtmlAttr($placeholderImageSrc) ?>"
             <?php if ($isLazyLoaded): ?>
                 <?php if ($isConsentRequired): ?>
-                    data-consent-src="<?= $origImageSrc ?>"
-                    data-consent-srcset="<?= $imageSrcset ?>"
+                    data-consent-src="<?= $escaper->escapeUrl($origImageSrc) ?>"
+                    data-consent-srcset="<?= $escaper->escapeUrl((string) $imageSrcset) ?>"
                 <?php elseif (!$visibilityMediaQuery): ?>
-                    data-src="<?= $origImageSrc ?>"
-                    data-srcset="<?= $imageSrcset ?>"
+                    data-src="<?= $escaper->escapeUrl($origImageSrc) ?>"
+                    data-srcset="<?= $escaper->escapeUrl((string) $imageSrcset) ?>"
                 <?php endif; ?>
             <?php else: ?>
                 <?php if ($isConsentRequired): ?>
-                    data-consent-src="<?= $origImageSrc ?>"
-                    data-consent-srcset="<?= $imageSrcset ?>"
+                    data-consent-src="<?= $escaper->escapeUrl($origImageSrc) ?>"
+                    data-consent-srcset="<?= $escaper->escapeUrl((string) $imageSrcset) ?>"
                 <?php elseif (!$visibilityMediaQuery): ?>
-                    src="<?= $origImageSrc ?>"
-                    srcset="<?= $imageSrcset ?>"
+                    src="<?= $escaper->escapeUrl($origImageSrc) ?>"
+                    srcset="<?= $escaper->escapeUrl((string) $imageSrcset) ?>"
                 <?php endif; ?>
             <?php endif; ?>
             <?php if ($imageSizes): ?>
-                sizes="<?= $imageSizes ?>"
+                sizes="<?= $escaper->escapeHtmlAttr((string) $imageSizes) ?>"
             <?php endif; ?>
             <?php if ($imageWidth): ?>
-                width="<?= $imageWidth ?>"
+                width="<?= $escaper->escapeHtmlAttr((string) $imageWidth) ?>"
             <?php endif; ?>
             <?php if ($imageHeight): ?>
-                height="<?= $imageHeight ?>"
+                height="<?= $escaper->escapeHtmlAttr((string) $imageHeight) ?>"
             <?php endif; ?>
             <?php if ($fetchPriority): ?>
                 fetchpriority="high"
