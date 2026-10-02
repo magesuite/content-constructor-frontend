@@ -6,26 +6,18 @@ namespace MageSuite\ContentConstructorFrontend\Service;
 
 class MediaResolver
 {
-    public const CACHE_LIFETIME = 86400;
+    public const int CACHE_LIFETIME = 86400;
 
-    protected \Magento\Cms\Model\Template\FilterProvider $filterProvider;
-    protected \Magento\Store\Model\StoreManagerInterface $storeManager;
-    protected \Magento\Framework\App\Filesystem\DirectoryList $directoryList;
-    protected \Magento\Framework\App\CacheInterface $cache;
-    protected \MageSuite\Media\Service\Thumbnail\Generator $generator;
+    protected const string CACHE_KEY_HASH_ALGORITHM = 'sha256';
 
     public function __construct(
-        \Magento\Store\Model\StoreManagerInterface $storeManager,
-        \Magento\Framework\App\Filesystem\DirectoryList $directoryList,
-        \Magento\Framework\App\CacheInterface $cache,
-        \Magento\Cms\Model\Template\FilterProvider $filterProvider,
-        \MageSuite\Media\Service\Thumbnail\Generator $generator
+        protected \Magento\Store\Model\StoreManagerInterface $storeManager,
+        protected \Magento\Framework\App\Filesystem\DirectoryList $directoryList,
+        protected \Magento\Framework\App\CacheInterface $cache,
+        protected \Magento\Cms\Model\Template\FilterProvider $filterProvider,
+        protected \MageSuite\Media\Service\Thumbnail\Generator $generator,
+        protected \Magento\Framework\Filesystem\Driver\File $fileDriver
     ) {
-        $this->storeManager = $storeManager;
-        $this->directoryList = $directoryList;
-        $this->cache = $cache;
-        $this->filterProvider = $filterProvider;
-        $this->generator = $generator;
     }
 
     public function resolve(string $mediaPath): string
@@ -58,7 +50,7 @@ class MediaResolver
         return $srcSet;
     }
 
-    public function resolveSrcSetArray(string $mediaPath)
+    public function resolveSrcSetArray(string $mediaPath): string|array|null
     {
         if ($this->isDirectUrl($mediaPath)) {
             return $mediaPath;
@@ -97,19 +89,17 @@ class MediaResolver
         return $srcSet;
     }
 
-    protected function getCacheIdentifier($prefix, $originalImageUrl): string
+    protected function getCacheIdentifier(string $prefix, string $originalImageUrl): string
     {
-        $storeId = $this->storeManager->getStore()->getId();
-        return sprintf("%s_%s_%s", $storeId, $prefix, md5($originalImageUrl));
+        return sprintf(
+            '%s_%s_%s',
+            $this->storeManager->getStore()->getId(),
+            $prefix,
+            hash(self::CACHE_KEY_HASH_ALGORITHM, $originalImageUrl)
+        );
     }
 
-    /**
-     * Returns images paths from strings in array
-     * @param $array
-     * @return mixed
-     * @throws \Exception
-     */
-    public function resolveInArray($array)
+    public function resolveInArray(mixed $array): mixed
     {
         if (!is_array($array)) {
             return $array;
@@ -130,55 +120,32 @@ class MediaResolver
     protected function parseMediaUrl(string $mediaPath): string
     {
         if (preg_match('/\bhttps?:\/\//i', $mediaPath)) {
-            $path = parse_url($mediaPath, PHP_URL_PATH);
-            return str_replace('/media/', '', $path);
-        } else {
-            preg_match_all('/url="(?<url>.*?)"/si', $mediaPath, $results, PREG_PATTERN_ORDER);
+            return str_replace('/media/', '', (string) parse_url($mediaPath, PHP_URL_PATH));
         }
 
-        if (!isset($results['url'][0])) {
-            return $mediaPath;
-        }
+        preg_match_all('/url="(?<url>.*?)"/si', $mediaPath, $results, PREG_PATTERN_ORDER);
 
-        return $results['url'][0];
+        return $results['url'][0] ?? $mediaPath;
     }
 
     public function buildSrcSetArray(string $originalImageUrl): array
     {
         $originalImagePath = $this->getMediaDirectoryPath() . $originalImageUrl;
-        $originalImageName = pathinfo($originalImagePath, PATHINFO_BASENAME);
-        $originalImageDirectory = dirname($originalImagePath);
 
         if (!$this->imageFileExist($originalImagePath) || $this->isGif($originalImagePath)) {
             return [];
         }
 
-        $imageSize = getimagesize($originalImagePath);
+        $imageSize = $this->readImageSize($originalImagePath);
 
-        if ($imageSize === false) {
+        if ($imageSize === null) {
             return [];
         }
 
         $originalImageWidth = $imageSize[0];
-        $srcSet[$originalImageWidth] = $this->getUrl($originalImageUrl);
+        $resizedImageUrls = $this->buildResizedImageUrls($originalImagePath, $originalImageWidth, \MageSuite\Media\Service\Thumbnail\Generator::WIDTHS_DEFAULT);
 
-        $thumbsDirectory = $originalImageDirectory . '/.thumbs';
-
-        foreach (\MageSuite\Media\Service\Thumbnail\Generator::WIDTHS_DEFAULT as $resizedImageWidth) {
-            if ($resizedImageWidth >= $originalImageWidth) {
-                continue;
-            }
-
-            $resizedFilePath = $thumbsDirectory . '/' . $resizedImageWidth . '/' . $originalImageName;
-
-            if (!file_exists($resizedFilePath)) {
-                $this->generator->generateThumbnails($originalImagePath, null, [$resizedImageWidth]);
-            }
-
-            $srcSet[$resizedImageWidth] = $this->getUrlByPath($resizedFilePath);
-        }
-
-        return $srcSet;
+        return [$originalImageWidth => $this->getUrl($originalImageUrl)] + $resizedImageUrls;
     }
 
     public function resolveOriginalImageSize(string $mediaPath): ?array
@@ -194,9 +161,9 @@ class MediaResolver
             return null;
         }
 
-        $imageSize = getimagesize($originalImagePath);
+        $imageSize = $this->readImageSize($originalImagePath);
 
-        if ($imageSize === false) {
+        if ($imageSize === null) {
             return null;
         }
 
@@ -226,42 +193,48 @@ class MediaResolver
     protected function buildSrcSetByDensity(string $originalImageUrl): string
     {
         $originalImagePath = $this->getMediaDirectoryPath() . $originalImageUrl;
-        $originalImageName = pathinfo($originalImagePath, PATHINFO_BASENAME);
-        $originalImageDirectory = dirname($originalImagePath);
 
         if (!$this->imageFileExist($originalImagePath) || $this->isGif($originalImagePath)) {
             return '';
         }
 
-        $imageSize = getimagesize($originalImagePath);
+        $imageSize = $this->readImageSize($originalImagePath);
 
-        if ($imageSize === false) {
+        if ($imageSize === null) {
             return '';
         }
 
-        $originalImageWidth = $imageSize[0];
-        $thumbsDirectory = $originalImageDirectory . '/.thumbs';
-        $srcSet = [];
+        $srcSet = array_values($this->buildResizedImageUrls($originalImagePath, $imageSize[0], \MageSuite\Media\Service\Thumbnail\Generator::WIDTHS_CATEGORY));
 
-        foreach (\MageSuite\Media\Service\Thumbnail\Generator::WIDTHS_CATEGORY as $resizedImageWidth) {
-            if ($resizedImageWidth >= $originalImageWidth) {
-                continue;
-            }
+        if (count($srcSet) !== 2) {
+            return '';
+        }
 
-            $resizedFilePath = $thumbsDirectory . '/' . $resizedImageWidth . '/' . $originalImageName;
+        return vsprintf('%s, %s 2x', $srcSet);
+    }
+
+    protected function buildResizedImageUrls(string $originalImagePath, int $originalImageWidth, array $widths): array
+    {
+        $thumbsDirectory = sprintf('%s/.thumbs', $this->fileDriver->getParentDirectory($originalImagePath));
+        $originalImageName = pathinfo($originalImagePath, PATHINFO_BASENAME);
+        $resizedImageUrls = [];
+
+        foreach (array_filter($widths, static fn (int $width): bool => $width < $originalImageWidth) as $resizedImageWidth) {
+            $resizedFilePath = sprintf('%s/%d/%s', $thumbsDirectory, $resizedImageWidth, $originalImageName);
 
             if (!file_exists($resizedFilePath)) {
                 $this->generator->generateThumbnails($originalImagePath, null, [$resizedImageWidth]);
             }
 
-            $srcSet[] = $this->getUrlByPath($resizedFilePath);
+            $resizedImageUrls[$resizedImageWidth] = $this->getUrlByPath($resizedFilePath);
         }
 
-        if (count($srcSet) != 2) {
-            return '';
-        }
+        return $resizedImageUrls;
+    }
 
-        return vsprintf('%s, %s 2x', $srcSet);
+    protected function readImageSize(string $imagePath): ?array
+    {
+        return getimagesize($imagePath) ?: null; // phpcs:ignore Magento2.Functions.DiscouragedFunction -- reads only the image header
     }
 
     protected function imageFileExist(string $originalImagePath): bool
@@ -291,13 +264,13 @@ class MediaResolver
         return $this->getUrl($url);
     }
 
-    protected function buildSrcSetElement(string $url, $width): string
+    protected function buildSrcSetElement(string $url, int|string $width): string
     {
         return sprintf('%s %sw', $url, $width);
     }
 
-    protected function isDirectUrl(string $url)
+    protected function isDirectUrl(string $url): bool
     {
-        return filter_var($url, FILTER_VALIDATE_URL);
+        return filter_var($url, FILTER_VALIDATE_URL) !== false;
     }
 }
