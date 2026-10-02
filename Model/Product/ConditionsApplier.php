@@ -7,13 +7,10 @@ namespace MageSuite\ContentConstructorFrontend\Model\Product;
 class ConditionsApplier
 {
     protected const array DATE_ATTRIBUTES = ['special_from_date', 'special_to_date'];
-    protected const string CATEGORY_ATTRIBUTE = 'category_ids';
 
     public function __construct(
         protected \Smile\ElasticsuiteVirtualCategory\Model\RuleFactory $ruleFactory,
-        protected \Magento\Widget\Helper\Conditions $conditionsHelper,
-        protected \Magento\CatalogWidget\Model\Rule\Condition\Product\CategoryConditionProcessor $categoryConditionProcessor,
-        protected \Magento\Store\Model\StoreManagerInterface $storeManager
+        protected \Magento\Widget\Helper\Conditions $conditionsHelper
     ) {
     }
 
@@ -47,17 +44,9 @@ class ConditionsApplier
 
     protected function prepareConditions(array $conditions): array
     {
-        $storeId = (int) $this->storeManager->getStore()->getId();
-
         foreach ($conditions as $key => $condition) {
-            $attribute = (string) ($condition['attribute'] ?? '');
-
-            if (in_array($attribute, self::DATE_ATTRIBUTES, true)) {
+            if (in_array((string) ($condition['attribute'] ?? ''), self::DATE_ATTRIBUTES, true)) {
                 $conditions[$key]['value'] = date('Y-m-d H:i:s', (int) strtotime((string) $condition['value']));
-            }
-
-            if ($attribute === self::CATEGORY_ATTRIBUTE) {
-                $conditions[$key] = $this->categoryConditionProcessor->process($condition, $storeId);
             }
         }
 

@@ -87,6 +87,7 @@ class ProductConditionsTest extends \PHPUnit\Framework\TestCase
 
         $this->assertNotEmpty($categoryProductIds);
         $this->assertEqualsCanonicalizing($categoryProductIds, array_column($products, 'id'));
+        $this->assertContains('334', array_map('strval', array_column($products, 'id')), 'Products of anchor subcategories must be included.');
     }
 
     #[\Magento\TestFramework\Fixture\DataFixture('MageSuite_ContentConstructorFrontend::Test/Integration/DataProviders/_files/products.php')]
