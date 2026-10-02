@@ -76,6 +76,32 @@ class ProductConditionsTest extends \PHPUnit\Framework\TestCase
         }
     }
 
+    #[\Magento\TestFramework\Fixture\DataFixture('MageSuite_ContentConstructorFrontend::Test/Integration/DataProviders/_files/products.php')]
+    public function testCategoryConditionSelectsTheProductsOfThatCategory(): void
+    {
+        $categoryProductIds = array_column($this->dataProvider->getProducts(['category_id' => 333]), 'id');
+
+        $products = $this->dataProvider->getProducts(['conditions' => $this->buildConditions([
+            ['attribute' => 'category_ids', 'operator' => '()', 'value' => '333'],
+        ])]);
+
+        $this->assertNotEmpty($categoryProductIds);
+        $this->assertEqualsCanonicalizing($categoryProductIds, array_column($products, 'id'));
+    }
+
+    #[\Magento\TestFramework\Fixture\DataFixture('MageSuite_ContentConstructorFrontend::Test/Integration/DataProviders/_files/products.php')]
+    public function testExcludedCategoryConditionLeavesOutTheProductsOfThatCategory(): void
+    {
+        $categoryProductIds = array_column($this->dataProvider->getProducts(['category_id' => 333]), 'id');
+
+        $products = $this->dataProvider->getProducts(['conditions' => $this->buildConditions([
+            ['attribute' => 'category_ids', 'operator' => '!()', 'value' => '333'],
+        ])]);
+
+        $this->assertNotEmpty($products);
+        $this->assertSame([], array_intersect($categoryProductIds, array_column($products, 'id')));
+    }
+
     protected function buildConditions(array $productConditions): array
     {
         $conditions = [

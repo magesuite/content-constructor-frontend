@@ -10,7 +10,7 @@ class ConditionsApplier
     protected const string CATEGORY_ATTRIBUTE = 'category_ids';
 
     public function __construct(
-        protected \Magento\CatalogWidget\Model\RuleFactory $ruleFactory,
+        protected \Smile\ElasticsuiteVirtualCategory\Model\RuleFactory $ruleFactory,
         protected \Magento\Widget\Helper\Conditions $conditionsHelper,
         protected \Magento\CatalogWidget\Model\Rule\Condition\Product\CategoryConditionProcessor $categoryConditionProcessor,
         protected \Magento\Store\Model\StoreManagerInterface $storeManager
