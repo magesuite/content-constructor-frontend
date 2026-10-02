@@ -9,6 +9,7 @@ class MediaResolver
     public const int CACHE_LIFETIME = 86400;
 
     protected const string CACHE_KEY_HASH_ALGORITHM = 'sha256';
+    protected const array URL_PARTS_OUTSIDE_PATH_PATTERNS = ['#^https?://[^/?\#]*#i', '#[?\#].*$#s'];
 
     public function __construct(
         protected \Magento\Store\Model\StoreManagerInterface $storeManager,
@@ -16,7 +17,8 @@ class MediaResolver
         protected \Magento\Framework\App\CacheInterface $cache,
         protected \Magento\Cms\Model\Template\FilterProvider $filterProvider,
         protected \MageSuite\Media\Service\Thumbnail\Generator $generator,
-        protected \Magento\Framework\Filesystem\Driver\File $fileDriver
+        protected \Magento\Framework\Filesystem\Driver\File $fileDriver,
+        protected \Magento\Framework\Filesystem\Io\File $ioFile
     ) {
     }
 
@@ -120,7 +122,7 @@ class MediaResolver
     protected function parseMediaUrl(string $mediaPath): string
     {
         if (preg_match('/\bhttps?:\/\//i', $mediaPath)) {
-            return str_replace('/media/', '', (string) parse_url($mediaPath, PHP_URL_PATH));
+            return str_replace('/media/', '', (string) preg_replace(self::URL_PARTS_OUTSIDE_PATH_PATTERNS, '', $mediaPath));
         }
 
         preg_match_all('/url="(?<url>.*?)"/si', $mediaPath, $results, PREG_PATTERN_ORDER);
@@ -216,13 +218,13 @@ class MediaResolver
     protected function buildResizedImageUrls(string $originalImagePath, int $originalImageWidth, array $widths): array
     {
         $thumbsDirectory = sprintf('%s/.thumbs', $this->fileDriver->getParentDirectory($originalImagePath));
-        $originalImageName = pathinfo($originalImagePath, PATHINFO_BASENAME);
+        $originalImageName = $this->ioFile->getPathInfo($originalImagePath)['basename'] ?? '';
         $resizedImageUrls = [];
 
         foreach (array_filter($widths, static fn (int $width): bool => $width < $originalImageWidth) as $resizedImageWidth) {
             $resizedFilePath = sprintf('%s/%d/%s', $thumbsDirectory, $resizedImageWidth, $originalImageName);
 
-            if (!file_exists($resizedFilePath)) {
+            if (!$this->fileDriver->isExists($resizedFilePath)) {
                 $this->generator->generateThumbnails($originalImagePath, null, [$resizedImageWidth]);
             }
 
@@ -239,12 +241,12 @@ class MediaResolver
 
     protected function imageFileExist(string $originalImagePath): bool
     {
-        return file_exists($originalImagePath) && is_file($originalImagePath);
+        return $this->fileDriver->isFile($originalImagePath);
     }
 
     protected function isGif(string $originalImagePath): bool
     {
-        return pathinfo($originalImagePath)['extension'] === 'gif';
+        return ($this->ioFile->getPathInfo($originalImagePath)['extension'] ?? '') === 'gif';
     }
 
     protected function getUrl(string $url): string
