@@ -212,7 +212,9 @@ class CmsPreloadImageResolver
             return $srcSet;
         }
 
-        if (empty($srcSet)) {
+        $availableWidths = array_filter(array_keys($srcSet), 'is_int');
+
+        if (empty($availableWidths)) {
             return null;
         }
 
@@ -220,7 +222,7 @@ class CmsPreloadImageResolver
             return $srcSet[$imageWidth];
         }
 
-        return $srcSet[$this->resolveClosestWidth(array_keys($srcSet), $imageWidth)];
+        return $srcSet[$this->resolveClosestWidth($availableWidths, $imageWidth)];
     }
 
     protected function resolveClosestWidth(array $availableWidths, int $imageWidth): int
