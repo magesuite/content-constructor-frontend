@@ -153,8 +153,13 @@ class MediaResolver
             return [];
         }
 
-        list($originalImageWidth) = getimagesize($originalImagePath);
+        $imageSize = getimagesize($originalImagePath);
 
+        if ($imageSize === false) {
+            return [];
+        }
+
+        $originalImageWidth = $imageSize[0];
         $srcSet[$originalImageWidth] = $this->getUrl($originalImageUrl);
 
         $thumbsDirectory = $originalImageDirectory . '/.thumbs';
@@ -191,6 +196,10 @@ class MediaResolver
 
         $imageSize = getimagesize($originalImagePath);
 
+        if ($imageSize === false) {
+            return null;
+        }
+
         return [
             'width' => $imageSize[0],
             'height' => $imageSize[1]
@@ -224,8 +233,13 @@ class MediaResolver
             return '';
         }
 
-        list($originalImageWidth) = getimagesize($originalImagePath);
+        $imageSize = getimagesize($originalImagePath);
 
+        if ($imageSize === false) {
+            return '';
+        }
+
+        $originalImageWidth = $imageSize[0];
         $thumbsDirectory = $originalImageDirectory . '/.thumbs';
         $srcSet = [];
 
