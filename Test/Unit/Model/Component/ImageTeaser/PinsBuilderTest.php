@@ -15,6 +15,7 @@ class PinsBuilderTest extends \PHPUnit\Framework\TestCase
 
     protected array $viewVars = [
         'teaser/pins/default_color' => '#0a7d3e',
+        'teaser/pins/default_outline_color' => '#111111',
         'teaser/pins/icon/path' => 'images/icons/pins/pin.svg',
         'teaser/pins/icon/inlined' => true,
         'teaser/pins/icon/lazy_loaded' => false,
@@ -31,24 +32,13 @@ class PinsBuilderTest extends \PHPUnit\Framework\TestCase
         $viewConfig = $this->createMock(\Magento\Framework\View\ConfigInterface::class);
         $viewConfig->method('getViewConfig')->willReturn($viewConfigFile);
 
-        $this->pinsBuilder = $objectManager->create(
-            \MageSuite\ContentConstructorFrontend\Model\Component\ImageTeaser\PinsBuilder::class,
-            ['viewConfig' => $viewConfig]
-        );
+        $this->pinsBuilder = $objectManager->create(\MageSuite\ContentConstructorFrontend\Model\Component\ImageTeaser\PinsBuilder::class, ['viewConfig' => $viewConfig]);
 
-        $this->imageTeaser = $this->createMock(
-            \MageSuite\ContentConstructorFrontend\Model\Component\ImageTeaser::class
-        );
+        $this->imageTeaser = $this->createMock(\MageSuite\ContentConstructorFrontend\Model\Component\ImageTeaser::class);
         $this->imageTeaser->method('getPinProductUrl')
-            ->willReturnCallback(
-                fn (string $sku): ?string => $sku === self::RESOLVED_SKU
-                    ? 'https://example.com/product.html'
-                    : null
-            );
+            ->willReturnCallback(fn (string $sku): ?string => $sku === self::RESOLVED_SKU ? 'https://example.com/product.html' : null);
         $this->imageTeaser->method('getPinProductCard')
-            ->willReturnCallback(
-                fn (string $sku): ?array => $sku === self::RESOLVED_SKU ? $this->getCardData() : null
-            );
+            ->willReturnCallback(fn (string $sku): ?array => $sku === self::RESOLVED_SKU ? $this->getCardData() : null);
     }
 
     protected function getCardData(): array
@@ -63,7 +53,7 @@ class PinsBuilderTest extends \PHPUnit\Framework\TestCase
         ];
     }
 
-    protected function buildPins(array $items, ?string $baseColor = null): array
+    protected function buildPins(array $items, ?string $baseColor = null, bool $baseNoFill = false): array
     {
         $configuration = ['items' => $items];
 
@@ -71,12 +61,16 @@ class PinsBuilderTest extends \PHPUnit\Framework\TestCase
             $configuration['base_color'] = $baseColor;
         }
 
+        if ($baseNoFill) {
+            $configuration['base_no_fill'] = true;
+        }
+
         return $this->pinsBuilder->getPins($this->imageTeaser, $configuration);
     }
 
-    protected function buildSinglePin(array $item, ?string $baseColor = null)
+    protected function buildSinglePin(array $item, ?string $baseColor = null, bool $baseNoFill = false): \MageSuite\ContentConstructorFrontend\Model\Component\ImageTeaser\Pin
     {
-        $pins = $this->buildPins([$item], $baseColor);
+        $pins = $this->buildPins([$item], $baseColor, $baseNoFill);
 
         $this->assertCount(1, $pins);
 
@@ -157,7 +151,7 @@ class PinsBuilderTest extends \PHPUnit\Framework\TestCase
         $this->assertNull($card->getRating());
     }
 
-    public function testItHidesSaleBadgeWhenToggledOffButKeepsSalePriceStyling(): void
+    public function testItHidesSaleBadgeButKeepsSalePrice(): void
     {
         $card = $this->buildSinglePin([
             'sku' => self::RESOLVED_SKU,
@@ -169,26 +163,20 @@ class PinsBuilderTest extends \PHPUnit\Framework\TestCase
         $this->assertSame('cs-pins__card-price cs-pins__card-price--sale', $card->getPriceCssClasses());
     }
 
-    public function testItMarksPinUnresolvedWhenCardCannotBeBuilt(): void
+    public function testItMarksPinUnresolvedWithoutCard(): void
     {
         $pin = $this->buildSinglePin(['sku' => self::UNRESOLVED_SKU, 'display' => 'rich']);
 
-        $this->assertSame(
-            'cs-pins__pin cs-pins__pin--simple cs-pins__pin--unresolved',
-            $pin->getCssClasses()
-        );
+        $this->assertSame('cs-pins__pin cs-pins__pin--simple cs-pins__pin--unresolved', $pin->getCssClasses());
         $this->assertNull($pin->getCard());
         $this->assertSame('', $pin->getHref());
     }
 
-    public function testItMarksPinUnresolvedWhenProductHasNoUrl(): void
+    public function testItMarksPinUnresolvedWithoutUrl(): void
     {
         $pin = $this->buildSinglePin(['sku' => self::UNRESOLVED_SKU, 'display' => 'simple']);
 
-        $this->assertSame(
-            'cs-pins__pin cs-pins__pin--simple cs-pins__pin--unresolved',
-            $pin->getCssClasses()
-        );
+        $this->assertSame('cs-pins__pin cs-pins__pin--simple cs-pins__pin--unresolved', $pin->getCssClasses());
         $this->assertSame('', $pin->getHref());
     }
 
@@ -245,13 +233,79 @@ class PinsBuilderTest extends \PHPUnit\Framework\TestCase
         ];
     }
 
+    #[\PHPUnit\Framework\Attributes\DataProvider('fillDataProvider')]
+    public function testItMarksPinsWithoutFill(array $item, bool $baseNoFill, bool $expectedNoFill): void
+    {
+        $pin = $this->buildSinglePin(array_merge(['sku' => self::RESOLVED_SKU], $item), '#00ff00', $baseNoFill);
+
+        $this->assertSame($expectedNoFill, str_contains($pin->getCssClasses(), 'cs-pins__pin--no-fill'));
+    }
+
+    public static function fillDataProvider(): array
+    {
+        return [
+            'pin saved before the setting existed' => [[], false, false],
+            'slide without fill' => [[], true, true],
+            'own colour on a slide without fill' => [['override_color' => 1, 'color' => '#123456'], true, false],
+            'invalid own colour on a slide without fill' => [['override_color' => 1, 'color' => 'red'], true, true],
+            'pin without fill and with own colour' => [['override_color' => 1, 'color' => '#123456', 'no_fill' => 1], false, true],
+            'pin without fill while its override is off' => [['no_fill' => 1], false, false],
+        ];
+    }
+
+    #[\PHPUnit\Framework\Attributes\DataProvider('outlineColorDataProvider')]
+    public function testItResolvesOutlineColor(array $item, ?string $baseOutlineColor, string $expectedColor): void
+    {
+        $configuration = ['base_no_fill' => true, 'base_outline_color' => $baseOutlineColor, 'items' => [array_merge(['sku' => self::RESOLVED_SKU], $item)]];
+        $pin = $this->pinsBuilder->getPins($this->imageTeaser, $configuration)[0];
+
+        $this->assertStringEndsWith('--cs-pins-icon-stroke: ' . $expectedColor . ';', $pin->getStyle());
+    }
+
+    public static function outlineColorDataProvider(): array
+    {
+        return [
+            'view.xml default' => [[], null, '#111111'],
+            'slide outline' => [[], '#222222', '#222222'],
+            'own outline' => [['override_color' => 1, 'no_fill' => 1, 'outline_color' => '#333333'], '#222222', '#333333'],
+            'css injection in own outline' => [['override_color' => 1, 'no_fill' => 1, 'outline_color' => 'red; background: url(x)'], '#222222', '#222222'],
+            'own outline while the pin takes no fill from the slide' => [['override_color' => 1, 'outline_color' => '#333333'], '#222222', '#222222'],
+        ];
+    }
+
+    #[\PHPUnit\Framework\Attributes\DataProvider('darkOutlineDataProvider')]
+    public function testItMarksPinsWithDarkOutline(string $outlineColor, bool $expectedDarkOutline): void
+    {
+        $configuration = ['base_no_fill' => true, 'base_outline_color' => $outlineColor, 'items' => [['sku' => self::RESOLVED_SKU]]];
+        $pin = $this->pinsBuilder->getPins($this->imageTeaser, $configuration)[0];
+
+        $this->assertSame($expectedDarkOutline, str_contains($pin->getCssClasses(), 'cs-pins__pin--dark-outline'));
+    }
+
+    public static function darkOutlineDataProvider(): array
+    {
+        return [
+            'white' => ['#ffffff', false],
+            'near black' => ['#1a1a1a', true],
+            'dark red' => ['#cf3030', true],
+            'yellow' => ['#ffd500', false],
+            'grey just above the threshold, short form' => ['#777', false],
+            'grey just below the threshold' => ['#757575', true],
+        ];
+    }
+
+    public function testItSetsNoOutlineColorOnFilledPins(): void
+    {
+        $pin = $this->buildSinglePin(['sku' => self::RESOLVED_SKU, 'override_color' => 1, 'outline_color' => '#333333'], '#00ff00');
+
+        $this->assertStringNotContainsString('--cs-pins-icon-stroke', $pin->getStyle());
+        $this->assertStringNotContainsString('cs-pins__pin--dark-outline', $pin->getCssClasses());
+    }
+
     #[\PHPUnit\Framework\Attributes\DataProvider('cardAttributesDataProvider')]
     public function testItWhitelistsCardAttributes(array $item, array $expectedAttributes): void
     {
-        $pin = $this->buildSinglePin(array_merge(
-            ['sku' => self::RESOLVED_SKU, 'display' => 'rich'],
-            $item
-        ));
+        $pin = $this->buildSinglePin(array_merge(['sku' => self::RESOLVED_SKU, 'display' => 'rich'], $item));
 
         $this->assertSame($expectedAttributes, $pin->getCardAttributes());
     }
@@ -278,7 +332,7 @@ class PinsBuilderTest extends \PHPUnit\Framework\TestCase
         ];
     }
 
-    public function testItAppliesCoordinateDefaultsForLegacyPins(): void
+    public function testItDefaultsCoordinatesOfLegacyPins(): void
     {
         $pin = $this->buildSinglePin(['sku' => self::RESOLVED_SKU], '#00ff00');
 
@@ -287,10 +341,7 @@ class PinsBuilderTest extends \PHPUnit\Framework\TestCase
 
     public function testItCastsCoordinatesToNumbers(): void
     {
-        $pin = $this->buildSinglePin(
-            ['sku' => self::RESOLVED_SKU, 'x' => '12.75', 'y' => 99],
-            '#00ff00'
-        );
+        $pin = $this->buildSinglePin(['sku' => self::RESOLVED_SKU, 'x' => '12.75', 'y' => 99], '#00ff00');
 
         $this->assertSame('left: 12.75%; top: 99%; --cs-pins-color: #00ff00;', $pin->getStyle());
     }
@@ -302,7 +353,7 @@ class PinsBuilderTest extends \PHPUnit\Framework\TestCase
         $this->assertNotNull($pin->getCard());
     }
 
-    public function testItTreatsUnknownDisplayValueAsLinkOnly(): void
+    public function testItTreatsUnknownDisplayAsLinkOnly(): void
     {
         $pin = $this->buildSinglePin(['sku' => self::RESOLVED_SKU, 'display' => 'whatever']);
 
@@ -323,7 +374,7 @@ class PinsBuilderTest extends \PHPUnit\Framework\TestCase
         );
     }
 
-    public function testItReturnsNoIconAttributesWithoutConfiguredPath(): void
+    public function testItReturnsNoIconAttributesWithoutPath(): void
     {
         $this->viewVars['teaser/pins/icon/path'] = '';
 
