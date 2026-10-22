@@ -1,0 +1,23 @@
+{
+    "cms_page": {
+        "column": {
+            "layout_update_xml": true,
+            "content_constructor_content": true
+        }
+    },
+    "catalog_product_entity_text": {
+        "column": {
+            "value": true
+        }
+    },
+    "catalog_category_entity_text": {
+        "column": {
+            "value": true
+        }
+    },
+    "cms_block": {
+        "column": {
+            "content_constructor_content": true
+        }
+    }
+}
