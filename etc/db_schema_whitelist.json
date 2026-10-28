@@ -2,6 +2,7 @@
     "cms_page": {
         "column": {
             "layout_update_xml": true,
+            "layout_update_xml_backup": true,
             "content_constructor_content": true
         }
     },
