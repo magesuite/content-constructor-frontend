@@ -21,9 +21,7 @@ class BrandCarouselTest extends \PHPUnit\Framework\TestCase
         $this->brandCarousel = $objectManager->get(\MageSuite\ContentConstructorFrontend\Model\Component\BrandCarousel::class);
         $this->storeManager = $objectManager->get(\Magento\Store\Model\StoreManagerInterface::class);
 
-        $version = \Composer\InstalledVersions::getVersion('creativestyle/magesuite-brand-management');
-
-        if (!empty($version) && version_compare($version, '2.0.0') < 0) {
+        if (!$objectManager->create(\MageSuite\ContentConstructorAdmin\Test\Integration\Fixtures\BrandManagementVersion::class)->isVersion2OrHigher()) {
             // In Brand V1, the subfolder for media was stored in a codebase. In V2 it is stored in brand's image attributes.
             $this->brandSubfolder = 'brands/';
         }
