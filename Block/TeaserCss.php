@@ -97,9 +97,16 @@ class TeaserCss extends \Magento\Framework\View\Element\Template
 
     public function getColumnsConfig()
     {
-        $pageLayout = $this->pageLayoutHelper->getPageLayout();
-        $columnsCfgPath = $pageLayout === '1column' ? 'columns/one-column' : 'columns/multiple-columns';
-        return $this->getVar($columnsCfgPath, 'MageSuite_ContentConstructor');
+        return $this->getVar($this->getColumnsConfigPath(), 'MageSuite_ContentConstructor');
+    }
+
+    protected function getColumnsConfigPath(): string
+    {
+        if ($this->getIsProductsGrid()) {
+            return 'columns/one-column';
+        }
+
+        return $this->pageLayoutHelper->getPageLayout() === '1column' ? 'columns/one-column' : 'columns/multiple-columns';
     }
 
     public function getTeaserAspectRatios($teaser)
