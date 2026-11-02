@@ -349,6 +349,20 @@
                     <ticket_id>IPET-2920</ticket_id>
                 </entry>
             </tag>
+            <tag version="6.2.0" date="2026-10-19">
+                <entry>
+                    <type>REFACTOR</type>
+                    <overview>Removed unused layout_update_xml_backup column from cms_page table and redundant UpgradeSchema</overview>
+                </entry>
+                <entry>
+                    <type>REFACTOR</type>
+                    <overview>Replaced obsolete UpgradeData script with SetNewsDatesSearchable and CopyCreativeComponentsImages data patches and removed setup_version from module.xml</overview>
+                </entry>
+                <entry>
+                    <type>REFACTOR</type>
+                    <overview>Removed obsolete cc:imageteaser:notmigrated:find command</overview>
+                </entry>
+            </tag>
         </changelog>
     </module>
 </config>
