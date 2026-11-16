@@ -23,20 +23,12 @@ class PinCardDataProvider extends \MageSuite\ContentConstructorFrontend\DataProv
 
     protected function buildCardCollection(array $skus): \Magento\Catalog\Model\ResourceModel\Product\Collection
     {
-        $collection = $this->databaseProductCollectionFactory->create();
-
-        $collection->addAttributeToSelect($this->catalogConfig->getProductAttributes())
-            ->setStore($this->storeManager->getStore())
-            ->addFinalPrice()
-            ->addTaxPercents()
-            ->addUrlRewrite()
-            ->addStoreFilter()
-            ->setVisibility(PinProductProvider::INDIVIDUALLY_VISIBLE_IDS)
-            ->addAttributeToFilter(
-                'status',
-                \Magento\Catalog\Model\Product\Attribute\Source\Status::STATUS_ENABLED
-            );
-
+        $collection = $this->collectionInitializer->createCollection(self::COLLECTION_TYPE_DATABASE);
+        $this->collectionInitializer->prepareForStorefront($collection, PinProductProvider::INDIVIDUALLY_VISIBLE_IDS);
+        $collection->addAttributeToFilter(
+            'status',
+            \Magento\Catalog\Model\Product\Attribute\Source\Status::STATUS_ENABLED
+        );
         $collection->addFieldToFilter('sku', ['in' => $skus]);
 
         return $collection;

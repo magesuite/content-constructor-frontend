@@ -1,189 +1,134 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MageSuite\ContentConstructorFrontend\DataProviders;
 
 class ProductCarouselDataProvider
 {
-    const COLLECTION_TYPE_ELASTICSEARCH = 'elasticsearch';
-    const COLLECTION_TYPE_DATABASE = 'database';
-    /**
-     * Fields from old sorting solution, preserved only to achieve backwards compatibility for existing components
-     * @var array
-     */
-    protected $oldFieldsMapping = [
+    public const string COLLECTION_TYPE_ELASTICSEARCH = \MageSuite\ContentConstructorFrontend\Model\ProductCarousel\CollectionInitializer::COLLECTION_TYPE_ELASTICSEARCH;
+    public const string COLLECTION_TYPE_DATABASE = \MageSuite\ContentConstructorFrontend\Model\ProductCarousel\CollectionInitializer::COLLECTION_TYPE_DATABASE;
+
+    protected const string LEGACY_NEWEST_PRODUCTS_ORDER = 'newest_products';
+    protected const string NEW_PRODUCTS_FILTER = 'new_products';
+    protected const string VIRTUAL_CATEGORY_IDENTITY = 'virtual_category';
+    protected const string ELASTICSEARCH_IDENTITIES_KEY = 'product_identities_from_elasticsearch';
+
+    protected array $oldFieldsMapping = [
         'creation_date' => 'created_at',
-        'bestsellers_amount' => 'bestseller_score_by_amount'
+        'bestsellers_amount' => 'bestseller_score_by_amount',
     ];
 
-    protected $sortingTypeMapping = [
+    protected array $sortingTypeMapping = [
         'skus' => 'sku',
-        'product_ids' => 'entity_id'
+        'product_ids' => 'entity_id',
     ];
 
-    protected $stockData = [];
-
-    protected \Smile\ElasticsuiteCatalog\Model\ResourceModel\Product\Fulltext\CollectionFactory $productCollectionFactory;
-
-    protected \Magento\Catalog\Helper\Image $imageHelper;
-
-    protected \Magento\Review\Model\Review $review;
-
-    protected \Magento\Wishlist\Helper\Data $wishlistHelper;
-
-    protected \Magento\Catalog\Block\Product\View $productView;
-
-    protected AdditionalProductDataProvider $additionalProductDataProvider;
-
-    protected \Magento\Framework\App\Config\ScopeConfigInterface $scopeInterface;
-
-    protected \MageSuite\Frontend\Helper\Product\StockData $stockDataHelper;
-
-    protected \Magento\Catalog\Model\Config $catalogConfig;
-
-    protected \Magento\Store\Model\StoreManagerInterface $storeManager;
-
-    protected \Magento\Framework\App\State $state;
-
-    protected \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $databaseProductCollectionFactory;
-    protected \Magento\Framework\View\Layout $layout;
-
-    private \Magento\Catalog\Block\Product\ListProduct $listProductBlock;
-
-    private \MageSuite\Frontend\Helper\Product $productHelper;
-
-    protected \MageSuite\Discount\Helper\Discount $discountHelper;
-
-    private \MageSuite\ProductPositiveIndicators\Helper\Product $productIndicatorHelper;
-
-    private \MageSuite\ContentConstructorFrontend\Model\Sort\Pool $sortersPool;
-
-    private \MageSuite\ContentConstructorFrontend\Model\Filter\Pool $filtersPool;
-
-    protected \MageSuite\DailyDeal\Helper\OfferData $dailyDealHelper;
-
-    private \Magento\Catalog\Api\CategoryRepositoryInterface $categoryRepository;
-
-    protected \Magento\CatalogInventory\Api\StockStateInterface $stockInterface;
+    protected array $stockData = [];
 
     protected array $productData = [];
 
     protected bool $skipCollectionFilters = false;
 
     public function __construct(
-        \Smile\ElasticsuiteCatalog\Model\ResourceModel\Product\Fulltext\CollectionFactory $productCollectionFactory,
-        \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $databaseProductCollectionFactory,
-        \Magento\Catalog\Helper\Image $imageHelper,
-        \Magento\Review\Model\Review $review,
-        \Magento\Wishlist\Helper\Data $wishlistHelper,
-        \Magento\Catalog\Block\Product\View $productView,
-        AdditionalProductDataProvider $additionalProductDataProvider,
-        \Magento\Framework\App\Config\ScopeConfigInterface $scopeInterface,
-        \MageSuite\Frontend\Helper\Product\StockData $stockDataHelper,
-        \Magento\Catalog\Model\Config $catalogConfig,
-        \Magento\Store\Model\StoreManagerInterface $storeManager,
-        \Magento\Catalog\Block\Product\ListProduct $listProductBlock,
-        \MageSuite\Frontend\Helper\Product $productHelper,
-        \MageSuite\ProductPositiveIndicators\Helper\Product $productIndicatorHelper,
-        \MageSuite\ContentConstructorFrontend\Model\Sort\Pool $sortersPool,
-        \MageSuite\ContentConstructorFrontend\Model\Filter\Pool $filtersPool,
-        \MageSuite\DailyDeal\Helper\OfferData $dailyDealHelper,
-        \Magento\Catalog\Api\CategoryRepositoryInterface $categoryRepository,
-        \Magento\CatalogInventory\Api\StockStateInterface $stockInterface,
-        \Magento\Framework\App\State $state,
-        \MageSuite\Discount\Helper\Discount $discountHelper,
-        \Magento\Framework\View\Layout $layout
+        protected \MageSuite\ContentConstructorFrontend\Model\ProductCarousel\CollectionInitializer $collectionInitializer,
+        protected \MageSuite\ContentConstructorFrontend\Model\ProductCarousel\CollectionFilter $collectionFilter,
+        protected \MageSuite\ContentConstructorFrontend\Model\ProductCarousel\ProductTileRenderer $productTileRenderer,
+        protected \MageSuite\ContentConstructorFrontend\Model\ProductCarousel\ProductTileData $productTileData,
+        protected \MageSuite\ContentConstructorFrontend\Model\ProductCarousel\ProductIndicators $productIndicators,
+        protected \MageSuite\ContentConstructorFrontend\DataProviders\AdditionalProductDataProvider $additionalProductDataProvider,
+        protected \MageSuite\Frontend\Helper\Product\StockData $stockDataHelper,
+        protected \Magento\Framework\App\State $state
     ) {
-        $this->productCollectionFactory = $productCollectionFactory;
-        $this->databaseProductCollectionFactory = $databaseProductCollectionFactory;
-        $this->imageHelper = $imageHelper;
-        $this->review = $review;
-        $this->wishlistHelper = $wishlistHelper;
-        $this->productView = $productView;
-        $this->additionalProductDataProvider = $additionalProductDataProvider;
-        $this->scopeInterface = $scopeInterface;
-        $this->stockDataHelper = $stockDataHelper;
-        $this->catalogConfig = $catalogConfig;
-        $this->storeManager = $storeManager;
-        $this->listProductBlock = $listProductBlock;
-        $this->productHelper = $productHelper;
-        $this->productIndicatorHelper = $productIndicatorHelper;
-        $this->sortersPool = $sortersPool;
-        $this->filtersPool = $filtersPool;
-        $this->dailyDealHelper = $dailyDealHelper;
-        $this->categoryRepository = $categoryRepository;
-        $this->stockInterface = $stockInterface;
-        $this->state = $state;
-        $this->discountHelper = $discountHelper;
-        $this->layout = $layout;
     }
 
-    /**
-     * Collections are used instead of ProductRepository because the latter
-     * does not support random ordering in 2.1 version
-     * @param array $criteria
-     * @return array
-     */
-    public function getProducts(array $criteria, $returnProductsEntities = false)
+    public function getProducts(array $criteria, bool $returnProductsEntities = false): array
     {
         $collection = $this->buildCollectionSearchCriteria($criteria);
         $collection->addMediaGalleryData();
         $products = $collection->getItems();
 
         if ($this->skipCollectionFilters) {
-            $result = [];
-
-            foreach ($products as $product) {
-                $productData = $this->mapProductToArray($product);
-
-                if ($collection->hasFlag('virtual_category_applied')) {
-                    $productData['identities'] = array_merge($productData['identities'], ['virtual_category']);
-                }
-
-                $result[] = $productData;
-            }
-            return $result;
+            return $this->mapProductsToArray($products, $collection);
         }
 
         if (!empty($criteria['filter']) && isset($criteria['limit']) && $criteria['limit'] >= 0) {
-            $products = array_slice($products, 0, $criteria['limit']);
+            $products = array_slice($products, 0, (int) $criteria['limit']);
         }
 
-        if($collection instanceof \Smile\ElasticsuiteCatalog\Model\ResourceModel\Product\Fulltext\Collection) {
-            $productIdentitiesFromElasticSearch = $this->getProductIdentitiesFromElasticSearch($collection);
-            $collection->setDataToAll('product_identities_from_elasticsearch', $productIdentitiesFromElasticSearch);
+        if ($collection instanceof \Smile\ElasticsuiteCatalog\Model\ResourceModel\Product\Fulltext\Collection) {
+            $collection->setDataToAll(
+                self::ELASTICSEARCH_IDENTITIES_KEY,
+                $this->getProductIdentitiesFromElasticSearch($collection)
+            );
         }
 
         $this->stockData = $this->stockDataHelper->getStockData($products);
 
         if ($returnProductsEntities) {
-            $products = $this->sortResults($products, $criteria);
-
-            return $products;
+            return $this->sortResults($products, $criteria);
         }
 
-        $result = [];
+        return $this->sortResults($this->mapProductsToArray($products, $collection), $criteria);
+    }
 
-        if (empty($products)) {
-            return $result;
+    public function getAddToCartButtonHtml(\Magento\Catalog\Api\Data\ProductInterface $product): string
+    {
+        if (!$this->isProductInStock($product)) {
+            return '';
         }
+
+        return $this->productTileRenderer->getAddToCartButtonHtml($product);
+    }
+
+    public function getIsNewProduct(\Magento\Catalog\Api\Data\ProductInterface $product): bool
+    {
+        return $this->productIndicators->isNew($product);
+    }
+
+    public function getSalePercentage(\Magento\Catalog\Api\Data\ProductInterface $product): int
+    {
+        return $this->productIndicators->getSalePercentage($product);
+    }
+
+    public function getPopularIconFlag(\Magento\Catalog\Api\Data\ProductInterface $product): bool
+    {
+        return $this->productIndicators->getPopularIconFlag($product);
+    }
+
+    public function isFreeShipped(\Magento\Catalog\Api\Data\ProductInterface $product): bool
+    {
+        return $this->productIndicators->isFreeShipped($product);
+    }
+
+    public function setSkipCollectionFilters(bool $value): void
+    {
+        $this->skipCollectionFilters = $value;
+    }
+
+    protected function mapProductsToArray(
+        array $products,
+        \Magento\Catalog\Model\ResourceModel\Product\Collection $collection
+    ): array {
+        $isVirtualCategoryApplied = (bool) $collection->hasFlag(
+            \MageSuite\ContentConstructorFrontend\Model\ProductCarousel\CollectionFilter::VIRTUAL_CATEGORY_FLAG
+        );
+        $productsData = [];
 
         foreach ($products as $product) {
             $productData = $this->mapProductToArray($product);
 
-            if ($collection->hasFlag('virtual_category_applied')) {
-                $productData['identities'] = array_merge($productData['identities'], ['virtual_category']);
+            if ($isVirtualCategoryApplied) {
+                $productData['identities'][] = self::VIRTUAL_CATEGORY_IDENTITY;
             }
 
-            $result[] = $productData;
+            $productsData[] = $productData;
         }
 
-        $result = $this->sortResults($result, $criteria);
-
-        return $result;
+        return $productsData;
     }
 
-
-    protected function mapProductToArray(\Magento\Catalog\Api\Data\ProductInterface $product)
+    protected function mapProductToArray(\Magento\Catalog\Api\Data\ProductInterface $product): array
     {
         if (isset($this->productData[$product->getId()])) {
             return $this->productData[$product->getId()];
@@ -210,68 +155,80 @@ class ProductCarouselDataProvider
             'isFreeShipped' => $this->isFreeShipped($product),
             'identities' => $product->getIdentities(),
             'shortDescription' => $product->getShortDescription(),
-            'dailyDealOffer' => $this->dailyDealHelper->prepareOfferData($product)
+            'dailyDealOffer' => $this->productIndicators->getDailyDealOffer($product),
         ];
 
-        $this->productData[$product->getId()] = array_merge($productData, $this->additionalProductDataProvider->getData($product));
+        $additionalProductData = $this->additionalProductDataProvider->getData($product);
+        $this->productData[$product->getId()] = array_merge($productData, $additionalProductData);
+
         return $this->productData[$product->getId()];
     }
 
-    protected function buildCollectionSearchCriteria($criteria)
-    {
-        $collectionType = $criteria['collection_type'] ?? self::COLLECTION_TYPE_ELASTICSEARCH;
+    protected function buildCollectionSearchCriteria(
+        array $criteria
+    ): \Magento\Catalog\Model\ResourceModel\Product\Collection {
+        $collectionType = (string) ($criteria['collection_type'] ?? self::COLLECTION_TYPE_ELASTICSEARCH);
         $collection = $this->initializeCollection($collectionType);
+        $this->applyFilterAttributes($collection, $criteria['filter_attributes'] ?? []);
 
-        $showOutOfStock = $this->scopeInterface->getValue(
-            'cataloginventory/options/show_out_of_stock',
-            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
-        );
-
-        if (isset($criteria['filter_attributes'])) {
-            foreach ($criteria['filter_attributes'] as $attribute => $conditions) {
-                $collection->addAttributeToFilter($attribute, [$conditions['operator'] => $conditions['value']]);
-            }
-        }
-
-        // when skus are defined other criterias are not included
-        if (isset($criteria['skus']) and !empty($criteria['skus'])) {
-            $skus = $this->prepareSortingArray($criteria['skus']);
-
-            $collection->addFieldToFilter('sku', ['in' => $skus]);
+        if (!empty($criteria['skus'])) {
+            $collection->addFieldToFilter('sku', ['in' => $this->prepareSortingArray($criteria['skus'])]);
 
             return $collection;
         }
 
-        if (!$showOutOfStock && $collectionType === self::COLLECTION_TYPE_ELASTICSEARCH) {
-            $collection->addIsInStockFilter();
-        } else if(!$showOutOfStock && $collectionType === self::COLLECTION_TYPE_DATABASE) {
-            $collection->addAttributeToFilter('is_saleable', true);
-        }
+        $this->collectionFilter->applyStockFilter($collection, $collectionType);
 
         if (isset($criteria['category_id'])) {
             $collection = $this->applyCategoryFilter($collection, $criteria['category_id']);
         }
 
+        $this->collectionFilter->applyConditions($collection, $collectionType, $criteria['conditions'] ?? null);
+
         if (isset($criteria['product_ids'])) {
-            $collection->addFieldToFilter('entity_id', array('in' => $criteria['product_ids']));
+            $collection->addFieldToFilter('entity_id', ['in' => $criteria['product_ids']]);
         }
 
-        // Following is for backwards compatibility with old newest_products which was placed in sorting options
-        if (isset($criteria['order_by']) AND $criteria['order_by'] == 'newest_products') {
-            $criteria['filter'] = 'new_products';
+        return $this->applyFilteringSortingAndLimit($collection, $this->normalizeLegacyCriteria($criteria));
+    }
+
+    protected function applyFilterAttributes(
+        \Magento\Catalog\Model\ResourceModel\Product\Collection $collection,
+        array $filterAttributes
+    ): void {
+        foreach ($filterAttributes as $attribute => $conditions) {
+            $collection->addAttributeToFilter($attribute, [$conditions['operator'] => $conditions['value']]);
+        }
+    }
+
+    protected function normalizeLegacyCriteria(array $criteria): array
+    {
+        if (($criteria['order_by'] ?? null) === self::LEGACY_NEWEST_PRODUCTS_ORDER) {
+            $criteria['filter'] = self::NEW_PRODUCTS_FILTER;
             unset($criteria['order_by']);
         }
 
-        if (isset($criteria['filter'])) {
-            $collection = $this->applyFiltering($collection, $criteria['filter']);
+        if (isset($criteria['order_by'], $this->oldFieldsMapping[$criteria['order_by']])) {
+            $criteria['order_by'] = $this->oldFieldsMapping[$criteria['order_by']];
         }
 
-        if (isset($criteria['order_by']) and isset($criteria['order_type'])) {
-            if (isset($this->oldFieldsMapping[$criteria['order_by']])) {
-                $criteria['order_by'] = $this->oldFieldsMapping[$criteria['order_by']];
-            }
+        return $criteria;
+    }
 
-            $collection = $this->applySorting($collection, $criteria['order_by'], $criteria['order_type']);
+    protected function applyFilteringSortingAndLimit(
+        \Magento\Catalog\Model\ResourceModel\Product\Collection $collection,
+        array $criteria
+    ): \Magento\Catalog\Model\ResourceModel\Product\Collection {
+        if (isset($criteria['filter'])) {
+            $collection = $this->applyFiltering($collection, (string) $criteria['filter']);
+        }
+
+        if (isset($criteria['order_by'], $criteria['order_type'])) {
+            $collection = $this->applySorting(
+                $collection,
+                (string) $criteria['order_by'],
+                (string) $criteria['order_type']
+            );
         }
 
         if (isset($criteria['limit']) && $criteria['limit'] >= 0 && empty($criteria['filter'])) {
@@ -281,153 +238,65 @@ class ProductCarouselDataProvider
         return $collection;
     }
 
-    /**
-     * @return \Smile\ElasticsuiteCatalog\Model\ResourceModel\Product\Fulltext\Collection
-     */
-    protected function initializeCollection($type = self::COLLECTION_TYPE_ELASTICSEARCH)
-    {
-        if($type === self::COLLECTION_TYPE_ELASTICSEARCH) {
-            $collection = $this->productCollectionFactory->create();
-        } else {
-            $collection = $this->databaseProductCollectionFactory->create();
-        }
-
-        $collection->addAttributeToSelect($this->catalogConfig->getProductAttributes());
-
-        if ($this->skipCollectionFilters) {
-            return $collection;
-        }
-
-        $collection->setStore($this->storeManager->getStore())
-            ->addFinalPrice()
-            ->addTaxPercents()
-            ->addUrlRewrite()
-            ->addStoreFilter()
-            ->setVisibility(\Magento\Catalog\Model\Product\Visibility::VISIBILITY_BOTH);
-
-        return $collection;
+    protected function initializeCollection(
+        string $type = self::COLLECTION_TYPE_ELASTICSEARCH
+    ): \Magento\Catalog\Model\ResourceModel\Product\Collection {
+        return $this->collectionInitializer->initialize($type, $this->skipCollectionFilters);
     }
 
-    /**
-     * @param \Magento\Catalog\Api\Data\ProductInterface $product
-     * @return string
-     */
-    protected function getProductPriceHtml(\Magento\Catalog\Api\Data\ProductInterface $product)
+    protected function getProductPriceHtml(\Magento\Catalog\Api\Data\ProductInterface $product): string
     {
-        return $this->productView->getProductPriceHtml(
-            $product,
-            'final_price',
-            \Magento\Framework\Pricing\Render::ZONE_ITEM_LIST,
-            ['include_container' => true]
-        );
+        return $this->productTileRenderer->getPriceHtml($product);
     }
 
-    protected function getProductImageUrl($product)
+    protected function getProductImageUrl(\Magento\Catalog\Api\Data\ProductInterface $product): string
     {
-        $productImageUrl = $this->imageHelper
-            ->init($product, 'category_page_grid')
-            ->constrainOnly(FALSE)->keepAspectRatio(TRUE)->keepFrame(FALSE)->resize(400)->getUrl();
-
-        return $productImageUrl;
+        return $this->productTileData->getImageUrl($product);
     }
 
-    protected function getProductRatingSummary($product)
+    protected function getProductRatingSummary(\Magento\Catalog\Api\Data\ProductInterface $product): array|false
     {
-        $this->review->getEntitySummary($product, $this->storeManager->getStore()->getId());
-
-        $ratingSummary = $product->getRatingSummary();
-        if (!$ratingSummary) {
-            return false;
-        }
-
-        $reviewsCount = $product->getReviewsCount();
-        // Since 2.3.3 rating summary is being returned directly, not as an object.
-        if (is_object($ratingSummary)) {
-            $reviewsCount = $ratingSummary->getReviewsCount();
-            $ratingSummary = $ratingSummary->getRatingSummary();
-        }
-
-        if (!$reviewsCount) {
-            return false;
-        }
-
-        $activeStars = $ratingSummary ? (round($ratingSummary / 10) / 2) : 0;
-
-        $reviewData = [
-            'data' => [
-                'maxStars' => 5,
-                'activeStars' => $activeStars,
-                'text' => '(' . $reviewsCount . ')',
-                'count' => $reviewsCount
-            ]
-        ];
-
-        return $reviewData;
+        return $this->productTileData->getRatingSummary($product);
     }
 
-    protected function isProductInStock($product)
+    protected function isProductInStock(\Magento\Catalog\Api\Data\ProductInterface $product): bool
     {
-        return $this->stockData[$product->getId()]['salable'] ?? $product->getIsSalable();
+        return (bool) ($this->stockData[$product->getId()]['salable'] ?? $product->getIsSalable());
     }
 
-    protected function getProductWishlistDataPost($product)
+    protected function getProductWishlistDataPost(\Magento\Catalog\Api\Data\ProductInterface $product): string
     {
-        return $this->wishlistHelper->getAddParams($product);
+        return $this->productTileData->getWishlistDataPost($product);
     }
 
-    protected function getProductQty($productId)
+    protected function getProductQty(int|string $productId): float|int
     {
         return $this->stockData[$productId]['qty'] ?? 0;
     }
 
-    protected function getSwatchesHtml($product)
+    protected function getSwatchesHtml(\Magento\Catalog\Api\Data\ProductInterface $product): string|false
     {
-        if ($product->getTypeId() == \Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE) {
-            $swatchesBlock = $this->layout->getBlock('product.tile.details.renderers.configurable');
-            if (!$swatchesBlock) {
-                return false;
-            }
-
-            return $swatchesBlock->setProduct($product)->toHtml();
-        }
-
-        return false;
+        return $this->productTileRenderer->getSwatchesHtml($product);
     }
 
-    /**
-     * Some criterias (sku) requires that products should be sorted
-     * @param $products
-     * @param $criteria
-     */
-    protected function sortResults($products, $criteria)
+    protected function sortResults(array $products, array $criteria): array
     {
-        $sortingType = null;
+        $sortingType = $this->resolveSortingType($criteria);
 
-        if (isset($criteria['skus']) && !empty($criteria['skus'])) {
-            $sortingType = 'skus';
-        }
-
-        if ($this->state->getAreaCode() == \Magento\Framework\App\Area::AREA_FRONTEND && isset($criteria['product_ids']) && !empty($criteria['product_ids'])) {
-            $sortingType = 'product_ids';
-        }
-
-        if (!$sortingType) {
+        if ($sortingType === null) {
             return $products;
         }
 
         $sortingData = $this->prepareSortingArray($criteria[$sortingType]);
-
         $sortingField = $this->sortingTypeMapping[$sortingType];
         $sortedProducts = [];
 
         foreach ($products as $product) {
             $index = array_search($product[$sortingField], $sortingData);
 
-            if ($index === false) {
-                continue;
+            if ($index !== false) {
+                $sortedProducts[$index] = $product;
             }
-
-            $sortedProducts[$index] = $product;
         }
 
         ksort($sortedProducts);
@@ -435,174 +304,81 @@ class ProductCarouselDataProvider
         return $sortedProducts;
     }
 
-    public function getAddToCartButtonHtml($product)
+    protected function resolveSortingType(array $criteria): ?string
     {
-        if (!$this->isProductInStock($product)) {
-            return '';
+        $isFrontend = $this->state->getAreaCode() === \Magento\Framework\App\Area::AREA_FRONTEND;
+
+        if ($isFrontend && !empty($criteria['product_ids'])) {
+            return 'product_ids';
         }
 
-        $postParams = $this->listProductBlock->getAddToCartPostParams($product);
-
-        $productType = $product->getTypeId();
-
-        if ($productType !== \Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE) {
-            $addToCartText = __('Add to cart');
-        } else {
-            $addToCartText = __('Configure');
-        }
-
-        return sprintf(
-            '<form data-role="tocart-form" action="%s" method="post">
-                <input type="hidden" name="product" value="%s">
-                <input type="hidden" name="%s" value="%s">
-                %s
-                <button disabled type="submit" title="%s"
-                class="tocart | cs-button cs-button--type_grid-tocart">
-                    <span class="cs-button__span">%s</span>
-                </button>
-            </form>',
-            $postParams['action'],
-            $postParams['data']['product'],
-            \Magento\Framework\App\Action\Action::PARAM_NAME_URL_ENCODED,
-            $postParams['data'][\Magento\Framework\App\Action\Action::PARAM_NAME_URL_ENCODED],
-            $this->listProductBlock->getBlockHtml('formkey'),
-            $addToCartText,
-            $addToCartText
-        );
+        return empty($criteria['skus']) ? null : 'skus';
     }
 
-    public function getIsNewProduct($product)
-    {
-        return $this->productHelper->isNew($product);
+    protected function applyFiltering(
+        \Magento\Catalog\Model\ResourceModel\Product\Collection $collection,
+        string $filter
+    ): \Magento\Catalog\Model\ResourceModel\Product\Collection {
+        return $this->collectionFilter->applyFiltering($collection, $filter);
     }
 
-    public function getSalePercentage($product)
-    {
-        return $this->discountHelper->getSalePercentage($product);
+    protected function applySorting(
+        \Magento\Catalog\Model\ResourceModel\Product\Collection $collection,
+        string $orderBy,
+        string $orderType
+    ): \Magento\Catalog\Model\ResourceModel\Product\Collection {
+        return $this->collectionFilter->applySorting($collection, $orderBy, $orderType);
     }
 
-    public function getPopularIconFlag($product)
-    {
-        return $this->productIndicatorHelper->getPopularIconFlag($product);
+    protected function applyCategoryFilter(
+        \Magento\Catalog\Model\ResourceModel\Product\Collection $collection,
+        int|string $categoryId
+    ): \Magento\Catalog\Model\ResourceModel\Product\Collection {
+        return $this->collectionFilter->applyCategoryFilter($collection, $categoryId);
     }
 
-    public function isFreeShipped($product)
-    {
-        return $this->productIndicatorHelper->showFreeShippingInProductTiles() && $this->productIndicatorHelper->isFreeShipped($product);
+    protected function applyVirtualCategoryFilters(
+        \Magento\Catalog\Model\ResourceModel\Product\Collection $collection,
+        \Magento\Catalog\Api\Data\CategoryInterface $category
+    ): \Magento\Catalog\Model\ResourceModel\Product\Collection {
+        return $this->collectionFilter->applyVirtualCategoryFilters($collection, $category);
     }
 
-    protected function applyFiltering($collection, $filter)
+    protected function prepareSortingArray(array|string|int $skus): array
     {
-        $filter = $this->filtersPool->getFilter($filter);
+        $values = is_array($skus) ? $skus : explode(',', (string) $skus);
 
-        if ($filter == null) {
-            return $collection;
-        }
-
-        return $filter->filter($collection);
+        return array_map(static fn ($value): string => trim((string) $value), $values);
     }
 
-    protected function applySorting($collection, $orderBy, $orderType)
-    {
-        $sorter = $this->sortersPool->getSorter($orderBy);
-
-        if ($sorter == null) {
-            return $collection;
-        }
-
-        return $sorter->sort($collection, $orderBy, $orderType);
-    }
-
-    /**
-     * @param $criteria
-     * @param $collection
-     */
-    protected function applyCategoryFilter($collection, $categoryId)
-    {
-        try {
-            $category = $this->categoryRepository->get($categoryId);
-
-            if ($category->getIsVirtualCategory() && $category->getVirtualRule()) {
-                return $this->applyVirtualCategoryFilters($collection, $category);
-            }
-
-            return $collection->addFieldToFilter('category_ids', $categoryId);
-        } catch (\Magento\Framework\Exception\NoSuchEntityException $exception) {
-            return $collection;
-        }
-    }
-
-    /**
-     * @param $collection
-     * @param $category
-     */
-    protected function applyVirtualCategoryFilters($collection, $category)
-    {
-        $queryFilter = $category->getVirtualRule()->getCategorySearchQuery($category);
-
-        if($queryFilter == null) {
-            throw new \Magento\Framework\Exception\LocalizedException(__(
-                'Query filter for virtual category was not generated properly. Category might be disabled or misconfigured. Category ID %1 %2',
-                $category->getId(),
-                $category->getName()
-            ));
-        }
-
-        $collection->addQueryFilter($queryFilter);
-        $collection->setFlag('virtual_category_applied', true);
-
-        return $collection;
-    }
-
-    protected function prepareSortingArray($skus)
-    {
-        if (!is_array($skus)) {
-            $skus = explode(',', $skus);
-        }
-
-        return array_map('trim', $skus);
-    }
-
-    protected function getProductIdentitiesFromElasticSearch(\Smile\ElasticsuiteCatalog\Model\ResourceModel\Product\Fulltext\Collection $collection)
-    {
-        $conditionWithProductIds = $this->getWhereConditionWithProductIds($collection);
-
-        preg_match('/\(([0-9, ]+?)\)/', $conditionWithProductIds, $idsFromCondition);
+    protected function getProductIdentitiesFromElasticSearch(
+        \Smile\ElasticsuiteCatalog\Model\ResourceModel\Product\Fulltext\Collection $collection
+    ): array {
+        preg_match('/\(([0-9, ]+?)\)/', $this->getWhereConditionWithProductIds($collection), $idsFromCondition);
 
         if (!isset($idsFromCondition[1])) {
             return [];
         }
 
-        $productIds = explode(',', $idsFromCondition[1]);
-        $productIds = array_map('intval', $productIds);
-
-        $identities = array_map(
-            function ($productId) {
-                return sprintf('%s_%s', \Magento\Catalog\Model\Product::CACHE_TAG, $productId);
-            },
-            $productIds
+        return array_map(
+            static fn (string $productId): string => sprintf(
+                '%s_%d',
+                \Magento\Catalog\Model\Product::CACHE_TAG,
+                (int) $productId
+            ),
+            explode(',', $idsFromCondition[1])
         );
-
-        return $identities;
     }
 
-    protected function getWhereConditionWithProductIds(\Smile\ElasticsuiteCatalog\Model\ResourceModel\Product\Fulltext\Collection $collection)
-    {
-        $conditions = $collection->getSelect()->getPart('where');
-
-        foreach($conditions as $condition) {
-            if(strpos($condition, 'entity_id IN') == false) {
-                continue;
+    protected function getWhereConditionWithProductIds(
+        \Smile\ElasticsuiteCatalog\Model\ResourceModel\Product\Fulltext\Collection $collection
+    ): string {
+        foreach ($collection->getSelect()->getPart('where') as $condition) {
+            if (str_contains((string) $condition, 'entity_id IN')) {
+                return (string) $condition;
             }
-
-            return $condition;
         }
 
         return '';
-    }
-
-    public function setSkipCollectionFilters(bool $value): void
-    {
-        $this->skipCollectionFilters = $value;
     }
 }

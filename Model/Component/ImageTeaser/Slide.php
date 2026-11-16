@@ -10,6 +10,7 @@ class Slide extends \MageSuite\ContentConstructorFrontend\Model\Component\Generi
         protected \MageSuite\ContentConstructorFrontend\Service\UrlResolver $urlResolver,
         protected \MageSuite\ContentConstructorFrontend\Service\MediaResolver $mediaResolver,
         protected \MageSuite\ContentConstructorFrontend\Model\Component\ImageTeaser\Slide\CanBeDisplayedInterface $canBeDisplayed,
+        protected \MageSuite\ThemeHelpers\Helper\ImageType $imageTypeHelper,
         array $data = []
     ) {
         parent::__construct($urlResolver, $mediaResolver, $data);
@@ -24,6 +25,11 @@ class Slide extends \MageSuite\ContentConstructorFrontend\Model\Component\Generi
         }
 
         return null;
+    }
+
+    public function getMimeType(): ?string
+    {
+        return $this->imageTypeHelper->getMimeType((string) $this->getSrc());
     }
 
     public function getSrcSet(): ?string
