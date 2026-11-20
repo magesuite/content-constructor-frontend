@@ -18,9 +18,9 @@ $productImage2x = $imageHelper->init($productObj, 'category_page_grid_x2');
 $productImage2xUrl = $productImage2x->getUrl();
 
 $isLazyLoaded = $block->getVar('daily_deal_teaser/lazyload_image');
-$loaderImage = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
+$loaderImage = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==';
 ?>
-<a href="<?= $productUrl; ?>" class="cs-daily-deal-teaser__image-wrapper">
+<a href="<?= /** @noEscape */ $productUrl; ?>" class="cs-daily-deal-teaser__image-wrapper">
     <?php if ($block->getVar('daily_deal_teaser/discount_badge/show') && $product['dailyDealOffer']['discountPercentage']): ?>
         <div class="cs-daily-deal-teaser__discount">
             <span class="cs-daily-deal-teaser__badge-wrapper cs-dailydeal__badge cs-dailydeal__badge--dd-discount">
