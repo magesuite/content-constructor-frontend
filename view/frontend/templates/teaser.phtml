@@ -13,46 +13,53 @@
 
     $teaserBrickClass = $brickClass . ' ' . $brickClass . '--teaser';
     if($teaser['size']['x'] == 2) {
-        $teaserBrickClass .= ' ' .$brickClass . '--x2';
+        $teaserBrickClass .= ' ' . $brickClass . '--x2';
     }
     if($teaser['size']['y'] == 2) {
         $teaserBrickClass .= ' ' . $brickClass . '--y2';
     }
+
+    $teaserImageAlt = $teaser['image']['alt'] ?? '';
+    $teaserHtmlTag = $block->getHtmlTag() ?? 'div';
 ?>
 
-<<?= $block->getHtmlTag() ?? 'div' ?> class="<?= $teaserBrickClass ?>" data-teaser-id="<?= $teaserId ?>">
-    <div class="<?= $gridClass ?>__teaser <?= $gridClass ?>__teaser--scheme-<?= $teaser['colorScheme'] ?>">
+<<?= /** @noEscape */ $teaserHtmlTag ?> class="<?= /** @noEscape */ $teaserBrickClass ?>" data-teaser-id="<?= /** @noEscape */ $teaserId ?>">
+    <div class="<?= /** @noEscape */ $gridClass ?>__teaser <?= /** @noEscape */ $gridClass ?>__teaser--scheme-<?= /** @noEscape */ $teaser['colorScheme'] ?>">
         <?php if($teaser['href'] != ''): ?>
-            <a href="<?php echo $teaser['href'] ?>" class="<?php /* @escapeNotVerified */ echo $gridClass; ?>__teaser-content-wrapper">
+            <a href="<?= /** @noEscape */ $teaser['href'] ?>" class="<?= /** @noEscape */ $gridClass; ?>__teaser-content-wrapper">
         <?php else: ?>
-            <div class="<?php /* @escapeNotVerified */ echo $gridClass; ?>__teaser-content-wrapper">
+            <div class="<?= /** @noEscape */ $gridClass; ?>__teaser-content-wrapper">
         <?php endif; ?>
 
-            <figure class="<?php /* @escapeNotVerified */ echo $gridClass; ?>__teaser-figure">
+            <figure class="<?= /** @noEscape */ $gridClass; ?>__teaser-figure">
                 <?php // @TODO: unify image structure ?>
                 <img
-                    class="<?php /* @escapeNotVerified */ echo $gridClass; ?>__teaser-image lazyload"
-                    src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-                    data-src="<?= $teaser['image']['src'] ?>"
-                    <?php if ($teaser['image']['srcSet']): ?>data-srcset="<?= $teaser['image']['srcSet'] ?>"<?php endif; ?>
-                    alt="<?= isset($teaser['image']['alt']) ? $teaser['image']['alt'] : '' ?>"
+                    class="<?= /** @noEscape */ $gridClass; ?>__teaser-image lazyload"
+                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                    data-src="<?= /** @noEscape */ $teaser['image']['src'] ?>"
+                    <?php if ($teaser['image']['srcSet']): ?>data-srcset="<?= /** @noEscape */ $teaser['image']['srcSet'] ?>"<?php endif; ?>
+                    alt="<?= /** @noEscape */ $teaserImageAlt ?>"
                 >
             </figure>
-            <div class="<?php /* @escapeNotVerified */ echo $gridClass; ?>__teaser-content <?php /* @escapeNotVerified */ echo $gridClass; ?>__teaser-content--<?php echo $teaser['displayVariant'] ?>">
+            <div class="<?= /** @noEscape */ $gridClass; ?>__teaser-content <?= /** @noEscape */ $gridClass; ?>__teaser-content--<?= /** @noEscape */ $teaser['displayVariant'] ?>">
                 <?php if($teaser['headline'] != '') {
-                    echo '<h4 class="' . $gridClass . '__teaser-headline">'.$teaser['headline'].'</h4>';
+                    $headlineHtml = sprintf('<h4 class="%s__teaser-headline">%s</h4>', $gridClass, $teaser['headline']);
+                    echo /** @noEscape */ $headlineHtml;
                 }
                 if($teaser['subheadline'] != '') {
-                    echo '<span class="' . $gridClass . '__teaser-subheadline">'.$teaser['subheadline'].'</span>';
+                    $subheadlineHtml = sprintf('<span class="%s__teaser-subheadline">%s</span>', $gridClass, $teaser['subheadline']);
+                    echo /** @noEscape */ $subheadlineHtml;
                 }
                 if($teaser['paragraph'] != '') {
-                    echo '<p class="' . $gridClass . '__teaser-text">'.$teaser['paragraph'].'</p>';
+                    $paragraphHtml = sprintf('<p class="%s__teaser-text">%s</p>', $gridClass, $teaser['paragraph']);
+                    echo /** @noEscape */ $paragraphHtml;
                 }
                 if($teaser['ctaLabel'] != '' && $teaser['href'] != '') {
-                    echo '<span role="button" class="cs-button cs-button--type_long cs-button--look_default">
-                        <span class="cs-button__span">'.$teaser['ctaLabel'].'</span>
+                    $ctaHtml = sprintf('<span role="button" class="cs-button cs-button--type_long cs-button--look_default">
+                        <span class="cs-button__span">%s</span>
                         <svg class="cs-button__icon"><use xlink:href="#arrow_next"></use></svg>
-                    </span>';
+                    </span>', $teaser['ctaLabel']);
+                    echo /** @noEscape */ $ctaHtml;
                 } ?>
             </div>
 
@@ -62,4 +69,4 @@
             </div>
         <?php endif; ?>
     </div>
-</<?= $block->getHtmlTag() ?? 'div' ?>>
+</<?= /** @noEscape */ $teaserHtmlTag ?>>

@@ -18,9 +18,9 @@ $visibilityMediaQuery = $block->getVisibilityMediaQuery();
 /**
  * Image properties with support for conditional lazy loading.
  */
-$origImageSrc = $block->escapeUrl($slide->getSrc());
+$origImageSrc = $escaper->escapeUrl($slide->getSrc());
 $hasImage = !empty($origImageSrc);
-$placeholderImageSrc = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
+$placeholderImageSrc = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==';
 $imageSrcset = $slide->getSrcSet();
 
 if (empty($imageSrcset) || $isSvg) {
