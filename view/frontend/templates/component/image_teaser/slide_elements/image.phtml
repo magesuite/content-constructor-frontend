@@ -20,7 +20,7 @@ $visibilityMediaQuery = $block->getVisibilityMediaQuery();
  */
 $origImageSrc = $escaper->escapeUrl((string) $slide->getSrc());
 $hasImage = !empty($origImageSrc);
-$placeholderImageSrc = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
+$placeholderImageSrc = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==';
 $imageSrcset = $slide->getSrcSet();
 
 if (empty($imageSrcset) || $isSvg) {
